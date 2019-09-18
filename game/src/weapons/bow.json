@@ -1,0 +1,508 @@
+{
+	"Items": [
+{
+"name": "Argent Bow",
+"might": 8,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Assassin's Bow+",
+"might": 11,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Assassin's Bow",
+"might": 7,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Beguiling Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Beguiling Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Big-Catch Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Big-Catch Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Bouquet Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Bouquet Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Bow of Devotion",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Brave Bow+",
+"might": 7,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Brave Bow",
+"might": 4,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Clarisse's Bow+",
+"might": 11,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Clarisse's Bow",
+"might": 7,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Cocobow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Cocobow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Cunning Bow",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Cupid Arrow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Cupid Arrow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Deep-Blue Bow",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Devilish Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Devilish Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Fiddlestick Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Fiddlestick Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Firesweep Bow+",
+"might": 11,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Firesweep Bow",
+"might": 7,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Fishie Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Fishie Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Fujin Yumi",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Gratia+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Gratia",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Guard Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Guard Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Hama Ya+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Hama Ya",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Iron Bow",
+"might": 4,
+"range": 2,
+"sp": 50,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Kabura Ya+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Kabura Ya",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Killer Bow+",
+"might": 9,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Killer Bow",
+"might": 5,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Luna Arc",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Monstrous Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Monstrous Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Mulagir",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Nidhogg",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Niles's Bow",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Parthia",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Refreshing Bolt+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Refreshing Bolt",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Shining Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Shining Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Short Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Short Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Silver Bow+",
+"might": 13,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Silver Bow",
+"might": 9,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Skadi",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Slaying Bow+",
+"might": 12,
+"range": 2,
+"sp": 300,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Slaying Bow",
+"might": 8,
+"range": 2,
+"sp": 200,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Steel Bow",
+"might": 6,
+"range": 2,
+"sp": 100,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Swift Mulagir",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Thögn",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+},
+{
+"name": "Umbra Burst",
+"might": 14,
+"range": 2,
+"sp": 0,
+"prf": false,
+"type": "bow"
+},
+{
+"name": "Warrior Princess",
+"might": 14,
+"range": 2,
+"sp": 400,
+"prf": true,
+"type": "bow"
+}
+]
+}

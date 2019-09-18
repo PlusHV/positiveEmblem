@@ -1,0 +1,292 @@
+{
+	"Items": [
+		{
+			"name": "Absorb+",
+			"might": 7,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Absorb",
+			"might": 4,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Assault",
+			"might": 10,
+			"range": 2,
+			"sp": 50,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Candlelight+",
+			"might": 11,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Candlelight",
+			"might": 7,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Fear+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Fear",
+			"might": 5,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Flash+",
+			"might": 11,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Flash",
+			"might": 7,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Gjallarbrú",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type": "staff"
+		},
+		{
+			"name": "Grandscratcher+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Grandscratcher",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Gravity+",
+			"might": 10,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Gravity",
+			"might": 6,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Hliðskjálf",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type": "staff"
+		},
+		{
+			"name": "Joyous Lantern+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Joyous Lantern",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Kumade+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Kumade",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Ovoid Staff+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Ovoid Staff",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Pain+",
+			"might": 10,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Pain",
+			"might": 3,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Panic+",
+			"might": 11,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Panic",
+			"might": 7,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Sanngriðr",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type": "staff"
+		},
+		{
+			"name": "Slow+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Slow",
+			"might": 5,
+			"range": 2,
+			"sp": 150,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Thökk",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type": "staff"
+		},
+		{
+			"name": "Toasty Skewer+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Toasty Skewer",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Trilemma+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Trilemma",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Umbra Burst",
+			"might": 14,
+			"range": 2,
+			"sp": 0,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Witchy Wand+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type": "staff"
+		},
+		{
+			"name": "Witchy Wand",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type": "staff"
+		}
+	]
+}

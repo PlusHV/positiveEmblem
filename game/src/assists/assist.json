@@ -1,0 +1,333 @@
+{
+	"Items": [
+		{
+			"name": "Ardent Sacrifice",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "health"
+		},
+		{
+			"name": "Dance",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "dance"
+		},
+		{
+			"name": "Draw Back",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+		{
+			"name": "Future Vision",
+			"sp": 400,
+			"range": 1,
+			"prf": true,
+			"type": "movement"
+		},
+		{
+			"name": "Gray Waves",
+			"sp": 400,
+			"range": 1,
+			"prf": true,
+			"type": "dance"
+		},
+		{
+			"name": "Harsh Command+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Harsh Command",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Heal",
+			"sp": 50,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Martyr+",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Martyr",
+			"sp": 200,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Mend",
+			"sp": 100,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Physic+",
+			"sp": 300,
+			"range": 2,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Physic",
+			"sp": 200,
+			"range": 2,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Pivot",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+		{
+			"name": "Rally Atk/Def+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Atk/Def",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Atk/Res",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Atk/Spd+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Atk/Spd",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Attack",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Def/Res+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Def/Res",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Defense",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Resistance",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Spd/Def+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Spd/Def",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Spd/Res+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Spd/Res",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Speed",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Up Atk+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Up Atk",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Up Res+",
+			"sp": 400,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Rally Up Res",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "rally"
+		},
+		{
+			"name": "Reciprocal Aid",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "health"
+		},
+		{
+			"name": "Reconcile",
+			"sp": 100,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Recover+",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Recover",
+			"sp": 200,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Rehabilitate+",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Rehabilitate",
+			"sp": 200,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Reposition",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+		{
+			"name": "Restore+",
+			"sp": 300,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Restore",
+			"sp": 200,
+			"range": 1,
+			"prf": false,
+			"type": "heal"
+		},
+		{
+			"name": "Sacrifice",
+			"sp": 400,
+			"range": 1,
+			"prf": true,
+			"type": "health"
+		},
+		{
+			"name": "Shove",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+		{
+			"name": "Sing",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "dance"
+		},
+		{
+			"name": "Smite",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+		{
+			"name": "Swap",
+			"sp": 150,
+			"range": 1,
+			"prf": false,
+			"type": "movement"
+		},
+	]
+}

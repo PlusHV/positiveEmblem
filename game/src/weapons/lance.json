@@ -1,0 +1,676 @@
+{
+	"Items": [
+		{
+			"name": "Barrier Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Barrier Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Berkut's Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Berkut's Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Brave Lance+",
+			"might": 8,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Brave Lance",
+			"might": 5,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Bright Naginata",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Bull Spear",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Carrot Lance+",
+			"might": 13,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Carrot Lance",
+			"might": 9,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Casa Blanca+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Casa Blanca",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Cursed Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Dauntless Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Daybreak Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Deft Harpoon+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Deft Harpoon",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Fensalir",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Festive Siegmund",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Firesweep L+",
+			"might": 15,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Firesweep Lance",
+			"might": 11,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "First Bite+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "First Bite",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Flame Siegmund",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Flashing Carrot+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Flashing Carrot",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Florina's Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Gáe Bolg",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Geirskögul",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Gradivus",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Harmonic Lance+",
+			"might": 13,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Harmonic Lance",
+			"might": 9,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Heavy Spear+",
+			"might": 12,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Heavy Spear",
+			"might": 8,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Hifalseka's Spear",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Iron Lance",
+			"might": 6,
+			"range": 1,
+			"sp": 50,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "It's Curtains...+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "It's Curtains...",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Killer Lance+",
+			"might": 11,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Killer Lance",
+			"might": 7,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Kriemhild",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Leiptr",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Lofty Blossoms+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Lofty Blossoms",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Loyal Greatlance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Luncheon Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Luncheon Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Maltet",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Ninis's Ice Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "falseble Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Oboro's Spear",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Panther Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Peri's Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Reprisal Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Reprisal Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Rhomphaia",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Ridersbane+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Ridersbane",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Sapphire Lance+",
+			"might": 12,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Sapphire Lance",
+			"might": 8,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Scythe of Sariel",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Shanna's Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Shell Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Shell Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Siegmund",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Silver Lance+",
+			"might": 15,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Silver Lance",
+			"might": 11,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Slaying Lance+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Slaying Lance",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Slaying Spear+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Slaying Spear",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Steady Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Steel Lance",
+			"might": 8,
+			"range": 1,
+			"sp": 100,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Tannenboom!+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Tannenboom!",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Umbra Burst",
+			"might": 16,
+			"range": 1,
+			"sp": 0,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Vanguard+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Vanguard",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Verðandi",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Vidofnir",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Wagasa+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Wagasa",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "lance"
+		},
+		{
+			"name": "Whitewing Lance",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		},
+		{
+			"name": "Whitewing Spear",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "lance"
+		}
+	]
+}

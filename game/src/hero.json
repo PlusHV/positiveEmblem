@@ -1,6 +1,29 @@
 {
    "Items":[
       {
+         "hero_id":0,
+         "name":"",
+         "basehp":0,
+         "baseatk":0,
+         "basespd":0,
+         "basedef":0,
+         "baseres":0,
+         "maxhp":0,
+         "maxatk":0,
+         "maxspd":0,
+         "maxdef":0,
+         "maxres":0,
+         "hpgrowth":0,
+         "atkgrowth":0,
+         "spdgrowth":0,
+         "defgrowth":0,
+         "resgrowth":0,
+         "color":"red",
+         "weapontype":"sword",
+         "movetype":"infantry",
+         "minrarity":2
+      },
+      {
          "hero_id":1,
          "name":"Alfonse",
          "basehp":19,

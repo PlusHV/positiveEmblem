@@ -1,0 +1,493 @@
+{
+	"Items": [
+		{
+			"name": "Aura",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárblade+",
+			"might": 13,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárblade",
+			"might": 9,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárblooms+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárblooms",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárowl+",
+			"might": 10,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárowl",
+			"might": 6,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárraven+",
+			"might": 11,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárraven",
+			"might": 7,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárserpent+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárserpent",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárwolf+",
+			"might": 10,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blárwolf",
+			"might": 6,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blessed Bouquet+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blessed Bouquet",
+			"might": 8,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blue Egg+",
+			"might": 11,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blue Egg",
+			"might": 7,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blue Gift+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Blue Gift",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Book of Orchids",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Dancer's Score+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Dancer's Score",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Dark Aura",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Death",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Dire Thunder",
+			"might": 9,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Ellight",
+			"might": 6,
+			"range": 2,
+			"sp": 100,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Elthunder",
+			"might": 6,
+			"range": 2,
+			"sp": 100,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Fresh Bouquet+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Fresh Bouquet",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Huginn's Egg",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Ivaldi",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Juicy Wave+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Juicy Wave",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Keen Blárwolf+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Keen Blárwolf",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Light",
+			"might": 4,
+			"range": 2,
+			"sp": 50,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Missiletainn",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Mjölnir",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Odin's Grimoire",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Prayer Wheel",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Sagittae",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Sealife Tome+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Sealife Tome",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Shine+",
+			"might": 13,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Shine",
+			"might": 9,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Silver Goblet+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Silver Goblet",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Tactical Bolt",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Thani",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Thoron+",
+			"might": 13,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Thoron",
+			"might": 9,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Thunder",
+			"might": 4,
+			"range": 2,
+			"sp": 50,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Tome of Thoron",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Umbra Burst",
+			"might": 14,
+			"range": 2,
+			"sp": 0,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Valaskjálf",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Vessel of Cheer+",
+			"might": 12,
+			"range": 2,
+			"sp": 300,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Vessel of Cheer",
+			"might": 8,
+			"range": 2,
+			"sp": 200,
+			"prf": false,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Virtuous Naga",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Wargod's Tome",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Weirding Tome",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		},
+		{
+			"name": "Worldsea Wave",
+			"might": 14,
+			"range": 2,
+			"sp": 400,
+			"prf": true,
+			"type:" "bluetome"
+		}
+
+	]
+}

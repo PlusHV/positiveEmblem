@@ -1,8 +1,9 @@
 import { Client } from 'boardgame.io/react';
 import { Game } from 'boardgame.io/core';
 import React from 'react';
+import Select from 'react-select';
 import './App.css';
-import heroes from './hero.json';
+import heroes from './heroInfo.json';
 import { CalculateStat } from './StatCalculation.js';
 
 class Stats extends React.Component{
@@ -11,18 +12,32 @@ class Stats extends React.Component{
     this.state = {
       level: 1,
       merge: 10,
+      heroName: "",
+      weapon: "",
+      assist: "",
+      special: "",
+      askill: "",
+      bskill: "",
+      cskill: "",
+      sseal: ""
+      //
     };
     //this.level = 1;  
    //this.onLevelChange = this.onLevelChange.bind(this);
-  }  
-  onLevelChange(e){
-    this.setState({level: e.target.value});
-    //this.state.level = newLevel;
-    console.log(this.state.level);
+ }  
+ onLevelChange(e){
+  this.setState({level: e.target.value});
+
     //this.forceUpdate();
 
   }
-	render(){
+  onHeroChange(e){
+    this.setState({heroName: e});
+    //console.log(this.state.heroName);
+    //this.forceUpdate();
+
+  }
+  render(){
     var  heroText = heroes.Items;
 
     var heroData = {}; //list of objects
@@ -33,8 +48,15 @@ class Stats extends React.Component{
       //heroData[heroText[i].name] = JSON.parse(heroText[i]);
 
     }
-    //console.log(CalculateStat)
-    console.log(this.state.merge);
+
+    var heroList = Object.keys(heroData);
+
+    var heroList2 = [];
+
+    for (var key of heroList){
+      heroList2.push({value: key, label: key});
+    }
+
     const spacing = {
      border: '2px solid #555',
      width: '50px',
@@ -43,18 +65,37 @@ class Stats extends React.Component{
      textAlign: 'center',
    };   
 
-   const statText = ["Level", "Merge", "HP", "Atk", "Spd", "Def", "Res" ];
-   const statNumbers = [40, 10, heroData["Marisa"].basehp, heroData["Marisa"].baseatk, heroData["Marisa"].basespd, heroData["Marisa"].basedef, heroData["Marisa"].baseres];
-   const statGrowths = [5, 10, heroData["Marisa"].hpgrowth, heroData["Marisa"].atkgrowth, heroData["Marisa"].spdgrowth, heroData["Marisa"].defgrowth, heroData["Marisa"].resgrowth];
 
-   const equipText = ["Weapon", "Assist", "Special", "A Skill", "B Skill", "C Skill", "S Seal"];
-   const equippedSkill = ["Wo Dao (Def)", "Reposition", "Aether", "Distant Counter", "Wrath 3", "Attack Tactics 3", "Brazen Atk/Spd 3"];
+   var hero = this.state.heroName.value;
+
+   if (heroData[hero] == null){
+    hero = "";
+    
+  }
+
+  const statText = ["Level", "Merge", "HP", "Atk", "Spd", "Def", "Res" ];
+  const statNumbers = [40, 10, heroData[hero].basehp, heroData[hero].baseatk, heroData[hero].basespd, heroData[hero].basedef, heroData[hero].baseres];
+  const statGrowths = [5, 10, heroData[hero].growthhp, heroData[hero].growthatk, heroData[hero].growthspd, heroData[hero].growthdef, heroData[hero].growthres];
+
+  const equipText = ["Weapon", "Assist", "Special", "A Skill", "B Skill", "C Skill", "S Seal"];
+  const equippedSkill = ["Wo Dao (Def)", "Reposition", "Aether", "Distant Counter", "Wrath 3", "Attack Tactics 3", "Brazen Atk/Spd 3"];
 
   // console.log(CalculateStat(this.level, statGrowths[0], statGrowths[2], statNumbers[2] ));
 
 
 
-   let tbody = [];
+  let tbody = [];
+  tbody.push(<tr><td>Hero</td> <td colspan = "4"> 
+    <Select 
+    options={heroList2}
+    value={this.state.heroName}
+  onChange = {(e) => this.onHeroChange(e)  /* {(e) => this.onHeroChange(e)*/ } 
+  /> </td></tr> );
+
+
+  console.log(this.state.heroName);
+
+
     	for (let i = 0; i < statText.length; i++) { //rows
         let cells = [];
 

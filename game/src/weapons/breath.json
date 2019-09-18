@@ -1,0 +1,244 @@
+{
+	"Items": [
+		{
+			"name": "Breath of Blight",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Breath of Fog",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Dark Breath+",
+			"might": 13,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Dark Breath",
+			"might": 9,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Demonic Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Divine Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Divine Mist",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Draconic Rage",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Expiration",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Fell Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Fire Breath+",
+			"might": 8,
+			"range": 1,
+			"sp": 100,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Fire Breath",
+			"might": 6,
+			"range": 1,
+			"sp": 50,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Flametongue+",
+			"might": 15,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Flametongue",
+			"might": 11,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Glittering Breath+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Glittering Breath",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Great Flame",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Light Breath+",
+			"might": 13,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Light Breath",
+			"might": 9,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Lightning Breath+",
+			"might": 11,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Lightning Breath",
+			"might": 7,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Oracle's Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Razing Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Savage Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Spirit Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Sublime Surge",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Summer's Breath",
+			"might": 16,
+			"range": 1,
+			"sp": 400,
+			"prf": true,
+			"type": "breath"
+		},
+		{
+			"name": "Umbra Burst",
+			"might": 16,
+			"range": 1,
+			"sp": 0,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Water Breath+",
+			"might": 14,
+			"range": 1,
+			"sp": 300,
+			"prf": false,
+			"type": "breath"
+		},
+		{
+			"name": "Water Breath",
+			"might": 10,
+			"range": 1,
+			"sp": 200,
+			"prf": false,
+			"type": "breath"
+		}
+	]
+}
