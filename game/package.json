@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "addons": "^0.1.2",
     "react": "^16.9.0",
+    "react-addons-create-fragment": "^15.6.2",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-dropdown-input": "^0.1.11",
+    "react-scripts": "3.1.1",
+    "react-select": "^3.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,2907 @@
+{
+	"Items": [
+		{	
+		"name": "Aerobatics 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Aerobatics 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Aerobatics 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+
+			"name": "Armored Blow 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Armored Blow 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Armored Blow 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Armored Boots",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Atk Feint 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+
+			"name": "Atk Feint 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+
+			"name": "Atk Feint 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+
+			"name": "Atk Ploy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Atk Ploy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Atk Ploy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Atk Smoke 1",
+			"sp": 60,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Atk Smoke 2",
+			"sp": 120,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Atk Smoke 3",
+			"sp": 240,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Atk Tactic 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Atk Tactic 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Atk Tactic 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Atk/Def Bond 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Def Bond 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Def Bond 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Atk/Res Bond 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Res Bond 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Res Bond 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Atk/Spd 1",
+			"sp": 80,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Spd 2",
+			"sp": 160,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Atk/Spd Bond 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Spd Bond 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Atk/Spd Bond 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Attack +1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Attack +2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Attack +3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Attack/Def +1",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Attack/Def +2",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Attack/Res 1",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Attack/Res 2",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Blaze Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Blaze Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Blaze Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+
+			"name": "Brash Assault 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+
+			"name": "Brash Assault 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+
+			"name": "Brash Assault 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+
+			"name": "Brazen Atk/Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Brazen Atk/Res 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Res 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Res 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Brazen Atk/Spd 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Spd 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Brazen Atk/Spd 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Breath of Life 1",
+			"sp": 50,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Breath of Life 2",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Breath of Life 3",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Chill Atk 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Chill Atk 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Chill Atk 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Chill Spd 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Chill Spd 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Chill Spd 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Close Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Close Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Close Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Darting Blow 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Darting Blow 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Darting Blow 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Darting Stance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Darting Stance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Darting Stance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Def Ploy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Def Ploy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Def Ploy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Def Tactic 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Def Tactic 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Def Tactic 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Def/Res Bond 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Def/Res Bond 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Def/Res Bond 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Defense +1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Defense +2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Defense +3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Deflect Magic 1",
+			"sp": 50,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Magic 2",
+			"sp": 100,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Magic 3",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+
+			"name": "Deflect Melee 1",
+			"sp": 50,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Melee 2",
+			"sp": 100,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Melee 3",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+
+			"name": "Deflect Missile 1",
+			"sp": 50,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Missile 2",
+			"sp": 100,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Deflect Missile 3",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+
+			"name": "Distant Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Distant Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Distant Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Drive Atk 1",
+			"sp": 120,
+			"prf": false,
+			"type": "drive",
+			"max": false
+		},
+		{
+
+			"name": "Drive Atk 2",
+			"sp": 240,
+			"prf": false,
+			"type": "drive",
+			"max": true
+		},
+		{
+
+			"name": "Drive Def 1",
+			"sp": 120,
+			"prf": false,
+			"type": "drive",
+			"max": false
+		},
+		{
+
+			"name": "Drive Def 2",
+			"sp": 240,
+			"prf": false,
+			"type": "drive",
+			"max": true
+		},
+		{
+
+			"name": "Drive Res 1",
+			"sp": 120,
+			"prf": false,
+			"type": "drive",
+			"max": false
+		},
+		{
+
+			"name": "Drive Res 2",
+			"sp": 240,
+			"prf": false,
+			"type": "drive",
+			"max": true
+		},
+		{
+
+			"name": "Drive Spd 1",
+			"sp": 120,
+			"prf": false,
+			"type": "drive",
+			"max": false
+		},
+		{
+
+			"name": "Drive Spd 2",
+			"sp": 240,
+			"prf": false,
+			"type": "drive",
+			"max": true
+		},
+		{
+
+			"name": "Earth Boost 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Earth Boost 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Earth Boost 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Earth Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on dance",
+			"max": false
+		},
+		{
+
+			"name": "Earth Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on dance",
+			"max": false
+		},
+		{
+
+			"name": "Earth Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on dance",
+			"max": true
+		},
+		{
+
+			"name": "Embla's Ward",
+			"sp": 0,
+			"prf": true,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Even Def Wave 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Even Def Wave 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Even Def Wave 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Even Res Wave 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Even Res Wave 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Even Res Wave 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Fierce Stance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Fierce Stance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Fierce Stance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Fire Boost 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Fire Boost 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Fire Boost 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Flashing Blade 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Flashing Blade 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Flashing Blade 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Flier Formation 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Flier Formation 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Flier Formation 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+
+			"name": "Fortify Def 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Fortify Def 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Fortify Def 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Fortify Res 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Fortify Res 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Fortify Res 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Fortress Def 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Fortress Def 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Fortress Def 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Fortress Res 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Fortress Res 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Fortress Res 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Gale Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Gale Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Gale Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+
+			"name": "Guidance 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Guidance 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Guidance 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+
+			"name": "Hardy Bearing 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+
+			"name": "Hardy Bearing 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+
+			"name": "Hardy Bearing 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-priority",
+			"max": true
+		},
+		{
+
+			"name": "Heavy Blade 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Heavy Blade 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Heavy Blade 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Hone Atk 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Hone Atk 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Hone Atk 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Hone Spd 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Hone Spd 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Hone Spd 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "HP +3",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "HP +4",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "HP +5",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "HP/Atk 1",
+			"sp": 100,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "HP/Atk 2",
+			"sp": 200,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "HP/Res 1",
+			"sp": 100,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "HP/Res 2",
+			"sp": 200,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "HP/Spd 1",
+			"sp": 100,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "HP/Spd 2",
+			"sp": 200,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Initiate Seal Atk 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Atk 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Atk 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Def 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Def 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Def 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal HP 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal HP 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal HP 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Res 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Res 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Res 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Spd 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Spd 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Initiate Seal Spd 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Iote's Shield",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+
+			"name": "Live to Serve 1",
+			"sp": 40,
+			"prf": false,
+			"type": "on-heal",
+			"max": false
+		},
+		{
+
+			"name": "Live to Serve 2",
+			"sp": 80,
+			"prf": false,
+			"type": "on-heal",
+			"max": false
+		},
+		{
+
+			"name": "Live to Serve 3",
+			"sp": 160,
+			"prf": false,
+			"type": "on-heal",
+			"max": true
+		},
+		{
+
+			"name": "Múspellflame",
+			"sp": 0,
+			"prf": true,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Obstruct 1",
+			"sp": 50,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Obstruct 2",
+			"sp": 100,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+
+			"name": "Obstruct 3",
+			"sp": 200,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+
+			"name": "Panic Ploy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Panic Ploy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Panic Ploy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Phantom Spd 1",
+			"sp": 50,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Phantom Spd 2",
+			"sp": 100,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Phantom Spd 3",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+
+			"name": "Poison Strike 1",
+			"sp": 60,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Poison Strike 2",
+			"sp": 120,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Poison Strike 3",
+			"sp": 240,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Quick Riposte 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+
+			"name": "Quick Riposte 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+
+			"name": "Quick Riposte 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+
+			"name": "Quickened Pulse",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Renewal 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Renewal 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Renewal 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Res Ploy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Res Ploy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Res Ploy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Res Tactic 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Res Tactic 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Res Tactic 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Resistance +1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Resistance +2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Resistance +3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Røkkr",
+			"sp": 0,
+			"prf": true,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+
+			"name": "Savage Blow 1",
+			"sp": 50,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Savage Blow 2",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Savage Blow 3",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Seal Atk 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Seal Atk 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Seal Atk 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Seal Spd 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Seal Spd 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Seal Spd 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Spd Ploy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Spd Ploy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Spd Ploy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Spd Smoke 1",
+			"sp": 60,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Spd Smoke 2",
+			"sp": 120,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+
+			"name": "Spd Smoke 3",
+			"sp": 240,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+
+			"name": "Spd/Def 1",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Spd/Def 2",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Spd/Res 1",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Spd/Res 2",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Spd/Res Bond 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Spd/Res Bond 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Spd/Res Bond 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Speed +1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Speed +2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Speed +3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": true
+		},
+		{
+
+			"name": "Spur Atk 1",
+			"sp": 50,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Atk 2",
+			"sp": 100,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Atk 3",
+			"sp": 200,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Spur Atk/Spd 1",
+			"sp": 120,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Atk/Spd 2",
+			"sp": 240,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Spur Def 1",
+			"sp": 50,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Def 2",
+			"sp": 100,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Def 3",
+			"sp": 200,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Spur Def/Res 1",
+			"sp": 120,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Def/Res 2",
+			"sp": 240,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Spur Res 1",
+			"sp": 50,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Res 2",
+			"sp": 100,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Res 3",
+			"sp": 200,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Spur Spd 1",
+			"sp": 50,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Spd 2",
+			"sp": 100,
+			"prf": false,
+			"type": "spur",
+			"max": false
+		},
+		{
+
+			"name": "Spur Spd 3",
+			"sp": 200,
+			"prf": false,
+			"type": "spur",
+			"max": true
+		},
+		{
+
+			"name": "Squad Ace A 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace A 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace A 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace B 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace B 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace B 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace C 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace C 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace C 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace D 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace D 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace D 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace E 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace E 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace E 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace F 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace F 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace F 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace G 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace G 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace G 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace H 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace H 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace H 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace I 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace I 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace I 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace J 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace J 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace J 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace K 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace K 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace K 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace L 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace L 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace L 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace M 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace M 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace M 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace N 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace N 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace N 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace O 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace O 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace O 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace P 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace P 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace P 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Q 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Q 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Q 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace R 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace R 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace R 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace S 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace S 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace S 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace T 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace T 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace T 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace U 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace U 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace U 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace V 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace V 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace V 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace W 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace W 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace W 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace X 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace X 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace X 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Y 1",
+			"sp": 30,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Y 2",
+			"sp": 60,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Y 3",
+			"sp": 120,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Z 1",
+			"sp": 40,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Z 2",
+			"sp": 80,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Squad Ace Z 3",
+			"sp": 160,
+			"prf": false,
+			"type": "passive",
+			"max": false
+		},
+		{
+
+			"name": "Steady Stance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Steady Stance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Steady Stance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Sturdy Blow 1",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Sturdy Blow 2",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Threaten Atk 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Atk 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Atk 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Threaten Def 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Def 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Def 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Threaten Res 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Res 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Res 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Threaten Spd 1",
+			"sp": 50,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Spd 2",
+			"sp": 100,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+
+			"name": "Threaten Spd 3",
+			"sp": 200,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+
+			"name": "Torrent Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Torrent Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+
+			"name": "Torrent Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+
+			"name": "Warding Stance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Warding Stance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Warding Stance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Water Boost 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Water Boost 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Water Boost 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+
+			"name": "Wind Boost 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Wind Boost 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+
+			"name": "Wind Boost 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		}
+	]
+}

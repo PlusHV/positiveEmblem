@@ -1,0 +1,1789 @@
+{
+	"Items": [
+		{
+			"name": "Aerobatics 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Aerobatics 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Aerobatics 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Atk/Def Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Def Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Def Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Atk Feint 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Atk Feint 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Atk Feint 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Atk/Res Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Res Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Res Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Atk/Spd Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Spd Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Atk/Spd Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Atk/Spd Ruse 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Atk/Spd Ruse 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Atk/Spd Ruse 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Axebreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Axebreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Axebreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "B Tomebreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "B Tomebreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "B Tomebreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Beorc's Blessing",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Binding Shield",
+			"sp": 300,
+			"prf": true,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Blaze Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Blaze Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Blaze Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Bold Fighter 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Bold Fighter 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Bold Fighter 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Bowbreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Bowbreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Bowbreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Brash Assault 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Brash Assault 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Brash Assault 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Bushido",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Caldera Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Caldera Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Cancel Affinity 1",
+			"sp": 50,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Cancel Affinity 2",
+			"sp": 100,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Cancel Affinity 3",
+			"sp": 200,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Chill Atk 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Atk 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Atk 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Chill Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Chill Res 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Res 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Res 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Chill Spd 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Spd 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Chill Spd 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Chilling Seal",
+			"sp": 300,
+			"prf": true,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Crusader's Ward",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Daggerbreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Daggerbreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Daggerbreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Dazzling Staff 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Dazzling Staff 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Dazzling Staff 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Def Feint 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Def Feint 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Def Feint 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Def/Res Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Def/Res Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Def/Res Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Def/Res Ruse 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Def/Res Ruse 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Def/Res Ruse 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Deluge Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Deluge Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Desperation 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+			"name": "Desperation 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+			"name": "Desperation 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-priority",
+			"max": true
+		},
+		{
+			"name": "Disarm Trap 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-move",
+			"max": false
+		},
+		{
+			"name": "Disarm Trap 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-move",
+			"max": false
+		},
+		{
+			"name": "Disarm Trap 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-move",
+			"max": true
+		},
+		{
+			"name": "Double Lion",
+			"sp": 300,
+			"prf": true,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Drag Back",
+			"sp": 150,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Dull Close 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Dull Close 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Dull Close 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Dull Ranged 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Dull Ranged 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Dull Ranged 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Earth Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Earth Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Earth Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Escape Route 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Escape Route 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Escape Route 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Fireflood Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Fireflood Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Firestorm Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Firestorm Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Flier Formation 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Flier Formation 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Flier Formation 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Follow-Up Ring",
+			"sp": 200,
+			"prf": true,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Freezing Seal",
+			"sp": 300,
+			"prf": true,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "G Tomebreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "G Tomebreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "G Tomebreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Gale Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Gale Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Gale Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Geyser Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Geyser Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Guard 1",
+			"sp": 50,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+			"name": "Guard 2",
+			"sp": 100,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+			"name": "Guard 3",
+			"sp": 200,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+			"name": "Hit and Run",
+			"sp": 150,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Knock Back",
+			"sp": 150,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Lancebreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Lancebreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Lancebreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Light and Dark",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Live for Bounty",
+			"sp": 100,
+			"prf": false,
+			"type": "",
+			"max": true
+		},
+		{
+			"name": "Live for Honor",
+			"sp": 100,
+			"prf": false,
+			"type": "",
+			"max": true
+		},
+		{
+			"name": "Live to Serve 1",
+			"sp": 40,
+			"prf": false,
+			"type": "on-heal",
+			"max": false
+		},
+		{
+			"name": "Live to Serve 2",
+			"sp": 80,
+			"prf": false,
+			"type": "on-heal",
+			"max": false
+		},
+		{
+			"name": "Live to Serve 3",
+			"sp": 160,
+			"prf": false,
+			"type": "on-heal",
+			"max": true
+		},
+		{
+			"name": "Lull Atk/Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Atk/Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Atk/Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Lull Atk/Spd 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Atk/Spd 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Atk/Spd 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Lull Spd/Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Spd/Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Lull Spd/Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Lunar Brace",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Lunge",
+			"sp": 150,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Mystic Boost 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Mystic Boost 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Mystic Boost 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Null C-Disrupt 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Null C-Disrupt 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Null C-Disrupt 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Null Follow-Up 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Null Follow-Up 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Null Follow-Up 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Obstruct 1",
+			"sp": 50,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Obstruct 2",
+			"sp": 100,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Obstruct 3",
+			"sp": 200,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Pass 1",
+			"sp": 50,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Pass 2",
+			"sp": 100,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Pass 3",
+			"sp": 200,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Poison Strike 1",
+			"sp": 60,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Poison Strike 2",
+			"sp": 120,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Poison Strike 3",
+			"sp": 240,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Quick Riposte 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Quick Riposte 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Quick Riposte 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "R Tomebreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "R Tomebreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "R Tomebreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Recover Ring",
+			"sp": 200,
+			"prf": true,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Renewal 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Renewal 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Renewal 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Res Feint 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Res Feint 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Res Feint 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Rockslide Dance 1",
+			"sp": 120,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Rockslide Dance 2",
+			"sp": 240,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "S Drink",
+			"sp": 300,
+			"prf": true,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Sabotage Atk 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Atk 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Atk 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Sabotage Def 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Def 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Def 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Sabotage Res 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Res 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sabotage Res 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Sacae's Blessing",
+			"sp": 300,
+			"prf": true,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Seal Atk 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Atk 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Atk 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Atk/Def 1",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Atk/Def 2",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Atk/Spd 1",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Atk/Spd 2",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Def 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Def 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Def 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Def/Res 1",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Def/Res 2",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Res 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Res 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Res 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Spd 1",
+			"sp": 40,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Spd 2",
+			"sp": 80,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Spd 3",
+			"sp": 160,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Seal Spd/Def 1",
+			"sp": 100,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Seal Spd/Def 2",
+			"sp": 200,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Shield Pulse 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Shield Pulse 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Shield Pulse 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Solar Brace",
+			"sp": 300,
+			"prf": true,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Spd/Def Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Spd/Def Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Spd/Def Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Spd Feint 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Spd Feint 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-rally",
+			"max": false
+		},
+		{
+			"name": "Spd Feint 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-rally",
+			"max": true
+		},
+		{
+			"name": "Spd/Res Link 1",
+			"sp": 60,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Spd/Res Link 2",
+			"sp": 120,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": false
+		},
+		{
+			"name": "Spd/Res Link 3",
+			"sp": 240,
+			"prf": false,
+			"type": "on-m-assist",
+			"max": true
+		},
+		{
+			"name": "Special Fighter 1",
+			"sp": 60,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+			"name": "Special Fighter 2",
+			"sp": 120,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": false
+		},
+		{
+			"name": "Special Fighter 3",
+			"sp": 240,
+			"prf": false,
+			"type": "conditional-stat",
+			"max": true
+		},
+		{
+			"name": "Special Spiral 1",
+			"sp": 60,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Special Spiral 2",
+			"sp": 120,
+			"prf": false,
+			"type": "post-battle",
+			"max": false
+		},
+		{
+			"name": "Special Spiral 3",
+			"sp": 240,
+			"prf": false,
+			"type": "post-battle",
+			"max": true
+		},
+		{
+			"name": "Sudden Panic 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sudden Panic 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Sudden Panic 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Swordbreaker 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Swordbreaker 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Swordbreaker 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Torrent Dance 1",
+			"sp": 50,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Torrent Dance 2",
+			"sp": 100,
+			"prf": false,
+			"type": "on-dance",
+			"max": false
+		},
+		{
+			"name": "Torrent Dance 3",
+			"sp": 200,
+			"prf": false,
+			"type": "on-dance",
+			"max": true
+		},
+		{
+			"name": "Vantage 1",
+			"sp": 50,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+			"name": "Vantage 2",
+			"sp": 100,
+			"prf": false,
+			"type": "attack-priority",
+			"max": false
+		},
+		{
+			"name": "Vantage 3",
+			"sp": 200,
+			"prf": false,
+			"type": "attack-priority",
+			"max": true
+		},
+		{
+			"name": "Vengeful Fighter 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Vengeful Fighter 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Vengeful Fighter 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Warp Powder",
+			"sp": 300,
+			"prf": true,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Wary Fighter 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Wary Fighter 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Wary Fighter 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Watersweep 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Watersweep 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Watersweep 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Windsweep 1",
+			"sp": 60,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Windsweep 2",
+			"sp": 120,
+			"prf": false,
+			"type": "attack-count",
+			"max": false
+		},
+		{
+			"name": "Windsweep 3",
+			"sp": 240,
+			"prf": false,
+			"type": "attack-count",
+			"max": true
+		},
+		{
+			"name": "Wings of Mercy 1",
+			"sp": 60,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Wings of Mercy 2",
+			"sp": 120,
+			"prf": false,
+			"type": "movement",
+			"max": false
+		},
+		{
+			"name": "Wings of Mercy 3",
+			"sp": 240,
+			"prf": false,
+			"type": "movement",
+			"max": true
+		},
+		{
+			"name": "Wrath 1",
+			"sp": 60,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Wrath 2",
+			"sp": 120,
+			"prf": false,
+			"type": "turn-start",
+			"max": false
+		},
+		{
+			"name": "Wrath 3",
+			"sp": 240,
+			"prf": false,
+			"type": "turn-start",
+			"max": true
+		},
+		{
+			"name": "Wrathful Staff 1",
+			"sp": 60,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Wrathful Staff 2",
+			"sp": 120,
+			"prf": false,
+			"type": "damage-calc",
+			"max": false
+		},
+		{
+			"name": "Wrathful Staff 3",
+			"sp": 240,
+			"prf": false,
+			"type": "damage-calc",
+			"max": true
+		},
+		{
+			"name": "Yune's Whispers",
+			"sp": 300,
+			"prf": true,
+			"type": "turn-start",
+			"max": true
+		}
+	]
+}
