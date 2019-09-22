@@ -1,0 +1,1948 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"prf": false,
+		"type": "",
+		"max": false
+	},	
+	"1": {
+		"name": "Air Orders 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"2": {
+		"name": "Air Orders 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"3": {
+		"name": "Air Orders 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"4": {
+		"name": "Armor March 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"5": {
+		"name": "Armor March 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"6": {
+		"name": "Armor March 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"7": {
+		"name": "Atk Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"8": {
+		"name": "Atk Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"9": {
+		"name": "Atk Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"10": {
+		"name": "Atk Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"11": {
+		"name": "Atk Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"12": {
+		"name": "Atk Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"13": {
+		"name": "Atk/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"14": {
+		"name": "Atk/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"15": {
+		"name": "Atk/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"16": {
+		"name": "Atk Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"17": {
+		"name": "Atk Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"18": {
+		"name": "Atk Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"19": {
+		"name": "Atk Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"20": {
+		"name": "Atk Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"21": {
+		"name": "Atk Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"22": {
+		"name": "Axe Experience 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"23": {
+		"name": "Axe Experience 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"24": {
+		"name": "Axe Experience 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"25": {
+		"name": "Axe Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"26": {
+		"name": "Axe Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"27": {
+		"name": "Axe Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"28": {
+		"name": "B Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"29": {
+		"name": "B Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"30": {
+		"name": "B Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"31": {
+		"name": "B Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"32": {
+		"name": "B Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"33": {
+		"name": "B Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"34": {
+		"name": "Beast Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"35": {
+		"name": "Beast Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"36": {
+		"name": "Beast Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"37": {
+		"name": "Beast Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"38": {
+		"name": "Beast Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"39": {
+		"name": "Beast Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"40": {
+		"name": "Bow Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"41": {
+		"name": "Bow Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"42": {
+		"name": "Bow Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"43": {
+		"name": "Bow Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"44": {
+		"name": "Bow Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"45": {
+		"name": "Bow Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"46": {
+		"name": "Breath of Life 1",
+		"sp": 50,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"47": {
+		"name": "Breath of Life 2",
+		"sp": 100,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"48": {
+		"name": "Breath of Life 3",
+		"sp": 200,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"49": {
+		"name": "Chaos Named",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"50": {
+		"name": "Close Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"51": {
+		"name": "Close Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"52": {
+		"name": "Close Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"53": {
+		"name": "Dagger Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"54": {
+		"name": "Dagger Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"55": {
+		"name": "Dagger Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"56": {
+		"name": "Def Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"57": {
+		"name": "Def Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"58": {
+		"name": "Def Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"59": {
+		"name": "Def Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"60": {
+		"name": "Def Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"61": {
+		"name": "Def Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"62": {
+		"name": "Def Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"63": {
+		"name": "Def Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"64": {
+		"name": "Def Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"65": {
+		"name": "Def Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"66": {
+		"name": "Def Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"67": {
+		"name": "Def Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"68": {
+		"name": "Distant Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"69": {
+		"name": "Distant Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"70": {
+		"name": "Distant Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"71": {
+		"name": "Divine Fang",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"72": {
+		"name": "Dragon Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"73": {
+		"name": "Dragon Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"74": {
+		"name": "Dragon Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"75": {
+		"name": "Drive Atk 1",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"76": {
+		"name": "Drive Atk 2",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"77": {
+		"name": "Drive Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"78": {
+		"name": "Drive Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"79": {
+		"name": "Drive Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"80": {
+		"name": "Drive Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"81": {
+		"name": "Drive Spd 1",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"82": {
+		"name": "Drive Spd 2",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"83": {
+		"name": "Even Atk Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"84": {
+		"name": "Even Atk Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"85": {
+		"name": "Even Atk Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"86": {
+		"name": "Even Def Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"87": {
+		"name": "Even Def Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"88": {
+		"name": "Even Def Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"89": {
+		"name": "Even Res Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"90": {
+		"name": "Even Res Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"91": {
+		"name": "Even Res Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"92": {
+		"name": "Even Spd Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"93": {
+		"name": "Even Spd Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"94": {
+		"name": "Even Spd Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"95": {
+		"name": "Flier Guidance 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"96": {
+		"name": "Flier Guidance 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"97": {
+		"name": "Flier Guidance 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"98": {
+		"name": "Fortify Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"99": {
+		"name": "Fortify Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"100": {
+		"name": "Fortify Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"101": {
+		"name": "Fortify Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"102": {
+		"name": "Fortify Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"103": {
+		"name": "Fortify Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"104": {
+		"name": "Fortify Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"105": {
+		"name": "Fortify Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"106": {
+		"name": "Fortify Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"107": {
+		"name": "Fortify Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"108": {
+		"name": "Fortify Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"109": {
+		"name": "G Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"110": {
+		"name": "G Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"111": {
+		"name": "G Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"112": {
+		"name": "G Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"113": {
+		"name": "G Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"114": {
+		"name": "G Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"115": {
+		"name": "Glare",
+		"sp": 300,
+		"prf": true,
+		"type": "post-battle",
+		"max": true
+	},
+	"116": {
+		"name": "Goad Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"117": {
+		"name": "Goad Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"118": {
+		"name": "Goad Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"119": {
+		"name": "Goad Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"120": {
+		"name": "Goad Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"121": {
+		"name": "Ground Orders 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"122": {
+		"name": "Ground Orders 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"123": {
+		"name": "Ground Orders 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"124": {
+		"name": "Guidance 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"125": {
+		"name": "Guidance 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"126": {
+		"name": "Guidance 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"127": {
+		"name": "Hone Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"128": {
+		"name": "Hone Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"129": {
+		"name": "Hone Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"130": {
+		"name": "Hone Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"131": {
+		"name": "Hone Atk 4",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"132": {
+		"name": "Hone Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"133": {
+		"name": "Hone Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"134": {
+		"name": "Hone Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"135": {
+		"name": "Hone Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"136": {
+		"name": "Hone Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"137": {
+		"name": "Hone Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"138": {
+		"name": "Hone Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"139": {
+		"name": "Hone Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"140": {
+		"name": "Human Virtue",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"141": {
+		"name": "Inf. Hexblade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"142": {
+		"name": "Inf. Hexblade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"143": {
+		"name": "Inf. Hexblade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"144": {
+		"name": "Infantry Breath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"145": {
+		"name": "Infantry Breath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"146": {
+		"name": "Infantry Breath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"147": {
+		"name": "Infantry Flash 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"148": {
+		"name": "Infantry Flash 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"149": {
+		"name": "Infantry Flash 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"150": {
+		"name": "Infantry Pulse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"151": {
+		"name": "Infantry Pulse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"152": {
+		"name": "Infantry Pulse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"153": {
+		"name": "Infantry Rush 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"154": {
+		"name": "Infantry Rush 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"155": {
+		"name": "Infantry Rush 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"156": {
+		"name": "Joint Hone Atk",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"157": {
+		"name": "Joint Hone Spd",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"158": {
+		"name": "Lance Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"159": {
+		"name": "Lance Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"160": {
+		"name": "Lance Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"161": {
+		"name": "Odd Atk Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"162": {
+		"name": "Odd Atk Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"163": {
+		"name": "Odd Atk Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"164": {
+		"name": "Odd Def Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"165": {
+		"name": "Odd Def Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"166": {
+		"name": "Odd Def Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"167": {
+		"name": "Odd Res Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"168": {
+		"name": "Odd Res Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"169": {
+		"name": "Odd Res Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"170": {
+		"name": "Odd Spd Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"171": {
+		"name": "Odd Spd Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"172": {
+		"name": "Odd Spd Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"173": {
+		"name": "Ostia's Pulse",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"174": {
+		"name": "Panic Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"175": {
+		"name": "Panic Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"176": {
+		"name": "Panic Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"177": {
+		"name": "Pulse Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"178": {
+		"name": "Pulse Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"179": {
+		"name": "Pulse Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"180": {
+		"name": "R Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"181": {
+		"name": "R Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"182": {
+		"name": "R Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"183": {
+		"name": "R Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"184": {
+		"name": "R Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"185": {
+		"name": "R Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"186": {
+		"name": "Res Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"187": {
+		"name": "Res Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"188": {
+		"name": "Res Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"189": {
+		"name": "Res Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"190": {
+		"name": "Res Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"191": {
+		"name": "Res Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"192": {
+		"name": "Res Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"193": {
+		"name": "Res Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"194": {
+		"name": "Res Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"195": {
+		"name": "Res Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"196": {
+		"name": "Res Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"197": {
+		"name": "Res Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"198": {
+		"name": "Rouse Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"199": {
+		"name": "Rouse Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"200": {
+		"name": "Rouse Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"201": {
+		"name": "Savage Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"202": {
+		"name": "Savage Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"203": {
+		"name": "Savage Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"204": {
+		"name": "Solitary Dream",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"205": {
+		"name": "Sparkling Boost",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"206": {
+		"name": "Spd Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"207": {
+		"name": "Spd Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"208": {
+		"name": "Spd Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"209": {
+		"name": "Spd Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"210": {
+		"name": "Spd Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"211": {
+		"name": "Spd Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"212": {
+		"name": "Spd Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"213": {
+		"name": "Spd Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"214": {
+		"name": "Spd Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"215": {
+		"name": "Spd Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"216": {
+		"name": "Spd Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"217": {
+		"name": "Spd Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"218": {
+		"name": "Spur Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"219": {
+		"name": "Spur Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"220": {
+		"name": "Spur Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"221": {
+		"name": "Spur Atk/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"222": {
+		"name": "Spur Atk/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"223": {
+		"name": "Spur Atk/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"224": {
+		"name": "Spur Atk/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"225": {
+		"name": "Spur Atk/Spd 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"226": {
+		"name": "Spur Atk/Spd 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"227": {
+		"name": "Spur Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"228": {
+		"name": "Spur Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"229": {
+		"name": "Spur Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"230": {
+		"name": "Spur Def/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"231": {
+		"name": "Spur Def/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"232": {
+		"name": "Spur Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"233": {
+		"name": "Spur Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"234": {
+		"name": "Spur Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"235": {
+		"name": "Spur Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"236": {
+		"name": "Spur Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"237": {
+		"name": "Spur Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"238": {
+		"name": "Spur Spd/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"239": {
+		"name": "Spur Spd/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"240": {
+		"name": "Spur Spd/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"241": {
+		"name": "Spur Spd/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"242": {
+		"name": "Staff Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"243": {
+		"name": "Staff Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"244": {
+		"name": "Staff Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"245": {
+		"name": "Surtr's Menace",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"246": {
+		"name": "Sword Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"247": {
+		"name": "Sword Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"248": {
+		"name": "Sword Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"249": {
+		"name": "Sword Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"250": {
+		"name": "Sword Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"251": {
+		"name": "Sword Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"252": {
+		"name": "Threat. Atk/Spd 1",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"253": {
+		"name": "Threat. Atk/Spd 2",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"254": {
+		"name": "Threat. Atk/Spd 3",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"255": {
+		"name": "Threaten Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"256": {
+		"name": "Threaten Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"257": {
+		"name": "Threaten Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"258": {
+		"name": "Threaten Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"259": {
+		"name": "Threaten Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"260": {
+		"name": "Threaten Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"261": {
+		"name": "Threaten Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"262": {
+		"name": "Threaten Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"263": {
+		"name": "Threaten Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"264": {
+		"name": "Threaten Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"265": {
+		"name": "Threaten Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"266": {
+		"name": "Threaten Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"267": {
+		"name": "Time's Pulse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"268": {
+		"name": "Time's Pulse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"269": {
+		"name": "Time's Pulse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"270": {
+		"name": "Upheaval",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"271": {
+		"name": "Vision of Arcadia",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	},
+	"272": {
+		"name": "Ward Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"273": {
+		"name": "Ward Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"274": {
+		"name": "Ward Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"275": {
+		"name": "Ward Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"276": {
+		"name": "Ward Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"277": {
+		"name": "With Everyone!",
+		"sp": 300,
+		"prf": true,
+		"type": "turn-start",
+		"max": true
+	}
+}

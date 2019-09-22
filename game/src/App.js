@@ -1,140 +1,205 @@
 import { Client } from 'boardgame.io/react';
 import { Game } from 'boardgame.io/core';
 import React from 'react';
-import Select from 'react-select';
+import Select from 'react-select-v2';
 import './App.css';
-import heroes from './heroInfo.json';
+
 import { CalculateStat } from './StatCalculation.js';
+
+
+//Json imports
+import heroData from './heroInfo.json';
+import weapons from './weapons.js';
+import specials from './skills/special.json';
+import assists from './skills/assist.json';
+import skills from './skills.js';
+
 
 class Stats extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      level: 1,
-      merge: 10,
-      heroName: "",
-      weapon: "",
-      assist: "",
-      special: "",
-      askill: "",
-      bskill: "",
-      cskill: "",
-      sseal: ""
-      //
-    };
-    //this.level = 1;  
-   //this.onLevelChange = this.onLevelChange.bind(this);
- }  
- onLevelChange(e){
+    this.state = playerHeroes[0];
+
+}  
+onLevelChange(e){
   this.setState({level: e.target.value});
 
-    //this.forceUpdate();
+
+}
+onHeroChange(e){
+  this.setState({heroID: e});
+  var newHero = heroData[e.value];
+  var weaponList = weapons[newHero.weapontype];
+  console.log(newHero);
+  var skillDropdowns = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weaponList},
+                       "assist":{list: [], info: assists}, "special":{list: [], info: specials},
+                       "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
+                       "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal}
+                     };
+//var info =  "hero": heroData, "weapon": weaponList, "assist": assists, "special":specials, "a":skills["a"], "b":skills["b"], "c":skills["c", "seal":skills["seal"]};
+
+for (const [key, value] of Object.entries(skillDropdowns)) {
+ this.fillDropdown(value.list, value.info);
+}
+
+  let temp = Object.assign({}, this.state.heroSkills);
+  temp["weapon"] = skillDropdowns["weapon"].list[newHero.weapon];
+  temp["assist"] = skillDropdowns["assist"].list[newHero.assist];
+  temp["special"] = skillDropdowns["special"].list[newHero.special];
+  temp["a"] = skillDropdowns["a"].list[newHero.askill];
+  temp["b"] = skillDropdowns["b"].list[newHero.bskill];
+  temp["c"] = skillDropdowns["c"].list[newHero.cskill];
+  temp["seal"] = skillDropdowns["seal"].list[newHero.sseal];
+
+  this.setState({heroSkills: temp});
+
+  playerHeroes[currentHero] = this.state;
+}
+
+onSkillChange(e, index){
+  let temp = Object.assign({}, this.state.heroSkills);
+  temp[index] = e;
+  this.setState({heroSkills: temp});
+
+}
+
+fillDropdown(dropdownList, info){
+  for (const [key, value] of Object.entries(info)) {
+    dropdownList.push({value: key, label: value.name});
+  }
+
+}
+
+render(){
+
+  var hero = this.state.heroID.value;
+
+  if (heroData[hero] == null){
+    hero = "0";
 
   }
-  onHeroChange(e){
-    this.setState({heroName: e});
-    //console.log(this.state.heroName);
-    //this.forceUpdate();
+  var selectedHero = heroData[hero];
 
-  }
-  render(){
-    var  heroText = heroes.Items;
-
-    var heroData = {}; //list of objects
-    //var test =JSON.parse(heroText[20]);
-    
-    for (let i = 0; i < heroText.length; i++){
-      heroData[heroText[i].name] = heroText[i]; //set up object for hero
-      //heroData[heroText[i].name] = JSON.parse(heroText[i]);
-
-    }
-
-    var heroList = Object.keys(heroData);
-
-    var heroList2 = [];
-
-    for (var key of heroList){
-      heroList2.push({value: key, label: key});
-    }
-
-    const spacing = {
-     border: '2px solid #555',
-     width: '50px',
-     height: '10px',
-     lineHeight: '10px',
-     textAlign: 'center',
-   };   
-
-
-   var hero = this.state.heroName.value;
-
-   if (heroData[hero] == null){
-    hero = "";
-    
-  }
-
-  const statText = ["Level", "Merge", "HP", "Atk", "Spd", "Def", "Res" ];
-  const statNumbers = [40, 10, heroData[hero].basehp, heroData[hero].baseatk, heroData[hero].basespd, heroData[hero].basedef, heroData[hero].baseres];
-  const statGrowths = [5, 10, heroData[hero].growthhp, heroData[hero].growthatk, heroData[hero].growthspd, heroData[hero].growthdef, heroData[hero].growthres];
-
-  const equipText = ["Weapon", "Assist", "Special", "A Skill", "B Skill", "C Skill", "S Seal"];
-  const equippedSkill = ["Wo Dao (Def)", "Reposition", "Aether", "Distant Counter", "Wrath 3", "Attack Tactics 3", "Brazen Atk/Spd 3"];
-
-  // console.log(CalculateStat(this.level, statGrowths[0], statGrowths[2], statNumbers[2] ));
+  var weaponList = weapons[selectedHero.weapontype]; 
 
 
 
-  let tbody = [];
-  tbody.push(<tr><td>Hero</td> <td colspan = "4"> 
-    <Select 
-    options={heroList2}
-    value={this.state.heroName}
-  onChange = {(e) => this.onHeroChange(e)  /* {(e) => this.onHeroChange(e)*/ } 
-  /> </td></tr> );
+var skillDropdowns = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weaponList},
+                       "assist":{list: [], info: assists}, "special":{list: [], info: specials},
+                       "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
+                       "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal}
+                     };
+//var info =  "hero": heroData, "weapon": weaponList, "assist": assists, "special":specials, "a":skills["a"], "b":skills["b"], "c":skills["c", "seal":skills["seal"]};
+
+for (const [key, value] of Object.entries(skillDropdowns)) {
+ this.fillDropdown(value.list, value.info);
+}
+
+//console.log(selectedHero.weapon);
+
+const statText = ["Level", "Merge", "HP", "Atk", "Spd", "Def", "Res" ];
+const statNumbers = [40, 10, selectedHero.basehp, selectedHero.baseatk, selectedHero.basespd, selectedHero.basedef, selectedHero.baseres];
+const statGrowths = [5, 10, selectedHero.growthhp, selectedHero.growthatk, selectedHero.growthspd, selectedHero.growthdef, selectedHero.growthres];
+
+const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
+const equippedSkill = [ weaponList[this.state.heroSkills["weapon"].value], assists[this.state.heroSkills["assist"].value], 
+specials[this.state.heroSkills["special"].value],
+skills.a[this.state.heroSkills["a"].value], skills.a[this.state.heroSkills["b"].value], 
+skills.c[this.state.heroSkills["c"].value], skills.seal[this.state.heroSkills["seal"].value]
+];
+
+// console.log(CalculateStat(this.level, statGrowths[0], statGrowths[2], statNumbers[2] ));
+
+const dropDownTheme = theme => ({
+      ...theme,
+      borderRadius: 0,
+      colors: {
+        ...theme.colors,
+        primary25: 'black', // hovering 
+        primary: 'royalblue', //already selected
+        primary50: 'navy',
+        neutral0: '#212C37', //background
+        neutral80: 'silver', // text in text box
+      },
+    });
+const customStyles = {
+              container: (base) => ({
+                ...base,
+                display:'inline-block',
+                width: 40,
+            }),
+            valueContainer: (base) => ({
+                ...base,
+                minHeight: 10,
+            })
+}
+let tbody = [];
+tbody.push(<tr key = "hero"><td key = "heroText">Hero</td>
+  <td colSpan = "4" key = "selectedHero"> 
+  <Select
+  theme = {dropDownTheme} 
+  options={skillDropdowns["hero"].list}
+  value={this.state.heroID}
+onChange = {(e) => this.onHeroChange(e)  /* {(e) => this.onHeroChange(e)*/ } 
+/> </td></tr> );
 
 
-  console.log(this.state.heroName);
+//console.log(this.state.heroName);
 
 
-    	for (let i = 0; i < statText.length; i++) { //rows
-        let cells = [];
+  	for (let i = 0; i < statText.length; i++) { //rows
+      let cells = [];
 
-        cells.push(<td className = "statText">{statText[i]}</td>);
+      cells.push(<td className = "statText" key = {statText[i]} >{statText[i]}</td>);
 
-        if (i === 0){
-          cells.push(<td className = "statNum"><input 
-            value = {this.state.level} 
-            type = "number" 
-            min = "1" 
-            max = "40" 
-            
-            onChange = {(e) => this.onLevelChange(e)} 
-            />  </td>);
-        } else{
-          cells.push(<td className ="statNum">{CalculateStat(this.state.level, statGrowths[0], statGrowths[i], statNumbers[i] )}  </td>);
-        }
-        cells.push(<td style= {spacing}></td>);
-        cells.push(<td className = "equipText">{equipText[i]}</td>);
-        cells.push(<td className = "equippedSkill">{equippedSkill[i]}</td>);
-
-        tbody.push(<tr key={i}>{cells}</tr>);
+      if (i === 0){
+        cells.push(<td className = "statNum" key = {statNumbers[i]}>
+          <input
+          className = "numberInput"
+          value = {this.state.level} 
+          type = "number" 
+          min = "1" 
+          max = "40" 
+          onChange = {(e) => this.onLevelChange(e)} 
+          />  
+          </td>);
+      } else{
+        cells.push(<td className ="statNum" key = {statNumbers[i]}>{CalculateStat(this.state.level, statGrowths[0], statGrowths[i], statNumbers[i] )}  </td>);
       }
 
+      cells.push(<td className= "spacing" key = {i}></td>);
+      cells.push(<td className = "equipText" key = {equipText[i]}>{equipText[i]}</td>);
 
-      return (
 
-        <div>
-        <table id = "Stats" align = 'left'>
-        <tbody>
 
-        {tbody}
-        </tbody>
-        </table>
+      cells.push(<td className = "equippedSkill" key = {equipText[i] + equippedSkill[i]} >
+        
+          <Select
+            theme = {dropDownTheme} 
+            options={skillDropdowns[equipText[i]].list}
+            value={this.state.heroSkills[equipText[i]]}
+          onChange = {(e, index) => this.onSkillChange(e,equipText[i])  /* {(e) => this.onHeroChange(e)*/ } 
+          /> 
+        </td>);
 
-        </div>
-
-        );
+      tbody.push(<tr key={"row"+i}>{cells}</tr>);
     }
+
+
+    return (
+
+      <div>
+      <table id = "Stats" align = 'left'>
+      <tbody>
+
+      {tbody}
+      </tbody>
+      </table>
+
+      </div>
+
+      );
+  }
 
 } //end stats
 
@@ -155,51 +220,83 @@ class TicTacToeBoard extends React.Component {
   render() {
 
 
-    const cellStyle = {
-      border: '1px solid #555',
-      width: '50px',
-      height: '50px',
-      lineHeight: '50px',
-      textAlign: 'center',
-    };
+
 
     let tbody = [];
-    for (let i = 0; i < 8; i++) { //rows
-      let cells = [];
-      for (let j = 0; j < 6; j++) { //columns
-        const id = 6 * i + j;
-        cells.push(
-          <td style={cellStyle} key={id} onClick={() => this.onClick(id)}>
-          {this.props.G.cells[id]}
-          </td>
-          );
-      }
-      tbody.push(<tr key={i}>{cells}</tr>);
+  for (let i = 0; i < 8; i++) { //rows
+    let cells = [];
+    for (let j = 0; j < 6; j++) { //columns
+      const id = 6 * i + j;
+      cells.push(
+        <td className= "cellStyle" key={id} onClick={() => this.onClick(id)}>
+        {this.props.G.cells[id]}
+        </td>
+        );
     }
-
-    return (
-
-      <div>
-      <table align = 'center'>
-      <tbody>
-      <tr>
-      <td>
-      <Stats/>
-      </td>
-      <td>
-      <table id="board" align = 'center'>
-      <tbody>{tbody}</tbody>
-      </table>
-      </td>
-      </tr>
-      </tbody>
-      </table>
-
-
-      </div>
-      );
+    tbody.push(<tr key={i}>{cells}</tr>);
   }
+
+  return (
+
+    <div>
+    <table align = 'center'>
+    <tbody>
+    <tr>
+      <td>"Player"</td>
+      <td colSpan = "2">
+        <Stats/>
+      </td>
+      <td rowSpan = "2">
+        <table id="board" align = 'center'>
+        <tbody>{tbody}</tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>"Enemy"</td>
+      <td>"Skills"</td>
+      <td>"Extra Info"</td>
+    </tr>
+
+    </tbody>
+    </table>
+
+
+    </div>
+    );
+}
 } //end board
+
+function makeHeroStruct(){
+
+  function hero(){
+    this["id"] = arguments[0];
+    this["level"] = 1;
+    this["merge"] = 0;
+    this["heroID"] = "0";
+    this["heroSkills"] = {"weapon": "0", "assist": "0", "special": "0", "a": "0", "b": "0", "c": "0", "seal": "0"};
+  }  
+  return hero;
+}
+
+var heroStruct = makeHeroStruct();
+
+
+
+var playerHeroes =[new heroStruct(0), new heroStruct(1), new heroStruct(2), new heroStruct(3), new heroStruct(4)];
+
+var currentHero = 0;
+//console.log(playerHeroes);
+// var skillDropdowns = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weaponList},
+//                        "assist":{list: [], info: assists}, "special":{list: [], info: specials},
+//                        "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
+//                        "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal}
+//                      };
+// //var info =  "hero": heroData, "weapon": weaponList, "assist": assists, "special":specials, "a":skills["a"], "b":skills["b"], "c":skills["c", "seal":skills["seal"]};
+
+// for (const [key, value] of Object.entries(skillDropdowns)) {
+//  this.fillDropdown(value.list, value.info);
+// }
 
 const TicTacToe = Game({
   setup: () => ({ cells: Array(48).fill(null) }),
@@ -207,6 +304,7 @@ const TicTacToe = Game({
   moves: {
     clickCell(G, ctx, id) {
       G.cells[id] = ctx.currentPlayer;
+      
     },
   },
 });
@@ -214,6 +312,7 @@ const TicTacToe = Game({
 const App = Client({
   game: TicTacToe,
   board: TicTacToeBoard,
+  debug: false,
 });
 
 export default App;

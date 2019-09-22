@@ -23,46 +23,96 @@
   color: #61dafb;
 }
 
-table {
-  border-collapse: collapse;
-  border: 2px solid #555;
+body{
+  background-color: black;
+  color: white;
+
 }
 
+table{
+  background-color: #212C37;
+}
 
+table,tr,td {
+  border-collapse: collapse;
+  border: 2px solid #930322;
+}
+
+.numberInput {
+  background-color: #212C37;
+  color: white;
+}
+.cellStyle{
+      border: 2px solid #555;
+      width: 70px;
+      height: 70px;
+      lineHeight: 50px;
+      textAlign: center;
+}
 .statText {
         
-  border: 2px solid #555;
+  border: 2px solid #930322;
   width: 50px;
-  height: 10px;
-  lineHeight: 15px;
+  height: 5px;
+  lineHeight: 10px;
   textAlign: center;
 
-      }
+}
 .statNum {
-  border: 2px solid #555;
+  border: 2px solid #930322;
   width: 25px;
-  height: 10px;
-  lineHeight: 15px;
+  height: 5px;
+  lineHeight: 10px;
   textAlign: center;
 
 }
 .equipText {
-  border: 2px solid #555;
+  border: 2px solid #930322;
   width: 50px;
-  height: 10px;
-  lineHeight: 15px;
+  height: 5px;
+  lineHeight: 10px;
   textAlign: center;
 
 }
 .equippedSkill {
-  border: 2px solid #555;
-  width: 125px;
-  height: 10px;
-  lineHeight: 15px;
+  border: 2px solid #930322;
+  width: 200px;
+  height: 5px;
+  lineHeight: 10px;
   textAlign: center;
 }
 
+.spacing {
+   border: 2px solid #930322;
+   width: 50px;
+   height: 5px;
+   lineHeight: 10px;
+   textAlign: center;
+ }
 
+.dropdown{
+  background-color: blue;
+}
+
+  .Select-control {
+    height: 1px;
+
+    .Select-placeholder {
+      line-height: 26px;
+    }
+
+    .Select-value {
+      line-height: 26px !important;
+
+      .Select-value-label {
+        line-height: 26px;
+      }
+    }
+
+    .Select-input {
+      height: 1px;
+    }
+}
 
 @keyframes App-logo-spin {
   from {

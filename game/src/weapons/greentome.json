@@ -1,436 +1,442 @@
 {
-	"Items": [
-		{
-			"name": "Blizzard",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Book of Shadows",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Buoyboard+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Buoyboard",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Chaos Manifest",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Dancer's Ring+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Dancer's Ring",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Dark Excalibur",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Divine Naga",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Élivágar",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Elwind",
-			"might": 6,
-			"range": 2,
-			"sp": 100,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Excalibur",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Forseti",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Giga Excalibur",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Green Egg+",
-			"might": 11,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Green Egg",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Green Gift+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Green Gift",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnblade+",
-			"might": 13,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnblade",
-			"might": 9,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnblooms+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnblooms",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronfalsewl+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronfalsewl",
-			"might": 6,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnraven+",
-			"might": 11,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnraven",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnserpent+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnserpent",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnwolf+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Gronnwolf",
-			"might": 6,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Hibiscus Tome+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Hibiscus Tome",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Ífingr",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Inscribed Tome",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Iris's Tome",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Keen Gronnwolf+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Keen Gronnwolf",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Light of Dawn",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Muninn's Egg",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Naga",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Nifl Frostflowers",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Rexcalibur+",
-			"might": 13,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Rexcalibur",
-			"might": 9,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Sandwiches!+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Sandwiches!",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Spectral Tome+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Spectral Tome",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Tactical Gale",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Thunderhead",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Umbra Burst",
-			"might": 14,
-			"range": 2,
-			"sp": 0,
-			"prf": false,
-			"type": "greentome"
-		},
-		{
-			"name": "Vafþrúðnir",
-			"might": 9,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Veðrfölnir's Egg",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Wind's Brand",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "greentome"
-		},
-		{
-			"name": "Wind",
-			"might": 4,
-			"range": 2,
-			"sp": 50,
-			"prf": false,
-			"type": "greentome"
-		}
-	]
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "greentome"
+	},
+	"1": {
+		"name": "Blizzard",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"2": {
+		"name": "Book of Shadows",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"3": {
+		"name": "Buoyboard+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"4": {
+		"name": "Buoyboard",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"5": {
+		"name": "Chaos Manifest",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"6": {
+		"name": "Dancer's Ring+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"7": {
+		"name": "Dancer's Ring",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"8": {
+		"name": "Dark Excalibur",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"9": {
+		"name": "Divine Naga",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"10": {
+		"name": "Élivágar",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"11": {
+		"name": "Elwind",
+		"might": 6,
+		"range": 2,
+		"sp": 100,
+		"prf": false,
+		"type": "greentome"
+	},
+	"12": {
+		"name": "Excalibur",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"13": {
+		"name": "Forseti",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"14": {
+		"name": "Giga Excalibur",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"15": {
+		"name": "Green Egg+",
+		"might": 11,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"16": {
+		"name": "Green Egg",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"17": {
+		"name": "Green Gift+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"18": {
+		"name": "Green Gift",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"19": {
+		"name": "Gronnblade+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"20": {
+		"name": "Gronnblade",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"21": {
+		"name": "Gronnblooms+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"22": {
+		"name": "Gronnblooms",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"23": {
+		"name": "Gronfalsewl+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"24": {
+		"name": "Gronfalsewl",
+		"might": 6,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"25": {
+		"name": "Gronnraven+",
+		"might": 11,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"26": {
+		"name": "Gronnraven",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"27": {
+		"name": "Gronnserpent+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"28": {
+		"name": "Gronnserpent",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"29": {
+		"name": "Gronnwolf+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"30": {
+		"name": "Gronnwolf",
+		"might": 6,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"31": {
+		"name": "Hibiscus Tome+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"32": {
+		"name": "Hibiscus Tome",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"33": {
+		"name": "Ífingr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"34": {
+		"name": "Inscribed Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"35": {
+		"name": "Iris's Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"36": {
+		"name": "Keen Gronnwolf+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"37": {
+		"name": "Keen Gronnwolf",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"38": {
+		"name": "Light of Dawn",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"39": {
+		"name": "Muninn's Egg",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"40": {
+		"name": "Naga",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"41": {
+		"name": "Nifl Frostflowers",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"42": {
+		"name": "Rexcalibur+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"43": {
+		"name": "Rexcalibur",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"44": {
+		"name": "Sandwiches!+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"45": {
+		"name": "Sandwiches!",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"46": {
+		"name": "Spectral Tome+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome"
+	},
+	"47": {
+		"name": "Spectral Tome",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome"
+	},
+	"48": {
+		"name": "Tactical Gale",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"49": {
+		"name": "Thunderhead",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"50": {
+		"name": "Umbra Burst",
+		"might": 14,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "greentome"
+	},
+	"51": {
+		"name": "Vafþrúðnir",
+		"might": 9,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"52": {
+		"name": "Veðrfölnir's Egg",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"53": {
+		"name": "Wind's Brand",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "greentome"
+	},
+	"54": {
+		"name": "Wind",
+		"might": 4,
+		"range": 2,
+		"sp": 50,
+		"prf": false,
+		"type": "greentome"
+	}
 }

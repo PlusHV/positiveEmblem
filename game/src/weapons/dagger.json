@@ -1,508 +1,514 @@
 {
-	"Items": [
-		{
-			"name": "Athame",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Barb Shuriken+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Barb Shuriken",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Bottled Juice+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Bottled Juice",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Broadleaf Fan+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Broadleaf Fan",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Cloud Maiougi+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Cloud Maiougi",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Dancer's Fan+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Dancer's Fan",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Deathly Dagger",
-			"might": 11,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Dusk Uchiwa+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Dusk Uchiwa",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Felicia's Plate",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Goodie Boot+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Goodie Boot",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Hoarfrost Knife",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Hunting Blade",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Iron Dagger",
-			"might": 3,
-			"range": 2,
-			"sp": 50,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Kagami Mochi+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Kagami Mochi",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Kagero's Dart",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Kitty Paddle+",
-			"might": 8,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Kitty Paddle",
-			"might": 5,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Lethal Carrot+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Lethal Carrot",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Lyfjaberg",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Ouch Pouch+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Ouch Pouch",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Pegasus Carrot+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Pegasus Carrot",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Peshkatz",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Poison Dagger+",
-			"might": 5,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Poison Dagger",
-			"might": 2,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Red-Hot Ducks+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Red-Hot Ducks",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Rogue Dagger+",
-			"might": 7,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Rogue Dagger",
-			"might": 4,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Saizo's Star",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Scallop Blade+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Scallop Blade",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Seashell+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Seashell",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Silver Dagger+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Silver Dagger",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Sky Maiougi+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Sky Maiougi",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Smoke Dagger+",
-			"might": 9,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Smoke Dagger",
-			"might": 6,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Splashy Bucket+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Splashy Bucket",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Spy's Dagger",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Starfish+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Starfish",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Steel Dagger",
-			"might": 5,
-			"range": 2,
-			"sp": 100,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Sylgr",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "Sæhrímnir",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "dagger"
-		},
-		{
-			"name": "The Cleaner+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "The Cleaner",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Tropical Treats+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Tropical Treats",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "dagger"
-		},
-		{
-			"name": "Umbra Burst",
-			"might": 14,
-			"range": 2,
-			"sp": 0,
-			"prf": false,
-			"type": "dagger"
-		}
-	]
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "dagger"
+	},
+	"1": {
+		"name": "Athame",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"2": {
+		"name": "Barb Shuriken+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"3": {
+		"name": "Barb Shuriken",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"4": {
+		"name": "Bottled Juice+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"5": {
+		"name": "Bottled Juice",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"6": {
+		"name": "Broadleaf Fan+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"7": {
+		"name": "Broadleaf Fan",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"8": {
+		"name": "Cloud Maiougi+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"9": {
+		"name": "Cloud Maiougi",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"10": {
+		"name": "Dancer's Fan+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"11": {
+		"name": "Dancer's Fan",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"12": {
+		"name": "Deathly Dagger",
+		"might": 11,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"13": {
+		"name": "Dusk Uchiwa+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"14": {
+		"name": "Dusk Uchiwa",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"15": {
+		"name": "Felicia's Plate",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"16": {
+		"name": "Goodie Boot+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"17": {
+		"name": "Goodie Boot",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"18": {
+		"name": "Hoarfrost Knife",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"19": {
+		"name": "Hunting Blade",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"20": {
+		"name": "Iron Dagger",
+		"might": 3,
+		"range": 2,
+		"sp": 50,
+		"prf": false,
+		"type": "dagger"
+	},
+	"21": {
+		"name": "Kagami Mochi+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"22": {
+		"name": "Kagami Mochi",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"23": {
+		"name": "Kagero's Dart",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"24": {
+		"name": "Kitty Paddle+",
+		"might": 8,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"25": {
+		"name": "Kitty Paddle",
+		"might": 5,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"26": {
+		"name": "Lethal Carrot+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"27": {
+		"name": "Lethal Carrot",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"28": {
+		"name": "Lyfjaberg",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"29": {
+		"name": "Ouch Pouch+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"30": {
+		"name": "Ouch Pouch",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"31": {
+		"name": "Pegasus Carrot+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"32": {
+		"name": "Pegasus Carrot",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"33": {
+		"name": "Peshkatz",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"34": {
+		"name": "Poison Dagger+",
+		"might": 5,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"35": {
+		"name": "Poison Dagger",
+		"might": 2,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"36": {
+		"name": "Red-Hot Ducks+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"37": {
+		"name": "Red-Hot Ducks",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"38": {
+		"name": "Rogue Dagger+",
+		"might": 7,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"39": {
+		"name": "Rogue Dagger",
+		"might": 4,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"40": {
+		"name": "Saizo's Star",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"41": {
+		"name": "Scallop Blade+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"42": {
+		"name": "Scallop Blade",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"43": {
+		"name": "Seashell+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"44": {
+		"name": "Seashell",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"45": {
+		"name": "Silver Dagger+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"46": {
+		"name": "Silver Dagger",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"47": {
+		"name": "Sky Maiougi+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"48": {
+		"name": "Sky Maiougi",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"49": {
+		"name": "Smoke Dagger+",
+		"might": 9,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"50": {
+		"name": "Smoke Dagger",
+		"might": 6,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"51": {
+		"name": "Splashy Bucket+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"52": {
+		"name": "Splashy Bucket",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"53": {
+		"name": "Spy's Dagger",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"54": {
+		"name": "Starfish+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"55": {
+		"name": "Starfish",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"56": {
+		"name": "Steel Dagger",
+		"might": 5,
+		"range": 2,
+		"sp": 100,
+		"prf": false,
+		"type": "dagger"
+	},
+	"57": {
+		"name": "Sylgr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"58": {
+		"name": "Sæhrímnir",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "dagger"
+	},
+	"59": {
+		"name": "The Cleaner+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"60": {
+		"name": "The Cleaner",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"61": {
+		"name": "Tropical Treats+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger"
+	},
+	"62": {
+		"name": "Tropical Treats",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger"
+	},
+	"63": {
+		"name": "Umbra Burst",
+		"might": 14,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "dagger"
+	}
 }

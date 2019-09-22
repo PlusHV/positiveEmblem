@@ -1,212 +1,218 @@
 {
-	"Items": [
-		{
-			"name": "Adult (Armored)",
-			"might": 9,
-			"range": 1,
-			"sp": 200,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Adult (Cavalry)",
-			"might": 9,
-			"range": 1,
-			"sp": 200,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Adult (Flier)",
-			"might": 9,
-			"range": 1,
-			"sp": 200,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Adult (Infantry)",
-			"might": 9,
-			"range": 1,
-			"sp": 200,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Brazen Cat Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Bunny Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Covert Cat Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Fledgling (Flier)",
-			"might": 6,
-			"range": 1,
-			"sp": 100,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Foxkit Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Hatchling (Flier)",
-			"might": 4,
-			"range": 1,
-			"sp": 50,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Hawk King Claw",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Heron Wing",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Kitsune Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Lion King Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Raven King Beak",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Sabertooth Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Taguel Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Whelp (Armored)",
-			"might": 4,
-			"range": 1,
-			"sp": 50,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Whelp (Cavalry)",
-			"might": 4,
-			"range": 1,
-			"sp": 50,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Whelp (Infantry)",
-			"might": 4,
-			"range": 1,
-			"sp": 50,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Wolf Queen Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Wolfpup Fang",
-			"might": 14,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Wolfskin Fang",
-			"might": 9,
-			"range": 1,
-			"sp": 400,
-			"prf": true,
-			"type": "beast"
-		},
-		{
-			"name": "Yearling (Arm.)",
-			"might": 6,
-			"range": 1,
-			"sp": 100,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Yearling (Cavalry)",
-			"might": 6,
-			"range": 1,
-			"sp": 100,
-			"prf": false,
-			"type": "beast"
-		},
-		{
-			"name": "Yearling (Infantry)",
-			"might": 6,
-			"range": 1,
-			"sp": 100,
-			"prf": false,
-			"type": "beast"
-		}
-	]
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 1,
+		"sp": 0,
+		"prf": false,
+		"type": "beast"
+	},
+	"1": {
+		"name": "Adult (Armored)",
+		"might": 9,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "beast"
+	},
+	"2": {
+		"name": "Adult (Cavalry)",
+		"might": 9,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "beast"
+	},
+	"3": {
+		"name": "Adult (Flier)",
+		"might": 9,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "beast"
+	},
+	"4": {
+		"name": "Adult (Infantry)",
+		"might": 9,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "beast"
+	},
+	"5": {
+		"name": "Brazen Cat Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"6": {
+		"name": "Bunny Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"7": {
+		"name": "Covert Cat Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"8": {
+		"name": "Fledgling (Flier)",
+		"might": 6,
+		"range": 1,
+		"sp": 100,
+		"prf": false,
+		"type": "beast"
+	},
+	"9": {
+		"name": "Foxkit Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"10": {
+		"name": "Hatchling (Flier)",
+		"might": 4,
+		"range": 1,
+		"sp": 50,
+		"prf": false,
+		"type": "beast"
+	},
+	"11": {
+		"name": "Hawk King Claw",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"12": {
+		"name": "Heron Wing",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"13": {
+		"name": "Kitsune Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"14": {
+		"name": "Lion King Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"15": {
+		"name": "Raven King Beak",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"16": {
+		"name": "Sabertooth Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"17": {
+		"name": "Taguel Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"18": {
+		"name": "Whelp (Armored)",
+		"might": 4,
+		"range": 1,
+		"sp": 50,
+		"prf": false,
+		"type": "beast"
+	},
+	"19": {
+		"name": "Whelp (Cavalry)",
+		"might": 4,
+		"range": 1,
+		"sp": 50,
+		"prf": false,
+		"type": "beast"
+	},
+	"20": {
+		"name": "Whelp (Infantry)",
+		"might": 4,
+		"range": 1,
+		"sp": 50,
+		"prf": false,
+		"type": "beast"
+	},
+	"21": {
+		"name": "Wolf Queen Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"22": {
+		"name": "Wolfpup Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"23": {
+		"name": "Wolfskin Fang",
+		"might": 9,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"type": "beast"
+	},
+	"24": {
+		"name": "Yearling (Arm.)",
+		"might": 6,
+		"range": 1,
+		"sp": 100,
+		"prf": false,
+		"type": "beast"
+	},
+	"25": {
+		"name": "Yearling (Cavalry)",
+		"might": 6,
+		"range": 1,
+		"sp": 100,
+		"prf": false,
+		"type": "beast"
+	},
+	"26": {
+		"name": "Yearling (Infantry)",
+		"might": 6,
+		"range": 1,
+		"sp": 100,
+		"prf": false,
+		"type": "beast"
+	}
 }

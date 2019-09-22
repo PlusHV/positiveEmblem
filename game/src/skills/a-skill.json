@@ -1,0 +1,1920 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"1": {
+		"name": "AR-D Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"2": {
+		"name": "AR-D Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"3": {
+		"name": "AR-D Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"4": {
+		"name": "AR-D Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"5": {
+		"name": "AR-D Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"6": {
+		"name": "AR-D Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"7": {
+		"name": "AR-D Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"8": {
+		"name": "AR-D Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"9": {
+		"name": "AR-D Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"10": {
+		"name": "AR-D Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"11": {
+		"name": "AR-D Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"12": {
+		"name": "AR-D Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"13": {
+		"name": "AR-O Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"14": {
+		"name": "AR-O Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"15": {
+		"name": "AR-O Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"16": {
+		"name": "AR-O Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"17": {
+		"name": "AR-O Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"18": {
+		"name": "AR-O Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"19": {
+		"name": "AR-O Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"20": {
+		"name": "AR-O Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"21": {
+		"name": "AR-O Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"22": {
+		"name": "Armored Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"23": {
+		"name": "Armored Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"24": {
+		"name": "Armored Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"25": {
+		"name": "Atk/Def Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"26": {
+		"name": "Atk/Def Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"27": {
+		"name": "Atk/Def Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"28": {
+		"name": "Atk/Def Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"29": {
+		"name": "Atk/Def Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"30": {
+		"name": "Atk/Def Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"31": {
+		"name": "Atk/Def Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"32": {
+		"name": "Atk/Def Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"33": {
+		"name": "Atk/Def Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"34": {
+		"name": "Atk/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"35": {
+		"name": "Atk/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"36": {
+		"name": "Atk/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"37": {
+		"name": "Atk/Res Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"38": {
+		"name": "Atk/Res Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"39": {
+		"name": "Atk/Res Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"40": {
+		"name": "Atk/Res Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"41": {
+		"name": "Atk/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"42": {
+		"name": "Atk/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"43": {
+		"name": "Atk/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"44": {
+		"name": "Atk/Spd 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"45": {
+		"name": "Atk/Spd 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"46": {
+		"name": "Atk/Spd Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"47": {
+		"name": "Atk/Spd Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"48": {
+		"name": "Atk/Spd Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"49": {
+		"name": "Atk/Spd Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"50": {
+		"name": "Atk/Spd Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"51": {
+		"name": "Atk/Spd Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"52": {
+		"name": "Atk/Spd Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"53": {
+		"name": "Atk/Spd Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"54": {
+		"name": "Atk/Spd Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"55": {
+		"name": "Atk/Spd Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"56": {
+		"name": "Atk/Spd Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"57": {
+		"name": "Atk/Spd Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"58": {
+		"name": "Atk/Spd Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"59": {
+		"name": "Attack/Def +1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"60": {
+		"name": "Attack/Def +2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"61": {
+		"name": "Attack +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"62": {
+		"name": "Attack +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"63": {
+		"name": "Attack +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"64": {
+		"name": "Attack/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"65": {
+		"name": "Attack/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"66": {
+		"name": "B Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"67": {
+		"name": "B Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"68": {
+		"name": "B Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"69": {
+		"name": "B Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"70": {
+		"name": "B Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"71": {
+		"name": "B Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"72": {
+		"name": "Bonus Doubler 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"73": {
+		"name": "Bonus Doubler 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"74": {
+		"name": "Bonus Doubler 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"75": {
+		"name": "Bracing Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"76": {
+		"name": "Bracing Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"77": {
+		"name": "Bracing Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"78": {
+		"name": "Bracing Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"79": {
+		"name": "Brazen Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"80": {
+		"name": "Brazen Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"81": {
+		"name": "Brazen Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"82": {
+		"name": "Brazen Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"83": {
+		"name": "Brazen Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"84": {
+		"name": "Brazen Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"85": {
+		"name": "Brazen Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"86": {
+		"name": "Brazen Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"87": {
+		"name": "Brazen Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"88": {
+		"name": "Brazen Atk/Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"89": {
+		"name": "Brazen Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"90": {
+		"name": "Brazen Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"91": {
+		"name": "Brazen Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"92": {
+		"name": "Brazen Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"93": {
+		"name": "Brazen Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"94": {
+		"name": "Brazen Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"95": {
+		"name": "C Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"96": {
+		"name": "C Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"97": {
+		"name": "C Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"98": {
+		"name": "Close Counter",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"99": {
+		"name": "Close Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"100": {
+		"name": "Close Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"101": {
+		"name": "Close Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"102": {
+		"name": "Darting Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"103": {
+		"name": "Darting Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"104": {
+		"name": "Darting Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"105": {
+		"name": "Darting Blow 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"106": {
+		"name": "Darting Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"107": {
+		"name": "Darting Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"108": {
+		"name": "Darting Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"109": {
+		"name": "Death Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"110": {
+		"name": "Death Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"111": {
+		"name": "Death Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"112": {
+		"name": "Death Blow 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"113": {
+		"name": "Def/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"114": {
+		"name": "Def/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"115": {
+		"name": "Def/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"116": {
+		"name": "Def/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"117": {
+		"name": "Def/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"118": {
+		"name": "Def/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"119": {
+		"name": "Def/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"120": {
+		"name": "Def/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"121": {
+		"name": "Defense +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"122": {
+		"name": "Defense +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"123": {
+		"name": "Defense +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"124": {
+		"name": "Defiant Atk 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"125": {
+		"name": "Defiant Atk 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"126": {
+		"name": "Defiant Atk 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"127": {
+		"name": "Defiant Def 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"128": {
+		"name": "Defiant Def 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"129": {
+		"name": "Defiant Def 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"130": {
+		"name": "Defiant Res 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"131": {
+		"name": "Defiant Res 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"132": {
+		"name": "Defiant Res 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"133": {
+		"name": "Defiant Spd 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"134": {
+		"name": "Defiant Spd 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"135": {
+		"name": "Defiant Spd 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"136": {
+		"name": "Distant Counter",
+		"sp": 300,
+		"prf": false,
+		"type": "attack-count",
+		"max": false
+	},
+	"137": {
+		"name": "Distant Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"138": {
+		"name": "Distant Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"139": {
+		"name": "Distant Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"140": {
+		"name": "Distant Def 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"141": {
+		"name": "Dragonskin",
+		"sp": 300,
+		"prf": true,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"142": {
+		"name": "Earth Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"143": {
+		"name": "Earth Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"144": {
+		"name": "Earth Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"145": {
+		"name": "Fierce Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"146": {
+		"name": "Fierce Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"147": {
+		"name": "Fierce Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"148": {
+		"name": "Fierce Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"149": {
+		"name": "Fire Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"150": {
+		"name": "Fire Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"151": {
+		"name": "Fire Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"152": {
+		"name": "Flashing Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"153": {
+		"name": "Flashing Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"154": {
+		"name": "Flashing Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"155": {
+		"name": "Flashing Blade 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"156": {
+		"name": "Fort. Def/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"157": {
+		"name": "Fort. Def/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"158": {
+		"name": "Fort. Def/Res 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"159": {
+		"name": "Fortress Def 1",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"160": {
+		"name": "Fortress Def 2",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"161": {
+		"name": "Fortress Def 3",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"162": {
+		"name": "Fortress Res 1",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"163": {
+		"name": "Fortress Res 2",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"164": {
+		"name": "Fortress Res 3",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"165": {
+		"name": "Fury 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"166": {
+		"name": "Fury 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"167": {
+		"name": "Fury 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"168": {
+		"name": "Fury 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"169": {
+		"name": "G Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"170": {
+		"name": "G Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"171": {
+		"name": "G Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"172": {
+		"name": "G Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"173": {
+		"name": "G Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"174": {
+		"name": "G Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"175": {
+		"name": "Grani's Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"176": {
+		"name": "Heavy Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"177": {
+		"name": "Heavy Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"178": {
+		"name": "Heavy Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"179": {
+		"name": "HP/Atk 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"180": {
+		"name": "HP/Atk 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"181": {
+		"name": "HP/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"182": {
+		"name": "HP/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"183": {
+		"name": "HP +3",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"184": {
+		"name": "HP +4",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"185": {
+		"name": "HP +5",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"186": {
+		"name": "HP/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"187": {
+		"name": "HP/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"188": {
+		"name": "HP/Spd 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"189": {
+		"name": "HP/Spd 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"190": {
+		"name": "Iote's Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"191": {
+		"name": "Kestrel Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"192": {
+		"name": "Kestrel Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"193": {
+		"name": "Laws of Sacae",
+		"sp": 300,
+		"prf": true,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"194": {
+		"name": "Life and Death 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"195": {
+		"name": "Life and Death 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"196": {
+		"name": "Life and Death 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"197": {
+		"name": "Mirror Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"198": {
+		"name": "Mirror Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"199": {
+		"name": "Mirror Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"200": {
+		"name": "Mirror Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"201": {
+		"name": "Mirror Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"202": {
+		"name": "Ostian Counter",
+		"sp": 350,
+		"prf": true,
+		"type": "attack-count",
+		"max": true
+	},
+	"203": {
+		"name": "R Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"204": {
+		"name": "R Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"205": {
+		"name": "R Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"206": {
+		"name": "R Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"207": {
+		"name": "R Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"208": {
+		"name": "R Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"209": {
+		"name": "Resistance +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"210": {
+		"name": "Resistance +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"211": {
+		"name": "Resistance +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"212": {
+		"name": "Scendscale",
+		"sp": 300,
+		"prf": true,
+		"type": "damage-calc",
+		"max": true
+	},
+	"213": {
+		"name": "Sorcery Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"214": {
+		"name": "Sorcery Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"215": {
+		"name": "Sorcery Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"216": {
+		"name": "Spd/Def 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"217": {
+		"name": "Spd/Def 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"218": {
+		"name": "Spd/Def Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"219": {
+		"name": "Spd/Def Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"220": {
+		"name": "Spd/Def Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"221": {
+		"name": "Spd/Def Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"222": {
+		"name": "Spd/Def Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"223": {
+		"name": "Spd/Def Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"224": {
+		"name": "Spd/Def Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"225": {
+		"name": "Spd/Def Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"226": {
+		"name": "Spd/Def Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"227": {
+		"name": "Spd/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"228": {
+		"name": "Spd/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"229": {
+		"name": "Spd/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"230": {
+		"name": "Spd/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"231": {
+		"name": "Spd/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"232": {
+		"name": "Speed +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"233": {
+		"name": "Speed +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"max": false
+	},
+	"234": {
+		"name": "Speed +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"max": true
+	},
+	"235": {
+		"name": "Steady Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"236": {
+		"name": "Steady Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"237": {
+		"name": "Steady Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"238": {
+		"name": "Steady Posture 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"239": {
+		"name": "Steady Posture 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"240": {
+		"name": "Steady Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"241": {
+		"name": "Steady Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"242": {
+		"name": "Steady Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"243": {
+		"name": "Steady Stance 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"244": {
+		"name": "Sturdy Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"245": {
+		"name": "Sturdy Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"246": {
+		"name": "Sturdy Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"247": {
+		"name": "Sturdy Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"248": {
+		"name": "Sturdy Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"249": {
+		"name": "Svalinn Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"250": {
+		"name": "Swift Sparrow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"251": {
+		"name": "Swift Sparrow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"252": {
+		"name": "Swift Sparrow 3",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"253": {
+		"name": "Swift Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"254": {
+		"name": "Swift Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"255": {
+		"name": "Swift Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"256": {
+		"name": "Swift Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"257": {
+		"name": "Triangle Adept 1",
+		"sp": 50,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"258": {
+		"name": "Triangle Adept 2",
+		"sp": 100,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"259": {
+		"name": "Triangle Adept 3",
+		"sp": 200,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"260": {
+		"name": "Warding Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"261": {
+		"name": "Warding Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"262": {
+		"name": "Warding Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"263": {
+		"name": "Warding Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"264": {
+		"name": "Warding Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"265": {
+		"name": "Warding Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"266": {
+		"name": "Warding Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"267": {
+		"name": "Warding Stance 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"268": {
+		"name": "Water Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"269": {
+		"name": "Water Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"270": {
+		"name": "Water Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"271": {
+		"name": "Wind Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"272": {
+		"name": "Wind Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"273": {
+		"name": "Wind Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	}
+}

@@ -1,389 +1,394 @@
 {
-	"Items":[
-		{
-			"name": "Aversa's Night",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Bolganone+",
-			"might": 13,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Bolganone",
-			"might": 9,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Book of Dreams",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Brynhildr",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Candelabra+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Candelabra",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Cymbeline",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Dawn Suzu",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Elfire",
-			"might": 6,
-			"range": 2,
-			"sp": 100,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Eternal Tome",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Fenrir+",
-			"might": 13,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Fenrir",
-			"might": 9,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Fire",
-			"might": 4,
-			"range": 2,
-			"sp": 50,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Flux",
-			"might": 4,
-			"range": 2,
-			"sp": 50,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Forblaze",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Fruit of Iðunn",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Gleipnir",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Grima's Truth",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Grimoire",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Hermit's Tome",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Imhullu",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Keen Rauðrwolf+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Keen Rauðrwolf",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Loptous",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Loyal Wreath+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Loyal Wreath",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Mögþrasir",
-			"might": 8,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Múspell Fireposy",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Naglfar",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Ragnarok",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrblade+",
-			"might": 13,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrblade",
-			"might": 9,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrfox+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrfox",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrowl+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrowl",
-			"might": 6,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrraven+",
-			"might": 11,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrraven",
-			"might": 7,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrwolf+",
-			"might": 10,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Rauðrwolf",
-			"might": 6,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Reese's Tome",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Ruin",
-			"might": 6,
-			"range": 2,
-			"sp": 100,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Tharja's Hex",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		},
-		{
-			"name": "Tomato Tome+",
-			"might": 12,
-			"range": 2,
-			"sp": 300,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Tomato Tome",
-			"might": 8,
-			"range": 2,
-			"sp": 200,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Umbra Burst",
-			"might": 14,
-			"range": 2,
-			"sp": 0,
-			"prf": false,
-			"type": "redtome"
-		},
-		{
-			"name": "Valflame",
-			"might": 14,
-			"range": 2,
-			"sp": 400,
-			"prf": true,
-			"type": "redtome"
-		}
-
-	]
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "redtome"
+	},
+	"1": {
+		"name": "Aversa's Night",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"2": {
+		"name": "Bolganone+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"3": {
+		"name": "Bolganone",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"4": {
+		"name": "Book of Dreams",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"5": {
+		"name": "Brynhildr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"6": {
+		"name": "Candelabra+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"7": {
+		"name": "Candelabra",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"8": {
+		"name": "Cymbeline",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"9": {
+		"name": "Dawn Suzu",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"10": {
+		"name": "Elfire",
+		"might": 6,
+		"range": 2,
+		"sp": 100,
+		"prf": false,
+		"type": "redtome"
+	},
+	"11": {
+		"name": "Eternal Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"12": {
+		"name": "Fenrir+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"13": {
+		"name": "Fenrir",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"14": {
+		"name": "Fire",
+		"might": 4,
+		"range": 2,
+		"sp": 50,
+		"prf": false,
+		"type": "redtome"
+	},
+	"15": {
+		"name": "Flux",
+		"might": 4,
+		"range": 2,
+		"sp": 50,
+		"prf": false,
+		"type": "redtome"
+	},
+	"16": {
+		"name": "Forblaze",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"17": {
+		"name": "Fruit of Iðunn",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"18": {
+		"name": "Gleipnir",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"19": {
+		"name": "Grima's Truth",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"20": {
+		"name": "Grimoire",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"21": {
+		"name": "Hermit's Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"22": {
+		"name": "Imhullu",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"23": {
+		"name": "Keen Rauðrwolf+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"24": {
+		"name": "Keen Rauðrwolf",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"25": {
+		"name": "Loptous",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"26": {
+		"name": "Loyal Wreath+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"27": {
+		"name": "Loyal Wreath",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"28": {
+		"name": "Mögþrasir",
+		"might": 8,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"29": {
+		"name": "Múspell Fireposy",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"30": {
+		"name": "Naglfar",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"31": {
+		"name": "Ragnarok",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"32": {
+		"name": "Rauðrblade+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"33": {
+		"name": "Rauðrblade",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"34": {
+		"name": "Rauðrfox+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"35": {
+		"name": "Rauðrfox",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"36": {
+		"name": "Rauðrowl+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"37": {
+		"name": "Rauðrowl",
+		"might": 6,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"38": {
+		"name": "Rauðrraven+",
+		"might": 11,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"39": {
+		"name": "Rauðrraven",
+		"might": 7,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"40": {
+		"name": "Rauðrwolf+",
+		"might": 10,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"41": {
+		"name": "Rauðrwolf",
+		"might": 6,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"42": {
+		"name": "Reese's Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"43": {
+		"name": "Ruin",
+		"might": 6,
+		"range": 2,
+		"sp": 100,
+		"prf": false,
+		"type": "redtome"
+	},
+	"44": {
+		"name": "Tharja's Hex",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	},
+	"45": {
+		"name": "Tomato Tome+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome"
+	},
+	"46": {
+		"name": "Tomato Tome",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome"
+	},
+	"47": {
+		"name": "Umbra Burst",
+		"might": 14,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "redtome"
+	},
+	"48": {
+		"name": "Valflame",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "redtome"
+	}
 }

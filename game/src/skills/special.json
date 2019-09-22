@@ -1,0 +1,485 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"cd": 0,
+		"prf": false,
+		"type": ""
+	},
+	"1": {
+		"name": "Aegis",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"2": {
+		"name": "Aether",
+		"sp": 500,
+		"cd": 5,
+		"prf": false,
+		"type": "battle"
+	},
+	"3": {
+		"name": "Astra",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"4": {
+		"name": "Black Luna",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"type": "battle"
+	},
+	"5": {
+		"name": "Blazing Flame",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"6": {
+		"name": "Blazing Light",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"7": {
+		"name": "Blazing Thunder",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"8": {
+		"name": "Blazing Wind",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"9": {
+		"name": "Blue Flame",
+		"sp": 500,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"10": {
+		"name": "Bonfire",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"11": {
+		"name": "Buckler",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"12": {
+		"name": "Chilling Wind",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"13": {
+		"name": "Daylight",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"14": {
+		"name": "Draconic Aura",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"15": {
+		"name": "Dragon Fang",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"16": {
+		"name": "Dragon Gaze",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"17": {
+		"name": "Earthfire Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"18": {
+		"name": "Earthfire Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"19": {
+		"name": "Earthwater Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"20": {
+		"name": "Earthwater Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"21": {
+		"name": "Escutcheon",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"22": {
+		"name": "Fire Emblem",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"type": "battle"
+	},
+	"23": {
+		"name": "Fireflood Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"24": {
+		"name": "Fireflood Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"25": {
+		"name": "Galeforce",
+		"sp": 500,
+		"cd": 5,
+		"prf": false,
+		"type": "post-battle"
+	},
+	"26": {
+		"name": "Glacies",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"27": {
+		"name": "Glimmer",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"28": {
+		"name": "Glowing Ember",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"29": {
+		"name": "Growing Flame",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"30": {
+		"name": "Growing Light",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"31": {
+		"name": "Growing Thunder",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"32": {
+		"name": "Growing Wind",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"33": {
+		"name": "Heavenly Light",
+		"sp": 150,
+		"cd": 2,
+		"prf": false,
+		"type": "heal"
+	},
+	"34": {
+		"name": "Holy Vestments",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"35": {
+		"name": "Ice Mirror",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"type": "battle"
+	},
+	"36": {
+		"name": "Iceberg",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"37": {
+		"name": "Ignis",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "battle"
+	},
+	"38": {
+		"name": "Imbue",
+		"sp": 50,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"39": {
+		"name": "Kindled-Fire Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"40": {
+		"name": "Luna",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"41": {
+		"name": "Lunar Flash",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"type": "battle"
+	},
+	"42": {
+		"name": "Miracle",
+		"sp": 200,
+		"cd": 5,
+		"prf": false,
+		"type": "battle"
+	},
+	"43": {
+		"name": "Moonbow",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"44": {
+		"name": "New Moon",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"45": {
+		"name": "Night Sky",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"46": {
+		"name": "Noontime",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"47": {
+		"name": "Pavise",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"48": {
+		"name": "Radiant Aether",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"type": "battle"
+	},
+	"49": {
+		"name": "Regnal Astra",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"type": "battle"
+	},
+	"50": {
+		"name": "Reprisal",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"51": {
+		"name": "Retribution",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"52": {
+		"name": "Rising Flame",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"53": {
+		"name": "Rising Light",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"54": {
+		"name": "Rising Thunder",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"55": {
+		"name": "Rising Wind",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"56": {
+		"name": "Ruptured Sky",
+		"sp": 500,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"57": {
+		"name": "Sacred Cowl",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "battle"
+	},
+	"58": {
+		"name": "Sirius",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"type": "battle"
+	},
+	"59": {
+		"name": "Sol",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"60": {
+		"name": "Solid-Earth Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"61": {
+		"name": "Still-Water Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"62": {
+		"name": "Swift-Winds Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"63": {
+		"name": "Umbra Blast",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"64": {
+		"name": "Umbra Calamity",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"65": {
+		"name": "Umbra Eruption",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "pre-battle"
+	},
+	"66": {
+		"name": "Vengeance",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "battle"
+	},
+	"67": {
+		"name": "Windfire Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	},
+	"68": {
+		"name": "Windfire Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal"
+	}
+}

@@ -1,789 +1,795 @@
 {
-	"Items":[
-		{
-			"name": "Alondite",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Amiti",
-			"might": 11,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Ardent Durandal",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Armorslayer+",
-			"might": 12,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Armorslayer",
-			"might": 8,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Armorsmasher+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Armorsmasher",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Audhulma",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Ayra's Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Barrier Blade+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Barrier Blade",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Beloved Zofia",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Binding Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Blazing Durandal",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Brave Sword+",
-			"might": 8,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Brave Sword",
-			"might": 5,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Bull Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Cake Cutter+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Cake Cutter",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Creator Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Dark Greatsword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Dark Mystletainn",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Divine Tyrfing",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Dracofalchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Dragonbind",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Durandal",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Eckesachs",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Exalted Falchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Falchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Falchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Falchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Firesweep S+",
-			"might": 15,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Firesweep S",
-			"might": 11,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Fólkvangr",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Geishun+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Geishun",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Gjöll",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Gladiator's Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Golden Dagger",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Hana's Katana",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Heart's Blade+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Heart's Blade",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Hikami",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Hinata's Katana",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Iron Sword",
-			"might": 6,
-			"range": 1,
-			"sp":50,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Kadomatsu+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Kadomatsu",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Killing Edge+",
-			"might": 11,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Killing Edge",
-			"might": 7,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Laevatein",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Light Brand",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Meisterschwert",
-			"might": 11,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Missiletainn",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Mystletainn",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Nameless Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Níu",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Panther Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Petal Parasol+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Petal Parasol",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Ragnell",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Raijinto",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Regal Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Resolute Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Rowdy Sword",
-			"might": 11,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Royal Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Ruby Sword+",
-			"might": 12,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Ruby Sword",
-			"might": 8,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Safeguard+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Safeguard",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Sandfort Spade+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Sandfort Spade",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Scarlet Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Sealed Falchion",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Selena's Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Shadow Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Siegfried",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Sieglinde",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Silver Sword+",
-			"might": 15,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Silver Sword",
-			"might": 11,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Silverbrand",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Skuld",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Slaying Edge+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Slaying Edge",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Sökkvabekkr",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Sol Katti",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Solitary Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Steel Sword",
-			"might": 8,
-			"range": 1,
-			"sp":100,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Storm Sieglinde",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Tyrfing",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Umbra Burst",
-			"might": 16,
-			"range": 1,
-			"sp":0,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Vassal's Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Whitewing Blade",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Wing Sword",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Wo Dao+",
-			"might": 13,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Wo Dao",
-			"might": 9,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Yato",
-			"might": 16,
-			"range": 1,
-			"sp":400,
-			"prf": true,
-			"type": "sword"
-		},
-		{
-			"name": "Zanbato+",
-			"might": 14,
-			"range": 1,
-			"sp":300,
-			"prf": false,
-			"type": "sword"
-		},
-		{
-			"name": "Zanbato",
-			"might": 10,
-			"range": 1,
-			"sp":200,
-			"prf": false,
-			"type": "sword"
-		}
-	]
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 1,
+		"sp": 0,
+		"prf": false,
+		"type": "sword"
+	},
+	"1": {
+		"name": "Alondite",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"2": {
+		"name": "Amiti",
+		"might": 11,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"3": {
+		"name": "Ardent Durandal",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"4": {
+		"name": "Armorslayer+",
+		"might": 12,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"5": {
+		"name": "Armorslayer",
+		"might": 8,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"6": {
+		"name": "Armorsmasher+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"7": {
+		"name": "Armorsmasher",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"8": {
+		"name": "Audhulma",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"9": {
+		"name": "Ayra's Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"10": {
+		"name": "Barrier Blade+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"11": {
+		"name": "Barrier Blade",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"12": {
+		"name": "Beloved Zofia",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"13": {
+		"name": "Binding Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"14": {
+		"name": "Blazing Durandal",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"15": {
+		"name": "Brave Sword+",
+		"might": 8,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"16": {
+		"name": "Brave Sword",
+		"might": 5,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"17": {
+		"name": "Bull Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"18": {
+		"name": "Cake Cutter+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"19": {
+		"name": "Cake Cutter",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"20": {
+		"name": "Creator Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"21": {
+		"name": "Dark Greatsword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"22": {
+		"name": "Dark Mystletainn",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"23": {
+		"name": "Divine Tyrfing",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"24": {
+		"name": "Dracofalchion",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"25": {
+		"name": "Dragonbind",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"26": {
+		"name": "Durandal",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"27": {
+		"name": "Eckesachs",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"28": {
+		"name": "Exalted Falchion",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"29": {
+		"name": "Falchion (Awakening)",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"30": {
+		"name": "Falchion (Gaiden)",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"31": {
+		"name": "Falchion (Mystery)",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"32": {
+		"name": "Firesweep S+",
+		"might": 15,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"33": {
+		"name": "Firesweep S",
+		"might": 11,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"34": {
+		"name": "Fólkvangr",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"35": {
+		"name": "Geishun+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"36": {
+		"name": "Geishun",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"37": {
+		"name": "Gjöll",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"38": {
+		"name": "Gladiator's Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"39": {
+		"name": "Golden Dagger",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"40": {
+		"name": "Hana's Katana",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"41": {
+		"name": "Heart's Blade+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"42": {
+		"name": "Heart's Blade",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"43": {
+		"name": "Hikami",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"44": {
+		"name": "Hinata's Katana",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"45": {
+		"name": "Iron Sword",
+		"might": 6,
+		"range": 1,
+		"sp":50,
+		"prf": false,
+		"type": "sword"
+	},
+	"46": {
+		"name": "Kadomatsu+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"47": {
+		"name": "Kadomatsu",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"48": {
+		"name": "Killing Edge+",
+		"might": 11,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"49": {
+		"name": "Killing Edge",
+		"might": 7,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"50": {
+		"name": "Laevatein",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"51": {
+		"name": "Light Brand",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"52": {
+		"name": "Meisterschwert",
+		"might": 11,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"53": {
+		"name": "Missiletainn",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"54": {
+		"name": "Mystletainn",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"55": {
+		"name": "Nameless Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"56": {
+		"name": "Níu",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"57": {
+		"name": "Panther Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"58": {
+		"name": "Petal Parasol+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"59": {
+		"name": "Petal Parasol",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"60": {
+		"name": "Ragnell",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"61": {
+		"name": "Raijinto",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"62": {
+		"name": "Regal Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"63": {
+		"name": "Resolute Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"64": {
+		"name": "Rowdy Sword",
+		"might": 11,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"65": {
+		"name": "Royal Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"66": {
+		"name": "Ruby Sword+",
+		"might": 12,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"67": {
+		"name": "Ruby Sword",
+		"might": 8,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"68": {
+		"name": "Safeguard+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"69": {
+		"name": "Safeguard",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"70": {
+		"name": "Sandfort Spade+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"71": {
+		"name": "Sandfort Spade",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"72": {
+		"name": "Scarlet Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"73": {
+		"name": "Sealed Falchion",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"74": {
+		"name": "Selena's Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"75": {
+		"name": "Shadow Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"76": {
+		"name": "Siegfried",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"77": {
+		"name": "Sieglinde",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"78": {
+		"name": "Silver Sword+",
+		"might": 15,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"79": {
+		"name": "Silver Sword",
+		"might": 11,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"80": {
+		"name": "Silverbrand",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"81": {
+		"name": "Skuld",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"82": {
+		"name": "Slaying Edge+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"83": {
+		"name": "Slaying Edge",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"84": {
+		"name": "Sökkvabekkr",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"85": {
+		"name": "Sol Katti",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"86": {
+		"name": "Solitary Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"87": {
+		"name": "Steel Sword",
+		"might": 8,
+		"range": 1,
+		"sp":100,
+		"prf": false,
+		"type": "sword"
+	},
+	"88": {
+		"name": "Storm Sieglinde",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"89": {
+		"name": "Tyrfing",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"90": {
+		"name": "Umbra Burst",
+		"might": 16,
+		"range": 1,
+		"sp":0,
+		"prf": false,
+		"type": "sword"
+	},
+	"91": {
+		"name": "Vassal's Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"92": {
+		"name": "Whitewing Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"93": {
+		"name": "Wing Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"94": {
+		"name": "Wo Dao+",
+		"might": 13,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"95": {
+		"name": "Wo Dao",
+		"might": 9,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	},
+	"96": {
+		"name": "Yato",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"type": "sword"
+	},
+	"97": {
+		"name": "Zanbato+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword"
+	},
+	"98": {
+		"name": "Zanbato",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword"
+	}
 }
 
