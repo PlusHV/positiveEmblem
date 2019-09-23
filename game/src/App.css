@@ -43,11 +43,20 @@ table,tr,td {
   color: white;
 }
 .cellStyle{
-      border: 2px solid #555;
-      width: 70px;
-      height: 70px;
-      lineHeight: 50px;
-      textAlign: center;
+  border: 2px solid #555;
+  width: 70px;
+  height: 70px;
+  lineHeight: 50px;
+  textAlign: center;
+}
+
+.teamMember{
+  border: 2px solid #555;
+  width: 50px;
+  height: 50px;
+  lineHeight: 50px;
+  textAlign: center;
+
 }
 .statText {
         
@@ -94,25 +103,7 @@ table,tr,td {
   background-color: blue;
 }
 
-  .Select-control {
-    height: 1px;
 
-    .Select-placeholder {
-      line-height: 26px;
-    }
-
-    .Select-value {
-      line-height: 26px !important;
-
-      .Select-value-label {
-        line-height: 26px;
-      }
-    }
-
-    .Select-input {
-      height: 1px;
-    }
-}
 
 @keyframes App-logo-spin {
   from {
