@@ -45,6 +45,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [213],
 		"type": "beast"
 	},
 	"6": {
@@ -53,6 +54,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [416],
 		"type": "beast"
 	},
 	"7": {
@@ -61,6 +63,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [315],
 		"type": "beast"
 	},
 	"8": {
@@ -77,6 +80,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [350],
 		"type": "beast"
 	},
 	"10": {
@@ -93,6 +97,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [392],
 		"type": "beast"
 	},
 	"12": {
@@ -101,6 +106,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [204, 321],
 		"type": "beast"
 	},
 	"13": {
@@ -109,6 +115,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [180],
 		"type": "beast"
 	},
 	"14": {
@@ -117,6 +124,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [37],
 		"type": "beast"
 	},
 	"15": {
@@ -125,6 +133,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [275],
 		"type": "beast"
 	},
 	"16": {
@@ -133,6 +142,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [270],
 		"type": "beast"
 	},
 	"17": {
@@ -141,6 +151,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [308],
 		"type": "beast"
 	},
 	"18": {
@@ -173,6 +184,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [278],
 		"type": "beast"
 	},
 	"22": {
@@ -181,6 +193,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [405],
 		"type": "beast"
 	},
 	"23": {
@@ -189,6 +202,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [190],
 		"type": "beast"
 	},
 	"24": {

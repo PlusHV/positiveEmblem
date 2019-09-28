@@ -29,6 +29,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [145],
 		"type": "axe"
 	},
 	"4": {
@@ -37,6 +38,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [23],
 		"type": "axe"
 	},
 	"5": {
@@ -45,6 +47,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [316,221],
 		"type": "axe"
 	},
 	"6": {
@@ -69,6 +72,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [145,146],
 		"type": "axe"
 	},
 	"9": {
@@ -77,6 +81,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [27],
 		"type": "axe"
 	},
 	"10": {
@@ -101,6 +106,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [148],
 		"type": "axe"
 	},
 	"13": {
@@ -109,6 +115,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [13],
 		"type": "axe"
 	},
 	"14": {
@@ -133,6 +140,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [55],
 		"type": "axe"
 	},
 	"17": {
@@ -141,6 +149,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [399],
 		"type": "axe"
 	},
 	"18": {
@@ -149,6 +158,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [113],
 		"type": "axe"
 	},
 	"19": {
@@ -189,6 +199,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [152],
 		"type": "axe"
 	},
 	"24": {
@@ -197,6 +208,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [105],
 		"type": "axe"
 	},
 	"25": {
@@ -221,6 +233,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [],
 		"type": "axe"
 	},
 	"28": {
@@ -229,6 +242,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [7],
 		"type": "axe"
 	},
 	"29": {
@@ -301,6 +315,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [267,265],
 		"type": "axe"
 	},
 	"38": {
@@ -309,6 +324,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [],
 		"type": "axe"
 	},
 	"39": {
@@ -390,6 +406,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [8],
 		"type": "axe"
 	},
 	"49": {
@@ -462,6 +479,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [379],
 		"type": "axe"
 	},
 	"58": {
@@ -511,6 +529,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [83],
 		"type": "axe"
 	},
 	"64": {
@@ -519,13 +538,13 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [147],
 		"type": "axe"
 	},
 	"65": {
 		"name": "Umbra Burst",
 		"might": 16,
 		"range": 1,
-
 		"sp": 0,
 		"prf": false,
 		"type": "axe"
@@ -536,6 +555,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [161],
 		"type": "axe"
 	},
 	"67": {
@@ -544,6 +564,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [18],
 		"type": "axe"
 	},
 	"68": {
@@ -552,6 +573,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [86],
 		"type": "axe"
 	},
 	"69": {
@@ -576,6 +598,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [409],
 		"type": "axe"
 	}
 

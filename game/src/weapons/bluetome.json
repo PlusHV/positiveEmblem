@@ -13,6 +13,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [219],
 		"type": "bluetome"
 	},
 	"2": {
@@ -165,6 +166,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [246],
 		"type": "bluetome"
 	},
 	"21": {
@@ -189,6 +191,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [78, 219],
 		"type": "bluetome"
 	},
 	"24": {
@@ -197,6 +200,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [79],
 		"type": "bluetome"
 	},
 	"25": {
@@ -205,6 +209,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [319, 301],
 		"type": "bluetome"
 	},
 	"26": {
@@ -245,6 +250,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [48],
 		"type": "bluetome"
 	},
 	"31": {
@@ -253,6 +259,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [195],
 		"type": "bluetome"
 	},
 	"32": {
@@ -301,6 +308,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [303],
 		"type": "bluetome"
 	},
 	"38": {
@@ -309,6 +317,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [168],
 		"type": "bluetome"
 	},
 	"39": {
@@ -317,6 +326,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [295],
 		"type": "bluetome"
 	},
 	"40": {
@@ -325,6 +335,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [20],
 		"type": "bluetome"
 	},
 	"41": {
@@ -333,6 +344,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [193],
 		"type": "bluetome"
 	},
 	"42": {
@@ -389,6 +401,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [327],
 		"type": "bluetome"
 	},
 	"49": {
@@ -397,6 +410,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [262],
 		"type": "bluetome"
 	},
 	"50": {
@@ -429,6 +443,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [380],
 		"type": "bluetome"
 	},
 	"54": {
@@ -445,6 +460,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [],
 		"type": "bluetome"
 	},
 	"56": {
@@ -469,6 +485,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [177],
 		"type": "bluetome"
 	},
 	"59": {
@@ -477,6 +494,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [341],
 		"type": "bluetome"
 	},
 	"60": {
@@ -485,6 +503,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [238],
 		"type": "bluetome"
 	},
 	"61": {
@@ -493,6 +512,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [197],
 		"type": "bluetome"
 	}
 }

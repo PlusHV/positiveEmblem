@@ -61,7 +61,7 @@ class Stats extends React.Component{
 
 
 
-  let currentHeroInfo = heroData[this.props.gameState.selectedHero.heroID.value];
+  let currentHeroInfo = heroData[this.props.gameState.selectedMember.heroID.value];
 
 
   const statText = ["Level", "Merge", "HP", "Atk", "Spd", "Def", "Res" ];
@@ -69,11 +69,11 @@ class Stats extends React.Component{
   const statGrowths = [5, 10, currentHeroInfo.growthhp, currentHeroInfo.growthatk, currentHeroInfo.growthspd, currentHeroInfo.growthdef, currentHeroInfo.growthres];
 
   const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
-  const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedHero.heroSkills["weapon"].value], 
-  assists[this.props.gameState.selectedHero.heroSkills["assist"].value], 
-  specials[this.props.gameState.selectedHero.heroSkills["special"].value],
-  skills.a[this.props.gameState.selectedHero.heroSkills["a"].value], skills.a[this.props.gameState.selectedHero.heroSkills["b"].value], 
-  skills.c[this.props.gameState.selectedHero.heroSkills["c"].value], skills.seal[this.props.gameState.selectedHero.heroSkills["seal"].value]
+  const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"].value], 
+  assists[this.props.gameState.selectedMember.heroSkills["assist"].value], 
+  specials[this.props.gameState.selectedMember.heroSkills["special"].value],
+  skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.a[this.props.gameState.selectedMember.heroSkills["b"].value], 
+  skills.c[this.props.gameState.selectedMember.heroSkills["c"].value], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"].value]
   ];
 
 
@@ -86,7 +86,7 @@ class Stats extends React.Component{
     <Select
     theme = {dropDownTheme} 
     options={this.props.gameState.skillDropdowns["hero"].list}
-    value={this.props.gameState.selectedHero.heroID}
+    value={this.props.gameState.selectedMember.heroID}
   onChange = {(e) => this.props.heroChange(e)  } /> 
   </td></tr> );
 
@@ -100,7 +100,7 @@ class Stats extends React.Component{
           cells.push(<td className = "statNum" key = {"stat" +statText[i]}>
             <input
             className = "numberInput"
-            value = {this.props.gameState.selectedHero.level} 
+            value = {this.props.gameState.selectedMember.level} 
             type = "number" 
             min = "1" 
             max = "40" 
@@ -108,7 +108,7 @@ class Stats extends React.Component{
             />  
             </td>);
         } else{
-          cells.push(<td className ="statNum" key = {"stat" + statNumbers[i]}>{CalculateStat(this.props.gameState.selectedHero.level, statGrowths[0], statGrowths[i], statNumbers[i] )}  </td>);
+          cells.push(<td className ="statNum" key = {"stat" + statNumbers[i]}>{CalculateStat(this.props.gameState.selectedMember.level, statGrowths[0], statGrowths[i], statNumbers[i] )}  </td>);
         }
 
         cells.push(<td className= "spacing" key = {i}></td>);
@@ -149,11 +149,11 @@ class Skills extends React.Component{
     let tbody = [];
 
     const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
-    const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedHero.heroSkills["weapon"].value], 
-                            assists[this.props.gameState.selectedHero.heroSkills["assist"].value], 
-                            specials[this.props.gameState.selectedHero.heroSkills["special"].value],
-                            skills.a[this.props.gameState.selectedHero.heroSkills["a"].value], skills.a[this.props.gameState.selectedHero.heroSkills["b"].value], 
-                            skills.c[this.props.gameState.selectedHero.heroSkills["c"].value], skills.seal[this.props.gameState.selectedHero.heroSkills["seal"].value]
+    const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"].value], 
+                            assists[this.props.gameState.selectedMember.heroSkills["assist"].value], 
+                            specials[this.props.gameState.selectedMember.heroSkills["special"].value],
+                            skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.a[this.props.gameState.selectedMember.heroSkills["b"].value], 
+                            skills.c[this.props.gameState.selectedMember.heroSkills["c"].value], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"].value]
     ];     
 
 
@@ -170,7 +170,7 @@ class Skills extends React.Component{
             <Select
               theme = {dropDownTheme} 
               options={this.props.gameState.skillDropdowns[equipText[i]].list}
-              value={this.props.gameState.selectedHero.heroSkills[equipText[i]]}
+              value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
             onChange = {(e, index) => this.props.skillChange(e,equipText[i])} 
             /> 
           </td>);
@@ -211,7 +211,7 @@ class TicTacToeBoard extends React.Component{
     // eslint-disable-next-line
     for (var [key, value] of Object.entries(initDropdowns)) {
 
-      this.fillDropdown(value.list, value.info);
+      this.fillDropdown(value.list, value.info, new heroStruct(0));
     }                
 
     this.state = {
@@ -222,12 +222,12 @@ class TicTacToeBoard extends React.Component{
       "heroIndex": 0, //The index of the hero in the heroList
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
       "skillDropdowns": initDropdowns,
-      "selectedHero": new heroStruct(0), //The current struct in heroList
+      "selectedMember": new heroStruct(0), //The current struct in heroList
       "weaponList": weapons["sword"],
       "selectedHeroInfo": heroData["0"] //The current hero's info
     }
 
-    this.selectNewHero = this.selectNewHero.bind(this);
+    this.selectNewMember = this.selectNewMember.bind(this);
     this.onLevelChange = this.onLevelChange.bind(this);
     this.onHeroChange = this.onHeroChange.bind(this);
     this.onSkillChange = this.onSkillChange.bind(this);
@@ -239,7 +239,7 @@ class TicTacToeBoard extends React.Component{
     //updates the selectedHero according to playerSide and currentHero values and other values dependent on it
 
     let newSelected = this.state.heroList[side][newIndex];
-    this.setState({selectedHero: newSelected }); //updates the select hero
+    this.setState({selectedMember: newSelected }); //updates the select member with the new hero in heroList
 
 
     this.setState({selectedHeroInfo: heroData[newSelected.heroID.value]});
@@ -248,38 +248,43 @@ class TicTacToeBoard extends React.Component{
     this.setState({weaponlist: weapons[heroData[newSelected.heroID.value].weapontype]});
 
 
-    this.updateDropdowns(weapons[heroData[newSelected.heroID.value].weapontype]);
-
+    this.updateDropdowns(heroData[newSelected.heroID.value]);//weapons[heroData[newSelected.heroID.value].weapontype]);
 
   }
 
-  updateDropdowns(newWeaponList){
-    let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: newWeaponList},
+  updateDropdowns(newHero){
+    let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
                          "assist":{list: [], info: assists}, "special":{list: [], info: specials},
                          "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
                          "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal}
                    };
 
 
-
+      console.log(dropTemp);
     // eslint-disable-next-line               
-    for (var [key, value] of Object.entries(dropTemp)) {
-      this.fillDropdown(value.list, value.info);
+    for (let [key, value] of Object.entries(dropTemp)) {
+      this.fillDropdown(value.list, value.info, newHero);
     }
     
     this.setState({skillDropdowns: dropTemp});
     return dropTemp;
   }
 
-  fillDropdown(dropdownList, info){
+  fillDropdown(dropdownList, info, newHero){
     // eslint-disable-next-line
-    for (let [key, value] of Object.entries(info)) {
-      dropdownList.push({value: key, label: value.name});
+    for (let [key, value1] of Object.entries(info)) {
+      if (  !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
+        value1.prf === false || //if the prf key says false, then push to the list
+        ( !('users' in value1) || value1.users.includes( parseInt(newHero.id) ) ) ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
+        dropdownList.push({value: key, label: value1.name});
+      }
     }
 
   }
 
-  selectNewHero(side, i){
+
+
+  selectNewMember(side, i){ // selecting new member
 
     this.updateHero(side, i);
 
@@ -293,35 +298,48 @@ class TicTacToeBoard extends React.Component{
     temp[this.state.playerSide][this.state.heroIndex].level = e.target.value;
 
     this.setState({heroList: temp});
-    this.setState({selectedHero: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level
+    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
   }
 
-  onHeroChange(e){    //Changing a hero will need to update the heroList, update skillsdropdowns, weapon list, and selectedHeroInfo - selected Hero will change but not its reference?
+  onHeroChange(e){    //Changing a hero will need to update the states of the board for stat display
 
     var temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex].heroID = e;
 
 
     var newHero = heroData[e.value];
+    //console.log(newHero);
 
+    var updatedDropdowns = this.updateDropdowns(newHero); //only really updates the weaponlist for now
+  //  console.log(updatedDropdowns);
 
-    var updatedDropdowns = this.updateDropdowns(weapons[newHero.weapontype]); //only really updates the weaponlist for now
 
     let tSkills = {}; //Object.assign({}, this.state.heroSkills);
-    tSkills["weapon"] = updatedDropdowns["weapon"].list[newHero.weapon];
-    tSkills["assist"] = updatedDropdowns["assist"].list[newHero.assist];
-    tSkills["special"] = updatedDropdowns["special"].list[newHero.special];
-    tSkills["a"] = updatedDropdowns["a"].list[newHero.askill];
-    tSkills["b"] = updatedDropdowns["b"].list[newHero.bskill];
-    tSkills["c"] = updatedDropdowns["c"].list[newHero.cskill];
-    tSkills["seal"] = updatedDropdowns["seal"].list[newHero.sseal];
-
+    tSkills["weapon"] = updatedDropdowns["weapon"].list.find(this.findMatchingValue, newHero.weapon);
+    tSkills["assist"] = updatedDropdowns["assist"].list.find(this.findMatchingValue, newHero.assist);
+    tSkills["special"] = updatedDropdowns["special"].list.find(this.findMatchingValue, newHero.special);
+    tSkills["a"] = updatedDropdowns["a"].list.find(this.findMatchingValue, newHero.askill);
+    tSkills["b"] = updatedDropdowns["b"].list.find(this.findMatchingValue, newHero.bskill);
+    tSkills["c"] = updatedDropdowns["c"].list.find(this.findMatchingValue, newHero.cskill);
+    tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findMatchingValue, newHero.sseal);
+   // console.log(tSkills);
     temp[this.state.playerSide][this.state.heroIndex].heroSkills = tSkills;
 
 
     this.setState({heroList: temp});
-    this.setState({selectedHero: temp[this.state.playerSide][this.state.heroIndex] });
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
+
+
+    this.setState({selectedHeroInfo: heroData[newHero.id]});
+
+
+    this.setState({weaponlist: weapons[heroData[newHero.id].weapontype]});
+
+  }
+
+  findMatchingValue(item){
+    return item.value === this;
   }
 
   onSkillChange(e, index){
@@ -333,7 +351,7 @@ class TicTacToeBoard extends React.Component{
 
     temp[this.state.playerSide][this.state.heroIndex].heroSkills = skillList;
     this.setState({heroList: temp});
-    this.setState({selectedHero: temp[this.state.playerSide][this.state.heroIndex] });
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
     //heroList[playerSide][heroIndex] = this.state;
 
 
@@ -380,7 +398,7 @@ class TicTacToeBoard extends React.Component{
         <td><TeamElement 
             name = "1" 
             gameState = {this.state} 
-            selector = {this.selectNewHero} />
+            selector = {this.selectNewMember} />
         </td>
 
         <td colSpan = "2">
@@ -400,7 +418,7 @@ class TicTacToeBoard extends React.Component{
         <td><TeamElement 
             name = "2" 
             gameState = {this.state} 
-            selector = {this.selectNewHero} />
+            selector = {this.selectNewMember} />
         </td>
         
         <td>

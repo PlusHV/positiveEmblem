@@ -13,6 +13,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [420, 28],
 		"type": "sword"
 	},
 	"2": {
@@ -21,6 +22,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [95],
 		"type": "sword"
 	},
 	"3": {
@@ -29,6 +31,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [99],
 		"type": "sword"
 	},
 	"4": {
@@ -69,6 +72,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [176],
 		"type": "sword"
 	},
 	"9": {
@@ -77,6 +81,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [15],
 		"type": "sword"
 	},
 	"10": {
@@ -101,6 +106,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [52],
 		"type": "sword"
 	},
 	"13": {
@@ -109,6 +115,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [333],
 		"type": "sword"
 	},
 	"14": {
@@ -117,6 +124,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [332, 101],
 		"type": "sword"
 	},
 	"15": {
@@ -141,6 +149,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [36],
 		"type": "sword"
 	},
 	"18": {
@@ -165,6 +174,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [32, 33],
 		"type": "sword"
 	},
 	"21": {
@@ -173,6 +183,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [361],
 		"type": "sword"
 	},
 	"22": {
@@ -181,6 +192,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [10, 93],
 		"type": "sword"
 	},
 	"23": {
@@ -189,6 +201,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [364, 349],
 		"type": "sword"
 	},
 	"24": {
@@ -197,6 +210,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [5],
 		"type": "sword"
 	},
 	"25": {
@@ -205,6 +219,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [331],
 		"type": "sword"
 	},
 	"26": {
@@ -213,6 +228,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [101],
 		"type": "sword"
 	},
 	"27": {
@@ -221,6 +237,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [421],
 		"type": "sword"
 	},
 	"28": {
@@ -229,6 +246,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [255],
 		"type": "sword"
 	},
 	"29": {
@@ -237,6 +255,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [254, 230, 56],
 		"type": "sword"
 	},
 	"30": {
@@ -245,6 +264,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [4],
 		"type": "sword"
 	},
 	"31": {
@@ -253,6 +273,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [253],
 		"type": "sword"
 	},
 	"32": {
@@ -277,6 +298,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [2],
 		"type": "sword"
 	},
 	"35": {
@@ -301,6 +323,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [157],
 		"type": "sword"
 	},
 	"38": {
@@ -309,6 +332,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [296],
 		"type": "sword"
 	},
 	"39": {
@@ -317,6 +341,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [340],
 		"type": "sword"
 	},
 	"40": {
@@ -325,6 +350,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [141],
 		"type": "sword"
 	},
 	"41": {
@@ -349,6 +375,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [137],
 		"type": "sword"
 	},
 	"44": {
@@ -357,6 +384,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [153],
 		"type": "sword"
 	},
 	"45": {
@@ -405,6 +433,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [202],
 		"type": "sword"
 	},
 	"51": {
@@ -413,6 +442,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [207],
 		"type": "sword"
 	},
 	"52": {
@@ -421,6 +451,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [320],
 		"type": "sword"
 	},
 	"53": {
@@ -429,6 +460,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [305],
 		"type": "sword"
 	},
 	"54": {
@@ -437,6 +469,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [93],
 		"type": "sword"
 	},
 	"55": {
@@ -445,6 +478,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [116, 186],
 		"type": "sword"
 	},
 	"56": {
@@ -453,6 +487,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [199],
 		"type": "sword"
 	},
 	"57": {
@@ -461,6 +496,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [374],
 		"type": "sword"
 	},
 	"58": {
@@ -485,6 +521,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [163, 164],
 		"type": "sword"
 	},
 	"61": {
@@ -493,6 +530,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [337, 339],
 		"type": "sword"
 	},
 	"62": {
@@ -501,6 +539,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [224],
 		"type": "sword"
 	},
 	"63": {
@@ -509,6 +548,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [260],
 		"type": "sword"
 	},
 	"64": {
@@ -517,6 +557,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [],
 		"type": "sword"
 	},
 	"65": {
@@ -525,6 +566,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [237],
 		"type": "sword"
 	},
 	"66": {
@@ -581,6 +623,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [281],
 		"type": "sword"
 	},
 	"73": {
@@ -589,6 +632,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [56, 58, 230, 254],
 		"type": "sword"
 	},
 	"74": {
@@ -597,6 +641,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [348],
 		"type": "sword"
 	},
 	"75": {
@@ -605,6 +650,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [247],
 		"type": "sword"
 	},
 	"76": {
@@ -613,6 +659,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [413],
 		"type": "sword"
 	},
 	"77": {
@@ -621,6 +668,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [92],
 		"type": "sword"
 	},
 	"78": {
@@ -645,6 +693,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [352],
 		"type": "sword"
 	},
 	"81": {
@@ -653,6 +702,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [300],
 		"type": "sword"
 	},
 	"82": {
@@ -677,6 +727,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [],
 		"type": "sword"
 	},
 	"85": {
@@ -685,6 +736,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [242],
 		"type": "sword"
 	},
 	"86": {
@@ -693,6 +745,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [227],
 		"type": "sword"
 	},
 	"87": {
@@ -709,6 +762,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [91],
 		"type": "sword"
 	},
 	"89": {
@@ -717,6 +771,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [349],
 		"type": "sword"
 	},
 	"90": {
@@ -733,6 +788,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [187],
 		"type": "sword"
 	},
 	"92": {
@@ -741,6 +797,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [307],
 		"type": "sword"
 	},
 	"93": {
@@ -749,6 +806,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [35],
 		"type": "sword"
 	},
 	"94": {
@@ -773,6 +831,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
+		"users": [71],
 		"type": "sword"
 	},
 	"97": {

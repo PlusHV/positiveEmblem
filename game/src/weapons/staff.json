@@ -85,6 +85,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [117],
 		"type": "staff"
 	},
 	"11": {
@@ -125,6 +126,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [406],
 		"type": "staff"
 	},
 	"16": {
@@ -213,6 +215,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [41],
 		"type": "staff"
 	},
 	"27": {
@@ -237,6 +240,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"user": [226],
 		"type": "staff"
 	},
 	"30": {

@@ -14,6 +14,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [127],
 		"type": "breath"
 	},
 	"2": {
@@ -22,6 +23,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [394, 396],
 		"type": "breath"
 	},
 	"3": {
@@ -46,6 +48,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [160],
 		"type": "breath"
 	},
 	"6": {
@@ -54,6 +57,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [276],
 		"type": "breath"
 	},
 	"7": {
@@ -62,6 +66,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [395],
 		"type": "breath"
 	},
 	"8": {
@@ -70,6 +75,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [68, 69],
 		"type": "breath"
 	},
 	"9": {
@@ -78,6 +84,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [324, 325],
 		"type": "breath"
 	},
 	"10": {
@@ -86,6 +93,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [85],
 		"type": "breath"
 	},
 	"11": {
@@ -142,6 +150,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [273],
 		"type": "breath"
 	},
 	"18": {
@@ -182,6 +191,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [277],
 		"type": "breath"
 	},
 	"23": {
@@ -190,6 +200,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [398],
 		"type": "breath"
 	},
 	"24": {
@@ -198,6 +209,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [74],
 		"type": "breath"
 	},
 	"25": {
@@ -206,6 +218,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [274],
 		"type": "breath"
 	},
 	"26": {
@@ -214,6 +227,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [373],
 		"type": "breath"
 	},
 	"27": {
@@ -222,6 +236,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
+		"users": [393],
 		"type": "breath"
 	},
 	"28": {

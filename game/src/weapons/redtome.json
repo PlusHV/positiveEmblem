@@ -13,6 +13,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [14],
 		"type": "redtome"
 	},
 	"2": {
@@ -37,6 +38,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [39],
 		"type": "redtome"
 	},
 	"5": {
@@ -45,6 +47,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [211],
 		"type": "redtome"
 	},
 	"6": {
@@ -69,6 +72,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [347],
 		"type": "redtome"
 	},
 	"9": {
@@ -77,6 +81,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [264],
 		"type": "redtome"
 	},
 	"10": {
@@ -93,6 +98,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [369],
 		"type": "redtome"
 	},
 	"12": {
@@ -133,6 +139,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [218],
 		"type": "redtome"
 	},
 	"17": {
@@ -141,6 +148,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [385],
 		"type": "redtome"
 	},
 	"18": {
@@ -149,6 +157,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [89],
 		"type": "redtome"
 	},
 	"19": {
@@ -157,6 +166,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [271],
 		"type": "redtome"
 	},
 	"20": {
@@ -165,6 +175,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [292],
 		"type": "redtome"
 	},
 	"21": {
@@ -173,6 +184,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [314],
 		"type": "redtome"
 	},
 	"22": {
@@ -181,6 +193,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [131],
 		"type": "redtome"
 	},
 	"23": {
@@ -205,6 +218,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [179],
 		"type": "redtome"
 	},
 	"26": {
@@ -229,6 +243,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [169],
 		"type": "redtome"
 	},
 	"29": {
@@ -237,6 +252,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [390],
 		"type": "redtome"
 	},
 	"30": {
@@ -245,6 +261,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [245],
 		"type": "redtome"
 	},
 	"31": {
@@ -253,6 +270,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [21],
 		"type": "redtome"
 	},
 	"32": {
@@ -341,6 +359,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [188],
 		"type": "redtome"
 	},
 	"43": {
@@ -357,6 +376,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [389],
 		"type": "redtome"
 	},
 	"45": {
@@ -389,6 +409,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
+		"users": [12],
 		"type": "redtome"
 	}
 }
