@@ -68,17 +68,6 @@ class Stats extends React.Component{
   const statNumbers = [40, 10, currentHeroInfo.basehp, currentHeroInfo.baseatk, currentHeroInfo.basespd, currentHeroInfo.basedef, currentHeroInfo.baseres];
   const statGrowths = [5, 10, currentHeroInfo.growthhp, currentHeroInfo.growthatk, currentHeroInfo.growthspd, currentHeroInfo.growthdef, currentHeroInfo.growthres];
 
-  const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
-  const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"].value], 
-  assists[this.props.gameState.selectedMember.heroSkills["assist"].value], 
-  specials[this.props.gameState.selectedMember.heroSkills["special"].value],
-  skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.a[this.props.gameState.selectedMember.heroSkills["b"].value], 
-  skills.c[this.props.gameState.selectedMember.heroSkills["c"].value], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"].value]
-  ];
-
-
-
-
 
   let tbody = [];
   tbody.push(<tr key = "hero"><td key = "heroText">Hero</td>
@@ -179,6 +168,18 @@ class Skills extends React.Component{
         tbody.push(<tr key={"skill row"+i}>{cells}</tr>);
     }
 
+    tbody.push(
+      <tr key = {"checkbox row"}> 
+        <td className = "equippedSkill" key = {"maxFilter"}>
+            Only Max Skills<input 
+            type = "checkbox"
+            value = {this.props.gameState.maxFilter}
+            onChange = {(e) => this.props.maxFilterChange(e)}
+              />
+            
+        </td>
+      </tr>
+    );
 
     return(
 
@@ -224,13 +225,15 @@ class TicTacToeBoard extends React.Component{
       "skillDropdowns": initDropdowns,
       "selectedMember": new heroStruct(0), //The current struct in heroList
       "weaponList": weapons["sword"],
-      "selectedHeroInfo": heroData["0"] //The current hero's info
+      "selectedHeroInfo": heroData["0"], //The current hero's info
+      "maxFilter": false
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
     this.onLevelChange = this.onLevelChange.bind(this);
     this.onHeroChange = this.onHeroChange.bind(this);
     this.onSkillChange = this.onSkillChange.bind(this);
+    this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
   } //end constructor
 
 
@@ -248,11 +251,11 @@ class TicTacToeBoard extends React.Component{
     this.setState({weaponlist: weapons[heroData[newSelected.heroID.value].weapontype]});
 
 
-    this.updateDropdowns(heroData[newSelected.heroID.value]);//weapons[heroData[newSelected.heroID.value].weapontype]);
+    this.updateDropdowns(heroData[newSelected.heroID.value], this.state.maxFilter);//weapons[heroData[newSelected.heroID.value].weapontype]);
 
   }
 
-  updateDropdowns(newHero){
+  updateDropdowns(newHero, newMax){
     let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
                          "assist":{list: [], info: assists}, "special":{list: [], info: specials},
                          "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
@@ -260,23 +263,27 @@ class TicTacToeBoard extends React.Component{
                    };
 
 
-      console.log(dropTemp);
+
     // eslint-disable-next-line               
     for (let [key, value] of Object.entries(dropTemp)) {
-      this.fillDropdown(value.list, value.info, newHero);
+      this.fillDropdown(value.list, value.info, newHero, newMax);
     }
     
     this.setState({skillDropdowns: dropTemp});
     return dropTemp;
   }
 
-  fillDropdown(dropdownList, info, newHero){
+  fillDropdown(dropdownList, info, newHero, newMax){
     // eslint-disable-next-line
     for (let [key, value1] of Object.entries(info)) {
-      if (  !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
+      if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
         value1.prf === false || //if the prf key says false, then push to the list
-        ( !('users' in value1) || value1.users.includes( parseInt(newHero.id) ) ) ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
-        dropdownList.push({value: key, label: value1.name});
+        ( !('users' in value1) || value1.users.includes( parseInt(newHero.id) ) )  
+        ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
+          
+          if (!newMax || (  !('max' in value1) || value1.max  ) ){
+            dropdownList.push({value: key, label: value1.name});
+          }
       }
     }
 
@@ -308,10 +315,10 @@ class TicTacToeBoard extends React.Component{
 
 
     var newHero = heroData[e.value];
-    //console.log(newHero);
 
-    var updatedDropdowns = this.updateDropdowns(newHero); //only really updates the weaponlist for now
-  //  console.log(updatedDropdowns);
+
+    var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter); //only really updates the weaponlist for now
+
 
 
     let tSkills = {}; //Object.assign({}, this.state.heroSkills);
@@ -322,7 +329,7 @@ class TicTacToeBoard extends React.Component{
     tSkills["b"] = updatedDropdowns["b"].list.find(this.findMatchingValue, newHero.bskill);
     tSkills["c"] = updatedDropdowns["c"].list.find(this.findMatchingValue, newHero.cskill);
     tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findMatchingValue, newHero.sseal);
-   // console.log(tSkills);
+
     temp[this.state.playerSide][this.state.heroIndex].heroSkills = tSkills;
 
 
@@ -356,7 +363,11 @@ class TicTacToeBoard extends React.Component{
 
 
   }
+  onMaxFilterChange(e){
 
+    this.updateDropdowns(this.state.selectedHeroInfo, e.target.checked);
+    this.setState({maxFilter: e.target.checked});
+  }
 
 
 
@@ -424,7 +435,8 @@ class TicTacToeBoard extends React.Component{
         <td>
           <Skills
             gameState = {this.state}
-            skillChange = {this.onSkillChange} />
+            skillChange = {this.onSkillChange}
+            maxFilterChange = {this.onMaxFilterChange} />
         </td>
         <td>"Extra Info"</td>
       </tr>
