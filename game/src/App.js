@@ -136,12 +136,12 @@ class Skills extends React.Component{
   render(){
 
     let tbody = [];
-
+    console.log(this.props.gameState.selectedMember.heroSkills);
     const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
     const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"].value], 
                             assists[this.props.gameState.selectedMember.heroSkills["assist"].value], 
                             specials[this.props.gameState.selectedMember.heroSkills["special"].value],
-                            skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.a[this.props.gameState.selectedMember.heroSkills["b"].value], 
+                            skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.b[this.props.gameState.selectedMember.heroSkills["b"].value], 
                             skills.c[this.props.gameState.selectedMember.heroSkills["c"].value], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"].value]
     ];     
 
@@ -248,7 +248,7 @@ class TicTacToeBoard extends React.Component{
     this.setState({selectedHeroInfo: heroData[newSelected.heroID.value]});
 
 
-    this.setState({weaponlist: weapons[heroData[newSelected.heroID.value].weapontype]});
+    this.setState({weaponList: weapons[heroData[newSelected.heroID.value].weapontype]});
 
 
     this.updateDropdowns(heroData[newSelected.heroID.value], this.state.maxFilter);//weapons[heroData[newSelected.heroID.value].weapontype]);
@@ -340,8 +340,8 @@ class TicTacToeBoard extends React.Component{
 
     this.setState({selectedHeroInfo: heroData[newHero.id]});
 
-
-    this.setState({weaponlist: weapons[heroData[newHero.id].weapontype]});
+    //console.log(weapons[heroData[newHero.id].weapontype]);
+    this.setState({weaponList: weapons[heroData[newHero.id].weapontype]});
 
   }
 

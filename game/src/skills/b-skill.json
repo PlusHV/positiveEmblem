@@ -4,7 +4,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "",
-		"max": false
+		"max": true
 	},
 	"1": {
 		"name": "Aerobatics 1",
@@ -178,6 +178,7 @@
 		"name": "Beorc's Blessing",
 		"sp": 300,
 		"prf": true,
+		"users": [25],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -185,6 +186,7 @@
 		"name": "Binding Shield",
 		"sp": 300,
 		"prf": true,
+		"users": [255],
 		"type": "attack-count",
 		"max": true
 	},
@@ -276,6 +278,7 @@
 		"name": "Bushido",
 		"sp": 300,
 		"prf": true,
+		"users": [339],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -402,6 +405,7 @@
 		"name": "Chilling Seal",
 		"sp": 300,
 		"prf": true,
+		"users": [136],
 		"type": "turn-start",
 		"max": false
 	},
@@ -409,6 +413,7 @@
 		"name": "Crusader's Ward",
 		"sp": 300,
 		"prf": true,
+		"users": [364],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -577,6 +582,7 @@
 		"name": "Double Lion",
 		"sp": 300,
 		"prf": true,
+		"users": [53],
 		"type": "attack-count",
 		"max": true
 	},
@@ -724,6 +730,7 @@
 		"name": "Follow-Up Ring",
 		"sp": 200,
 		"prf": true,
+		"users": [9],
 		"type": "attack-count",
 		"max": true
 	},
@@ -731,6 +738,7 @@
 		"name": "Freezing Seal",
 		"sp": 300,
 		"prf": true,
+		"users": [157],
 		"type": "turn-start",
 		"max": true
 	},
@@ -850,6 +858,7 @@
 		"name": "Light and Dark",
 		"sp": 300,
 		"prf": true,
+		"users": [177],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -955,6 +964,7 @@
 		"name": "Lunar Brace",
 		"sp": 300,
 		"prf": true,
+		"users": [91],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -1137,6 +1147,7 @@
 		"name": "Recover Ring",
 		"sp": 200,
 		"prf": true,
+		"users": [12],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1200,6 +1211,7 @@
 		"name": "S Drink",
 		"sp": 300,
 		"prf": true,
+		"users": [207],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1270,6 +1282,7 @@
 		"name": "Sacae's Blessing",
 		"sp": 300,
 		"prf": true,
+		"users": [239],
 		"type": "attack-count",
 		"max": true
 	},
@@ -1438,6 +1451,7 @@
 		"name": "Solar Brace",
 		"sp": 300,
 		"prf": true,
+		"users": [103],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -1655,6 +1669,7 @@
 		"name": "Warp Powder",
 		"sp": 300,
 		"prf": true,
+		"users": [420],
 		"type": "movement",
 		"max": true
 	},
@@ -1788,6 +1803,7 @@
 		"name": "Yune's Whispers",
 		"sp": 300,
 		"prf": true,
+		"users": [263],
 		"type": "turn-start",
 		"max": true
 	}

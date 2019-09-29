@@ -4,7 +4,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "",
-		"max": false
+		"max": true
 	},	
 	"1": {
 		"name": "Air Orders 1",
@@ -346,6 +346,7 @@
 		"name": "Chaos Named",
 		"sp": 300,
 		"prf": true,
+		"users": [419],
 		"type": "turn-start",
 		"max": true
 	},
@@ -500,6 +501,7 @@
 		"name": "Divine Fang",
 		"sp": 300,
 		"prf": true,
+		"users": [276],
 		"type": "turn-start",
 		"max": true
 	},
@@ -808,6 +810,7 @@
 		"name": "Glare",
 		"sp": 300,
 		"prf": true,
+		"users": [278],
 		"type": "post-battle",
 		"max": true
 	},
@@ -983,6 +986,7 @@
 		"name": "Human Virtue",
 		"sp": 300,
 		"prf": true,
+		"users": [331],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1214,6 +1218,7 @@
 		"name": "Ostia's Pulse",
 		"sp": 300,
 		"prf": true,
+		"users": [147],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1431,6 +1436,7 @@
 		"name": "Solitary Dream",
 		"sp": 300,
 		"prf": true,
+		"users": [398],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1438,6 +1444,7 @@
 		"name": "Sparkling Boost",
 		"sp": 300,
 		"prf": true,
+		"users": [88],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1718,6 +1725,7 @@
 		"name": "Surtr's Menace",
 		"sp": 300,
 		"prf": true,
+		"users": [379],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1893,6 +1901,7 @@
 		"name": "Upheaval",
 		"sp": 300,
 		"prf": true,
+		"users": [85],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1900,6 +1909,7 @@
 		"name": "Vision of Arcadia",
 		"sp": 300,
 		"prf": true,
+		"users": [99],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1942,6 +1952,7 @@
 		"name": "With Everyone!",
 		"sp": 300,
 		"prf": true,
+		"users": [395],
 		"type": "turn-start",
 		"max": true
 	}

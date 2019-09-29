@@ -5,7 +5,8 @@
 		"range": 2,
 		"sp": 0,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"1": {
 		"name": "Absorb+",
@@ -13,7 +14,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"2": {
 		"name": "Absorb",
@@ -21,7 +23,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"3": {
 		"name": "Assault",
@@ -29,7 +32,8 @@
 		"range": 2,
 		"sp": 50,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"4": {
 		"name": "Candlelight+",
@@ -37,7 +41,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"5": {
 		"name": "Candlelight",
@@ -45,7 +50,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"6": {
 		"name": "Fear+",
@@ -53,7 +59,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"7": {
 		"name": "Fear",
@@ -61,7 +68,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"8": {
 		"name": "Flash+",
@@ -69,7 +77,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"9": {
 		"name": "Flash",
@@ -77,7 +86,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"10": {
 		"name": "Gjallarbrú",
@@ -86,7 +96,8 @@
 		"sp": 400,
 		"prf": true,
 		"user": [117],
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"11": {
 		"name": "Grandscratcher+",
@@ -94,7 +105,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"12": {
 		"name": "Grandscratcher",
@@ -102,7 +114,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"13": {
 		"name": "Gravity+",
@@ -110,7 +123,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"14": {
 		"name": "Gravity",
@@ -118,7 +132,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"15": {
 		"name": "Hliðskjálf",
@@ -127,7 +142,8 @@
 		"sp": 400,
 		"prf": true,
 		"user": [406],
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"16": {
 		"name": "Joyous Lantern+",
@@ -135,7 +151,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"17": {
 		"name": "Joyous Lantern",
@@ -143,7 +160,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"18": {
 		"name": "Kumade+",
@@ -151,7 +169,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"19": {
 		"name": "Kumade",
@@ -159,7 +178,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"20": {
 		"name": "Ovoid Staff+",
@@ -167,7 +187,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"21": {
 		"name": "Ovoid Staff",
@@ -175,7 +196,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"22": {
 		"name": "Pain+",
@@ -183,7 +205,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"23": {
 		"name": "Pain",
@@ -191,7 +214,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"24": {
 		"name": "Panic+",
@@ -199,7 +223,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"25": {
 		"name": "Panic",
@@ -207,7 +232,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"26": {
 		"name": "Sanngriðr",
@@ -216,7 +242,8 @@
 		"sp": 400,
 		"prf": true,
 		"user": [41],
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"27": {
 		"name": "Slow+",
@@ -224,7 +251,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"28": {
 		"name": "Slow",
@@ -232,7 +260,8 @@
 		"range": 2,
 		"sp": 150,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"29": {
 		"name": "Thökk",
@@ -241,7 +270,8 @@
 		"sp": 400,
 		"prf": true,
 		"user": [226],
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"30": {
 		"name": "Toasty Skewer+",
@@ -249,7 +279,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"31": {
 		"name": "Toasty Skewer",
@@ -257,7 +288,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"32": {
 		"name": "Trilemma+",
@@ -265,7 +297,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"33": {
 		"name": "Trilemma",
@@ -273,7 +306,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"34": {
 		"name": "Umbra Burst",
@@ -281,7 +315,8 @@
 		"range": 2,
 		"sp": 0,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	},
 	"35": {
 		"name": "Witchy Wand+",
@@ -289,7 +324,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": true
 	},
 	"36": {
 		"name": "Witchy Wand",
@@ -297,6 +333,7 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "staff"
+		"type": "staff",
+		"max": false
 	}
 }

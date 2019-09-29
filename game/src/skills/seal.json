@@ -4,7 +4,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "",
-		"max": false
+		"max": true
 	},	
 	"1": {	
 		"name": "Aerobatics 1",
@@ -874,6 +874,7 @@
 		"name": "Embla's Ward",
 		"sp": 0,
 		"prf": true,
+		"users": [],
 		"type": "damage-calc",
 		"max": false
 	},
@@ -1490,6 +1491,7 @@
 		"name": "Múspellflame",
 		"sp": 0,
 		"prf": true,
+		"users": [],
 		"type": "damage-calc",
 		"max": false
 	},
@@ -1722,6 +1724,7 @@
 		"name": "Røkkr",
 		"sp": 0,
 		"prf": true,
+		"users": [],
 		"type": "damage-calc",
 		"max": false
 	},

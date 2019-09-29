@@ -5,7 +5,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"1": {
 		"name": "Adult (Armored)",
@@ -13,7 +14,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"2": {
 		"name": "Adult (Cavalry)",
@@ -21,7 +23,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"3": {
 		"name": "Adult (Flier)",
@@ -29,7 +32,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"4": {
 		"name": "Adult (Infantry)",
@@ -37,7 +41,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"5": {
 		"name": "Brazen Cat Fang",
@@ -46,7 +51,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [213],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"6": {
 		"name": "Bunny Fang",
@@ -55,7 +61,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [416],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"7": {
 		"name": "Covert Cat Fang",
@@ -64,7 +71,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [315],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"8": {
 		"name": "Fledgling (Flier)",
@@ -72,7 +80,8 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"9": {
 		"name": "Foxkit Fang",
@@ -81,7 +90,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [350],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"10": {
 		"name": "Hatchling (Flier)",
@@ -89,7 +99,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"11": {
 		"name": "Hawk King Claw",
@@ -98,7 +109,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [392],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"12": {
 		"name": "Heron Wing",
@@ -107,7 +119,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [204, 321],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"13": {
 		"name": "Kitsune Fang",
@@ -116,7 +129,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [180],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"14": {
 		"name": "Lion King Fang",
@@ -125,7 +139,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [37],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"15": {
 		"name": "Raven King Beak",
@@ -134,7 +149,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [275],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"16": {
 		"name": "Sabertooth Fang",
@@ -143,7 +159,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [270],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"17": {
 		"name": "Taguel Fang",
@@ -152,7 +169,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [308],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"18": {
 		"name": "Whelp (Armored)",
@@ -160,7 +178,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"19": {
 		"name": "Whelp (Cavalry)",
@@ -168,7 +187,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"20": {
 		"name": "Whelp (Infantry)",
@@ -176,7 +196,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"21": {
 		"name": "Wolf Queen Fang",
@@ -185,7 +206,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [278],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"22": {
 		"name": "Wolfpup Fang",
@@ -194,7 +216,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [405],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"23": {
 		"name": "Wolfskin Fang",
@@ -203,7 +226,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [190],
-		"type": "beast"
+		"type": "beast",
+		"max": true
 	},
 	"24": {
 		"name": "Yearling (Arm.)",
@@ -211,7 +235,8 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"25": {
 		"name": "Yearling (Cavalry)",
@@ -219,7 +244,8 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	},
 	"26": {
 		"name": "Yearling (Infantry)",
@@ -227,6 +253,7 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "beast"
+		"type": "beast",
+		"max": false
 	}
 }

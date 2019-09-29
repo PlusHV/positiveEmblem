@@ -5,7 +5,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"1": {
 		"name": "Alondite",
@@ -14,7 +15,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [420, 28],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"2": {
 		"name": "Amiti",
@@ -23,7 +25,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [95],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"3": {
 		"name": "Ardent Durandal",
@@ -32,7 +35,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [99],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"4": {
 		"name": "Armorslayer+",
@@ -40,7 +44,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"5": {
 		"name": "Armorslayer",
@@ -48,7 +53,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"6": {
 		"name": "Armorsmasher+",
@@ -56,7 +62,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"7": {
 		"name": "Armorsmasher",
@@ -64,7 +71,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"8": {
 		"name": "Audhulma",
@@ -73,7 +81,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [176],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"9": {
 		"name": "Ayra's Blade",
@@ -82,7 +91,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [15],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"10": {
 		"name": "Barrier Blade+",
@@ -90,7 +100,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"11": {
 		"name": "Barrier Blade",
@@ -98,7 +109,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"12": {
 		"name": "Beloved Zofia",
@@ -107,7 +119,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [52],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"13": {
 		"name": "Binding Blade",
@@ -116,7 +129,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [333],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"14": {
 		"name": "Blazing Durandal",
@@ -125,7 +139,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [332, 101],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"15": {
 		"name": "Brave Sword+",
@@ -133,7 +148,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"16": {
 		"name": "Brave Sword",
@@ -141,7 +157,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"17": {
 		"name": "Bull Blade",
@@ -150,7 +167,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [36],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"18": {
 		"name": "Cake Cutter+",
@@ -158,7 +176,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"19": {
 		"name": "Cake Cutter",
@@ -166,7 +185,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"20": {
 		"name": "Creator Sword",
@@ -175,7 +195,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [32, 33],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"21": {
 		"name": "Dark Greatsword",
@@ -184,7 +205,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [361],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"22": {
 		"name": "Dark Mystletainn",
@@ -193,7 +215,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [10, 93],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"23": {
 		"name": "Divine Tyrfing",
@@ -202,7 +225,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [364, 349],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"24": {
 		"name": "Dracofalchion",
@@ -211,7 +235,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [5],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"25": {
 		"name": "Dragonbind",
@@ -220,7 +245,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [331],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"26": {
 		"name": "Durandal",
@@ -229,7 +255,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [101],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"27": {
 		"name": "Eckesachs",
@@ -238,7 +265,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [421],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"28": {
 		"name": "Exalted Falchion",
@@ -247,7 +275,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [255],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"29": {
 		"name": "Falchion (Awakening)",
@@ -256,7 +285,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [254, 230, 56],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"30": {
 		"name": "Falchion (Gaiden)",
@@ -265,7 +295,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [4],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"31": {
 		"name": "Falchion (Mystery)",
@@ -274,7 +305,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [253],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"32": {
 		"name": "Firesweep S+",
@@ -282,7 +314,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"33": {
 		"name": "Firesweep S",
@@ -290,7 +323,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"34": {
 		"name": "Fólkvangr",
@@ -299,7 +333,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [2],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"35": {
 		"name": "Geishun+",
@@ -307,7 +342,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"36": {
 		"name": "Geishun",
@@ -315,7 +351,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"37": {
 		"name": "Gjöll",
@@ -324,7 +361,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [157],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"38": {
 		"name": "Gladiator's Blade",
@@ -333,7 +371,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [296],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"39": {
 		"name": "Golden Dagger",
@@ -342,7 +381,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [340],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"40": {
 		"name": "Hana's Katana",
@@ -351,7 +391,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [141],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"41": {
 		"name": "Heart's Blade+",
@@ -359,7 +400,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"42": {
 		"name": "Heart's Blade",
@@ -367,7 +409,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"43": {
 		"name": "Hikami",
@@ -376,7 +419,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [137],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"44": {
 		"name": "Hinata's Katana",
@@ -385,7 +429,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [153],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"45": {
 		"name": "Iron Sword",
@@ -393,7 +438,8 @@
 		"range": 1,
 		"sp":50,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"46": {
 		"name": "Kadomatsu+",
@@ -401,7 +447,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"47": {
 		"name": "Kadomatsu",
@@ -409,7 +456,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"48": {
 		"name": "Killing Edge+",
@@ -417,7 +465,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"49": {
 		"name": "Killing Edge",
@@ -425,7 +474,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"50": {
 		"name": "Laevatein",
@@ -434,7 +484,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [202],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"51": {
 		"name": "Light Brand",
@@ -443,7 +494,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [207],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"52": {
 		"name": "Meisterschwert",
@@ -452,7 +504,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [320],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"53": {
 		"name": "Missiletainn",
@@ -461,7 +514,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [305],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"54": {
 		"name": "Mystletainn",
@@ -470,7 +524,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [93],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"55": {
 		"name": "Nameless Blade",
@@ -479,7 +534,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [116, 186],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"56": {
 		"name": "Níu",
@@ -488,7 +544,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [199],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"57": {
 		"name": "Panther Sword",
@@ -497,7 +554,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [374],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"58": {
 		"name": "Petal Parasol+",
@@ -505,7 +563,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"59": {
 		"name": "Petal Parasol",
@@ -513,7 +572,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"60": {
 		"name": "Ragnell",
@@ -522,7 +582,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [163, 164],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"61": {
 		"name": "Raijinto",
@@ -531,7 +592,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [337, 339],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"62": {
 		"name": "Regal Blade",
@@ -540,7 +602,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [224],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"63": {
 		"name": "Resolute Blade",
@@ -549,7 +612,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [260],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"64": {
 		"name": "Rowdy Sword",
@@ -558,7 +622,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"65": {
 		"name": "Royal Sword",
@@ -567,7 +632,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [237],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"66": {
 		"name": "Ruby Sword+",
@@ -575,7 +641,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"67": {
 		"name": "Ruby Sword",
@@ -583,7 +650,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"68": {
 		"name": "Safeguard+",
@@ -591,7 +659,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"69": {
 		"name": "Safeguard",
@@ -599,7 +668,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"70": {
 		"name": "Sandfort Spade+",
@@ -607,7 +677,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"71": {
 		"name": "Sandfort Spade",
@@ -615,7 +686,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"72": {
 		"name": "Scarlet Sword",
@@ -624,7 +696,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [281],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"73": {
 		"name": "Sealed Falchion",
@@ -633,7 +706,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [56, 58, 230, 254],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"74": {
 		"name": "Selena's Blade",
@@ -642,7 +716,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [348],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"75": {
 		"name": "Shadow Sword",
@@ -651,7 +726,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [247],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"76": {
 		"name": "Siegfried",
@@ -660,7 +736,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [413],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"77": {
 		"name": "Sieglinde",
@@ -669,7 +746,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [92],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"78": {
 		"name": "Silver Sword+",
@@ -677,7 +755,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"79": {
 		"name": "Silver Sword",
@@ -685,7 +764,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"80": {
 		"name": "Silverbrand",
@@ -694,7 +774,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [352],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"81": {
 		"name": "Skuld",
@@ -703,7 +784,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [300],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"82": {
 		"name": "Slaying Edge+",
@@ -711,7 +793,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"83": {
 		"name": "Slaying Edge",
@@ -719,7 +802,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"84": {
 		"name": "Sökkvabekkr",
@@ -728,7 +812,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"85": {
 		"name": "Sol Katti",
@@ -737,7 +822,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [242],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"86": {
 		"name": "Solitary Blade",
@@ -746,7 +832,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [227],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"87": {
 		"name": "Steel Sword",
@@ -754,7 +841,8 @@
 		"range": 1,
 		"sp":100,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"88": {
 		"name": "Storm Sieglinde",
@@ -763,7 +851,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [91],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"89": {
 		"name": "Tyrfing",
@@ -772,7 +861,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [349],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"90": {
 		"name": "Umbra Burst",
@@ -780,7 +870,8 @@
 		"range": 1,
 		"sp":0,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"91": {
 		"name": "Vassal's Blade",
@@ -789,7 +880,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [187],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"92": {
 		"name": "Whitewing Blade",
@@ -798,7 +890,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [307],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"93": {
 		"name": "Wing Sword",
@@ -807,7 +900,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [35],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"94": {
 		"name": "Wo Dao+",
@@ -815,7 +909,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"95": {
 		"name": "Wo Dao",
@@ -823,7 +918,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	},
 	"96": {
 		"name": "Yato",
@@ -832,7 +928,8 @@
 		"sp":400,
 		"prf": true,
 		"users": [71],
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"97": {
 		"name": "Zanbato+",
@@ -840,7 +937,8 @@
 		"range": 1,
 		"sp":300,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": true
 	},
 	"98": {
 		"name": "Zanbato",
@@ -848,7 +946,8 @@
 		"range": 1,
 		"sp":200,
 		"prf": false,
-		"type": "sword"
+		"type": "sword",
+		"max": false
 	}
 }
 

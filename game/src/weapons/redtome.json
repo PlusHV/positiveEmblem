@@ -5,7 +5,8 @@
 		"range": 2,
 		"sp": 0,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"1": {
 		"name": "Aversa's Night",
@@ -14,7 +15,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [14],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"2": {
 		"name": "Bolganone+",
@@ -22,7 +24,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"3": {
 		"name": "Bolganone",
@@ -30,7 +33,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"4": {
 		"name": "Book of Dreams",
@@ -39,7 +43,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [39],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"5": {
 		"name": "Brynhildr",
@@ -48,7 +53,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [211],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"6": {
 		"name": "Candelabra+",
@@ -56,7 +62,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"7": {
 		"name": "Candelabra",
@@ -64,7 +71,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"8": {
 		"name": "Cymbeline",
@@ -73,7 +81,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [347],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"9": {
 		"name": "Dawn Suzu",
@@ -82,7 +91,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [264],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"10": {
 		"name": "Elfire",
@@ -90,7 +100,8 @@
 		"range": 2,
 		"sp": 100,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"11": {
 		"name": "Eternal Tome",
@@ -99,7 +110,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [369],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"12": {
 		"name": "Fenrir+",
@@ -107,7 +119,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"13": {
 		"name": "Fenrir",
@@ -115,7 +128,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"14": {
 		"name": "Fire",
@@ -123,7 +137,8 @@
 		"range": 2,
 		"sp": 50,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"15": {
 		"name": "Flux",
@@ -131,7 +146,8 @@
 		"range": 2,
 		"sp": 50,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"16": {
 		"name": "Forblaze",
@@ -140,7 +156,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [218],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"17": {
 		"name": "Fruit of Iðunn",
@@ -149,7 +166,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [385],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"18": {
 		"name": "Gleipnir",
@@ -158,7 +176,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [89],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"19": {
 		"name": "Grima's Truth",
@@ -167,7 +186,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [271],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"20": {
 		"name": "Grimoire",
@@ -176,7 +196,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [292],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"21": {
 		"name": "Hermit's Tome",
@@ -185,7 +206,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [314],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"22": {
 		"name": "Imhullu",
@@ -194,7 +216,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [131],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"23": {
 		"name": "Keen Rauðrwolf+",
@@ -202,7 +225,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"24": {
 		"name": "Keen Rauðrwolf",
@@ -210,7 +234,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"25": {
 		"name": "Loptous",
@@ -219,7 +244,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [179],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"26": {
 		"name": "Loyal Wreath+",
@@ -227,7 +253,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"27": {
 		"name": "Loyal Wreath",
@@ -235,7 +262,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"28": {
 		"name": "Mögþrasir",
@@ -244,7 +272,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [169],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"29": {
 		"name": "Múspell Fireposy",
@@ -253,7 +282,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [390],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"30": {
 		"name": "Naglfar",
@@ -262,7 +292,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [245],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"31": {
 		"name": "Ragnarok",
@@ -271,7 +302,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [21],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"32": {
 		"name": "Rauðrblade+",
@@ -279,7 +311,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"33": {
 		"name": "Rauðrblade",
@@ -287,7 +320,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"34": {
 		"name": "Rauðrfox+",
@@ -295,7 +329,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"35": {
 		"name": "Rauðrfox",
@@ -303,7 +338,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"36": {
 		"name": "Rauðrowl+",
@@ -311,7 +347,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"37": {
 		"name": "Rauðrowl",
@@ -319,7 +356,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"38": {
 		"name": "Rauðrraven+",
@@ -327,7 +365,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"39": {
 		"name": "Rauðrraven",
@@ -335,7 +374,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"40": {
 		"name": "Rauðrwolf+",
@@ -343,7 +383,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"41": {
 		"name": "Rauðrwolf",
@@ -351,7 +392,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"42": {
 		"name": "Reese's Tome",
@@ -360,7 +402,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [188],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"43": {
 		"name": "Ruin",
@@ -368,7 +411,8 @@
 		"range": 2,
 		"sp": 100,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"44": {
 		"name": "Tharja's Hex",
@@ -377,7 +421,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [389],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"45": {
 		"name": "Tomato Tome+",
@@ -385,7 +430,8 @@
 		"range": 2,
 		"sp": 300,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	},
 	"46": {
 		"name": "Tomato Tome",
@@ -393,7 +439,8 @@
 		"range": 2,
 		"sp": 200,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"47": {
 		"name": "Umbra Burst",
@@ -401,7 +448,8 @@
 		"range": 2,
 		"sp": 0,
 		"prf": false,
-		"type": "redtome"
+		"type": "redtome",
+		"max": false
 	},
 	"48": {
 		"name": "Valflame",
@@ -410,6 +458,7 @@
 		"sp": 400,
 		"prf": true,
 		"users": [12],
-		"type": "redtome"
+		"type": "redtome",
+		"max": true
 	}
 }

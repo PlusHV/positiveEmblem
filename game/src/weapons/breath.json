@@ -5,7 +5,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 
 	"1": {
@@ -15,7 +16,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [127],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"2": {
 		"name": "Breath of Fog",
@@ -24,7 +26,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [394, 396],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"3": {
 		"name": "Dark Breath+",
@@ -32,7 +35,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"4": {
 		"name": "Dark Breath",
@@ -40,7 +44,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"5": {
 		"name": "Demonic Breath",
@@ -49,7 +54,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [160],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"6": {
 		"name": "Divine Breath",
@@ -58,7 +64,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [276],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"7": {
 		"name": "Divine Mist",
@@ -67,7 +74,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [395],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"8": {
 		"name": "Draconic Rage",
@@ -76,7 +84,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [68, 69],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"9": {
 		"name": "Expiration",
@@ -85,7 +94,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [324, 325],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"10": {
 		"name": "Fell Breath",
@@ -94,7 +104,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [85],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"11": {
 		"name": "Fire Breath+",
@@ -102,7 +113,8 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"12": {
 		"name": "Fire Breath",
@@ -110,7 +122,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"13": {
 		"name": "Flametongue+",
@@ -118,7 +131,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"14": {
 		"name": "Flametongue",
@@ -126,7 +140,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"15": {
 		"name": "Glittering Breath+",
@@ -134,7 +149,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"16": {
 		"name": "Glittering Breath",
@@ -142,7 +158,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"17": {
 		"name": "Great Flame",
@@ -151,7 +168,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [273],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"18": {
 		"name": "Light Breath+",
@@ -159,7 +177,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"19": {
 		"name": "Light Breath",
@@ -167,7 +186,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"20": {
 		"name": "Lightning Breath+",
@@ -175,7 +195,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"21": {
 		"name": "Lightning Breath",
@@ -183,7 +204,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"22": {
 		"name": "Oracle's Breath",
@@ -192,7 +214,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [277],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"23": {
 		"name": "Razing Breath",
@@ -201,7 +224,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [398],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"24": {
 		"name": "Savage Breath",
@@ -210,7 +234,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [74],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"25": {
 		"name": "Spirit Breath",
@@ -219,7 +244,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [274],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"26": {
 		"name": "Sublime Surge",
@@ -228,7 +254,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [373],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"27": {
 		"name": "Summer's Breath",
@@ -237,7 +264,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [393],
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"28": {
 		"name": "Umbra Burst",
@@ -245,7 +273,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	},
 	"29": {
 		"name": "Water Breath+",
@@ -253,7 +282,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": true
 	},
 	"30": {
 		"name": "Water Breath",
@@ -261,7 +291,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "breath"
+		"type": "breath",
+		"max": false
 	}
 	
 }

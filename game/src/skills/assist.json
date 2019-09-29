@@ -4,336 +4,387 @@
 		"sp": 0,
 		"range": 1,
 		"prf": false,
-		"type": ""
+		"type": "",
+		"max": true
 	},
 	"1": {
 		"name": "Ardent Sacrifice",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "health"
+		"type": "health",
+		"max": true
 	},
 	"2": {
 		"name": "Dance",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "dance"
+		"type": "dance",
+		"max": true
 	},
 	"3": {
 		"name": "Draw Back",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	},
 	"4": {
 		"name": "Future Vision",
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"type": "movement"
+		"users": [231],
+		"type": "movement",
+		"max": true
 	},
 	"5": {
 		"name": "Gray Waves",
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"type": "dance"
+		"users": [20],
+		"type": "dance",
+		"max": true
 	},
 	"6": {
 		"name": "Harsh Command+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"7": {
 		"name": "Harsh Command",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"8": {
 		"name": "Heal",
 		"sp": 50,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"9": {
 		"name": "Martyr+",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": true
 	},
 	"10": {
 		"name": "Martyr",
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"11": {
 		"name": "Mend",
 		"sp": 100,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"12": {
 		"name": "Physic+",
 		"sp": 300,
 		"range": 2,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": true
 	},
 	"13": {
 		"name": "Physic",
 		"sp": 200,
 		"range": 2,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"14": {
 		"name": "Pivot",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	},
 	"15": {
 		"name": "Rally Atk/Def+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"16": {
 		"name": "Rally Atk/Def",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"17": {
 		"name": "Rally Atk/Res",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"18": {
 		"name": "Rally Atk/Spd+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"19": {
 		"name": "Rally Atk/Spd",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"20": {
 		"name": "Rally Attack",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"21": {
 		"name": "Rally Def/Res+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"22": {
 		"name": "Rally Def/Res",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"23": {
 		"name": "Rally Defense",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"24": {
 		"name": "Rally Resistance",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"25": {
 		"name": "Rally Spd/Def+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"26": {
 		"name": "Rally Spd/Def",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"27": {
 		"name": "Rally Spd/Res+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"28": {
 		"name": "Rally Spd/Res",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"29": {
 		"name": "Rally Speed",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"30": {
 		"name": "Rally Up Atk+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"31": {
 		"name": "Rally Up Atk",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"32": {
 		"name": "Rally Up Res+",
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"33": {
 		"name": "Rally Up Res",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally"
+		"type": "rally",
+		"max": true
 	},
 	"34": {
 		"name": "Reciprocal Aid",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "health"
+		"type": "health",
+		"max": true
 	},
 	"35": {
 		"name": "Reconcile",
 		"sp": 100,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"36": {
 		"name": "Recover+",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": true
 	},
 	"37": {
 		"name": "Recover",
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"38": {
 		"name": "Rehabilitate+",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": true
 	},
 	"39": {
 		"name": "Rehabilitate",
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"40": {
 		"name": "Reposition",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	},
 	"41": {
 		"name": "Restore+",
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": true
 	},
 	"42": {
 		"name": "Restore",
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal"
+		"type": "heal",
+		"max": false
 	},
 	"43": {
 		"name": "Sacrifice",
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"type": "health"
+		"users": [262, 263],
+		"type": "health",
+		"max": true
 	},
 	"44": {
 		"name": "Shove",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	},
 	"45": {
 		"name": "Sing",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "dance"
+		"type": "dance",
+		"max": true
 	},
 	"46": {
 		"name": "Smite",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	},
 	"47": {
 		"name": "Swap",
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement"
+		"type": "movement",
+		"max": true
 	}
 
 }

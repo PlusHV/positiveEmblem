@@ -5,7 +5,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"1": {
 		"name": "Ardent Service+",
@@ -13,7 +14,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"2": {
 		"name": "Ardent Service",
@@ -21,7 +23,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"3": {
 		"name": "Armads",
@@ -30,7 +33,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [145],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"4": {
 		"name": "Axe of Virility",
@@ -39,7 +43,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [23],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"5": {
 		"name": "Basilikos",
@@ -48,7 +53,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [316,221],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"6": {
 		"name": "Beach Banner+",
@@ -56,7 +62,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"7": {
 		"name": "Beach Banner",
@@ -64,7 +71,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"8": {
 		"name": "Berserk Armads",
@@ -73,7 +81,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [145,146],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"9": {
 		"name": "Beruka's Axe",
@@ -82,7 +91,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [27],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"10": {
 		"name": "Brave Axe+",
@@ -90,7 +100,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"11": {
 		"name": "Brave Axe",
@@ -98,7 +109,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"12": {
 		"name": "Býleistr",
@@ -107,7 +119,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [148],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"13": {
 		"name": "Camilla's Axe",
@@ -116,7 +129,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [13],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"14": {
 		"name": "Carrot Axe+",
@@ -124,7 +138,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"15": {
 		"name": "Carrot Axe",
@@ -132,7 +147,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"16": {
 		"name": "Cherche's Axe",
@@ -141,7 +157,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [55],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"17": {
 		"name": "Draconic Poleax",
@@ -150,7 +167,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [399],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"18": {
 		"name": "Eldhrímnir",
@@ -159,7 +177,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [113],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"19": {
 		"name": "Emerald Axe+",
@@ -167,7 +186,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"20": {
 		"name": "Emerald Axe",
@@ -175,7 +195,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"21": {
 		"name": "Faithful Axe+",
@@ -183,7 +204,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"22": {
 		"name": "Faithful Axe",
@@ -191,7 +213,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"23": {
 		"name": "Freikugel",
@@ -200,7 +223,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [152],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"24": {
 		"name": "Garm",
@@ -209,7 +233,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [105],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"25": {
 		"name": "Giant Spoon+",
@@ -217,7 +242,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"26": {
 		"name": "Giant Spoon",
@@ -225,7 +251,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"27": {
 		"name": "Glitnir",
@@ -234,7 +261,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"28": {
 		"name": "Grado Poleax",
@@ -243,7 +271,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [7],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"29": {
 		"name": "Hack-o'-Lantern+",
@@ -251,7 +280,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"30": {
 		"name": "Hack-o'-Lantern",
@@ -259,7 +289,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"31": {
 		"name": "Hagoita+",
@@ -267,7 +298,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"32": {
 		"name": "Hagoita",
@@ -275,7 +307,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"33": {
 		"name": "Hammer+",
@@ -283,7 +316,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"34": {
 		"name": "Hammer",
@@ -291,7 +325,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"35": {
 		"name": "Handbell+",
@@ -299,7 +334,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"36": {
 		"name": "Handbell",
@@ -307,7 +343,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"37": {
 		"name": "Hauteclere",
@@ -316,7 +353,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [267,265],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"38": {
 		"name": "Hel Scythe",
@@ -325,7 +363,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"39": {
 		"name": "Iron Axe",
@@ -334,7 +373,8 @@
 
 		"sp": 50,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"40": {
 		"name": "Killer Axe+",
@@ -342,7 +382,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"41": {
 		"name": "Killer Axe",
@@ -350,7 +391,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"42": {
 		"name": "Legion's Axe+",
@@ -358,7 +400,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"43": {
 		"name": "Legion's Axe",
@@ -366,7 +409,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"44": {
 		"name": "Lilith Floatie+",
@@ -374,7 +418,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"45": {
 		"name": "Lilith Floatie",
@@ -382,7 +427,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"46": {
 		"name": "Melon Crusher+",
@@ -390,7 +436,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"47": {
 		"name": "Melon Crusher",
@@ -398,7 +445,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"48": {
 		"name": "Nóatún",
@@ -407,7 +455,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [8],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"49": {
 		"name": "Poleaxe+",
@@ -415,7 +464,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"50": {
 		"name": "Poleaxe",
@@ -423,7 +473,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"51": {
 		"name": "Sack o' Gifts+",
@@ -431,7 +482,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"52": {
 		"name": "Sack o' Gifts",
@@ -439,7 +491,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"53": {
 		"name": "Shoreline Rake+",
@@ -447,7 +500,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"54": {
 		"name": "Shoreline Rake",
@@ -455,7 +509,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"55": {
 		"name": "Silver Axe+",
@@ -463,7 +518,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"56": {
 		"name": "Silver Axe",
@@ -471,7 +527,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"57": {
 		"name": "Sinmara",
@@ -480,7 +537,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [379],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"58": {
 		"name": "Slaying Axe+",
@@ -488,7 +546,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"59": {
 		"name": "Slaying Axe",
@@ -496,7 +555,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"60": {
 		"name": "Slaying Hammer+",
@@ -504,7 +564,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"61": {
 		"name": "Slaying Hammer",
@@ -512,7 +573,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"62": {
 		"name": "Steel Axe",
@@ -521,7 +583,8 @@
 
 		"sp": 100,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"63": {
 		"name": "Stout Tomahawk",
@@ -530,7 +593,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [83],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"64": {
 		"name": "Thunder Armads",
@@ -539,7 +603,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [147],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"65": {
 		"name": "Umbra Burst",
@@ -547,7 +612,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"66": {
 		"name": "Urvan",
@@ -556,7 +622,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [161],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"67": {
 		"name": "Urðr",
@@ -565,7 +632,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [18],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"68": {
 		"name": "Victorious Axe",
@@ -574,7 +642,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [86],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"69": {
 		"name": "Wo Gùn+",
@@ -582,7 +651,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	},
 	"70": {
 		"name": "Wo Gùn",
@@ -590,7 +660,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "axe"
+		"type": "axe",
+		"max": false
 	},
 	"71": {
 		"name": "Wolf Berg",
@@ -599,7 +670,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [409],
-		"type": "axe"
+		"type": "axe",
+		"max": true
 	}
 
 }

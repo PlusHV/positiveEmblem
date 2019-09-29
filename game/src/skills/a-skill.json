@@ -4,7 +4,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "",
-		"max": false
+		"max": true
 	},
 	"1": {
 		"name": "AR-D Atk/Res 1",
@@ -990,6 +990,7 @@
 		"name": "Dragonskin",
 		"sp": 300,
 		"prf": true,
+		"users": [325],
 		"type": "conditional-stat",
 		"max": true
 	},
@@ -1354,6 +1355,7 @@
 		"name": "Laws of Sacae",
 		"sp": 300,
 		"prf": true,
+		"users": [243],
 		"type": "conditional-stat",
 		"max": true
 	},
@@ -1417,6 +1419,7 @@
 		"name": "Ostian Counter",
 		"sp": 350,
 		"prf": true,
+		"users": [144],
 		"type": "attack-count",
 		"max": true
 	},
@@ -1487,6 +1490,7 @@
 		"name": "Scendscale",
 		"sp": 300,
 		"prf": true,
+		"users": [5],
 		"type": "damage-calc",
 		"max": true
 	},

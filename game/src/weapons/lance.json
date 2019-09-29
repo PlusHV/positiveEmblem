@@ -5,7 +5,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"1": {
 		"name": "Barrier Lance+",
@@ -13,7 +14,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"2": {
 		"name": "Barrier Lance",
@@ -21,7 +23,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"3": {
 		"name": "Berkut's Lance+",
@@ -29,7 +32,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"4": {
 		"name": "Berkut's Lance",
@@ -37,7 +41,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"5": {
 		"name": "Brave Lance+",
@@ -45,7 +50,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"6": {
 		"name": "Brave Lance",
@@ -53,7 +59,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"7": {
 		"name": "Bright Naginata",
@@ -62,7 +69,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [360],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"8": {
 		"name": "Bull Spear",
@@ -71,7 +79,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [377],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"9": {
 		"name": "Carrot Lance+",
@@ -79,7 +88,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"10": {
 		"name": "Carrot Lance",
@@ -87,7 +97,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"11": {
 		"name": "Casa Blanca+",
@@ -95,7 +106,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"12": {
 		"name": "Casa Blanca",
@@ -103,7 +115,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"13": {
 		"name": "Cursed Lance",
@@ -112,7 +125,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [404],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"14": {
 		"name": "Dauntless Lance",
@@ -121,7 +135,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [282],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"15": {
 		"name": "Daybreak Lance",
@@ -130,7 +145,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [236],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"16": {
 		"name": "Deft Harpoon+",
@@ -138,7 +154,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"17": {
 		"name": "Deft Harpoon",
@@ -146,7 +163,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"18": {
 		"name": "Fensalir",
@@ -155,7 +173,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [355],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"19": {
 		"name": "Festive Siegmund",
@@ -164,7 +183,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [106],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"20": {
 		"name": "Firesweep L+",
@@ -172,7 +192,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"21": {
 		"name": "Firesweep Lance",
@@ -180,7 +201,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"22": {
 		"name": "First Bite+",
@@ -188,7 +210,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"23": {
 		"name": "First Bite",
@@ -196,7 +219,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"24": {
 		"name": "Flame Siegmund",
@@ -205,7 +229,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [104, 103],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"25": {
 		"name": "Flashing Carrot+",
@@ -213,7 +238,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"26": {
 		"name": "Flashing Carrot",
@@ -221,7 +247,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"27": {
 		"name": "Florina's Lance",
@@ -230,7 +257,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [122],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"28": {
 		"name": "Gáe Bolg",
@@ -239,7 +267,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [313],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"29": {
 		"name": "Geirskögul",
@@ -248,7 +277,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [229],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"30": {
 		"name": "Gradivus",
@@ -257,7 +287,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [142, 45],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"31": {
 		"name": "Harmonic Lance+",
@@ -265,7 +296,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"32": {
 		"name": "Harmonic Lance",
@@ -273,7 +305,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"33": {
 		"name": "Heavy Spear+",
@@ -281,7 +314,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"34": {
 		"name": "Heavy Spear",
@@ -289,7 +323,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"35": {
 		"name": "Hinoka's Spear",
@@ -298,7 +333,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [156],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"36": {
 		"name": "Iron Lance",
@@ -306,7 +342,8 @@
 		"range": 1,
 		"sp": 50,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"37": {
 		"name": "It's Curtains...+",
@@ -314,7 +351,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"38": {
 		"name": "It's Curtains...",
@@ -322,7 +360,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"39": {
 		"name": "Killer Lance+",
@@ -330,7 +369,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"40": {
 		"name": "Killer Lance",
@@ -338,7 +378,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"41": {
 		"name": "Kriemhild",
@@ -347,7 +388,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [26],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"42": {
 		"name": "Leiptr",
@@ -356,7 +398,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [119],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"43": {
 		"name": "Lofty Blossoms+",
@@ -364,7 +407,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"44": {
 		"name": "Lofty Blossoms",
@@ -372,7 +416,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"45": {
 		"name": "Loyal Greatlance",
@@ -381,7 +426,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [304],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"46": {
 		"name": "Luncheon Lance+",
@@ -389,7 +435,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"47": {
 		"name": "Luncheon Lance",
@@ -397,7 +444,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"48": {
 		"name": "Maltet",
@@ -406,7 +454,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [144],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"49": {
 		"name": "Ninis's Ice Lance",
@@ -415,7 +464,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [102],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"50": {
 		"name": "Noble Lance",
@@ -424,7 +474,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [80],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"51": {
 		"name": "Oboro's Spear",
@@ -433,7 +484,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [294],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"52": {
 		"name": "Panther Lance",
@@ -442,7 +494,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [1],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"53": {
 		"name": "Peri's Lance",
@@ -451,7 +504,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [310],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"54": {
 		"name": "Reprisal Lance+",
@@ -459,7 +513,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"55": {
 		"name": "Reprisal Lance",
@@ -467,7 +522,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"56": {
 		"name": "Rhomphaia",
@@ -476,7 +532,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [60],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"57": {
 		"name": "Ridersbane+",
@@ -484,7 +541,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"58": {
 		"name": "Ridersbane",
@@ -492,7 +550,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"59": {
 		"name": "Sapphire Lance+",
@@ -500,7 +559,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"60": {
 		"name": "Sapphire Lance",
@@ -508,7 +568,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"61": {
 		"name": "Scythe of Sariel",
@@ -517,7 +578,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [76],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"62": {
 		"name": "Shanna's Lance",
@@ -526,7 +588,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [354],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"63": {
 		"name": "Shell Lance+",
@@ -534,7 +597,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"64": {
 		"name": "Shell Lance",
@@ -542,7 +606,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"65": {
 		"name": "Siegmund",
@@ -551,7 +616,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [104],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"66": {
 		"name": "Silver Lance+",
@@ -559,7 +625,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"67": {
 		"name": "Silver Lance",
@@ -567,7 +634,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"68": {
 		"name": "Slaying Lance+",
@@ -575,7 +643,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"69": {
 		"name": "Slaying Lance",
@@ -583,7 +652,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"70": {
 		"name": "Slaying Spear+",
@@ -591,7 +661,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"71": {
 		"name": "Slaying Spear",
@@ -599,7 +670,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"72": {
 		"name": "Steady Lance",
@@ -608,7 +680,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [330],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"73": {
 		"name": "Steel Lance",
@@ -616,7 +689,8 @@
 		"range": 1,
 		"sp": 100,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"74": {
 		"name": "Tannenboom!+",
@@ -624,7 +698,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"75": {
 		"name": "Tannenboom!",
@@ -632,7 +707,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"76": {
 		"name": "Umbra Burst",
@@ -640,7 +716,8 @@
 		"range": 1,
 		"sp": 0,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"77": {
 		"name": "Vanguard+",
@@ -648,7 +725,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"78": {
 		"name": "Vanguard",
@@ -656,7 +734,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"79": {
 		"name": "Verðandi",
@@ -665,7 +744,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [24],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"80": {
 		"name": "Vidofnir",
@@ -674,7 +754,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [386],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"81": {
 		"name": "Wagasa+",
@@ -682,7 +763,8 @@
 		"range": 1,
 		"sp": 300,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"82": {
 		"name": "Wagasa",
@@ -690,7 +772,8 @@
 		"range": 1,
 		"sp": 200,
 		"prf": false,
-		"type": "lance"
+		"type": "lance",
+		"max": false
 	},
 	"83": {
 		"name": "Whitewing Lance",
@@ -699,7 +782,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": [47],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	},
 	"84": {
 		"name": "Whitewing Spear",
@@ -708,6 +792,7 @@
 		"sp": 400,
 		"prf": true,
 		"users": [107],
-		"type": "lance"
+		"type": "lance",
+		"max": true
 	}
 }
