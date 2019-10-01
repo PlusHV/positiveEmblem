@@ -10,7 +10,9 @@
     "react-dropdown-input": "^0.1.11",
     "react-scripts": "3.1.1",
     "react-select": "^3.0.4",
-    "react-select-v2": "^2.4.2"
+    "react-select-v2": "^2.4.2",
+    "underscore": "^1.9.1",
+    "underscore.string": "^3.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
