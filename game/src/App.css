@@ -31,22 +31,20 @@ body{
 
 table{
   background-color: #212C37;
+
 }
 
 table,tr,td {
   border-collapse: collapse;
   border: 2px solid #930322;
+  table-layout: fixed;
 }
 
-.numberInput {
-  background-color: #212C37;
-  color: white;
-}
+
 .cellStyle{
   border: 2px solid #555;
   width: 70px;
   height: 70px;
-  lineHeight: 50px;
   textAlign: center;
 }
 
@@ -66,45 +64,63 @@ table,tr,td {
 
 }
 
+.heroText{
+  border: 2px solid #930322;
+  width: auto;
+  text-align: center;
+}
+.inputNum {
+  border: 2px solid #930322;
+  width: 150px;
+  max-width: 90px;
+  min-width: 50px;
+
+}
+.numberInput {
+  background-color: #212C37;
+  color: white;
+  width: 90%;
+}
+
 .statText {
         
   border: 2px solid #930322;
-  width: 50px;
-  height: 5px;
-  lineHeight: 10px;
+  width: 150px;
   text-align: center;
+  max-width: 90px;
+  min-width: 50px;
 
 }
 .statNum {
   border: 2px solid #930322;
-  width: 25px;
+  width: 150px;
   height: 5px;
-  lineHeight: 10px;
-  textAlign: center;
+  text-align: center;
+  max-width: 90px;
+  min-width: 50px;
 
 }
 .equipText {
   border: 2px solid #930322;
   width: 50px;
   height: 5px;
-  lineHeight: 10px;
-  textAlign: center;
+  text-align: center;
 
 }
 .equippedSkill {
   border: 2px solid #930322;
   width: 200px;
   height: 5px;
-  lineHeight: 10px;
-  textAlign: center;
+  text-align: center;
 }
 
 .spacing {
    border: 2px solid #930322;
-   width: 50px;
-   height: 5px;
-   lineHeight: 10px;
-   textAlign: center;
+   width: 150px;
+  max-width: 90px;
+  min-width: 50px;
+
+   text-align: center;
  }
 
 .dropdown{

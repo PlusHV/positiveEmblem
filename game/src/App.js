@@ -56,6 +56,8 @@ class TicTacToeBoard extends React.Component{
     this.onHeroChange = this.onHeroChange.bind(this);
     this.onSkillChange = this.onSkillChange.bind(this);
     this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
+    this.onBuffChange = this.onBuffChange.bind(this);
+    this.onIVChange = this.onIVChange.bind(this);
   } //end constructor
 
 
@@ -193,7 +195,41 @@ class TicTacToeBoard extends React.Component{
     this.setState({maxFilter: e.target.checked});
   }
 
+  onBuffChange(e, index, stat){ //also handles debuffs and combat modifiers
+    let temp = this.state.heroList;
 
+
+    let buffList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex][index]);
+    
+
+    buffList[stat] = e.target.value;
+
+    temp[this.state.playerSide][this.state.heroIndex][index] = buffList;
+    this.setState({heroList: temp});
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
+
+  }
+
+  onIVChange(e, type){
+    let temp = this.state.heroList;
+
+
+    let ivList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex].iv);
+    
+
+    //if either iv is set to neutral, set the other one to neutral as well.
+    if (e.target.value === "neutral"){
+      ivList.asset = "neutral";
+      ivList.flaw = "neutral";
+    } else{
+    ivList[type] = e.target.value;
+    }
+
+    temp[this.state.playerSide][this.state.heroIndex].iv = ivList;
+    this.setState({heroList: temp});
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
+
+  }
 
   onClick(id) {
     if (this.isActive(id)) {
@@ -240,7 +276,9 @@ class TicTacToeBoard extends React.Component{
           <Stats 
               gameState = {this.state} 
               levelChange = {this.onLevelsChange}
-              heroChange = {this.onHeroChange}  />
+              heroChange = {this.onHeroChange}  
+              buffChange = {this.onBuffChange}
+              ivChange = {this.onIVChange} />
         </td>
         <td rowSpan = "2">
           <table id="board" align = 'center'>
@@ -287,13 +325,13 @@ function makeHeroStruct(){
     this["merge"] = 0;
     this["dragonflower"] = 0;
     this["heroID"] = {value: "0", label: ""};
-    this["iv"] = {asset: "", flaw: ""};
+    this["iv"] = {asset: "neutral", flaw: "neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} 
                         };
-    this["buffs"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    this["debuffs"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    this["combatMod"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    this["combat"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
   }  

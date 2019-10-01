@@ -35,6 +35,7 @@ export function CalculateStats(hero){
 	return statArray;
 }
 
+//Gets the modification to base stats depending on rarity (starting from rarity 5)
 function RarityMods(bases, rarity, order){
 	//let dict = object(rest(statName), bases);
 	let mods = object(statName,[0, 0, 0, 0, 0]);
@@ -43,10 +44,9 @@ function RarityMods(bases, rarity, order){
 	let stack = [...order];
 
 	for (let i = 5; i > rarity; i--){
-		//console.log(i%2 === 1);
-		if (i%2 == 1){ //going from 5-4 or 3-2 reduces hp by one
+
+		if (i%2 === 1){ //going from 5-4 or 3-2 reduces hp by one
 			stack = [...order]; //reset stack
-			console.log(stack);
 			mods["hp"] -= 1;
 		}
 
@@ -64,12 +64,8 @@ function RarityMods(bases, rarity, order){
 
 		mods[val] -=1;
 
-
-
-
 	}
-	//console.log(order);
-	//console.log(mods);
+
 	return mods;
 }
 
@@ -99,8 +95,5 @@ function StatOrder(stats){
 	return order;
 
 }
-
-//rarity - 5 -> 4 decrease hp by 1, then remove 3rd and 4th highest
-		//4 - > 3 decrease 2 and 1 highest by 1
 
 
