@@ -3,10 +3,10 @@ import {object} from 'underscore';
 
 const statName = ["hp", "atk", "spd", "def", "res"];
 
-export function CalculateStat(level, rarity, growth, base, rmod){
+export function CalculateStat(level, rarity, growth, base){
 	
 		var calculatedGrowthRate = Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0 ;
-		return base + rmod + Math.trunc(calculatedGrowthRate * (level-1));
+		return base + Math.trunc(calculatedGrowthRate * (level-1));
 
 };
 
@@ -21,22 +21,63 @@ export function CalculateStats(hero){
 
   	//todo - merge bonuses
 
+  	//order is rarity mods - > ivs -> merges/dragonflowers
   	//
-  	const statOrder = StatOrder(object(statName, bases) ); 
+  	var statOrder = StatOrder(object(statName, bases) ); 
 
-  	var rarityMods = RarityMods(bases, hero.rarity, statOrder);
+
+  	//rarity calculation
+  	var rarityMods = RarityMods(hero.rarity, statOrder);
+  	bases = ApplyMods(bases, rarityMods);
+
+  	console.log(bases);
+  	//iv calculation
+  	var ivMods = IVMods(hero.iv.asset, hero.iv.flaw);
+  	bases = ApplyMods(bases, ivMods.base);
+  	growths = ApplyMods(growths, ivMods.growth);
+
+  	console.log(bases);
+  	statOrder = StatOrder(object(statName,bases)); //recalculate with ivs applied
+  	//merge calculaion
+
+  	//dragonflower calculation
 
   	for (let i = 0; i < bases.length; i++) {
 
-  		statArray[statName[i]] = CalculateStat(hero.level, hero.rarity, growths[i], bases[i], rarityMods[statName[i]]);
+  		statArray[statName[i]] = CalculateStat(hero.level, hero.rarity, growths[i], bases[i]);
   	}
 
 
 	return statArray;
 }
 
+
+function ApplyMods(base, mod){
+	let newBase = [];
+	for (let i =0; i < base.length; i++){
+		newBase[i] = base[i] + mod[statName[i]];
+	}
+	return newBase;
+
+}
+
+function IVMods(asset, flaw){
+	let statMods = object(statName,[0, 0, 0, 0, 0]);
+	let growthMods = object(statName,[0, 0, 0, 0, 0]);
+	if ( !(asset === "neutral") && !(flaw === "neutral") ){
+		statMods[asset] = 1;
+		statMods[flaw] = -1;
+
+		growthMods[asset] = 5;
+		growthMods[flaw] = -5;		
+	}
+
+	return {base: statMods, growth: growthMods} ;
+
+}
+
 //Gets the modification to base stats depending on rarity (starting from rarity 5)
-function RarityMods(bases, rarity, order){
+function RarityMods(rarity, order){
 	//let dict = object(rest(statName), bases);
 	let mods = object(statName,[0, 0, 0, 0, 0]);
 

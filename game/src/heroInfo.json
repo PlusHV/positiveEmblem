@@ -21,7 +21,7 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "0",
-		"sseal": "0"			
+		"ssewwal": "0"			
 	},
 	"1": {  
 		"id": 1,
@@ -45,7 +45,8 @@
 		"askill": "185",
 		"bskill": "226",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 198 			
 
 
 	},
@@ -71,7 +72,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "220",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 23 			
 
 
 	},
@@ -97,7 +99,8 @@
 		"askill": "245",
 		"bskill": "0",
 		"cskill": "64",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 233 			
 
 
 	},
@@ -123,7 +126,8 @@
 		"askill": "63",
 		"bskill": "245",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 205 			
 
 
 	},
@@ -149,7 +153,8 @@
 		"askill": "212",
 		"bskill": "50",
 		"cskill": "254",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 109 			
 
 
 	},
@@ -175,7 +180,8 @@
 		"askill": "105",
 		"bskill": "146",
 		"cskill": "163",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 169 			
 
 
 	},
@@ -201,7 +207,8 @@
 		"askill": "144",
 		"bskill": "0",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 175 			
 
 
 	},
@@ -227,7 +234,8 @@
 		"askill": "0",
 		"bskill": "232",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 255 			
 
 
 	},
@@ -253,7 +261,8 @@
 		"askill": "0",
 		"bskill": "103",
 		"cskill": "78",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 241 			
 
 
 	},
@@ -279,7 +288,8 @@
 		"askill": "81",
 		"bskill": "193",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 231 			
 
 
 	},
@@ -305,7 +315,8 @@
 		"askill": "185",
 		"bskill": "120",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 208 			
 
 
 	},
@@ -331,7 +342,8 @@
 		"askill": "0",
 		"bskill": "162",
 		"cskill": "61",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 125 			
 
 
 	},
@@ -357,7 +369,8 @@
 		"askill": "245",
 		"bskill": "0",
 		"cskill": "248",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 146 			
 
 
 	},
@@ -383,7 +396,8 @@
 		"askill": "189",
 		"bskill": "0",
 		"cskill": "169",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 188 			
 
 
 	},
@@ -409,7 +423,8 @@
 		"askill": "251",
 		"bskill": "78",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 143 			
 
 
 	},
@@ -435,7 +450,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 149 			
 
 
 	},
@@ -461,7 +477,8 @@
 		"askill": "0",
 		"bskill": "92",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 102 			
 
 
 	},
@@ -487,7 +504,8 @@
 		"askill": "259",
 		"bskill": "0",
 		"cskill": "80",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 255 			
 
 
 	},
@@ -513,7 +531,8 @@
 		"askill": "234",
 		"bskill": "0",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 83 			
 
 
 	},
@@ -539,7 +558,8 @@
 		"askill": "68",
 		"bskill": "3",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 47 			
 
 
 	},
@@ -565,7 +585,8 @@
 		"askill": "231",
 		"bskill": "229",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 32 			
 
 
 	},
@@ -591,7 +612,8 @@
 		"askill": "0",
 		"bskill": "117",
 		"cskill": "220",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 48 			
 
 
 	},
@@ -617,7 +639,8 @@
 		"askill": "167",
 		"bskill": "38",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 133 			
 
 
 	},
@@ -643,7 +666,8 @@
 		"askill": "71",
 		"bskill": "0",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 200 			
 
 
 	},
@@ -669,7 +693,8 @@
 		"askill": "270",
 		"bskill": "0",
 		"cskill": "274",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 155 			
 
 
 	},
@@ -695,7 +720,8 @@
 		"askill": "267",
 		"bskill": "0",
 		"cskill": "169",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 162 			
 
 
 	},
@@ -721,7 +747,8 @@
 		"askill": "129",
 		"bskill": "137",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 207 			
 
 
 	},
@@ -747,7 +774,8 @@
 		"askill": "242",
 		"bskill": "248",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 159 			
 
 
 	},
@@ -773,7 +801,8 @@
 		"askill": "144",
 		"bskill": "165",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 220 			
 
 
 	},
@@ -799,7 +828,8 @@
 		"askill": "40",
 		"bskill": "0",
 		"cskill": "155",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 140 			
 
 
 	},
@@ -825,7 +855,8 @@
 		"askill": "30",
 		"bskill": "64",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 189 			
 
 
 	},
@@ -851,7 +882,8 @@
 		"askill": "168",
 		"bskill": "251",
 		"cskill": "85",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 222 			
 
 
 	},
@@ -877,7 +909,8 @@
 		"askill": "136",
 		"bskill": "56",
 		"cskill": "172",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 45 			
 
 
 	},
@@ -903,7 +936,8 @@
 		"askill": "65",
 		"bskill": "0",
 		"cskill": "138",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 69 			
 
 
 	},
@@ -929,7 +963,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "105",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 211 			
 
 
 	},
@@ -955,7 +990,8 @@
 		"askill": "0",
 		"bskill": "248",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 226 			
 
 
 	},
@@ -981,7 +1017,8 @@
 		"askill": "140",
 		"bskill": "235",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 35 			
 
 
 	},
@@ -1007,7 +1044,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "203",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 211 			
 
 
 	},
@@ -1033,7 +1071,8 @@
 		"askill": "36",
 		"bskill": "12",
 		"cskill": "120",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 53 			
 
 
 	},
@@ -1059,7 +1098,8 @@
 		"askill": "220",
 		"bskill": "0",
 		"cskill": "276",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 230 			
 
 
 	},
@@ -1085,7 +1125,8 @@
 		"askill": "55",
 		"bskill": "254",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 115 			
 
 
 	},
@@ -1111,7 +1152,8 @@
 		"askill": "135",
 		"bskill": "122",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 165 			
 
 
 	},
@@ -1137,7 +1179,8 @@
 		"askill": "45",
 		"bskill": "0",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 197 			
 
 
 	},
@@ -1163,7 +1206,8 @@
 		"askill": "111",
 		"bskill": "102",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 71 			
 
 
 	},
@@ -1189,7 +1233,8 @@
 		"askill": "175",
 		"bskill": "0",
 		"cskill": "118",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 207 			
 
 
 	},
@@ -1215,7 +1260,8 @@
 		"askill": "187",
 		"bskill": "0",
 		"cskill": "197",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 142 			
 
 
 	},
@@ -1241,7 +1287,8 @@
 		"askill": "24",
 		"bskill": "184",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 83 			
 
 
 	},
@@ -1267,7 +1314,8 @@
 		"askill": "0",
 		"bskill": "53",
 		"cskill": "82",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 37 			
 
 
 	},
@@ -1293,7 +1341,8 @@
 		"askill": "63",
 		"bskill": "95",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 94 			
 
 
 	},
@@ -1319,7 +1368,8 @@
 		"askill": "36",
 		"bskill": "0",
 		"cskill": "61",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 183 			
 
 
 	},
@@ -1345,7 +1395,8 @@
 		"askill": "139",
 		"bskill": "0",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 240 			
 
 
 	},
@@ -1371,7 +1422,8 @@
 		"askill": "0",
 		"bskill": "56",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 183 			
 
 
 	},
@@ -1397,7 +1449,8 @@
 		"askill": "112",
 		"bskill": "82",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 16 			
 
 
 	},
@@ -1423,7 +1476,8 @@
 		"askill": "273",
 		"bskill": "0",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 222 			
 
 
 	},
@@ -1449,7 +1503,8 @@
 		"askill": "63",
 		"bskill": "0",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 227 			
 
 
 	},
@@ -1475,7 +1530,8 @@
 		"askill": "129",
 		"bskill": "0",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 220 			
 
 
 	},
@@ -1501,7 +1557,8 @@
 		"askill": "81",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 53 			
 
 
 	},
@@ -1527,7 +1584,8 @@
 		"askill": "167",
 		"bskill": "50",
 		"cskill": "251",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 14 			
 
 
 	},
@@ -1553,7 +1611,8 @@
 		"askill": "60",
 		"bskill": "0",
 		"cskill": "24",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 174 			
 
 
 	},
@@ -1579,7 +1638,8 @@
 		"askill": "0",
 		"bskill": "116",
 		"cskill": "237",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 157 			
 
 
 	},
@@ -1605,7 +1665,8 @@
 		"askill": "211",
 		"bskill": "0",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 235 			
 
 
 	},
@@ -1631,7 +1692,8 @@
 		"askill": "0",
 		"bskill": "155",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 169 			
 
 
 	},
@@ -1657,7 +1719,8 @@
 		"askill": "0",
 		"bskill": "135",
 		"cskill": "64",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 193 			
 
 
 	},
@@ -1683,7 +1746,8 @@
 		"askill": "123",
 		"bskill": "116",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 208 			
 
 
 	},
@@ -1709,7 +1773,8 @@
 		"askill": "245",
 		"bskill": "86",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 193 			
 
 
 	},
@@ -1735,7 +1800,8 @@
 		"askill": "259",
 		"bskill": "152",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 77 			
 
 
 	},
@@ -1761,7 +1827,8 @@
 		"askill": "0",
 		"bskill": "95",
 		"cskill": "48",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 255 			
 
 
 	},
@@ -1787,7 +1854,8 @@
 		"askill": "27",
 		"bskill": "146",
 		"cskill": "134",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 40 			
 
 
 	},
@@ -1813,7 +1881,8 @@
 		"askill": "48",
 		"bskill": "0",
 		"cskill": "104",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 100 			
 
 
 	},
@@ -1839,7 +1908,8 @@
 		"askill": "60",
 		"bskill": "0",
 		"cskill": "231",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 153 			
 
 
 	},
@@ -1865,7 +1935,8 @@
 		"askill": "123",
 		"bskill": "149",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 198 			
 
 
 	},
@@ -1891,7 +1962,8 @@
 		"askill": "0",
 		"bskill": "196",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 2 			
 
 
 	},
@@ -1917,7 +1989,8 @@
 		"askill": "256",
 		"bskill": "0",
 		"cskill": "105",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 182 			
 
 
 	},
@@ -1943,7 +2016,8 @@
 		"askill": "58",
 		"bskill": "223",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 102 			
 
 
 	},
@@ -1969,7 +2043,8 @@
 		"askill": "0",
 		"bskill": "208",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 163 			
 
 
 	},
@@ -1995,7 +2070,8 @@
 		"askill": "0",
 		"bskill": "95",
 		"cskill": "52",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 114 			
 
 
 	},
@@ -2021,7 +2097,8 @@
 		"askill": "0",
 		"bskill": "158",
 		"cskill": "211",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 30 			
 
 
 	},
@@ -2047,7 +2124,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 206 			
 
 
 	},
@@ -2073,7 +2151,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "85",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 154 			
 
 
 	},
@@ -2099,7 +2178,8 @@
 		"askill": "112",
 		"bskill": "129",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 91 			
 
 
 	},
@@ -2125,7 +2205,8 @@
 		"askill": "185",
 		"bskill": "83",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 52 			
 
 
 	},
@@ -2151,7 +2232,8 @@
 		"askill": "248",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 116 			
 
 
 	},
@@ -2177,7 +2259,8 @@
 		"askill": "148",
 		"bskill": "158",
 		"cskill": "152",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 184 			
 
 
 	},
@@ -2203,7 +2286,8 @@
 		"askill": "0",
 		"bskill": "137",
 		"cskill": "272",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 209 			
 
 
 	},
@@ -2229,7 +2313,8 @@
 		"askill": "120",
 		"bskill": "32",
 		"cskill": "270",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 47 			
 
 
 	},
@@ -2255,7 +2340,8 @@
 		"askill": "33",
 		"bskill": "86",
 		"cskill": "200",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 21 			
 
 
 	},
@@ -2281,7 +2367,8 @@
 		"askill": "111",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 171 			
 
 
 	},
@@ -2307,7 +2394,8 @@
 		"askill": "251",
 		"bskill": "140",
 		"cskill": "205",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 131 			
 
 
 	},
@@ -2333,7 +2421,8 @@
 		"askill": "251",
 		"bskill": "78",
 		"cskill": "182",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 179 			
 
 
 	},
@@ -2359,7 +2448,8 @@
 		"askill": "0",
 		"bskill": "64",
 		"cskill": "9",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 90 			
 
 
 	},
@@ -2385,7 +2475,8 @@
 		"askill": "58",
 		"bskill": "136",
 		"cskill": "166",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 221 			
 
 
 	},
@@ -2411,7 +2502,8 @@
 		"askill": "0",
 		"bskill": "83",
 		"cskill": "138",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 65 			
 
 
 	},
@@ -2437,7 +2529,8 @@
 		"askill": "167",
 		"bskill": "137",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 72 			
 
 
 	},
@@ -2463,7 +2556,8 @@
 		"askill": "54",
 		"bskill": "170",
 		"cskill": "80",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 250 			
 
 
 	},
@@ -2489,7 +2583,8 @@
 		"askill": "111",
 		"bskill": "102",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 126 			
 
 
 	},
@@ -2515,7 +2610,8 @@
 		"askill": "251",
 		"bskill": "9",
 		"cskill": "55",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 156 			
 
 
 	},
@@ -2541,7 +2637,8 @@
 		"askill": "0",
 		"bskill": "126",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 234 			
 
 
 	},
@@ -2567,7 +2664,8 @@
 		"askill": "228",
 		"bskill": "0",
 		"cskill": "114",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 30 			
 
 
 	},
@@ -2593,7 +2691,8 @@
 		"askill": "112",
 		"bskill": "47",
 		"cskill": "271",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 192 			
 
 
 	},
@@ -2619,7 +2718,8 @@
 		"askill": "151",
 		"bskill": "0",
 		"cskill": "116",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 26 			
 
 
 	},
@@ -2645,7 +2745,8 @@
 		"askill": "0",
 		"bskill": "21",
 		"cskill": "274",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 100 			
 
 
 	},
@@ -2671,7 +2772,8 @@
 		"askill": "252",
 		"bskill": "18",
 		"cskill": "208",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 132 			
 
 
 	},
@@ -2697,7 +2799,8 @@
 		"askill": "248",
 		"bskill": "205",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 66 			
 
 
 	},
@@ -2723,7 +2826,8 @@
 		"askill": "0",
 		"bskill": "191",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 230 			
 
 
 	},
@@ -2749,7 +2853,8 @@
 		"askill": "101",
 		"bskill": "217",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 6 			
 
 
 	},
@@ -2775,7 +2880,8 @@
 		"askill": "33",
 		"bskill": "32",
 		"cskill": "52",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 255 			
 
 
 	},
@@ -2801,7 +2907,8 @@
 		"askill": "132",
 		"bskill": "199",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 137 			
 
 
 	},
@@ -2827,7 +2934,8 @@
 		"askill": "220",
 		"bskill": "126",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 158 			
 
 
 	},
@@ -2853,7 +2961,8 @@
 		"askill": "0",
 		"bskill": "165",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 214 			
 
 
 	},
@@ -2879,7 +2988,8 @@
 		"askill": "117",
 		"bskill": "235",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 47 			
 
 
 	},
@@ -2905,7 +3015,8 @@
 		"askill": "0",
 		"bskill": "248",
 		"cskill": "42",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 128 			
 
 
 	},
@@ -2931,7 +3042,8 @@
 		"askill": "211",
 		"bskill": "0",
 		"cskill": "48",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 31 			
 
 
 	},
@@ -2957,7 +3069,8 @@
 		"askill": "220",
 		"bskill": "217",
 		"cskill": "52",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 40 			
 
 
 	},
@@ -2983,7 +3096,8 @@
 		"askill": "60",
 		"bskill": "0",
 		"cskill": "118",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 203 			
 
 
 	},
@@ -3009,7 +3123,8 @@
 		"askill": "0",
 		"bskill": "214",
 		"cskill": "18",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 219 			
 
 
 	},
@@ -3035,7 +3150,8 @@
 		"askill": "234",
 		"bskill": "152",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 195 			
 
 
 	},
@@ -3061,7 +3177,8 @@
 		"askill": "180",
 		"bskill": "64",
 		"cskill": "123",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 61 			
 
 
 	},
@@ -3087,7 +3204,8 @@
 		"askill": "48",
 		"bskill": "15",
 		"cskill": "91",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 13 			
 
 
 	},
@@ -3113,7 +3231,8 @@
 		"askill": "27",
 		"bskill": "204",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 139 			
 
 
 	},
@@ -3139,7 +3258,8 @@
 		"askill": "43",
 		"bskill": "158",
 		"cskill": "61",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 7 			
 
 
 	},
@@ -3165,7 +3285,8 @@
 		"askill": "3",
 		"bskill": "32",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 208 			
 
 
 	},
@@ -3191,7 +3312,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "48",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 210 			
 
 
 	},
@@ -3217,7 +3339,8 @@
 		"askill": "24",
 		"bskill": "188",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 53 			
 
 
 	},
@@ -3243,7 +3366,8 @@
 		"askill": "0",
 		"bskill": "248",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 129 			
 
 
 	},
@@ -3269,7 +3393,8 @@
 		"askill": "126",
 		"bskill": "152",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 82 			
 
 
 	},
@@ -3295,7 +3420,8 @@
 		"askill": "0",
 		"bskill": "232",
 		"cskill": "61",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 198 			
 
 
 	},
@@ -3321,7 +3447,8 @@
 		"askill": "139",
 		"bskill": "0",
 		"cskill": "176",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 44 			
 
 
 	},
@@ -3347,7 +3474,8 @@
 		"askill": "0",
 		"bskill": "254",
 		"cskill": "58",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 79 			
 
 
 	},
@@ -3373,7 +3501,8 @@
 		"askill": "0",
 		"bskill": "254",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 134 			
 
 
 	},
@@ -3399,7 +3528,8 @@
 		"askill": "161",
 		"bskill": "116",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 136 			
 
 
 	},
@@ -3425,7 +3555,8 @@
 		"askill": "199",
 		"bskill": "47",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 234 			
 
 
 	},
@@ -3451,7 +3582,8 @@
 		"askill": "63",
 		"bskill": "232",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 204 			
 
 
 	},
@@ -3477,7 +3609,8 @@
 		"askill": "273",
 		"bskill": "0",
 		"cskill": "251",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 224 			
 
 
 	},
@@ -3503,7 +3636,8 @@
 		"askill": "168",
 		"bskill": "239",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 129 			
 
 
 	},
@@ -3529,7 +3663,8 @@
 		"askill": "21",
 		"bskill": "81",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 109 			
 
 
 	},
@@ -3555,7 +3690,8 @@
 		"askill": "164",
 		"bskill": "57",
 		"cskill": "191",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 249 			
 
 
 	},
@@ -3581,7 +3717,8 @@
 		"askill": "251",
 		"bskill": "78",
 		"cskill": "157",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 123 			
 
 
 	},
@@ -3607,7 +3744,8 @@
 		"askill": "24",
 		"bskill": "0",
 		"cskill": "133",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 225 			
 
 
 	},
@@ -3633,7 +3771,8 @@
 		"askill": "0",
 		"bskill": "83",
 		"cskill": "127",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 10 			
 
 
 	},
@@ -3659,7 +3798,8 @@
 		"askill": "0",
 		"bskill": "115",
 		"cskill": "166",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 22 			
 
 
 	},
@@ -3685,7 +3825,8 @@
 		"askill": "196",
 		"bskill": "149",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 90 			
 
 
 	},
@@ -3711,7 +3852,8 @@
 		"askill": "91",
 		"bskill": "32",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -3737,7 +3879,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 108 			
 
 
 	},
@@ -3763,7 +3906,8 @@
 		"askill": "202",
 		"bskill": "32",
 		"cskill": "91",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 58 			
 
 
 	},
@@ -3789,7 +3933,8 @@
 		"askill": "136",
 		"bskill": "0",
 		"cskill": "116",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 154 			
 
 
 	},
@@ -3815,7 +3960,8 @@
 		"askill": "136",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 144 			
 
 
 	},
@@ -3841,7 +3987,8 @@
 		"askill": "136",
 		"bskill": "235",
 		"cskill": "173",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 118 			
 
 
 	},
@@ -3867,7 +4014,8 @@
 		"askill": "174",
 		"bskill": "115",
 		"cskill": "152",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 191 			
 
 
 	},
@@ -3893,7 +4041,8 @@
 		"askill": "208",
 		"bskill": "0",
 		"cskill": "176",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 199 			
 
 
 	},
@@ -3919,7 +4068,8 @@
 		"askill": "0",
 		"bskill": "123",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 205 			
 
 
 	},
@@ -3945,7 +4095,8 @@
 		"askill": "129",
 		"bskill": "107",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 17 			
 
 
 	},
@@ -3971,7 +4122,8 @@
 		"askill": "58",
 		"bskill": "146",
 		"cskill": "58",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 221 			
 
 
 	},
@@ -3997,7 +4149,8 @@
 		"askill": "167",
 		"bskill": "38",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 251 			
 
 
 	},
@@ -4023,7 +4176,8 @@
 		"askill": "48",
 		"bskill": "102",
 		"cskill": "97",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 221 			
 
 
 	},
@@ -4049,7 +4203,8 @@
 		"askill": "48",
 		"bskill": "15",
 		"cskill": "3",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 157 			
 
 
 	},
@@ -4075,7 +4230,8 @@
 		"askill": "129",
 		"bskill": "0",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 235 			
 
 
 	},
@@ -4101,7 +4257,8 @@
 		"askill": "136",
 		"bskill": "104",
 		"cskill": "18",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 213 			
 
 
 	},
@@ -4127,7 +4284,8 @@
 		"askill": "27",
 		"bskill": "158",
 		"cskill": "131",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 87 			
 
 
 	},
@@ -4153,7 +4311,8 @@
 		"askill": "0",
 		"bskill": "53",
 		"cskill": "143",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 159 			
 
 
 	},
@@ -4179,7 +4338,8 @@
 		"askill": "158",
 		"bskill": "235",
 		"cskill": "275",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 165 			
 
 
 	},
@@ -4205,7 +4365,8 @@
 		"askill": "237",
 		"bskill": "25",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 245 			
 
 
 	},
@@ -4231,7 +4392,8 @@
 		"askill": "136",
 		"bskill": "217",
 		"cskill": "94",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 75 			
 
 
 	},
@@ -4257,7 +4419,8 @@
 		"askill": "263",
 		"bskill": "186",
 		"cskill": "67",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -4283,7 +4446,8 @@
 		"askill": "178",
 		"bskill": "226",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 85 			
 
 
 	},
@@ -4309,7 +4473,8 @@
 		"askill": "0",
 		"bskill": "110",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 125 			
 
 
 	},
@@ -4335,7 +4500,8 @@
 		"askill": "0",
 		"bskill": "67",
 		"cskill": "120",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 200 			
 
 
 	},
@@ -4361,7 +4527,8 @@
 		"askill": "164",
 		"bskill": "44",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 84 			
 
 
 	},
@@ -4387,7 +4554,8 @@
 		"askill": "251",
 		"bskill": "232",
 		"cskill": "163",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 74 			
 
 
 	},
@@ -4413,7 +4581,8 @@
 		"askill": "252",
 		"bskill": "78",
 		"cskill": "3",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 183 			
 
 
 	},
@@ -4439,7 +4608,8 @@
 		"askill": "196",
 		"bskill": "0",
 		"cskill": "266",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 92 			
 
 
 	},
@@ -4465,7 +4635,8 @@
 		"askill": "167",
 		"bskill": "0",
 		"cskill": "100",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 2 			
 
 
 	},
@@ -4491,7 +4662,8 @@
 		"askill": "76",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 94 			
 
 
 	},
@@ -4517,7 +4689,8 @@
 		"askill": "123",
 		"bskill": "165",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 226 			
 
 
 	},
@@ -4543,7 +4716,8 @@
 		"askill": "178",
 		"bskill": "44",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 134 			
 
 
 	},
@@ -4569,7 +4743,8 @@
 		"askill": "0",
 		"bskill": "184",
 		"cskill": "237",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 135 			
 
 
 	},
@@ -4595,7 +4770,8 @@
 		"askill": "101",
 		"bskill": "245",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 134 			
 
 
 	},
@@ -4621,7 +4797,8 @@
 		"askill": "197",
 		"bskill": "121",
 		"cskill": "15",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 174 			
 
 
 	},
@@ -4647,7 +4824,8 @@
 		"askill": "211",
 		"bskill": "0",
 		"cskill": "48",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 210 			
 
 
 	},
@@ -4673,7 +4851,8 @@
 		"askill": "0",
 		"bskill": "115",
 		"cskill": "12",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 143 			
 
 
 	},
@@ -4699,7 +4878,8 @@
 		"askill": "0",
 		"bskill": "214",
 		"cskill": "117",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 143 			
 
 
 	},
@@ -4725,7 +4905,8 @@
 		"askill": "201",
 		"bskill": "32",
 		"cskill": "85",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 12 			
 
 
 	},
@@ -4751,7 +4932,8 @@
 		"askill": "262",
 		"bskill": "61",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 80 			
 
 
 	},
@@ -4777,7 +4959,8 @@
 		"askill": "231",
 		"bskill": "123",
 		"cskill": "120",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 34 			
 
 
 	},
@@ -4803,7 +4986,8 @@
 		"askill": "148",
 		"bskill": "0",
 		"cskill": "119",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 123 			
 
 
 	},
@@ -4829,7 +5013,8 @@
 		"askill": "91",
 		"bskill": "0",
 		"cskill": "104",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 63 			
 
 
 	},
@@ -4855,7 +5040,8 @@
 		"askill": "126",
 		"bskill": "78",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 34 			
 
 
 	},
@@ -4881,7 +5067,8 @@
 		"askill": "0",
 		"bskill": "251",
 		"cskill": "94",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 150 			
 
 
 	},
@@ -4907,7 +5094,8 @@
 		"askill": "251",
 		"bskill": "0",
 		"cskill": "12",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 190 			
 
 
 	},
@@ -4933,7 +5121,8 @@
 		"askill": "0",
 		"bskill": "155",
 		"cskill": "18",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 122 			
 
 
 	},
@@ -4959,7 +5148,8 @@
 		"askill": "0",
 		"bskill": "220",
 		"cskill": "39",
-		"sseal": "0"		
+		"sseal": "0",
+		"bvid": 201 		
 
 
 	},
@@ -4985,7 +5175,8 @@
 		"askill": "6",
 		"bskill": "32",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 177 			
 
 
 	},
@@ -5011,7 +5202,8 @@
 		"askill": "111",
 		"bskill": "158",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 146 			
 
 
 	},
@@ -5037,7 +5229,8 @@
 		"askill": "158",
 		"bskill": "56",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 206 			
 
 
 	},
@@ -5063,7 +5256,8 @@
 		"askill": "0",
 		"bskill": "78",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 175 			
 
 
 	},
@@ -5089,7 +5283,8 @@
 		"askill": "0",
 		"bskill": "165",
 		"cskill": "197",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 152 			
 
 
 	},
@@ -5115,7 +5310,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 170 			
 
 
 	},
@@ -5141,7 +5337,8 @@
 		"askill": "252",
 		"bskill": "102",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 107 			
 
 
 	},
@@ -5167,7 +5364,8 @@
 		"askill": "0",
 		"bskill": "53",
 		"cskill": "67",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 121 			
 
 
 	},
@@ -5193,7 +5391,8 @@
 		"askill": "205",
 		"bskill": "47",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 35 			
 
 
 	},
@@ -5219,7 +5418,8 @@
 		"askill": "197",
 		"bskill": "70",
 		"cskill": "163",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 238 			
 
 
 	},
@@ -5245,7 +5445,8 @@
 		"askill": "0",
 		"bskill": "254",
 		"cskill": "88",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 252 			
 
 
 	},
@@ -5271,7 +5472,8 @@
 		"askill": "167",
 		"bskill": "6",
 		"cskill": "172",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 166 			
 
 
 	},
@@ -5297,7 +5499,8 @@
 		"askill": "0",
 		"bskill": "21",
 		"cskill": "138",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 230 			
 
 
 	},
@@ -5323,7 +5526,8 @@
 		"askill": "199",
 		"bskill": "102",
 		"cskill": "132",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 245 			
 
 
 	},
@@ -5349,7 +5553,8 @@
 		"askill": "256",
 		"bskill": "0",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 232 			
 
 
 	},
@@ -5375,7 +5580,8 @@
 		"askill": "167",
 		"bskill": "149",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 114 			
 
 
 	},
@@ -5401,7 +5607,8 @@
 		"askill": "236",
 		"bskill": "171",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 27 			
 
 
 	},
@@ -5427,7 +5634,8 @@
 		"askill": "0",
 		"bskill": "99",
 		"cskill": "251",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 121 			
 
 
 	},
@@ -5453,7 +5661,8 @@
 		"askill": "139",
 		"bskill": "158",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 242 			
 
 
 	},
@@ -5479,7 +5688,8 @@
 		"askill": "0",
 		"bskill": "196",
 		"cskill": "12",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 93 			
 
 
 	},
@@ -5505,7 +5715,8 @@
 		"askill": "0",
 		"bskill": "158",
 		"cskill": "203",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 41 			
 
 
 	},
@@ -5531,7 +5742,8 @@
 		"askill": "234",
 		"bskill": "115",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 54 			
 
 
 	},
@@ -5557,7 +5769,8 @@
 		"askill": "226",
 		"bskill": "0",
 		"cskill": "132",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 18 			
 
 
 	},
@@ -5583,7 +5796,8 @@
 		"askill": "251",
 		"bskill": "220",
 		"cskill": "163",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 214 			
 
 
 	},
@@ -5609,7 +5823,8 @@
 		"askill": "0",
 		"bskill": "165",
 		"cskill": "224",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 12 			
 
 
 	},
@@ -5635,7 +5850,8 @@
 		"askill": "43",
 		"bskill": "177",
 		"cskill": "9",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 174 			
 
 
 	},
@@ -5661,7 +5877,8 @@
 		"askill": "180",
 		"bskill": "0",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 48 			
 
 
 	},
@@ -5687,7 +5904,8 @@
 		"askill": "63",
 		"bskill": "0",
 		"cskill": "220",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 58 			
 
 
 	},
@@ -5713,7 +5931,8 @@
 		"askill": "234",
 		"bskill": "0",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 61 			
 
 
 	},
@@ -5739,7 +5958,8 @@
 		"askill": "84",
 		"bskill": "44",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 177 			
 
 
 	},
@@ -5765,7 +5985,8 @@
 		"askill": "87",
 		"bskill": "0",
 		"cskill": "78",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 176 			
 
 
 	},
@@ -5791,7 +6012,8 @@
 		"askill": "0",
 		"bskill": "32",
 		"cskill": "98",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 29 			
 
 
 	},
@@ -5817,7 +6039,8 @@
 		"askill": "0",
 		"bskill": "165",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 4 			
 
 
 	},
@@ -5843,7 +6066,8 @@
 		"askill": "0",
 		"bskill": "152",
 		"cskill": "257",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 250 			
 
 
 	},
@@ -5869,7 +6093,8 @@
 		"askill": "0",
 		"bskill": "102",
 		"cskill": "120",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 140 			
 
 
 	},
@@ -5895,7 +6120,8 @@
 		"askill": "97",
 		"bskill": "0",
 		"cskill": "163",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 102 			
 
 
 	},
@@ -5921,7 +6147,8 @@
 		"askill": "234",
 		"bskill": "232",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 43 			
 
 
 	},
@@ -5947,7 +6174,8 @@
 		"askill": "48",
 		"bskill": "0",
 		"cskill": "133",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 23 			
 
 
 	},
@@ -5973,7 +6201,8 @@
 		"askill": "245",
 		"bskill": "0",
 		"cskill": "82",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 98 			
 
 
 	},
@@ -5999,7 +6228,8 @@
 		"askill": "135",
 		"bskill": "0",
 		"cskill": "220",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 194 			
 
 
 	},
@@ -6025,7 +6255,8 @@
 		"askill": "251",
 		"bskill": "248",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 94 			
 
 
 	},
@@ -6051,7 +6282,8 @@
 		"askill": "251",
 		"bskill": "196",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 84 			
 
 
 	},
@@ -6077,7 +6309,8 @@
 		"askill": "185",
 		"bskill": "0",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 232 			
 
 
 	},
@@ -6103,7 +6336,8 @@
 		"askill": "199",
 		"bskill": "9",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 48 			
 
 
 	},
@@ -6129,7 +6363,8 @@
 		"askill": "15",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 255 			
 
 
 	},
@@ -6155,7 +6390,8 @@
 		"askill": "161",
 		"bskill": "149",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 54 			
 
 
 	},
@@ -6181,7 +6417,8 @@
 		"askill": "151",
 		"bskill": "0",
 		"cskill": "176",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 54 			
 
 
 	},
@@ -6207,7 +6444,8 @@
 		"askill": "187",
 		"bskill": "0",
 		"cskill": "191",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 13 			
 
 
 	},
@@ -6233,7 +6471,8 @@
 		"askill": "251",
 		"bskill": "181",
 		"cskill": "18",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 157 			
 
 
 	},
@@ -6259,7 +6498,8 @@
 		"askill": "0",
 		"bskill": "64",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 239 			
 
 
 	},
@@ -6285,7 +6525,8 @@
 		"askill": "246",
 		"bskill": "15",
 		"cskill": "70",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 241 			
 
 
 	},
@@ -6311,7 +6552,8 @@
 		"askill": "126",
 		"bskill": "0",
 		"cskill": "237",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 125 			
 
 
 	},
@@ -6337,7 +6579,8 @@
 		"askill": "193",
 		"bskill": "78",
 		"cskill": "217",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 217 			
 
 
 	},
@@ -6363,7 +6606,8 @@
 		"askill": "48",
 		"bskill": "115",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 115 			
 
 
 	},
@@ -6389,7 +6633,8 @@
 		"askill": "65",
 		"bskill": "0",
 		"cskill": "80",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 39 			
 
 
 	},
@@ -6415,7 +6660,8 @@
 		"askill": "0",
 		"bskill": "78",
 		"cskill": "30",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 37 			
 
 
 	},
@@ -6441,7 +6687,8 @@
 		"askill": "155",
 		"bskill": "146",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 154 			
 
 
 	},
@@ -6467,7 +6714,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 202 			
 
 
 	},
@@ -6493,7 +6741,8 @@
 		"askill": "0",
 		"bskill": "64",
 		"cskill": "244",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 142 			
 
 
 	},
@@ -6519,7 +6768,8 @@
 		"askill": "182",
 		"bskill": "0",
 		"cskill": "152",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 211 			
 
 
 	},
@@ -6545,7 +6795,8 @@
 		"askill": "0",
 		"bskill": "208",
 		"cskill": "97",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 165 			
 
 
 	},
@@ -6571,7 +6822,8 @@
 		"askill": "0",
 		"bskill": "248",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 18 			
 
 
 	},
@@ -6597,7 +6849,8 @@
 		"askill": "0",
 		"bskill": "95",
 		"cskill": "237",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 34 			
 
 
 	},
@@ -6623,7 +6876,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 18 			
 
 
 	},
@@ -6649,7 +6903,8 @@
 		"askill": "48",
 		"bskill": "26",
 		"cskill": "149",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 190 			
 
 
 	},
@@ -6675,7 +6930,8 @@
 		"askill": "0",
 		"bskill": "44",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 234 			
 
 
 	},
@@ -6701,7 +6957,8 @@
 		"askill": "0",
 		"bskill": "155",
 		"cskill": "138",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 214 			
 
 
 	},
@@ -6727,7 +6984,8 @@
 		"askill": "12",
 		"bskill": "0",
 		"cskill": "169",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 167 			
 
 
 	},
@@ -6753,7 +7011,8 @@
 		"askill": "185",
 		"bskill": "0",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 215 			
 
 
 	},
@@ -6779,7 +7038,8 @@
 		"askill": "154",
 		"bskill": "232",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 117 			
 
 
 	},
@@ -6805,7 +7065,8 @@
 		"askill": "231",
 		"bskill": "0",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -6831,7 +7092,8 @@
 		"askill": "139",
 		"bskill": "115",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 206 			
 
 
 	},
@@ -6857,7 +7119,8 @@
 		"askill": "37",
 		"bskill": "255",
 		"cskill": "123",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 110 			
 
 
 	},
@@ -6883,7 +7146,8 @@
 		"askill": "36",
 		"bskill": "97",
 		"cskill": "191",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 74 			
 
 
 	},
@@ -6909,7 +7173,8 @@
 		"askill": "190",
 		"bskill": "0",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 108 			
 
 
 	},
@@ -6935,7 +7200,8 @@
 		"askill": "84",
 		"bskill": "0",
 		"cskill": "155",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 220 			
 
 
 	},
@@ -6961,7 +7227,8 @@
 		"askill": "196",
 		"bskill": "0",
 		"cskill": "276",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 199 			
 
 
 	},
@@ -6987,7 +7254,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "231",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 192 			
 
 
 	},
@@ -7013,7 +7281,8 @@
 		"askill": "251",
 		"bskill": "168",
 		"cskill": "114",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 246 			
 
 
 	},
@@ -7039,7 +7308,8 @@
 		"askill": "0",
 		"bskill": "6",
 		"cskill": "36",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 81 			
 
 
 	},
@@ -7065,7 +7335,8 @@
 		"askill": "0",
 		"bskill": "89",
 		"cskill": "231",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 96 			
 
 
 	},
@@ -7091,7 +7362,8 @@
 		"askill": "199",
 		"bskill": "115",
 		"cskill": "12",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 92 			
 
 
 	},
@@ -7117,7 +7389,8 @@
 		"askill": "167",
 		"bskill": "0",
 		"cskill": "134",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 19 			
 
 
 	},
@@ -7143,7 +7416,8 @@
 		"askill": "114",
 		"bskill": "235",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 207 			
 
 
 	},
@@ -7169,7 +7443,8 @@
 		"askill": "251",
 		"bskill": "115",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 203 			
 
 
 	},
@@ -7195,7 +7470,8 @@
 		"askill": "18",
 		"bskill": "56",
 		"cskill": "71",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 254 			
 
 
 	},
@@ -7221,7 +7497,8 @@
 		"askill": "74",
 		"bskill": "158",
 		"cskill": "146",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 70 			
 
 
 	},
@@ -7247,7 +7524,8 @@
 		"askill": "136",
 		"bskill": "143",
 		"cskill": "115",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 220 			
 
 
 	},
@@ -7273,7 +7551,8 @@
 		"askill": "228",
 		"bskill": "0",
 		"cskill": "78",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 39 			
 
 
 	},
@@ -7299,7 +7578,8 @@
 		"askill": "0",
 		"bskill": "120",
 		"cskill": "203",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 183 			
 
 
 	},
@@ -7325,7 +7605,8 @@
 		"askill": "0",
 		"bskill": "78",
 		"cskill": "266",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 33 			
 
 
 	},
@@ -7351,7 +7632,8 @@
 		"askill": "45",
 		"bskill": "251",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 176 			
 
 
 	},
@@ -7377,7 +7659,8 @@
 		"askill": "0",
 		"bskill": "41",
 		"cskill": "217",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 157 			
 
 
 	},
@@ -7403,7 +7686,8 @@
 		"askill": "262",
 		"bskill": "0",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 9 			
 
 
 	},
@@ -7429,7 +7713,8 @@
 		"askill": "251",
 		"bskill": "15",
 		"cskill": "98",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 197 			
 
 
 	},
@@ -7455,7 +7740,8 @@
 		"askill": "0",
 		"bskill": "214",
 		"cskill": "45",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 184 			
 
 
 	},
@@ -7481,7 +7767,8 @@
 		"askill": "0",
 		"bskill": "47",
 		"cskill": "82",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 61 			
 
 
 	},
@@ -7507,7 +7794,8 @@
 		"askill": "0",
 		"bskill": "95",
 		"cskill": "104",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 139 			
 
 
 	},
@@ -7533,7 +7821,8 @@
 		"askill": "251",
 		"bskill": "3",
 		"cskill": "214",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 107 			
 
 
 	},
@@ -7559,7 +7848,8 @@
 		"askill": "211",
 		"bskill": "0",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 57 			
 
 
 	},
@@ -7585,7 +7875,8 @@
 		"askill": "45",
 		"bskill": "0",
 		"cskill": "155",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 184 			
 
 
 	},
@@ -7611,7 +7902,8 @@
 		"askill": "36",
 		"bskill": "122",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 248 			
 
 
 	},
@@ -7637,7 +7929,8 @@
 		"askill": "123",
 		"bskill": "0",
 		"cskill": "263",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 60 			
 
 
 	},
@@ -7663,7 +7956,8 @@
 		"askill": "0",
 		"bskill": "191",
 		"cskill": "263",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 211 			
 
 
 	},
@@ -7689,7 +7983,8 @@
 		"askill": "126",
 		"bskill": "161",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 163 			
 
 
 	},
@@ -7715,7 +8010,8 @@
 		"askill": "126",
 		"bskill": "0",
 		"cskill": "220",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 152 			
 
 
 	},
@@ -7741,7 +8037,8 @@
 		"askill": "201",
 		"bskill": "0",
 		"cskill": "12",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 133 			
 
 
 	},
@@ -7767,7 +8064,8 @@
 		"askill": "0",
 		"bskill": "117",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 115 			
 
 
 	},
@@ -7793,7 +8091,8 @@
 		"askill": "139",
 		"bskill": "29",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 205 			
 
 
 	},
@@ -7819,7 +8118,8 @@
 		"askill": "78",
 		"bskill": "56",
 		"cskill": "126",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 165 			
 
 
 	},
@@ -7845,7 +8145,8 @@
 		"askill": "262",
 		"bskill": "0",
 		"cskill": "274",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 144 			
 
 
 	},
@@ -7871,7 +8172,8 @@
 		"askill": "251",
 		"bskill": "165",
 		"cskill": "111",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 194 			
 
 
 	},
@@ -7897,7 +8199,8 @@
 		"askill": "245",
 		"bskill": "53",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 18 			
 
 
 	},
@@ -7923,7 +8226,8 @@
 		"askill": "0",
 		"bskill": "120",
 		"cskill": "239",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 170 			
 
 
 	},
@@ -7949,7 +8253,8 @@
 		"askill": "27",
 		"bskill": "251",
 		"cskill": "239",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 203 			
 
 
 	},
@@ -7975,7 +8280,8 @@
 		"askill": "251",
 		"bskill": "81",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 86 			
 
 
 	},
@@ -8001,7 +8307,8 @@
 		"askill": "0",
 		"bskill": "248",
 		"cskill": "120",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 196 			
 
 
 	},
@@ -8027,7 +8334,8 @@
 		"askill": "0",
 		"bskill": "56",
 		"cskill": "64",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 136 			
 
 
 	},
@@ -8053,7 +8361,8 @@
 		"askill": "0",
 		"bskill": "89",
 		"cskill": "179",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 28 			
 
 
 	},
@@ -8079,7 +8388,8 @@
 		"askill": "211",
 		"bskill": "0",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 198 			
 
 
 	},
@@ -8105,7 +8415,8 @@
 		"askill": "51",
 		"bskill": "3",
 		"cskill": "123",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 43 			
 
 
 	},
@@ -8131,7 +8442,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 193 			
 
 
 	},
@@ -8157,7 +8469,8 @@
 		"askill": "239",
 		"bskill": "0",
 		"cskill": "76",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 135 			
 
 
 	},
@@ -8183,7 +8496,8 @@
 		"askill": "185",
 		"bskill": "196",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 48 			
 
 
 	},
@@ -8209,7 +8523,8 @@
 		"askill": "0",
 		"bskill": "47",
 		"cskill": "273",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 45 			
 
 
 	},
@@ -8235,7 +8550,8 @@
 		"askill": "135",
 		"bskill": "0",
 		"cskill": "260",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 184 			
 
 
 	},
@@ -8261,7 +8577,8 @@
 		"askill": "104",
 		"bskill": "184",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 147 			
 
 
 	},
@@ -8287,7 +8604,8 @@
 		"askill": "111",
 		"bskill": "53",
 		"cskill": "156",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 143 			
 
 
 	},
@@ -8313,7 +8631,8 @@
 		"askill": "0",
 		"bskill": "232",
 		"cskill": "118",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 162 			
 
 
 	},
@@ -8339,7 +8658,8 @@
 		"askill": "111",
 		"bskill": "232",
 		"cskill": "222",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 148 			
 
 
 	},
@@ -8365,7 +8685,8 @@
 		"askill": "239",
 		"bskill": "0",
 		"cskill": "99",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 131 			
 
 
 	},
@@ -8391,7 +8712,8 @@
 		"askill": "139",
 		"bskill": "0",
 		"cskill": "203",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 35 			
 
 
 	},
@@ -8417,7 +8739,8 @@
 		"askill": "76",
 		"bskill": "97",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 38 			
 
 
 	},
@@ -8443,7 +8766,8 @@
 		"askill": "0",
 		"bskill": "235",
 		"cskill": "275",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 201 			
 
 
 	},
@@ -8469,7 +8793,8 @@
 		"askill": "141",
 		"bskill": "44",
 		"cskill": "194",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 27 			
 
 
 	},
@@ -8495,7 +8820,8 @@
 		"askill": "87",
 		"bskill": "0",
 		"cskill": "6",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 92 			
 
 
 	},
@@ -8521,7 +8847,8 @@
 		"askill": "135",
 		"bskill": "0",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 67 			
 
 
 	},
@@ -8547,7 +8874,8 @@
 		"askill": "132",
 		"bskill": "24",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 191 			
 
 
 	},
@@ -8573,7 +8901,8 @@
 		"askill": "182",
 		"bskill": "0",
 		"cskill": "160",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 51 			
 
 
 	},
@@ -8599,7 +8928,8 @@
 		"askill": "0",
 		"bskill": "83",
 		"cskill": "78",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 247 			
 
 
 	},
@@ -8625,7 +8955,8 @@
 		"askill": "74",
 		"bskill": "165",
 		"cskill": "140",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 141 			
 
 
 	},
@@ -8651,7 +8982,8 @@
 		"askill": "236",
 		"bskill": "78",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 81 			
 
 
 	},
@@ -8677,7 +9009,8 @@
 		"askill": "259",
 		"bskill": "191",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -8703,7 +9036,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "45",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 39 			
 
 
 	},
@@ -8729,7 +9063,8 @@
 		"askill": "27",
 		"bskill": "232",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 251 			
 
 
 	},
@@ -8755,7 +9090,8 @@
 		"askill": "259",
 		"bskill": "50",
 		"cskill": "241",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 113 			
 
 
 	},
@@ -8781,7 +9117,8 @@
 		"askill": "126",
 		"bskill": "0",
 		"cskill": "138",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 245 			
 
 
 	},
@@ -8807,7 +9144,8 @@
 		"askill": "33",
 		"bskill": "56",
 		"cskill": "166",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 231 			
 
 
 	},
@@ -8833,7 +9171,8 @@
 		"askill": "192",
 		"bskill": "39",
 		"cskill": "126",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 81 			
 
 
 	},
@@ -8859,7 +9198,8 @@
 		"askill": "189",
 		"bskill": "204",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 35 			
 
 
 	},
@@ -8885,7 +9225,8 @@
 		"askill": "0",
 		"bskill": "95",
 		"cskill": "211",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 20 			
 
 
 	},
@@ -8911,7 +9252,8 @@
 		"askill": "0",
 		"bskill": "155",
 		"cskill": "237",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 29 			
 
 
 	},
@@ -8937,7 +9279,8 @@
 		"askill": "266",
 		"bskill": "115",
 		"cskill": "55",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 169 			
 
 
 	},
@@ -8963,7 +9306,8 @@
 		"askill": "0",
 		"bskill": "254",
 		"cskill": "208",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 159 			
 
 
 	},
@@ -8989,7 +9333,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 237 			
 
 
 	},
@@ -9015,7 +9360,8 @@
 		"askill": "36",
 		"bskill": "70",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 62 			
 
 
 	},
@@ -9041,7 +9387,8 @@
 		"askill": "259",
 		"bskill": "0",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 140 			
 
 
 	},
@@ -9067,7 +9414,8 @@
 		"askill": "259",
 		"bskill": "0",
 		"cskill": "266",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 17 			
 
 
 	},
@@ -9093,7 +9441,8 @@
 		"askill": "185",
 		"bskill": "38",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 254 			
 
 
 	},
@@ -9119,7 +9468,8 @@
 		"askill": "48",
 		"bskill": "174",
 		"cskill": "91",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 217 			
 
 
 	},
@@ -9145,7 +9495,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "130",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 0 			
 
 
 	},
@@ -9171,7 +9522,8 @@
 		"askill": "161",
 		"bskill": "186",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 36 			
 
 
 	},
@@ -9197,7 +9549,8 @@
 		"askill": "185",
 		"bskill": "35",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 233 			
 
 
 	},
@@ -9223,7 +9576,8 @@
 		"askill": "0",
 		"bskill": "78",
 		"cskill": "266",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 193 			
 
 
 	},
@@ -9249,7 +9603,8 @@
 		"askill": "234",
 		"bskill": "0",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 218 			
 
 
 	},
@@ -9275,7 +9630,8 @@
 		"askill": "254",
 		"bskill": "122",
 		"cskill": "197",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 172 			
 
 
 	},
@@ -9301,7 +9657,8 @@
 		"askill": "249",
 		"bskill": "0",
 		"cskill": "98",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -9327,7 +9684,8 @@
 		"askill": "0",
 		"bskill": "112",
 		"cskill": "33",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 77 			
 
 
 	},
@@ -9353,7 +9711,8 @@
 		"askill": "108",
 		"bskill": "0",
 		"cskill": "276",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 243 			
 
 
 	},
@@ -9379,7 +9738,8 @@
 		"askill": "242",
 		"bskill": "0",
 		"cskill": "67",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 148 			
 
 
 	},
@@ -9405,7 +9765,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "21",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 79 			
 
 
 	},
@@ -9431,7 +9792,8 @@
 		"askill": "0",
 		"bskill": "70",
 		"cskill": "135",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 225 			
 
 
 	},
@@ -9457,7 +9819,8 @@
 		"askill": "9",
 		"bskill": "0",
 		"cskill": "3",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 19 			
 
 
 	},
@@ -9483,7 +9846,8 @@
 		"askill": "101",
 		"bskill": "58",
 		"cskill": "214",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 187 			
 
 
 	},
@@ -9509,7 +9873,8 @@
 		"askill": "242",
 		"bskill": "0",
 		"cskill": "88",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 91 			
 
 
 	},
@@ -9535,7 +9900,8 @@
 		"askill": "199",
 		"bskill": "75",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 123 			
 
 
 	},
@@ -9561,7 +9927,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "80",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 147 			
 
 
 	},
@@ -9587,7 +9954,8 @@
 		"askill": "201",
 		"bskill": "0",
 		"cskill": "191",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 138 			
 
 
 	},
@@ -9613,7 +9981,8 @@
 		"askill": "262",
 		"bskill": "0",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 181 			
 
 
 	},
@@ -9639,7 +10008,8 @@
 		"askill": "36",
 		"bskill": "211",
 		"cskill": "188",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 178 			
 
 
 	},
@@ -9665,7 +10035,8 @@
 		"askill": "0",
 		"bskill": "242",
 		"cskill": "108",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 188 			
 
 
 	},
@@ -9691,7 +10062,8 @@
 		"askill": "196",
 		"bskill": "0",
 		"cskill": "226",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 203 			
 
 
 	},
@@ -9717,7 +10089,8 @@
 		"askill": "58",
 		"bskill": "251",
 		"cskill": "269",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 107 			
 
 
 	},
@@ -9743,7 +10116,8 @@
 		"askill": "123",
 		"bskill": "149",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 4 			
 
 
 	},
@@ -9769,7 +10143,8 @@
 		"askill": "211",
 		"bskill": "158",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 225 			
 
 
 	},
@@ -9795,7 +10170,8 @@
 		"askill": "251",
 		"bskill": "50",
 		"cskill": "139",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 21 			
 
 
 	},
@@ -9821,7 +10197,8 @@
 		"askill": "0",
 		"bskill": "226",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 56 			
 
 
 	},
@@ -9847,7 +10224,8 @@
 		"askill": "101",
 		"bskill": "6",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 154 			
 
 
 	},
@@ -9873,7 +10251,8 @@
 		"askill": "243",
 		"bskill": "239",
 		"cskill": "245",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 56 			
 
 
 	},
@@ -9899,7 +10278,8 @@
 		"askill": "65",
 		"bskill": "0",
 		"cskill": "82",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 95 			
 
 
 	},
@@ -9925,7 +10305,8 @@
 		"askill": "167",
 		"bskill": "0",
 		"cskill": "214",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 66 			
 
 
 	},
@@ -9951,7 +10332,8 @@
 		"askill": "167",
 		"bskill": "0",
 		"cskill": "169",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 97 			
 
 
 	},
@@ -9977,7 +10359,8 @@
 		"askill": "36",
 		"bskill": "35",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 128 			
 
 
 	},
@@ -10003,7 +10386,8 @@
 		"askill": "98",
 		"bskill": "0",
 		"cskill": "266",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 237 			
 
 
 	},
@@ -10029,7 +10413,8 @@
 		"askill": "54",
 		"bskill": "165",
 		"cskill": "222",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 89 			
 
 
 	},
@@ -10055,7 +10440,8 @@
 		"askill": "217",
 		"bskill": "0",
 		"cskill": "126",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 37 			
 
 
 	},
@@ -10081,7 +10467,8 @@
 		"askill": "251",
 		"bskill": "47",
 		"cskill": "105",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 21 			
 
 
 	},
@@ -10107,7 +10494,8 @@
 		"askill": "98",
 		"bskill": "235",
 		"cskill": "185",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 55 			
 
 
 	},
@@ -10133,7 +10521,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 222 			
 
 
 	},
@@ -10159,7 +10548,8 @@
 		"askill": "48",
 		"bskill": "211",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 80 			
 
 
 	},
@@ -10185,7 +10575,8 @@
 		"askill": "239",
 		"bskill": "201",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 145 			
 
 
 	},
@@ -10211,7 +10602,8 @@
 		"askill": "246",
 		"bskill": "47",
 		"cskill": "85",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 136 			
 
 
 	},
@@ -10237,7 +10629,8 @@
 		"askill": "27",
 		"bskill": "116",
 		"cskill": "74",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 66 			
 
 
 	},
@@ -10263,7 +10656,8 @@
 		"askill": "24",
 		"bskill": "0",
 		"cskill": "48",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 206 			
 
 
 	},
@@ -10289,7 +10683,8 @@
 		"askill": "145",
 		"bskill": "32",
 		"cskill": "277",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 170 			
 
 
 	},
@@ -10315,7 +10710,8 @@
 		"askill": "126",
 		"bskill": "0",
 		"cskill": "234",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 58 			
 
 
 	},
@@ -10341,7 +10737,8 @@
 		"askill": "101",
 		"bskill": "0",
 		"cskill": "27",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 174 			
 
 
 	},
@@ -10367,7 +10764,8 @@
 		"askill": "87",
 		"bskill": "217",
 		"cskill": "204",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 154 			
 
 
 	},
@@ -10393,7 +10791,8 @@
 		"askill": "24",
 		"bskill": "115",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 17 			
 
 
 	},
@@ -10419,7 +10818,8 @@
 		"askill": "259",
 		"bskill": "12",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 7 			
 
 
 	},
@@ -10445,7 +10845,8 @@
 		"askill": "63",
 		"bskill": "199",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 19 			
 
 
 	},
@@ -10471,7 +10872,8 @@
 		"askill": "111",
 		"bskill": "0",
 		"cskill": "263",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 147 			
 
 
 	},
@@ -10497,7 +10899,8 @@
 		"askill": "0",
 		"bskill": "73",
 		"cskill": "91",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 7 			
 
 
 	},
@@ -10523,7 +10926,8 @@
 		"askill": "104",
 		"bskill": "0",
 		"cskill": "176",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 155 			
 
 
 	},
@@ -10549,7 +10953,8 @@
 		"askill": "101",
 		"bskill": "0",
 		"cskill": "273",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 200 			
 
 
 	},
@@ -10575,7 +10980,8 @@
 		"askill": "0",
 		"bskill": "254",
 		"cskill": "52",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 254 			
 
 
 	},
@@ -10601,7 +11007,8 @@
 		"askill": "171",
 		"bskill": "53",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 48 			
 
 
 	},
@@ -10627,7 +11034,8 @@
 		"askill": "132",
 		"bskill": "199",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 136 			
 
 
 	},
@@ -10653,7 +11061,8 @@
 		"askill": "175",
 		"bskill": "50",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 162 			
 
 
 	},
@@ -10679,7 +11088,8 @@
 		"askill": "88",
 		"bskill": "56",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 214 			
 
 
 	},
@@ -10705,7 +11115,8 @@
 		"askill": "0",
 		"bskill": "126",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 31 			
 
 
 	},
@@ -10731,7 +11142,8 @@
 		"askill": "98",
 		"bskill": "158",
 		"cskill": "166",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 30 			
 
 
 	},
@@ -10757,7 +11169,8 @@
 		"askill": "24",
 		"bskill": "0",
 		"cskill": "229",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 226 			
 
 
 	},
@@ -10783,7 +11196,8 @@
 		"askill": "0",
 		"bskill": "123",
 		"cskill": "103",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 116 			
 
 
 	},
@@ -10809,7 +11223,8 @@
 		"askill": "151",
 		"bskill": "0",
 		"cskill": "152",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 22 			
 
 
 	},
@@ -10835,7 +11250,8 @@
 		"askill": "58",
 		"bskill": "95",
 		"cskill": "172",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 235 			
 
 
 	},
@@ -10861,7 +11277,8 @@
 		"askill": "154",
 		"bskill": "0",
 		"cskill": "88",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 85 			
 
 
 	},
@@ -10887,7 +11304,8 @@
 		"askill": "215",
 		"bskill": "56",
 		"cskill": "217",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 33 			
 
 
 	},
@@ -10913,7 +11331,8 @@
 		"askill": "36",
 		"bskill": "180",
 		"cskill": "49",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 49 			
 
 
 	},
@@ -10939,7 +11358,8 @@
 		"askill": "148",
 		"bskill": "236",
 		"cskill": "176",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 20 			
 
 
 	},
@@ -10965,7 +11385,8 @@
 		"askill": "196",
 		"bskill": "239",
 		"cskill": "0",
-		"sseal": "0"			
+		"sseal": "0",
+		"bvid": 187 			
 
 
 	}

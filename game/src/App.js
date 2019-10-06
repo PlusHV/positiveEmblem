@@ -226,6 +226,8 @@ class TicTacToeBoard extends React.Component{
     }
 
     temp[this.state.playerSide][this.state.heroIndex].iv = ivList;
+
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 

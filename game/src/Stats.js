@@ -7,7 +7,7 @@ import './App.css';
 export default class Stats extends React.Component{
 
   render(){
-  	console.log(this.props.gameState.selectedMember);
+
 	const dropDownTheme = theme => ({
 	  ...theme,
 	  borderRadius: 0,
