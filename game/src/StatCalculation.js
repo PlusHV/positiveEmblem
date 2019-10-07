@@ -1,14 +1,35 @@
 import heroData from './heroInfo.json';
 import {object} from 'underscore';
+import growthVectors from './growthVectors.json';
 
 const statName = ["hp", "atk", "spd", "def", "res"];
 
-export function CalculateStat(level, rarity, growth, base){
-	
-		var calculatedGrowthRate = Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0 ;
-		return base + Math.trunc(calculatedGrowthRate * (level-1));
+function CalculateMinMaxStat(level, rarity, growth, base){
+		
 
-};
+		if (level === 1){
+			return base;
+			
+		} else if (level === 40){
+			
+			let calculatedGrowthRate = Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0 ;
+			return base + Math.trunc(calculatedGrowthRate * (39));
+		} 
+
+}
+
+function CalculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
+
+	let growthID = ((3 * orgBase) + offset + Math.trunc(growth * (0.07 * rarity + 0.79))  + bvid) % 64;
+	console.log(growthID);
+	var levelup = ConvertGrowthVector(growthVectors[growth.toString()][growthID.toString()], level );
+	console.log(levelup);
+	return base + levelup;
+}
+
+function ConvertGrowthVector(vect, level){
+	return (vect.substring(0, level-1).match(/1/g)|| []).length;
+}
 
 export function CalculateStats(hero){
 	var statArray = {};
@@ -16,7 +37,10 @@ export function CalculateStats(hero){
 	var heroInfo = heroData[hero.heroID.value];
 
   	var bases = [heroInfo.basehp, heroInfo.baseatk, heroInfo.basespd, heroInfo.basedef, heroInfo.baseres];
+  	var orgBases = [...bases];
   	var growths = [heroInfo.growthhp, heroInfo.growthatk, heroInfo.growthspd, heroInfo.growthdef, heroInfo.growthres];
+
+  	const growthOffset = [-35, -28, -21, -14, -7];
   	//todo - modify these depending on boon/bane
 
   	//todo - merge bonuses
@@ -30,21 +54,23 @@ export function CalculateStats(hero){
   	var rarityMods = RarityMods(hero.rarity, statOrder);
   	bases = ApplyMods(bases, rarityMods);
 
-  	console.log(bases);
   	//iv calculation
   	var ivMods = IVMods(hero.iv.asset, hero.iv.flaw);
   	bases = ApplyMods(bases, ivMods.base);
   	growths = ApplyMods(growths, ivMods.growth);
 
-  	console.log(bases);
+
   	statOrder = StatOrder(object(statName,bases)); //recalculate with ivs applied
   	//merge calculaion
 
   	//dragonflower calculation
 
   	for (let i = 0; i < bases.length; i++) {
-
-  		statArray[statName[i]] = CalculateStat(hero.level, hero.rarity, growths[i], bases[i]);
+		if (hero.level === 1 || hero.level === 40){
+  			statArray[statName[i]] = CalculateMinMaxStat(hero.level, hero.rarity, growths[i], bases[i]);
+  		} else{
+  			statArray[statName[i]] = CalculateMidStat(hero.level, hero.rarity, growths[i], bases[i], heroInfo.bvid, growthOffset[i], orgBases[i]);
+  		}
   	}
 
 

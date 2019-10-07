@@ -126,7 +126,7 @@ class TicTacToeBoard extends React.Component{
   onLevelsChange(e, type){ 
 
     let temp = this.state.heroList;
-    temp[this.state.playerSide][this.state.heroIndex][type] = e.target.value;
+    temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
     temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
 
     this.setState({heroList: temp});
