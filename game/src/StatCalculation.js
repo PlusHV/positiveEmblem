@@ -21,9 +21,9 @@ function CalculateMinMaxStat(level, rarity, growth, base){
 function CalculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
 
 	let growthID = ((3 * orgBase) + offset + Math.trunc(growth * (0.07 * rarity + 0.79))  + bvid) % 64;
-	console.log(growthID);
-	var levelup = ConvertGrowthVector(growthVectors[growth.toString()][growthID.toString()], level );
-	console.log(levelup);
+	let growthValue = Math.trunc( Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0  * (39));
+	var levelup = ConvertGrowthVector(growthVectors[growthValue][growthID.toString()], level );
+	
 	return base + levelup;
 }
 
