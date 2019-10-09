@@ -327,7 +327,7 @@ function makeHeroStruct(){
     this["merge"] = 0;
     this["dragonflower"] = 0;
     this["heroID"] = {value: "0", label: ""};
-    this["iv"] = {asset: "neutral", flaw: "neutral"};
+    this["iv"] = {asset: "Neutral", flaw: "Neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} 
                         };

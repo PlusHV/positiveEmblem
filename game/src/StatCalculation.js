@@ -52,7 +52,7 @@ export function CalculateStats(hero){
 
   	//rarity calculation
   	var rarityMods = RarityMods(hero.rarity, statOrder);
-  	bases = ApplyMods(bases, rarityMods);
+  	
 
   	//iv calculation
   	var ivMods = IVMods(hero.iv.asset, hero.iv.flaw);
@@ -61,9 +61,19 @@ export function CalculateStats(hero){
 
 
   	statOrder = StatOrder(object(statName,bases)); //recalculate with ivs applied
-  	//merge calculaion
+
+  	//merge calculation
+  	var mergeMods = MergeMods(hero.merge, statOrder, hero.iv.flaw);
 
   	//dragonflower calculation
+  	var flowerMods =FlowerMods(hero.dragonflower, statOrder);
+
+  	//apply mods
+
+  	bases = ApplyMods(bases, flowerMods);
+  	bases = ApplyMods(bases, mergeMods.base);
+  	growths = ApplyMods(growths, mergeMods.growth);
+  	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
 
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){
@@ -130,6 +140,77 @@ function RarityMods(rarity, order){
 			val = stack.pop();
 
 		mods[val] -=1;
+
+	}
+
+	return mods;
+}
+
+function MergeMods(merge, order, flaw){
+	let statMods = object(statName,[0, 0, 0, 0, 0]);
+	let growthMods = object(statName,[0, 0, 0, 0, 0]);
+
+
+	let stack = [...order];
+
+	for (let i = 1; i < merge+1; i++){
+
+		if (i === 1){
+
+			//First merge bonus
+			if (flaw === 'Neutral'){
+				statMods[order[0]] +=1;
+				statMods[order[1]] +=1;
+				statMods[order[2]] +=1;
+
+			} else{
+				statMods[flaw] +=1;
+				growthMods[flaw] += 5 
+			}
+		}
+			
+		//on 6th merge, stack is reset
+		if (i === 6){
+			stack = [...order];
+		}
+
+
+		let val = stack.shift();
+		statMods[val] +=1;
+
+		//if on 3rd or 8th merge, reset stack
+		if (i%5  === 3){
+			stack = [...order];
+		}
+
+		val = stack.shift();
+		statMods[val] +=1;
+
+
+		
+
+	}
+
+	return {base: statMods, growth: growthMods} ;
+}
+
+
+function FlowerMods(flowers, order){
+	//let dict = object(rest(statName), bases);
+	let mods = object(statName,[0, 0, 0, 0, 0]);
+
+
+	let stack = [...order];
+
+	for (let i = 1; i < flowers+1; i++){
+
+		if (i === 6){ 
+			stack = [...order]; //reset stack
+		}
+
+		let val = stack.shift();
+
+		mods[val] +=1;
 
 	}
 
