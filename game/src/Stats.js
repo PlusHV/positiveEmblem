@@ -103,7 +103,25 @@ export default class Stats extends React.Component{
 			    }
 	    	}
 
-	    	if (statText[i] === "atk"){
+	    	//Last Column
+
+	    	if (statText[i] === "hp"){
+	    		cells.push(<td key = "summonerSupportLabel" className= "statText">Sum Support</td>);
+	    		cells.push(<td key = "summonerSupportValue"> 
+
+	    				</td>);
+
+	    	} else if(statText[i] === "atk"){
+	    		cells.push(<td key = "allySupportLabel" className= "statText">Ally Support</td>);
+	    		cells.push(<td key = "allySupportValue"> 
+
+	    				</td>);
+	    	} else if (statText[i] === "spd"){
+	    		cells.push(<td key = "blessingLabel" className= "statText">Blessing</td>);
+	    		cells.push(<td key = "blessingValue"> 
+
+	    				</td>);
+	    	} else if (statText[i] === "def"){
 	    		cells.push(<td key = "assetLabel" className= "statText">Asset</td>);
 
 	    		let options = [];
@@ -127,7 +145,7 @@ export default class Stats extends React.Component{
 
 
 
-	    	} else if (statText[i] === "def"){
+	    	} else if (statText[i] === "res"){
 	    		cells.push(<td key = "flawLabel" className= "statText">Flaw</td>);
 
 	    		let options = [];

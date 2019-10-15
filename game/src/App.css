@@ -129,6 +129,76 @@ table,tr,td {
 
 
 
+.smallSelect__control {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__container {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__input {
+    height: 30px;
+    min-height: 30px;
+    top: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    transform: translateY(-50%);
+  }
+.smallSelect__singleValue {
+    height: 20px;
+    min-height: 20px;
+    top: 0%;
+    position: relative;
+
+  }
+.smallSelect__dropdownIndicator {
+    height: 20px;
+    min-height: 20px;
+    padding-top: 1;
+    padding-bottom: 1;
+    padding-right: 1;
+    padding-left: 1;
+  }
+.smallSelect__indicatorSeparator {
+    height: 15px;
+    min-height: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    align-self: center;
+  }
+.smallSelect__clearIndicator {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__valueContainer {
+    height: 20px;
+    min-height: 20px;
+
+  }
+
+.smallSelect__indicatorsContainer {
+    height: 20px;
+    min-height: 20px;
+
+  }
+.smallSelect__group {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__groupHeading {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__menuPortal {
+    height: 20px;
+    min-height: 20px;
+  }
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -48,7 +48,8 @@ class TicTacToeBoard extends React.Component{
       "selectedMember": new heroStruct(0), //The current struct in heroList
       "weaponList": weapons["sword"],
       "selectedHeroInfo": heroData["0"], //The current hero's info
-      "maxFilter": false
+      "maxFilter": false,
+      "fortLevel": 0
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -336,6 +337,8 @@ function makeHeroStruct(){
     this["combat"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
+    this["summonerSupport"] = "None";
+    this["allySupport"] = {"hero": "0", "level": "None" };
   }  
   return hero;
 }

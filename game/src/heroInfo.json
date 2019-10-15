@@ -21,7 +21,8 @@
 		"askill": "0",
 		"bskill": "0",
 		"cskill": "0",
-		"ssewwal": "0"			
+		"sseal": "0",
+		"bvzid": 0			
 	},
 	"1": {  
 		"id": 1,
@@ -46,7 +47,8 @@
 		"bskill": "226",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 198 			
+		"bvid": 198,
+		"art": "Abel" 			
 
 
 	},
@@ -73,7 +75,8 @@
 		"bskill": "0",
 		"cskill": "220",
 		"sseal": "0",
-		"bvid": 23 			
+		"bvid": 23,
+		"art": "Alfonse" 			
 
 
 	},
@@ -100,7 +103,8 @@
 		"bskill": "0",
 		"cskill": "64",
 		"sseal": "0",
-		"bvid": 233 			
+		"bvid": 233,
+		"art": "Alfonse - Spring" 			
 
 
 	},
@@ -127,7 +131,8 @@
 		"bskill": "245",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 205 			
+		"bvid": 205,
+		"art": "Alm" 			
 
 
 	},
@@ -154,7 +159,8 @@
 		"bskill": "50",
 		"cskill": "254",
 		"sseal": "0",
-		"bvid": 109 			
+		"bvid": 109,
+		"art": "Alm - CYL" 			
 
 
 	},
@@ -181,7 +187,8 @@
 		"bskill": "146",
 		"cskill": "163",
 		"sseal": "0",
-		"bvid": 169 			
+		"bvid": 169,
+		"art": "Alm - Legendary" 			
 
 
 	},
@@ -208,7 +215,8 @@
 		"bskill": "0",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 175 			
+		"bvid": 175,
+		"art": "Amelia" 			
 
 
 	},
@@ -235,7 +243,8 @@
 		"bskill": "232",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 255 			
+		"bvid": 255,
+		"art": "Anna" 			
 
 
 	},
@@ -262,7 +271,8 @@
 		"bskill": "103",
 		"cskill": "78",
 		"sseal": "0",
-		"bvid": 241 			
+		"bvid": 241,
+		"art": "Arden" 			
 
 
 	},
@@ -289,7 +299,8 @@
 		"bskill": "193",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 231 			
+		"bvid": 231,
+		"art": "Ares" 			
 
 
 	},
@@ -316,7 +327,8 @@
 		"bskill": "120",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 208 			
+		"bvid": 208,
+		"art": "Arthur" 			
 
 
 	},
@@ -343,7 +355,8 @@
 		"bskill": "162",
 		"cskill": "61",
 		"sseal": "0",
-		"bvid": 125 			
+		"bvid": 125,
+		"art": "Arvis" 			
 
 
 	},
@@ -370,7 +383,8 @@
 		"bskill": "0",
 		"cskill": "248",
 		"sseal": "0",
-		"bvid": 146 			
+		"bvid": 146,
+		"art": "Athena" 			
 
 
 	},
@@ -397,7 +411,8 @@
 		"bskill": "0",
 		"cskill": "169",
 		"sseal": "0",
-		"bvid": 188 			
+		"bvid": 188,
+		"art": "Aversa" 			
 
 
 	},
@@ -424,7 +439,8 @@
 		"bskill": "78",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 143 			
+		"bvid": 143,
+		"art": "Ayra" 			
 
 
 	},
@@ -451,7 +467,8 @@
 		"bskill": "0",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 149 			
+		"bvid": 149,
+		"art": "Azama" 			
 
 
 	},
@@ -478,7 +495,8 @@
 		"bskill": "92",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 102 			
+		"bvid": 102,
+		"art": "Azura - New Years" 			
 
 
 	},
@@ -505,7 +523,8 @@
 		"bskill": "0",
 		"cskill": "80",
 		"sseal": "0",
-		"bvid": 255 			
+		"bvid": 255,
+		"art": "Azura - Dancer" 			
 
 
 	},
@@ -532,7 +551,8 @@
 		"bskill": "0",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 83 			
+		"bvid": 83,
+		"art": "Azura" 			
 
 
 	},
@@ -559,7 +579,8 @@
 		"bskill": "3",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 47 			
+		"bvid": 47,
+		"art": "Azura - Legendary" 			
 
 
 	},
@@ -586,7 +607,8 @@
 		"bskill": "229",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 32 			
+		"bvid": 32,
+		"art": "Azura - Dreaming" 			
 
 
 	},
@@ -613,7 +635,8 @@
 		"bskill": "117",
 		"cskill": "220",
 		"sseal": "0",
-		"bvid": 48 			
+		"bvid": 48,
+		"art": "Barst" 			
 
 
 	},
@@ -640,7 +663,8 @@
 		"bskill": "38",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 133 			
+		"bvid": 133,
+		"art": "Bartre" 			
 
 
 	},
@@ -667,7 +691,8 @@
 		"bskill": "0",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 200 			
+		"bvid": 200,
+		"art": "Berkut - Dancer" 			
 
 
 	},
@@ -694,7 +719,8 @@
 		"bskill": "0",
 		"cskill": "274",
 		"sseal": "0",
-		"bvid": 155 			
+		"bvid": 155,
+		"art": "Berkut" 			
 
 
 	},
@@ -721,7 +747,8 @@
 		"bskill": "0",
 		"cskill": "169",
 		"sseal": "0",
-		"bvid": 162 			
+		"bvid": 162,
+		"art": "Berkut - Fallen" 			
 
 
 	},
@@ -748,7 +775,8 @@
 		"bskill": "137",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 207 			
+		"bvid": 207,
+		"art": "Beruka" 			
 
 
 	},
@@ -775,7 +803,8 @@
 		"bskill": "248",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 159 			
+		"bvid": 159,
+		"art": "Black Knight" 			
 
 
 	},
@@ -802,7 +831,8 @@
 		"bskill": "165",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 220 			
+		"bvid": 220,
+		"art": "Boey" 			
 
 
 	},
@@ -829,7 +859,8 @@
 		"bskill": "0",
 		"cskill": "155",
 		"sseal": "0",
-		"bvid": 140 			
+		"bvid": 140,
+		"art": "Brady" 			
 
 
 	},
@@ -856,7 +887,8 @@
 		"bskill": "64",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 189 			
+		"bvid": 189,
+		"art": "Bruno - Spring" 			
 
 
 	},
@@ -883,7 +915,8 @@
 		"bskill": "251",
 		"cskill": "85",
 		"sseal": "0",
-		"bvid": 222 			
+		"bvid": 222,
+		"art": "Byleth - Female" 			
 
 
 	},
@@ -910,7 +943,8 @@
 		"bskill": "56",
 		"cskill": "172",
 		"sseal": "0",
-		"bvid": 45 			
+		"bvid": 45,
+		"art": "Byleth - Male" 			
 
 
 	},
@@ -937,7 +971,8 @@
 		"bskill": "0",
 		"cskill": "138",
 		"sseal": "0",
-		"bvid": 69 			
+		"bvid": 69,
+		"art": "Caeda - Bride" 			
 
 
 	},
@@ -964,7 +999,8 @@
 		"bskill": "0",
 		"cskill": "105",
 		"sseal": "0",
-		"bvid": 211 			
+		"bvid": 211,
+		"art": "Caeda" 			
 
 
 	},
@@ -991,7 +1027,8 @@
 		"bskill": "248",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 226 			
+		"bvid": 226,
+		"art": "Cain" 			
 
 
 	},
@@ -1018,7 +1055,8 @@
 		"bskill": "235",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 35 			
+		"bvid": 35,
+		"art": "Caineghis" 			
 
 
 	},
@@ -1045,7 +1083,8 @@
 		"bskill": "0",
 		"cskill": "203",
 		"sseal": "0",
-		"bvid": 211 			
+		"bvid": 211,
+		"art": "Camilla" 			
 
 
 	},
@@ -1072,7 +1111,8 @@
 		"bskill": "12",
 		"cskill": "120",
 		"sseal": "0",
-		"bvid": 53 			
+		"bvid": 53,
+		"art": "Camilla - Dreaming" 			
 
 
 	},
@@ -1099,7 +1139,8 @@
 		"bskill": "0",
 		"cskill": "276",
 		"sseal": "0",
-		"bvid": 230 			
+		"bvid": 230,
+		"art": "Camilla - New Years" 			
 
 
 	},
@@ -1126,7 +1167,8 @@
 		"bskill": "254",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 115 			
+		"bvid": 115,
+		"art": "Camilla - CYL" 			
 
 
 	},
@@ -1153,7 +1195,8 @@
 		"bskill": "122",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 165 			
+		"bvid": 165,
+		"art": "Camilla - Spring" 			
 
 
 	},
@@ -1180,7 +1223,8 @@
 		"bskill": "0",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 197 			
+		"bvid": 197,
+		"art": "Camilla - Spa" 			
 
 
 	},
@@ -1207,7 +1251,8 @@
 		"bskill": "102",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 71 			
+		"bvid": 71,
+		"art": "Camilla - Summer" 			
 
 
 	},
@@ -1234,7 +1279,8 @@
 		"bskill": "0",
 		"cskill": "118",
 		"sseal": "0",
-		"bvid": 207 			
+		"bvid": 207,
+		"art": "Camus" 			
 
 
 	},
@@ -1261,7 +1307,8 @@
 		"bskill": "0",
 		"cskill": "197",
 		"sseal": "0",
-		"bvid": 142 			
+		"bvid": 142,
+		"art": "Canas" 			
 
 
 	},
@@ -1288,7 +1335,8 @@
 		"bskill": "184",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 83 			
+		"bvid": 83,
+		"art": "Catria" 			
 
 
 	},
@@ -1315,7 +1363,8 @@
 		"bskill": "53",
 		"cskill": "82",
 		"sseal": "0",
-		"bvid": 37 			
+		"bvid": 37,
+		"art": "Catria - Spring" 			
 
 
 	},
@@ -1342,7 +1391,8 @@
 		"bskill": "95",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 94 			
+		"bvid": 94,
+		"art": "Cecilia" 			
 
 
 	},
@@ -1369,7 +1419,8 @@
 		"bskill": "0",
 		"cskill": "61",
 		"sseal": "0",
-		"bvid": 183 			
+		"bvid": 183,
+		"art": "Cecilia - Christmas" 			
 
 
 	},
@@ -1396,7 +1447,8 @@
 		"bskill": "0",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 240 			
+		"bvid": 240,
+		"art": "Celica" 			
 
 
 	},
@@ -1423,7 +1475,8 @@
 		"bskill": "56",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 183 			
+		"bvid": 183,
+		"art": "Celica - Fallen" 			
 
 
 	},
@@ -1450,7 +1503,8 @@
 		"bskill": "82",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 16 			
+		"bvid": 16,
+		"art": "Celica - CYL" 			
 
 
 	},
@@ -1477,7 +1531,8 @@
 		"bskill": "0",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 222 			
+		"bvid": 222,
+		"art": "Charlotte - Bride" 			
 
 
 	},
@@ -1504,7 +1559,8 @@
 		"bskill": "0",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 227 			
+		"bvid": 227,
+		"art": "Cherche" 			
 
 
 	},
@@ -1531,7 +1587,8 @@
 		"bskill": "0",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 220 			
+		"bvid": 220,
+		"art": "Chrom" 			
 
 
 	},
@@ -1558,7 +1615,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 53 			
+		"bvid": 53,
+		"art": "Chrom - Christmas" 			
 
 
 	},
@@ -1585,7 +1643,8 @@
 		"bskill": "50",
 		"cskill": "251",
 		"sseal": "0",
-		"bvid": 14 			
+		"bvid": 14,
+		"art": "Chrom - Exalt" 			
 
 
 	},
@@ -1612,7 +1671,8 @@
 		"bskill": "0",
 		"cskill": "24",
 		"sseal": "0",
-		"bvid": 174 			
+		"bvid": 174,
+		"art": "Chrom - Spring" 			
 
 
 	},
@@ -1639,7 +1699,8 @@
 		"bskill": "116",
 		"cskill": "237",
 		"sseal": "0",
-		"bvid": 157 			
+		"bvid": 157,
+		"art": "Clair" 			
 
 
 	},
@@ -1666,7 +1727,8 @@
 		"bskill": "0",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 235 			
+		"bvid": 235,
+		"art": "Clarine" 			
 
 
 	},
@@ -1693,7 +1755,8 @@
 		"bskill": "155",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 169 			
+		"bvid": 169,
+		"art": "Clarisse" 			
 
 
 	},
@@ -1720,7 +1783,8 @@
 		"bskill": "135",
 		"cskill": "64",
 		"sseal": "0",
-		"bvid": 193 			
+		"bvid": 193,
+		"art": "Claude" 			
 
 
 	},
@@ -1747,7 +1811,8 @@
 		"bskill": "116",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 208 			
+		"bvid": 208,
+		"art": "Clive" 			
 
 
 	},
@@ -1774,7 +1839,8 @@
 		"bskill": "86",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 193 			
+		"bvid": 193,
+		"art": "Cordelia - Summer" 			
 
 
 	},
@@ -1801,7 +1867,8 @@
 		"bskill": "152",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 77 			
+		"bvid": 77,
+		"art": "Cordelia" 			
 
 
 	},
@@ -1828,7 +1895,8 @@
 		"bskill": "95",
 		"cskill": "48",
 		"sseal": "0",
-		"bvid": 255 			
+		"bvid": 255,
+		"art": "Cordelia - Bride" 			
 
 
 	},
@@ -1855,7 +1923,8 @@
 		"bskill": "146",
 		"cskill": "134",
 		"sseal": "0",
-		"bvid": 40 			
+		"bvid": 40,
+		"art": "Corrin M - Dreaming" 			
 
 
 	},
@@ -1882,7 +1951,8 @@
 		"bskill": "0",
 		"cskill": "104",
 		"sseal": "0",
-		"bvid": 100 			
+		"bvid": 100,
+		"art": "Corrin F - Dreaming" 			
 
 
 	},
@@ -1909,7 +1979,8 @@
 		"bskill": "0",
 		"cskill": "231",
 		"sseal": "0",
-		"bvid": 153 			
+		"bvid": 153,
+		"art": "Corrin - New Years" 			
 
 
 	},
@@ -1936,7 +2007,8 @@
 		"bskill": "149",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 198 			
+		"bvid": 198,
+		"art": "Corrin M" 			
 
 
 	},
@@ -1963,7 +2035,8 @@
 		"bskill": "196",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 2 			
+		"bvid": 2,
+		"art": "Corrin F" 			
 
 
 	},
@@ -1990,7 +2063,8 @@
 		"bskill": "0",
 		"cskill": "105",
 		"sseal": "0",
-		"bvid": 182 			
+		"bvid": 182,
+		"art": "Corrin F - Summer" 			
 
 
 	},
@@ -2017,7 +2091,8 @@
 		"bskill": "223",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 102 			
+		"bvid": 102,
+		"art": "Corrin - Fallen" 			
 
 
 	},
@@ -2044,7 +2119,8 @@
 		"bskill": "208",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 163 			
+		"bvid": 163,
+		"art": "Cynthia" 			
 
 
 	},
@@ -2071,7 +2147,8 @@
 		"bskill": "95",
 		"cskill": "52",
 		"sseal": "0",
-		"bvid": 114 			
+		"bvid": 114,
+		"art": "Death Knight" 			
 
 
 	},
@@ -2098,7 +2175,8 @@
 		"bskill": "158",
 		"cskill": "211",
 		"sseal": "0",
-		"bvid": 30 			
+		"bvid": 30,
+		"art": "Deirdre" 			
 
 
 	},
@@ -2125,7 +2203,8 @@
 		"bskill": "0",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 206 			
+		"bvid": 206,
+		"art": "Delthea" 			
 
 
 	},
@@ -2152,7 +2231,8 @@
 		"bskill": "0",
 		"cskill": "85",
 		"sseal": "0",
-		"bvid": 154 			
+		"bvid": 154,
+		"art": "Delthea - Fallen" 			
 
 
 	},
@@ -2179,7 +2259,8 @@
 		"bskill": "129",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 91 			
+		"bvid": 91,
+		"art": "Dimitri" 			
 
 
 	},
@@ -2206,7 +2287,8 @@
 		"bskill": "83",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 52 			
+		"bvid": 52,
+		"art": "Donnel" 			
 
 
 	},
@@ -2233,7 +2315,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 116 			
+		"bvid": 116,
+		"art": "Dorcas - Halloween" 			
 
 
 	},
@@ -2260,7 +2343,8 @@
 		"bskill": "158",
 		"cskill": "152",
 		"sseal": "0",
-		"bvid": 184 			
+		"bvid": 184,
+		"art": "Dorcas" 			
 
 
 	},
@@ -2287,7 +2371,8 @@
 		"bskill": "137",
 		"cskill": "272",
 		"sseal": "0",
-		"bvid": 209 			
+		"bvid": 209,
+		"art": "Draug" 			
 
 
 	},
@@ -2314,7 +2399,8 @@
 		"bskill": "32",
 		"cskill": "270",
 		"sseal": "0",
-		"bvid": 47 			
+		"bvid": 47,
+		"art": "Duma" 			
 
 
 	},
@@ -2341,7 +2427,8 @@
 		"bskill": "86",
 		"cskill": "200",
 		"sseal": "0",
-		"bvid": 21 			
+		"bvid": 21,
+		"art": "Edelgard" 			
 
 
 	},
@@ -2368,7 +2455,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 171 			
+		"bvid": 171,
+		"art": "Effie" 			
 
 
 	},
@@ -2395,7 +2483,8 @@
 		"bskill": "140",
 		"cskill": "205",
 		"sseal": "0",
-		"bvid": 131 			
+		"bvid": 131,
+		"art": "Eir" 			
 
 
 	},
@@ -2422,7 +2511,8 @@
 		"bskill": "78",
 		"cskill": "182",
 		"sseal": "0",
-		"bvid": 179 			
+		"bvid": 179,
+		"art": "Eirika - Memories" 			
 
 
 	},
@@ -2449,7 +2539,8 @@
 		"bskill": "64",
 		"cskill": "9",
 		"sseal": "0",
-		"bvid": 90 			
+		"bvid": 90,
+		"art": "Eirika - Christmas" 			
 
 
 	},
@@ -2476,7 +2567,8 @@
 		"bskill": "136",
 		"cskill": "166",
 		"sseal": "0",
-		"bvid": 221 			
+		"bvid": 221,
+		"art": "Eirika - Legendary" 			
 
 
 	},
@@ -2503,7 +2595,8 @@
 		"bskill": "83",
 		"cskill": "138",
 		"sseal": "0",
-		"bvid": 65 			
+		"bvid": 65,
+		"art": "Eirika" 			
 
 
 	},
@@ -2530,7 +2623,8 @@
 		"bskill": "137",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 72 			
+		"bvid": 72,
+		"art": "Eldigan" 			
 
 
 	},
@@ -2557,7 +2651,8 @@
 		"bskill": "170",
 		"cskill": "80",
 		"sseal": "0",
-		"bvid": 250 			
+		"bvid": 250,
+		"art": "Elincia - Festival" 			
 
 
 	},
@@ -2584,7 +2679,8 @@
 		"bskill": "102",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 126 			
+		"bvid": 126,
+		"art": "Elincia" 			
 
 
 	},
@@ -2611,7 +2707,8 @@
 		"bskill": "9",
 		"cskill": "55",
 		"sseal": "0",
-		"bvid": 156 			
+		"bvid": 156,
+		"art": "Elise - Spa" 			
 
 
 	},
@@ -2638,7 +2735,8 @@
 		"bskill": "126",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 234 			
+		"bvid": 234,
+		"art": "Elise" 			
 
 
 	},
@@ -2665,7 +2763,8 @@
 		"bskill": "0",
 		"cskill": "114",
 		"sseal": "0",
-		"bvid": 30 			
+		"bvid": 30,
+		"art": "Elise - Summer" 			
 
 
 	},
@@ -2692,7 +2791,8 @@
 		"bskill": "47",
 		"cskill": "271",
 		"sseal": "0",
-		"bvid": 192 			
+		"bvid": 192,
+		"art": "Eliwood - Legendary" 			
 
 
 	},
@@ -2719,7 +2819,8 @@
 		"bskill": "0",
 		"cskill": "116",
 		"sseal": "0",
-		"bvid": 26 			
+		"bvid": 26,
+		"art": "Eliwood - Valentines" 			
 
 
 	},
@@ -2746,7 +2847,8 @@
 		"bskill": "21",
 		"cskill": "274",
 		"sseal": "0",
-		"bvid": 100 			
+		"bvid": 100,
+		"art": "Eliwood" 			
 
 
 	},
@@ -2773,7 +2875,8 @@
 		"bskill": "18",
 		"cskill": "208",
 		"sseal": "0",
-		"bvid": 132 			
+		"bvid": 132,
+		"art": "Eliwood - CYL" 			
 
 
 	},
@@ -2800,7 +2903,8 @@
 		"bskill": "205",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 66 			
+		"bvid": 66,
+		"art": "Ephraim - Legendary" 			
 
 
 	},
@@ -2827,7 +2931,8 @@
 		"bskill": "191",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 230 			
+		"bvid": 230,
+		"art": "Ephraim" 			
 
 
 	},
@@ -2854,7 +2959,8 @@
 		"bskill": "217",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 6 			
+		"bvid": 6,
+		"art": "Ephraim - CYL" 			
 
 
 	},
@@ -2881,7 +2987,8 @@
 		"bskill": "32",
 		"cskill": "52",
 		"sseal": "0",
-		"bvid": 255 			
+		"bvid": 255,
+		"art": "Ephraim - Christmas" 			
 
 
 	},
@@ -2908,7 +3015,8 @@
 		"bskill": "199",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 137 			
+		"bvid": 137,
+		"art": "Est" 			
 
 
 	},
@@ -2935,7 +3043,8 @@
 		"bskill": "126",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 158 			
+		"bvid": 158,
+		"art": "Ethlyn" 			
 
 
 	},
@@ -2962,7 +3071,8 @@
 		"bskill": "165",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 214 			
+		"bvid": 214,
+		"art": "Fae" 			
 
 
 	},
@@ -2989,7 +3099,8 @@
 		"bskill": "235",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 47 			
+		"bvid": 47,
+		"art": "Fae - Christmas" 			
 
 
 	},
@@ -3016,7 +3127,8 @@
 		"bskill": "248",
 		"cskill": "42",
 		"sseal": "0",
-		"bvid": 128 			
+		"bvid": 128,
+		"art": "Faye" 			
 
 
 	},
@@ -3043,7 +3155,8 @@
 		"bskill": "0",
 		"cskill": "48",
 		"sseal": "0",
-		"bvid": 31 			
+		"bvid": 31,
+		"art": "Felicia" 			
 
 
 	},
@@ -3070,7 +3183,8 @@
 		"bskill": "217",
 		"cskill": "52",
 		"sseal": "0",
-		"bvid": 40 			
+		"bvid": 40,
+		"art": "Felicia - Picnic" 			
 
 
 	},
@@ -3097,7 +3211,8 @@
 		"bskill": "0",
 		"cskill": "118",
 		"sseal": "0",
-		"bvid": 203 			
+		"bvid": 203,
+		"art": "Finn" 			
 
 
 	},
@@ -3124,7 +3239,8 @@
 		"bskill": "214",
 		"cskill": "18",
 		"sseal": "0",
-		"bvid": 219 			
+		"bvid": 219,
+		"art": "Fiora - Summer" 			
 
 
 	},
@@ -3151,7 +3267,8 @@
 		"bskill": "152",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 195 			
+		"bvid": 195,
+		"art": "Fir" 			
 
 
 	},
@@ -3178,7 +3295,8 @@
 		"bskill": "64",
 		"cskill": "123",
 		"sseal": "0",
-		"bvid": 61 			
+		"bvid": 61,
+		"art": "Fjorm - Bride" 			
 
 
 	},
@@ -3205,7 +3323,8 @@
 		"bskill": "15",
 		"cskill": "91",
 		"sseal": "0",
-		"bvid": 13 			
+		"bvid": 13,
+		"art": "Fjorm - New Years" 			
 
 
 	},
@@ -3232,7 +3351,8 @@
 		"bskill": "204",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 139 			
+		"bvid": 139,
+		"art": "Fjorm" 			
 
 
 	},
@@ -3259,7 +3379,8 @@
 		"bskill": "158",
 		"cskill": "61",
 		"sseal": "0",
-		"bvid": 7 			
+		"bvid": 7,
+		"art": "Flora" 			
 
 
 	},
@@ -3286,7 +3407,8 @@
 		"bskill": "32",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 208 			
+		"bvid": 208,
+		"art": "Flora - Picnic" 			
 
 
 	},
@@ -3313,7 +3435,8 @@
 		"bskill": "0",
 		"cskill": "48",
 		"sseal": "0",
-		"bvid": 210 			
+		"bvid": 210,
+		"art": "Florina" 			
 
 
 	},
@@ -3340,7 +3463,8 @@
 		"bskill": "188",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 53 			
+		"bvid": 53,
+		"art": "Frederick - Summer" 			
 
 
 	},
@@ -3367,7 +3491,8 @@
 		"bskill": "248",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 129 			
+		"bvid": 129,
+		"art": "Frederick" 			
 
 
 	},
@@ -3394,7 +3519,8 @@
 		"bskill": "152",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 82 			
+		"bvid": 82,
+		"art": "Gaius" 			
 
 
 	},
@@ -3421,7 +3547,8 @@
 		"bskill": "232",
 		"cskill": "61",
 		"sseal": "0",
-		"bvid": 198 			
+		"bvid": 198,
+		"art": "Gaius - Summer" 			
 
 
 	},
@@ -3448,7 +3575,8 @@
 		"bskill": "0",
 		"cskill": "176",
 		"sseal": "0",
-		"bvid": 44 			
+		"bvid": 44,
+		"art": "Garon" 			
 
 
 	},
@@ -3475,7 +3603,8 @@
 		"bskill": "254",
 		"cskill": "58",
 		"sseal": "0",
-		"bvid": 79 			
+		"bvid": 79,
+		"art": "Genny - Picnic" 			
 
 
 	},
@@ -3502,7 +3631,8 @@
 		"bskill": "254",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 134 			
+		"bvid": 134,
+		"art": "Genny" 			
 
 
 	},
@@ -3529,7 +3659,8 @@
 		"bskill": "116",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 136 			
+		"bvid": 136,
+		"art": "Gerome" 			
 
 
 	},
@@ -3556,7 +3687,8 @@
 		"bskill": "47",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 234 			
+		"bvid": 234,
+		"art": "Gharnef" 			
 
 
 	},
@@ -3583,7 +3715,8 @@
 		"bskill": "232",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 204 			
+		"bvid": 204,
+		"art": "Gordin" 			
 
 
 	},
@@ -3610,7 +3743,8 @@
 		"bskill": "0",
 		"cskill": "251",
 		"sseal": "0",
-		"bvid": 224 			
+		"bvid": 224,
+		"art": "Gray" 			
 
 
 	},
@@ -3637,7 +3771,8 @@
 		"bskill": "239",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 129 			
+		"bvid": 129,
+		"art": "Greil - Valentines" 			
 
 
 	},
@@ -3664,7 +3799,8 @@
 		"bskill": "81",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 109 			
+		"bvid": 109,
+		"art": "Gunnthra - Summer" 			
 
 
 	},
@@ -3691,7 +3827,8 @@
 		"bskill": "57",
 		"cskill": "191",
 		"sseal": "0",
-		"bvid": 249 			
+		"bvid": 249,
+		"art": "Gunnthra" 			
 
 
 	},
@@ -3718,7 +3855,8 @@
 		"bskill": "78",
 		"cskill": "157",
 		"sseal": "0",
-		"bvid": 123 			
+		"bvid": 123,
+		"art": "Gunnthra - New Years" 			
 
 
 	},
@@ -3745,7 +3883,8 @@
 		"bskill": "0",
 		"cskill": "133",
 		"sseal": "0",
-		"bvid": 225 			
+		"bvid": 225,
+		"art": "Gunther" 			
 
 
 	},
@@ -3772,7 +3911,8 @@
 		"bskill": "83",
 		"cskill": "127",
 		"sseal": "0",
-		"bvid": 10 			
+		"bvid": 10,
+		"art": "Gwendolyn" 			
 
 
 	},
@@ -3799,7 +3939,8 @@
 		"bskill": "115",
 		"cskill": "166",
 		"sseal": "0",
-		"bvid": 22 			
+		"bvid": 22,
+		"art": "Haar" 			
 
 
 	},
@@ -3826,7 +3967,8 @@
 		"bskill": "149",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 90 			
+		"bvid": 90,
+		"art": "Hana" 			
 
 
 	},
@@ -3853,7 +3995,8 @@
 		"bskill": "32",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Hardin - Fallen" 			
 
 
 	},
@@ -3880,7 +4023,8 @@
 		"bskill": "0",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 108 			
+		"bvid": 108,
+		"art": "Hawkeye" 			
 
 
 	},
@@ -3907,7 +4051,8 @@
 		"bskill": "32",
 		"cskill": "91",
 		"sseal": "0",
-		"bvid": 58 			
+		"bvid": 58,
+		"art": "Hector- CYL" 			
 
 
 	},
@@ -3934,7 +4079,8 @@
 		"bskill": "0",
 		"cskill": "116",
 		"sseal": "0",
-		"bvid": 154 			
+		"bvid": 154,
+		"art": "Hector" 			
 
 
 	},
@@ -3961,7 +4107,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 144 			
+		"bvid": 144,
+		"art": "Hector - Valentines" 			
 
 
 	},
@@ -3988,7 +4135,8 @@
 		"bskill": "235",
 		"cskill": "173",
 		"sseal": "0",
-		"bvid": 118 			
+		"bvid": 118,
+		"art": "Hector - Legendary" 			
 
 
 	},
@@ -4015,7 +4163,8 @@
 		"bskill": "115",
 		"cskill": "152",
 		"sseal": "0",
-		"bvid": 191 			
+		"bvid": 191,
+		"art": "Helbindi" 			
 
 
 	},
@@ -4042,7 +4191,8 @@
 		"bskill": "0",
 		"cskill": "176",
 		"sseal": "0",
-		"bvid": 199 			
+		"bvid": 199,
+		"art": "Helbindi Summer" 			
 
 
 	},
@@ -4069,7 +4219,8 @@
 		"bskill": "123",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 205 			
+		"bvid": 205,
+		"art": "Henry - Halloween" 			
 
 
 	},
@@ -4096,7 +4247,8 @@
 		"bskill": "107",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 17 			
+		"bvid": 17,
+		"art": "Henry" 			
 
 
 	},
@@ -4123,7 +4275,8 @@
 		"bskill": "146",
 		"cskill": "58",
 		"sseal": "0",
-		"bvid": 221 			
+		"bvid": 221,
+		"art": "Hilda" 			
 
 
 	},
@@ -4150,7 +4303,8 @@
 		"bskill": "38",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 251 			
+		"bvid": 251,
+		"art": "Hinata" 			
 
 
 	},
@@ -4177,7 +4331,8 @@
 		"bskill": "102",
 		"cskill": "97",
 		"sseal": "0",
-		"bvid": 221 			
+		"bvid": 221,
+		"art": "Hinoka - Kinshi" 			
 
 
 	},
@@ -4204,7 +4359,8 @@
 		"bskill": "15",
 		"cskill": "3",
 		"sseal": "0",
-		"bvid": 157 			
+		"bvid": 157,
+		"art": "Hinoka - Spa" 			
 
 
 	},
@@ -4231,7 +4387,8 @@
 		"bskill": "0",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 235 			
+		"bvid": 235,
+		"art": "Hinoka" 			
 
 
 	},
@@ -4258,7 +4415,8 @@
 		"bskill": "104",
 		"cskill": "18",
 		"sseal": "0",
-		"bvid": 213 			
+		"bvid": 213,
+		"art": "Hrid" 			
 
 
 	},
@@ -4285,7 +4443,8 @@
 		"bskill": "158",
 		"cskill": "131",
 		"sseal": "0",
-		"bvid": 87 			
+		"bvid": 87,
+		"art": "Hrid - New Years" 			
 
 
 	},
@@ -4312,7 +4471,8 @@
 		"bskill": "53",
 		"cskill": "143",
 		"sseal": "0",
-		"bvid": 159 			
+		"bvid": 159,
+		"art": "Hubert" 			
 
 
 	},
@@ -4339,7 +4499,8 @@
 		"bskill": "235",
 		"cskill": "275",
 		"sseal": "0",
-		"bvid": 165 			
+		"bvid": 165,
+		"art": "Idun" 			
 
 
 	},
@@ -4366,7 +4527,8 @@
 		"bskill": "25",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 245 			
+		"bvid": 245,
+		"art": "Ike - CYL" 			
 
 
 	},
@@ -4393,7 +4555,8 @@
 		"bskill": "217",
 		"cskill": "94",
 		"sseal": "0",
-		"bvid": 75 			
+		"bvid": 75,
+		"art": "Valentines" 			
 
 
 	},
@@ -4420,7 +4583,8 @@
 		"bskill": "186",
 		"cskill": "67",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Ike - Legendary" 			
 
 
 	},
@@ -4447,7 +4611,8 @@
 		"bskill": "226",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 85 			
+		"bvid": 85,
+		"art": "Ike" 			
 
 
 	},
@@ -4474,7 +4639,8 @@
 		"bskill": "110",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 125 			
+		"bvid": 125,
+		"art": "Inigo - Dancer" 			
 
 
 	},
@@ -4501,7 +4667,8 @@
 		"bskill": "67",
 		"cskill": "120",
 		"sseal": "0",
-		"bvid": 200 			
+		"bvid": 200,
+		"art": "Innes - Summer" 			
 
 
 	},
@@ -4528,7 +4695,8 @@
 		"bskill": "44",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 84 			
+		"bvid": 84,
+		"art": "Innes" 			
 
 
 	},
@@ -4555,7 +4723,8 @@
 		"bskill": "232",
 		"cskill": "163",
 		"sseal": "0",
-		"bvid": 74 			
+		"bvid": 74,
+		"art": "Ishtar" 			
 
 
 	},
@@ -4582,7 +4751,8 @@
 		"bskill": "78",
 		"cskill": "3",
 		"sseal": "0",
-		"bvid": 183 			
+		"bvid": 183,
+		"art": "Ishtar - Dancer" 			
 
 
 	},
@@ -4609,7 +4779,8 @@
 		"bskill": "0",
 		"cskill": "266",
 		"sseal": "0",
-		"bvid": 92 			
+		"bvid": 92,
+		"art": "Jaffar" 			
 
 
 	},
@@ -4636,7 +4807,8 @@
 		"bskill": "0",
 		"cskill": "100",
 		"sseal": "0",
-		"bvid": 2 			
+		"bvid": 2,
+		"art": "Jagen" 			
 
 
 	},
@@ -4663,7 +4835,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 94 			
+		"bvid": 94,
+		"art": "Jakob - Halloween" 			
 
 
 	},
@@ -4690,7 +4863,8 @@
 		"bskill": "165",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 226 			
+		"bvid": 226,
+		"art": "Jakob" 			
 
 
 	},
@@ -4717,7 +4891,8 @@
 		"bskill": "44",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 134 			
+		"bvid": 134,
+		"art": "Jamke" 			
 
 
 	},
@@ -4744,7 +4919,8 @@
 		"bskill": "184",
 		"cskill": "237",
 		"sseal": "0",
-		"bvid": 135 			
+		"bvid": 135,
+		"art": "Jeorge" 			
 
 
 	},
@@ -4771,7 +4947,8 @@
 		"bskill": "245",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 134 			
+		"bvid": 134,
+		"art": "Joshua" 			
 
 
 	},
@@ -4798,7 +4975,8 @@
 		"bskill": "121",
 		"cskill": "15",
 		"sseal": "0",
-		"bvid": 174 			
+		"bvid": 174,
+		"art": "Julia - Legendary" 			
 
 
 	},
@@ -4825,7 +5003,8 @@
 		"bskill": "0",
 		"cskill": "48",
 		"sseal": "0",
-		"bvid": 210 			
+		"bvid": 210,
+		"art": "Julia" 			
 
 
 	},
@@ -4852,7 +5031,8 @@
 		"bskill": "115",
 		"cskill": "12",
 		"sseal": "0",
-		"bvid": 143 			
+		"bvid": 143,
+		"art": "Julius" 			
 
 
 	},
@@ -4879,7 +5059,8 @@
 		"bskill": "214",
 		"cskill": "117",
 		"sseal": "0",
-		"bvid": 143 			
+		"bvid": 143,
+		"art": "Kaden" 			
 
 
 	},
@@ -4906,7 +5087,8 @@
 		"bskill": "32",
 		"cskill": "85",
 		"sseal": "0",
-		"bvid": 12 			
+		"bvid": 12,
+		"art": "Kagero - Halloween" 			
 
 
 	},
@@ -4933,7 +5115,8 @@
 		"bskill": "61",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 80 			
+		"bvid": 80,
+		"art": "Kagero" 			
 
 
 	},
@@ -4960,7 +5143,8 @@
 		"bskill": "123",
 		"cskill": "120",
 		"sseal": "0",
-		"bvid": 34 			
+		"bvid": 34,
+		"art": "Kagero - Spring" 			
 
 
 	},
@@ -4987,7 +5171,8 @@
 		"bskill": "0",
 		"cskill": "119",
 		"sseal": "0",
-		"bvid": 123 			
+		"bvid": 123,
+		"art": "Kana F" 			
 
 
 	},
@@ -5014,7 +5199,8 @@
 		"bskill": "0",
 		"cskill": "104",
 		"sseal": "0",
-		"bvid": 63 			
+		"bvid": 63,
+		"art": "Kana M" 			
 
 
 	},
@@ -5041,7 +5227,8 @@
 		"bskill": "78",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 34 			
+		"bvid": 34,
+		"art": "Karel" 			
 
 
 	},
@@ -5068,7 +5255,8 @@
 		"bskill": "251",
 		"cskill": "94",
 		"sseal": "0",
-		"bvid": 150 			
+		"bvid": 150,
+		"art": "Karla" 			
 
 
 	},
@@ -5095,7 +5283,8 @@
 		"bskill": "0",
 		"cskill": "12",
 		"sseal": "0",
-		"bvid": 190 			
+		"bvid": 190,
+		"art": "Katarina" 			
 
 
 	},
@@ -5122,7 +5311,8 @@
 		"bskill": "155",
 		"cskill": "18",
 		"sseal": "0",
-		"bvid": 122 			
+		"bvid": 122,
+		"art": "Kaze" 			
 
 
 	},
@@ -5149,7 +5339,8 @@
 		"bskill": "220",
 		"cskill": "39",
 		"sseal": "0",
-		"bvid": 201 		
+		"bvid": 201,
+		"art": "Keaton" 		
 
 
 	},
@@ -5176,7 +5367,8 @@
 		"bskill": "32",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 177 			
+		"bvid": 177,
+		"art": "Kjelle" 			
 
 
 	},
@@ -5203,7 +5395,8 @@
 		"bskill": "158",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 146 			
+		"bvid": 146,
+		"art": "Klein" 			
 
 
 	},
@@ -5230,7 +5423,8 @@
 		"bskill": "56",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 206 			
+		"bvid": 206,
+		"art": "Kliff" 			
 
 
 	},
@@ -5257,7 +5451,8 @@
 		"bskill": "78",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 175 			
+		"bvid": 175,
+		"art": "Kronya" 			
 
 
 	},
@@ -5284,7 +5479,8 @@
 		"bskill": "165",
 		"cskill": "197",
 		"sseal": "0",
-		"bvid": 152 			
+		"bvid": 152,
+		"art": "L_Arachel" 			
 
 
 	},
@@ -5311,7 +5507,8 @@
 		"bskill": "0",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 170 			
+		"bvid": 170,
+		"art": "Lachesis" 			
 
 
 	},
@@ -5338,7 +5535,8 @@
 		"bskill": "102",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 107 			
+		"bvid": 107,
+		"art": "Laegjarn - Summer" 			
 
 
 	},
@@ -5365,7 +5563,8 @@
 		"bskill": "53",
 		"cskill": "67",
 		"sseal": "0",
-		"bvid": 121 			
+		"bvid": 121,
+		"art": "Laegjarn - New Years" 			
 
 
 	},
@@ -5392,7 +5591,8 @@
 		"bskill": "47",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 35 			
+		"bvid": 35,
+		"art": "Laegjarn" 			
 
 
 	},
@@ -5419,7 +5619,8 @@
 		"bskill": "70",
 		"cskill": "163",
 		"sseal": "0",
-		"bvid": 238 			
+		"bvid": 238,
+		"art": "Laevatain - Summer" 			
 
 
 	},
@@ -5446,7 +5647,8 @@
 		"bskill": "254",
 		"cskill": "88",
 		"sseal": "0",
-		"bvid": 252 			
+		"bvid": 252,
+		"art": "Laevatein - New Years" 			
 
 
 	},
@@ -5473,7 +5675,8 @@
 		"bskill": "6",
 		"cskill": "172",
 		"sseal": "0",
-		"bvid": 166 			
+		"bvid": 166,
+		"art": "Laevatein" 			
 
 
 	},
@@ -5500,7 +5703,8 @@
 		"bskill": "21",
 		"cskill": "138",
 		"sseal": "0",
-		"bvid": 230 			
+		"bvid": 230,
+		"art": "Laslow" 			
 
 
 	},
@@ -5527,7 +5731,8 @@
 		"bskill": "102",
 		"cskill": "132",
 		"sseal": "0",
-		"bvid": 245 			
+		"bvid": 245,
+		"art": "Leanne" 			
 
 
 	},
@@ -5554,7 +5759,8 @@
 		"bskill": "0",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 232 			
+		"bvid": 232,
+		"art": "Legault" 			
 
 
 	},
@@ -5581,7 +5787,8 @@
 		"bskill": "149",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 114 			
+		"bvid": 114,
+		"art": "Legion" 			
 
 
 	},
@@ -5608,7 +5815,8 @@
 		"bskill": "171",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 27 			
+		"bvid": 27,
+		"art": "Leif" 			
 
 
 	},
@@ -5635,7 +5843,8 @@
 		"bskill": "99",
 		"cskill": "251",
 		"sseal": "0",
-		"bvid": 121 			
+		"bvid": 121,
+		"art": "Lene" 			
 
 
 	},
@@ -5662,7 +5871,8 @@
 		"bskill": "158",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 242 			
+		"bvid": 242,
+		"art": "Leo - Picnic" 			
 
 
 	},
@@ -5689,7 +5899,8 @@
 		"bskill": "196",
 		"cskill": "12",
 		"sseal": "0",
-		"bvid": 93 			
+		"bvid": 93,
+		"art": "Leo - Summer" 			
 
 
 	},
@@ -5716,7 +5927,8 @@
 		"bskill": "158",
 		"cskill": "203",
 		"sseal": "0",
-		"bvid": 41 			
+		"bvid": 41,
+		"art": "Leo" 			
 
 
 	},
@@ -5743,7 +5955,8 @@
 		"bskill": "115",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 54 			
+		"bvid": 54,
+		"art": "Leon" 			
 
 
 	},
@@ -5770,7 +5983,8 @@
 		"bskill": "0",
 		"cskill": "132",
 		"sseal": "0",
-		"bvid": 18 			
+		"bvid": 18,
+		"art": "Lethe" 			
 
 
 	},
@@ -5797,7 +6011,8 @@
 		"bskill": "220",
 		"cskill": "163",
 		"sseal": "0",
-		"bvid": 214 			
+		"bvid": 214,
+		"art": "Lewyn" 			
 
 
 	},
@@ -5824,7 +6039,8 @@
 		"bskill": "165",
 		"cskill": "224",
 		"sseal": "0",
-		"bvid": 12 			
+		"bvid": 12,
+		"art": "Libra" 			
 
 
 	},
@@ -5851,7 +6067,8 @@
 		"bskill": "177",
 		"cskill": "9",
 		"sseal": "0",
-		"bvid": 174 			
+		"bvid": 174,
+		"art": "Lilina - Summer" 			
 
 
 	},
@@ -5878,7 +6095,8 @@
 		"bskill": "0",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 48 			
+		"bvid": 48,
+		"art": "Lilina - Valentines" 			
 
 
 	},
@@ -5905,7 +6123,8 @@
 		"bskill": "0",
 		"cskill": "220",
 		"sseal": "0",
-		"bvid": 58 			
+		"bvid": 58,
+		"art": "Lilina" 			
 
 
 	},
@@ -5932,7 +6151,8 @@
 		"bskill": "0",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 61 			
+		"bvid": 61,
+		"art": "Linde" 			
 
 
 	},
@@ -5959,7 +6179,8 @@
 		"bskill": "44",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 177 			
+		"bvid": 177,
+		"art": "Linde - Summer" 			
 
 
 	},
@@ -5986,7 +6207,8 @@
 		"bskill": "0",
 		"cskill": "78",
 		"sseal": "0",
-		"bvid": 176 			
+		"bvid": 176,
+		"art": "Linus" 			
 
 
 	},
@@ -6013,7 +6235,8 @@
 		"bskill": "32",
 		"cskill": "98",
 		"sseal": "0",
-		"bvid": 29 			
+		"bvid": 29,
+		"art": "Lissa - Christmas" 			
 
 
 	},
@@ -6040,7 +6263,8 @@
 		"bskill": "165",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 4 			
+		"bvid": 4,
+		"art": "Lissa" 			
 
 
 	},
@@ -6067,7 +6291,8 @@
 		"bskill": "152",
 		"cskill": "257",
 		"sseal": "0",
-		"bvid": 250 			
+		"bvid": 250,
+		"art": "Lloyd" 			
 
 
 	},
@@ -6094,7 +6319,8 @@
 		"bskill": "102",
 		"cskill": "120",
 		"sseal": "0",
-		"bvid": 140 			
+		"bvid": 140,
+		"art": "Loki - Spring" 			
 
 
 	},
@@ -6121,7 +6347,8 @@
 		"bskill": "0",
 		"cskill": "163",
 		"sseal": "0",
-		"bvid": 102 			
+		"bvid": 102,
+		"art": "Loki" 			
 
 
 	},
@@ -6148,7 +6375,8 @@
 		"bskill": "232",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 43 			
+		"bvid": 43,
+		"art": "Lon_qu" 			
 
 
 	},
@@ -6175,7 +6403,8 @@
 		"bskill": "0",
 		"cskill": "133",
 		"sseal": "0",
-		"bvid": 23 			
+		"bvid": 23,
+		"art": "Louise - Bride" 			
 
 
 	},
@@ -6202,7 +6431,8 @@
 		"bskill": "0",
 		"cskill": "82",
 		"sseal": "0",
-		"bvid": 98 			
+		"bvid": 98,
+		"art": "Lucina - CYL" 			
 
 
 	},
@@ -6229,7 +6459,8 @@
 		"bskill": "0",
 		"cskill": "220",
 		"sseal": "0",
-		"bvid": 194 			
+		"bvid": 194,
+		"art": "Lucina" 			
 
 
 	},
@@ -6256,7 +6487,8 @@
 		"bskill": "248",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 94 			
+		"bvid": 94,
+		"art": "Lucina - Legendary" 			
 
 
 	},
@@ -6283,7 +6515,8 @@
 		"bskill": "196",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 84 			
+		"bvid": 84,
+		"art": "Lucina - Spring" 			
 
 
 	},
@@ -6310,7 +6543,8 @@
 		"bskill": "0",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 232 			
+		"bvid": 232,
+		"art": "Lucius" 			
 
 
 	},
@@ -6337,7 +6571,8 @@
 		"bskill": "9",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 48 			
+		"bvid": 48,
+		"art": "Lugh" 			
 
 
 	},
@@ -6364,7 +6599,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 255 			
+		"bvid": 255,
+		"art": "Lukas - Picnic" 			
 
 
 	},
@@ -6391,7 +6627,8 @@
 		"bskill": "149",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 54 			
+		"bvid": 54,
+		"art": "Lukas" 			
 
 
 	},
@@ -6418,7 +6655,8 @@
 		"bskill": "0",
 		"cskill": "176",
 		"sseal": "0",
-		"bvid": 54 			
+		"bvid": 54,
+		"art": "Luke" 			
 
 
 	},
@@ -6445,7 +6683,8 @@
 		"bskill": "0",
 		"cskill": "191",
 		"sseal": "0",
-		"bvid": 13 			
+		"bvid": 13,
+		"art": "Lute" 			
 
 
 	},
@@ -6472,7 +6711,8 @@
 		"bskill": "181",
 		"cskill": "18",
 		"sseal": "0",
-		"bvid": 157 			
+		"bvid": 157,
+		"art": "Lyn - CYL" 			
 
 
 	},
@@ -6499,7 +6739,8 @@
 		"bskill": "64",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 239 			
+		"bvid": 239,
+		"art": "Lyn - Bride" 			
 
 
 	},
@@ -6526,7 +6767,8 @@
 		"bskill": "15",
 		"cskill": "70",
 		"sseal": "0",
-		"bvid": 241 			
+		"bvid": 241,
+		"art": "Lyn - Summer" 			
 
 
 	},
@@ -6553,7 +6795,8 @@
 		"bskill": "0",
 		"cskill": "237",
 		"sseal": "0",
-		"bvid": 125 			
+		"bvid": 125,
+		"art": "Lyn" 			
 
 
 	},
@@ -6580,7 +6823,8 @@
 		"bskill": "78",
 		"cskill": "217",
 		"sseal": "0",
-		"bvid": 217 			
+		"bvid": 217,
+		"art": "Lyn - Legendary" 			
 
 
 	},
@@ -6607,7 +6851,8 @@
 		"bskill": "115",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 115 			
+		"bvid": 115,
+		"art": "Lyn - Valentines" 			
 
 
 	},
@@ -6634,7 +6879,8 @@
 		"bskill": "0",
 		"cskill": "80",
 		"sseal": "0",
-		"bvid": 39 			
+		"bvid": 39,
+		"art": "Lyon" 			
 
 
 	},
@@ -6661,7 +6907,8 @@
 		"bskill": "78",
 		"cskill": "30",
 		"sseal": "0",
-		"bvid": 37 			
+		"bvid": 37,
+		"art": "Mae" 			
 
 
 	},
@@ -6688,7 +6935,8 @@
 		"bskill": "146",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 154 			
+		"bvid": 154,
+		"art": "Mareeta - Fallen" 			
 
 
 	},
@@ -6715,7 +6963,8 @@
 		"bskill": "0",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 202 			
+		"bvid": 202,
+		"art": "Maria" 			
 
 
 	},
@@ -6742,7 +6991,8 @@
 		"bskill": "64",
 		"cskill": "244",
 		"sseal": "0",
-		"bvid": 142 			
+		"bvid": 142,
+		"art": "Maribelle" 			
 
 
 	},
@@ -6769,7 +7019,8 @@
 		"bskill": "0",
 		"cskill": "152",
 		"sseal": "0",
-		"bvid": 211 			
+		"bvid": 211,
+		"art": "Marisa" 			
 
 
 	},
@@ -6796,7 +7047,8 @@
 		"bskill": "208",
 		"cskill": "97",
 		"sseal": "0",
-		"bvid": 165 			
+		"bvid": 165,
+		"art": "Marisa - Spring" 			
 
 
 	},
@@ -6823,7 +7075,8 @@
 		"bskill": "248",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 18 			
+		"bvid": 18,
+		"art": "Marth - Bride" 			
 
 
 	},
@@ -6850,7 +7103,8 @@
 		"bskill": "95",
 		"cskill": "237",
 		"sseal": "0",
-		"bvid": 34 			
+		"bvid": 34,
+		"art": "Marth" 			
 
 
 	},
@@ -6877,7 +7131,8 @@
 		"bskill": "0",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 18 			
+		"bvid": 18,
+		"art": "Marth_F" 			
 
 
 	},
@@ -6904,7 +7159,8 @@
 		"bskill": "26",
 		"cskill": "149",
 		"sseal": "0",
-		"bvid": 190 			
+		"bvid": 190,
+		"art": "Marth - Legendary" 			
 
 
 	},
@@ -6931,7 +7187,8 @@
 		"bskill": "44",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 234 			
+		"bvid": 234,
+		"art": "Mathilda" 			
 
 
 	},
@@ -6958,7 +7215,8 @@
 		"bskill": "155",
 		"cskill": "138",
 		"sseal": "0",
-		"bvid": 214 			
+		"bvid": 214,
+		"art": "Matthew" 			
 
 
 	},
@@ -6985,7 +7243,8 @@
 		"bskill": "0",
 		"cskill": "169",
 		"sseal": "0",
-		"bvid": 167 			
+		"bvid": 167,
+		"art": "Mercedes" 			
 
 
 	},
@@ -7012,7 +7271,8 @@
 		"bskill": "0",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 215 			
+		"bvid": 215,
+		"art": "Merric" 			
 
 
 	},
@@ -7039,7 +7299,8 @@
 		"bskill": "232",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 117 			
+		"bvid": 117,
+		"art": "Mia" 			
 
 
 	},
@@ -7066,7 +7327,8 @@
 		"bskill": "0",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Mia - Halloween" 			
 
 
 	},
@@ -7093,7 +7355,8 @@
 		"bskill": "115",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 206 			
+		"bvid": 206,
+		"art": "Micaiah" 			
 
 
 	},
@@ -7120,7 +7383,8 @@
 		"bskill": "255",
 		"cskill": "123",
 		"sseal": "0",
-		"bvid": 110 			
+		"bvid": 110,
+		"art": "Micaiah - CYL" 			
 
 
 	},
@@ -7147,7 +7411,8 @@
 		"bskill": "97",
 		"cskill": "191",
 		"sseal": "0",
-		"bvid": 74 			
+		"bvid": 74,
+		"art": "Micaiah - Festival" 			
 
 
 	},
@@ -7174,7 +7439,8 @@
 		"bskill": "0",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 108 			
+		"bvid": 108,
+		"art": "Michalis" 			
 
 
 	},
@@ -7201,7 +7467,8 @@
 		"bskill": "0",
 		"cskill": "155",
 		"sseal": "0",
-		"bvid": 220 			
+		"bvid": 220,
+		"art": "Mikoto - Dreaming" 			
 
 
 	},
@@ -7228,7 +7495,8 @@
 		"bskill": "0",
 		"cskill": "276",
 		"sseal": "0",
-		"bvid": 199 			
+		"bvid": 199,
+		"art": "Minerva" 			
 
 
 	},
@@ -7255,7 +7523,8 @@
 		"bskill": "0",
 		"cskill": "231",
 		"sseal": "0",
-		"bvid": 192 			
+		"bvid": 192,
+		"art": "Mist" 			
 
 
 	},
@@ -7282,7 +7551,8 @@
 		"bskill": "168",
 		"cskill": "114",
 		"sseal": "0",
-		"bvid": 246 			
+		"bvid": 246,
+		"art": "Mist - Valentines" 			
 
 
 	},
@@ -7309,7 +7579,8 @@
 		"bskill": "6",
 		"cskill": "36",
 		"sseal": "0",
-		"bvid": 81 			
+		"bvid": 81,
+		"art": "Mordecai" 			
 
 
 	},
@@ -7336,7 +7607,8 @@
 		"bskill": "89",
 		"cskill": "231",
 		"sseal": "0",
-		"bvid": 96 			
+		"bvid": 96,
+		"art": "Morgan M" 			
 
 
 	},
@@ -7363,7 +7635,8 @@
 		"bskill": "115",
 		"cskill": "12",
 		"sseal": "0",
-		"bvid": 92 			
+		"bvid": 92,
+		"art": "Morgan F" 			
 
 
 	},
@@ -7390,7 +7663,8 @@
 		"bskill": "0",
 		"cskill": "134",
 		"sseal": "0",
-		"bvid": 19 			
+		"bvid": 19,
+		"art": "Myrhh" 			
 
 
 	},
@@ -7417,7 +7691,8 @@
 		"bskill": "235",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 207 			
+		"bvid": 207,
+		"art": "Myrrh - Halloween" 			
 
 
 	},
@@ -7444,7 +7719,8 @@
 		"bskill": "115",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 203 			
+		"bvid": 203,
+		"art": "Naesala" 			
 
 
 	},
@@ -7471,7 +7747,8 @@
 		"bskill": "56",
 		"cskill": "71",
 		"sseal": "0",
-		"bvid": 254 			
+		"bvid": 254,
+		"art": "Naga" 			
 
 
 	},
@@ -7498,7 +7775,8 @@
 		"bskill": "158",
 		"cskill": "146",
 		"sseal": "0",
-		"bvid": 70 			
+		"bvid": 70,
+		"art": "Nah" 			
 
 
 	},
@@ -7525,7 +7803,8 @@
 		"bskill": "143",
 		"cskill": "115",
 		"sseal": "0",
-		"bvid": 220 			
+		"bvid": 220,
+		"art": "Nailah" 			
 
 
 	},
@@ -7552,7 +7831,8 @@
 		"bskill": "0",
 		"cskill": "78",
 		"sseal": "0",
-		"bvid": 39 			
+		"bvid": 39,
+		"art": "Nanna" 			
 
 
 	},
@@ -7579,7 +7859,8 @@
 		"bskill": "120",
 		"cskill": "203",
 		"sseal": "0",
-		"bvid": 183 			
+		"bvid": 183,
+		"art": "Narcian" 			
 
 
 	},
@@ -7606,7 +7887,8 @@
 		"bskill": "78",
 		"cskill": "266",
 		"sseal": "0",
-		"bvid": 33 			
+		"bvid": 33,
+		"art": "Navarre" 			
 
 
 	},
@@ -7633,7 +7915,8 @@
 		"bskill": "251",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 176 			
+		"bvid": 176,
+		"art": "Nephenee" 			
 
 
 	},
@@ -7660,7 +7943,8 @@
 		"bskill": "41",
 		"cskill": "217",
 		"sseal": "0",
-		"bvid": 157 			
+		"bvid": 157,
+		"art": "Nephenee - Dancer" 			
 
 
 	},
@@ -7687,7 +7971,8 @@
 		"bskill": "0",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 9 			
+		"bvid": 9,
+		"art": "Niles" 			
 
 
 	},
@@ -7714,7 +7999,8 @@
 		"bskill": "15",
 		"cskill": "98",
 		"sseal": "0",
-		"bvid": 197 			
+		"bvid": 197,
+		"art": "Niles - Halloween" 			
 
 
 	},
@@ -7741,7 +8027,8 @@
 		"bskill": "214",
 		"cskill": "45",
 		"sseal": "0",
-		"bvid": 184 			
+		"bvid": 184,
+		"art": "Nina" 			
 
 
 	},
@@ -7768,7 +8055,8 @@
 		"bskill": "47",
 		"cskill": "82",
 		"sseal": "0",
-		"bvid": 61 			
+		"bvid": 61,
+		"art": "Ninian - Bride" 			
 
 
 	},
@@ -7795,7 +8083,8 @@
 		"bskill": "95",
 		"cskill": "104",
 		"sseal": "0",
-		"bvid": 139 			
+		"bvid": 139,
+		"art": "Ninian" 			
 
 
 	},
@@ -7822,7 +8111,8 @@
 		"bskill": "3",
 		"cskill": "214",
 		"sseal": "0",
-		"bvid": 107 			
+		"bvid": 107,
+		"art": "Nino - Fangs" 			
 
 
 	},
@@ -7849,7 +8139,8 @@
 		"bskill": "0",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 57 			
+		"bvid": 57,
+		"art": "Nino" 			
 
 
 	},
@@ -7876,7 +8167,8 @@
 		"bskill": "0",
 		"cskill": "155",
 		"sseal": "0",
-		"bvid": 184 			
+		"bvid": 184,
+		"art": "Noire - Summer" 			
 
 
 	},
@@ -7903,7 +8195,8 @@
 		"bskill": "122",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 248 			
+		"bvid": 248,
+		"art": "Nowi - Halloween" 			
 
 
 	},
@@ -7930,7 +8223,8 @@
 		"bskill": "0",
 		"cskill": "263",
 		"sseal": "0",
-		"bvid": 60 			
+		"bvid": 60,
+		"art": "Nowi" 			
 
 
 	},
@@ -7957,7 +8251,8 @@
 		"bskill": "191",
 		"cskill": "263",
 		"sseal": "0",
-		"bvid": 211 			
+		"bvid": 211,
+		"art": "Oboro" 			
 
 
 	},
@@ -7984,7 +8279,8 @@
 		"bskill": "161",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 163 			
+		"bvid": 163,
+		"art": "Odin" 			
 
 
 	},
@@ -8011,7 +8307,8 @@
 		"bskill": "0",
 		"cskill": "220",
 		"sseal": "0",
-		"bvid": 152 			
+		"bvid": 152,
+		"art": "Ogma" 			
 
 
 	},
@@ -8038,7 +8335,8 @@
 		"bskill": "0",
 		"cskill": "12",
 		"sseal": "0",
-		"bvid": 133 			
+		"bvid": 133,
+		"art": "Oliver" 			
 
 
 	},
@@ -8065,7 +8363,8 @@
 		"bskill": "117",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 115 			
+		"bvid": 115,
+		"art": "Olivia" 			
 
 
 	},
@@ -8092,7 +8391,8 @@
 		"bskill": "29",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 205 			
+		"bvid": 205,
+		"art": "Olivia - Dancer" 			
 
 
 	},
@@ -8119,7 +8419,8 @@
 		"bskill": "56",
 		"cskill": "126",
 		"sseal": "0",
-		"bvid": 165 			
+		"bvid": 165,
+		"art": "Olivia - Ylissean" 			
 
 
 	},
@@ -8146,7 +8447,8 @@
 		"bskill": "0",
 		"cskill": "274",
 		"sseal": "0",
-		"bvid": 144 			
+		"bvid": 144,
+		"art": "Olwen" 			
 
 
 	},
@@ -8173,7 +8475,8 @@
 		"bskill": "165",
 		"cskill": "111",
 		"sseal": "0",
-		"bvid": 194 			
+		"bvid": 194,
+		"art": "Olwen - Thracia" 			
 
 
 	},
@@ -8200,7 +8503,8 @@
 		"bskill": "53",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 18 			
+		"bvid": 18,
+		"art": "Ophelia" 			
 
 
 	},
@@ -8227,7 +8531,8 @@
 		"bskill": "120",
 		"cskill": "239",
 		"sseal": "0",
-		"bvid": 170 			
+		"bvid": 170,
+		"art": "Oscar" 			
 
 
 	},
@@ -8254,7 +8559,8 @@
 		"bskill": "251",
 		"cskill": "239",
 		"sseal": "0",
-		"bvid": 203 			
+		"bvid": 203,
+		"art": "Owain" 			
 
 
 	},
@@ -8281,7 +8587,8 @@
 		"bskill": "81",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 86 			
+		"bvid": 86,
+		"art": "Palla - Spring" 			
 
 
 	},
@@ -8308,7 +8615,8 @@
 		"bskill": "248",
 		"cskill": "120",
 		"sseal": "0",
-		"bvid": 196 			
+		"bvid": 196,
+		"art": "Palla" 			
 
 
 	},
@@ -8335,7 +8643,8 @@
 		"bskill": "56",
 		"cskill": "64",
 		"sseal": "0",
-		"bvid": 136 			
+		"bvid": 136,
+		"art": "Panne" 			
 
 
 	},
@@ -8362,7 +8671,8 @@
 		"bskill": "89",
 		"cskill": "179",
 		"sseal": "0",
-		"bvid": 28 			
+		"bvid": 28,
+		"art": "Pent - Bride" 			
 
 
 	},
@@ -8389,7 +8699,8 @@
 		"bskill": "0",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 198 			
+		"bvid": 198,
+		"art": "Peri" 			
 
 
 	},
@@ -8416,7 +8727,8 @@
 		"bskill": "3",
 		"cskill": "123",
 		"sseal": "0",
-		"bvid": 43 			
+		"bvid": 43,
+		"art": "Petra" 			
 
 
 	},
@@ -8443,7 +8755,8 @@
 		"bskill": "0",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 193 			
+		"bvid": 193,
+		"art": "Priscilla" 			
 
 
 	},
@@ -8470,7 +8783,8 @@
 		"bskill": "0",
 		"cskill": "76",
 		"sseal": "0",
-		"bvid": 135 			
+		"bvid": 135,
+		"art": "Quan" 			
 
 
 	},
@@ -8497,7 +8811,8 @@
 		"bskill": "196",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 48 			
+		"bvid": 48,
+		"art": "Raigh" 			
 
 
 	},
@@ -8524,7 +8839,8 @@
 		"bskill": "47",
 		"cskill": "273",
 		"sseal": "0",
-		"bvid": 45 			
+		"bvid": 45,
+		"art": "Ranulf" 			
 
 
 	},
@@ -8551,7 +8867,8 @@
 		"bskill": "0",
 		"cskill": "260",
 		"sseal": "0",
-		"bvid": 184 			
+		"bvid": 184,
+		"art": "Raven" 			
 
 
 	},
@@ -8578,7 +8895,8 @@
 		"bskill": "184",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 147 			
+		"bvid": 147,
+		"art": "Rebecca" 			
 
 
 	},
@@ -8605,7 +8923,8 @@
 		"bskill": "53",
 		"cskill": "156",
 		"sseal": "0",
-		"bvid": 143 			
+		"bvid": 143,
+		"art": "Reinhardt - Dancer" 			
 
 
 	},
@@ -8632,7 +8951,8 @@
 		"bskill": "232",
 		"cskill": "118",
 		"sseal": "0",
-		"bvid": 162 			
+		"bvid": 162,
+		"art": "Reinhardt" 			
 
 
 	},
@@ -8659,7 +8979,8 @@
 		"bskill": "232",
 		"cskill": "222",
 		"sseal": "0",
-		"bvid": 148 			
+		"bvid": 148,
+		"art": "Reinhardt - Thracia" 			
 
 
 	},
@@ -8686,7 +9007,8 @@
 		"bskill": "0",
 		"cskill": "99",
 		"sseal": "0",
-		"bvid": 131 			
+		"bvid": 131,
+		"art": "Reyson" 			
 
 
 	},
@@ -8713,7 +9035,8 @@
 		"bskill": "0",
 		"cskill": "203",
 		"sseal": "0",
-		"bvid": 35 			
+		"bvid": 35,
+		"art": "Rhajat" 			
 
 
 	},
@@ -8740,7 +9063,8 @@
 		"bskill": "97",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 38 			
+		"bvid": 38,
+		"art": "Rinea - Dancer" 			
 
 
 	},
@@ -8767,7 +9091,8 @@
 		"bskill": "235",
 		"cskill": "275",
 		"sseal": "0",
-		"bvid": 201 			
+		"bvid": 201,
+		"art": "Robin M - Fallen" 			
 
 
 	},
@@ -8794,7 +9119,8 @@
 		"bskill": "44",
 		"cskill": "194",
 		"sseal": "0",
-		"bvid": 27 			
+		"bvid": 27,
+		"art": "Robin F - Legendary" 			
 
 
 	},
@@ -8821,7 +9147,8 @@
 		"bskill": "0",
 		"cskill": "6",
 		"sseal": "0",
-		"bvid": 92 			
+		"bvid": 92,
+		"art": "Robin M - Christmas" 			
 
 
 	},
@@ -8848,7 +9175,8 @@
 		"bskill": "0",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 67 			
+		"bvid": 67,
+		"art": "Robin M" 			
 
 
 	},
@@ -8875,7 +9203,8 @@
 		"bskill": "24",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 191 			
+		"bvid": 191,
+		"art": "Robin F" 			
 
 
 	},
@@ -8902,7 +9231,8 @@
 		"bskill": "0",
 		"cskill": "160",
 		"sseal": "0",
-		"bvid": 51 			
+		"bvid": 51,
+		"art": "Robin F - Summer" 			
 
 
 	},
@@ -8929,7 +9259,8 @@
 		"bskill": "83",
 		"cskill": "78",
 		"sseal": "0",
-		"bvid": 247 			
+		"bvid": 247,
+		"art": "Roderick" 			
 
 
 	},
@@ -8956,7 +9287,8 @@
 		"bskill": "165",
 		"cskill": "140",
 		"sseal": "0",
-		"bvid": 141 			
+		"bvid": 141,
+		"art": "Roy - Legendary" 			
 
 
 	},
@@ -8983,7 +9315,8 @@
 		"bskill": "78",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 81 			
+		"bvid": 81,
+		"art": "Roy - CYL" 			
 
 
 	},
@@ -9010,7 +9343,8 @@
 		"bskill": "191",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Roy" 			
 
 
 	},
@@ -9037,7 +9371,8 @@
 		"bskill": "0",
 		"cskill": "45",
 		"sseal": "0",
-		"bvid": 39 			
+		"bvid": 39,
+		"art": "Roy - Valentines" 			
 
 
 	},
@@ -9064,7 +9399,8 @@
 		"bskill": "232",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 251 			
+		"bvid": 251,
+		"art": "Rutger" 			
 
 
 	},
@@ -9091,7 +9427,8 @@
 		"bskill": "50",
 		"cskill": "241",
 		"sseal": "0",
-		"bvid": 113 			
+		"bvid": 113,
+		"art": "Ryoma - Festival" 			
 
 
 	},
@@ -9118,7 +9455,8 @@
 		"bskill": "0",
 		"cskill": "138",
 		"sseal": "0",
-		"bvid": 245 			
+		"bvid": 245,
+		"art": "Ryoma" 			
 
 
 	},
@@ -9145,7 +9483,8 @@
 		"bskill": "56",
 		"cskill": "166",
 		"sseal": "0",
-		"bvid": 231 			
+		"bvid": 231,
+		"art": "Ryoma - Spa" 			
 
 
 	},
@@ -9172,7 +9511,8 @@
 		"bskill": "39",
 		"cskill": "126",
 		"sseal": "0",
-		"bvid": 81 			
+		"bvid": 81,
+		"art": "Ryoma - Legendary" 			
 
 
 	},
@@ -9199,7 +9539,8 @@
 		"bskill": "204",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 35 			
+		"bvid": 35,
+		"art": "Saber" 			
 
 
 	},
@@ -9226,7 +9567,8 @@
 		"bskill": "95",
 		"cskill": "211",
 		"sseal": "0",
-		"bvid": 20 			
+		"bvid": 20,
+		"art": "Saias" 			
 
 
 	},
@@ -9253,7 +9595,8 @@
 		"bskill": "155",
 		"cskill": "237",
 		"sseal": "0",
-		"bvid": 29 			
+		"bvid": 29,
+		"art": "Saizo" 			
 
 
 	},
@@ -9280,7 +9623,8 @@
 		"bskill": "115",
 		"cskill": "55",
 		"sseal": "0",
-		"bvid": 169 			
+		"bvid": 169,
+		"art": "Sakura - Halloween" 			
 
 
 	},
@@ -9307,7 +9651,8 @@
 		"bskill": "254",
 		"cskill": "208",
 		"sseal": "0",
-		"bvid": 159 			
+		"bvid": 159,
+		"art": "Sakura - Spa" 			
 
 
 	},
@@ -9334,7 +9679,8 @@
 		"bskill": "0",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 237 			
+		"bvid": 237,
+		"art": "Sakura" 			
 
 
 	},
@@ -9361,7 +9707,8 @@
 		"bskill": "70",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 62 			
+		"bvid": 62,
+		"art": "Sanaki - Bride" 			
 
 
 	},
@@ -9388,7 +9735,8 @@
 		"bskill": "0",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 140 			
+		"bvid": 140,
+		"art": "Sanaki" 			
 
 
 	},
@@ -9415,7 +9763,8 @@
 		"bskill": "0",
 		"cskill": "266",
 		"sseal": "0",
-		"bvid": 17 			
+		"bvid": 17,
+		"art": "Selena" 			
 
 
 	},
@@ -9442,7 +9791,8 @@
 		"bskill": "38",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 254 			
+		"bvid": 254,
+		"art": "Seliph" 			
 
 
 	},
@@ -9469,7 +9819,8 @@
 		"bskill": "174",
 		"cskill": "91",
 		"sseal": "0",
-		"bvid": 217 			
+		"bvid": 217,
+		"art": "Selkie" 			
 
 
 	},
@@ -9496,7 +9847,8 @@
 		"bskill": "0",
 		"cskill": "130",
 		"sseal": "0",
-		"bvid": 0 			
+		"bvid": 0,
+		"art": "Serra" 			
 
 
 	},
@@ -9523,7 +9875,8 @@
 		"bskill": "186",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 36 			
+		"bvid": 36,
+		"art": "Seth" 			
 
 
 	},
@@ -9550,7 +9903,8 @@
 		"bskill": "35",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 233 			
+		"bvid": 233,
+		"art": "Setsuna" 			
 
 
 	},
@@ -9577,7 +9931,8 @@
 		"bskill": "78",
 		"cskill": "266",
 		"sseal": "0",
-		"bvid": 193 			
+		"bvid": 193,
+		"art": "Shanna" 			
 
 
 	},
@@ -9604,7 +9959,8 @@
 		"bskill": "0",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 218 			
+		"bvid": 218,
+		"art": "Sharena" 			
 
 
 	},
@@ -9631,7 +9987,8 @@
 		"bskill": "122",
 		"cskill": "197",
 		"sseal": "0",
-		"bvid": 172 			
+		"bvid": 172,
+		"art": "Sharena - Spring" 			
 
 
 	},
@@ -9658,7 +10015,8 @@
 		"bskill": "0",
 		"cskill": "98",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Sheena" 			
 
 
 	},
@@ -9685,7 +10043,8 @@
 		"bskill": "112",
 		"cskill": "33",
 		"sseal": "0",
-		"bvid": 77 			
+		"bvid": 77,
+		"art": "Shigure - Dancer" 			
 
 
 	},
@@ -9712,7 +10071,8 @@
 		"bskill": "0",
 		"cskill": "276",
 		"sseal": "0",
-		"bvid": 243 			
+		"bvid": 243,
+		"art": "Shigure" 			
 
 
 	},
@@ -9739,7 +10099,8 @@
 		"bskill": "0",
 		"cskill": "67",
 		"sseal": "0",
-		"bvid": 148 			
+		"bvid": 148,
+		"art": "Shiro" 			
 
 
 	},
@@ -9766,7 +10127,8 @@
 		"bskill": "0",
 		"cskill": "21",
 		"sseal": "0",
-		"bvid": 79 			
+		"bvid": 79,
+		"art": "Siegbert" 			
 
 
 	},
@@ -9793,7 +10155,8 @@
 		"bskill": "70",
 		"cskill": "135",
 		"sseal": "0",
-		"bvid": 225 			
+		"bvid": 225,
+		"art": "Sigrun" 			
 
 
 	},
@@ -9820,7 +10183,8 @@
 		"bskill": "0",
 		"cskill": "3",
 		"sseal": "0",
-		"bvid": 19 			
+		"bvid": 19,
+		"art": "Sigrun - Bride" 			
 
 
 	},
@@ -9847,7 +10211,8 @@
 		"bskill": "58",
 		"cskill": "214",
 		"sseal": "0",
-		"bvid": 187 			
+		"bvid": 187,
+		"art": "Sigurd" 			
 
 
 	},
@@ -9874,7 +10239,8 @@
 		"bskill": "0",
 		"cskill": "88",
 		"sseal": "0",
-		"bvid": 91 			
+		"bvid": 91,
+		"art": "Silas" 			
 
 
 	},
@@ -9901,7 +10267,8 @@
 		"bskill": "75",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 123 			
+		"bvid": 123,
+		"art": "Silvia" 			
 
 
 	},
@@ -9928,7 +10295,8 @@
 		"bskill": "0",
 		"cskill": "80",
 		"sseal": "0",
-		"bvid": 147 			
+		"bvid": 147,
+		"art": "Soleil" 			
 
 
 	},
@@ -9955,7 +10323,8 @@
 		"bskill": "0",
 		"cskill": "191",
 		"sseal": "0",
-		"bvid": 138 			
+		"bvid": 138,
+		"art": "Sonya" 			
 
 
 	},
@@ -9982,7 +10351,8 @@
 		"bskill": "0",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 181 			
+		"bvid": 181,
+		"art": "Sophia" 			
 
 
 	},
@@ -10009,7 +10379,8 @@
 		"bskill": "211",
 		"cskill": "188",
 		"sseal": "0",
-		"bvid": 178 			
+		"bvid": 178,
+		"art": "Soren - Valentines" 			
 
 
 	},
@@ -10036,7 +10407,8 @@
 		"bskill": "242",
 		"cskill": "108",
 		"sseal": "0",
-		"bvid": 188 			
+		"bvid": 188,
+		"art": "Soren" 			
 
 
 	},
@@ -10063,7 +10435,8 @@
 		"bskill": "0",
 		"cskill": "226",
 		"sseal": "0",
-		"bvid": 203 			
+		"bvid": 203,
+		"art": "Sothe" 			
 
 
 	},
@@ -10090,7 +10463,8 @@
 		"bskill": "251",
 		"cskill": "269",
 		"sseal": "0",
-		"bvid": 107 			
+		"bvid": 107,
+		"art": "Sothis" 			
 
 
 	},
@@ -10117,7 +10491,8 @@
 		"bskill": "149",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 4 			
+		"bvid": 4,
+		"art": "Stahl" 			
 
 
 	},
@@ -10144,7 +10519,8 @@
 		"bskill": "158",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 225 			
+		"bvid": 225,
+		"art": "Subaki" 			
 
 
 	},
@@ -10171,7 +10547,8 @@
 		"bskill": "50",
 		"cskill": "139",
 		"sseal": "0",
-		"bvid": 21 			
+		"bvid": 21,
+		"art": "Sue" 			
 
 
 	},
@@ -10198,7 +10575,8 @@
 		"bskill": "226",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 56 			
+		"bvid": 56,
+		"art": "Sully" 			
 
 
 	},
@@ -10225,7 +10603,8 @@
 		"bskill": "6",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 154 			
+		"bvid": 154,
+		"art": "Sumia" 			
 
 
 	},
@@ -10252,7 +10631,8 @@
 		"bskill": "239",
 		"cskill": "245",
 		"sseal": "0",
-		"bvid": 56 			
+		"bvid": 56,
+		"art": "Surtr" 			
 
 
 	},
@@ -10279,7 +10659,8 @@
 		"bskill": "0",
 		"cskill": "82",
 		"sseal": "0",
-		"bvid": 95 			
+		"bvid": 95,
+		"art": "Tailtiu" 			
 
 
 	},
@@ -10306,7 +10687,8 @@
 		"bskill": "0",
 		"cskill": "214",
 		"sseal": "0",
-		"bvid": 66 			
+		"bvid": 66,
+		"art": "Takumi - Fallen" 			
 
 
 	},
@@ -10333,7 +10715,8 @@
 		"bskill": "0",
 		"cskill": "169",
 		"sseal": "0",
-		"bvid": 97 			
+		"bvid": 97,
+		"art": "Takumi - Summer" 			
 
 
 	},
@@ -10360,7 +10743,8 @@
 		"bskill": "35",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 128 			
+		"bvid": 128,
+		"art": "Takumi - New Years" 			
 
 
 	},
@@ -10387,7 +10771,8 @@
 		"bskill": "0",
 		"cskill": "266",
 		"sseal": "0",
-		"bvid": 237 			
+		"bvid": 237,
+		"art": "Takumi" 			
 
 
 	},
@@ -10414,7 +10799,8 @@
 		"bskill": "165",
 		"cskill": "222",
 		"sseal": "0",
-		"bvid": 89 			
+		"bvid": 89,
+		"art": "Tana - Summer" 			
 
 
 	},
@@ -10441,7 +10827,8 @@
 		"bskill": "0",
 		"cskill": "126",
 		"sseal": "0",
-		"bvid": 37 			
+		"bvid": 37,
+		"art": "Tana" 			
 
 
 	},
@@ -10468,7 +10855,8 @@
 		"bskill": "47",
 		"cskill": "105",
 		"sseal": "0",
-		"bvid": 21 			
+		"bvid": 21,
+		"art": "Tanith - Bride" 			
 
 
 	},
@@ -10495,7 +10883,8 @@
 		"bskill": "235",
 		"cskill": "185",
 		"sseal": "0",
-		"bvid": 55 			
+		"bvid": 55,
+		"art": "Tharja - Christmas" 			
 
 
 	},
@@ -10522,7 +10911,8 @@
 		"bskill": "0",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 222 			
+		"bvid": 222,
+		"art": "Tharja" 			
 
 
 	},
@@ -10549,7 +10939,8 @@
 		"bskill": "211",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 80 			
+		"bvid": 80,
+		"art": "Tharja - Bride" 			
 
 
 	},
@@ -10576,7 +10967,8 @@
 		"bskill": "201",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 145 			
+		"bvid": 145,
+		"art": "Thea" 			
 
 
 	},
@@ -10603,7 +10995,8 @@
 		"bskill": "47",
 		"cskill": "85",
 		"sseal": "0",
-		"bvid": 136 			
+		"bvid": 136,
+		"art": "Tibarn" 			
 
 
 	},
@@ -10630,7 +11023,8 @@
 		"bskill": "116",
 		"cskill": "74",
 		"sseal": "0",
-		"bvid": 66 			
+		"bvid": 66,
+		"art": "Tiki SD - Summer" 			
 
 
 	},
@@ -10657,7 +11051,8 @@
 		"bskill": "0",
 		"cskill": "48",
 		"sseal": "0",
-		"bvid": 206 			
+		"bvid": 206,
+		"art": "Tiki" 			
 
 
 	},
@@ -10684,7 +11079,8 @@
 		"bskill": "32",
 		"cskill": "277",
 		"sseal": "0",
-		"bvid": 170 			
+		"bvid": 170,
+		"art": "Tiki - Legendary" 			
 
 
 	},
@@ -10711,7 +11107,8 @@
 		"bskill": "0",
 		"cskill": "234",
 		"sseal": "0",
-		"bvid": 58 			
+		"bvid": 58,
+		"art": "Tiki Awakening" 			
 
 
 	},
@@ -10738,7 +11135,8 @@
 		"bskill": "0",
 		"cskill": "27",
 		"sseal": "0",
-		"bvid": 174 			
+		"bvid": 174,
+		"art": "Tiki - Summer" 			
 
 
 	},
@@ -10765,7 +11163,8 @@
 		"bskill": "217",
 		"cskill": "204",
 		"sseal": "0",
-		"bvid": 154 			
+		"bvid": 154,
+		"art": "Tiki - Fallen" 			
 
 
 	},
@@ -10792,7 +11191,8 @@
 		"bskill": "115",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 17 			
+		"bvid": 17,
+		"art": "Titania" 			
 
 
 	},
@@ -10819,7 +11219,8 @@
 		"bskill": "12",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 7 			
+		"bvid": 7,
+		"art": "Titania - Valentines" 			
 
 
 	},
@@ -10846,7 +11247,8 @@
 		"bskill": "199",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 19 			
+		"bvid": 19,
+		"art": "Tobin" 			
 
 
 	},
@@ -10873,7 +11275,8 @@
 		"bskill": "0",
 		"cskill": "263",
 		"sseal": "0",
-		"bvid": 147 			
+		"bvid": 147,
+		"art": "Ursula" 			
 
 
 	},
@@ -10900,7 +11303,8 @@
 		"bskill": "73",
 		"cskill": "91",
 		"sseal": "0",
-		"bvid": 7 			
+		"bvid": 7,
+		"art": "Ursula - Summer" 			
 
 
 	},
@@ -10927,7 +11331,8 @@
 		"bskill": "0",
 		"cskill": "176",
 		"sseal": "0",
-		"bvid": 155 			
+		"bvid": 155,
+		"art": "Valter" 			
 
 
 	},
@@ -10954,7 +11359,8 @@
 		"bskill": "0",
 		"cskill": "273",
 		"sseal": "0",
-		"bvid": 200 			
+		"bvid": 200,
+		"art": "Velouria" 			
 
 
 	},
@@ -10981,7 +11387,8 @@
 		"bskill": "254",
 		"cskill": "52",
 		"sseal": "0",
-		"bvid": 254 			
+		"bvid": 254,
+		"art": "Veronica - CYL" 			
 
 
 	},
@@ -11008,7 +11415,8 @@
 		"bskill": "53",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 48 			
+		"bvid": 48,
+		"art": "Veronica - Spring" 			
 
 
 	},
@@ -11035,7 +11443,8 @@
 		"bskill": "199",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 136 			
+		"bvid": 136,
+		"art": "Virion" 			
 
 
 	},
@@ -11062,7 +11471,8 @@
 		"bskill": "50",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 162 			
+		"bvid": 162,
+		"art": "Walhart" 			
 
 
 	},
@@ -11089,7 +11499,8 @@
 		"bskill": "56",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 214 			
+		"bvid": 214,
+		"art": "Wolt - Summer" 			
 
 
 	},
@@ -11116,7 +11527,8 @@
 		"bskill": "126",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 31 			
+		"bvid": 31,
+		"art": "Wrys" 			
 
 
 	},
@@ -11143,7 +11555,8 @@
 		"bskill": "158",
 		"cskill": "166",
 		"sseal": "0",
-		"bvid": 30 			
+		"bvid": 30,
+		"art": "Xander - Festival" 			
 
 
 	},
@@ -11170,7 +11583,8 @@
 		"bskill": "0",
 		"cskill": "229",
 		"sseal": "0",
-		"bvid": 226 			
+		"bvid": 226,
+		"art": "Xander" 			
 
 
 	},
@@ -11197,7 +11611,8 @@
 		"bskill": "123",
 		"cskill": "103",
 		"sseal": "0",
-		"bvid": 116 			
+		"bvid": 116,
+		"art": "Xander - Spring" 			
 
 
 	},
@@ -11224,7 +11639,8 @@
 		"bskill": "0",
 		"cskill": "152",
 		"sseal": "0",
-		"bvid": 22 			
+		"bvid": 22,
+		"art": "Xander - Summer" 			
 
 
 	},
@@ -11251,7 +11667,8 @@
 		"bskill": "95",
 		"cskill": "172",
 		"sseal": "0",
-		"bvid": 235 			
+		"bvid": 235,
+		"art": "Yarne" 			
 
 
 	},
@@ -11278,7 +11695,8 @@
 		"bskill": "0",
 		"cskill": "88",
 		"sseal": "0",
-		"bvid": 85 			
+		"bvid": 85,
+		"art": "Ylgr - Summer" 			
 
 
 	},
@@ -11305,7 +11723,8 @@
 		"bskill": "56",
 		"cskill": "217",
 		"sseal": "0",
-		"bvid": 33 			
+		"bvid": 33,
+		"art": "Ylgr" 			
 
 
 	},
@@ -11332,7 +11751,8 @@
 		"bskill": "180",
 		"cskill": "49",
 		"sseal": "0",
-		"bvid": 49 			
+		"bvid": 49,
+		"art": "Yune" 			
 
 
 	},
@@ -11359,7 +11779,8 @@
 		"bskill": "236",
 		"cskill": "176",
 		"sseal": "0",
-		"bvid": 20 			
+		"bvid": 20,
+		"art": "Zelgius" 			
 
 
 	},
@@ -11386,7 +11807,8 @@
 		"bskill": "239",
 		"cskill": "0",
 		"sseal": "0",
-		"bvid": 187 			
+		"bvid": 187,
+		"art": "Zephiel" 			
 
 
 	}

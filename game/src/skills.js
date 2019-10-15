@@ -14,6 +14,90 @@ export default class Skills extends React.Component{
 
   render(){
 
+const dropDownStyle = {
+
+  control: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  }),
+  container: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  }),
+  input: base => ({
+    ...base,
+    height: '30px',
+    minHeight: '30px',
+    top: '0%',
+    paddingTop: 0,
+    paddingBottom: 0,
+    marginBottom: 0,
+    marginTop: 0,
+    position: 'relative',
+    transform: 'translateY(-25%)'
+  }),
+  singleValue: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px',
+    top: '0%',
+    position: 'relative',
+
+  }),
+  dropdownIndicator: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px',
+    paddingTop: 1,
+    paddingBottom: 1,
+    paddingRight: 1,
+    paddingLeft: 1
+  }),
+  indicatorSeparator: base => ({
+    ...base,
+    height: '15px',
+    minHeight: '15px',
+    marginBottom: 0,
+    marginTop: 0,
+    alignSelf: 'center'
+  }),
+  clearIndicator: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  }),
+  valueContainer: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px',
+
+  }),
+
+  indicatorsContainer: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+
+  }),
+  group: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  }),
+  groupHeading: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  }),
+  menuPortal: base => ({
+    ...base,
+    height: '20px',
+    minHeight: '20px'
+  })
+
+};
   const dropDownTheme = theme => ({
     ...theme,
     borderRadius: 0,
@@ -26,7 +110,7 @@ export default class Skills extends React.Component{
             neutral80: 'silver', // text in text box
           },
   });
-
+    console.log(dropDownTheme);
     let tbody = [];
 
     const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
@@ -49,6 +133,8 @@ export default class Skills extends React.Component{
         cells.push(<td className = "equippedSkill" key = {"equip:" + equippedSkill[i]} >
           
             <Select
+
+              styles = {dropDownStyle}
               theme = {dropDownTheme} 
               options={this.props.gameState.skillDropdowns[equipText[i]].list}
               value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
