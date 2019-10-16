@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+import heroData from './heroInfo.json';
+
+
 export default class TeamElement extends React.Component{
   constructor(props){
     super(props);
@@ -16,18 +19,20 @@ export default class TeamElement extends React.Component{
       if (this.props.name === this.props.gameState.playerSide && i === this.props.gameState.heroIndex){
         cellClass = "highlightedTeamMember";
       }
-
+      
       cells.push(
           <td className= {cellClass} key={i} onClick={(side) => this.props.selector(this.props.name, i)}>
-          
-          {this.state.team[i].id}
+            <img src= {require('./art/' +  heroData[this.state.team[i].heroID.value].art + '/Face_FC.png') } 
+                className = "heroFace" 
+                alt = {heroData[this.state.team[i].heroID.value].name}  />
+                  
           </td>
           );
       
       tbody.push(<tr key={i}>{cells}</tr>);
     }
 
-
+//{this.state.team[i].id}
 
     return(
         <table id = "Team" >
