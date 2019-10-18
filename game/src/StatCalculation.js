@@ -41,14 +41,8 @@ export function CalculateStats(hero){
   	var growths = [heroInfo.growthhp, heroInfo.growthatk, heroInfo.growthspd, heroInfo.growthdef, heroInfo.growthres];
 
   	const growthOffset = [-35, -28, -21, -14, -7];
-  	//todo - modify these depending on boon/bane
 
-  	//todo - merge bonuses
-
-  	//order is rarity mods - > ivs -> merges/dragonflowers
-  	//
   	var statOrder = StatOrder(object(statName, bases) ); 
-
 
   	//rarity calculation
   	var rarityMods = RarityMods(hero.rarity, statOrder);
@@ -67,6 +61,12 @@ export function CalculateStats(hero){
 
   	//dragonflower calculation
   	var flowerMods =FlowerMods(hero.dragonflower, statOrder);
+
+  	//fort calculation
+
+  	//summoner support calculation
+
+  	
 
   	//apply mods
 

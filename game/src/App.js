@@ -49,7 +49,8 @@ class TicTacToeBoard extends React.Component{
       "weaponList": weapons["sword"],
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
-      "fortLevel": 0
+      "fortLevel": 0,
+      "blessing": "None"
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -139,6 +140,35 @@ class TicTacToeBoard extends React.Component{
     var temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex].heroID = e;
 
+
+    //Sets the initial position of the on the board 
+    if (temp[this.state.playerSide][this.state.heroIndex].position === -1 && e.value !== "0"){
+      
+      let pos = this.getFilledPositions();
+      let x = 0;
+      let y = 42;
+      let inc = -6;
+      if (this.state.playerSide === "2"){
+        y = 0;
+        inc = 6;
+      }
+      
+      while (temp[this.state.playerSide][this.state.heroIndex].position === -1 && (y >=0 && y<=42) ){
+        if (! (pos.includes(y+x)) ){
+          temp[this.state.playerSide][this.state.heroIndex].position = y+x;
+          this.props.G.cells[y+x] = heroData[e.value];
+        } else if (x <5){
+          x+=1;
+        } else if (x>=5){
+          x= 0;
+          y+=inc;
+        } 
+
+      }
+
+    } else{
+      this.props.G.cells[temp[this.state.playerSide][this.state.heroIndex].position] = heroData[e.value];
+    }
 
     var newHero = heroData[e.value];
 
@@ -234,31 +264,63 @@ class TicTacToeBoard extends React.Component{
 
   }
 
-  onClick(id) {
-    if (this.isActive(id)) {
-      this.props.moves.clickCell(id);
-      this.props.events.endTurn();
+  getFilledPositions(){
+    let positions = [];
+    let temp = this.state.heroList["1"].concat(this.state.heroList["2"]);
+    
+    // eslint-disable-next-line
+    for (let x of temp){
+      if (x.position>=0)
+        positions.push(x.position);
     }
+
+
+    return positions
   }
 
-  isActive(id) {
-    if (!this.props.isActive) return false;
-    if (this.props.G.cells[id] !== null) return false;
-    return true;
-  }
+  // onClick(id) {
+  //   if (this.isActive(id)) {
+  //     this.props.moves.clickCell(id);
+  //     this.props.events.endTurn();
+  //   }
+  // }
+
+  // isActive(id) {
+  //   if (!this.props.isActive) return false;
+  //   if (this.props.G.cells[id] !== null) return false;
+  //   return true;
+  // }
 
   render() {
+
+    let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
     for (let i = 0; i < 8; i++) { //rows
       let cells = [];
         for (let j = 0; j < 6; j++) { //columns
           const id = 6 * i + j;
-          cells.push(
-            <td className= "cellStyle" key={id} onClick={() => this.onClick(id)}>
-            {this.props.G.cells[id]}
+          if (this.props.G.cells[id] != null){
+            let cellClass = "cellStyle";
+
+            if (id  === highLightedCell){
+              cellClass = "highlightedCellStyle"
+            }
+
+            cells.push(
+              <td className= {cellClass} key={id}>
+              <img src= {require('./art/' +  this.props.G.cells[id].art + '/Face_FC.png') } 
+                  className = "heroFace" 
+                  alt = {this.props.G.cells[id].name}  />
+              </td>
+              );
+          } else{
+             cells.push(
+            <td className= "cellStyle" key={id}>
             </td>
             );
+          }
+          ////{this.props.G.cells[id]}
         }
       tbody.push(<tr key={i}>{cells}</tr>);
     }
@@ -339,6 +401,8 @@ function makeHeroStruct(){
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
     this["summonerSupport"] = "None";
     this["allySupport"] = {"hero": "0", "level": "None" };
+    this["blessing"] = "None";
+    this["position"] = -1;
   }  
   return hero;
 }
