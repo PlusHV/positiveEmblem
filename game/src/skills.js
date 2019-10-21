@@ -110,7 +110,6 @@ const dropDownStyle = {
             neutral80: 'silver', // text in text box
           },
   });
-    console.log(dropDownTheme);
     let tbody = [];
 
     const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];

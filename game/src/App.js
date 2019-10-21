@@ -60,6 +60,10 @@ class TicTacToeBoard extends React.Component{
     this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
     this.onBuffChange = this.onBuffChange.bind(this);
     this.onIVChange = this.onIVChange.bind(this);
+
+    this.dragTeamMember = this.dragTeamMember.bind(this);
+    this.dragOverTeamMember = this.dragOverTeamMember.bind(this);
+    this.dropTeamMember = this.dropTeamMember.bind(this);
   } //end constructor
 
 
@@ -156,7 +160,7 @@ class TicTacToeBoard extends React.Component{
       while (temp[this.state.playerSide][this.state.heroIndex].position === -1 && (y >=0 && y<=42) ){
         if (! (pos.includes(y+x)) ){
           temp[this.state.playerSide][this.state.heroIndex].position = y+x;
-          this.props.G.cells[y+x] = heroData[e.value];
+          this.props.G.cells[y+x] = {"hero":heroData[e.value], "side": this.state.playerSide, "index": this.state.heroIndex};
         } else if (x <5){
           x+=1;
         } else if (x>=5){
@@ -167,7 +171,7 @@ class TicTacToeBoard extends React.Component{
       }
 
     } else{
-      this.props.G.cells[temp[this.state.playerSide][this.state.heroIndex].position] = heroData[e.value];
+      this.props.G.cells[temp[this.state.playerSide][this.state.heroIndex].position] = {"hero":heroData[e.value], "side": this.state.playerSide, "index": this.state.heroIndex};
     }
 
     var newHero = heroData[e.value];
@@ -290,6 +294,98 @@ class TicTacToeBoard extends React.Component{
   //   if (this.props.G.cells[id] !== null) return false;
   //   return true;
   // }
+  dragTeamMember(ev){
+    ev.dataTransfer.setData("index", parseInt(ev.target.id) ); //Gets the id, which is the index in heroList
+
+  }
+  dragOverTeamMember(ev){
+    ev.preventDefault();
+  }
+
+  dropTeamMember(ev){
+    ev.preventDefault();
+    let dragData = ev.dataTransfer.getData("index");
+    let dragSide = "";
+    if (dragData>=5){
+      dragData -=5;
+      dragSide = "2"; 
+    } else{
+      dragSide = "1";
+    }
+
+    let dropData = parseInt(ev.target.id);
+    let dropSide = "";
+    if (dropData>=5){
+      dropData -=5;
+      dropSide = "2"; 
+    } else{
+      dropSide = "1";
+    }
+
+    let temp = this.state.heroList;
+    let dragTemp = temp[dragSide][dragData];
+    temp[dragSide][dragData] = temp[dropSide][dropData];
+    temp[dropSide][dropData] = dragTemp;
+
+    this.setState({heroList: temp});
+
+    this.updateHero(dropSide, dropData);
+    this.setState({heroIndex: dropData});
+    this.setState({playerSide: dropSide})
+
+  }
+
+
+
+  dragBoardMember(ev){
+    ev.dataTransfer.setData("text", ev.target.id ); 
+  }
+  dragOverBoard(ev){
+    ev.preventDefault();
+  }
+
+  dropBoardMember(ev){
+    ev.preventDefault();
+    let dragData = JSON.parse(ev.dataTransfer.getData("text"));
+
+    let dragIndex = dragData.index;
+    let dragSide = dragData.side;
+
+    let dropPosition = parseInt(ev.target.id);
+
+
+
+    //if spot is already filled and don't do anything (for now)
+    if (this.props.G.cells[dropPosition] !==null){
+
+      //todo initiate battle if in proper range and it is opposite side as dragged
+
+      //todo use assist skills if in proper range and it is on same side
+
+
+
+      return;
+    }
+
+    let temp = this.state.heroList;
+
+
+    //remove old from board
+    this.props.G.cells[temp[dragSide][dragIndex].position] = null;
+    
+
+    //update for new position
+    this.props.G.cells[dropPosition] = dragData;
+    temp[dragSide][dragIndex].position = dropPosition;
+
+
+    this.setState({heroList: temp});
+    //this.updateHero(dropSide, dropData);
+    this.setState({selectedMember: temp[dragSide][dragIndex] });
+
+
+  }
+
 
   render() {
 
@@ -307,16 +403,45 @@ class TicTacToeBoard extends React.Component{
               cellClass = "highlightedCellStyle"
             }
 
-            cells.push(
-              <td className= {cellClass} key={id}>
-              <img src= {require('./art/' +  this.props.G.cells[id].art + '/Face_FC.png') } 
-                  className = "heroFace" 
-                  alt = {this.props.G.cells[id].name}  />
-              </td>
-              );
+            let positions = this.getFilledPositions();
+
+
+            if (positions.includes(id)){
+              cells.push(
+                <td className= {cellClass} key={id} onClick={(side) => this.selectNewMember(this.props.name, i)}
+                  id = {id}
+                  onDragOver = {(e) => this.dragOverBoard(e)}
+                  onDrop = {(e) => this.dropBoardMember(e)} >
+
+                <img src= {require('./art/' +  this.props.G.cells[id].hero.art + '/Face_FC.png') } 
+                    className = "heroFace" 
+                    alt = {this.props.G.cells[id].hero.name}
+                    draggable = "true"
+                    id =  {JSON.stringify(this.props.G.cells[id])}
+                    onDragStart = {(e) => this.dragBoardMember(e)} />
+                </td>
+                );
+
+            } else{
+              cells.push(
+                <td className= {cellClass} key={id} 
+                  id = {id}
+                  onDragOver = {(e) => this.dragOverBoard(e)}
+                  onDrop = {(e) => this.dropBoardMember(e)} >
+                  11111
+                </td>
+                );              
+            }
+
+
           } else{
              cells.push(
-            <td className= "cellStyle" key={id}>
+            <td className= "cellStyle" key={id}
+              id = {id}
+              onDragOver = {(e) => this.dragOverBoard(e)}
+              onDrop = {(e) => this.dropBoardMember(e)} >
+
+
             </td>
             );
           }
@@ -334,7 +459,10 @@ class TicTacToeBoard extends React.Component{
         <td><TeamElement 
             name = "1" 
             gameState = {this.state} 
-            selector = {this.selectNewMember} />
+            selector = {this.selectNewMember}
+            drag = {this.dragTeamMember}
+            dragOver = {this.dragOverTeamMember}
+            drop = {this.dropTeamMember} />
         </td>
 
         <td colSpan = "2">
@@ -356,7 +484,10 @@ class TicTacToeBoard extends React.Component{
         <td><TeamElement 
             name = "2" 
             gameState = {this.state} 
-            selector = {this.selectNewMember} />
+            selector = {this.selectNewMember}
+            drag = {this.dragTeamMember}
+            dragOver = {this.dragOverTeamMember}
+            drop = {this.dropTeamMember} />            
         </td>
         
         <td>

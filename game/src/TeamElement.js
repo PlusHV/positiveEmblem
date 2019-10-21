@@ -12,6 +12,13 @@ export default class TeamElement extends React.Component{
 
 
   render(){
+
+    let idIndex = 0;
+    if (this.props.name === "2"){
+      idIndex = 5;
+    }
+
+
     let tbody = [];
     for (let i = 0; i < this.state.team.length; i++) { //rows
       let cells = [];
@@ -21,10 +28,16 @@ export default class TeamElement extends React.Component{
       }
       
       cells.push(
-          <td className= {cellClass} key={i} onClick={(side) => this.props.selector(this.props.name, i)}>
+          <td className= {cellClass} key={i} onClick={(side) => this.props.selector(this.props.name, i)}
+          onDragOver = {(e) => this.props.dragOver(e)}
+          onDrop = {(e) => this.props.drop(e)}
+          >
             <img src= {require('./art/' +  heroData[this.state.team[i].heroID.value].art + '/Face_FC.png') } 
                 className = "heroFace" 
-                alt = {heroData[this.state.team[i].heroID.value].name}  />
+                alt = {heroData[this.state.team[i].heroID.value].name}
+                draggable  = "true"
+                id = {idIndex+i }
+                onDragStart = {(e) => this.props.drag(e)}  />
                   
           </td>
           );
