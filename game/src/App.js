@@ -145,34 +145,7 @@ class TicTacToeBoard extends React.Component{
     temp[this.state.playerSide][this.state.heroIndex].heroID = e;
 
 
-    //Sets the initial position of the on the board 
-    if (temp[this.state.playerSide][this.state.heroIndex].position === -1 && e.value !== "0"){
-      
-      let pos = this.getFilledPositions();
-      let x = 0;
-      let y = 42;
-      let inc = -6;
-      if (this.state.playerSide === "2"){
-        y = 0;
-        inc = 6;
-      }
-      
-      while (temp[this.state.playerSide][this.state.heroIndex].position === -1 && (y >=0 && y<=42) ){
-        if (! (pos.includes(y+x)) ){
-          temp[this.state.playerSide][this.state.heroIndex].position = y+x;
-          this.props.G.cells[y+x] = {"hero":heroData[e.value], "side": this.state.playerSide, "index": this.state.heroIndex};
-        } else if (x <5){
-          x+=1;
-        } else if (x>=5){
-          x= 0;
-          y+=inc;
-        } 
 
-      }
-
-    } else{
-      this.props.G.cells[temp[this.state.playerSide][this.state.heroIndex].position] = {"hero":heroData[e.value], "side": this.state.playerSide, "index": this.state.heroIndex};
-    }
 
     var newHero = heroData[e.value];
 
@@ -192,6 +165,36 @@ class TicTacToeBoard extends React.Component{
 
     temp[this.state.playerSide][this.state.heroIndex].heroSkills = tSkills; //update the new heroes default skills
     temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]); //recalculate stats
+
+
+    //Sets the initial position of the on the board 
+    if (temp[this.state.playerSide][this.state.heroIndex].position === -1 && e.value !== "0"){
+      
+      let pos = this.getFilledPositions();
+      let x = 0;
+      let y = 42;
+      let inc = -6;
+      if (this.state.playerSide === "2"){
+        y = 0;
+        inc = 6;
+      }
+      
+      while (temp[this.state.playerSide][this.state.heroIndex].position === -1 && (y >=0 && y<=42) ){
+        if (! (pos.includes(y+x)) ){
+          temp[this.state.playerSide][this.state.heroIndex].position = y+x;
+          this.props.G.cells[y+x] = temp[this.state.playerSide][this.state.heroIndex];
+        } else if (x <5){
+          x+=1;
+        } else if (x>=5){
+          x= 0;
+          y+=inc;
+        } 
+
+      }
+
+    } else{
+      this.props.G.cells[temp[this.state.playerSide][this.state.heroIndex].position] = temp[this.state.playerSide][this.state.heroIndex];
+    }
 
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
@@ -294,8 +297,10 @@ class TicTacToeBoard extends React.Component{
   //   if (this.props.G.cells[id] !== null) return false;
   //   return true;
   // }
+
+  //drag Team member
   dragTeamMember(ev){
-    ev.dataTransfer.setData("index", parseInt(ev.target.id) ); //Gets the id, which is the index in heroList
+    ev.dataTransfer.setData("text", ev.target.id ); //Gets the id, which is the index in heroList
 
   }
   dragOverTeamMember(ev){
@@ -304,33 +309,39 @@ class TicTacToeBoard extends React.Component{
 
   dropTeamMember(ev){
     ev.preventDefault();
-    let dragData = ev.dataTransfer.getData("index");
-    let dragSide = "";
-    if (dragData>=5){
-      dragData -=5;
-      dragSide = "2"; 
-    } else{
-      dragSide = "1";
-    }
+    let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
-    let dropData = parseInt(ev.target.id);
-    let dropSide = "";
-    if (dropData>=5){
-      dropData -=5;
-      dropSide = "2"; 
-    } else{
-      dropSide = "1";
-    }
+    let drag = this.indexToSideIndex(dragData.listIndex);
+
+    let dragIndex = drag.teamIndex;
+    let dragSide = drag.side;
+
+    let dropData = JSON.parse(ev.target.id);
+
+    let drop = this.indexToSideIndex(dropData.listIndex);
+
+    let dropIndex = drop.teamIndex;
+    let dropSide = drop.side;
 
     let temp = this.state.heroList;
-    let dragTemp = temp[dragSide][dragData];
-    temp[dragSide][dragData] = temp[dropSide][dropData];
-    temp[dropSide][dropData] = dragTemp;
+
+    //temp to hold the dragged member
+    let dragTemp = temp[dragSide][dragIndex];
+
+    //replace the dragged member with the member in dropped location
+    temp[dragSide][dragIndex] = temp[dropSide][dropIndex];
+
+    //put the dragged member into the dropped location
+    temp[dropSide][dropIndex] = dragTemp;
+
+    //they have swapped and need their listIndex updated
+    temp[dragSide][dragIndex].listIndex = dragData.listIndex;
+    temp[dropSide][dropIndex].listIndex = dropData.listIndex;
 
     this.setState({heroList: temp});
 
-    this.updateHero(dropSide, dropData);
-    this.setState({heroIndex: dropData});
+    this.updateHero(dropSide, dropIndex);
+    this.setState({heroIndex: dropIndex});
     this.setState({playerSide: dropSide})
 
   }
@@ -346,10 +357,17 @@ class TicTacToeBoard extends React.Component{
 
   dropBoardMember(ev){
     ev.preventDefault();
+
+    console.log("123");
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
-    let dragIndex = dragData.index;
-    let dragSide = dragData.side;
+    let drag = this.indexToSideIndex(dragData.listIndex);
+
+    let dragIndex = drag.teamIndex;
+    let dragSide = drag.side;
+
+    // let dragIndex = dragData.index;
+    // let dragSide = dragData.side;
 
     let dropPosition = parseInt(ev.target.id);
 
@@ -386,6 +404,25 @@ class TicTacToeBoard extends React.Component{
 
   }
 
+  //Given an index, get the side and index (for that side)
+  indexToSideIndex(listIndex){
+
+    let newIndex = 0;
+    let newSide = "";
+
+    if (listIndex>=5){
+      newIndex = listIndex - 5;
+      newSide = "2"; 
+    } else{
+      newIndex = listIndex;
+      newSide = "1";
+    }
+
+
+    return {side:  newSide, teamIndex: newIndex};
+
+  }
+
 
   render() {
 
@@ -413,9 +450,9 @@ class TicTacToeBoard extends React.Component{
                   onDragOver = {(e) => this.dragOverBoard(e)}
                   onDrop = {(e) => this.dropBoardMember(e)} >
 
-                <img src= {require('./art/' +  this.props.G.cells[id].hero.art + '/Face_FC.png') } 
+                <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 
                     className = "heroFace" 
-                    alt = {this.props.G.cells[id].hero.name}
+                    alt = {heroData[this.props.G.cells[id].heroID.value].name}
                     draggable = "true"
                     id =  {JSON.stringify(this.props.G.cells[id])}
                     onDragStart = {(e) => this.dragBoardMember(e)} />
@@ -517,6 +554,7 @@ function makeHeroStruct(){
 
   function hero(){
     this["id"] = arguments[0];
+    this["listIndex"] = arguments[0];
     this["level"] = 1;
     this["merge"] = 0;
     this["dragonflower"] = 0;

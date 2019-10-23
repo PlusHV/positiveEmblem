@@ -31,13 +31,14 @@ export default class TeamElement extends React.Component{
           <td className= {cellClass} key={i} onClick={(side) => this.props.selector(this.props.name, i)}
           onDragOver = {(e) => this.props.dragOver(e)}
           onDrop = {(e) => this.props.drop(e)}
+          id = {idIndex + i}
           >
             <img src= {require('./art/' +  heroData[this.state.team[i].heroID.value].art + '/Face_FC.png') } 
                 className = "heroFace" 
                 alt = {heroData[this.state.team[i].heroID.value].name}
                 draggable  = "true"
-                id = {idIndex+i }
-                onDragStart = {(e) => this.props.drag(e)}  />
+                id = {JSON.stringify(this.state.team[i]) }
+                onDragStart = {(e) => this.props.drag(e)} />
                   
           </td>
           );
