@@ -60,6 +60,8 @@ class TicTacToeBoard extends React.Component{
     this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
     this.onBuffChange = this.onBuffChange.bind(this);
     this.onIVChange = this.onIVChange.bind(this);
+    this.onSupportLevelChange = this.onSupportLevelChange.bind(this);
+    this.onAllySupportChange = this.onAllySupportChange.bind(this);
 
     this.dragTeamMember = this.dragTeamMember.bind(this);
     this.dragOverTeamMember = this.dragOverTeamMember.bind(this);
@@ -271,6 +273,31 @@ class TicTacToeBoard extends React.Component{
 
   }
 
+  //When support levels or blessings change
+  onSupportLevelChange(e, type){
+    let temp = this.state.heroList;
+
+    temp[this.state.playerSide][this.state.heroIndex][type] = e.target.value;
+
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+    this.setState({heroList: temp});
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
+
+
+  }
+
+  onAllySupportChange(e){
+    var temp = this.state.heroList;
+    temp[this.state.playerSide][this.state.heroIndex].allySupport = e;
+
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+
+    this.setState({heroList: temp});
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
+
+
+  }
+
   getFilledPositions(){
     let positions = [];
     let temp = this.state.heroList["1"].concat(this.state.heroList["2"]);
@@ -285,18 +312,6 @@ class TicTacToeBoard extends React.Component{
     return positions
   }
 
-  // onClick(id) {
-  //   if (this.isActive(id)) {
-  //     this.props.moves.clickCell(id);
-  //     this.props.events.endTurn();
-  //   }
-  // }
-
-  // isActive(id) {
-  //   if (!this.props.isActive) return false;
-  //   if (this.props.G.cells[id] !== null) return false;
-  //   return true;
-  // }
 
   //drag Team member
   dragTeamMember(ev){
@@ -531,7 +546,9 @@ class TicTacToeBoard extends React.Component{
           <Skills
             gameState = {this.state}
             skillChange = {this.onSkillChange}
-            maxFilterChange = {this.onMaxFilterChange} />
+            maxFilterChange = {this.onMaxFilterChange}
+            supportLevelChange = {this.onSupportLevelChange}
+            allySupportChange = {this.onAllySupportChange} />
         </td>
         <td>"Extra Info"</td>
       </tr>
@@ -569,7 +586,8 @@ function makeHeroStruct(){
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
     this["summonerSupport"] = "None";
-    this["allySupport"] = {"hero": "0", "level": "None" };
+    this["allySupportLevel"] = "None";
+    this["allySupport"] = {value: "0", label: ""};
     this["blessing"] = "None";
     this["position"] = -1;
   }  

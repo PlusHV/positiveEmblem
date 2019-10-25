@@ -3,6 +3,7 @@ import React from 'react';
 import Select from 'react-select-v2';
 
 import './App.css';
+import {capitalize} from 'underscore.string';
 
 // import heroData from './heroInfo.json';
 // import weapons from './weapons.js';
@@ -112,49 +113,111 @@ const dropDownStyle = {
   });
     let tbody = [];
 
-    const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal"];
-    const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"].value], 
-                            assists[this.props.gameState.selectedMember.heroSkills["assist"].value], 
-                            specials[this.props.gameState.selectedMember.heroSkills["special"].value],
-                            skills.a[this.props.gameState.selectedMember.heroSkills["a"].value], skills.b[this.props.gameState.selectedMember.heroSkills["b"].value], 
-                            skills.c[this.props.gameState.selectedMember.heroSkills["c"].value], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"].value]
+    const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal", "summoner", "ally lvl", "ally", "blessing" ];
+    const equipKey = ["weapon", "assist", "special", "a", "b", "c", "seal", "summonerSupport", "allySupportLevel", "allySupport", "blessing" ];
+    const equippedValue = [ this.props.gameState.selectedMember.heroSkills["weapon"], 
+                            this.props.gameState.selectedMember.heroSkills["assist"], 
+                            this.props.gameState.selectedMember.heroSkills["special"],
+                            this.props.gameState.selectedMember.heroSkills["a"], this.props.gameState.selectedMember.heroSkills["b"], 
+                            this.props.gameState.selectedMember.heroSkills["c"], this.props.gameState.selectedMember.heroSkills["seal"],
+                            this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
+                            this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
     ];     
 
+    const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"]], 
+                            assists[this.props.gameState.selectedMember.heroSkills["assist"]], 
+                            specials[this.props.gameState.selectedMember.heroSkills["special"]],
+                            skills.a[this.props.gameState.selectedMember.heroSkills["a"]], skills.b[this.props.gameState.selectedMember.heroSkills["b"]], 
+                            skills.c[this.props.gameState.selectedMember.heroSkills["c"]], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"]],
+                            this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
+                            this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
+    ];     
 
+//Last Column
+    let supportLevels = ["S", "A", "B", "C", "None"];
+    let blessings = ["None", "Water", "Earth", "Wind", "Fire", "Light", "Dark", "Astra", "Anima"];
 
     for (let i = 0; i < equipText.length; i++) { //rows
         let cells = [];
 
-        cells.push(<td className = "equipText" key = {equipText[i]} >{equipText[i]}</td>);
+        cells.push(<td className = "equipText" key = {equipText[i]} >{capitalize(equipText[i], true) }</td>);
 
+        if (i < 7){
 
+          cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
+            
+              <Select
 
-        cells.push(<td className = "equippedSkill" key = {"equip:" + equippedSkill[i]} >
-          
+                styles = {dropDownStyle}
+                theme = {dropDownTheme} 
+                options={this.props.gameState.skillDropdowns[equipKey[i]].list}
+                value={equippedValue[i]}
+              onChange = {(e, index) => this.props.skillChange(e,equipKey[i])} 
+              /> 
+            </td>);
+          //value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
+        } else if (equipText[i] === "ally"){ //ally uses a separate onChange function and everything
+
+            cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
             <Select
-
               styles = {dropDownStyle}
               theme = {dropDownTheme} 
-              options={this.props.gameState.skillDropdowns[equipText[i]].list}
-              value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
-            onChange = {(e, index) => this.props.skillChange(e,equipText[i])} 
-            /> 
-          </td>);
+              options={this.props.gameState.skillDropdowns["hero"].list}
+              value={equippedValue[i]}
+              onChange = {(e) => this.props.allySupportChange(e)  } />
+              </td>
+              );
 
+        } else {
+          let optionList = supportLevels;
+          if (equipText[i] === "blessing"){
+            optionList = blessings;
+          }
+
+
+          let options = [];
+          for (let j = 0; j < optionList.length; j++){
+
+            options.push(<option key = {equipText[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
+          }
+
+          //for blessing, legendary and mythic heroes will display their blessing and disable it
+          if (equipText[i] === "blessing" && (this.props.gameState.selectedHeroInfo.type === "legendary" || this.props.gameState.selectedHeroInfo.type === "mythic")  ){
+            cells.push(<td key = {equipText[i] + "Value"}>  
+              <select disabled value = {capitalize(this.props.gameState.selectedHeroInfo.blessing, true)}
+                   >
+                {options}
+              </select>
+              </td>);
+          } else{
+            cells.push(<td key = {equipText[i] + "Value"} >  
+                <select value = {equippedValue[i]}
+                    onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
+                  {options}
+                </select>
+                </td>);
+          }
+
+        }
 
         tbody.push(<tr key={"skill row"+i}>{cells}</tr>);
     }
 
     tbody.push(
       <tr key = {"checkbox row"}> 
-        <td className = "equippedSkill" key = {"maxFilter"}>
-            Only Max Skills<input 
+        <td className = "equipText" key = {"maxFilter"}>
+            Max 
+        </td>
+
+        <td className = "equippedSkill" key = {"maxCheckbox"}>
+            <input 
             type = "checkbox"
             value = {this.props.gameState.maxFilter}
             onChange = {(e) => this.props.maxFilterChange(e)}
               />
-            
         </td>
+            
+        
       </tr>
     );
 

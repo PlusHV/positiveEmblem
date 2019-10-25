@@ -103,36 +103,21 @@ export default class Stats extends React.Component{
 			    }
 	    	}
 
-	    	//Last Column
 
-	    	if (statText[i] === "hp"){
-	    		cells.push(<td key = "summonerSupportLabel" className= "statText">Sum Support</td>);
-	    		cells.push(<td key = "summonerSupportValue"> 
 
-	    				</td>);
 
-	    	} else if(statText[i] === "atk"){
-	    		cells.push(<td key = "allySupportLabel" className= "statText">Ally Support</td>);
-	    		cells.push(<td key = "allySupportValue"> 
-
-	    				</td>);
-	    	} else if (statText[i] === "spd"){
-	    		cells.push(<td key = "blessingLabel" className= "statText">Blessing</td>);
-	    		cells.push(<td key = "blessingValue"> 
-
-	    				</td>);
-	    	} else if (statText[i] === "def"){
+	    	if (statText[i] === "atk"){
 	    		cells.push(<td key = "assetLabel" className= "statText">Asset</td>);
 
 	    		let options = [];
-	    		options.push(<option value = "neutral">Neutral</option>);
+	    		options.push(<option key = "assetNeutral" value = "neutral">Neutral</option>);
 	    		for (let j = 0; j < statText.length; j++){
 
 
 	    			if (this.props.gameState.selectedMember.iv.flaw === statText[j])
-	    				options.push(<option value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
+	    				options.push(<option key =  {"asset" + statText[j]} value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
 	    			else
-	    				options.push(<option value = {statText[j]}>{capitalize(statText[j], true)}</option>);
+	    				options.push(<option key = {"asset" + statText[j]} value = {statText[j]}>{capitalize(statText[j], true)}</option>);
 
 	    		}
 	    		cells.push(<td key = "assetValue"> 
@@ -145,18 +130,18 @@ export default class Stats extends React.Component{
 
 
 
-	    	} else if (statText[i] === "res"){
+	    	} else if (statText[i] === "def"){
 	    		cells.push(<td key = "flawLabel" className= "statText">Flaw</td>);
 
 	    		let options = [];
-	    		options.push(<option value = "neutral">Neutral</option>);
+	    		options.push(<option key = "flawNeutral" value = "neutral">Neutral</option>);
 	    		for (let j = 0; j < statText.length; j++){
 
 
 	    			if (this.props.gameState.selectedMember.iv.asset === statText[j])
-	    				options.push(<option value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
+	    				options.push(<option key = {"flaw" + statText[j]} value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
 	    			else
-	    				options.push(<option value = {statText[j]}>{capitalize(statText[j], true)}</option>);
+	    				options.push(<option key = {"flaw" + statText[j]} value = {statText[j]}>{capitalize(statText[j], true)}</option>);
 
 
 	    		}
