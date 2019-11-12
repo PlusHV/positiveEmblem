@@ -9,6 +9,7 @@ import './App.css';
 import TeamElement from './TeamElement.js';
 import Stats from './Stats.js';
 import Skills from './Skills.js';
+import Field from './Field.js';
 
 //Json imports
 import heroData from './heroInfo.json';
@@ -50,7 +51,7 @@ class TicTacToeBoard extends React.Component{
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
-      "blessing": "None"
+      "season": {"l1": "Water", "l2": "Earth", "m1": "Light", "m2": "Dark"}
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -62,6 +63,8 @@ class TicTacToeBoard extends React.Component{
     this.onIVChange = this.onIVChange.bind(this);
     this.onSupportLevelChange = this.onSupportLevelChange.bind(this);
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
+    this.onFortLevelChange = this.onFortLevelChange.bind(this);
+    this.onSeasonChange = this.onSeasonChange.bind(this);
 
     this.dragTeamMember = this.dragTeamMember.bind(this);
     this.dragOverTeamMember = this.dragOverTeamMember.bind(this);
@@ -295,6 +298,27 @@ class TicTacToeBoard extends React.Component{
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
+
+  }
+
+  onFortLevelChange(e){
+
+    this.setState({fortLevel: Number(e.target.value) });
+
+    // let temp = this.state.heroList;
+    // temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
+    // temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+
+    // this.setState({heroList: temp});
+    // this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
+
+  }
+
+  onSeasonChange(e, type){
+    var temp = this.state.season;
+    temp[type] = e.value;
+
+    this.setState({season: temp});
 
   }
 
@@ -549,6 +573,11 @@ class TicTacToeBoard extends React.Component{
             maxFilterChange = {this.onMaxFilterChange}
             supportLevelChange = {this.onSupportLevelChange}
             allySupportChange = {this.onAllySupportChange} />
+          <Field  
+            gameState = {this.state}
+            fortChange = {this.onFortLevelChange}
+            seasonChange = {this.onSeasonChange} />
+          
         </td>
         <td>"Extra Info"</td>
       </tr>

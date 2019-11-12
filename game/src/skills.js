@@ -123,7 +123,7 @@ const dropDownStyle = {
                             this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
                             this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
     ];     
-
+    
     const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"]], 
                             assists[this.props.gameState.selectedMember.heroSkills["assist"]], 
                             specials[this.props.gameState.selectedMember.heroSkills["special"]],
@@ -139,11 +139,12 @@ const dropDownStyle = {
 
     for (let i = 0; i < equipText.length; i++) { //rows
         let cells = [];
-
+        //column text
         cells.push(<td className = "equipText" key = {equipText[i]} >{capitalize(equipText[i], true) }</td>);
-
+        //the first 7 are the equipped skills/seals etc
         if (i < 7){
 
+          //drop down menu for skill
           cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
             
               <Select
@@ -155,8 +156,9 @@ const dropDownStyle = {
               onChange = {(e, index) => this.props.skillChange(e,equipKey[i])} 
               /> 
             </td>);
+
           //value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
-        } else if (equipText[i] === "ally"){ //ally uses a separate onChange function and everything
+        } else if (equipText[i] === "ally"){ //allies need use the Select dropdown so its value its onChange function is different
 
             cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
             <Select
@@ -168,7 +170,7 @@ const dropDownStyle = {
               </td>
               );
 
-        } else {
+        } else { //regular dropdown levels for blessings and support levels
           let optionList = supportLevels;
           if (equipText[i] === "blessing"){
             optionList = blessings;
@@ -181,7 +183,7 @@ const dropDownStyle = {
             options.push(<option key = {equipText[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
           }
 
-          //for blessing, legendary and mythic heroes will display their blessing and disable it
+          //for the blessing input, legendary and mythic heroes will display their blessing and disable it
           if (equipText[i] === "blessing" && (this.props.gameState.selectedHeroInfo.type === "legendary" || this.props.gameState.selectedHeroInfo.type === "mythic")  ){
             cells.push(<td key = {equipText[i] + "Value"}>  
               <select disabled value = {capitalize(this.props.gameState.selectedHeroInfo.blessing, true)}
@@ -189,7 +191,7 @@ const dropDownStyle = {
                 {options}
               </select>
               </td>);
-          } else{
+          } else{ //regular heroes blessing dropdown
             cells.push(<td key = {equipText[i] + "Value"} >  
                 <select value = {equippedValue[i]}
                     onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
