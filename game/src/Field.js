@@ -22,9 +22,9 @@ export default class Field extends React.Component{
 	            />  
 	      </td>);
 
-      tbody.push(<tr key= "fortRow" >{cells}</tr>);
+    tbody.push(<tr key= "fortRow" >{cells}</tr>);
 
-    let seasons = ["l1", "l2", "m1", "m2"];
+    let seasons = ["L1", "L2", "M1", "M2"];
     let legendary = ["Water", "Earth", "Wind", "Fire"];
     let mythic = ["Light", "Dark", "Astra", "Anima"];
     //Season Settings
@@ -40,14 +40,21 @@ export default class Field extends React.Component{
 		//for last two inputs, use mythic list
 		if (i >= 2){
 		   	optionList = mythic;
-
 		}
 
 	    let options = [];
 
 	    for (let j = 0; j < optionList.length; j++){
 
-	            options.push(<option key = {seasons[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
+	    		//Getting the list of seasons to use for the dropdowns
+
+	    		//Checks if this season is in the list of seasons and if it is the dropdown for that found season -> if not, then disable this option to prevent dupes
+	    		if (Object.values(this.props.gameState.season).includes(optionList[j]) && this.props.gameState.season[seasons[i]] !== optionList[j]) {
+	            	options.push(<option disabled key = {seasons[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
+	            } else {
+	            	options.push(<option key = {seasons[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
+	            }
+
 		}
 
         cells.push(<td key = {seasons[i] + "Value"} >  
@@ -57,7 +64,7 @@ export default class Field extends React.Component{
               </select>
               </td>);
 
-	    tbody.push(<tr key= "fortRow" >{cells}</tr>);  
+	    tbody.push(<tr key= {seasons[i] + "Row"} >{cells}</tr>);  
     }
 
     

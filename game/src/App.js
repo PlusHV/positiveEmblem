@@ -51,7 +51,7 @@ class TicTacToeBoard extends React.Component{
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
-      "season": {"l1": "Water", "l2": "Earth", "m1": "Light", "m2": "Dark"}
+      "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"}
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -316,8 +316,8 @@ class TicTacToeBoard extends React.Component{
 
   onSeasonChange(e, type){
     var temp = this.state.season;
-    temp[type] = e.value;
-
+    temp[type] = e.target.value;
+    
     this.setState({season: temp});
 
   }
