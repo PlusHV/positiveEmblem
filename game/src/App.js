@@ -218,20 +218,49 @@ class TicTacToeBoard extends React.Component{
     return item.value === this;
   }
 
-  onSkillChange(e, index){
-    let temp = this.state.heroList;
+  onSkillChange(e, index){ //e is the new value, index is the key 
+    let temp = this.state.heroList; //copy of heroList
 
 
-    let skillList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex].heroSkills);
-    skillList[index] = e;
+    let skillList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex].heroSkills); //copy of hero's skill list
+    skillList[index] = e; //replace skill
+    
+    //TODO - implement skills  - weapons first
+    if (index === "weapon"){
 
-    temp[this.state.playerSide][this.state.heroIndex].heroSkills = skillList;
-    this.setState({heroList: temp});
+      let pTemp = temp[this.state.playerSide][this.state.heroIndex].passive;
+      pTemp["atk"] += this.state.weaponList[e.value]["might"]; 
+      temp[this.state.playerSide][this.state.heroIndex].passive = pTemp;
+    //} //TODO - make  a function that takes the attached skills of a weapon, add all of their effects to an array, then add to the skillBucket
+    } else if (this.state.skillDropdowns[index].info[e.value].type  === "passive"){ //checks if the skill is a passive
+      let statMods = this.state.skillDropdowns[index].info[e.value].effect; //effect should contain the list of stats to buff
+      console.log(statMods);
+      let pTemp = temp[this.state.playerSide][this.state.heroIndex].passive;
+
+
+      Object.keys(statMods).forEach((key, i) => {
+        pTemp[key] += statMods[key];
+      });
+
+
+
+      temp[this.state.playerSide][this.state.heroIndex].passive = pTemp;
+      //TODO - modify all passives such that they give a list of their stat modifications
+
+    }
+
+    //TODO - add other types of skills 
+
+
+    temp[this.state.playerSide][this.state.heroIndex].heroSkills = skillList; //update the temp copy of heroList
+    
+    //update states
+    this.setState({heroList: temp}); 
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
-    //heroList[playerSide][heroIndex] = this.state;
 
 
   }
+
   onMaxFilterChange(e){
 
     this.updateDropdowns(this.state.selectedHeroInfo, e.target.checked);
@@ -397,7 +426,7 @@ class TicTacToeBoard extends React.Component{
   dropBoardMember(ev){
     ev.preventDefault();
 
-    console.log("123");
+
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
     let drag = this.indexToSideIndex(dragData.listIndex);
@@ -465,6 +494,7 @@ class TicTacToeBoard extends React.Component{
 
   render() {
 
+    console.log(this.state.heroList);
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
@@ -600,18 +630,21 @@ function makeHeroStruct(){
 
   function hero(){
     this["id"] = arguments[0];
-    this["listIndex"] = arguments[0];
+    this["listIndex"] = arguments[0]; //index of the hero for the list of heroes
     this["level"] = 1;
     this["merge"] = 0;
     this["dragonflower"] = 0;
     this["heroID"] = {value: "0", label: ""};
     this["iv"] = {asset: "Neutral", flaw: "Neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
-                          "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} 
+                          "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
+
+
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["combat"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
     this["summonerSupport"] = "None";
@@ -619,6 +652,11 @@ function makeHeroStruct(){
     this["allySupport"] = {value: "0", label: ""};
     this["blessing"] = "None";
     this["position"] = -1;
+
+    this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0} //set of stats from skills
+    this["range"] = 1;
+
+
   }  
   return hero;
 }

@@ -1646,7 +1646,8 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
-		"max": true
+		"max": true,
+		"effect": {"spd": 3}
 	},
 	"235": {
 		"name": "Steady Blow 1",

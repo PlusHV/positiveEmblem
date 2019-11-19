@@ -7,9 +7,9 @@ import {capitalize} from 'underscore.string';
 
 // import heroData from './heroInfo.json';
 // import weapons from './weapons.js';
-import specials from './skills/special.json';
-import assists from './skills/assist.json';
-import skills from './skillList.js';
+//import specials from './skills/special.json';
+//import assists from './skills/assist.json';
+//import skills from './skillList.js';
 
 export default class Skills extends React.Component{
 
@@ -124,14 +124,14 @@ const dropDownStyle = {
                             this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
     ];     
     
-    const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"]], 
+    /*const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"]], 
                             assists[this.props.gameState.selectedMember.heroSkills["assist"]], 
                             specials[this.props.gameState.selectedMember.heroSkills["special"]],
                             skills.a[this.props.gameState.selectedMember.heroSkills["a"]], skills.b[this.props.gameState.selectedMember.heroSkills["b"]], 
                             skills.c[this.props.gameState.selectedMember.heroSkills["c"]], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"]],
                             this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
                             this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
-    ];     
+    ];     */
 
 //Last Column
     let supportLevels = ["S", "A", "B", "C", "None"];
