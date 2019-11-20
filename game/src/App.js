@@ -169,6 +169,17 @@ class TicTacToeBoard extends React.Component{
     tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findMatchingValue, newHero.sseal);
 
     temp[this.state.playerSide][this.state.heroIndex].heroSkills = tSkills; //update the new heroes default skills
+
+
+    //Passives/weapons only currently
+    //Add the effects of the skills to the hero
+    Object.keys(tSkills).forEach((key, i) => {
+       temp[this.state.playerSide][this.state.heroIndex] = this.getSkillEffects(tSkills[key].value , key);
+    });
+
+
+
+
     temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]); //recalculate stats
 
 
@@ -219,23 +230,42 @@ class TicTacToeBoard extends React.Component{
   }
 
   onSkillChange(e, index){ //e is the new value, index is the key 
-    let temp = this.state.heroList; //copy of heroList
+    let tempHeroList = this.state.heroList;
+    let hero = this.state.heroList[this.state.playerSide][this.state.heroIndex]; //copy of heroList
 
 
-    let skillList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex].heroSkills); //copy of hero's skill list
+    let skillList =  Object.assign({}, hero.heroSkills); //copy of hero's skill list
     skillList[index] = e; //replace skill
+    hero.heroSkills = skillList; //update the temp copy of heroList
     
     //TODO - implement skills  - weapons first
-    if (index === "weapon"){
+    //Add skill effect to the hero
+    hero = this.getSkillEffects(e.value, index);
 
-      let pTemp = temp[this.state.playerSide][this.state.heroIndex].passive;
-      pTemp["atk"] += this.state.weaponList[e.value]["might"]; 
-      temp[this.state.playerSide][this.state.heroIndex].passive = pTemp;
-    //} //TODO - make  a function that takes the attached skills of a weapon, add all of their effects to an array, then add to the skillBucket
-    } else if (this.state.skillDropdowns[index].info[e.value].type  === "passive"){ //checks if the skill is a passive
-      let statMods = this.state.skillDropdowns[index].info[e.value].effect; //effect should contain the list of stats to buff
-      console.log(statMods);
-      let pTemp = temp[this.state.playerSide][this.state.heroIndex].passive;
+    //TODO - add other types of skills 
+
+
+    
+    
+    tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
+    //update states
+    this.setState({heroList: tempHeroList}); 
+    this.setState({selectedMember: hero });
+
+
+  }
+
+  getSkillEffects(id, skillType){
+    let currentHero = this.state.heroList[this.state.playerSide][this.state.heroIndex]; //copy of current hero
+
+    if (skillType === "weapon"){
+      let pTemp = currentHero.passive;
+      pTemp["atk"] += this.state.weaponList[id]["might"]; 
+      currentHero.passive = pTemp;
+
+    } else if (this.state.skillDropdowns[skillType].info[id].type  === "passive") {
+      let statMods = this.state.skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
+      let pTemp = currentHero.passive;
 
 
       Object.keys(statMods).forEach((key, i) => {
@@ -244,22 +274,14 @@ class TicTacToeBoard extends React.Component{
 
 
 
-      temp[this.state.playerSide][this.state.heroIndex].passive = pTemp;
-      //TODO - modify all passives such that they give a list of their stat modifications
-
+      currentHero.passive = pTemp;
     }
 
-    //TODO - add other types of skills 
-
-
-    temp[this.state.playerSide][this.state.heroIndex].heroSkills = skillList; //update the temp copy of heroList
-    
-    //update states
-    this.setState({heroList: temp}); 
-    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
-
+    return currentHero; //hero with new skills
 
   }
+
+
 
   onMaxFilterChange(e){
 

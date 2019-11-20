@@ -251,6 +251,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"32": {
@@ -259,6 +260,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"33": {
@@ -267,6 +269,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": true
 	},
 	"34": {
@@ -275,6 +278,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1, "def": 1},
 		"max": false
 	},
 	"35": {
@@ -283,6 +287,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2, "def": 2},
 		"max": true
 	},
 	"36": {
@@ -291,6 +296,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1, "res": 1},
 		"max": false
 	},
 	"37": {
@@ -299,6 +305,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2, "res": 2},
 		"max": true
 	},
 	"38": {
@@ -643,6 +650,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"81": {
@@ -651,6 +659,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"82": {
@@ -659,6 +668,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": true
 	},
 	"83": {
@@ -1076,6 +1086,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "def": 3},
 		"max": false
 	},
 	"135": {
@@ -1084,6 +1095,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "def": 4},
 		"max": false
 	},
 	"136": {
@@ -1092,6 +1104,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "def": 5},
 		"max": true
 	},
 	"137": {
@@ -1100,6 +1113,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "res": 3},
 		"max": false
 	},
 	"138": {
@@ -1108,6 +1122,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "res": 4},
 		"max": false
 	},
 	"139": {
@@ -1116,6 +1131,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": -3, "res": 5},
 		"max": true
 	},
 	"140": {
@@ -1268,6 +1284,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"159": {
@@ -1276,6 +1293,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"160": {
@@ -1284,6 +1302,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": true
 	},
 	"161": {
@@ -1292,6 +1311,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3, "atk": 1},
 		"max": false
 	},
 	"162": {
@@ -1300,6 +1320,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4, "atk": 2},
 		"max": true
 	},
 	"163": {
@@ -1308,6 +1329,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3, "res": 1},
 		"max": false
 	},
 	"164": {
@@ -1316,6 +1338,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4, "res": 2},
 		"max": true
 	},
 	"165": {
@@ -1324,6 +1347,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3, "spd": 1},
 		"max": false
 	},
 	"166": {
@@ -1332,6 +1356,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4, "spd": 2},
 		"max": true
 	},
 	"167": {
@@ -1340,6 +1365,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"168": {
@@ -1348,6 +1374,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"169": {
@@ -1356,6 +1383,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"170": {
@@ -1364,6 +1392,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"171": {
@@ -1372,6 +1401,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"172": {
@@ -1380,6 +1410,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"173": {
@@ -1388,6 +1419,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"174": {
@@ -1396,6 +1428,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"175": {
@@ -1404,6 +1437,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"176": {
@@ -1412,6 +1446,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"177": {
@@ -1420,6 +1455,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"178": {
@@ -1428,6 +1464,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"179": {
@@ -1436,6 +1473,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"180": {
@@ -1444,6 +1482,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"181": {
@@ -1452,6 +1491,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"182": {
@@ -1701,6 +1741,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"213": {
@@ -1709,6 +1750,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"214": {
@@ -1717,6 +1759,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": true
 	},
 	"215": {
@@ -1854,6 +1897,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1, "def": 1},
 		"max": false
 	},
 	"232": {
@@ -1862,6 +1906,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2, "def": 2},
 		"max": true
 	},
 	"233": {
@@ -1870,6 +1915,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1, "res": 1},
 		"max": false
 	},
 	"234": {
@@ -1878,6 +1924,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2, "res": 2},
 		"max": true
 	},
 	"235": {
@@ -1910,6 +1957,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"239": {
@@ -1918,6 +1966,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"240": {
@@ -1926,6 +1975,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": true
 	},
 	"241": {
@@ -2062,6 +2112,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"258": {
@@ -2070,6 +2121,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"259": {
@@ -2078,6 +2130,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"260": {
@@ -2086,6 +2139,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"261": {
@@ -2094,6 +2148,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"262": {
@@ -2102,6 +2157,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"263": {
@@ -2110,6 +2166,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"264": {
@@ -2118,6 +2175,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"265": {
@@ -2126,6 +2184,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"266": {
@@ -2134,6 +2193,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"267": {
@@ -2142,6 +2202,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"268": {
@@ -2150,6 +2211,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"269": {
@@ -2158,6 +2220,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"270": {
@@ -2166,6 +2229,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"271": {
@@ -2174,6 +2238,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"272": {
@@ -2182,6 +2247,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"273": {
@@ -2190,6 +2256,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"274": {
@@ -2198,6 +2265,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"275": {
@@ -2206,6 +2274,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"276": {
@@ -2214,6 +2283,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"277": {
@@ -2222,6 +2292,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"278": {
@@ -2230,6 +2301,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"279": {
@@ -2238,6 +2310,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"280": {
@@ -2246,6 +2319,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"281": {
@@ -2254,6 +2328,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"282": {
@@ -2262,6 +2337,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"283": {
@@ -2270,6 +2346,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"284": {
@@ -2278,6 +2355,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"285": {
@@ -2286,6 +2364,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"286": {
@@ -2294,6 +2373,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"287": {
@@ -2302,6 +2382,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"288": {
@@ -2310,6 +2391,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"289": {
@@ -2318,6 +2400,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"290": {
@@ -2326,6 +2409,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"291": {
@@ -2334,6 +2418,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"292": {
@@ -2342,6 +2427,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"293": {
@@ -2350,6 +2436,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"294": {
@@ -2358,6 +2445,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"295": {
@@ -2366,6 +2454,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"296": {
@@ -2374,6 +2463,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"297": {
@@ -2382,6 +2472,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"298": {
@@ -2390,6 +2481,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"299": {
@@ -2398,6 +2490,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"300": {
@@ -2406,6 +2499,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"301": {
@@ -2414,6 +2508,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"302": {
@@ -2422,6 +2517,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"303": {
@@ -2430,6 +2526,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"304": {
@@ -2438,6 +2535,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"305": {
@@ -2446,6 +2544,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"306": {
@@ -2454,6 +2553,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"307": {
@@ -2462,6 +2562,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"308": {
@@ -2470,6 +2571,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"309": {
@@ -2478,6 +2580,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"310": {
@@ -2486,6 +2589,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"311": {
@@ -2494,6 +2598,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"312": {
@@ -2502,6 +2607,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"313": {
@@ -2510,6 +2616,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"314": {
@@ -2518,6 +2625,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"315": {
@@ -2526,6 +2634,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"316": {
@@ -2534,6 +2643,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"317": {
@@ -2542,6 +2652,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"318": {
@@ -2550,6 +2661,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"319": {
@@ -2558,6 +2670,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"320": {
@@ -2566,6 +2679,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 1},
 		"max": false
 	},
 	"321": {
@@ -2574,6 +2688,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 2},
 		"max": false
 	},
 	"322": {
@@ -2582,6 +2697,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"def": 3},
 		"max": false
 	},
 	"323": {
@@ -2590,6 +2706,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 1},
 		"max": false
 	},
 	"324": {
@@ -2598,6 +2715,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 2},
 		"max": false
 	},
 	"325": {
@@ -2606,6 +2724,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"res": 3},
 		"max": false
 	},
 	"326": {
@@ -2614,6 +2733,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 1},
 		"max": false
 	},
 	"327": {
@@ -2622,6 +2742,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 2},
 		"max": false
 	},
 	"328": {
@@ -2630,6 +2751,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"spd": 3},
 		"max": false
 	},
 	"329": {
@@ -2638,6 +2760,7 @@
 		"sp": 30,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 1},
 		"max": false
 	},
 	"330": {
@@ -2646,6 +2769,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 2},
 		"max": false
 	},
 	"331": {
@@ -2654,6 +2778,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "passive",
+		"effect": {"atk": 3},
 		"max": false
 	},
 	"332": {
@@ -2662,6 +2787,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 3},
 		"max": false
 	},
 	"333": {
@@ -2670,6 +2796,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 4},
 		"max": false
 	},
 	"334": {
@@ -2678,6 +2805,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
+		"effect": {"hp": 5},
 		"max": false
 	},
 	"335": {
