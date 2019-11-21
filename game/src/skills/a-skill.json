@@ -1348,7 +1348,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
-		"effect": {"hp": 5, "atk": 1},
+		"effect": {"hp": 5},
 		"max": true
 	},
 	"186": {

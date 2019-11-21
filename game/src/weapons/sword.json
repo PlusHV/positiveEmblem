@@ -499,7 +499,7 @@
 	},
 	"52": {
 		"name": "Meisterschwert",
-		"might": 11,
+		"might": 999,
 		"range": 1,
 		"sp":400,
 		"prf": true,
