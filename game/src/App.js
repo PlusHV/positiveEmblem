@@ -286,6 +286,14 @@ class TicTacToeBoard extends React.Component{
       updatedHero.passive = pTemp;
     }
 
+    if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
+      for (var x of skillDropdowns[skillType].info[id].skills) {
+
+        updatedHero = this.getSkillEffect(x[1], x[0], updatedHero, skillDropdowns); //add the extra skills as well
+      }
+
+    }
+
     return updatedHero; //hero with new skills
 
   }
@@ -309,6 +317,13 @@ class TicTacToeBoard extends React.Component{
 
 
       updatedHero.passive = pTemp;
+    }
+
+    if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
+      for (var x of this.state.skillDropdowns[skillType].info[id].skills) {
+        updatedHero = this.removeSkillEffect(x[1], x[0], updatedHero); //remove the extra skills as well
+      }
+
     }
 
     return updatedHero; //hero with new skills

@@ -381,6 +381,7 @@
 		"prf": true,
 		"users": [6],
 		"type": "bow",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"42": {
