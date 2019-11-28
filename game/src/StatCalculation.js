@@ -31,7 +31,7 @@ function ConvertGrowthVector(vect, level){
 	return (vect.substring(0, level-1).match(/1/g)|| []).length;
 }
 
-export function CalculateStats(hero){
+export function CalculateStats(hero, fort, blessings, seasons){
 	var statArray = {};
 
 	var heroInfo = heroData[hero.heroID.value];
@@ -74,6 +74,7 @@ export function CalculateStats(hero){
   	bases = ApplyMods(bases, mergeMods.base);
   	growths = ApplyMods(growths, mergeMods.growth);
   	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
+  	bases = ApplyMods(bases, hero.passive);
 
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){

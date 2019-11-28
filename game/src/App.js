@@ -41,7 +41,7 @@ class TicTacToeBoard extends React.Component{
     this.state = {
       "heroList": { 
         "1":[new heroStruct(0), new heroStruct(1), new heroStruct(2), new heroStruct(3), new heroStruct(4)],
-        "2": [new heroStruct(5), new heroStruct(6), new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10)]
+        "2": [new heroStruct(6), new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11)]
       },
       "heroIndex": 0, //The index of the hero in the heroList
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
@@ -192,24 +192,24 @@ class TicTacToeBoard extends React.Component{
 
 
     //Sets the initial position of the on the board 
-    if (hero.position === -1 && e.value !== "0"){
-      
+    if (hero.position === -1 && e.value !== "0"){ //if hero was blank
+      hero.side = this.state.playerSide;
       let pos = this.getFilledPositions();
-      let x = 0;
-      let y = 42;
-      let inc = -6;
+      let x = 0; //check column - always goes from left to right
+      let y = 42; //row -> player one starts at bottom row
+      let inc = -6; //going up a row requires -6
       if (this.state.playerSide === "2"){
-        y = 0;
-        inc = 6;
+        y = 0; //player 2 starts at top row
+        inc = 6; //going down a row is 6
       }
       
-      while (hero.position === -1 && (y >=0 && y<=42) ){
-        if (! (pos.includes(y+x)) ){
+      while (hero.position === -1 && (y >=0 && y<=42) ){ //not filled and rows are not out of bound
+        if (! (pos.includes(y+x)) ){ //space is free
           hero.position = y+x;
           this.props.G.cells[y+x] = hero;
-        } else if (x <5){
+        } else if (x <5){ //move to next column
           x+=1;
-        } else if (x>=5){
+        } else if (x>=5){ //end of row, start at first column and increment row
           x= 0;
           y+=inc;
         } 
@@ -256,7 +256,7 @@ class TicTacToeBoard extends React.Component{
 
     //TODO - add other types of skills 
 
-
+    hero.stats = CalculateStats(hero);
     
     
     tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
@@ -422,9 +422,9 @@ class TicTacToeBoard extends React.Component{
 
   }
 
-  getFilledPositions(){
+  getFilledPositions(){ //get positions that are occupied by a hero
     let positions = [];
-    let temp = this.state.heroList["1"].concat(this.state.heroList["2"]);
+    let temp = this.state.heroList["1"].concat(this.state.heroList["2"]); //merge two lists
     
     // eslint-disable-next-line
     for (let x of temp){
@@ -437,7 +437,7 @@ class TicTacToeBoard extends React.Component{
   }
 
 
-  //drag Team member
+  //drag Team member - the team elements
   dragTeamMember(ev){
     ev.dataTransfer.setData("text", ev.target.id ); //Gets the id, which is the index in heroList
 
@@ -450,17 +450,17 @@ class TicTacToeBoard extends React.Component{
     ev.preventDefault();
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
-    let drag = this.indexToSideIndex(dragData.listIndex);
+   // let drag = this.indexToSideIndex(dragData.listIndex);
 
-    let dragIndex = drag.teamIndex;
-    let dragSide = drag.side;
+    let dragIndex = dragData.listIndex;
+    let dragSide = dragData.side;
 
     let dropData = JSON.parse(ev.target.id);
 
-    let drop = this.indexToSideIndex(dropData.listIndex);
+    //let drop = this.indexToSideIndex(dropData.listIndex);
 
-    let dropIndex = drop.teamIndex;
-    let dropSide = drop.side;
+    let dropIndex = dropData.listIndex;
+    let dropSide = dropData.side;
 
     let temp = this.state.heroList;
 
@@ -473,9 +473,13 @@ class TicTacToeBoard extends React.Component{
     //put the dragged member into the dropped location
     temp[dropSide][dropIndex] = dragTemp;
 
-    //they have swapped and need their listIndex updated
+    //they have swapped and need their listIndex updated - they are the same because they have swapped
     temp[dragSide][dragIndex].listIndex = dragData.listIndex;
     temp[dropSide][dropIndex].listIndex = dropData.listIndex;
+
+    //also update sides
+    temp[dragSide][dragIndex].side = dragData.side;
+    temp[dropSide][dropIndex].side = dropData.side;
 
     this.setState({heroList: temp});
 
@@ -487,8 +491,9 @@ class TicTacToeBoard extends React.Component{
 
 
 
+//the board elements
   dragBoardMember(ev){
-    ev.dataTransfer.setData("text", ev.target.id ); 
+    ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
   }
   dragOverBoard(ev){
     ev.preventDefault();
@@ -500,10 +505,10 @@ class TicTacToeBoard extends React.Component{
 
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
-    let drag = this.indexToSideIndex(dragData.listIndex);
+    //let drag = this.indexToSideIndex(dragData.listIndex);
 
-    let dragIndex = drag.teamIndex;
-    let dragSide = drag.side;
+    let dragIndex = dragData.listIndex; //the index of that team
+    let dragSide = dragData.side; //the team dragged is on
 
     // let dragIndex = dragData.index;
     // let dragSide = dragData.side;
@@ -703,7 +708,7 @@ function makeHeroStruct(){
 
   function hero(){
     this["id"] = arguments[0];
-    this["listIndex"] = arguments[0]; //index of the hero for the list of heroes
+    this["listIndex"] = arguments[0] % 6; //index of the hero for the list of heroes
     this["level"] = 1;
     this["merge"] = 0;
     this["dragonflower"] = 0;
@@ -713,6 +718,7 @@ function makeHeroStruct(){
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
 
+    this["side"] = (Math.floor(arguments[0] / 6) + 1).toString();
 
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
