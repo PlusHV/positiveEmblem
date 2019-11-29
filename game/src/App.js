@@ -51,6 +51,28 @@ class TicTacToeBoard extends React.Component{
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
+      "blessingBuffs": { 
+        "1": {
+          "Water": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Earth": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Wind": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Fire": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Light": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Dark": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Astra": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Anima": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
+        } ,
+        "2": {
+          "Water": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Earth": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Wind": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Fire": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Light": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Dark": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Astra": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
+          "Anima": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
+        }
+      },
       "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"}
     }
 
@@ -138,7 +160,8 @@ class TicTacToeBoard extends React.Component{
 
     let temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel,
+       this.state.blessingBuffs[this.state.playerSide], this.state.season);
 
     this.setState({heroList: temp});
     this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
@@ -188,7 +211,7 @@ class TicTacToeBoard extends React.Component{
 
 
 
-    hero.stats = CalculateStats(hero); //recalculate stats
+    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season); //recalculate stats
 
 
     //Sets the initial position of the on the board 
@@ -256,7 +279,7 @@ class TicTacToeBoard extends React.Component{
 
     //TODO - add other types of skills 
 
-    hero.stats = CalculateStats(hero);
+    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
     
     
     tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
@@ -370,7 +393,7 @@ class TicTacToeBoard extends React.Component{
 
     temp[this.state.playerSide][this.state.heroIndex].iv = ivList;
 
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
@@ -382,7 +405,7 @@ class TicTacToeBoard extends React.Component{
 
     temp[this.state.playerSide][this.state.heroIndex][type] = e.target.value;
 
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
@@ -393,7 +416,7 @@ class TicTacToeBoard extends React.Component{
     var temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex].allySupport = e;
 
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
+    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
 
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
