@@ -51,7 +51,7 @@ class TicTacToeBoard extends React.Component{
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
-      "blessingBuffs": { 
+      "blessingBuffs": { //the buffs each season will give a team - one for each team
         "1": {
           "Water": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
           "Earth": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
@@ -427,7 +427,7 @@ class TicTacToeBoard extends React.Component{
   onFortLevelChange(e){
 
     this.setState({fortLevel: Number(e.target.value) });
-
+    this.RecalculateAllHeroStats(this.state.heroList,  Number(e.target.value), this.state.blessingBuffs, this.state.season);
     // let temp = this.state.heroList;
     // temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
     // temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
@@ -514,6 +514,7 @@ class TicTacToeBoard extends React.Component{
 
 
 
+
 //the board elements
   dragBoardMember(ev){
     ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
@@ -591,6 +592,25 @@ class TicTacToeBoard extends React.Component{
   }
 
 
+  //get an updated list of heroes and update all of their stats
+  RecalculateAllHeroStats(currentHeroList, newFortLevel, newblessingBuffs, newSeasons){
+    let tempList = currentHeroList;
+
+    Object.keys(tempList).forEach((key, i) => { //for each team
+        let tempTeam = tempList[key]; //copy of team to be modified
+
+        Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
+          tempTeam[memberKey].stats = CalculateStats(tempTeam[memberKey], newFortLevel, newblessingBuffs[key], newSeasons); //new stats 
+        });
+
+        tempList[key] = tempTeam; //update the team lsit
+    });
+
+    
+    return tempList; //the heroList with stats recalculated
+  }
+
+
   render() {
 
     console.log(this.state.heroList);
@@ -635,7 +655,6 @@ class TicTacToeBoard extends React.Component{
                   id = {id}
                   onDragOver = {(e) => this.dragOverBoard(e)}
                   onDrop = {(e) => this.dropBoardMember(e)} >
-                  11111
                 </td>
                 );              
             }

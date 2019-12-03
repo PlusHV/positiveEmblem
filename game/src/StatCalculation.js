@@ -63,7 +63,7 @@ export function CalculateStats(hero, fort, blessings, seasons){
   	var flowerMods =FlowerMods(hero.dragonflower, statOrder);
 
   	//fort calculation
-
+  	var fortMods = FortMods(hero.side, fort);
   	//summoner support calculation
 
   	
@@ -75,6 +75,7 @@ export function CalculateStats(hero, fort, blessings, seasons){
   	growths = ApplyMods(growths, mergeMods.growth);
   	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
   	bases = ApplyMods(bases, hero.passive);
+  	bases = ApplyMods(bases, fortMods);
 
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){
@@ -216,6 +217,25 @@ function FlowerMods(flowers, order){
 	}
 
 	return mods;
+}
+
+function FortMods(side, level){
+
+
+	let buff = 4 * level;
+
+	if (side === "2"){
+		buff = -buff; //enemy's buff needs the negative version of the buff
+	}
+
+	if (buff <= 0){ //if buff is negative/0, then no buff is granted - same if hero is not assigned
+		return object(statName,[0, 0, 0, 0, 0]);
+	} else{
+		return object(statName,[0, buff, buff, buff, buff]); //give buff in all stats but HP
+	}
+
+
+
 }
 
 //returns an array of stats from highest to lowest
