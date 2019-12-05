@@ -82,6 +82,7 @@ class TicTacToeBoard extends React.Component{
     this.onSkillChange = this.onSkillChange.bind(this);
     this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
     this.onBuffChange = this.onBuffChange.bind(this);
+    this.onBonusChange = this.onBonusChange.bind(this);
     this.onIVChange = this.onIVChange.bind(this);
     this.onSupportLevelChange = this.onSupportLevelChange.bind(this);
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
@@ -376,6 +377,21 @@ class TicTacToeBoard extends React.Component{
 
   }
 
+  onBonusChange(e){
+    var temp = this.state.heroList;
+    let hero = temp[this.state.playerSide][this.state.heroIndex]; 
+    
+
+    hero.bonus = e.target.checked;
+    hero.stats =  CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    temp[this.state.playerSide][this.state.heroIndex] = hero;
+
+    this.setState({heroList: temp});
+    this.setState({selectedMember: hero});
+    //console.log(e.target.checked);
+
+  }
+
   onIVChange(e, type){
     let temp = this.state.heroList;
 
@@ -613,8 +629,8 @@ class TicTacToeBoard extends React.Component{
 
   render() {
 
-    console.log(this.state.heroList);
-    console.log(this.state.heroList[1][0]);
+    // console.log(this.state.heroList);
+    // console.log(this.state.heroList[1][0]);
 
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
@@ -722,7 +738,8 @@ class TicTacToeBoard extends React.Component{
             skillChange = {this.onSkillChange}
             maxFilterChange = {this.onMaxFilterChange}
             supportLevelChange = {this.onSupportLevelChange}
-            allySupportChange = {this.onAllySupportChange} />
+            allySupportChange = {this.onAllySupportChange}
+            bonusChange = {this.onBonusChange} />
           <Field  
             gameState = {this.state}
             fortChange = {this.onFortLevelChange}
@@ -776,6 +793,7 @@ function makeHeroStruct(){
 
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0} //set of stats from skills
     this["range"] = 1;
+    this["bonus"] = false;
 
 
   }  

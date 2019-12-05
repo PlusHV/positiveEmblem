@@ -64,9 +64,11 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
   	//fort calculation
   	var fortMods = FortMods(hero.side, fort);
+
   	//summoner support calculation
 
-  	
+
+
 
   	//apply mods
 
@@ -76,6 +78,10 @@ export function CalculateStats(hero, fort, blessings, seasons){
   	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
   	bases = ApplyMods(bases, hero.passive);
   	bases = ApplyMods(bases, fortMods);
+
+  	if (hero.bonus){ //if hero is set as a bonus, they will get the extra stats
+  		bases = ApplyMods(bases, object(statName,[10, 4, 4, 4, 4]));
+  	}
 
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){
