@@ -197,7 +197,8 @@
 		"bvid": 169,
 		"art": "Alm - Legendary",
 		"type": "legendary",
-		"blessing": "earth" 			
+		"blessing": "earth",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -604,7 +605,8 @@
 		"bvid": 47,
 		"art": "Azura - Legendary",
 		"type": "legendary",
-		"blessing": "water" 			
+		"blessing": "water",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
 
 
 	},
@@ -2490,7 +2492,8 @@
 		"bvid": 47,
 		"art": "Duma",
 		"type": "mythic",
-		"blessing": "anima" 			
+		"blessing": "anima",
+		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -2578,7 +2581,8 @@
 		"bvid": 131,
 		"art": "Eir",
 		"type": "mythic",
-		"blessing": "light" 			
+		"blessing": "light",
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}
 
 
 	},
@@ -2666,7 +2670,8 @@
 		"bvid": 221,
 		"art": "Eirika - Legendary",
 		"type": "legendary",
-		"blessing": "water" 			
+		"blessing": "water",
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -2899,7 +2904,8 @@
 		"bvid": 192,
 		"art": "Eliwood - Legendary",
 		"type": "legendary",
-		"blessing": "wind" 			
+		"blessing": "wind",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -3016,7 +3022,8 @@
 		"bvid": 66,
 		"art": "Ephraim - Legendary",
 		"type": "legendary",
-		"blessing": "fire" 			
+		"blessing": "fire",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
 
 
 	},
@@ -3481,7 +3488,8 @@
 		"bvid": 139,
 		"art": "Fjorm",
 		"type": "legendary",
-		"blessing": "water" 			
+		"blessing": "water",
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
 
 
 	},
@@ -3975,7 +3983,8 @@
 		"bvid": 249,
 		"art": "Gunnthra",
 		"type": "legendary",
-		"blessing": "wind" 			
+		"blessing": "wind",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
 
 
 	},
@@ -4295,7 +4304,8 @@
 		"bvid": 118,
 		"art": "Hector - Legendary",
 		"type": "legendary",
-		"blessing": "fire" 			
+		"blessing": "fire",
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -4586,7 +4596,8 @@
 		"bvid": 213,
 		"art": "Hrid",
 		"type": "legendary",
-		"blessing": "wind" 			
+		"blessing": "wind",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
 
 
 	},
@@ -4761,7 +4772,8 @@
 		"bvid": 49,
 		"art": "Ike - Legendary",
 		"type": "legendary",
-		"blessing": "earth" 			
+		"blessing": "earth",
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -5168,7 +5180,8 @@
 		"bvid": 174,
 		"art": "Julia - Legendary",
 		"type": "legendary",
-		"blessing": "earth" 			
+		"blessing": "earth",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -6735,7 +6748,8 @@
 		"bvid": 94,
 		"art": "Lucina - Legendary",
 		"type": "legendary",
-		"blessing": "wind" 			
+		"blessing": "wind",
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
 
 
 	},
@@ -7084,7 +7098,8 @@
 		"bvid": 217,
 		"art": "Lyn - Legendary",
 		"type": "legendary",
-		"blessing": "wind" 			
+		"blessing": "wind",
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -7433,7 +7448,8 @@
 		"bvid": 190,
 		"art": "Marth - Legendary",
 		"type": "legendary",
-		"blessing": "fire" 			
+		"blessing": "fire",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
 
 
 	},
@@ -8043,7 +8059,8 @@
 		"bvid": 254,
 		"art": "Naga",
 		"type": "mythic",
-		"blessing": "astra" 			
+		"blessing": "astra",
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}
 
 
 	},
@@ -9465,7 +9482,8 @@
 		"bvid": 27,
 		"art": "Robin F - Legendary",
 		"type": "legendary",
-		"blessing": "earth" 			
+		"blessing": "earth",
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
 
 
 	},
@@ -9640,7 +9658,8 @@
 		"bvid": 141,
 		"art": "Roy - Legendary",
 		"type": "legendary",
-		"blessing": "fire" 			
+		"blessing": "fire",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
 
 
 	},
@@ -9873,7 +9892,8 @@
 		"bvid": 81,
 		"art": "Ryoma - Legendary",
 		"type": "legendary",
-		"blessing": "water" 			
+		"blessing": "water",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
 
 
 	},
@@ -10860,7 +10880,8 @@
 		"bvid": 107,
 		"art": "Sothis",
 		"type": "mythic",
-		"blessing": "dark" 			
+		"blessing": "dark",
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}
 
 
 	},
@@ -11499,7 +11520,8 @@
 		"bvid": 170,
 		"art": "Tiki - Legendary",
 		"type": "legendary",
-		"blessing": "earth" 			
+		"blessing": "earth",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
 
 
 	},
@@ -12196,7 +12218,8 @@
 		"bvid": 49,
 		"art": "Yune",
 		"type": "mythic",
-		"blessing": "dark" 			
+		"blessing": "dark",
+		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0}
 
 
 	},
