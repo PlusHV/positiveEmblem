@@ -171,22 +171,43 @@ class TicTacToeBoard extends React.Component{
   onHeroChange(e){    //Changing a hero will need to update the states of the board for stat display
 
     var temp = this.state.heroList;
-    let hero = temp[this.state.playerSide][this.state.heroIndex];
+    let hero = temp[this.state.playerSide][this.state.heroIndex]; //the current hero
+
+
+    let tempBlessings = this.state.blessingBuffs; //copy the blessing buffs
+
+    //the heroInfo of replaced hero
+    let oldHero = heroData[hero.heroID.value];
+    console.log(oldHero);
+
+    //Removing old blessing buffs
+    if ('type' in oldHero &&   (oldHero.type === "legendary" || oldHero.type === "mythic") ){
+
+      //Loop through each stat for current team and the element and subtract the oldHero's buff from the team buff pool
+      Object.keys(tempBlessings[this.state.playerSide][oldHero.blessing]).forEach((key, i) => {
+        tempBlessings[this.state.playerSide][oldHero.blessing][key] -= oldHero.buff[key];
+      });
+
+    }
     
-    hero.heroID = e;
+
+
+    hero.heroID = e; //change the heroId of the current hero
 
 
 
 
-    var newHero = heroData[e.value];
+    var newHero = heroData[e.value]; //get the heroData from heroInfo.json
 
 
     var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter); //only really updates the weaponlist for now
 
+
+    //hero skill updating
     let tSkills = hero.heroSkills; //Object.assign({}, this.state.heroSkills);
 
 
-    Object.keys(tSkills).forEach((key, i) => { //clears old effects
+    Object.keys(tSkills).forEach((key, i) => { //clear the skills on the hero for the new defaults that will be set
        hero = this.removeSkillEffect(tSkills[key].value , key, hero);
     });
 
@@ -211,8 +232,19 @@ class TicTacToeBoard extends React.Component{
 
 
 
+    //Assign the hero's blessing if appropriate -> Otherwise, it will just have any blessing it had previously.
+    //Also add the buff to that team
+    if (newHero.type === "legendary" || newHero.type === "mythic"){
+      hero.blessing = newHero.blessing;
+      Object.keys(tempBlessings[this.state.playerSide][newHero.blessing]).forEach((key, i) => {
+        tempBlessings[this.state.playerSide][newHero.blessing][key] += newHero.buff[key];
+      });      
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season); //recalculate stats
+
+    }
+
+
+    hero.stats = CalculateStats(hero, this.state.fortLevel, tempBlessings[this.state.playerSide], this.state.season); //recalculate stats
 
 
     //Sets the initial position of the on the board 
@@ -248,7 +280,7 @@ class TicTacToeBoard extends React.Component{
     this.setState({heroList: temp});
     this.setState({selectedMember: hero });
 
-
+    this.setState({blessingBuffs: tempBlessings});
 
     this.setState({selectedHeroInfo: heroData[newHero.id]});
 
@@ -609,7 +641,7 @@ class TicTacToeBoard extends React.Component{
 
 
   //get an updated list of heroes and update all of their stats
-  RecalculateAllHeroStats(currentHeroList, newFortLevel, newblessingBuffs, newSeasons){
+  RecalculateAllHeroStats(currentHeroList, newFortLevel, newblessingBuffs, newSeasons){ 
     let tempList = currentHeroList;
 
     Object.keys(tempList).forEach((key, i) => { //for each team
@@ -631,7 +663,7 @@ class TicTacToeBoard extends React.Component{
 
     // console.log(this.state.heroList);
     // console.log(this.state.heroList[1][0]);
-
+    console.log(this.state.blessingBuffs);
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
