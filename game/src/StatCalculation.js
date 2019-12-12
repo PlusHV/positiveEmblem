@@ -31,6 +31,11 @@ function ConvertGrowthVector(vect, level){
 	return (vect.substring(0, level-1).match(/1/g)|| []).length;
 }
 
+
+// hero - ?
+// fort - the fort level
+// blessings - the list of buffs for each season for the side the hero is on
+// seasons - the list of current seasons
 export function CalculateStats(hero, fort, blessings, seasons){
 	var statArray = {};
 
@@ -68,16 +73,47 @@ export function CalculateStats(hero, fort, blessings, seasons){
   	//summoner support calculation
 
 
+  	//blessing buff calculation
+
+  	var blessingMods = object(statName,[0, 0, 0, 0, 0]); //default
+	//First we check if legendary/mythic
 
 
-  	//apply mods
+
+	//first check if they are in season
+	if (Object.values(seasons).includes(hero.blessing)){
+
+		//if legendary, add in the in season mythic buffs
+		if (heroInfo.type === "legendary"){
+
+			blessingMods = BlessingMods(blessingMods, blessings[seasons["M1"]]);
+
+			blessingMods = BlessingMods(blessingMods, blessings[seasons["M2"]]);
+
+		//if mythic, add in the in season legendary buffs
+		} else if (heroInfo.type === "mythic"){
+			blessingMods = BlessingMods(blessingMods, blessings[seasons["L1"]]);
+			blessingMods = BlessingMods(blessingMods, blessings[seasons["L2"]]);
+
+		//if regular unit add in the appropriate blessing buff
+		} else{
+			blessingMods = BlessingMods(blessingMods, blessings[hero.blessing]);
+		}
+
+	
+	}
+
+
+
+  	//apply mods - no more mod calculations should be done below here
 
   	bases = ApplyMods(bases, flowerMods);
   	bases = ApplyMods(bases, mergeMods.base);
-  	growths = ApplyMods(growths, mergeMods.growth);
+  	growths = ApplyMods(growths, mergeMods.growth); //growth is change because first merge removes the bane
   	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
   	bases = ApplyMods(bases, hero.passive);
   	bases = ApplyMods(bases, fortMods);
+  	bases = ApplyMods(bases, blessingMods);
 
   	if (hero.bonus){ //if hero is set as a bonus, they will get the extra stats
   		bases = ApplyMods(bases, object(statName,[10, 4, 4, 4, 4]));
@@ -241,6 +277,18 @@ function FortMods(side, level){
 	}
 
 
+
+}
+
+function BlessingMods(orgBuffs, addBuffs){
+
+    let newBuffs = object(statName,[0, 0, 0, 0, 0]);
+
+    Object.keys(orgBuffs).forEach((key, i) => {
+		newBuffs[key] = orgBuffs[key] + addBuffs[key];
+	});
+
+	return newBuffs;
 
 }
 

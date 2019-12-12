@@ -47,6 +47,7 @@ export default class Stats extends React.Component{
   const min = ["1", "0", "0", "1"];
   const max = ["40", "10", "10", "5"];
   let cells = [];
+  
     for (let i = 0; i < levelText.length; i++) { //rows
       cells.push(<td className = "statText" key = {levelText[i] + " label"}> {capitalize(levelText[i], true)} </td>);
       cells.push(<td className = "inputNum" key = {levelText[i] + " value"}>
@@ -105,7 +106,7 @@ export default class Stats extends React.Component{
 
 
 
-
+	    	//Assets
 	    	if (statText[i] === "atk"){
 	    		cells.push(<td key = "assetLabel" className= "statText">Asset</td>);
 
@@ -129,7 +130,7 @@ export default class Stats extends React.Component{
 
 
 
-
+	    		//Flaw
 	    	} else if (statText[i] === "def"){
 	    		cells.push(<td key = "flawLabel" className= "statText">Flaw</td>);
 
