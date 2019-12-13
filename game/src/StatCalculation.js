@@ -72,6 +72,8 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
   	//summoner support calculation
 
+  	var summonerSupportMods = SummonerSupportMods(hero.summonerSupport);
+
 
   	//blessing buff calculation
 
@@ -90,10 +92,11 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
 			blessingMods = BlessingMods(blessingMods, blessings[seasons["M2"]]);
 
-		//if mythic, add in the in season legendary buffs
+		//if mythic, add in the in season legendary buffs - > mythics don't get legendary buffs in AR
 		} else if (heroInfo.type === "mythic"){
-			blessingMods = BlessingMods(blessingMods, blessings[seasons["L1"]]);
-			blessingMods = BlessingMods(blessingMods, blessings[seasons["L2"]]);
+			//blessingMods = BlessingMods(blessingMods, blessings[seasons["L1"]]);
+			//blessingMods = BlessingMods(blessingMods, blessings[seasons["L2"]]);
+			blessingMods = object(statName,[0, 0, 0, 0, 0]); //mythics can't get blessing buffs
 
 		//if regular unit add in the appropriate blessing buff
 		} else{
@@ -112,6 +115,7 @@ export function CalculateStats(hero, fort, blessings, seasons){
   	growths = ApplyMods(growths, mergeMods.growth); //growth is change because first merge removes the bane
   	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
   	bases = ApplyMods(bases, hero.passive);
+  	bases = ApplyMods(bases, summonerSupportMods);
   	bases = ApplyMods(bases, fortMods);
   	bases = ApplyMods(bases, blessingMods);
 
@@ -290,6 +294,21 @@ function BlessingMods(orgBuffs, addBuffs){
 
 	return newBuffs;
 
+}
+
+function SummonerSupportMods(level){
+	let statBuffs = object(statName,[0, 0, 0, 0, 0]);
+
+	if (level === "C")
+		statBuffs = object(statName,[3, 0, 0, 0, 2]);
+	else if (level === "B")
+		statBuffs = object(statName,[4, 0, 0, 2, 2]);
+	else if (level === "A")
+		statBuffs = object(statName,[4, 0, 2, 2, 2]);
+	else if (level === "S")
+		statBuffs = object(statName,[5, 2, 2, 2, 2]);
+
+	return statBuffs;
 }
 
 //returns an array of stats from highest to lowest

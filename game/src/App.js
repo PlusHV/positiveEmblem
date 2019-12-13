@@ -485,13 +485,15 @@ class TicTacToeBoard extends React.Component{
   onFortLevelChange(e){
 
     this.setState({fortLevel: Number(e.target.value) });
-    this.RecalculateAllHeroStats(this.state.heroList,  Number(e.target.value), this.state.blessingBuffs, this.state.season);
-    // let temp = this.state.heroList;
-    // temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
-    // temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex]);
 
-    // this.setState({heroList: temp});
-    // this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
+    let updateHeroList = this.state.heroList;
+
+    updateHeroList = this.RecalculateAllHeroStats(updateHeroList,  Number(e.target.value), this.state.blessingBuffs, this.state.season);
+
+
+    this.setState({heroList: updateHeroList});
+    
+    this.setState({selectedMember: updateHeroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
 
   }
 
@@ -500,6 +502,15 @@ class TicTacToeBoard extends React.Component{
     temp[type] = e.target.value;
     
     this.setState({season: temp});
+
+    let seasonHeroList = this.state.heroList;
+
+
+    seasonHeroList = this.RecalculateAllHeroStats(seasonHeroList, this.state.fortLevel, this.state.blessingBuffs, temp); //update all heroes with new seasons
+
+    this.setState({heroList: seasonHeroList });
+    this.setState({selectedMember: seasonHeroList[this.state.playerSide][this.state.heroIndex] });
+
 
   }
 
