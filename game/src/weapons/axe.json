@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -15,6 +16,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"2": {
@@ -24,6 +26,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"3": {
@@ -34,6 +37,7 @@
 		"prf": true,
 		"users": [145],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"4": {
@@ -44,6 +48,7 @@
 		"prf": true,
 		"users": [23],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"5": {
@@ -54,6 +59,7 @@
 		"prf": true,
 		"users": [316,221],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"6": {
@@ -63,6 +69,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"7": {
@@ -72,6 +79,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"8": {
@@ -82,6 +90,7 @@
 		"prf": true,
 		"users": [145,146],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"9": {
@@ -92,6 +101,7 @@
 		"prf": true,
 		"users": [27],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"10": {
@@ -101,6 +111,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"11": {
@@ -110,6 +121,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"12": {
@@ -120,6 +132,7 @@
 		"prf": true,
 		"users": [148],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"13": {
@@ -130,6 +143,7 @@
 		"prf": true,
 		"users": [13],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"14": {
@@ -139,6 +153,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"15": {
@@ -148,6 +163,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"16": {
@@ -158,6 +174,7 @@
 		"prf": true,
 		"users": [55],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"17": {
@@ -168,6 +185,7 @@
 		"prf": true,
 		"users": [399],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"18": {
@@ -178,6 +196,7 @@
 		"prf": true,
 		"users": [113],
 		"type": "axe",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"19": {
@@ -187,6 +206,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"20": {
@@ -196,6 +216,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"21": {
@@ -205,6 +226,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"22": {
@@ -214,6 +236,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"23": {
@@ -224,6 +247,7 @@
 		"prf": true,
 		"users": [152],
 		"type": "axe",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"24": {
@@ -234,6 +258,7 @@
 		"prf": true,
 		"users": [105],
 		"type": "axe",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"25": {
@@ -243,6 +268,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"26": {
@@ -252,6 +278,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"27": {
@@ -262,6 +289,7 @@
 		"prf": true,
 		"users": [],
 		"type": "axe",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"28": {
@@ -272,6 +300,7 @@
 		"prf": true,
 		"users": [7],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"29": {
@@ -281,6 +310,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"30": {
@@ -290,6 +320,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"31": {
@@ -299,6 +330,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"32": {
@@ -308,6 +340,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"33": {
@@ -317,6 +350,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"34": {
@@ -326,6 +360,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"35": {
@@ -335,6 +370,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"36": {
@@ -344,6 +380,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"37": {
@@ -354,6 +391,7 @@
 		"prf": true,
 		"users": [267,265],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"38": {
@@ -364,6 +402,7 @@
 		"prf": true,
 		"users": [],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"39": {
@@ -374,6 +413,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"40": {
@@ -383,6 +423,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"41": {
@@ -392,6 +433,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"42": {
@@ -401,6 +443,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"43": {
@@ -410,6 +453,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"44": {
@@ -419,6 +463,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"45": {
@@ -428,6 +473,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"46": {
@@ -437,6 +483,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"47": {
@@ -446,6 +493,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"48": {
@@ -456,6 +504,7 @@
 		"prf": true,
 		"users": [8],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"49": {
@@ -465,6 +514,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"50": {
@@ -474,6 +524,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"51": {
@@ -483,6 +534,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"52": {
@@ -492,6 +544,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"53": {
@@ -501,6 +554,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"54": {
@@ -510,6 +564,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"55": {
@@ -519,6 +574,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"56": {
@@ -528,6 +584,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"57": {
@@ -538,6 +595,7 @@
 		"prf": true,
 		"users": [379],
 		"type": "axe",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"58": {
@@ -547,6 +605,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"59": {
@@ -556,6 +615,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"60": {
@@ -565,6 +625,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"61": {
@@ -574,6 +635,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"62": {
@@ -584,6 +646,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"63": {
@@ -594,6 +657,7 @@
 		"prf": true,
 		"users": [83],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"64": {
@@ -604,6 +668,7 @@
 		"prf": true,
 		"users": [147],
 		"type": "axe",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"65": {
@@ -613,6 +678,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"66": {
@@ -623,6 +689,7 @@
 		"prf": true,
 		"users": [161],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"67": {
@@ -633,6 +700,7 @@
 		"prf": true,
 		"users": [18],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"68": {
@@ -643,6 +711,7 @@
 		"prf": true,
 		"users": [86],
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"69": {
@@ -652,6 +721,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": true
 	},
 	"70": {
@@ -661,6 +731,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
+		"skills": [],
 		"max": false
 	},
 	"71": {
@@ -671,6 +742,7 @@
 		"prf": true,
 		"users": [409],
 		"type": "axe",
+		"skills": [["a", 123]],
 		"max": true
 	}
 

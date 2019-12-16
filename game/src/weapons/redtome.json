@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -16,6 +17,7 @@
 		"prf": true,
 		"users": [14],
 		"type": "redtome",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"2": {
@@ -25,6 +27,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"3": {
@@ -34,6 +37,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"4": {
@@ -44,6 +48,7 @@
 		"prf": true,
 		"users": [39],
 		"type": "redtome",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"5": {
@@ -54,6 +59,7 @@
 		"prf": true,
 		"users": [211],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"6": {
@@ -63,6 +69,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"7": {
@@ -72,6 +79,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"8": {
@@ -82,6 +90,7 @@
 		"prf": true,
 		"users": [347],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"9": {
@@ -92,6 +101,7 @@
 		"prf": true,
 		"users": [264],
 		"type": "redtome",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"10": {
@@ -101,6 +111,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"11": {
@@ -111,6 +122,7 @@
 		"prf": true,
 		"users": [369],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"12": {
@@ -120,6 +132,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"13": {
@@ -129,6 +142,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"14": {
@@ -138,6 +152,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"15": {
@@ -147,6 +162,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"16": {
@@ -157,6 +173,7 @@
 		"prf": true,
 		"users": [218],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"17": {
@@ -167,6 +184,7 @@
 		"prf": true,
 		"users": [385],
 		"type": "redtome",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"18": {
@@ -177,6 +195,7 @@
 		"prf": true,
 		"users": [89],
 		"type": "redtome",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"19": {
@@ -187,6 +206,7 @@
 		"prf": true,
 		"users": [271],
 		"type": "redtome",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"20": {
@@ -197,6 +217,7 @@
 		"prf": true,
 		"users": [292],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"21": {
@@ -207,6 +228,7 @@
 		"prf": true,
 		"users": [314],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"22": {
@@ -217,6 +239,7 @@
 		"prf": true,
 		"users": [131],
 		"type": "redtome",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"23": {
@@ -226,6 +249,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"24": {
@@ -235,6 +259,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"25": {
@@ -245,6 +270,7 @@
 		"prf": true,
 		"users": [179],
 		"type": "redtome",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"26": {
@@ -254,6 +280,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"27": {
@@ -263,6 +290,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"28": {
@@ -273,6 +301,7 @@
 		"prf": true,
 		"users": [169],
 		"type": "redtome",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"29": {
@@ -283,6 +312,7 @@
 		"prf": true,
 		"users": [390],
 		"type": "redtome",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"30": {
@@ -293,6 +323,7 @@
 		"prf": true,
 		"users": [245],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"31": {
@@ -303,6 +334,7 @@
 		"prf": true,
 		"users": [21],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"32": {
@@ -312,6 +344,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"33": {
@@ -321,6 +354,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"34": {
@@ -330,6 +364,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"35": {
@@ -339,6 +374,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"36": {
@@ -348,6 +384,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"37": {
@@ -357,6 +394,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"38": {
@@ -366,6 +404,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"39": {
@@ -375,6 +414,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"40": {
@@ -384,6 +424,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"41": {
@@ -393,6 +434,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"42": {
@@ -403,6 +445,7 @@
 		"prf": true,
 		"users": [188],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"43": {
@@ -412,6 +455,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"44": {
@@ -422,6 +466,7 @@
 		"prf": true,
 		"users": [389],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"45": {
@@ -431,6 +476,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	},
 	"46": {
@@ -440,6 +486,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"47": {
@@ -449,6 +496,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "redtome",
+		"skills": [],
 		"max": false
 	},
 	"48": {
@@ -459,6 +507,7 @@
 		"prf": true,
 		"users": [12],
 		"type": "redtome",
+		"skills": [],
 		"max": true
 	}
 }

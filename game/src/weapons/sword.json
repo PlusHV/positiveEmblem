@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -16,6 +17,7 @@
 		"prf": true,
 		"users": [420, 28],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"2": {
@@ -26,6 +28,7 @@
 		"prf": true,
 		"users": [95],
 		"type": "sword",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"3": {
@@ -36,6 +39,7 @@
 		"prf": true,
 		"users": [99],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"4": {
@@ -45,6 +49,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"5": {
@@ -54,6 +59,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"6": {
@@ -63,6 +69,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"7": {
@@ -72,6 +79,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"8": {
@@ -82,6 +90,7 @@
 		"prf": true,
 		"users": [176],
 		"type": "sword",
+		"skills": [["a", 211], ["a", 210]],
 		"max": true
 	},
 	"9": {
@@ -92,6 +101,7 @@
 		"prf": true,
 		"users": [15],
 		"type": "sword",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"10": {
@@ -101,6 +111,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"11": {
@@ -110,6 +121,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"12": {
@@ -120,6 +132,7 @@
 		"prf": true,
 		"users": [52],
 		"type": "sword",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"13": {
@@ -130,6 +143,7 @@
 		"prf": true,
 		"users": [333],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"14": {
@@ -140,6 +154,7 @@
 		"prf": true,
 		"users": [332, 101],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"15": {
@@ -149,6 +164,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"16": {
@@ -158,6 +174,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"17": {
@@ -168,6 +185,7 @@
 		"prf": true,
 		"users": [36],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"18": {
@@ -177,6 +195,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"19": {
@@ -186,6 +205,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"20": {
@@ -196,6 +216,7 @@
 		"prf": true,
 		"users": [32, 33],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"21": {
@@ -206,6 +227,7 @@
 		"prf": true,
 		"users": [361],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"22": {
@@ -216,6 +238,7 @@
 		"prf": true,
 		"users": [10, 93],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"23": {
@@ -226,6 +249,7 @@
 		"prf": true,
 		"users": [364, 349],
 		"type": "sword",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"24": {
@@ -236,6 +260,7 @@
 		"prf": true,
 		"users": [5],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"25": {
@@ -246,6 +271,7 @@
 		"prf": true,
 		"users": [331],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"26": {
@@ -256,6 +282,7 @@
 		"prf": true,
 		"users": [101],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"27": {
@@ -266,6 +293,7 @@
 		"prf": true,
 		"users": [421],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"28": {
@@ -276,6 +304,7 @@
 		"prf": true,
 		"users": [255],
 		"type": "sword",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"29": {
@@ -286,6 +315,7 @@
 		"prf": true,
 		"users": [254, 230, 56],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"30": {
@@ -296,6 +326,7 @@
 		"prf": true,
 		"users": [4],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"31": {
@@ -306,6 +337,7 @@
 		"prf": true,
 		"users": [253],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"32": {
@@ -315,6 +347,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"33": {
@@ -324,6 +357,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"34": {
@@ -334,6 +368,7 @@
 		"prf": true,
 		"users": [2],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"35": {
@@ -343,6 +378,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"36": {
@@ -352,6 +388,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"37": {
@@ -362,6 +399,7 @@
 		"prf": true,
 		"users": [157],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"38": {
@@ -372,6 +410,7 @@
 		"prf": true,
 		"users": [296],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"39": {
@@ -382,6 +421,7 @@
 		"prf": true,
 		"users": [340],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"40": {
@@ -392,6 +432,7 @@
 		"prf": true,
 		"users": [141],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"41": {
@@ -401,6 +442,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"42": {
@@ -410,6 +452,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"43": {
@@ -420,6 +463,7 @@
 		"prf": true,
 		"users": [137],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"44": {
@@ -430,6 +474,7 @@
 		"prf": true,
 		"users": [153],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"45": {
@@ -439,6 +484,7 @@
 		"sp":50,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"46": {
@@ -448,6 +494,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"47": {
@@ -457,6 +504,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"48": {
@@ -466,6 +514,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"49": {
@@ -475,6 +524,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"50": {
@@ -485,6 +535,7 @@
 		"prf": true,
 		"users": [202],
 		"type": "sword",
+		"skills": ["a", 63]],
 		"max": true
 	},
 	"51": {
@@ -495,6 +546,7 @@
 		"prf": true,
 		"users": [207],
 		"type": "sword",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"52": {
@@ -505,6 +557,7 @@
 		"prf": true,
 		"users": [320],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"53": {
@@ -515,6 +568,7 @@
 		"prf": true,
 		"users": [305],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"54": {
@@ -525,6 +579,7 @@
 		"prf": true,
 		"users": [93],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"55": {
@@ -535,6 +590,7 @@
 		"prf": true,
 		"users": [116, 186],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"56": {
@@ -545,6 +601,7 @@
 		"prf": true,
 		"users": [199],
 		"type": "sword",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"57": {
@@ -555,6 +612,7 @@
 		"prf": true,
 		"users": [374],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"58": {
@@ -564,6 +622,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"59": {
@@ -573,6 +632,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"60": {
@@ -583,6 +643,7 @@
 		"prf": true,
 		"users": [163, 164],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"61": {
@@ -593,6 +654,7 @@
 		"prf": true,
 		"users": [337, 339],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"62": {
@@ -603,6 +665,7 @@
 		"prf": true,
 		"users": [224],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"63": {
@@ -613,6 +676,7 @@
 		"prf": true,
 		"users": [260],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"64": {
@@ -623,6 +687,7 @@
 		"prf": true,
 		"users": [],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"65": {
@@ -633,6 +698,7 @@
 		"prf": true,
 		"users": [237],
 		"type": "sword",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"66": {
@@ -642,6 +708,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"67": {
@@ -651,6 +718,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"68": {
@@ -660,6 +728,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"69": {
@@ -669,6 +738,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"70": {
@@ -678,6 +748,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"71": {
@@ -687,6 +758,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"72": {
@@ -697,6 +769,7 @@
 		"prf": true,
 		"users": [281],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"73": {
@@ -707,6 +780,7 @@
 		"prf": true,
 		"users": [56, 58, 230, 254],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"74": {
@@ -717,6 +791,7 @@
 		"prf": true,
 		"users": [348],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"75": {
@@ -727,6 +802,7 @@
 		"prf": true,
 		"users": [247],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"76": {
@@ -737,6 +813,7 @@
 		"prf": true,
 		"users": [413],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"77": {
@@ -747,6 +824,7 @@
 		"prf": true,
 		"users": [92],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"78": {
@@ -756,6 +834,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"79": {
@@ -765,6 +844,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"80": {
@@ -775,6 +855,7 @@
 		"prf": true,
 		"users": [352],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"81": {
@@ -785,6 +866,7 @@
 		"prf": true,
 		"users": [300],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"82": {
@@ -794,6 +876,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"83": {
@@ -803,6 +886,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"84": {
@@ -813,6 +897,7 @@
 		"prf": true,
 		"users": [],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"85": {
@@ -823,6 +908,7 @@
 		"prf": true,
 		"users": [242],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"86": {
@@ -833,6 +919,7 @@
 		"prf": true,
 		"users": [227],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"87": {
@@ -842,6 +929,7 @@
 		"sp":100,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"88": {
@@ -852,6 +940,7 @@
 		"prf": true,
 		"users": [91],
 		"type": "sword",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"89": {
@@ -862,6 +951,7 @@
 		"prf": true,
 		"users": [349],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"90": {
@@ -871,6 +961,7 @@
 		"sp":0,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"91": {
@@ -881,6 +972,7 @@
 		"prf": true,
 		"users": [187],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"92": {
@@ -891,6 +983,7 @@
 		"prf": true,
 		"users": [307],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"93": {
@@ -901,6 +994,7 @@
 		"prf": true,
 		"users": [35],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"94": {
@@ -910,6 +1004,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"95": {
@@ -919,6 +1014,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	},
 	"96": {
@@ -929,6 +1025,7 @@
 		"prf": true,
 		"users": [71],
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"97": {
@@ -938,6 +1035,7 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": true
 	},
 	"98": {
@@ -947,6 +1045,7 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
+		"skills": [],
 		"max": false
 	}
 }

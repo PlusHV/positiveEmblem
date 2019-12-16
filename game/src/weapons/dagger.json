@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -16,6 +17,7 @@
 		"prf": true,
 		"user": [194],
 		"type": "dagger",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"2": {
@@ -25,6 +27,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"3": {
@@ -34,6 +37,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"4": {
@@ -43,6 +47,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"5": {
@@ -52,6 +57,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"6": {
@@ -61,6 +67,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"7": {
@@ -70,6 +77,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"8": {
@@ -79,6 +87,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"9": {
@@ -88,6 +97,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"10": {
@@ -97,6 +107,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"11": {
@@ -106,6 +117,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"12": {
@@ -116,6 +128,7 @@
 		"prf": true,
 		"user": [170],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"13": {
@@ -125,6 +138,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"14": {
@@ -134,6 +148,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"15": {
@@ -144,6 +159,7 @@
 		"prf": true,
 		"user": [112],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"16": {
@@ -153,6 +169,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"17": {
@@ -162,6 +179,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"18": {
@@ -172,6 +190,7 @@
 		"prf": true,
 		"user": [120],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"19": {
@@ -182,6 +201,7 @@
 		"prf": true,
 		"user": [311],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"20": {
@@ -191,6 +211,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"21": {
@@ -200,6 +221,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"22": {
@@ -209,6 +231,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"23": {
@@ -219,6 +242,7 @@
 		"prf": true,
 		"user": [182],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"24": {
@@ -228,6 +252,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"25": {
@@ -237,6 +262,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"26": {
@@ -246,6 +272,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"27": {
@@ -255,6 +282,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"28": {
@@ -265,6 +293,7 @@
 		"prf": true,
 		"user": [88],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"29": {
@@ -274,6 +303,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"30": {
@@ -283,6 +313,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"31": {
@@ -292,6 +323,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"32": {
@@ -301,6 +333,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"33": {
@@ -311,6 +344,7 @@
 		"prf": true,
 		"user": [372],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"34": {
@@ -320,6 +354,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"35": {
@@ -329,6 +364,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"36": {
@@ -338,6 +374,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"37": {
@@ -347,6 +384,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"38": {
@@ -356,6 +394,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"39": {
@@ -365,6 +404,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"40": {
@@ -375,6 +415,7 @@
 		"prf": true,
 		"user": [342],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"41": {
@@ -384,6 +425,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"42": {
@@ -393,6 +435,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"43": {
@@ -402,6 +445,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"44": {
@@ -411,6 +455,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"45": {
@@ -420,6 +465,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"46": {
@@ -429,6 +475,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"47": {
@@ -438,6 +485,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"48": {
@@ -447,6 +495,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"49": {
@@ -456,6 +505,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"50": {
@@ -465,6 +515,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"51": {
@@ -474,6 +525,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"52": {
@@ -483,6 +535,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"53": {
@@ -493,6 +546,7 @@
 		"prf": true,
 		"user": [257],
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"54": {
@@ -502,6 +556,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"55": {
@@ -511,6 +566,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"56": {
@@ -520,6 +576,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"57": {
@@ -530,6 +587,7 @@
 		"prf": true,
 		"user": [418],
 		"type": "dagger",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"58": {
@@ -540,6 +598,7 @@
 		"prf": true,
 		"user": [121],
 		"type": "dagger",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"59": {
@@ -549,6 +608,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"60": {
@@ -558,6 +618,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"61": {
@@ -567,6 +628,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": true
 	},
 	"62": {
@@ -576,6 +638,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	},
 	"63": {
@@ -585,6 +648,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "dagger",
+		"skills": [],
 		"max": false
 	}
 }

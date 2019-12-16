@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -15,6 +16,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"2": {
@@ -24,6 +26,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"3": {
@@ -33,6 +36,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"4": {
@@ -42,6 +46,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"5": {
@@ -52,6 +57,7 @@
 		"prf": true,
 		"users": [213],
 		"type": "beast",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"6": {
@@ -62,6 +68,7 @@
 		"prf": true,
 		"users": [416],
 		"type": "beast",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"7": {
@@ -72,6 +79,7 @@
 		"prf": true,
 		"users": [315],
 		"type": "beast",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"8": {
@@ -81,6 +89,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"9": {
@@ -91,6 +100,7 @@
 		"prf": true,
 		"users": [350],
 		"type": "beast",
+		"skills": [["a", 211]],
 		"max": true
 	},
 	"10": {
@@ -100,6 +110,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"11": {
@@ -110,6 +121,7 @@
 		"prf": true,
 		"users": [392],
 		"type": "beast",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"12": {
@@ -120,6 +132,7 @@
 		"prf": true,
 		"users": [204, 321],
 		"type": "beast",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"13": {
@@ -130,6 +143,7 @@
 		"prf": true,
 		"users": [180],
 		"type": "beast",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"14": {
@@ -140,6 +154,7 @@
 		"prf": true,
 		"users": [37],
 		"type": "beast",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"15": {
@@ -150,6 +165,7 @@
 		"prf": true,
 		"users": [275],
 		"type": "beast",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"16": {
@@ -160,6 +176,7 @@
 		"prf": true,
 		"users": [270],
 		"type": "beast",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"17": {
@@ -170,6 +187,7 @@
 		"prf": true,
 		"users": [308],
 		"type": "beast",
+		"skills": [],
 		"max": true
 	},
 	"18": {
@@ -179,6 +197,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"19": {
@@ -188,6 +207,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"20": {
@@ -197,6 +217,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"21": {
@@ -207,6 +228,7 @@
 		"prf": true,
 		"users": [278],
 		"type": "beast",
+		"skills": [],
 		"max": true
 	},
 	"22": {
@@ -217,6 +239,7 @@
 		"prf": true,
 		"users": [405],
 		"type": "beast",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"23": {
@@ -227,6 +250,7 @@
 		"prf": true,
 		"users": [190],
 		"type": "beast",
+		"skills": [],
 		"max": true
 	},
 	"24": {
@@ -236,6 +260,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"25": {
@@ -245,6 +270,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	},
 	"26": {
@@ -254,6 +280,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "beast",
+		"skills": [],
 		"max": false
 	}
 }

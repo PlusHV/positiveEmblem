@@ -6,6 +6,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"1": {
@@ -15,6 +16,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"2": {
@@ -24,6 +26,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"3": {
@@ -33,6 +36,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"4": {
@@ -42,6 +46,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"5": {
@@ -51,6 +56,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"6": {
@@ -60,6 +66,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"7": {
@@ -70,6 +77,7 @@
 		"prf": true,
 		"users": [360],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"8": {
@@ -80,6 +88,7 @@
 		"prf": true,
 		"users": [377],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"9": {
@@ -89,6 +98,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"10": {
@@ -98,6 +108,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"11": {
@@ -107,6 +118,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"12": {
@@ -116,6 +128,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"13": {
@@ -126,6 +139,7 @@
 		"prf": true,
 		"users": [404],
 		"type": "lance",
+		"skills": [["a", 45]],
 		"max": true
 	},
 	"14": {
@@ -136,6 +150,7 @@
 		"prf": true,
 		"users": [282],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"15": {
@@ -146,6 +161,7 @@
 		"prf": true,
 		"users": [236],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"16": {
@@ -155,6 +171,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"17": {
@@ -164,6 +181,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"18": {
@@ -174,6 +192,7 @@
 		"prf": true,
 		"users": [355],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"19": {
@@ -184,6 +203,7 @@
 		"prf": true,
 		"users": [106],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"20": {
@@ -193,6 +213,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"21": {
@@ -202,6 +223,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"22": {
@@ -211,6 +233,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"23": {
@@ -220,6 +243,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"24": {
@@ -230,6 +254,7 @@
 		"prf": true,
 		"users": [104, 103],
 		"type": "lance",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"25": {
@@ -239,6 +264,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"26": {
@@ -248,6 +274,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"27": {
@@ -258,6 +285,7 @@
 		"prf": true,
 		"users": [122],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"28": {
@@ -268,6 +296,7 @@
 		"prf": true,
 		"users": [313],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"29": {
@@ -278,6 +307,7 @@
 		"prf": true,
 		"users": [229],
 		"type": "lance",
+		"skills": [["a", 123]],
 		"max": true
 	},
 	"30": {
@@ -288,6 +318,7 @@
 		"prf": true,
 		"users": [142, 45],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"31": {
@@ -297,6 +328,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"32": {
@@ -306,6 +338,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"33": {
@@ -315,6 +348,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"34": {
@@ -324,6 +358,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"35": {
@@ -334,6 +369,7 @@
 		"prf": true,
 		"users": [156],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"36": {
@@ -343,6 +379,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"37": {
@@ -352,6 +389,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"38": {
@@ -361,6 +399,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"39": {
@@ -370,6 +409,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"40": {
@@ -379,6 +419,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"41": {
@@ -389,6 +430,7 @@
 		"prf": true,
 		"users": [26],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"42": {
@@ -399,6 +441,7 @@
 		"prf": true,
 		"users": [119],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"43": {
@@ -408,6 +451,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"44": {
@@ -417,6 +461,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"45": {
@@ -427,6 +472,7 @@
 		"prf": true,
 		"users": [304],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"46": {
@@ -436,6 +482,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"47": {
@@ -445,6 +492,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"48": {
@@ -455,6 +503,7 @@
 		"prf": true,
 		"users": [144],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"49": {
@@ -465,6 +514,7 @@
 		"prf": true,
 		"users": [102],
 		"type": "lance",
+		"skills": [["a", 234]],
 		"max": true
 	},
 	"50": {
@@ -475,6 +525,7 @@
 		"prf": true,
 		"users": [80],
 		"type": "lance",
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"51": {
@@ -485,6 +536,7 @@
 		"prf": true,
 		"users": [294],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"52": {
@@ -495,6 +547,7 @@
 		"prf": true,
 		"users": [1],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"53": {
@@ -505,6 +558,7 @@
 		"prf": true,
 		"users": [310],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"54": {
@@ -514,6 +568,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"55": {
@@ -523,6 +578,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"56": {
@@ -533,6 +589,7 @@
 		"prf": true,
 		"users": [60],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"57": {
@@ -542,6 +599,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"58": {
@@ -551,6 +609,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"59": {
@@ -560,6 +619,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"60": {
@@ -569,6 +629,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"61": {
@@ -579,6 +640,7 @@
 		"prf": true,
 		"users": [76],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"62": {
@@ -589,6 +651,7 @@
 		"prf": true,
 		"users": [354],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"63": {
@@ -598,6 +661,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"64": {
@@ -607,6 +671,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"65": {
@@ -617,6 +682,7 @@
 		"prf": true,
 		"users": [104],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"66": {
@@ -626,6 +692,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"67": {
@@ -635,6 +702,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"68": {
@@ -644,6 +712,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"69": {
@@ -653,6 +722,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"70": {
@@ -662,6 +732,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"71": {
@@ -671,6 +742,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"72": {
@@ -681,6 +753,7 @@
 		"prf": true,
 		"users": [330],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"73": {
@@ -690,6 +763,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"74": {
@@ -699,6 +773,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"75": {
@@ -708,6 +783,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"76": {
@@ -717,6 +793,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"77": {
@@ -726,6 +803,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"78": {
@@ -735,6 +813,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"79": {
@@ -745,6 +824,7 @@
 		"prf": true,
 		"users": [24],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"80": {
@@ -755,6 +835,7 @@
 		"prf": true,
 		"users": [386],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"81": {
@@ -764,6 +845,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"82": {
@@ -773,6 +855,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "lance",
+		"skills": [],
 		"max": false
 	},
 	"83": {
@@ -783,6 +866,7 @@
 		"prf": true,
 		"users": [47],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	},
 	"84": {
@@ -793,6 +877,7 @@
 		"prf": true,
 		"users": [107],
 		"type": "lance",
+		"skills": [],
 		"max": true
 	}
 }
