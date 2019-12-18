@@ -535,7 +535,7 @@
 		"prf": true,
 		"users": [202],
 		"type": "sword",
-		"skills": ["a", 63]],
+		"skills": [["a", 63]],
 		"max": true
 	},
 	"51": {

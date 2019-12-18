@@ -1,5 +1,5 @@
 import { Client } from 'boardgame.io/react';
-import { Game } from 'boardgame.io/core';
+//import { Game } from 'boardgame.io/core';
 import React from 'react';
 import { CalculateStats } from './StatCalculation.js';
 import './App.css';
@@ -865,7 +865,7 @@ var heroStruct = makeHeroStruct();
 
 
 
-const TicTacToe = Game({
+const TicTacToe = {
   setup: () => ({ cells: Array(48).fill(null) }),
 
   moves: {
@@ -874,7 +874,7 @@ const TicTacToe = Game({
       
     },
   },
-});
+};
 
 const App = Client({
   game: TicTacToe,

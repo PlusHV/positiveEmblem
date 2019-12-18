@@ -205,7 +205,7 @@ const dropDownStyle = {
         tbody.push(<tr key={"skill row"+i}>{cells}</tr>);
     }
 
-    tbody.push(
+    tbody.push( //Checkbox for max row
       <tr key = {"checkbox row"}> 
         <td className = "equipText" key = {"maxFilter"}>
             Max 
@@ -215,6 +215,7 @@ const dropDownStyle = {
             <input 
             type = "checkbox"
             value = {this.props.gameState.maxFilter}
+            checked = {this.props.gameState.maxFilter}
             onChange = {(e) => this.props.maxFilterChange(e)}
               />
         </td>
@@ -222,6 +223,27 @@ const dropDownStyle = {
         
       </tr>
     );
+    console.log(this.props.gameState.selectedMember.bonus);
+    tbody.push( //Checkbox for bonus unit
+      <tr key = {"bonus row"}> 
+        <td className = "equipText" key = {"bonus"}>
+            Bonus
+        </td>
+
+        <td className = "equippedSkill" key = {"bonusCheckbox"}>
+            <input 
+            type = "checkbox"
+            value = {this.props.gameState.selectedMember.bonus}
+            checked = {this.props.gameState.selectedMember.bonus}
+            onChange = {(e) => this.props.bonusChange(e)}
+              />
+        </td>
+            
+        
+      </tr>
+
+
+    );    
 
     return(
 

@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "addons": "^0.1.2",
+    "boardgame.io": "^0.35.1",
     "react": "^16.9.0",
     "react-addons-create-fragment": "^15.6.2",
     "react-dom": "^16.9.0",
     "react-dropdown-input": "^0.1.11",
-    "react-scripts": "3.1.1",
+    "react-scripts": "^3.3.0",
     "react-select": "^3.0.4",
     "react-select-v2": "^2.4.2",
     "underscore": "^1.9.1",
