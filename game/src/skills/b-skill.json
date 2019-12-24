@@ -10,21 +10,21 @@
 		"name": "Aerobatics 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"2": {
 		"name": "Aerobatics 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"3": {
 		"name": "Aerobatics 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"4": {
@@ -660,21 +660,21 @@
 		"name": "Escape Route 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"94": {
 		"name": "Escape Route 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"95": {
 		"name": "Escape Route 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"96": {
@@ -709,21 +709,21 @@
 		"name": "Flier Formation 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"101": {
 		"name": "Flier Formation 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"102": {
 		"name": "Flier Formation 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"103": {
@@ -1042,42 +1042,42 @@
 		"name": "Obstruct 1",
 		"sp": 50,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"148": {
 		"name": "Obstruct 2",
 		"sp": 100,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"149": {
 		"name": "Obstruct 3",
 		"sp": 200,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"150": {
 		"name": "Pass 1",
 		"sp": 50,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"151": {
 		"name": "Pass 2",
 		"sp": 100,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"152": {
 		"name": "Pass 3",
 		"sp": 200,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"153": {
@@ -1670,7 +1670,7 @@
 		"sp": 300,
 		"prf": true,
 		"users": [420],
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"237": {
@@ -1740,21 +1740,21 @@
 		"name": "Wings of Mercy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"247": {
 		"name": "Wings of Mercy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"248": {
 		"name": "Wings of Mercy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"249": {

@@ -223,7 +223,7 @@ const dropDownStyle = {
         
       </tr>
     );
-    console.log(this.props.gameState.selectedMember.bonus);
+
     tbody.push( //Checkbox for bonus unit
       <tr key = {"bonus row"}> 
         <td className = "equipText" key = {"bonus"}>

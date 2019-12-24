@@ -310,7 +310,7 @@ class TicTacToeBoard extends React.Component{
 
 
     let skillList =  Object.assign({}, hero.heroSkills); //copy of hero's skill list
-    //console.log(skillList[index]);
+
     hero = this.removeSkillEffect(skillList[index].value, index, hero);
 
     skillList[index] = e; //replace skill
@@ -333,7 +333,11 @@ class TicTacToeBoard extends React.Component{
 
   }
 
-  getSkillEffect(id, skillType, currentHero, skillDropdowns){
+  getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype refers to the slot the skill originates from
+
+    //TODO: Except for weapons and assists (maybe specials), the type of the skill should always key into the same key of the hero and then add their effect
+
+
     let updatedHero = currentHero;
     if (skillType === "weapon"){
       let pTemp = updatedHero.passive;
@@ -350,6 +354,11 @@ class TicTacToeBoard extends React.Component{
       });
 
       updatedHero.passive = pTemp;
+    } else if(skillDropdowns[skillType].info[id].type === "movement"){
+
+      updatedHero.assist.type = "movement";
+      updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+      updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
     }
 
     if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
@@ -383,7 +392,10 @@ class TicTacToeBoard extends React.Component{
 
 
       updatedHero.passive = pTemp;
+    } else if(this.state.skillDropdowns[skillType].info[id].type === "movement"){
+      updatedHero.assist = {};
     }
+
 
     if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of this.state.skillDropdowns[skillType].info[id].skills) {
@@ -430,7 +442,7 @@ class TicTacToeBoard extends React.Component{
 
     this.setState({heroList: temp});
     this.setState({selectedMember: hero});
-    //console.log(e.target.checked);
+
 
   }
 
@@ -586,6 +598,7 @@ class TicTacToeBoard extends React.Component{
 
 //the board elements
   dragBoardMember(ev){
+
     ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
   }
   dragOverBoard(ev){
@@ -594,7 +607,6 @@ class TicTacToeBoard extends React.Component{
 
   dropBoardMember(ev){
     ev.preventDefault();
-
 
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
 
@@ -606,38 +618,76 @@ class TicTacToeBoard extends React.Component{
     // let dragIndex = dragData.index;
     // let dragSide = dragData.side;
 
-    let dropPosition = parseInt(ev.target.id);
+    let dropPosition = ev.target.id;
 
+    //if the spot has a hero, convert that hero to an ID
+    if (Number.isNaN(parseInt(dropPosition)) ){
 
-
-    //if spot is already filled and don't do anything (for now)
-    if (this.props.G.cells[dropPosition] !==null){
-
-      //todo initiate battle if in proper range and it is opposite side as dragged
-
-      //todo use assist skills if in proper range and it is on same side
-
-
-
-      return;
+      dropPosition = JSON.parse(dropPosition).position;
+    } else{
+      dropPosition = parseInt(dropPosition);
     }
 
     let temp = this.state.heroList;
 
 
-    //remove old from board
-    this.props.G.cells[temp[dragSide][dragIndex].position] = null;
-    
-
-    //update for new position
-    this.props.G.cells[dropPosition] = dragData;
-    temp[dragSide][dragIndex].position = dropPosition;
 
 
-    this.setState({heroList: temp});
-    //this.updateHero(dropSide, dropData);
-    this.setState({selectedMember: temp[dragSide][dragIndex] });
+    //if spot is already filled initiate assist and later battle
+    if (this.props.G.cells[dropPosition] !==null){
 
+
+      let dropIndex = this.props.G.cells[dropPosition].listIndex;
+      let dropSide = this.props.G.cells[dropPosition].side;
+      //todo initiate battle if in proper range and it is opposite side as dragged
+
+      //todo use assist skills if in proper range and it is on same side
+      let tempOrg = temp;
+
+
+      //if (this.CheckAdjacent(dragData.position, this.props.G.cells[dropPosition].position )){
+        //Check if in range for assist and they are on the same side
+      if (this.GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
+
+
+        if (dragData.assist.type === "movement"){
+          temp = this.ApplyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
+        }
+
+        //TODO, implement other assist types as well
+
+      }
+
+
+      //need to clear the old ones, and add the new ones
+        this.props.G.cells[tempOrg[dragSide][dragIndex].position] = null;
+        this.props.G.cells[dropPosition] = null;
+
+        this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+        this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+        this.setState({heroList: temp});
+        this.setState({selectedMember: temp[dragSide][dragIndex] });
+
+
+
+    } else { //regular movement
+
+
+
+      //remove old from board
+      this.props.G.cells[temp[dragSide][dragIndex].position] = null;
+      
+
+      //update for new position
+      this.props.G.cells[dropPosition] = temp[dragSide][dragIndex]; //update in gameboard
+      temp[dragSide][dragIndex].position = dropPosition; //update in team list
+
+
+      this.setState({heroList: temp});
+      //this.updateHero(dropSide, dropData);
+      this.setState({selectedMember: temp[dragSide][dragIndex] });
+      }
 
   }
 
@@ -687,12 +737,90 @@ class TicTacToeBoard extends React.Component{
     return tempList; //the heroList with stats recalculated
   }
 
+  ApplyMovementAssist(updatedHeroList, assister, assistee, effect){
+
+  let list = updatedHeroList;
+  let assisterPos = this.PositionToRowColumn(assister.position);
+  let assisteePos = this.PositionToRowColumn(assistee.position);
+
+
+  if (assisterPos[0] === assisteePos[0]){ //same row, move along the row so change column
+
+    let factor = assisteePos[1] - assisterPos[1];
+
+    assisterPos[1]+= factor * effect[0];
+
+    assisteePos[1]+= factor * effect[1];
+  } else if (assisterPos[1] === assisteePos[1]){ //same column, move along the column, so change row
+
+    let factor = assisteePos[0] - assisterPos[0];
+    assisterPos[0]+= factor * effect[0];
+    assisteePos[0]+= factor * effect[1];
+
+  }
+
+
+
+  //TODO - needs to make sure space is not occupied by someone else too
+  if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
+    || assisterPos[0] > 7 || assisterPos[0] < 0 || assisteePos[0] > 7 || assisteePos[0] < 0) { //row out of bounds
+
+
+    return updatedHeroList; //return original list
+  } else{
+
+    list[assister.side][assister.listIndex].position = this.RowColumnToPosition(assisterPos);
+    list[assistee.side][assistee.listIndex].position = this.RowColumnToPosition(assisteePos);
+
+    return list;
+  }
+
+
+  }
+
+  CheckAdjacent(first, second){
+   let firstRC = this.PositionToRowColumn(first);
+   let secondRC = this.PositionToRowColumn(second);
+
+
+    //if rows are the same, and column difference is one
+    if (firstRC[0] === secondRC[0] && Math.abs(firstRC[1] - secondRC[1]) === 1){
+      return true;
+    } else if (firstRC[1] === secondRC[1] && Math.abs(firstRC[0] - secondRC[0]) === 1)
+      return true;
+    
+    return false;
+
+  }
+
+  //Get the amount of spaces from first position to the second position
+  GetDistance(first, second){
+    let firstRC = this.PositionToRowColumn(first);
+    let secondRC = this.PositionToRowColumn(second);
+
+    let distance = 0;
+
+    distance += Math.abs(firstRC[1] - secondRC[1]); //difference in columns
+    distance += Math.abs(firstRC[0] - secondRC[0]); //difference in rows
+
+    return distance;
+
+  }
+
+  PositionToRowColumn(position){
+
+    let row = Math.floor(position/6);
+    let column = position%6;
+
+    return [row, column];
+  }
+
+  RowColumnToPosition(rc){
+    return rc[0] * 6 + rc[1];
+  }
 
   render() {
 
-    // console.log(this.state.heroList);
-    // console.log(this.state.heroList[1][0]);
-    //console.log(this.state.blessingBuffs);
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
@@ -709,24 +837,25 @@ class TicTacToeBoard extends React.Component{
 
             let positions = this.getFilledPositions();
 
-
-            if (positions.includes(id)){
+            if (positions.includes(id)){ //if it has a person in the cell
+              //onDrop = {(e) => this.dropBoardMember(e)} >
               cells.push(
-                <td className= {cellClass} key={id} onClick={(side) => this.selectNewMember(this.props.name, i)}
+                <td className= {cellClass} key={id} onClick={() => this.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
                   id = {id}
-                  onDragOver = {(e) => this.dragOverBoard(e)}
-                  onDrop = {(e) => this.dropBoardMember(e)} >
+                  onDragOver = {(e) => this.dragOverBoard(e)}>
+                  
 
                 <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 
                     className = "heroFace" 
                     alt = {heroData[this.props.G.cells[id].heroID.value].name}
                     draggable = "true"
                     id =  {JSON.stringify(this.props.G.cells[id])}
-                    onDragStart = {(e) => this.dragBoardMember(e)} />
+                    onDragStart = {(e) => this.dragBoardMember(e)}
+                    onDrop = {(e) => this.dropBoardMember(e)} />
                 </td>
                 );
 
-            } else{
+            } else{ //nobody in cell
               cells.push(
                 <td className= {cellClass} key={id} 
                   id = {id}
@@ -853,6 +982,7 @@ function makeHeroStruct(){
     this["position"] = -1;
 
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0} //set of stats from skills
+    this["assist"] = {}
     this["range"] = 1;
     this["bonus"] = false;
 
