@@ -47,7 +47,9 @@ export default class Stats extends React.Component{
   const min = ["1", "0", "0", "1"];
   const max = ["40", "10", "10", "5"];
   let cells = [];
-  
+  	
+
+  	//top row containing levels for the unit
     for (let i = 0; i < levelText.length; i++) { //rows
       cells.push(<td className = "statText" key = {levelText[i] + " label"}> {capitalize(levelText[i], true)} </td>);
       cells.push(<td className = "inputNum" key = {levelText[i] + " value"}>
@@ -66,29 +68,53 @@ export default class Stats extends React.Component{
     tbody.push(<tr key = "levels">{cells}</tr>);
 
 
+    	//stats
     	for (let i = 0; i < statText.length; i++) { //rows
 	        let cells = [];
 
-	        cells.push(<td className = "statText" key = {statText[i]} >{capitalize(statText[i], true)}</td>);
-	       
-	        cells.push(<td className ="statNum" key = {statText[i] + " value"}>
-	                    {this.props.gameState.selectedMember.stats[statText[i]]}  
-	                  </td>);
+	        cells.push(<td className = "statText" key = {statText[i]} >{capitalize(statText[i], true)}</td>); //get Stat name
+	       	
 
-	        cells.push(<td className= "spacing" key = {"space" + i}></td>);
+	       	if ( statText[i] === "hp"){
 
+			    cells.push(<td key = "currentHP" className= "inputNum">
+			        <input
+	            	className = "numberInput"
+	            	value = {this.props.gameState.selectedMember.currentHP} 
+	            	type = "number"
+	            	min = "0"
+	            	max = {this.props.gameState.selectedMember.stats["hp"]}
+	            	onChange = {(e) => this.props.hpChange(e)} 
+	            	/>  
+
+			       	</td>);
+			    //get maxHP value
+		        cells.push(<td className ="statNum" key = {statText[i] + " value"}> 
+		                    {this.props.gameState.selectedMember.stats[statText[i]]}  
+		                  </td>);
+	       	} else {
+	       		//get stat value
+		        cells.push(<td className ="statNum" key = {statText[i] + " value"}> 
+		                    {this.props.gameState.selectedMember.stats[statText[i]]}  
+		                  </td>);
+
+		        cells.push(<td className= "spacing" key = {"space" + i}></td>);
+	    	}
 	        //Boon drop bane drop
 	        //CurrentHP input Dragonflowers input
 	        // buff, debuff, drives/spur
 
 	        let modifiers = ["buff", "debuff", "combat"];
 
+
+	        //if hp row, get modifier headers
 	        if ( statText[i] === "hp"){
 
 	        	for (let j = 0; j < modifiers.length; j++){
 	        		cells.push(<td key = {modifiers[j]} className= "statText">{capitalize(modifiers[j], true)}</td>);
 	        	}
 
+	        //for rest, give corresponding modifier
 	        } else{
 
 	        	for (let j = 0; j < modifiers.length; j++){

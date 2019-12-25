@@ -88,6 +88,7 @@ class TicTacToeBoard extends React.Component{
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
     this.onFortLevelChange = this.onFortLevelChange.bind(this);
     this.onSeasonChange = this.onSeasonChange.bind(this);
+    this.onHPChange = this.onHPChange.bind(this);
 
     this.dragTeamMember = this.dragTeamMember.bind(this);
     this.dragOverTeamMember = this.dragOverTeamMember.bind(this);
@@ -160,12 +161,29 @@ class TicTacToeBoard extends React.Component{
   onLevelsChange(e, type){ 
 
     let temp = this.state.heroList;
-    temp[this.state.playerSide][this.state.heroIndex][type] = Number(e.target.value);
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel,
+
+    let hero = temp[this.state.playerSide][this.state.heroIndex];
+    hero[type] = Number(e.target.value);
+
+    let oldMaxHP = hero.stats.hp;
+
+    hero.stats = CalculateStats(hero, this.state.fortLevel,
        this.state.blessingBuffs[this.state.playerSide], this.state.season);
 
+    let newHP = hero.currentHP + hero.stats.hp - oldMaxHP;
+
+    if (newHP < 0)
+      hero.currentHP = 0;
+    else
+      hero.currentHP = newHP; 
+
+
+
+
+    temp[this.state.playerSide][this.state.heroIndex] = hero;
+
     this.setState({heroList: temp});
-    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
+    this.setState({selectedMember: hero }); //update the selectedHero according to changed level //todo
   }
 
   onHeroChange(e){    //Changing a hero will need to update the states of the board for stat display
@@ -247,7 +265,7 @@ class TicTacToeBoard extends React.Component{
 
     
     hero.stats = CalculateStats(hero, this.state.fortLevel, tempBlessings[this.state.playerSide], this.state.season); //recalculate stats
-    
+    hero.currentHP = hero.stats.hp;
 
     //Sets the initial position of the on the board 
     if (hero.position === -1 && e.value !== "0"){ //if hero was blank
@@ -523,6 +541,16 @@ class TicTacToeBoard extends React.Component{
     this.setState({heroList: seasonHeroList });
     this.setState({selectedMember: seasonHeroList[this.state.playerSide][this.state.heroIndex] });
 
+
+  }
+
+
+  onHPChange(e){
+
+    let temp = this.state.heroList;
+    temp[this.state.playerSide][this.state.heroIndex].currentHP = Number(e.target.value);
+    this.setState({heroList: temp});
+    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
 
   }
 
@@ -819,6 +847,7 @@ class TicTacToeBoard extends React.Component{
     return rc[0] * 6 + rc[1];
   }
 
+
   render() {
 
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
@@ -903,7 +932,8 @@ class TicTacToeBoard extends React.Component{
               levelChange = {this.onLevelsChange}
               heroChange = {this.onHeroChange}  
               buffChange = {this.onBuffChange}
-              ivChange = {this.onIVChange} />
+              ivChange = {this.onIVChange}
+              hpChange = {this.onHPChange} />
         </td>
         <td rowSpan = "2">
           <table id="board" align = 'center'>
@@ -980,7 +1010,7 @@ function makeHeroStruct(){
     this["allySupport"] = {value: "0", label: ""};
     this["blessing"] = "None";
     this["position"] = -1;
-
+    this["currentHP"] = 0;
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0} //set of stats from skills
     this["assist"] = {}
     this["range"] = 1;
