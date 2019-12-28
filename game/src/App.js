@@ -73,7 +73,8 @@ class TicTacToeBoard extends React.Component{
           "Anima": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
         }
       },
-      "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"}
+      "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"},
+      "availableMovement": []
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -170,12 +171,7 @@ class TicTacToeBoard extends React.Component{
     hero.stats = CalculateStats(hero, this.state.fortLevel,
        this.state.blessingBuffs[this.state.playerSide], this.state.season);
 
-    let newHP = hero.currentHP + hero.stats.hp - oldMaxHP;
-
-    if (newHP < 0)
-      hero.currentHP = 0;
-    else
-      hero.currentHP = newHP; 
+    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
 
 
 
@@ -339,9 +335,11 @@ class TicTacToeBoard extends React.Component{
     hero = this.getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
 
     //TODO - add other types of skills 
+    let oldMaxHP = hero.stats.hp;
 
     hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
-    
+
+    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
     
     tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
     //update states
@@ -455,7 +453,13 @@ class TicTacToeBoard extends React.Component{
     
 
     hero.bonus = e.target.checked;
+
+    let oldMaxHP = hero.stats.hp;
+
     hero.stats =  CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    
+    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
     this.setState({heroList: temp});
@@ -467,8 +471,8 @@ class TicTacToeBoard extends React.Component{
   onIVChange(e, type){
     let temp = this.state.heroList;
 
-
-    let ivList =  Object.assign({}, temp[this.state.playerSide][this.state.heroIndex].iv);
+    let hero = temp[this.state.playerSide][this.state.heroIndex];
+    let ivList =  Object.assign({}, hero.iv);
     
 
     //if either iv is set to neutral, set the other one to neutral as well.
@@ -479,9 +483,16 @@ class TicTacToeBoard extends React.Component{
     ivList[type] = e.target.value;
     }
 
-    temp[this.state.playerSide][this.state.heroIndex].iv = ivList;
+    hero.iv = ivList;
 
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    let oldMaxHP = hero.stats.hp;
+
+    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    
+    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+
+    temp[this.state.playerSide][this.state.heroIndex] = hero;
+
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
@@ -491,9 +502,18 @@ class TicTacToeBoard extends React.Component{
   onSupportLevelChange(e, type){
     let temp = this.state.heroList;
 
-    temp[this.state.playerSide][this.state.heroIndex][type] = e.target.value;
+    let hero = temp[this.state.playerSide][this.state.heroIndex];
 
-    temp[this.state.playerSide][this.state.heroIndex].stats = CalculateStats(temp[this.state.playerSide][this.state.heroIndex], this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    hero[type] = e.target.value;
+
+    let oldMaxHP = hero.stats.hp;
+
+    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+
+    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+
+    temp[this.state.playerSide][this.state.heroIndex] = hero;
+
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
 
@@ -628,9 +648,34 @@ class TicTacToeBoard extends React.Component{
   dragBoardMember(ev){
 
     ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
+
+    let dragData = JSON.parse(ev.target.id);
+
+    let oldHero = heroData[dragData.heroID.value];
+    let move = this.GetMovement(oldHero.movetype);
+
+    let pos = dragData.position;
+    let movementList = [];
+
+    for (let i = 0; i < 48; i++) { //rows
+      if (this.GetDistance(pos, i) <= move)
+        movementList.push(i);
+    }
+
+    this.setState({availableMovement: movementList});
+
+
+
+
   }
   dragOverBoard(ev){
     ev.preventDefault();
+  }
+
+  dragEnd(ev){
+    ev.dataTransfer.clearData();
+
+    this.setState({availableMovement: []});
   }
 
   dropBoardMember(ev){
@@ -715,7 +760,9 @@ class TicTacToeBoard extends React.Component{
       this.setState({heroList: temp});
       //this.updateHero(dropSide, dropData);
       this.setState({selectedMember: temp[dragSide][dragIndex] });
-      }
+    }
+
+    this.dragEnd(ev);
 
   }
 
@@ -742,9 +789,17 @@ class TicTacToeBoard extends React.Component{
   RecalculateTeamHeroStats(currentTeamList, newblessingBuffs){ //newFortLevel, newblessingBuffs, newSeasons){
     let tempTeam = currentTeamList;
     Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
+
+      let oldMaxHP = tempTeam[memberKey].stats.hp;
+
       tempTeam[memberKey].stats = CalculateStats(tempTeam[memberKey], this.state.fortLevel, newblessingBuffs, this.state.season); //new stats 
+
+      tempTeam[memberKey].currentHP = this.AdjustHP(oldMaxHP, tempTeam[memberKey]);
+
+
     });
     return tempTeam;
+
   }
 
   //get an updated list of heroes and update all of their stats
@@ -755,7 +810,13 @@ class TicTacToeBoard extends React.Component{
         let tempTeam = tempList[key]; //copy of team to be modified
 
         Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
+
+          let oldMaxHP = tempTeam[memberKey].stats.hp;
           tempTeam[memberKey].stats = CalculateStats(tempTeam[memberKey], newFortLevel, newblessingBuffs[key], newSeasons); //new stats 
+
+          tempTeam[memberKey].currentHP = this.AdjustHP(oldMaxHP, tempTeam[memberKey]);
+
+
         });
 
         tempList[key] = tempTeam; //update the team list
@@ -847,6 +908,29 @@ class TicTacToeBoard extends React.Component{
     return rc[0] * 6 + rc[1];
   }
 
+  //When max HP is changed, adjust current HP the same amount. Do not bring it below 0 though
+  AdjustHP(oldMax, updatedHero){
+
+    let newHP = updatedHero.currentHP + updatedHero.stats.hp - oldMax;
+
+    if (newHP < 0)
+      return 0;
+    else
+      return newHP; 
+
+  }
+
+  GetMovement(moveType){
+
+    if (moveType === "Cavalry")
+      return 3;
+    else if (moveType === "Infantry" || moveType === "Flying")
+      return 2;
+    else if (moveType === "Armored")
+      return 1;
+    else
+      return 0;
+  }
 
   render() {
 
@@ -857,13 +941,15 @@ class TicTacToeBoard extends React.Component{
       let cells = [];
         for (let j = 0; j < 6; j++) { //columns
           const id = 6 * i + j;
-          if (this.props.G.cells[id] != null){
+          //if (this.props.G.cells[id] != null){
             let cellClass = "cellStyle";
 
             if (id  === highLightedCell){
-              cellClass = "highlightedCellStyle"
+              cellClass = "highlightedCellStyle";
+            } else if (this.state.availableMovement.includes(id)){
+              cellClass = "movementCellStyle";
             }
-
+            
             let positions = this.getFilledPositions();
 
             if (positions.includes(id)){ //if it has a person in the cell
@@ -880,7 +966,8 @@ class TicTacToeBoard extends React.Component{
                     draggable = "true"
                     id =  {JSON.stringify(this.props.G.cells[id])}
                     onDragStart = {(e) => this.dragBoardMember(e)}
-                    onDrop = {(e) => this.dropBoardMember(e)} />
+                    onDrop = {(e) => this.dropBoardMember(e)}
+                    onDragEnd = {(e) => this.dragEnd(e)} />
                 </td>
                 );
 
@@ -895,17 +982,17 @@ class TicTacToeBoard extends React.Component{
             }
 
 
-          } else{
-             cells.push(
-            <td className= "cellStyle" key={id}
-              id = {id}
-              onDragOver = {(e) => this.dragOverBoard(e)}
-              onDrop = {(e) => this.dropBoardMember(e)} >
+          // } else{
+          //    cells.push(
+          //   <td className= "cellStyle" key={id}
+          //     id = {id}
+          //     onDragOver = {(e) => this.dragOverBoard(e)}
+          //     onDrop = {(e) => this.dropBoardMember(e)} >
 
 
-            </td>
-            );
-          }
+          //   </td>
+          //   );
+          // }
           ////{this.props.G.cells[id]}
         }
       tbody.push(<tr key={i}>{cells}</tr>);

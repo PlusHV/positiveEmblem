@@ -55,6 +55,27 @@ table,tr,td {
   text-align: center;
 }
 
+.movementCellStyle{
+  border: 3px solid orange;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+.attackCellStyle{
+  border: 3px solid red;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
+.assistCellStyle{
+  border: 3px solid blue;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+}
+
 .teamMember{
   border: 2px solid #555;
   min-width: 50px;
