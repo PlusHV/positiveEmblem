@@ -14,8 +14,12 @@ However, you can run this locally with a clone of this repository.
 You will additionally need to 
 install NodeJS - https://nodejs.org/en/
 
-install dependecies by navigating to /game then ->  npm install
+Install dependecies by navigating to /game then use the command
+>  npm install
 
-This should get all of your dependencies and you should be able to start using -> npm start
 
-It should then open a tab/window with the address http://localhost:3000/. This is where the simulation will be loaded. In the future, running can simply be done with the command "npm start"
+This should get all of your dependencies and you should be able to start using the command
+> npm start
+
+It should then open a tab/window with the address http://localhost:3000/. This is where the simulation will be loaded. In the future, running can done under /game with the command
+> npm start
