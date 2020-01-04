@@ -74,7 +74,9 @@ class TicTacToeBoard extends React.Component{
         }
       },
       "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"},
-      "availableMovement": []
+      "availableMovement": [],
+      "availableAssist": [],
+      "availableAttack": []
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -359,6 +361,7 @@ class TicTacToeBoard extends React.Component{
       let pTemp = updatedHero.passive;
       pTemp["atk"] += skillDropdowns["weapon"].info[id].might; 
       updatedHero.passive = pTemp;
+      updatedHero.range = skillDropdowns["weapon"].info[id].range;
 
     } else if (skillDropdowns[skillType].info[id].type  === "passive") {
       let statMods = skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
@@ -396,6 +399,7 @@ class TicTacToeBoard extends React.Component{
       let pTemp = updatedHero.passive;
       pTemp["atk"] -= this.state.weaponList[id]["might"]; //remove the weapon's attack
       updatedHero.passive = pTemp;
+      updatedHero.range = -1;
 
     } else if (this.state.skillDropdowns[skillType].info[id].type  === "passive") {
       let statMods = this.state.skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
@@ -654,16 +658,33 @@ class TicTacToeBoard extends React.Component{
     let oldHero = heroData[dragData.heroID.value];
     let move = this.GetMovement(oldHero.movetype);
 
+    let assist = -1;
+
+
+    if (dragData.assist.range !== null)
+      assist = dragData.assist.range;
+
+
     let pos = dragData.position;
     let movementList = [];
+    let assistList = [];
+    let attackList = [];
+
 
     for (let i = 0; i < 48; i++) { //rows
-      if (this.GetDistance(pos, i) <= move)
+      if (this.GetDistance(pos, i) <= move && this.props.G.cells[i] == null ){
         movementList.push(i);
+      } else if (this.props.G.cells[i] !== null && dragData.position !== i){ //if there is a hero and is not themselves
+        if (this.GetDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
+          assistList.push(i);
+        else if (this.GetDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
+          attackList.push(i);
+      }
     }
 
     this.setState({availableMovement: movementList});
-
+    this.setState({availableAssist: assistList});
+    this.setState({availableAttack: attackList});
 
 
 
@@ -676,6 +697,8 @@ class TicTacToeBoard extends React.Component{
     ev.dataTransfer.clearData();
 
     this.setState({availableMovement: []});
+    this.setState({availableAssist: []});
+    this.setState({availableAttack: []});
   }
 
   dropBoardMember(ev){
@@ -828,41 +851,49 @@ class TicTacToeBoard extends React.Component{
 
   ApplyMovementAssist(updatedHeroList, assister, assistee, effect){
 
-  let list = updatedHeroList;
-  let assisterPos = this.PositionToRowColumn(assister.position);
-  let assisteePos = this.PositionToRowColumn(assistee.position);
+    let list = updatedHeroList;
+    let assisterPos = this.PositionToRowColumn(assister.position);
+    let assisteePos = this.PositionToRowColumn(assistee.position);
+
+    let participantIDs = [assister.id, assistee.id];
 
 
-  if (assisterPos[0] === assisteePos[0]){ //same row, move along the row so change column
+    if (assisterPos[0] === assisteePos[0]){ //same row, move along the row so change column
 
-    let factor = assisteePos[1] - assisterPos[1];
+      let factor = assisteePos[1] - assisterPos[1];
 
-    assisterPos[1]+= factor * effect[0];
+      assisterPos[1]+= factor * effect[0];
 
-    assisteePos[1]+= factor * effect[1];
-  } else if (assisterPos[1] === assisteePos[1]){ //same column, move along the column, so change row
+      assisteePos[1]+= factor * effect[1];
+    } else if (assisterPos[1] === assisteePos[1]){ //same column, move along the column, so change row
 
-    let factor = assisteePos[0] - assisterPos[0];
-    assisterPos[0]+= factor * effect[0];
-    assisteePos[0]+= factor * effect[1];
+      let factor = assisteePos[0] - assisterPos[0];
+      assisterPos[0]+= factor * effect[0];
+      assisteePos[0]+= factor * effect[1];
 
-  }
+    }
+
+    let newAssisterPos = this.RowColumnToPosition(assisterPos);
+    let newAssisteePos = this.RowColumnToPosition(assisteePos);
+
+    //TODO - needs to make sure space is not occupied by someone else too
+    if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
+      || assisterPos[0] > 7 || assisterPos[0] < 0 || assisteePos[0] > 7 || assisteePos[0] < 0) { //row out of bounds
 
 
+      return updatedHeroList; //return original list
 
-  //TODO - needs to make sure space is not occupied by someone else too
-  if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
-    || assisterPos[0] > 7 || assisterPos[0] < 0 || assisteePos[0] > 7 || assisteePos[0] < 0) { //row out of bounds
+    } else if (participantIDs.includes(this.props.G.cells[newAssisterPos].id) || participantIDs.includes(this.props.G.cells[newAssisteePos].id)){ //Checks if new spots are occupied by units other than the assister/assistee
 
+      return updatedHeroList;
 
-    return updatedHeroList; //return original list
-  } else{
+    } else{
 
-    list[assister.side][assister.listIndex].position = this.RowColumnToPosition(assisterPos);
-    list[assistee.side][assistee.listIndex].position = this.RowColumnToPosition(assisteePos);
+      list[assister.side][assister.listIndex].position = newAssisterPos;
+      list[assistee.side][assistee.listIndex].position = newAssisteePos;
 
-    return list;
-  }
+      return list;
+    }
 
 
   }
@@ -934,6 +965,7 @@ class TicTacToeBoard extends React.Component{
 
   render() {
 
+
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
@@ -948,6 +980,10 @@ class TicTacToeBoard extends React.Component{
               cellClass = "highlightedCellStyle";
             } else if (this.state.availableMovement.includes(id)){
               cellClass = "movementCellStyle";
+            } else if (this.state.availableAssist.includes(id)){
+              cellClass =  "assistCellStyle";
+            } else if (this.state.availableAttack.includes(id)){
+              cellClass =  "attackCellStyle";
             }
             
             let positions = this.getFilledPositions();
@@ -1023,7 +1059,7 @@ class TicTacToeBoard extends React.Component{
               hpChange = {this.onHPChange} />
         </td>
         <td rowSpan = "2">
-          <table id="board" align = 'center'>
+          <table class= "boardStyle" id="board" align = 'center'>
           <tbody>{tbody}</tbody>
           </table>
         </td>
@@ -1100,7 +1136,7 @@ function makeHeroStruct(){
     this["currentHP"] = 0;
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0} //set of stats from skills
     this["assist"] = {}
-    this["range"] = 1;
+    this["range"] = -1;
     this["bonus"] = false;
 
 

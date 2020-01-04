@@ -36,6 +36,7 @@ table{
 
 table,tr,td {
   border-collapse: collapse;
+
   border: 2px solid #930322;
   table-layout: fixed;
 }
@@ -43,37 +44,55 @@ table,tr,td {
 
 .cellStyle{
   border: 2px solid #555;
+
   width: 70px;
   height: 70px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .highlightedCellStyle{
-  border: 3px solid yellow;
+  border: 2px solid yellow;
+
   width: 70px;
   height: 70px;
   text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1px;
 }
 
 .movementCellStyle{
-  border: 3px solid orange;
+  border: 2px solid aqua;
+
   width: 70px;
   height: 70px;
   text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1000px;  
 }
 
 .attackCellStyle{
-  border: 3px solid red;
+  border: 2px solid red;
+
   width: 70px;
   height: 70px;
   text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1px;
 }
 
 .assistCellStyle{
-  border: 3px solid blue;
+  border: 2px solid lime;
+
   width: 70px;
   height: 70px;
   text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1px;
+}
+
+.boardStyle{
+  border-collapse: separate;
 }
 
 .teamMember{
