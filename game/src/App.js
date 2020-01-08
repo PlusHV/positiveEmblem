@@ -148,7 +148,12 @@ class TicTacToeBoard extends React.Component{
           }
       }
     }
+    dropdownList.sort(this.compareLabels);
 
+  }
+
+  compareLabels(a, b){
+    return a.label > b.label ? 1 : b.label > a.label ? -1 : 0;
   }
 
 
@@ -595,7 +600,7 @@ class TicTacToeBoard extends React.Component{
 
   //drag Team member - the team elements
   dragTeamMember(ev){
-    ev.dataTransfer.setData("text", ev.target.id ); //Gets the id, which is the index in heroList
+    ev.dataTransfer.setData("text", ev.target.id ); //Gets the id, which should be holding the hero struct
 
   }
   dragOverTeamMember(ev){

@@ -56,7 +56,8 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": "status",
+		"effect": [["harsh", "restore"] ],
 		"max": true
 	},
 	"7": {
@@ -64,7 +65,8 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": "status",
+		"effect": [ ["harsh"] ],
 		"max": true
 	},
 	"8": {
@@ -130,6 +132,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 6], ["def", 6]],
 		"max": true
 	},
 	"16": {
@@ -138,6 +141,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 3], ["def", 3]],
 		"max": true
 	},
 	"17": {
@@ -146,6 +150,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 3], ["res", 3]],
 		"max": true
 	},
 	"18": {
@@ -154,6 +159,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 6], ["spd", 6]],
 		"max": true
 	},
 	"19": {
@@ -162,6 +168,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 6], ["spd", 6]],
 		"max": true
 	},
 	"20": {
@@ -170,6 +177,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 4]],
 		"max": true
 	},
 	"21": {
@@ -178,6 +186,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["def", 6], ["res", 6]],
 		"max": true
 	},
 	"22": {
@@ -186,6 +195,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["def", 3], ["res", 3]],
 		"max": true
 	},
 	"23": {
@@ -194,6 +204,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["def", 4]],
 		"max": true
 	},
 	"24": {
@@ -202,6 +213,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["res", 4]],
 		"max": true
 	},
 	"25": {
@@ -210,6 +222,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["spd", 6], ["def", 6]],
 		"max": true
 	},
 	"26": {
@@ -218,6 +231,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["spd", 3], ["def", 3]],
 		"max": true
 	},
 	"27": {
@@ -226,6 +240,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["spd", 6], ["res", 6]],
 		"max": true
 	},
 	"28": {
@@ -234,6 +249,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["spd", 3], ["res", 3]],
 		"max": true
 	},
 	"29": {
@@ -242,6 +258,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["spd", 4]],
 		"max": true
 	},
 	"30": {
@@ -250,6 +267,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 6], ["up"] ],
 		"max": true
 	},
 	"31": {
@@ -258,6 +276,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["atk", 4], ["up"]],
 		"max": true
 	},
 	"32": {
@@ -266,6 +285,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["res", 6], ["up"]],
 		"max": true
 	},
 	"33": {
@@ -274,6 +294,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
+		"effect": [["res", 4], ["up"]],
 		"max": true
 	},
 	"34": {
@@ -391,6 +412,15 @@
 		"prf": false,
 		"type": "movement",
 		"effect": [1, -1],
+		"max": true
+	},
+	"48": {
+		"name": "Rally Atk/Res+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": "rally",
+		"effect": [["atk", 6], ["res", 6]],
 		"max": true
 	}
 
