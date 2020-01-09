@@ -368,6 +368,23 @@ class TicTacToeBoard extends React.Component{
       updatedHero.passive = pTemp;
       updatedHero.range = skillDropdowns["weapon"].info[id].range;
 
+
+    } else if (skillType === "assist"){
+      if(skillDropdowns[skillType].info[id].type === "movement"){
+
+        updatedHero.assist.type = "movement";
+        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+
+      } else if(skillDropdowns[skillType].info[id].type === "rally"){
+
+        updatedHero.assist.type = "rally";
+        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      }
+
+
+
     } else if (skillDropdowns[skillType].info[id].type  === "passive") {
       let statMods = skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
       let pTemp = updatedHero.passive;
@@ -378,12 +395,8 @@ class TicTacToeBoard extends React.Component{
       });
 
       updatedHero.passive = pTemp;
-    } else if(skillDropdowns[skillType].info[id].type === "movement"){
-
-      updatedHero.assist.type = "movement";
-      updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
-      updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
     }
+
 
     if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of skillDropdowns[skillType].info[id].skills) {
@@ -406,6 +419,10 @@ class TicTacToeBoard extends React.Component{
       updatedHero.passive = pTemp;
       updatedHero.range = -1;
 
+    } else if (skillType === "assist"){
+
+      updatedHero.assist = {};
+
     } else if (this.state.skillDropdowns[skillType].info[id].type  === "passive") {
       let statMods = this.state.skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
       let pTemp = updatedHero.passive;
@@ -417,8 +434,6 @@ class TicTacToeBoard extends React.Component{
 
 
       updatedHero.passive = pTemp;
-    } else if(this.state.skillDropdowns[skillType].info[id].type === "movement"){
-      updatedHero.assist = {};
     }
 
 
@@ -753,6 +768,19 @@ class TicTacToeBoard extends React.Component{
 
         if (dragData.assist.type === "movement"){
           temp = this.ApplyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
+
+
+          //clear initial positions of assister/assistee
+          this.props.G.cells[tempOrg[dragSide][dragIndex].position] = null;
+          this.props.G.cells[dropPosition] = null;
+
+          //move the assistee/assister to their new positions 
+          this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+          this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+        } else if (dragData.assist.type === "rally"){
+          temp = this.ApplyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+
         }
 
         //TODO, implement other assist types as well
@@ -761,14 +789,10 @@ class TicTacToeBoard extends React.Component{
 
 
       //need to clear the old ones, and add the new ones
-        this.props.G.cells[tempOrg[dragSide][dragIndex].position] = null;
-        this.props.G.cells[dropPosition] = null;
 
-        this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
-        this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
 
         this.setState({heroList: temp});
-        this.setState({selectedMember: temp[dragSide][dragIndex] });
+        this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] }); 
 
 
 
@@ -899,6 +923,37 @@ class TicTacToeBoard extends React.Component{
 
       return list;
     }
+
+
+  }
+
+  ApplyRallyAssist(updatedHeroList, assister, assistee, effect){
+    let list = updatedHeroList;
+    let aoe = false;
+    let buffs = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    console.log(effect);
+
+    //get the rally buff that will be applied
+    for (var i = 0; i< effect.length; i++ ){
+      if (effect[i][1] === "up"){
+        aoe = true;
+      } else {
+        buffs[effect[i][0] ] += effect[i][1];
+      }
+
+    }
+    console.log(buffs);
+    //apply buff to assistee
+    //TODO - only highest buff should be applied?
+    Object.keys(buffs).forEach((key, i) => {
+      assistee.buff[key] += buffs[key];
+    });
+
+    list[assistee.side][assistee.listIndex] = assistee;
+
+    return list;
+
+    //TODO -apply buff units around if aoe = true
 
 
   }
