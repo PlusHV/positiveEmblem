@@ -1955,5 +1955,271 @@
 		"users": [395],
 		"type": "turn-start",
 		"max": true
+	},
+	"278": {
+		"name": "Panic Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"279": {
+		"name": "Panic Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "post-battle",
+		"max": false
+	},
+	"280": {
+		"name": "Panic Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "post-battle",
+		"max": true
+	},
+	"281": {
+		"name": "Atk/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"282": {
+		"name": "Atk/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"283": {
+		"name": "Atk/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"284": {
+		"name": "Joint Hone Def",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"285": {
+		"name": "Staff Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"286": {
+		"name": "Staff Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"287": {
+		"name": "Staff Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"288": {
+		"name": "Spd/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"289": {
+		"name": "Spd/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"290": {
+		"name": "Spd/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"291": {
+		"name": "Rouse Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"292": {
+		"name": "Rouse Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"293": {
+		"name": "Rouse Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"294": {
+		"name": "Atk/Def Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"295": {
+		"name": "Atk/Def Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"296": {
+		"name": "Atk/Def Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"297": {
+		"name": "Dagger Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"298": {
+		"name": "Dagger Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"299": {
+		"name": "Dagger Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"300": {
+		"name": "Fortify Res 4",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"301": {
+		"name": "Threat. Atk/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"302": {
+		"name": "Threat. Atk/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"303": {
+		"name": "Threat. Atk/Res 3",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"304": {
+		"name": "Def/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"305": {
+		"name": "Def/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"306": {
+		"name": "Def/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"307": {
+		"name": "Atk/Spd Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"308": {
+		"name": "Atk/Spd Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"309": {
+		"name": "Atk/Spd Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"310": {
+		"name": "Def/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"311": {
+		"name": "Def/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"312": {
+		"name": "Def/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"313": {
+		"name": "Atk/Spd Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"314": {
+		"name": "Atk/Spd Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"315": {
+		"name": "Atk/Spd Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
 	}
 }

@@ -652,5 +652,81 @@
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"64": {
+		"name": "Candlewax Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"65": {
+		"name": "Candlewax Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": false
+	},
+	"66": {
+		"name": "Meisterbogen",
+		"might": 9,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [440],
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"67": {
+		"name": "Guardian's Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [449],
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"68": {
+		"name": "Tanngrisnir",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [461],
+		"type": "bow",
+		"skills": [["a", 234]],
+		"max": true
+	},
+	"69": {
+		"name": "Fortune Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"70": {
+		"name": "Fortune Bow+",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": false
 	}
+
+	
+
 }

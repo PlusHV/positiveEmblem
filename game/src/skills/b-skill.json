@@ -1806,5 +1806,147 @@
 		"users": [263],
 		"type": "turn-start",
 		"max": true
+	},
+	"256": {
+		"name": "Killing Intent",
+		"sp": 300,
+		"prf": true,
+		"users": [428],
+		"type": "damage-calc",
+		"max": true
+	},
+	"257": {
+		"name": "Odd Follow-Up 1",
+		"sp": 60,
+		"prf": false,
+		"type": "attack-count",
+		"max": false
+	},
+	"258": {
+		"name": "Odd Follow-Up 2",
+		"sp": 120,
+		"prf": false,
+		"type": "attack-count",
+		"max": false
+	},
+	"259": {
+		"name": "Odd Follow-Up 3",
+		"sp": 240,
+		"prf": false,
+		"type": "attack-count",
+		"max": true
+	},
+	"260": {
+		"name": "Spd/Res Ruse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"261": {
+		"name": "Spd/Res Ruse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"262": {
+		"name": "Spd/Res Ruse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-rally",
+		"max": true
+	},
+	"263": {
+		"name": "Close Call 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"264": {
+		"name": "Close Call 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"265": {
+		"name": "Close Call 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"266": {
+		"name": "Daring Fighter 1",
+		"sp": 60,
+		"prf": false,
+		"type": "attack-count",
+		"max": false
+	},
+	"267": {
+		"name": "Daring Fighter 2",
+		"sp": 120,
+		"prf": false,
+		"type": "attack-count",
+		"max": false
+	},
+	"268": {
+		"name": "Daring Fighter 3",
+		"sp": 240,
+		"prf": false,
+		"type": "attack-count",
+		"max": true
+	},
+	"269": {
+		"name": "Soul of Zofia",
+		"sp": 300,
+		"prf": true,
+		"users": [465],
+		"type": "attack-count",
+		"max": true
+	},
+	"270": {
+		"name": "Sabotage Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"271": {
+		"name": "Sabotage Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"272": {
+		"name": "Sabotage Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"273": {
+		"name": "Repel 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"274": {
+		"name": "Repel 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"275": {
+		"name": "Repel 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
 	}
 }

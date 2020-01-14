@@ -879,5 +879,61 @@
 		"type": "lance",
 		"skills": [],
 		"max": true
+	},
+	"85": {
+		"name": "Sable Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [426],
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"86": {
+		"name": "Sol Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [435],
+		"type": "lance",
+		"skills": [["a", 211]],
+		"max": true
+	},
+	"87": {
+		"name": "Reginleif",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [441],
+		"type": "lance",
+		"skills": [["a", 63]],
+		"max": true
+	},
+	"88": {
+		"name": "Prized Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [451],
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"89": {
+		"name": "Earthly Gáe Bolg",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [471],
+		"type": "lance",
+		"skills": [["a", 123]],
+		"max": true
 	}
+
 }

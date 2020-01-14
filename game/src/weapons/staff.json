@@ -372,5 +372,25 @@
 		"type": "staff",
 		"skills": [],
 		"max": false
+	},
+	"37": {
+		"name": "Melancholy+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"max": true
+	},
+	"38": {
+		"name": "Melancholy",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"max": false
 	}
 }

@@ -557,5 +557,41 @@
 		"prf": false,
 		"type": "heal",
 		"max": true
+	},
+	"69": {
+		"name": "Njörun's Zeal",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": [440],
+		"type": "post-battle",
+		"max": true
+	},
+	"70": {
+		"name": "Twin Blades",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": [453],
+		"type": "battle",
+		"max": true
+	},
+	"71": {
+		"name": "Open the Future",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": [466],
+		"type": "battle",
+		"max": true
+	},
+	"72": {
+		"name": "Imperial Astra",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": [474],
+		"type": "battle",
+		"max": true
 	}
 }

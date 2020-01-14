@@ -1047,6 +1047,145 @@
 		"type": "sword",
 		"skills": [],
 		"max": false
+	},
+	"99": {
+		"name": "Rapier",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [425],
+		"type": "sword",
+		"skills": [["a", 234]],
+		"max": true
+	},
+	"100": {
+		"name": "Mercurius",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [427],
+		"type": "sword",
+		"skills": [["a", 63]],
+		"max": true
+	},
+	"101": {
+		"name": "Conjurer Curios",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [430],
+		"type": "sword",
+		"skills": [["a", 63]],
+		"max": true
+	},
+	"102": {
+		"name": "Astra Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [434],
+		"type": "sword",
+		"skills": [["a", 63]],
+		"max": true
+	},
+	"103": {
+		"name": "Ragnell·Alondite",
+		"might": 10,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [453],
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"104": {
+		"name": "Guard Sword+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"105": {
+		"name": "Guard Sword",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": false
+	},
+	"106": {
+		"name": "Mareeta's Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [455],
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"107": {
+		"name": "Venin Edge",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [459],
+		"type": "sword",
+		"skills": [["a", 123]],
+		"max": true
+	},
+	"108": {
+		"name": "Bellringer+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"109": {
+		"name": "Bellringer",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": false
+	},
+	"110": {
+		"name": "Larcei's Edge",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [473],
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"111": {
+		"name": "Balmung",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [474],
+		"type": "sword",
+		"skills": [["a", 234]],
+		"max": true
 	}
 }
 

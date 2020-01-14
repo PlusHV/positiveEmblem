@@ -75,6 +75,7 @@ export default class Stats extends React.Component{
 	        cells.push(<td className = "statText" key = {statText[i]} >{capitalize(statText[i], true)}</td>); //get Stat name
 	       	
 
+	        //if its hp, add the current hp input too
 	       	if ( statText[i] === "hp"){
 
 			    cells.push(<td key = "currentHP" className= "inputNum">
@@ -92,7 +93,7 @@ export default class Stats extends React.Component{
 		        cells.push(<td className ="statNum" key = {statText[i] + " value"}> 
 		                    {this.props.gameState.selectedMember.stats[statText[i]]}  
 		                  </td>);
-	       	} else {
+	       	} else { //otherwise, just leave a space after the stats
 	       		//get stat value
 		        cells.push(<td className ="statNum" key = {statText[i] + " value"}> 
 		                    {this.props.gameState.selectedMember.stats[statText[i]]}  
@@ -114,7 +115,7 @@ export default class Stats extends React.Component{
 	        		cells.push(<td key = {modifiers[j]} className= "statText">{capitalize(modifiers[j], true)}</td>);
 	        	}
 
-	        //for rest, give corresponding modifier
+	        //for rest, give corresponding modifier - buffs, debuffs, combat
 	        } else{
 
 	        	for (let j = 0; j < modifiers.length; j++){

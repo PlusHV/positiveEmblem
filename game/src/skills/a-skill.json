@@ -979,7 +979,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "attack-count",
-		"max": false
+		"max": true
 	},
 	"137": {
 		"name": "Distant Def 1",
@@ -1989,6 +1989,148 @@
 	"273": {
 		"name": "Wind Boost 3",
 		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"274": {
+		"name": "AR-D Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"275": {
+		"name": "AR-D Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"276": {
+		"name": "AR-D Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"277": {
+		"name": "Atk/Spd Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"278": {
+		"name": "Atk/Res Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"279": {
+		"name": "Heavy Blade 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"280": {
+		"name": "Brazen Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"281": {
+		"name": "Brazen Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"282": {
+		"name": "Brazen Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"283": {
+		"name": "Life and Death 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 7, "spd": 7, "def": -5, "res": -5},
+		"max": true
+	},
+	"284": {
+		"name": "Ashera's Chosen",
+		"sp": 300,
+		"prf": true,
+		"users": [453],
+		"type": "conditional-stat",
+		"max": true
+	},
+	"285": {
+		"name": "Atk/Def Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"286": {
+		"name": "Atk/Def Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"287": {
+		"name": "Atk/Def Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"288": {
+		"name": "Mirror Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"289": {
+		"name": "Distant Ward",
+		"sp": 300,
+		"prf": false,
+		"type": "attack-count",
+		"max": true
+	},
+	"290": {
+		"name": "Spd/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"291": {
+		"name": "Spd/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"292": {
+		"name": "Spd/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"293": {
+		"name": "Steady Posture 3",
+		"sp": 3000,
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true

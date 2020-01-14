@@ -282,5 +282,27 @@
 		"type": "beast",
 		"skills": [],
 		"max": false
+	},
+	"27": {
+		"name": "Guardian Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [469],
+		"type": "beast",
+		"skills": [["a", 234]],
+		"max": true
+	},
+	"28": {
+		"name": "New Foxkit Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [470],
+		"type": "beast",
+		"skills": [],
+		"max": true
 	}
 }

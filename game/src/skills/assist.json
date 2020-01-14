@@ -422,6 +422,15 @@
 		"type": "rally",
 		"effect": [["atk", 6], ["res", 6]],
 		"max": true
+	},
+	"49": {
+		"name": "Gentle Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": [457],
+		"type": "dance",
+		"max": true
 	}
 
 }

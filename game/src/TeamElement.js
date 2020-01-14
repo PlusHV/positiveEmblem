@@ -7,7 +7,7 @@ import heroData from './heroInfo.json';
 export default class TeamElement extends React.Component{
   constructor(props){
     super(props);
-    this.state = {"team": this.props.gameState.heroList[this.props.name]};
+    this.state = {"team": this.props.gameState.heroList[this.props.name]}; //the heroList for this team
   }
 
 

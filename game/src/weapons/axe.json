@@ -744,6 +744,58 @@
 		"type": "axe",
 		"skills": [["a", 123]],
 		"max": true
+	},
+	"72": {
+		"name": "Firesweep Axe+",
+		"might": 15,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"73": {
+		"name": "Firesweep Axe",
+		"might": 11,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": false
+	},
+	"74": {
+		"name": "Rearguard+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"75": {
+		"name": "Rearguard",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": false
+	},
+	"76": {
+		"name": "Vouge",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [456],
+		"type": "axe",
+		"skills": [],
+		"max": true
 	}
+
 
 }

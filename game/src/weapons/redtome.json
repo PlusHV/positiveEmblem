@@ -500,14 +500,23 @@
 		"max": false
 	},
 	"48": {
-		"name": "Valflame",
-		"might": 14,
+		"name": "Rauðrserpent+",
+		"might": 12,
 		"range": 2,
-		"sp": 400,
-		"prf": true,
-		"users": [12],
+		"sp": 300,
+		"prf": false,
 		"type": "redtome",
 		"skills": [],
 		"max": true
-	}
+	},
+	"49": {
+		"name": "Rauðrserpent",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"max": false
+	}	
 }

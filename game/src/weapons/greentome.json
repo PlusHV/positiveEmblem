@@ -344,7 +344,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [],
+		"users": [428],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -569,5 +569,47 @@
 		"type": "greentome",
 		"skills": [], 
 		"max": false
+	},
+	"55": {
+		"name": "Madness Flask+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [], 
+		"max": true
+	},
+	"56": {
+		"name": "Madness Flask",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome",
+		"skills": [], 
+		"max": false
+	},
+	"57": {
+		"name": "Saintly Seraphim",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [465],
+		"type": "greentome",
+		"skills": [["a", 234]], 
+		"max": true
+	},
+	"58": {
+		"name": "Winds of Silesse",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [465],
+		"type": "greentome",
+		"skills": [["a", 234]], 
+		"max": true
 	}
 }

@@ -638,5 +638,78 @@
 		"type": "bluetome",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"62": {
+		"name": "Spooky Censer+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"max": true
+	},
+	"63": {
+		"name": "Spooky Censer",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"max": false
+	},
+	"64": {
+		"name": "Fimbulvetr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"user": [452],
+		"type": "bluetome",
+		"skills": [["a", 211]],
+		"max": true
+	},
+	"65": {
+		"name": "Flower of Joy",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"user": [452],
+		"type": "bluetome",
+		"skills": [["a", 211]],
+		"max": true
+	},
+	"66": {
+		"name": "Tannenbit+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"max": true
+	},
+	"67": {
+		"name": "Tannenbit",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"max": false
+	},
+	"68": {
+		"name": "Imbued Koma",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"user": [466],
+		"type": "bluetome",
+		"skills": [],
+		"max": true
 	}
 }
