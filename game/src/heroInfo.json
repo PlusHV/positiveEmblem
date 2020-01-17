@@ -12305,7 +12305,7 @@
 		"cskill": "203",
 		"sseal": "0",
 		"bvid": 169,
-		"art": "Blank",
+		"art": "Bantu",
 		"type": "normal"			
 
 
@@ -12334,7 +12334,7 @@
 		"cskill": "74",
 		"sseal": "0",
 		"bvid": 216,
-		"art": "Blank",
+		"art": "Nagi",
 		"type": "normal"			
 
 
@@ -12363,7 +12363,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 12,
-		"art": "Blank",
+		"art": "Norne",
 		"type": "normal"			
 
 
@@ -12392,7 +12392,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 158,
-		"art": "Blank",
+		"art": "Phina",
 		"type": "normal"			
 
 
@@ -12421,7 +12421,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 160,
-		"art": "Blank",
+		"art": "Sirius",
 		"type": "normal"			
 
 
@@ -12450,7 +12450,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 15,
-		"art": "Blank",
+		"art": "Astram",
 		"type": "normal"			
 
 
@@ -12479,7 +12479,7 @@
 		"cskill": "280",
 		"sseal": "0",
 		"bvid": 208,
-		"art": "Blank",
+		"art": "Thrasir",
 		"type": "mythic",
 		"blessing": "Anima",
 		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}			
@@ -12510,7 +12510,7 @@
 		"cskill": "6",
 		"sseal": "0",
 		"bvid": 136,
-		"art": "Blank",
+		"art": "Dozla - Halloween",
 		"type": "normal"			
 
 
@@ -12539,7 +12539,7 @@
 		"cskill": "127",
 		"sseal": "0",
 		"bvid": 170,
-		"art": "Blank",
+		"art": "Hector - Duo",
 		"type": "normal"			
 
 
@@ -12568,7 +12568,7 @@
 		"cskill": "283",
 		"sseal": "0",
 		"bvid": 161,
-		"art": "Blank",
+		"art": "Ilyana - Halloween",
 		"type": "normal"			
 
 
@@ -12597,7 +12597,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 84,
-		"art": "Blank",
+		"art": "L_Arachel - Halloween",
 		"type": "normal"			
 
 
@@ -12626,7 +12626,7 @@
 		"cskill": "172",
 		"sseal": "0",
 		"bvid": 186,
-		"art": "Blank",
+		"art": "Rolf - Halloween",
 		"type": "normal"			
 
 
@@ -12655,7 +12655,7 @@
 		"cskill": "217",
 		"sseal": "0",
 		"bvid": 134,
-		"art": "Blank",
+		"art": "Catria - Echoes",
 		"type": "normal"			
 
 
@@ -12684,7 +12684,7 @@
 		"cskill": "284",
 		"sseal": "0",
 		"bvid": 130,
-		"art": "Blank",
+		"art": "Forsyth",
 		"type": "normal"			
 
 
@@ -12713,7 +12713,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 133,
-		"art": "Blank",
+		"art": "Python",
 		"type": "normal"			
 
 
@@ -12742,7 +12742,7 @@
 		"cskill": "287",
 		"sseal": "0",
 		"bvid": 241,
-		"art": "Blank",
+		"art": "Silque",
 		"type": "normal"			
 
 
@@ -12771,7 +12771,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 55,
-		"art": "Blank",
+		"art": "Valbar",
 		"type": "normal"			
 
 
@@ -12800,7 +12800,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 243,
-		"art": "Blank",
+		"art": "Conrad",
 		"type": "normal"			
 
 
@@ -12829,7 +12829,7 @@
 		"cskill": "64",
 		"sseal": "0",
 		"bvid": 247,
-		"art": "Blank",
+		"art": "Leif - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
 		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}		
@@ -12860,7 +12860,7 @@
 		"cskill": "163",
 		"sseal": "0",
 		"bvid": 182,
-		"art": "Blank",
+		"art": "Ephraim - Duo",
 		"type": "normal"			
 
 
@@ -12889,7 +12889,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 219,
-		"art": "Blank",
+		"art": "Ewan",
 		"type": "normal"			
 
 
@@ -12918,7 +12918,7 @@
 		"cskill": "152",
 		"sseal": "0",
 		"bvid": 153,
-		"art": "Blank",
+		"art": "Gerik",
 		"type": "normal"			
 
 
@@ -12947,7 +12947,7 @@
 		"cskill": "260",
 		"sseal": "0",
 		"bvid": 6,
-		"art": "Blank",
+		"art": "Ross",
 		"type": "normal"			
 
 
@@ -12976,7 +12976,7 @@
 		"cskill": "299",
 		"sseal": "0",
 		"bvid": 72,
-		"art": "Blank",
+		"art": "Tethys",
 		"type": "normal"			
 
 
@@ -13005,7 +13005,7 @@
 		"cskill": "58",
 		"sseal": "0",
 		"bvid": 243,
-		"art": "Blank",
+		"art": "Cormag",
 		"type": "normal"			
 
 
@@ -13034,7 +13034,7 @@
 		"cskill": "214",
 		"sseal": "0",
 		"bvid": 205,
-		"art": "Blank",
+		"art": "Chad",
 		"type": "normal"			
 
 
@@ -13063,7 +13063,7 @@
 		"cskill": "76",
 		"sseal": "0",
 		"bvid": 72,
-		"art": "Blank",
+		"art": "Echidna",
 		"type": "normal"			
 
 
@@ -13092,7 +13092,7 @@
 		"cskill": "179",
 		"sseal": "0",
 		"bvid": 168,
-		"art": "Blank",
+		"art": "Igrene",
 		"type": "normal"			
 
 
@@ -13121,7 +13121,7 @@
 		"cskill": "290",
 		"sseal": "0",
 		"bvid": 18,
-		"art": "Blank",
+		"art": "Larum",
 		"type": "normal"			
 
 
@@ -13150,7 +13150,7 @@
 		"cskill": "293",
 		"sseal": "0",
 		"bvid": 159,
-		"art": "Blank",
+		"art": "Perceval",
 		"type": "normal"			
 
 
@@ -13179,7 +13179,7 @@
 		"cskill": "194",
 		"sseal": "0",
 		"bvid": 203,
-		"art": "Blank",
+		"art": "Brunnya",
 		"type": "normal"			
 
 
@@ -13208,7 +13208,7 @@
 		"cskill": "296",
 		"sseal": "0",
 		"bvid": 20,
-		"art": "Blank",
+		"art": "Altina",
 		"type": "mythic",
 		"blessing": "Astra",
 		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}		
@@ -13239,7 +13239,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 138,
-		"art": "Blank",
+		"art": "Eyvel",
 		"type": "normal"			
 
 
@@ -13268,7 +13268,7 @@
 		"cskill": "200",
 		"sseal": "0",
 		"bvid": 35,
-		"art": "Blank",
+		"art": "Mareeta",
 		"type": "normal"			
 
 
@@ -13297,7 +13297,7 @@
 		"cskill": "85",
 		"sseal": "0",
 		"bvid": 240,
-		"art": "Blank",
+		"art": "Osian",
 		"type": "normal"			
 
 
@@ -13326,7 +13326,7 @@
 		"cskill": "300",
 		"sseal": "0",
 		"bvid": 137,
-		"art": "Blank",
+		"art": "Peony",
 		"type": "mythic",
 		"blessing": "Light",
 		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0}			
@@ -13357,7 +13357,7 @@
 		"cskill": "241",
 		"sseal": "0",
 		"bvid": 140,
-		"art": "Blank",
+		"art": "Tanya",
 		"type": "normal"			
 
 
@@ -13386,7 +13386,7 @@
 		"cskill": "203",
 		"sseal": "0",
 		"bvid": 240,
-		"art": "Blank",
+		"art": "Kempf",
 		"type": "normal"			
 
 
@@ -13415,7 +13415,7 @@
 		"cskill": "116",
 		"sseal": "0",
 		"bvid": 181,
-		"art": "Blank",
+		"art": "Jaffar - Christmas",
 		"type": "normal"			
 
 
@@ -13444,7 +13444,7 @@
 		"cskill": "157",
 		"sseal": "0",
 		"bvid": 242,
-		"art": "Blank",
+		"art": "Marth - Duo Christmas",
 		"type": "normal"			
 
 
@@ -13473,7 +13473,7 @@
 		"cskill": "6",
 		"sseal": "0",
 		"bvid": 18,
-		"art": "Blank",
+		"art": "Nino - Christmas",
 		"type": "normal"			
 
 
@@ -13502,7 +13502,7 @@
 		"cskill": "303",
 		"sseal": "0",
 		"bvid": 88,
-		"art": "Blank",
+		"art": "Sothis - Christmas",
 		"type": "normal"			
 
 
@@ -13531,7 +13531,7 @@
 		"cskill": "306",
 		"sseal": "0",
 		"bvid": 185,
-		"art": "Blank",
+		"art": "Zephiel - Christmas",
 		"type": "normal"			
 
 
@@ -13560,7 +13560,7 @@
 		"cskill": "309",
 		"sseal": "0",
 		"bvid": 76,
-		"art": "Blank",
+		"art": "Celica - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
 		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}			
@@ -13591,7 +13591,7 @@
 		"cskill": "312",
 		"sseal": "0",
 		"bvid": 39,
-		"art": "Blank",
+		"art": "Alfonse - New Years Duo",
 		"type": "normal"			
 
 
@@ -13620,7 +13620,7 @@
 		"cskill": "315",
 		"sseal": "0",
 		"bvid": 65,
-		"art": "Blank",
+		"art": "Anna - New Years",
 		"type": "normal"			
 
 
@@ -13649,7 +13649,7 @@
 		"cskill": "217",
 		"sseal": "0",
 		"bvid": 25,
-		"art": "Blank",
+		"art": "Eir - New Years",
 		"type": "normal"			
 
 
@@ -13678,7 +13678,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 148,
-		"art": "Blank",
+		"art": "Lethe - New Years",
 		"type": "normal"			
 
 
@@ -13707,7 +13707,7 @@
 		"cskill": "169",
 		"sseal": "0",
 		"bvid": 91,
-		"art": "Blank",
+		"art": "Selkie - New Years",
 		"type": "normal"			
 
 
@@ -13736,7 +13736,7 @@
 		"cskill": "0",
 		"sseal": "0",
 		"bvid": 189,
-		"art": "Blank",
+		"art": "Altena",
 		"type": "normal"			
 
 
@@ -13765,7 +13765,7 @@
 		"cskill": "179",
 		"sseal": "0",
 		"bvid": 132,
-		"art": "Blank",
+		"art": "Ced",
 		"type": "normal"			
 
 
@@ -13794,7 +13794,7 @@
 		"cskill": "280",
 		"sseal": "0",
 		"bvid": 160,
-		"art": "Blank",
+		"art": "Larcei",
 		"type": "normal"			
 
 
@@ -13823,7 +13823,7 @@
 		"cskill": "94",
 		"sseal": "0",
 		"bvid": 247,
-		"art": "Blank",
+		"art": "Shannan",
 		"type": "normal"			
 
 
@@ -13852,7 +13852,7 @@
 		"cskill": "97",
 		"sseal": "0",
 		"bvid": 156,
-		"art": "Blank",
+		"art": "Travant",
 		"type": "normal"			
 
 
