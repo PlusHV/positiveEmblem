@@ -725,8 +725,18 @@
 		"type": "bow",
 		"skills": [],
 		"max": false
+	},
+	"71": {
+		"name": "Mirage Longbow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": [476],
+		"type": "bow",
+		"skills": [["a", 234]],
+		"max": true
 	}
-
 	
 
 }

@@ -1948,5 +1948,47 @@
 		"prf": false,
 		"type": "damage-calc",
 		"max": true
+	},
+	"276": {
+		"name": "Spd/Def Ruse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"277": {
+		"name": "Spd/Def Ruse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"278": {
+		"name": "Spd/Def Ruse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-rally",
+		"max": true
+	},
+	"279": {
+		"name": "Lull Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"280": {
+		"name": "Lull Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"281": {
+		"name": "Lull Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
 	}
 }

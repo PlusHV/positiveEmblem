@@ -2134,5 +2134,47 @@
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true
+	},
+	"294": {
+		"name": "Shield Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"295": {
+		"name": "Shield Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"296": {
+		"name": "Shield Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"297": {
+		"name": "Blade Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"298": {
+		"name": "Blade Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"299": {
+		"name": "Blade Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

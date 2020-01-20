@@ -1186,6 +1186,17 @@
 		"type": "sword",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"112": {
+		"name": "Mirage Falchion",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": [477],
+		"type": "sword",
+		"skills": [["a", 123]],
+		"max": true
 	}
 }
 

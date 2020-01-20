@@ -934,6 +934,17 @@
 		"type": "lance",
 		"skills": [["a", 123]],
 		"max": true
+	},
+	"90": {
+		"name": "Mirage Feather",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [480],
+		"type": "lance",
+		"skills": [["a", 234]],
+		"max": true
 	}
 
 }

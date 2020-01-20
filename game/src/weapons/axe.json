@@ -795,6 +795,17 @@
 		"type": "axe",
 		"skills": [],
 		"max": true
+	},
+	"77": {
+		"name": "Mirage Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [479],
+		"type": "axe",
+		"skills": [["a", 211]],
+		"max": true
 	}
 
 
