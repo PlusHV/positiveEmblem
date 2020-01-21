@@ -10,7 +10,7 @@
 		"name": "Aerobatics 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"2": {
@@ -18,7 +18,7 @@
 		"name": "Aerobatics 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"3": {
@@ -26,7 +26,7 @@
 		"name": "Aerobatics 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"4": {
@@ -1013,7 +1013,7 @@
 		"name": "Flier Formation 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"126": {
@@ -1021,7 +1021,7 @@
 		"name": "Flier Formation 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"127": {
@@ -1029,7 +1029,7 @@
 		"name": "Flier Formation 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"128": {
@@ -1163,7 +1163,7 @@
 		"name": "Guidance 1",
 		"sp": 60,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"144": {
@@ -1171,7 +1171,7 @@
 		"name": "Guidance 2",
 		"sp": 120,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"145": {
@@ -1179,7 +1179,7 @@
 		"name": "Guidance 3",
 		"sp": 240,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"146": {
@@ -1540,7 +1540,7 @@
 		"name": "Obstruct 1",
 		"sp": 50,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"188": {
@@ -1548,7 +1548,7 @@
 		"name": "Obstruct 2",
 		"sp": 100,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": false
 	},
 	"189": {
@@ -1556,7 +1556,7 @@
 		"name": "Obstruct 3",
 		"sp": 200,
 		"prf": false,
-		"type": "movement",
+		"type": "warp",
 		"max": true
 	},
 	"190": {
@@ -3036,6 +3036,367 @@
 
 		"name": "Wind Boost 3",
 		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"364": {
+
+		"name": "Squad Ace AA 1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1},
+		"max": false
+	},
+	"365": {
+
+		"name": "Squad Ace AA 2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2},
+		"max": false
+	},
+	"366": {
+
+		"name": "Squad Ace AA 3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 3},
+		"max": false
+	},
+	"367": {
+
+		"name": "Squad Ace AB 1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 1},
+		"max": false
+	},
+	"368": {
+
+		"name": "Squad Ace AB 2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 2},
+		"max": false
+	},
+	"369": {
+
+		"name": "Squad Ace AB 3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 3},
+		"max": false
+	},
+	"370": {
+
+		"name": "Squad Ace AC 1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 1},
+		"max": false
+	},
+	"371": {
+
+		"name": "Squad Ace AC 2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 2},
+		"max": false
+	},
+	"372": {
+
+		"name": "Squad Ace AC 3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 3},
+		"max": false
+	},
+	"373": {
+
+		"name": "Squad Ace AD 1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1},
+		"max": false
+	},
+	"374": {
+
+		"name": "Squad Ace AD 2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2},
+		"max": false
+	},
+	"375": {
+
+		"name": "Squad Ace AD 3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3},
+		"max": false
+	},
+	"376": {
+
+		"name": "Chill Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"377": {
+
+		"name": "Chill Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"378": {
+
+		"name": "Chill Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"379": {
+
+		"name": "Chill Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"380": {
+
+		"name": "Chill Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"381": {
+
+		"name": "Chill Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"382": {
+
+		"name": "Def/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1, "res": 1},
+		"max": false
+	},
+	"383": {
+
+		"name": "Def/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2, "res": 2},
+		"max": true
+	},
+	"384": {
+
+		"name": "Defiant Atk 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"385": {
+
+		"name": "Defiant Atk 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"386": {
+
+		"name": "Defiant Atk 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"387": {
+
+		"name": "Defiant Def 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"388": {
+
+		"name": "Defiant Def 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"389": {
+
+		"name": "Defiant Def 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"390": {
+		"name": "Distant Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"391": {
+		"name": "Distant Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"392": {
+		"name": "Distant Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"393": {
+
+		"name": "HP/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "def": 1},
+		"max": false
+	},
+	"394": {
+
+		"name": "HP/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "def": 2},
+		"max": true
+	},
+	"395": {
+		"name": "Spd Feint 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"396": {
+		"name": "Spd Feint 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"397": {
+		"name": "Spd Feint 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-rally",
+		"max": true
+	},
+	"398": {
+
+		"name": "Spur Atk/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "spur",
+		"max": false
+	},
+	"399": {
+
+		"name": "Spur Atk/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "spur",
+		"max": true
+	},
+	"400": {
+		"name": "Swift Sparrow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"401": {
+		"name": "Swift Sparrow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"402": {
+		"name": "Swift Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"403": {
+		"name": "Swift Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"404": {
+		"name": "Warding Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"405": {
+		"name": "Warding Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"406": {
+		"name": "Warding Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"407": {
+		"name": "Mirror Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"408": {
+		"name": "Mirror Stance 2",
+		"sp": 240,
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true

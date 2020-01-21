@@ -933,26 +933,45 @@ class TicTacToeBoard extends React.Component{
   }
 
   ApplyRallyAssist(updatedHeroList, assister, assistee, effect){
+    //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
+    //if the first element is just up, then the buff is applied to units around the assistee as well
+
     let list = updatedHeroList;
     let aoe = false;
     let buffs = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    console.log(effect);
+
 
     //get the rally buff that will be applied
     for (var i = 0; i< effect.length; i++ ){
-      if (effect[i][1] === "up"){
+      if (effect[i][0] === "up"){
         aoe = true;
       } else {
-        buffs[effect[i][0] ] += effect[i][1];
+        buffs[effect[i][0]] =  effect[i][1]; //apply number to the stat
       }
 
     }
-    console.log(buffs);
+
     //apply buff to assistee
-    //TODO - only highest buff should be applied?
+
     Object.keys(buffs).forEach((key, i) => {
-      assistee.buff[key] += buffs[key];
+      assistee.buff[key] = Math.max( assistee.buff[key] ,buffs[key]); //apply highest buff
     });
+
+    //apply the rally to 
+    if (aoe){
+      let inRangeAllies = this.GetDistantAllies(list[assistee.side.toString()], assistee.position, assister.position, 2);
+      console.log(inRangeAllies);
+      //apply buff to all allies in range
+      for (let x of inRangeAllies){
+        Object.keys(buffs).forEach((key, i) => {
+          x.buff[key] = Math.max( x.buff[key] ,buffs[key]); //apply highest buff
+        });
+
+        list[x.side][x.listIndex] = x;
+      }
+      
+
+    }
 
     list[assistee.side][assistee.listIndex] = assistee;
 
@@ -990,6 +1009,30 @@ class TicTacToeBoard extends React.Component{
 
     return distance;
 
+  }
+
+  GetAdjacentAllies(hList, position, excluded){
+    let adjacentList = [];
+
+    for (let x of hList){
+      if (x.position !== position && x.position !== excluded && this.GetDistance(x.position, position) === 1 ){
+        adjacentList.push(x);
+      }
+
+    }    
+    return adjacentList;
+  }
+
+  GetDistantAllies(hList, position, excluded, distance){
+    let distantList = [];
+
+    for (let x of hList){
+      if (x.position !== position && x.position !== excluded && this.GetDistance(x.position, position) <= distance ){
+        distantList.push(x);
+      }
+
+    }    
+    return distantList;
   }
 
   PositionToRowColumn(position){
