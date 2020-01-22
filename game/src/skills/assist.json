@@ -13,6 +13,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "health",
+		"effect": ["heal", 10],
 		"max": true
 	},
 	"2": {
@@ -303,6 +304,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "health",
+		"effect": ["swap"],
 		"max": true
 	},
 	"35": {
@@ -377,6 +379,7 @@
 		"prf": true,
 		"users": [262, 263],
 		"type": "health",
+		"effect": ["heal", 99],
 		"max": true
 	},
 	"44": {

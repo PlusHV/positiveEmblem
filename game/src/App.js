@@ -386,6 +386,12 @@ class TicTacToeBoard extends React.Component{
         updatedHero.assist.type = "rally";
         updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+
+      } else if(skillDropdowns[skillType].info[id].type === "health"){
+
+        updatedHero.assist.type = "health";
+        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       }
 
 
@@ -786,6 +792,10 @@ class TicTacToeBoard extends React.Component{
         } else if (dragData.assist.type === "rally"){
           temp = this.ApplyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
 
+
+        } else if (dragData.assist.type === "health"){
+          temp = this.ApplyHealthAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+          
         }
 
         //TODO, implement other assist types as well
@@ -977,10 +987,53 @@ class TicTacToeBoard extends React.Component{
 
     return list;
 
-    //TODO -apply buff units around if aoe = true
-
 
   }
+
+  ApplyHealthAssist(updatedHeroList, assister, assistee, effect){
+    let list = updatedHeroList;
+
+    let newAssisterHP = assister.currentHP;
+    let newAssisteeHP = assistee.currentHP;
+
+    if (effect[0] === "swap"){ //reciprocal aid
+
+
+      //set hp for assister
+      if (assistee.currentHP > assister.stats.hp ){ //if their hp would exceed max hp, then set it to their max hp
+        newAssisterHP = assister.stats.hp;
+      } else {
+        newAssisterHP = assistee.currentHP;
+      }
+
+      //set hp for assistee
+      if (assister.currentHP > assistee.stats.hp ){ //if their hp would exceed max hp, then set it to their max hp
+        newAssisteeHP = assistee.stats.hp;
+      } else {
+        newAssisteeHP = assister.currentHP;
+      }
+
+    } else if(effect[0] === "heal"){
+      let maxHeal = effect[1];
+
+      let maxGive = assister.currentHP - 1;
+      let maxGet = assistee.stats.hp - assistee.currentHP;
+
+      let healAmount = Math.min(maxHeal, maxGive, maxGet); //the amount heal is the least of these three numbers
+
+      newAssisterHP = assister.currentHP - healAmount;
+      newAssisteeHP = assistee.currentHP + healAmount;
+
+
+    }
+
+    list[assistee.side][assistee.listIndex].currentHP = newAssisteeHP;
+    list[assister.side][assister.listIndex].currentHP = newAssisterHP;
+
+    return list;
+
+  }
+
 
   CheckAdjacent(first, second){
    let firstRC = this.PositionToRowColumn(first);
