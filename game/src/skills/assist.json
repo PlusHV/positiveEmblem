@@ -13,7 +13,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "health",
-		"effect": ["heal", 10],
+		"effect": ["heal", 10, 10],
 		"max": true
 	},
 	"2": {
@@ -76,6 +76,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 5, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": false
 	},
 	"9": {
@@ -84,6 +85,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0.5, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr"},
 		"max": true
 	},
 	"10": {
@@ -92,6 +94,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr"},
 		"max": false
 	},
 	"11": {
@@ -100,6 +103,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 10, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": false
 	},
 	"12": {
@@ -108,6 +112,7 @@
 		"range": 2,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": true
 	},
 	"13": {
@@ -116,6 +121,7 @@
 		"range": 2,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": false
 	},
 	"14": {
@@ -313,6 +319,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": 7, "mod2": ""},
 		"max": false
 	},
 	"36": {
@@ -321,6 +328,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0.5, "min": 15, "mod": 10, "selfHeal": 0, "mod2": ""},
 		"max": true
 	},
 	"37": {
@@ -329,6 +337,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": false
 	},
 	"38": {
@@ -337,6 +346,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0.5, "min": 7, "mod": -10, "selfHeal": 0, "mod2": "rehab"},
 		"max": true
 	},
 	"39": {
@@ -345,6 +355,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "mod2": "rehab"},
 		"max": false
 	},
 	"40": {
@@ -362,6 +373,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": true
 	},
 	"42": {
@@ -370,6 +382,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
 		"max": false
 	},
 	"43": {
@@ -379,7 +392,7 @@
 		"prf": true,
 		"users": [262, 263],
 		"type": "health",
-		"effect": ["heal", 99],
+		"effect": ["heal", 99, 0],
 		"max": true
 	},
 	"44": {

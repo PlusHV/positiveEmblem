@@ -375,6 +375,8 @@ class TicTacToeBoard extends React.Component{
 
 
     } else if (skillType === "assist"){
+
+      //TODO - can simplify this
       if(skillDropdowns[skillType].info[id].type === "movement"){
 
         updatedHero.assist.type = "movement";
@@ -390,6 +392,11 @@ class TicTacToeBoard extends React.Component{
       } else if(skillDropdowns[skillType].info[id].type === "health"){
 
         updatedHero.assist.type = "health";
+        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      } else if(skillDropdowns[skillType].info[id].type === "heal"){
+
+        updatedHero.assist.type = "heal";
         updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       }
@@ -796,6 +803,9 @@ class TicTacToeBoard extends React.Component{
         } else if (dragData.assist.type === "health"){
           temp = this.ApplyHealthAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
           
+        } else if (dragData.assist.type === "heal"){
+          temp = this.ApplyHealAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+          
         }
 
         //TODO, implement other assist types as well
@@ -1000,32 +1010,80 @@ class TicTacToeBoard extends React.Component{
 
 
       //set hp for assister
-      if (assistee.currentHP > assister.stats.hp ){ //if their hp would exceed max hp, then set it to their max hp
-        newAssisterHP = assister.stats.hp;
-      } else {
-        newAssisterHP = assistee.currentHP;
-      }
+      newAssisterHP = Math.min(assistee.currentHP, assister.stats.hp); //keep hp below max
 
       //set hp for assistee
-      if (assister.currentHP > assistee.stats.hp ){ //if their hp would exceed max hp, then set it to their max hp
-        newAssisteeHP = assistee.stats.hp;
-      } else {
-        newAssisteeHP = assister.currentHP;
-      }
+      newAssisteeHP = Math.min(assister.currentHP, assistee.stats.hp); //keep hp below max
+      
 
     } else if(effect[0] === "heal"){
-      let maxHeal = effect[1];
+      let maxHeal = effect[1]; //the amount transferred is capped
 
-      let maxGive = assister.currentHP - 1;
-      let maxGet = assistee.stats.hp - assistee.currentHP;
 
-      let healAmount = Math.min(maxHeal, maxGive, maxGet); //the amount heal is the least of these three numbers
 
-      newAssisterHP = assister.currentHP - healAmount;
+      let maxGive = assister.currentHP - 1; //can transfer until HP reaches 1
+      let maxGet = assistee.stats.hp - assistee.currentHP; //can only transfer amount to fully heal
+
+      let healAmount = Math.min(maxHeal, maxGive, maxGet); //the amount healed is the least of these three numbers
+      let transferAmount = Math.max(healAmount, effect[2]); //amount transferred is the amount healed, or the minimum heal (effect[2])
+
+      if (maxGive < effect[2]){ //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list
+        return list;
+      }
+
+      newAssisterHP = assister.currentHP - transferAmount;
       newAssisteeHP = assistee.currentHP + healAmount;
 
 
     }
+
+    list[assistee.side][assistee.listIndex].currentHP = newAssisteeHP;
+    list[assister.side][assister.listIndex].currentHP = newAssisterHP;
+
+    return list;
+
+  }
+
+  ApplyHealAssist(updatedHeroList, assister, assistee, effect){
+    let list = updatedHeroList;
+
+    let newAssisterHP = assister.currentHP;
+    let newAssisteeHP = assistee.currentHP;
+
+
+    //actual heal values to apply
+    let assisterHeal = 0;
+    let assisteeHeal = 0;
+    // "effect": {"atk": 0.5, "min": 7, "mod": 0, "self": "martyr", "mod2": "martyr"},
+
+    //minimum that will be healed
+    let min = effect.min;
+    //calculated healing amount
+    let selfHeal = effect.selfHeal;
+
+    let healCalc = Math.floor(assister.stats.atk * effect.atk) + effect.mod;
+
+    if (effect.mod2 === "martyr"){
+      healCalc += assister.stats.hp - assister.currentHP; //add to calculated healing amount, the damage on assister
+      selfHeal = Math.floor( (assister.stats.hp - assister.currentHP)/2); //heal for half of damage on assister
+
+
+    }
+
+    assisteeHeal = Math.max(min, healCalc); //Get the highest of the two
+    assisterHeal = selfHeal;
+
+
+    if (effect.mod2 === "rehab"){ //rehab's bonus is applied after the maximum is found
+      assisteeHeal += assistee.stats.hp - (2 * assistee.currentHP);
+    }
+
+    //set new HP values - Keep hp below max;
+    newAssisteeHP = Math.min(assistee.stats.hp, assistee.currentHP + assisteeHeal);
+    newAssisterHP = Math.min(assister.stats.hp, assister.currentHP + assisterHeal);
+    
+    
+   
 
     list[assistee.side][assistee.listIndex].currentHP = newAssisteeHP;
     list[assister.side][assister.listIndex].currentHP = newAssisterHP;
