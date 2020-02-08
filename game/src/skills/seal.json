@@ -3400,5 +3400,85 @@
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true
+	},
+	"409": {
+		"name": "Squad Ace AE 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "atk": 1},
+		"max": false
+	},
+	"410": {
+
+		"name": "Squad Ace AE 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "atk": 2},
+		"max": true
+	},
+	"411": {
+		"name": "Defiant Spd 1",
+		"sp": 40,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"412": {
+		"name": "Defiant Spd 2",
+		"sp": 80,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"413": {
+		"name": "Defiant Spd 3",
+		"sp": 160,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"414": {
+		"name": "Even Atk Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"415": {
+		"name": "Even Atk Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"416": {
+		"name": "Even Atk Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"417": {
+		"name": "Close Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"418": {
+		"name": "Close Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "drive",
+		"max": false
+	},
+	"419": {
+		"name": "Close Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "drive",
+		"max": true
 	}
 }
