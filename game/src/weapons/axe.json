@@ -806,6 +806,17 @@
 		"type": "axe",
 		"skills": [["a", 211]],
 		"max": true
+	},
+	"78": {
+		"name": "Scepter of Love",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [482],
+		"type": "axe",
+		"skills": [["a", 234]],
+		"max": true
 	}
 
 

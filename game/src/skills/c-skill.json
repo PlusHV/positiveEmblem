@@ -2221,5 +2221,47 @@
 		"prf": false,
 		"type": "turn-start",
 		"max": true
+	},
+	"316": {
+		"name": "Rouse Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"317": {
+		"name": "Rouse Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"318": {
+		"name": "Rouse Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"319": {
+		"name": "Threat. Atk/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"320": {
+		"name": "Threat. Atk/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"321": {
+		"name": "Threat. Atk/Def 3",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
 	}
 }

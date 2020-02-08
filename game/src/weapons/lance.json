@@ -945,6 +945,17 @@
 		"type": "lance",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"91": {
+		"name": "Thorn Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": [485],
+		"type": "lance",
+		"skills": [],
+		"max": true
 	}
 
 }

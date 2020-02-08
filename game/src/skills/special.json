@@ -335,7 +335,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [6],
+		"users": [6, 482],
 		"type": "battle",
 		"max": true
 	},
@@ -581,7 +581,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": [466],
+		"users": [466, 481],
 		"type": "battle",
 		"max": true
 	},

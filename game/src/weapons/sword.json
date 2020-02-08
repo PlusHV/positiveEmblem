@@ -895,7 +895,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
-		"users": [],
+		"users": [481],
 		"type": "sword",
 		"skills": [],
 		"max": true
@@ -1197,6 +1197,26 @@
 		"type": "sword",
 		"skills": [["a", 123]],
 		"max": true
+	},
+	"113": {
+		"name": "Melee Bouquet+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"114": {
+		"name": "Melee Bouquet",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": false
 	}
 }
 

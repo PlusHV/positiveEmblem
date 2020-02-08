@@ -1990,5 +1990,13 @@
 		"prf": false,
 		"type": "damage-calc",
 		"max": true
+	},
+	"282": {
+		"name": "Deadly Balance",
+		"sp": 300,
+		"prf": true,
+		"users": [481],
+		"type": "damage-calc",
+		"max": true
 	}
 }

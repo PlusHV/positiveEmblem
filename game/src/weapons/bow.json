@@ -717,7 +717,7 @@
 		"max": true
 	},
 	"70": {
-		"name": "Fortune Bow+",
+		"name": "Fortune Bow",
 		"might": 8,
 		"range": 2,
 		"sp": 200,
@@ -736,6 +736,26 @@
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"72": {
+		"name": "Budding Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"73": {
+		"name": "Budding Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"max": false
 	}
 	
 

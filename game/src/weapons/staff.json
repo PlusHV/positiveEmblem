@@ -392,5 +392,25 @@
 		"type": "staff",
 		"skills": [],
 		"max": false
+	},
+	"39": {
+		"name": "Rapport Wand+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"max": true
+	},
+	"40": {
+		"name": "Rapport Wand",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"max": false
 	}
 }
