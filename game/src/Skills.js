@@ -113,14 +113,14 @@ const dropDownStyle = {
   });
     let tbody = [];
 
-    const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal", "summoner", "ally lvl", "ally", "blessing" ];
-    const equipKey = ["weapon", "assist", "special", "a", "b", "c", "seal", "summonerSupport", "allySupportLevel", "allySupport", "blessing" ];
+    const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal", "summoner", "ally", "blessing" ];
+    const equipKey = ["weapon", "assist", "special", "a", "b", "c", "seal", "summonerSupport", "allySupport", "blessing" ];
     const equippedValue = [ this.props.gameState.selectedMember.heroSkills["weapon"], 
                             this.props.gameState.selectedMember.heroSkills["assist"], 
                             this.props.gameState.selectedMember.heroSkills["special"],
                             this.props.gameState.selectedMember.heroSkills["a"], this.props.gameState.selectedMember.heroSkills["b"], 
                             this.props.gameState.selectedMember.heroSkills["c"], this.props.gameState.selectedMember.heroSkills["seal"],
-                            this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
+                            this.props.gameState.selectedMember.summonerSupport,
                             this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
     ];     
     
@@ -145,7 +145,7 @@ const dropDownStyle = {
         if (i < 7){
 
           //drop down menu for skill
-          cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
+          cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colspan = "3">
             
               <Select
 
@@ -160,7 +160,7 @@ const dropDownStyle = {
           //value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
         } else if (equipText[i] === "ally"){ //allies need use the Select dropdown so its value its onChange function is different
 
-            cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} >
+            cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colspan = "3" >
             <Select
               styles = {dropDownStyle}
               theme = {dropDownTheme} 
@@ -172,6 +172,7 @@ const dropDownStyle = {
 
         } else { //regular dropdown levels for blessings and support levels
           let optionList = supportLevels;
+
           if (equipText[i] === "blessing"){
             optionList = blessings;
           }
@@ -183,6 +184,8 @@ const dropDownStyle = {
             options.push(<option key = {equipText[i] + optionList[j]} value = {optionList[j]}>{optionList[j]}</option>);
           }
 
+
+
           //for the blessing input, legendary and mythic heroes will display their blessing and disable it
           if (equipText[i] === "blessing" && (this.props.gameState.selectedHeroInfo.type === "legendary" || this.props.gameState.selectedHeroInfo.type === "mythic")  ){
             cells.push(<td key = {equipText[i] + "Value"}>  
@@ -192,12 +195,35 @@ const dropDownStyle = {
               </select>
               </td>);
           } else{ //regular heroes blessing dropdown
-            cells.push(<td key = {equipText[i] + "Value"} >  
-                <select value = {equippedValue[i]}
-                    onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
-                  {options}
-                </select>
-                </td>);
+
+            if (equipText[i] === "summoner"){
+
+              cells.push(<td key = {equipText[i] + "Value"} >  
+                  <select value = {equippedValue[i]}
+                      onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
+                    {options}
+                  </select>
+                  </td>);
+
+              cells.push(<td className = "equipText" key = {"ally lvl"}>Ally Lvl</td>);
+
+              cells.push(<td key = {"ally lvlValue"} >  
+                  <select value = {this.props.gameState.selectedMember.allySupportLevel}
+                      onChange = {(e, type) => this.props.supportLevelChange(e, "allySupportLevel")} >
+                    {options}
+                  </select>
+                  </td>);
+
+              //this.props.gameState.selectedMember.allySupportLevel
+
+            } else{
+              cells.push(<td key = {equipText[i] + "Value"}  colspan = "3">  
+                  <select value = {equippedValue[i]}
+                      onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
+                    {options}
+                  </select>
+                  </td>);
+            }
           }
 
         }
@@ -219,13 +245,7 @@ const dropDownStyle = {
             onChange = {(e) => this.props.maxFilterChange(e)}
               />
         </td>
-            
-        
-      </tr>
-    );
-
-    tbody.push( //Checkbox for bonus unit
-      <tr key = {"bonus row"}> 
+     
         <td className = "equipText" key = {"bonus"}>
             Bonus
         </td>
