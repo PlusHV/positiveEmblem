@@ -15,7 +15,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [14],
+		"users": ["Aversa: Dark One"],
 		"type": "redtome",
 		"skills": [["a", 211]],
 		"max": true
@@ -46,7 +46,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [39],
+		"users": ["Camilla: Flower of Fantasy"],
 		"type": "redtome",
 		"skills": [["a", 63]],
 		"max": true
@@ -57,7 +57,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [211],
+		"users": ["Leo: Sorcerous Prince"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -88,7 +88,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [347],
+		"users": ["Sanaki: Begnion's Apostle"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -99,7 +99,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [264],
+		"users": ["Micaiah: Summer's Dawn"],
 		"type": "redtome",
 		"skills": [["a", 63]],
 		"max": true
@@ -120,7 +120,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [369],
+		"users": ["Sophia: Nabata Prophet"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -171,7 +171,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [218],
+		"users": ["Lilina: Delightful Noble"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -182,7 +182,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [385],
+		"users": ["Tana: Noble and Nimble"],
 		"type": "redtome",
 		"skills": [["a", 234]],
 		"max": true
@@ -193,7 +193,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [89],
+		"users": ["Eirika: Anamnesis Lady"],
 		"type": "redtome",
 		"skills": [["a", 211]],
 		"max": true
@@ -204,7 +204,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [271],
+		"users": ["Morgan: Lad from Afar"],
 		"type": "redtome",
 		"skills": [["a", 123]],
 		"max": true
@@ -215,7 +215,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [292],
+		"users": ["Nowi: Eternal Witch"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -226,7 +226,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [314],
+		"users": ["Raigh: Dark Child"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -237,7 +237,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [131],
+		"users": ["Gharnef: Dark Pontifex"],
 		"type": "redtome",
 		"skills": [["a", 211]],
 		"max": true
@@ -268,7 +268,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [179],
+		"users": ["Julius: Scion of Darkness"],
 		"type": "redtome",
 		"skills": [["a", 211]],
 		"max": true
@@ -299,7 +299,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [169],
+		"users": ["Ishtar: Thunder's Waltz"],
 		"type": "redtome",
 		"skills": [["a", 234]],
 		"max": true
@@ -310,7 +310,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [390],
+		"users": ["Tharja: Obsessive Bride"],
 		"type": "redtome",
 		"skills": [["a", 234]],
 		"max": true
@@ -321,7 +321,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [245],
+		"users": ["Lyon: Shadow Prince"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -332,7 +332,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [21],
+		"users": ["Celica: Caring Princess"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -443,7 +443,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [188],
+		"users": ["Katarina: Wayward One"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -464,7 +464,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [389],
+		"users": ["Tharja: Dark Shadow"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -505,7 +505,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [12],
+		"users": ["Arvis: Emperor of Flame"],
 		"type": "redtome",
 		"skills": [],
 		"max": true
@@ -537,7 +537,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [478],
+		"users": ["Kiria: Cool Façade"],
 		"type": "redtome",
 		"skills": [["a", 63]],
 		"max": true

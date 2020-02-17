@@ -15,7 +15,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [136],
+		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "greentome",
 		"skills": [["a", 211]], 
 		"max": true
@@ -26,7 +26,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [21],
+		"users": ["Azura: Young Songstress"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true
@@ -57,7 +57,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [419],
+		"users": ["Yune: Chaos Goddess"],
 		"type": "greentome",
 		"skills": [["a", 211]], 
 		"max": true
@@ -88,7 +88,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [368, 259],
+		"users": ["Sonya: Vengeful Mage", "Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -99,7 +99,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [77, 178],
+		"users": ["Deirdre: Lady of the Forest", "Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -131,7 +131,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [259],
+		"users": ["Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -142,7 +142,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [214],
+		"users": ["Lewyn: Guiding Breeze"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true
@@ -153,7 +153,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [289],
+		"users": ["Nino: Pale Flower"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true
@@ -344,7 +344,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [428],
+		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -355,7 +355,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [29],
+		"users": ["Boey: Skillful Survivor"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -366,7 +366,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [290],
+		"users": ["Nino: Pious Mage"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -397,7 +397,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [263],
+		"users": ["Micaiah: Queen of Dawn"],
 		"type": "greentome",
 		"skills": [["a", 211]], 
 		"max": true
@@ -408,7 +408,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [356],
+		"users": ["Sharena: Spring Princess"],
 		"type": "greentome",
 		"skills": [["a", 211]], 
 		"max": true
@@ -419,7 +419,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [178],
+		"users": ["Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -430,7 +430,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [346],
+		"users": ["Sanaki: Apostle in White"],
 		"type": "greentome",
 		"skills": [["a", 63]], 
 		"max": true
@@ -501,7 +501,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [328],
+		"users": ["Robin: Mystery Tactician"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -512,7 +512,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [302],
+		"users": ["Olwen: Righteous Knight"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -533,7 +533,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [318],
+		"users": ["Reinhardt: Lightning's Rondo"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -544,7 +544,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [407],
+		"users": ["Veronica: Spring Princess"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true
@@ -555,7 +555,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [371],
+		"users": ["Soren: Shrewd Strategist"],
 		"type": "greentome",
 		"skills": [], 
 		"max": true
@@ -596,7 +596,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [465],
+		"users": ["Celica: Queen of Valentia"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true
@@ -607,7 +607,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [465],
+		"users": ["Celica: Queen of Valentia"],
 		"type": "greentome",
 		"skills": [["a", 234]], 
 		"max": true

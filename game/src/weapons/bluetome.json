@@ -15,7 +15,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [219],
+		"users": ["Linde: Light Mage"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -206,7 +206,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [246],
+		"users": ["Mae: Bundle of Energy"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -237,7 +237,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [78, 219],
+		"users": ["Delthea: Free Spirit", "Linde: Light Mage"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -248,7 +248,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [79],
+		"users": ["Delthea: Tatarrah's Puppet"],
 		"type": "bluetome",
 		"skills": [["a", 211]],
 		"max": true
@@ -259,7 +259,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [319, 301],
+		"users": ["Reinhardt: Thunder's Fist", "Olwen: Blue Mage Knight"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -310,7 +310,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [48],
+		"users": ["Catria: Spring Whitewing"],
 		"type": "bluetome",
 		"skills": [["a", 211]],
 		"max": true
@@ -321,7 +321,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [195],
+		"users": ["L'Arachel: Princess of Light"],
 		"type": "bluetome",
 		"skills": [["a", 123]],
 		"max": true
@@ -382,7 +382,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [303],
+		"users": ["Ophelia: Dramatic Heroine"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -393,7 +393,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [168],
+		"users": ["Ishtar: Thunder Goddess"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -404,7 +404,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [295],
+		"users": ["Odin: Potent Force"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -415,7 +415,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [20],
+		"users": ["Azura: Vallite Songstress"],
 		"type": "bluetome",
 		"skills": [["a", 234]],
 		"max": true
@@ -426,7 +426,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [193],
+		"users": ["Kliff: Curious Spirit"],
 		"type": "bluetome",
 		"skills": [["a", 123]],
 		"max": true
@@ -497,7 +497,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [327],
+		"users": ["Robin: High Deliverer"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -508,7 +508,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [262],
+		"users": ["Micaiah: Priestess of Dawn"],
 		"type": "bluetome",
 		"skills": [["a", 211]],
 		"max": true
@@ -549,7 +549,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [380],
+		"users": ["Tailtiu: Thunder Noble"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -570,7 +570,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [],
+		"users": [],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -601,7 +601,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [177],
+		"users": ["Julia: Crusader of Light"],
 		"type": "bluetome",
 		"skills": [["a", 63]],
 		"max": true
@@ -612,7 +612,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [341],
+		"users": ["Saias: Bishop of Flame"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true
@@ -623,7 +623,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [238],
+		"users": ["Lute: Prodigy"],
 		"type": "bluetome",
 		"skills": [["a", 234]],
 		"max": true
@@ -634,7 +634,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [197],
+		"users": ["Laegjarn: Burning Sun"],
 		"type": "bluetome",
 		"skills": [["a", 234]],
 		"max": true
@@ -665,7 +665,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [452],
+		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
 		"skills": [["a", 211]],
 		"max": true
@@ -676,7 +676,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [452],
+		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
 		"skills": [["a", 211]],
 		"max": true
@@ -707,7 +707,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [466],
+		"users": ["Alfonse: Askran Duo"],
 		"type": "bluetome",
 		"skills": [],
 		"max": true

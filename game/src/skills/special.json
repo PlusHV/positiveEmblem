@@ -36,7 +36,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": [420, 28],
+		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
 		"type": "battle",
 		"max": true
 	},
@@ -181,7 +181,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [255],
+		"users": ["Marth: Hero-King"],
 		"type": "battle",
 		"max": true
 	},
@@ -286,7 +286,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [119],
+		"users": ["Fjorm: Princess of Ice"],
 		"type": "battle",
 		"max": true
 	},
@@ -335,7 +335,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [6, 482],
+		"users": ["Alm: Saint-King", "Alm: Lovebird Duo"],
 		"type": "battle",
 		"max": true
 	},
@@ -392,7 +392,7 @@
 		"sp": 500,
 		"cd": 4,
 		"prf": true,
-		"users": [162, 163],
+		"users": ["Ike: Stalwart Heart", "Ike: Vanguard Legend"],
 		"type": "battle",
 		"max": true
 	},
@@ -401,7 +401,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [15],
+		"users": ["Ayra: Astra's Wielder"],
 		"type": "battle",
 		"max": true
 	},
@@ -474,7 +474,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [373],
+		"users": ["Sothis: Girl on the Throne"],
 		"type": "battle",
 		"max": true
 	},
@@ -563,7 +563,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": [440],
+		"users": ["Leif: Unifier of Thracia"],
 		"type": "post-battle",
 		"max": true
 	},
@@ -572,7 +572,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": [453],
+		"users": ["Altina: Dawn's Trueblade"],
 		"type": "battle",
 		"max": true
 	},
@@ -581,7 +581,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": [466, 481],
+		"users": ["Alfonse: Askran Duo", "Líf: Lethal Swordsman"],
 		"type": "battle",
 		"max": true
 	},
@@ -590,7 +590,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": [474],
+		"users": ["Shannan: Wielder of Astra"],
 		"type": "battle",
 		"max": true
 	}

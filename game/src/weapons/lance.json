@@ -75,7 +75,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [360],
+		"users": ["Shiro: Raw Talent"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -86,7 +86,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [377],
+		"users": ["Sully: Crimson Knight"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -137,7 +137,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [404],
+		"users": ["Valter: Dark Moonstone"],
 		"type": "lance",
 		"skills": [["a", 45]],
 		"max": true
@@ -148,7 +148,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [282],
+		"users": ["Nephenee: Fierce Halberdier"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -159,7 +159,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [236],
+		"users": ["Lukas: Sharp Soldier"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -190,7 +190,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [355],
+		"users": ["Sharena: Princess of Askr"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -201,7 +201,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [106],
+		"users": ["Ephraim: Sparkling Gallantly"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -252,7 +252,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [104, 103],
+		"users": ["Ephraim: Restoration Lord", "Ephraim: Legendary Lord"],
 		"type": "lance",
 		"skills": [["a", 63]],
 		"max": true
@@ -283,7 +283,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [122],
+		"users": ["Florina: Lovely Flier"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -294,7 +294,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [313],
+		"users": ["Quan: Luminous Lancer"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -305,7 +305,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [229],
+		"users": ["Lucina: Brave Princess"],
 		"type": "lance",
 		"skills": [["a", 123]],
 		"max": true
@@ -316,7 +316,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [142, 45],
+		"users": ["Hardin: Dark Emperor", "Camus: Sable Knight"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -367,7 +367,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [156],
+		"users": ["Hinoka: Warrior Princess"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -428,7 +428,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [26],
+		"users": ["Berkut: Purgatorial Prince"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -439,7 +439,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [119],
+		"users": ["Fjorm: Princess of Ice"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -470,7 +470,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [304],
+		"users": ["Oscar: Agile Horseman"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -501,7 +501,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [144],
+		"users": ["Hector: Brave Warrior"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -512,7 +512,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [102],
+		"users": ["Eliwood: Marquess Pherae"],
 		"type": "lance",
 		"skills": [["a", 234]],
 		"max": true
@@ -523,7 +523,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [80],
+		"users": ["Dimitri: The Protector"],
 		"type": "lance",
 		"skills": [["a", 63]],
 		"max": true
@@ -534,7 +534,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [294],
+		"users": ["Oboro: Fierce Fighter"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -545,7 +545,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [1],
+		"users": ["Abel: The Panther"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -556,7 +556,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [310],
+		"users": ["Peri: Playful Slayer"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -587,7 +587,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [60],
+		"users": ["Clair: Highborn Flier"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -638,7 +638,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [76],
+		"users": ["Death Knight: The Reaper"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -649,7 +649,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [354],
+		"users": ["Shanna: Sprightly Flier"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -680,7 +680,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [104],
+		"users": ["Ephraim: Restoration Lord"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -751,7 +751,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [330],
+		"users": ["Roderick: Steady Squire"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -822,7 +822,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [24],
+		"users": ["Berkut: Debonair Noble"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -833,7 +833,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [386],
+		"users": ["Tana: Winged Princess"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -864,7 +864,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [47],
+		"users": ["Catria: Middle Whitewing"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -875,7 +875,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [107],
+		"users": ["Est: Junior Whitewing"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -886,7 +886,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [426],
+		"users": ["Sirius: Mysterious Knight"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -897,7 +897,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [435],
+		"users": ["Forsyth: Loyal Lieutenant"],
 		"type": "lance",
 		"skills": [["a", 211]],
 		"max": true
@@ -908,7 +908,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [441],
+		"users": ["Ephraim: Dynastic Duo"],
 		"type": "lance",
 		"skills": [["a", 63]],
 		"max": true
@@ -919,7 +919,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [451],
+		"users": ["Perceval: Knightly Ideal"],
 		"type": "lance",
 		"skills": [],
 		"max": true
@@ -930,7 +930,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [471],
+		"users": ["Altena: Luminous Rider"],
 		"type": "lance",
 		"skills": [["a", 123]],
 		"max": true
@@ -941,7 +941,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [480],
+		"users": ["Tsubasa: Madcap Idol"],
 		"type": "lance",
 		"skills": [["a", 234]],
 		"max": true
@@ -952,7 +952,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [485],
+		"users": ["Rudolf: Emperor of Rigel"],
 		"type": "lance",
 		"skills": [],
 		"max": true

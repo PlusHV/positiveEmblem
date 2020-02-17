@@ -178,7 +178,7 @@
 		"name": "Beorc's Blessing",
 		"sp": 300,
 		"prf": true,
-		"users": [25],
+		"users": ["Berkut: Prideful Prince"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -186,7 +186,7 @@
 		"name": "Binding Shield",
 		"sp": 300,
 		"prf": true,
-		"users": [255],
+		"users": ["Marth: Hero-King"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -278,7 +278,7 @@
 		"name": "Bushido",
 		"sp": 300,
 		"prf": true,
-		"users": [339],
+		"users": ["Ryoma: Supreme Samurai"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -405,7 +405,7 @@
 		"name": "Chilling Seal",
 		"sp": 300,
 		"prf": true,
-		"users": [136],
+		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "turn-start",
 		"max": false
 	},
@@ -413,7 +413,7 @@
 		"name": "Crusader's Ward",
 		"sp": 300,
 		"prf": true,
-		"users": [364],
+		"users": ["Sigurd: Holy Knight"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -582,7 +582,7 @@
 		"name": "Double Lion",
 		"sp": 300,
 		"prf": true,
-		"users": [53],
+		"users": ["Celica: Warrior Priestess"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -730,7 +730,7 @@
 		"name": "Follow-Up Ring",
 		"sp": 200,
 		"prf": true,
-		"users": [9],
+		"users": ["Arden: Strong and Tough"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -738,7 +738,7 @@
 		"name": "Freezing Seal",
 		"sp": 300,
 		"prf": true,
-		"users": [157],
+		"users": ["Hríd: Icy Blade"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -858,7 +858,7 @@
 		"name": "Light and Dark",
 		"sp": 300,
 		"prf": true,
-		"users": [177],
+		"users": ["Julia: Crusader of Light"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -964,7 +964,7 @@
 		"name": "Lunar Brace",
 		"sp": 300,
 		"prf": true,
-		"users": [91],
+		"users": ["Eirika: Graceful Resolve"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -1147,7 +1147,7 @@
 		"name": "Recover Ring",
 		"sp": 200,
 		"prf": true,
-		"users": [12],
+		"users": ["Arvis: Emperor of Flame"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1211,7 +1211,7 @@
 		"name": "S Drink",
 		"sp": 300,
 		"prf": true,
-		"users": [207],
+		"users": ["Leif: Prince of Leonster"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1282,7 +1282,7 @@
 		"name": "Sacae's Blessing",
 		"sp": 300,
 		"prf": true,
-		"users": [239],
+		"users": ["Lyn: Brave Lady"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -1451,7 +1451,7 @@
 		"name": "Solar Brace",
 		"sp": 300,
 		"prf": true,
-		"users": [103],
+		"users": ["Ephraim: Legendary Lord"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -1669,7 +1669,7 @@
 		"name": "Warp Powder",
 		"sp": 300,
 		"prf": true,
-		"users": [420],
+		"users": ["Zelgius: Jet-Black General"],
 		"type": "warp",
 		"max": true
 	},
@@ -1803,7 +1803,7 @@
 		"name": "Yune's Whispers",
 		"sp": 300,
 		"prf": true,
-		"users": [263],
+		"users": ["Micaiah: Queen of Dawn"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1811,7 +1811,7 @@
 		"name": "Killing Intent",
 		"sp": 300,
 		"prf": true,
-		"users": [428],
+		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -1903,7 +1903,7 @@
 		"name": "Soul of Zofia",
 		"sp": 300,
 		"prf": true,
-		"users": [465],
+		"users": ["Celica: Queen of Valentia"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -1995,7 +1995,7 @@
 		"name": "Deadly Balance",
 		"sp": 300,
 		"prf": true,
-		"users": [481],
+		"users": ["Líf: Lethal Swordsman"],
 		"type": "damage-calc",
 		"max": true
 	}

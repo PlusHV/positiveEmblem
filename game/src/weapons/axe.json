@@ -35,7 +35,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [145],
+		"users": ["Hector: General of Ostia"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -46,7 +46,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [23],
+		"users": ["Bartre: Fearless Warrior"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -57,7 +57,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [316,221],
+		"users": ["Raven: Peerless Fighter", "Linus: Mad Dog"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -88,7 +88,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [145,146],
+		"users": ["Hector: General of Ostia", "Hector: Just Here to Fight"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -99,7 +99,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [27],
+		"users": ["Beruka: Quiet Assassin"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -130,7 +130,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [148],
+		"users": ["Helbindi: Savage Scourge"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -141,7 +141,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [13],
+		"users": ["Athena: Borderland Sword"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -172,7 +172,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [55],
+		"users": ["Cherche: Wyvern Friend"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -183,7 +183,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [399],
+		"users": ["Titania: Mighty Mercenary"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -194,7 +194,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [113],
+		"users": ["Felicia: Off the Menu"],
 		"type": "axe",
 		"skills": [["a", 234]],
 		"max": true
@@ -245,7 +245,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [152],
+		"users": ["Hilda: Idle Maiden"],
 		"type": "axe",
 		"skills": [["a", 234]],
 		"max": true
@@ -256,7 +256,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [105],
+		"users": ["Ephraim: Sacred Twin Lord"],
 		"type": "axe",
 		"skills": [["a", 63]],
 		"max": true
@@ -298,7 +298,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [7],
+		"users": ["Amelia: Rose of the War"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -389,7 +389,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [267,265],
+		"users": ["Minerva: Red Dragoon", "Michalis: Ambitious King"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -502,7 +502,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [8],
+		"users": ["Anna: Commander"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -593,7 +593,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [379],
+		"users": ["Surtr: Ruler of Flame"],
 		"type": "axe",
 		"skills": [["a", 123]],
 		"max": true
@@ -655,7 +655,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [83],
+		"users": ["Dorcas: Serene Warrior"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -666,7 +666,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [147],
+		"users": ["Hector: Marquess of Ostia"],
 		"type": "axe",
 		"skills": [["a", 123]],
 		"max": true
@@ -687,7 +687,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [161],
+		"users": ["Ike: Brave Mercenary"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -698,7 +698,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [18],
+		"users": ["Azura: Lady of Ballads"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -709,7 +709,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [86],
+		"users": ["Edelgard: The Future"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -740,7 +740,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [409],
+		"users": ["Walhart: The Conqueror"],
 		"type": "axe",
 		"skills": [["a", 123]],
 		"max": true
@@ -791,7 +791,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [456],
+		"users": ["Osian: Scolded Soldier"],
 		"type": "axe",
 		"skills": [],
 		"max": true
@@ -802,7 +802,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [479],
+		"users": ["Mamori: Microwavin' Idol"],
 		"type": "axe",
 		"skills": [["a", 211]],
 		"max": true
@@ -813,7 +813,7 @@
 		"range": 1,
 		"sp": 400,
 		"prf": true,
-		"users": [482],
+		"users": ["Alm: Lovebird Duo"],
 		"type": "axe",
 		"skills": [["a", 234]],
 		"max": true

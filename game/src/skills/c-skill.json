@@ -346,7 +346,7 @@
 		"name": "Chaos Named",
 		"sp": 300,
 		"prf": true,
-		"users": [419],
+		"users": ["Yune: Chaos Goddess"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -501,7 +501,7 @@
 		"name": "Divine Fang",
 		"sp": 300,
 		"prf": true,
-		"users": [276],
+		"users": ["Naga: Dragon Divinity"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -810,7 +810,7 @@
 		"name": "Glare",
 		"sp": 300,
 		"prf": true,
-		"users": [278],
+		"users": ["Nailah: Unflinching Eye"],
 		"type": "post-battle",
 		"max": true
 	},
@@ -986,7 +986,7 @@
 		"name": "Human Virtue",
 		"sp": 300,
 		"prf": true,
-		"users": [331],
+		"users": ["Roy: Blazing Lion"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1218,7 +1218,7 @@
 		"name": "Ostia's Pulse",
 		"sp": 300,
 		"prf": true,
-		"users": [147],
+		"users": ["Hector: Marquess of Ostia"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1436,7 +1436,7 @@
 		"name": "Solitary Dream",
 		"sp": 300,
 		"prf": true,
-		"users": [398],
+		"users": ["Tiki: Torpid Dragon"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1444,7 +1444,7 @@
 		"name": "Sparkling Boost",
 		"sp": 300,
 		"prf": true,
-		"users": [88],
+		"users": ["Eir: Merciful Death"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1725,7 +1725,7 @@
 		"name": "Surtr's Menace",
 		"sp": 300,
 		"prf": true,
-		"users": [379],
+		"users": ["Surtr: Ruler of Flame"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1901,7 +1901,7 @@
 		"name": "Upheaval",
 		"sp": 300,
 		"prf": true,
-		"users": [85],
+		"users": ["Duma: God of Strength"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1909,7 +1909,7 @@
 		"name": "Vision of Arcadia",
 		"sp": 300,
 		"prf": true,
-		"users": [99],
+		"users": ["Eliwood: Blazing Knight"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -1952,7 +1952,7 @@
 		"name": "With Everyone!",
 		"sp": 300,
 		"prf": true,
-		"users": [395],
+		"users": ["Tiki: Legendary Dragon"],
 		"type": "turn-start",
 		"max": true
 	},

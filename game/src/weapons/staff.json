@@ -105,7 +105,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [117],
+		"users": ["Fjorm: Bride of Rime"],
 		"type": "staff",
 		"skills": [],
 		"max": true
@@ -156,7 +156,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [406],
+		"users": ["Veronica: Brave Princess"],
 		"type": "staff",
 		"skills": [],
 		"max": true
@@ -267,7 +267,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [41],
+		"users": ["Camilla: Light of Nohr"],
 		"type": "staff",
 		"skills": [],
 		"max": true
@@ -298,7 +298,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [226],
+		"users": ["Loki: The Trickster"],
 		"type": "staff",
 		"skills": [],
 		"max": true

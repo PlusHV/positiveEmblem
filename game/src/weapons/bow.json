@@ -15,7 +15,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [192],
+		"users": ["Klein: Silver Nobleman"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -106,7 +106,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [111],
+		"users": ["Faye: Devoted Heart"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -177,7 +177,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [63],
+		"users": ["Claude: The Schemer"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -208,7 +208,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [241],
+		"users": ["Lyn: Lady of the Beach"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -299,7 +299,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [384],
+		"users": ["Takumi: Wild Card"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -420,7 +420,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [6],
+		"users": ["Alm: Saint-King"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -451,7 +451,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [239],
+		"users": ["Lyn: Brave Lady"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -462,7 +462,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [167],
+		"users": ["Innes: Regal Strategician"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -473,7 +473,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [284],
+		"users": ["Niles: Cruel to Be Kind"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -484,7 +484,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [175],
+		"users": ["Jeorge: Perfect Shot"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -575,7 +575,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [381],
+		"users": ["Takumi: Empty Vessel"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -616,7 +616,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [243],
+		"users": ["Lyn: Lady of the Wind"],
 		"type": "bow",
 		"skills": [["a", 211]],
 		"max": true
@@ -627,7 +627,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [231],
+		"users": ["Lucina: Glorious Archer"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -648,7 +648,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [154],
+		"users": ["Hinoka: Blue Sky Warrior"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -679,7 +679,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [440],
+		"users": ["Leif: Unifier of Thracia"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -690,7 +690,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [449],
+		"users": ["Igrene: Nabata Protector"],
 		"type": "bow",
 		"skills": [],
 		"max": true
@@ -701,7 +701,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [461],
+		"users": ["Marth: Royal Altean Duo"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true
@@ -732,7 +732,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": [476],
+		"users": ["Eleonora: Shooting Starlet"],
 		"type": "bow",
 		"skills": [["a", 234]],
 		"max": true

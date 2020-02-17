@@ -124,14 +124,6 @@ const dropDownStyle = {
                             this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
     ];     
     
-    /*const equippedSkill = [ this.props.gameState.weaponList[this.props.gameState.selectedMember.heroSkills["weapon"]], 
-                            assists[this.props.gameState.selectedMember.heroSkills["assist"]], 
-                            specials[this.props.gameState.selectedMember.heroSkills["special"]],
-                            skills.a[this.props.gameState.selectedMember.heroSkills["a"]], skills.b[this.props.gameState.selectedMember.heroSkills["b"]], 
-                            skills.c[this.props.gameState.selectedMember.heroSkills["c"]], skills.seal[this.props.gameState.selectedMember.heroSkills["seal"]],
-                            this.props.gameState.selectedMember.summonerSupport, this.props.gameState.selectedMember.allySupportLevel,
-                            this.props.gameState.selectedMember.allySupport, this.props.gameState.selectedMember.blessing
-    ];     */
 
 //Last Column
     let supportLevels = ["S", "A", "B", "C", "None"];
@@ -145,7 +137,7 @@ const dropDownStyle = {
         if (i < 7){
 
           //drop down menu for skill
-          cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colspan = "3">
+          cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colSpan = "3">
             
               <Select
 
@@ -160,7 +152,7 @@ const dropDownStyle = {
           //value={this.props.gameState.selectedMember.heroSkills[equipText[i]]}
         } else if (equipText[i] === "ally"){ //allies need use the Select dropdown so its value its onChange function is different
 
-            cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colspan = "3" >
+            cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colSpan = "3" >
             <Select
               styles = {dropDownStyle}
               theme = {dropDownTheme} 
@@ -217,7 +209,7 @@ const dropDownStyle = {
               //this.props.gameState.selectedMember.allySupportLevel
 
             } else{
-              cells.push(<td key = {equipText[i] + "Value"}  colspan = "3">  
+              cells.push(<td key = {equipText[i] + "Value"}  colSpan = "3">  
                   <select value = {equippedValue[i]}
                       onChange = {(e, type) => this.props.supportLevelChange(e, equipKey[i])} >
                     {options}

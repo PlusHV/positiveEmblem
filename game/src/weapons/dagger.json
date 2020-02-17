@@ -15,7 +15,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [194],
+		"users": ["Kronya: Gleaming Blade"],
 		"type": "dagger",
 		"skills": [["a", 211]],
 		"max": true
@@ -126,7 +126,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [170],
+		"users": ["Jaffar: Angel of Death"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -157,7 +157,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [112],
+		"users": ["Felicia: Maid Mayhem"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -188,7 +188,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [120],
+		"users": ["Flora: Cold as Ice"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -199,7 +199,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [311],
+		"users": ["Petra: Princess of Brigid"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -240,7 +240,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [182],
+		"users": ["Kagero: Honorable Ninja"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -291,7 +291,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [88],
+		"users": ["Eir: Merciful Death"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -342,7 +342,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [372],
+		"users": ["Sothe: Zephyr"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -413,7 +413,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [342],
+		"users": ["Saizo: Angry Ninja"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -544,7 +544,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [257],
+		"users": ["Matthew: Faithful Spy"],
 		"type": "dagger",
 		"skills": [],
 		"max": true
@@ -585,7 +585,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [418],
+		"users": ["Ylgr: Fresh Snowfall"],
 		"type": "dagger",
 		"skills": [["a", 234]],
 		"max": true
@@ -596,7 +596,7 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"user": [121],
+		"users": ["Flora: Signature Dish"],
 		"type": "dagger",
 		"skills": [["a", 63]],
 		"max": true

@@ -1013,7 +1013,7 @@
 		"name": "Dragonskin",
 		"sp": 300,
 		"prf": true,
-		"users": [325],
+		"users": ["Robin: Fell Vessel"],
 		"type": "conditional-stat",
 		"max": true
 	},
@@ -1408,7 +1408,7 @@
 		"name": "Laws of Sacae",
 		"sp": 300,
 		"prf": true,
-		"users": [243],
+		"users": ["Lyn: Lady of the Wind"],
 		"type": "conditional-stat",
 		"max": true
 	},
@@ -1475,7 +1475,7 @@
 		"name": "Ostian Counter",
 		"sp": 350,
 		"prf": true,
-		"users": [144],
+		"users": ["Hector: Brave Warrior"],
 		"type": "attack-count",
 		"max": true
 	},
@@ -1555,7 +1555,7 @@
 		"name": "Scendscale",
 		"sp": 300,
 		"prf": true,
-		"users": [5],
+		"users": ["Alm: Imperial Ascent"],
 		"type": "damage-calc",
 		"max": true
 	},
@@ -2068,7 +2068,7 @@
 		"name": "Ashera's Chosen",
 		"sp": 300,
 		"prf": true,
-		"users": [453],
+		"users": ["Altina: Dawn's Trueblade"],
 		"type": "conditional-stat",
 		"max": true
 	},

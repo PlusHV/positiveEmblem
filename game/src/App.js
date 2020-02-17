@@ -48,7 +48,7 @@ class TicTacToeBoard extends React.Component{
       "skillDropdowns": initDropdowns,
       "selectedMember": new heroStruct(0), //The current struct in heroList
       "weaponList": weapons["sword"],
-      "selectedHeroInfo": heroData["0"], //The current hero's info
+      "selectedHeroInfo": heroData[0], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
       "blessingBuffs": { //the buffs each season will give a team - one for each team
@@ -136,11 +136,14 @@ class TicTacToeBoard extends React.Component{
   }
 
   fillDropdown(dropdownList, info, newHero, newMax){
+
+    
     // eslint-disable-next-line
     for (let [key, value1] of Object.entries(info)) {
+
       if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
         value1.prf === false || //if the prf key says false, then push to the list
-        ( !('users' in value1) || value1.users.includes( parseInt(newHero.id) ) )  
+        ( !('users' in value1) || value1.users.includes(newHero.name ) )  //change to newHero.name
         ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
           
           if (!newMax || (  !('max' in value1) || value1.max  ) ){
@@ -221,27 +224,23 @@ class TicTacToeBoard extends React.Component{
 
     var newHero = heroData[e.value]; //get the heroData from heroInfo.json
 
-
     var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter); //only really updates the weaponlist for now
 
 
     //hero skill updating
     let tSkills = hero.heroSkills; //Object.assign({}, this.state.heroSkills);
 
-
     Object.keys(tSkills).forEach((key, i) => { //clear the skills on the hero for the new defaults that will be set
        hero = this.removeSkillEffect(tSkills[key].value , key, hero);
     });
 
-
-    
-    tSkills["weapon"] = updatedDropdowns["weapon"].list.find(this.findMatchingValue, newHero.weapon);
-    tSkills["assist"] = updatedDropdowns["assist"].list.find(this.findMatchingValue, newHero.assist);
-    tSkills["special"] = updatedDropdowns["special"].list.find(this.findMatchingValue, newHero.special);
-    tSkills["a"] = updatedDropdowns["a"].list.find(this.findMatchingValue, newHero.askill);
-    tSkills["b"] = updatedDropdowns["b"].list.find(this.findMatchingValue, newHero.bskill);
-    tSkills["c"] = updatedDropdowns["c"].list.find(this.findMatchingValue, newHero.cskill);
-    tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findMatchingValue, newHero.sseal);
+    tSkills["weapon"] = updatedDropdowns["weapon"].list.find(this.findSkillWithName, newHero.weapon);
+    tSkills["assist"] = updatedDropdowns["assist"].list.find(this.findSkillWithName, newHero.assist);
+    tSkills["special"] = updatedDropdowns["special"].list.find(this.findSkillWithName, newHero.special);
+    tSkills["a"] = updatedDropdowns["a"].list.find(this.findSkillWithName, newHero.askill);
+    tSkills["b"] = updatedDropdowns["b"].list.find(this.findSkillWithName, newHero.bskill);
+    tSkills["c"] = updatedDropdowns["c"].list.find(this.findSkillWithName, newHero.cskill);
+    tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findSkillWithName, newHero.sseal);
 
     hero.heroSkills = tSkills; //update the new heroes default skills
 
@@ -323,6 +322,9 @@ class TicTacToeBoard extends React.Component{
 
   findMatchingValue(item){
     return item.value === this;
+  }
+  findSkillWithName(item){
+    return item.label === this;
   }
 
   checkLabelExists(item){
@@ -910,8 +912,7 @@ class TicTacToeBoard extends React.Component{
     let assisteePos = this.PositionToRowColumn(assistee.position);
 
     let participantIDs = [assister.id, assistee.id];
-
-
+ 
     if (assisterPos[0] === assisteePos[0]){ //same row, move along the row so change column
 
       let factor = assisteePos[1] - assisterPos[1];
@@ -937,8 +938,10 @@ class TicTacToeBoard extends React.Component{
 
       return updatedHeroList; //return original list
 
-    } else if (participantIDs.includes(this.props.G.cells[newAssisterPos].id) || participantIDs.includes(this.props.G.cells[newAssisteePos].id)){ //Checks if new spots are occupied by units other than the assister/assistee
+    } else if (this.props.G.cells[newAssisteePos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisteePos].id) ){ //new assistee position is occupied by other hero
+      return updatedHeroList;
 
+    } else if (this.props.G.cells[newAssisterPos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisterPos].id) ){ //new assister position is occupied by other hero
       return updatedHeroList;
 
     } else{
@@ -980,7 +983,7 @@ class TicTacToeBoard extends React.Component{
     //apply the rally to 
     if (aoe){
       let inRangeAllies = this.GetDistantAllies(list[assistee.side.toString()], assistee.position, assister.position, 2);
-      console.log(inRangeAllies);
+
       //apply buff to all allies in range
       for (let x of inRangeAllies){
         Object.keys(buffs).forEach((key, i) => {
@@ -1184,6 +1187,24 @@ class TicTacToeBoard extends React.Component{
 
   render() {
 
+//      let temp = [
+
+// "0","0","220","64","0","254","163","6","234","78","0","0","61","248","169","0","257","135","80","108","21","0","220","0","70","274","169","0","0","0","155","0","85","172","138","105","257","70","203","120","276","21","0","135","135","118","197","0","82","0","61","229","130","21","257","103","229","0","251","24","237","0","260","64","0","0","0","48","134","104","231","0","130","105","0","76","52","211","76","85","0","0","0","152","272","270","200","0","205","182","9","166","138","0","80","0","55","0","114","271","116","274","208","103","260","6","52","0","0","257","6","42","48","52","118","18","0","123","91","76","61","6","48","0","103","0","61","176","58","0","0","0","0","251","6","0","191","157","133","127","166","0","0","257","91","116","0","173","152","176","6","0","58","0","97","3","135","18","131","143","275","260","94","67","0","130","120","0","163","3","266","100","0","0","0","237","0","15","48","12","117","85","0","120","119","104","0","94","12","18","39","0","0","108","70","197","234","135","67","70","163","88","172","138","132","21","0","76","251","0","12","203","0","132","163","224","9","21","220","108","0","78","98","0","257","120","163","0","133","82","220","70","0","0","0","0","0","176","191","18","0","70","237","217","6","80","30","0","108","244","152","97","76","237","0","149","130","138","169","234","0","135","76","123","191","260","155","276","231","114","36","231","12","134","6","0","71","146","115","78","203","266","0","217","234","98","45","82","104","214","130","155","135","263","263","0","220","12","130","0","126","274","111","0","239","239","135","120","64","179","260","123","229","76","0","273","260","0","156","118","222","99","203","0","275","194","6","229","0","160","78","140","0","0","45","0","241","138","166","126","0","211","237","55","208","103","0","130","266","0","91","130","0","0","266","103","197","98","33","276","67","21","135","3","214","88","0","80","191","108","188","108","226","269","0","0","139","229","0","245","82","214","169","0","266","222","126","105","185","234","0","0","85","74","48","277","234","27","204","0","0","0","263","91","176","273","52","0","0","0","0","0","166","229","103","152","172","88","217","49","176","0","203","74","0","0","0","0","280","6","127","283","0","172","217","284","0","287","0","0","64","163","0","152","260","299","58","214","76","179","290","293","194","296","0","200","85","300","241","203","116","157","6","303","306","309","312","315","217","0","169","0","179","280","94","97","0","78","0","0","135","269","318","0","6","321","208"
+
+//         ];
+//  let temp2 = [];
+
+//      for ( let x =0; x < temp.length; x++){
+
+
+//          temp2.push(skills.c[temp[x]].name );
+//        //let x of x
+
+
+//      }
+
+//      console.log(temp2);
+
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
     let tbody = [];
@@ -1277,7 +1298,7 @@ class TicTacToeBoard extends React.Component{
               hpChange = {this.onHPChange} />
         </td>
         <td rowSpan = "2">
-          <table class= "boardStyle" id="board" align = 'center'>
+          <table className= "boardStyle" id="board" align = 'center'>
           <tbody>{tbody}</tbody>
           </table>
         </td>
@@ -1332,7 +1353,7 @@ function makeHeroStruct(){
     this["level"] = 1;
     this["merge"] = 0;
     this["dragonflower"] = 0;
-    this["heroID"] = {value: "0", label: ""};
+    this["heroID"] = {value: 0, label: ""};
     this["iv"] = {asset: "Neutral", flaw: "Neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
@@ -1348,7 +1369,7 @@ function makeHeroStruct(){
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
     this["summonerSupport"] = "None";
     this["allySupportLevel"] = "None";
-    this["allySupport"] = {value: "0", label: ""};
+    this["allySupport"] = {value: 0, label: ""};
     this["blessing"] = "None";
     this["position"] = -1;
     this["currentHP"] = 0;

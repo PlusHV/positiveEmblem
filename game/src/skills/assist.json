@@ -38,7 +38,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": [231],
+		"users": ["Lucina: Glorious Archer"],
 		"type": "movement",
 		"effect": [1 , -1],
 		"max": true
@@ -48,7 +48,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": [20],
+		"users": ["Azura: Vallite Songstress"],
 		"type": "dance",
 		"max": true
 	},
@@ -390,7 +390,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": [262, 263],
+		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn"],
 		"type": "health",
 		"effect": ["heal", 99, 0],
 		"max": true
@@ -444,7 +444,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": [457],
+		"users": ["Peony: Sweet Dream"],
 		"type": "dance",
 		"max": true
 	}
