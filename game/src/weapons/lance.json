@@ -956,6 +956,26 @@
 		"type": "lance",
 		"skills": [],
 		"max": true
+	},
+	"92": {
+		"name": "Guard Lance+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"93": {
+		"name": "Guard Lance",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"max": false
 	}
 
 }

@@ -346,6 +346,17 @@
 		"type": "breath",
 		"skills": [["a", 234]],
 		"max": true
+	},
+	"33": {
+		"name": "Frost Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Nils: Bright Bard"],
+		"type": "breath",
+		"skills": [["a", 211]],
+		"max": true
 	}
 	
 }

@@ -1998,5 +1998,68 @@
 		"users": ["Líf: Lethal Swordsman"],
 		"type": "damage-calc",
 		"max": true
+	},
+	"283": {
+		"name": "Pegasus Flight 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"284": {
+		"name": "Pegasus Flight 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"285": {
+		"name": "Pegasus Flight 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
+	},
+	"286": {
+		"name": "Even Pulse Tie 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"287": {
+		"name": "Even Pulse Tie 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"288": {
+		"name": "Even Pulse Tie 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"289": {
+		"name": "Atk/Def Ruse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"290": {
+		"name": "Atk/Def Ruse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"291": {
+		"name": "Atk/Def Ruse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-rally",
+		"max": true
 	}
 }

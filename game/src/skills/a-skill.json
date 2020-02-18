@@ -2176,5 +2176,26 @@
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true
+	},
+	"300": {
+		"name": "Spd/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"301": {
+		"name": "Spd/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"302": {
+		"name": "Spd/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

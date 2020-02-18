@@ -730,5 +730,16 @@
 		"type": "dagger",
 		"skills": [],
 		"max": false
+	},
+	"72": {
+		"name": "Constant Dagger",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Leila: Rose amid Fangs"],
+		"type": "dagger",
+		"skills": [["a", 234]],
+		"max": true
 	}
 }

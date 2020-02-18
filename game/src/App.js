@@ -48,7 +48,7 @@ class TicTacToeBoard extends React.Component{
       "skillDropdowns": initDropdowns,
       "selectedMember": new heroStruct(0), //The current struct in heroList
       "weaponList": weapons["sword"],
-      "selectedHeroInfo": heroData[0], //The current hero's info
+      "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
       "fortLevel": 0,
       "blessingBuffs": { //the buffs each season will give a team - one for each team

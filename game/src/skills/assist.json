@@ -447,6 +447,15 @@
 		"users": ["Peony: Sweet Dream"],
 		"type": "dance",
 		"max": true
+	},
+	"50": {
+		"name": "Play",
+		"sp": 150,
+		"range": 1,
+		"prf": true,
+		"users": ["Nils: Bright Bard"],
+		"type": "dance",
+		"max": true
 	}
 
 }
