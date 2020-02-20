@@ -17,7 +17,7 @@
 		"prf": true,
 		"users": ["Aversa: Dark One"],
 		"type": "redtome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"2": {
@@ -48,7 +48,7 @@
 		"prf": true,
 		"users": ["Camilla: Flower of Fantasy"],
 		"type": "redtome",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"5": {
@@ -101,7 +101,7 @@
 		"prf": true,
 		"users": ["Micaiah: Summer's Dawn"],
 		"type": "redtome",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"10": {
@@ -184,7 +184,7 @@
 		"prf": true,
 		"users": ["Tana: Noble and Nimble"],
 		"type": "redtome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"18": {
@@ -195,7 +195,7 @@
 		"prf": true,
 		"users": ["Eirika: Anamnesis Lady"],
 		"type": "redtome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"19": {
@@ -206,7 +206,7 @@
 		"prf": true,
 		"users": ["Morgan: Lad from Afar"],
 		"type": "redtome",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"20": {
@@ -239,7 +239,7 @@
 		"prf": true,
 		"users": ["Gharnef: Dark Pontifex"],
 		"type": "redtome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"23": {
@@ -270,7 +270,7 @@
 		"prf": true,
 		"users": ["Julius: Scion of Darkness"],
 		"type": "redtome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"26": {
@@ -301,7 +301,7 @@
 		"prf": true,
 		"users": ["Ishtar: Thunder's Waltz"],
 		"type": "redtome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"29": {
@@ -312,7 +312,7 @@
 		"prf": true,
 		"users": ["Tharja: Obsessive Bride"],
 		"type": "redtome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"30": {
@@ -539,7 +539,7 @@
 		"prf": true,
 		"users": ["Kiria: Cool Façade"],
 		"type": "redtome",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	}
 }

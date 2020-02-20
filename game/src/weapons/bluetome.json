@@ -250,7 +250,7 @@
 		"prf": true,
 		"users": ["Delthea: Tatarrah's Puppet"],
 		"type": "bluetome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"25": {
@@ -312,7 +312,7 @@
 		"prf": true,
 		"users": ["Catria: Spring Whitewing"],
 		"type": "bluetome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"31": {
@@ -323,7 +323,7 @@
 		"prf": true,
 		"users": ["L'Arachel: Princess of Light"],
 		"type": "bluetome",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"32": {
@@ -417,7 +417,7 @@
 		"prf": true,
 		"users": ["Azura: Vallite Songstress"],
 		"type": "bluetome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"41": {
@@ -428,7 +428,7 @@
 		"prf": true,
 		"users": ["Kliff: Curious Spirit"],
 		"type": "bluetome",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"42": {
@@ -510,7 +510,7 @@
 		"prf": true,
 		"users": ["Micaiah: Priestess of Dawn"],
 		"type": "bluetome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"50": {
@@ -603,7 +603,7 @@
 		"prf": true,
 		"users": ["Julia: Crusader of Light"],
 		"type": "bluetome",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"59": {
@@ -625,7 +625,7 @@
 		"prf": true,
 		"users": ["Lute: Prodigy"],
 		"type": "bluetome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"61": {
@@ -636,7 +636,7 @@
 		"prf": true,
 		"users": ["Laegjarn: Burning Sun"],
 		"type": "bluetome",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"62": {
@@ -667,7 +667,7 @@
 		"prf": true,
 		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"65": {
@@ -678,7 +678,7 @@
 		"prf": true,
 		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"66": {

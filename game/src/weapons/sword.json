@@ -28,7 +28,7 @@
 		"prf": true,
 		"users": ["Elincia: Lost Princess"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"3": {
@@ -39,7 +39,7 @@
 		"prf": true,
 		"users": ["Eliwood: Blazing Knight"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"4": {
@@ -90,7 +90,7 @@
 		"prf": true,
 		"users": ["Joshua: Tempest King"],
 		"type": "sword",
-		"skills": [["a", 211], ["a", 210]],
+		"skills": [["a", "Resistance +3"], ["a", 210]],
 		"max": true
 	},
 	"9": {
@@ -101,7 +101,7 @@
 		"prf": true,
 		"users": ["Ayra: Astra's Wielder"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"10": {
@@ -132,7 +132,7 @@
 		"prf": true,
 		"users": ["Celica: Imprisoned Soul"],
 		"type": "sword",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"13": {
@@ -154,7 +154,7 @@
 		"prf": true,
 		"users": ["Roy: Brave Lion", "Eliwood: Knight of Lycia"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"15": {
@@ -249,7 +249,7 @@
 		"prf": true,
 		"users": ["Sigurd: Holy Knight", "Seliph: Heir of Light"],
 		"type": "sword",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"24": {
@@ -260,7 +260,7 @@
 		"prf": true,
 		"users": ["Alm: Imperial Ascent"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"25": {
@@ -304,7 +304,7 @@
 		"prf": true,
 		"users": ["Marth: Hero-King"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"29": {
@@ -399,7 +399,7 @@
 		"prf": true,
 		"users": ["Hríd: Icy Blade"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"38": {
@@ -535,7 +535,7 @@
 		"prf": true,
 		"users": ["Laevatein: Searing Steel"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"51": {
@@ -546,7 +546,7 @@
 		"prf": true,
 		"users": ["Leif: Prince of Leonster"],
 		"type": "sword",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"52": {
@@ -601,7 +601,7 @@
 		"prf": true,
 		"users": ["Laegjarn: Sheathed Steel"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"57": {
@@ -676,7 +676,7 @@
 		"prf": true,
 		"users": ["Mia: Lady of Blades"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"64": {
@@ -698,7 +698,7 @@
 		"prf": true,
 		"users": ["Celica: Warrior Priestess"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"66": {
@@ -940,7 +940,7 @@
 		"prf": true,
 		"users": ["Eirika: Graceful Resolve"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"89": {
@@ -1056,7 +1056,7 @@
 		"prf": true,
 		"users": ["Phina: Roving Dancer"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"100": {
@@ -1067,7 +1067,7 @@
 		"prf": true,
 		"users": ["Astram: Midia's Hero"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"101": {
@@ -1078,7 +1078,7 @@
 		"prf": true,
 		"users": ["Hector: Dressed-Up Duo"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"102": {
@@ -1089,7 +1089,7 @@
 		"prf": true,
 		"users": ["Catria: Mild Middle Sister"],
 		"type": "sword",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"103": {
@@ -1142,7 +1142,7 @@
 		"prf": true,
 		"users": ["Kempf: Conniving General"],
 		"type": "sword",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"108": {
@@ -1184,7 +1184,7 @@
 		"prf": true,
 		"users": ["Shannan: Wielder of Astra"],
 		"type": "sword",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"112": {
@@ -1195,7 +1195,7 @@
 		"prf": true,
 		"users": ["Itsuki: Finding a Path"],
 		"type": "sword",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"113": {

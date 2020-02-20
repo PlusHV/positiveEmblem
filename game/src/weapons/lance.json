@@ -254,7 +254,7 @@
 		"prf": true,
 		"users": ["Ephraim: Restoration Lord", "Ephraim: Legendary Lord"],
 		"type": "lance",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"25": {
@@ -307,7 +307,7 @@
 		"prf": true,
 		"users": ["Lucina: Brave Princess"],
 		"type": "lance",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"30": {
@@ -514,7 +514,7 @@
 		"prf": true,
 		"users": ["Eliwood: Marquess Pherae"],
 		"type": "lance",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"50": {
@@ -525,7 +525,7 @@
 		"prf": true,
 		"users": ["Dimitri: The Protector"],
 		"type": "lance",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"51": {
@@ -899,7 +899,7 @@
 		"prf": true,
 		"users": ["Forsyth: Loyal Lieutenant"],
 		"type": "lance",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"87": {
@@ -910,7 +910,7 @@
 		"prf": true,
 		"users": ["Ephraim: Dynastic Duo"],
 		"type": "lance",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"88": {
@@ -932,7 +932,7 @@
 		"prf": true,
 		"users": ["Altena: Luminous Rider"],
 		"type": "lance",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"90": {
@@ -943,7 +943,7 @@
 		"prf": true,
 		"users": ["Tsubasa: Madcap Idol"],
 		"type": "lance",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"91": {

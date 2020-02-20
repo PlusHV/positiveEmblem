@@ -17,7 +17,7 @@
 		"prf": true,
 		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "greentome",
-		"skills": [["a", 211]], 
+		"skills": [["a", "Resistance +3"]], 
 		"max": true
 	},
 	"2": {
@@ -28,7 +28,7 @@
 		"prf": true,
 		"users": ["Azura: Young Songstress"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	},
 	"3": {
@@ -59,7 +59,7 @@
 		"prf": true,
 		"users": ["Yune: Chaos Goddess"],
 		"type": "greentome",
-		"skills": [["a", 211]], 
+		"skills": [["a", "Resistance +3"]], 
 		"max": true
 	},
 	"6": {
@@ -144,7 +144,7 @@
 		"prf": true,
 		"users": ["Lewyn: Guiding Breeze"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	},
 	"14": {
@@ -155,7 +155,7 @@
 		"prf": true,
 		"users": ["Nino: Pale Flower"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	},
 	"15": {
@@ -399,7 +399,7 @@
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "greentome",
-		"skills": [["a", 211]], 
+		"skills": [["a", "Resistance +3"]], 
 		"max": true
 	},
 	"39": {
@@ -410,7 +410,7 @@
 		"prf": true,
 		"users": ["Sharena: Spring Princess"],
 		"type": "greentome",
-		"skills": [["a", 211]], 
+		"skills": [["a", "Resistance +3"]], 
 		"max": true
 	},
 	"40": {
@@ -432,7 +432,7 @@
 		"prf": true,
 		"users": ["Sanaki: Apostle in White"],
 		"type": "greentome",
-		"skills": [["a", 63]], 
+		"skills": [["a", "Attack +3"]], 
 		"max": true
 	},
 	"42": {
@@ -546,7 +546,7 @@
 		"prf": true,
 		"users": ["Veronica: Spring Princess"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	},
 	"53": {
@@ -598,7 +598,7 @@
 		"prf": true,
 		"users": ["Celica: Queen of Valentia"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	},
 	"58": {
@@ -607,9 +607,9 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": ["Celica: Queen of Valentia"],
+		"users": ["Ced: Hero on the Wind"],
 		"type": "greentome",
-		"skills": [["a", 234]], 
+		"skills": [["a", "Speed +3"]], 
 		"max": true
 	}
 }

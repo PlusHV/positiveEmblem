@@ -143,7 +143,7 @@ class TicTacToeBoard extends React.Component{
 
       if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
         value1.prf === false || //if the prf key says false, then push to the list
-        ( !('users' in value1) || value1.users.includes(newHero.name ) )  //change to newHero.name
+        ( !('users' in value1) || value1.users.includes(newHero.name ) )  
         ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
           
           if (!newMax || (  !('max' in value1) || value1.max  ) ){
@@ -421,7 +421,10 @@ class TicTacToeBoard extends React.Component{
     if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of skillDropdowns[skillType].info[id].skills) {
 
-        updatedHero = this.getSkillEffect(x[1], x[0], updatedHero, skillDropdowns); //add the extra skills as well
+
+        var additionalSkill  = skillDropdowns[x[0]].list.find(this.findSkillWithName, x[1]).value;
+
+        updatedHero = this.getSkillEffect(additionalSkill, x[0], updatedHero, skillDropdowns); //add the extra skills as well
       }
 
     }
@@ -459,7 +462,10 @@ class TicTacToeBoard extends React.Component{
 
     if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of this.state.skillDropdowns[skillType].info[id].skills) {
-        updatedHero = this.removeSkillEffect(x[1], x[0], updatedHero); //remove the extra skills as well
+
+        var additionalSkill  = this.state.skillDropdowns[x[0]].list.find(this.findSkillWithName, x[1]).value;
+
+        updatedHero = this.removeSkillEffect(additionalSkill, x[0], updatedHero); //remove the extra skills as well
       }
 
     }

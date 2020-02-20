@@ -17,7 +17,7 @@
 		"prf": true,
 		"users": ["Klein: Silver Nobleman"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"2": {
@@ -179,7 +179,7 @@
 		"prf": true,
 		"users": ["Claude: The Schemer"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"18": {
@@ -210,7 +210,7 @@
 		"prf": true,
 		"users": ["Lyn: Lady of the Beach"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"21": {
@@ -422,7 +422,7 @@
 		"prf": true,
 		"users": ["Alm: Saint-King"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"42": {
@@ -453,7 +453,7 @@
 		"prf": true,
 		"users": ["Lyn: Brave Lady"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"45": {
@@ -577,7 +577,7 @@
 		"prf": true,
 		"users": ["Takumi: Empty Vessel"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"57": {
@@ -618,7 +618,7 @@
 		"prf": true,
 		"users": ["Lyn: Lady of the Wind"],
 		"type": "bow",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"61": {
@@ -629,7 +629,7 @@
 		"prf": true,
 		"users": ["Lucina: Glorious Archer"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"62": {
@@ -650,7 +650,7 @@
 		"prf": true,
 		"users": ["Hinoka: Blue Sky Warrior"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"64": {
@@ -703,7 +703,7 @@
 		"prf": true,
 		"users": ["Marth: Royal Altean Duo"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"69": {
@@ -734,7 +734,7 @@
 		"prf": true,
 		"users": ["Eleonora: Shooting Starlet"],
 		"type": "bow",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"72": {

@@ -60,7 +60,7 @@
 		"prf": true,
 		"users": ["Idunn: Dark Priestess"],
 		"type": "breath",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"6": {
@@ -71,7 +71,7 @@
 		"prf": true,
 		"users": ["Naga: Dragon Divinity"],
 		"type": "breath",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"7": {
@@ -115,7 +115,7 @@
 		"prf": true,
 		"users": ["Duma: God of Strength"],
 		"type": "breath",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"11": {
@@ -186,7 +186,7 @@
 		"prf": true,
 		"users": ["Myrrh: Great Dragon"],
 		"type": "breath",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"18": {
@@ -237,7 +237,7 @@
 		"prf": true,
 		"users": ["Nah: Little Miss"],
 		"type": "breath",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"23": {
@@ -259,7 +259,7 @@
 		"prf": true,
 		"users": ["Corrin: Wailing Soul"],
 		"type": "breath",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"25": {
@@ -270,7 +270,7 @@
 		"prf": true,
 		"users": ["Myrrh: Spooky Monster"],
 		"type": "breath",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"26": {
@@ -292,7 +292,7 @@
 		"prf": true,
 		"users": ["Tiki: Beachside Scion"],
 		"type": "breath",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"28": {
@@ -344,7 +344,7 @@
 		"prf": true,
 		"users": ["Sothis: Silver Specter"],
 		"type": "breath",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"33": {
@@ -355,7 +355,7 @@
 		"prf": true,
 		"users": ["Nils: Bright Bard"],
 		"type": "breath",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	}
 	

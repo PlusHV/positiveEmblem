@@ -57,7 +57,7 @@
 		"prf": true,
 		"users": ["Lethe: Gallia's Valkyrie"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"6": {
@@ -68,7 +68,7 @@
 		"prf": true,
 		"users": ["Yarne: Timid Taguel"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"7": {
@@ -79,7 +79,7 @@
 		"prf": true,
 		"users": ["Ranulf: Friend of Nations"],
 		"type": "beast",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"8": {
@@ -100,7 +100,7 @@
 		"prf": true,
 		"users": ["Selkie: Free Spirit"],
 		"type": "beast",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"10": {
@@ -121,7 +121,7 @@
 		"prf": true,
 		"users": ["Tibarn: Lord of the Air"],
 		"type": "beast",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"12": {
@@ -132,7 +132,7 @@
 		"prf": true,
 		"users": ["Leanne: Forest's Song", "Reyson: White Prince"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"13": {
@@ -143,7 +143,7 @@
 		"prf": true,
 		"users": ["Kaden: Kitsune Braggart"],
 		"type": "beast",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"14": {
@@ -154,7 +154,7 @@
 		"prf": true,
 		"users": ["Caineghis: Gallia's Lion King"],
 		"type": "beast",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"15": {
@@ -165,7 +165,7 @@
 		"prf": true,
 		"users": ["Naesala: Sky's Shadow"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"16": {
@@ -176,7 +176,7 @@
 		"prf": true,
 		"users": ["Mordecai: Kindhearted Tiger"],
 		"type": "beast",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"17": {
@@ -239,7 +239,7 @@
 		"prf": true,
 		"users": ["Velouria: Wolf Cub"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"23": {
@@ -291,7 +291,7 @@
 		"prf": true,
 		"users": ["Lethe: New Year's Claw"],
 		"type": "beast",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"28": {

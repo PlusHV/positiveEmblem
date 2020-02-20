@@ -17,7 +17,7 @@
 		"prf": true,
 		"users": ["Kronya: Gleaming Blade"],
 		"type": "dagger",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"2": {
@@ -587,7 +587,7 @@
 		"prf": true,
 		"users": ["Ylgr: Fresh Snowfall"],
 		"type": "dagger",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"58": {
@@ -598,7 +598,7 @@
 		"prf": true,
 		"users": ["Flora: Signature Dish"],
 		"type": "dagger",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"59": {
@@ -739,7 +739,7 @@
 		"prf": true,
 		"users": ["Leila: Rose amid Fangs"],
 		"type": "dagger",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	}
 }

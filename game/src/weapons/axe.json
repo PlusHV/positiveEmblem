@@ -196,7 +196,7 @@
 		"prf": true,
 		"users": ["Felicia: Off the Menu"],
 		"type": "axe",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"19": {
@@ -247,7 +247,7 @@
 		"prf": true,
 		"users": ["Hilda: Idle Maiden"],
 		"type": "axe",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	},
 	"24": {
@@ -258,7 +258,7 @@
 		"prf": true,
 		"users": ["Ephraim: Sacred Twin Lord"],
 		"type": "axe",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"25": {
@@ -289,7 +289,7 @@
 		"prf": true,
 		"users": [],
 		"type": "axe",
-		"skills": [["a", 63]],
+		"skills": [["a", "Attack +3"]],
 		"max": true
 	},
 	"28": {
@@ -595,7 +595,7 @@
 		"prf": true,
 		"users": ["Surtr: Ruler of Flame"],
 		"type": "axe",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"58": {
@@ -668,7 +668,7 @@
 		"prf": true,
 		"users": ["Hector: Marquess of Ostia"],
 		"type": "axe",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"65": {
@@ -742,7 +742,7 @@
 		"prf": true,
 		"users": ["Walhart: The Conqueror"],
 		"type": "axe",
-		"skills": [["a", 123]],
+		"skills": [["a", "Defense +3"]],
 		"max": true
 	},
 	"72": {
@@ -804,7 +804,7 @@
 		"prf": true,
 		"users": ["Mamori: Microwavin' Idol"],
 		"type": "axe",
-		"skills": [["a", 211]],
+		"skills": [["a", "Resistance +3"]],
 		"max": true
 	},
 	"78": {
@@ -815,7 +815,7 @@
 		"prf": true,
 		"users": ["Alm: Lovebird Duo"],
 		"type": "axe",
-		"skills": [["a", 234]],
+		"skills": [["a", "Speed +3"]],
 		"max": true
 	}
 
