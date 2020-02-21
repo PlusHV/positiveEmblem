@@ -357,6 +357,17 @@
 		"type": "breath",
 		"skills": [["a", "Resistance +3"]],
 		"max": true
+	},
+	"34": {
+		"name": "Sun Dragonstone",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Kana: Dragon Princess"],
+		"type": "breath",
+		"skills": [],
+		"max": true
 	}
 	
 }

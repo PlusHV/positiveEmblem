@@ -541,5 +541,16 @@
 		"type": "redtome",
 		"skills": [["a", "Attack +3"]],
 		"max": true
+	},
+	"52": {
+		"name": "Corvus Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Henry: Twisted Mind"],
+		"type": "redtome",
+		"skills": [],
+		"max": true
 	}
 }

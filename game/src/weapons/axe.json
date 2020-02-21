@@ -817,6 +817,50 @@
 		"type": "axe",
 		"skills": [["a", "Speed +3"]],
 		"max": true
+	},
+	"79": {
+		"name": "Guardian's Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Hawkeye: Desert Guardian"],
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"80": {
+		"name": "Frederick's Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Frederick: Polite Knight"],
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"81": {
+		"name": "Arthur's Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Arthur: Hapless Hero"],
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"82": {
+		"name": "Devil Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Barst: The Hatchet"],
+		"type": "axe",
+		"skills": [],
+		"max": true
 	}
 
 

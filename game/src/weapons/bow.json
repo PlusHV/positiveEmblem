@@ -756,6 +756,39 @@
 		"type": "bow",
 		"skills": [],
 		"max": false
+	},
+	"74": {
+		"name": "Dignified Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Virion: Elite Archer"],
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"75": {
+		"name": "Renowned Bow",
+		"might": 9,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gordin: Altean Archer"],
+		"type": "bow",
+		"skills": [],
+		"max": true
+	},
+	"76": {
+		"name": "Rebecca's Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Rebecca: Wildflower"],
+		"type": "bow",
+		"skills": [],
+		"max": true
 	}
 	
 

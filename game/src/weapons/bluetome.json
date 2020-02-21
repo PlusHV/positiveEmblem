@@ -711,5 +711,16 @@
 		"type": "bluetome",
 		"skills": [],
 		"max": true
+	},
+	"69": {
+		"name": "Father's Tactics",
+		"might": 12,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Morgan: Lass from Afar"],
+		"type": "bluetome",
+		"skills": [],
+		"max": true
 	}
 }

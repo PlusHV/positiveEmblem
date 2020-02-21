@@ -741,5 +741,16 @@
 		"type": "dagger",
 		"skills": [["a", "Speed +3"]],
 		"max": true
+	},
+	"72": {
+		"name": "Jakob's Tray",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Jakob: Devoted Servant"],
+		"type": "dagger",
+		"skills": [],
+		"max": true
 	}
 }

@@ -1217,6 +1217,28 @@
 		"type": "sword",
 		"skills": [],
 		"max": false
+	},
+	"115": {
+		"name": "Concealed Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Athena: Borderland Sword"],
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"116": {
+		"name": "Laslow's Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Laslow: Dancing Duelist"],
+		"type": "sword",
+		"skills": [],
+		"max": true
 	}
 }
 

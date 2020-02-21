@@ -976,6 +976,50 @@
 		"type": "lance",
 		"skills": [],
 		"max": false
+	},
+	"94": {
+		"name": "Golden Naginata",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Subaki: Perfect Expert"],
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"95": {
+		"name": "Lordly Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Clive: Idealistic Knight"],
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"96": {
+		"name": "Knightly Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Mathilda: Legendary Knight"],
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"97": {
+		"name": "Cordelia's Lance",
+		"might": 10,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Cordelia: Knight Paragon"],
+		"type": "lance",
+		"skills": [["a", "Speed +3"]],
+		"max": true
 	}
 
 }
