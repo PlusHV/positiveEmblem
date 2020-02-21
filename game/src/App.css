@@ -108,6 +108,13 @@ table,tr,td {
   min-width: 100%;
   height: 100%;
   vertical-align: bottom;
+
+}
+.waitHeroFace{
+  min-width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  filter: grayscale(100%);
 }
 
 .highlightedTeamMember{
@@ -180,6 +187,8 @@ table,tr,td {
 .dropdown{
   background-color: blue;
 }
+
+
 
 
 

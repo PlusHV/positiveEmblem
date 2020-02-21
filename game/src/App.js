@@ -86,6 +86,7 @@ class TicTacToeBoard extends React.Component{
     this.onMaxFilterChange = this.onMaxFilterChange.bind(this);
     this.onBuffChange = this.onBuffChange.bind(this);
     this.onBonusChange = this.onBonusChange.bind(this);
+    this.onEndChange = this.onEndChange.bind(this);
     this.onIVChange = this.onIVChange.bind(this);
     this.onSupportLevelChange = this.onSupportLevelChange.bind(this);
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
@@ -401,6 +402,10 @@ class TicTacToeBoard extends React.Component{
         updatedHero.assist.type = "heal";
         updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      } else if (skillDropdowns[skillType].info[id].type === "dance"){
+        updatedHero.assist.type = "dance";
+
+        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       }
 
 
@@ -509,6 +514,21 @@ class TicTacToeBoard extends React.Component{
     hero.stats =  CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
     
     hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+
+    temp[this.state.playerSide][this.state.heroIndex] = hero;
+
+    this.setState({heroList: temp});
+    this.setState({selectedMember: hero});
+
+
+  }
+
+  onEndChange(e){
+    var temp = this.state.heroList;
+    let hero = temp[this.state.playerSide][this.state.heroIndex]; 
+    
+
+    hero.end = e.target.checked;
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -814,9 +834,9 @@ class TicTacToeBoard extends React.Component{
         } else if (dragData.assist.type === "heal"){
           temp = this.ApplyHealAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
           
+        } else if (dragData.assist.type === "dance"){
+          temp = this.ApplyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
         }
-
-        //TODO, implement other assist types as well
 
       }
 
@@ -1101,6 +1121,20 @@ class TicTacToeBoard extends React.Component{
 
   }
 
+  ApplyDanceAssist(updatedHeroList, assister, assistee){
+    let list = updatedHeroList;
+
+    if (assistee.end === true){
+      list[assistee.side][assistee.listIndex].end = false;
+    }
+
+    
+
+    return list;
+
+
+  }
+
 
   CheckAdjacent(first, second){
    let firstRC = this.PositionToRowColumn(first);
@@ -1235,6 +1269,11 @@ class TicTacToeBoard extends React.Component{
 
             if (positions.includes(id)){ //if it has a person in the cell
               //onDrop = {(e) => this.dropBoardMember(e)} >
+              var imgClass = "heroFace";
+              if (this.props.G.cells[id].end === true){
+                imgClass = "waitHeroFace";
+              }
+
               cells.push(
                 <td className= {cellClass} key={id} onClick={() => this.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
                   id = {id}
@@ -1242,7 +1281,7 @@ class TicTacToeBoard extends React.Component{
                   
 
                 <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 
-                    className = "heroFace" 
+                    className = {imgClass} 
                     alt = {heroData[this.props.G.cells[id].heroID.value].name}
                     draggable = "true"
                     id =  {JSON.stringify(this.props.G.cells[id])}
@@ -1327,7 +1366,8 @@ class TicTacToeBoard extends React.Component{
             maxFilterChange = {this.onMaxFilterChange}
             supportLevelChange = {this.onSupportLevelChange}
             allySupportChange = {this.onAllySupportChange}
-            bonusChange = {this.onBonusChange} />
+            bonusChange = {this.onBonusChange}
+            endChange = {this.onEndChange} />
           <Field  
             gameState = {this.state}
             fortChange = {this.onFortLevelChange}
@@ -1383,7 +1423,7 @@ function makeHeroStruct(){
     this["assist"] = {}
     this["range"] = -1;
     this["bonus"] = false;
-
+    this["end"] = false;
 
   }  
   return hero;

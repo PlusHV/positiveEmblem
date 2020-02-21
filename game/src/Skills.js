@@ -253,9 +253,32 @@ const dropDownStyle = {
             
         
       </tr>
+    );  
 
+    tbody.push(
+        <tr key = {"wait row"}> 
+        <td className = "equipText" key = {"wait"}>
+            Wait
+        </td>
 
-    );    
+        <td className = "equippedSkill" key = {"waitCheckbox"}>
+            <input 
+            type = "checkbox"
+            value = {this.props.gameState.selectedMember.end}
+            checked = {this.props.gameState.selectedMember.end}
+            onChange = {(e) => this.props.endChange(e)}
+              />
+        </td>
+
+        <td>
+
+        </td>
+
+        <td>
+        </td>
+
+      </tr>
+    );
 
     return(
 
