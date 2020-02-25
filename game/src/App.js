@@ -329,7 +329,6 @@ class TicTacToeBoard extends React.Component{
   }
 
   checkLabelExists(item){
-    console.log(item);
     return item.name === this;
   }
 
@@ -838,6 +837,10 @@ class TicTacToeBoard extends React.Component{
           temp = this.ApplyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
         }
 
+      //Check if in range for attack and if they are on the same die
+      } else if (this.GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
+
+        temp = this.DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
       }
 
 
@@ -1135,6 +1138,107 @@ class TicTacToeBoard extends React.Component{
 
   }
 
+  DoBattle(updatedHeroList, attacker, defender){
+    let list = updatedHeroList;
+
+    let newAttacker = attacker.currentHP;
+    let newDefender = defender.currentHP;
+
+    let attackerType = this.GetDamageType(heroData[attacker.heroID.value].weapontype);
+    let defenderType = this.GetDamageType(heroData[defender.heroID.value].weapontype);
+    //aDmgType = 
+
+    let attackCount = this.GetAttackCount(attacker, defender);
+
+    let attackStack = this.GetAttackOrder(attackCount);
+
+
+    while (attackStack.length > 0 && newAttacker > 0 && newDefender > 0){
+      let temp = attackStack.shift();
+      let damage = 0;
+      if (temp === 1){
+        damage = this.CalculateDamage(attacker, defender, attackerType);
+
+        newDefender = Math.max(0, newDefender - damage);
+
+      } else if (temp === 2){
+        damage = this.CalculateDamage(defender, attacker, defenderType);
+
+        newAttacker = Math.max(0, newAttacker - damage);
+      }
+
+    }
+
+    list[attacker.side][attacker.listIndex].currentHP = newAttacker;
+    list[defender.side][defender.listIndex].currentHP = newDefender;
+    return list;
+  }
+
+  GetDamageType(weaponType){
+    if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
+      return "def";
+    } else if (["redtome", "bluetome", "greentome", "breath", "staff"].includes(weaponType)){
+      return "res";
+    }
+    return "error";
+
+
+  }
+  //Get the number of attacks for each unit (e.g. doubling)
+  GetAttackCount(attacker, defender){
+    let attackerCount = 1; //Has at least one
+    let defenderCount = 0;
+
+    //determine if defender gets to attack at all
+    if (defender.range === attacker.range){ //to do - or if distant counter/close counter, 
+      defenderCount = 1;
+    }
+
+    //if outspeed (or if have double granting effect)
+    if ( (attacker.stats.spd - defender.stats.spd) >= 5 ) {
+
+      attackerCount++;
+
+    } else if ( (defender.stats.spd - attacker.stats.spd) >= 5  && defenderCount > 0) {
+      defenderCount++;
+
+    }
+
+    return [attackerCount, defenderCount];
+  }
+  //Given the attack counts, return the order in the form of a stack list
+  GetAttackOrder(stack){
+    //basic attack order without extra skills
+    let attackerHits = stack[0];
+    let defenderHits = stack[1];
+
+    let attackStack = [];
+
+    while (attackerHits > 0 ||  defenderHits > 0){
+
+      if (attackerHits > 0){
+        attackStack.push(1);
+        attackerHits--;
+      }
+
+      if (defenderHits > 0){
+        attackStack.push(2);
+        defenderHits--;
+      }
+
+
+    }
+
+    return attackStack;
+  }
+
+  CalculateDamage(attacker, defender, damageType){
+
+    return attacker.stats.atk - defender.stats[damageType];
+
+
+  }
+
 
   CheckAdjacent(first, second){
    let firstRC = this.PositionToRowColumn(first);
@@ -1227,12 +1331,6 @@ class TicTacToeBoard extends React.Component{
 
   render() {
 
-//      let temp = [
-
-// "0","0","220","64","0","254","163","6","234","78","0","0","61","248","169","0","257","135","80","108","21","0","220","0","70","274","169","0","0","0","155","0","85","172","138","105","257","70","203","120","276","21","0","135","135","118","197","0","82","0","61","229","130","21","257","103","229","0","251","24","237","0","260","64","0","0","0","48","134","104","231","0","130","105","0","76","52","211","76","85","0","0","0","152","272","270","200","0","205","182","9","166","138","0","80","0","55","0","114","271","116","274","208","103","260","6","52","0","0","257","6","42","48","52","118","18","0","123","91","76","61","6","48","0","103","0","61","176","58","0","0","0","0","251","6","0","191","157","133","127","166","0","0","257","91","116","0","173","152","176","6","0","58","0","97","3","135","18","131","143","275","260","94","67","0","130","120","0","163","3","266","100","0","0","0","237","0","15","48","12","117","85","0","120","119","104","0","94","12","18","39","0","0","108","70","197","234","135","67","70","163","88","172","138","132","21","0","76","251","0","12","203","0","132","163","224","9","21","220","108","0","78","98","0","257","120","163","0","133","82","220","70","0","0","0","0","0","176","191","18","0","70","237","217","6","80","30","0","108","244","152","97","76","237","0","149","130","138","169","234","0","135","76","123","191","260","155","276","231","114","36","231","12","134","6","0","71","146","115","78","203","266","0","217","234","98","45","82","104","214","130","155","135","263","263","0","220","12","130","0","126","274","111","0","239","239","135","120","64","179","260","123","229","76","0","273","260","0","156","118","222","99","203","0","275","194","6","229","0","160","78","140","0","0","45","0","241","138","166","126","0","211","237","55","208","103","0","130","266","0","91","130","0","0","266","103","197","98","33","276","67","21","135","3","214","88","0","80","191","108","188","108","226","269","0","0","139","229","0","245","82","214","169","0","266","222","126","105","185","234","0","0","85","74","48","277","234","27","204","0","0","0","263","91","176","273","52","0","0","0","0","0","166","229","103","152","172","88","217","49","176","0","203","74","0","0","0","0","280","6","127","283","0","172","217","284","0","287","0","0","64","163","0","152","260","299","58","214","76","179","290","293","194","296","0","200","85","300","241","203","116","157","6","303","306","309","312","315","217","0","169","0","179","280","94","97","0","78","0","0","135","269","318","0","6","321","208"
-
-//         ];
-//  let temp2 = [];
 
 //      for ( let x =0; x < temp.length; x++){
 
@@ -1243,7 +1341,6 @@ class TicTacToeBoard extends React.Component{
 
 //      }
 
-//      console.log(temp2);
 
     let highLightedCell = this.state.heroList[this.state.playerSide][this.state.heroIndex].position; 
 
