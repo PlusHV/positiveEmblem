@@ -2,6 +2,7 @@ import { Client } from 'boardgame.io/react';
 //import { Game } from 'boardgame.io/core';
 import React from 'react';
 import { CalculateStats } from './StatCalculation.js';
+import { DoBattle } from './Battle.js';
 import './App.css';
 
 
@@ -10,6 +11,7 @@ import TeamElement from './TeamElement.js';
 import Stats from './Stats.js';
 import Skills from './Skills.js';
 import Field from './Field.js';
+import BattleWindow from './BattleWindow.js';
 
 //Json imports
 import heroData from './heroInfo.json';
@@ -76,7 +78,9 @@ class TicTacToeBoard extends React.Component{
       "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"},
       "availableMovement": [],
       "availableAssist": [],
-      "availableAttack": []
+      "availableAttack": [],
+      "draggedHero": null,
+      "draggedOver": null
     }
 
     this.selectNewMember = this.selectNewMember.bind(this);
@@ -746,7 +750,7 @@ class TicTacToeBoard extends React.Component{
           attackList.push(i);
       }
     }
-
+    this.setState({draggedHero: dragData});
     this.setState({availableMovement: movementList});
     this.setState({availableAssist: assistList});
     this.setState({availableAttack: attackList});
@@ -756,6 +760,27 @@ class TicTacToeBoard extends React.Component{
   }
   dragOverBoard(ev){
     ev.preventDefault();
+
+
+
+    let dropPosition = ev.target.id;
+
+    //if the spot has a hero, convert that hero to an ID
+    if (Number.isNaN(parseInt(dropPosition)) ){
+
+      dropPosition = JSON.parse(dropPosition).position;
+    } else{
+      dropPosition = parseInt(dropPosition);
+    }
+
+    if ( this.state.draggedOver === null || (this.state.draggedOver.position !== dropPosition && 
+      this.props.G.cells[dropPosition] !==null && 
+      this.state.draggedHero.side !== this.props.G.cells[dropPosition].side) ){
+
+      this.setState({draggedOver: this.props.G.cells[dropPosition]});
+
+    }
+
   }
 
   dragEnd(ev){
@@ -764,6 +789,9 @@ class TicTacToeBoard extends React.Component{
     this.setState({availableMovement: []});
     this.setState({availableAssist: []});
     this.setState({availableAttack: []});
+
+    this.setState({draggedOver: null});
+    this.setState({draggedHero: null});
   }
 
   dropBoardMember(ev){
@@ -840,7 +868,7 @@ class TicTacToeBoard extends React.Component{
       //Check if in range for attack and if they are on the same die
       } else if (this.GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
 
-        temp = this.DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
+        temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
       }
 
 
@@ -1138,106 +1166,8 @@ class TicTacToeBoard extends React.Component{
 
   }
 
-  DoBattle(updatedHeroList, attacker, defender){
-    let list = updatedHeroList;
-
-    let newAttacker = attacker.currentHP;
-    let newDefender = defender.currentHP;
-
-    let attackerType = this.GetDamageType(heroData[attacker.heroID.value].weapontype);
-    let defenderType = this.GetDamageType(heroData[defender.heroID.value].weapontype);
-    //aDmgType = 
-
-    let attackCount = this.GetAttackCount(attacker, defender);
-
-    let attackStack = this.GetAttackOrder(attackCount);
 
 
-    while (attackStack.length > 0 && newAttacker > 0 && newDefender > 0){
-      let temp = attackStack.shift();
-      let damage = 0;
-      if (temp === 1){
-        damage = this.CalculateDamage(attacker, defender, attackerType);
-
-        newDefender = Math.max(0, newDefender - damage);
-
-      } else if (temp === 2){
-        damage = this.CalculateDamage(defender, attacker, defenderType);
-
-        newAttacker = Math.max(0, newAttacker - damage);
-      }
-
-    }
-
-    list[attacker.side][attacker.listIndex].currentHP = newAttacker;
-    list[defender.side][defender.listIndex].currentHP = newDefender;
-    return list;
-  }
-
-  GetDamageType(weaponType){
-    if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
-      return "def";
-    } else if (["redtome", "bluetome", "greentome", "breath", "staff"].includes(weaponType)){
-      return "res";
-    }
-    return "error";
-
-
-  }
-  //Get the number of attacks for each unit (e.g. doubling)
-  GetAttackCount(attacker, defender){
-    let attackerCount = 1; //Has at least one
-    let defenderCount = 0;
-
-    //determine if defender gets to attack at all
-    if (defender.range === attacker.range){ //to do - or if distant counter/close counter, 
-      defenderCount = 1;
-    }
-
-    //if outspeed (or if have double granting effect)
-    if ( (attacker.stats.spd - defender.stats.spd) >= 5 ) {
-
-      attackerCount++;
-
-    } else if ( (defender.stats.spd - attacker.stats.spd) >= 5  && defenderCount > 0) {
-      defenderCount++;
-
-    }
-
-    return [attackerCount, defenderCount];
-  }
-  //Given the attack counts, return the order in the form of a stack list
-  GetAttackOrder(stack){
-    //basic attack order without extra skills
-    let attackerHits = stack[0];
-    let defenderHits = stack[1];
-
-    let attackStack = [];
-
-    while (attackerHits > 0 ||  defenderHits > 0){
-
-      if (attackerHits > 0){
-        attackStack.push(1);
-        attackerHits--;
-      }
-
-      if (defenderHits > 0){
-        attackStack.push(2);
-        defenderHits--;
-      }
-
-
-    }
-
-    return attackStack;
-  }
-
-  CalculateDamage(attacker, defender, damageType){
-
-    return attacker.stats.atk - defender.stats[damageType];
-
-
-  }
 
 
   CheckAdjacent(first, second){
@@ -1418,9 +1348,9 @@ class TicTacToeBoard extends React.Component{
     return (
 
       <div>
-      <table align = 'center'>
+      <table align = 'center' >
       <tbody>
-      <tr>
+      <tr valign = 'top'>
         <td><TeamElement 
             name = "1" 
             gameState = {this.state} 
@@ -1430,7 +1360,7 @@ class TicTacToeBoard extends React.Component{
             drop = {this.dropTeamMember} />
         </td>
 
-        <td colSpan = "2">
+        <td colSpan = "3">
           <Stats 
               gameState = {this.state} 
               levelChange = {this.onLevelsChange}
@@ -1445,7 +1375,7 @@ class TicTacToeBoard extends React.Component{
           </table>
         </td>
       </tr>
-      <tr>
+      <tr valign = 'top'>
         
         <td><TeamElement 
             name = "2" 
@@ -1465,13 +1395,24 @@ class TicTacToeBoard extends React.Component{
             allySupportChange = {this.onAllySupportChange}
             bonusChange = {this.onBonusChange}
             endChange = {this.onEndChange} />
+
+        </td>
+
+        <td>
           <Field  
             gameState = {this.state}
             fortChange = {this.onFortLevelChange}
             seasonChange = {this.onSeasonChange} />
           
         </td>
-        <td>"Extra Info"</td>
+
+        <td>
+          <BattleWindow
+          gameState = {this.state}
+
+          />
+
+        </td>
       </tr>
 
       </tbody>
