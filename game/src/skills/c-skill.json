@@ -2263,5 +2263,47 @@
 		"prf": false,
 		"type": "turn-start",
 		"max": true
+	},
+	"322": {
+		"name": "Atk/Def Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"323": {
+		"name": "Atk/Def Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"324": {
+		"name": "Atk/Def Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"325": {
+		"name": "Rouse Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"326": {
+		"name": "Rouse Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"327": {
+		"name": "Rouse Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
 	}
 }

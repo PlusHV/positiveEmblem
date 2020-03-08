@@ -1020,6 +1020,17 @@
 		"type": "lance",
 		"skills": [["a", "Speed +3"]],
 		"max": true
+	},
+	"98": {
+		"name": "Veteran Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Jagen: Veteran Knight"],
+		"type": "lance",
+		"skills": [],
+		"max": true
 	}
 
 }

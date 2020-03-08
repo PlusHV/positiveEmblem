@@ -456,6 +456,16 @@
 		"users": ["Nils: Bright Bard"],
 		"type": "dance",
 		"max": true
+	},
+	"51": {
+		"name": "To Change Fate!",
+		"sp": 500,
+		"range": 1,
+		"prf": true,
+		"users": ["Chrom: Crowned Exalt"],
+		"type": "movement",
+		"effect": [0, -2],
+		"max": true
 	}
 
 }

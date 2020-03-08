@@ -789,6 +789,28 @@
 		"type": "bow",
 		"skills": [],
 		"max": true
+	},
+	"77": {
+		"name": "Randgríðr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Chrom: Crowned Exalt"],
+		"type": "bow",
+		"skills": [["a", "Attack +3"]],
+		"max": true
+	},
+	"78": {
+		"name": "Persecution Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Bernadetta: Eternal Loner"],
+		"type": "bow",
+		"skills": [],
+		"max": true
 	}
 	
 

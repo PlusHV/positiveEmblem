@@ -772,12 +772,17 @@ class TicTacToeBoard extends React.Component{
     } else{
       dropPosition = parseInt(dropPosition);
     }
+    let cellContent = this.props.G.cells[dropPosition];
 
-    if ( this.state.draggedOver === null || (this.state.draggedOver.position !== dropPosition && 
-      this.props.G.cells[dropPosition] !==null && 
-      this.state.draggedHero.side !== this.props.G.cells[dropPosition].side) ){
 
-      this.setState({draggedOver: this.props.G.cells[dropPosition]});
+    //check if cell has a hero and if it is on opposite side
+
+    if (cellContent !==null && this.state.draggedHero.side !== cellContent.side){
+      //if it is not the same draggedOver as before or if there was none before
+      if ( (this.state.draggedOver !== null && this.state.draggedOver.position !== dropPosition) || this.state.draggedOver === null ) {
+        this.setState({draggedOver: this.props.G.cells[dropPosition]});
+      }
+
 
     }
 

@@ -2061,5 +2061,26 @@
 		"prf": false,
 		"type": "on-rally",
 		"max": true
+	},
+	"292": {
+		"name": "Lull Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"293": {
+		"name": "Lull Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"max": false
+	},
+	"294": {
+		"name": "Lull Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"max": true
 	}
 }

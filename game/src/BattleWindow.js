@@ -23,9 +23,9 @@ export default class BattleWindow extends React.Component{
 		let aNewHP = 0;
 		let dOrgHP = 0;
 		let dNewHP = 0;
-		let aDmg = 0;
+		let aDmg = "-";
 		let aCount = 0;
-		let dDmg = 0;
+		let dDmg = "-";
 		let dCount = 0;
 
 
@@ -89,7 +89,7 @@ export default class BattleWindow extends React.Component{
 
 
 	    //portrait
-	    cells.push(<td rowSpan = "2"> 
+	    cells.push(<td rowSpan = "2" key = "aPortrait"> 
                 <img src= {require('./art/' +  aArt + '/Face_FC.png') } 
                     className = {aClass} 
                     alt = {aArt}
@@ -97,23 +97,23 @@ export default class BattleWindow extends React.Component{
 	    	</td>);
 
 
-	    cells.push(<td align = "center">
+	    cells.push(<td align = "center" key = "aHP">
 	    	{aOrgHP} -> {aNewHP}
 	    	</td>);
 
-	    cells.push(<td align = "center">
+	    cells.push(<td align = "center" key = "HPLabel">
 	    	HP
 	    	</td>);
 
 
-	    cells.push(<td align = "center">
+	    cells.push(<td align = "center" key = "dHP">
 	    	{dOrgHP} -> {dNewHP}
 	    	</td>);
 
 
 
 	    //portrait
-	    cells.push(<td rowSpan = "2" align = "center">
+	    cells.push(<td rowSpan = "2" align = "center" key = "dPortait">
                 <img src= {require('./art/' +  dArt + '/Face_FC.png') } 
                     className = {dClass}
                     alt = {dArt}
@@ -125,15 +125,15 @@ export default class BattleWindow extends React.Component{
 
 	    cells = [];
 
-	    cells.push(<td align = "center">
+	    cells.push(<td align = "center" key = "aDamage">
 	    	{aDmg + GetDoubleText(aCount)}
 	    	</td>);
-	    cells.push(<td>
+	    cells.push(<td key = "DamageLabel">
 	    	DMG
 	    	</td>);
 
 
-	    cells.push(<td align = "center">
+	    cells.push(<td align = "center" key = "dDamage">
 	    	{dDmg + GetDoubleText(dCount)}
 	    	</td>);
 
@@ -141,7 +141,7 @@ export default class BattleWindow extends React.Component{
 	    tbody.push(<tr key= "battleRow2" >{cells}</tr>);
 
     	return(
-	        <table id = "Battle">
+	        <table key = "Battle">
 	        <tbody>
 
 	        {tbody}
