@@ -552,5 +552,16 @@
 		"type": "redtome",
 		"skills": [],
 		"max": true
+	},
+	"53": {
+		"name": "Hades Ω",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lysithea: Child Prodigy"],
+		"type": "redtome",
+		"skills": [],
+		"max": true
 	}
 }

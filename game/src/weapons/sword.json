@@ -1239,6 +1239,28 @@
 		"type": "sword",
 		"skills": [],
 		"max": true
+	},
+	"117": {
+		"name": "Laid-Back Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Gray: Wry Comrade"],
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"118": {
+		"name": "Jubilant Blade",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Tobin: The Clueless One"],
+		"type": "sword",
+		"skills": [],
+		"max": true
 	}
 }
 

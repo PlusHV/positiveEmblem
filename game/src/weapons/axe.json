@@ -861,6 +861,37 @@
 		"type": "axe",
 		"skills": [],
 		"max": true
+	},
+	"83": {
+		"name": "Crusher",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Annette: Overachiever"],
+		"type": "axe",
+		"skills": [["a", "Attack +3"]],
+		"max": true
+	},
+	"84": {
+		"name": "Guard Axe+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": true
+	},
+	"85": {
+		"name": "Guard Axe",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"max": false
 	}
 
 
