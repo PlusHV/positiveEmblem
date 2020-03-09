@@ -96,7 +96,51 @@ export function GetAttackOrder(stack){
 
 export function CalculateDamage(attacker, defender, damageType){
 
-    return attacker.stats.atk - defender.stats[damageType];
+	let WTA = CalculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color );
 
+    return attacker.stats.atk + Math.floor(attacker.stats.atk * WTA) - defender.stats[damageType];
+
+
+}
+
+export function CalculateWeaponTriangleAdvantage(colorAttack, colorDefend){
+	let val = 0.0;
+
+	if (colorAttack === "red"){
+		if (colorDefend === "blue"){
+			val = -0.2;
+		} else if (colorDefend === "green"){
+			val = 0.2;
+		} else if (colorDefend === "colorless"){
+			val = 0.0; //to do, add raven effect
+		}
+
+	} else if (colorAttack === "blue"){
+		if (colorDefend === "green"){
+			val = -0.2;
+		} else if (colorDefend === "red"){
+			val = 0.2;
+		} else if (colorDefend === "colorless"){
+			val = 0.0; //to do, add raven effect
+		}
+
+	} else if (colorAttack === "green"){
+		if (colorDefend === "red"){
+			val = -0.2;
+		} else if (colorDefend === "blue"){
+			val = 0.2;
+		} else if (colorDefend === "colorless"){
+			val = 0.0; //to do, add raven effect
+		}
+
+	}
+	//TODO
+	//add colorless difference if raven effect
+	//Add check for triangle adept and cancel affinity
+
+	//affinity (x + 20)/20 where x is the TA amount
+	//CA 1/2 will remove the x depending on situation, and at CA 3, the x will be reversed
+
+	return val;
 
 }
