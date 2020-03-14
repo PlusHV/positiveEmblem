@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/positive-emblem/static/css/main.104d69ac.chunk.css",
+    "main.js": "/positive-emblem/static/js/main.8e6eb5d8.chunk.js",
+    "main.js.map": "/positive-emblem/static/js/main.8e6eb5d8.chunk.js.map",
+    "runtime-main.js": "/positive-emblem/static/js/runtime-main.8f4b8a36.js",
+    "runtime-main.js.map": "/positive-emblem/static/js/runtime-main.8f4b8a36.js.map",
+    "static/js/2.89bf82be.chunk.js": "/positive-emblem/static/js/2.89bf82be.chunk.js",
+    "static/js/2.89bf82be.chunk.js.map": "/positive-emblem/static/js/2.89bf82be.chunk.js.map",
+    "index.html": "/positive-emblem/index.html",
+    "precache-manifest.09e54c7e5f55f7e2a199b0c63860dcd0.js": "/positive-emblem/precache-manifest.09e54c7e5f55f7e2a199b0c63860dcd0.js",
+    "service-worker.js": "/positive-emblem/service-worker.js",
+    "static/css/main.104d69ac.chunk.css.map": "/positive-emblem/static/css/main.104d69ac.chunk.css.map",
+    "static/js/2.89bf82be.chunk.js.LICENSE": "/positive-emblem/static/js/2.89bf82be.chunk.js.LICENSE",
+    "static/media/Face_FC.png": "/positive-emblem/static/media/Face_FC.ff99ecca.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f4b8a36.js",
+    "static/js/2.89bf82be.chunk.js",
+    "static/css/main.104d69ac.chunk.css",
+    "static/js/main.8e6eb5d8.chunk.js"
+  ]
+}
