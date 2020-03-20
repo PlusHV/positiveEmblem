@@ -428,6 +428,7 @@ class GameBoard extends React.Component{
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       }
 
+    } else if (skillType === "special"){
 
 
     } else if (skillDropdowns[skillType].info[id].type  === "passive") {
@@ -779,16 +780,22 @@ class GameBoard extends React.Component{
     ev.preventDefault();
 
 
-
     let dropPosition = ev.target.id;
 
+
+    if (dropPosition === null){
+      return;
+    
     //if the spot has a hero, convert that hero to an ID
-    if (Number.isNaN(parseInt(dropPosition)) ){
+
+    } else if (Number.isNaN(parseInt(dropPosition)) ){
 
       dropPosition = JSON.parse(dropPosition).position;
     } else{
       dropPosition = parseInt(dropPosition);
     }
+
+
     let cellContent = this.props.G.cells[dropPosition];
 
 
@@ -1315,6 +1322,7 @@ class GameBoard extends React.Component{
                 gameState = {this.state}
                 G = {this.props.G}
                 filledPositions = {this.getFilledPositions}
+                selectNewMember = {this.selectNewMember}
                 dragOver = {this.dragOverBoard}
                 dragStart = {this.dragBoardMember}
                 drop = {this.dropBoardMember}
@@ -1407,7 +1415,7 @@ function makeHeroStruct(){
     this["currentHP"] = 0;
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //set of stats from skills
     this["assist"] = {};
-    //this["special"] = 
+    this["special"] = {};
     this["range"] = -1;
     this["bonus"] = false;
     this["end"] = false;

@@ -49,6 +49,7 @@ table,tr,td {
   height: 70px;
   text-align: center;
   box-sizing: border-box;
+  position: relative;
 }
 
 .highlightedCellStyle{
@@ -59,6 +60,7 @@ table,tr,td {
   text-align: center;
   box-sizing: border-box;
   border-spacing: 1px;
+  position: relative;
 }
 
 .movementCellStyle{
@@ -68,7 +70,8 @@ table,tr,td {
   height: 70px;
   text-align: center;
   box-sizing: border-box;
-  border-spacing: 1000px;  
+  border-spacing: 1000px; 
+  position: relative; 
 }
 
 .attackCellStyle{
@@ -79,6 +82,7 @@ table,tr,td {
   text-align: center;
   box-sizing: border-box;
   border-spacing: 1px;
+  position: relative;
 }
 
 .assistCellStyle{
@@ -89,6 +93,7 @@ table,tr,td {
   text-align: center;
   box-sizing: border-box;
   border-spacing: 1px;
+  position: relative;
 }
 
 .boardStyle{
@@ -199,6 +204,15 @@ table,tr,td {
   background-color: blue;
 }
 
+.healthText{
+  position: absolute; 
+  bottom: 0px; 
+  left: 0px; 
+  font-weight: bold;
+  user-select: none;
+  color: red; 
+  z-index: 2;
+}
 
 
 

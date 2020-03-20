@@ -39,10 +39,16 @@ export default class Map extends React.Component{
               }
 
               cells.push(
-                <td className= {cellClass} key={id} onClick={() => this.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
+                <td className= {cellClass} key={id} onClick={() => this.props.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
                   id = {id}
                   onDragOver = {(e) => this.props.dragOver(e)}>
-                  
+
+                  <span className = "healthText" 
+                  		id =  {JSON.stringify(this.props.G.cells[id])}
+                  		onDrop = {(e) => this.props.drop(e)}
+                  		onDragEnd = {(e) => this.props.dragEnd(e)}>
+                  	{this.props.G.cells[id].currentHP}
+                  </span>
 
                 <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 
                     className = {imgClass} 
@@ -52,6 +58,11 @@ export default class Map extends React.Component{
                     onDragStart = {(e) => this.props.dragStart(e)}
                     onDrop = {(e) => this.props.drop(e)}
                     onDragEnd = {(e) => this.props.dragEnd(e)} />
+
+               
+                     
+
+
                 </td>
                 );
 
