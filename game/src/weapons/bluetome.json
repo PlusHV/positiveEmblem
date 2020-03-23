@@ -722,5 +722,16 @@
 		"type": "bluetome",
 		"skills": [],
 		"max": true
+	},
+	"70": {
+		"name": "Eagle's Egg",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Est: Springtime Flier"],
+		"type": "bluetome",
+		"skills": [["a", "Attack +3"]],
+		"max": true
 	}
 }

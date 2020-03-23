@@ -1031,6 +1031,26 @@
 		"type": "lance",
 		"skills": [],
 		"max": true
+	},
+	"99": {
+		"name": "Gilt Fork+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"max": true
+	},
+	"100": {
+		"name": "Gilt Fork",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"max": false
 	}
 
 }

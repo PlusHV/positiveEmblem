@@ -1261,6 +1261,26 @@
 		"type": "sword",
 		"skills": [],
 		"max": true
+	},
+	"119": {
+		"name": "Carrot Cudgel+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": true
+	},
+	"120": {
+		"name": "Carrot Cudgel",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"max": false
 	}
 }
 

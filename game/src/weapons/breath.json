@@ -368,6 +368,17 @@
 		"type": "breath",
 		"skills": [],
 		"max": true
+	},
+	"35": {
+		"name": "Zephyr Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Idunn: Dragonkin Duo"],
+		"type": "breath",
+		"skills": [["a", "Resistance +3"]],
+		"max": true
 	}
 	
 }

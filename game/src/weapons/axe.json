@@ -892,6 +892,17 @@
 		"type": "axe",
 		"skills": [],
 		"max": false
+	},
+	"86": {
+		"name": "Bun-Bun Baton",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Fir: Student of Spring"],
+		"type": "axe",
+		"skills": [],
+		"max": true
 	}
 
 

@@ -2082,5 +2082,19 @@
 		"prf": false,
 		"type": "damage-calc",
 		"max": true
+	},
+	"295": {
+		"name": "Chill Atk/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"296": {
+		"name": "Chill Atk/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
 	}
 }

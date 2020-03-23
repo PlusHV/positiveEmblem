@@ -3403,7 +3403,7 @@
 	},
 	"409": {
 		"name": "Squad Ace AE 1",
-		"sp": 100,
+		"sp": 40,
 		"prf": false,
 		"type": "passive",
 		"effect": {"hp": 3, "atk": 1},
@@ -3412,7 +3412,7 @@
 	"410": {
 
 		"name": "Squad Ace AE 2",
-		"sp": 200,
+		"sp": 80,
 		"prf": false,
 		"type": "passive",
 		"effect": {"hp": 4, "atk": 2},
@@ -3479,6 +3479,71 @@
 		"sp": 240,
 		"prf": false,
 		"type": "drive",
+		"max": true
+	},
+	"420": {
+		"name": "Squad Ace AF 1",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "spd": 1},
+		"max": false
+	},
+	"421": {
+
+		"name": "Squad Ace AF 2",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "sod": 2},
+		"max": true
+	},
+	"422": {
+
+		"name": "Death Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"423": {
+
+		"name": "Death Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"424": {
+
+		"name": "Death Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"425": {
+
+		"name": "Def Feint 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"426": {
+
+		"name": "Def Feint 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-rally",
+		"max": false
+	},
+	"427": {
+
+		"name": "Def Feint 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-rally",
 		"max": true
 	}
 }

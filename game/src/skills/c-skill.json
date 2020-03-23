@@ -2305,5 +2305,26 @@
 		"prf": false,
 		"type": "turn-start",
 		"max": true
+	},
+	"328": {
+		"name": "Lance Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"329": {
+		"name": "Lance Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"330": {
+		"name": "Lance Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
 	}
 }

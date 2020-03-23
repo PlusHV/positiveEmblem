@@ -2197,5 +2197,12 @@
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true
+	},
+	"303": {
+		"name": "Sturdy Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }
