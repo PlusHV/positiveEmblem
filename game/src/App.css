@@ -212,6 +212,18 @@ table,tr,td {
   user-select: none;
   color: red; 
   z-index: 2;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+.specialText{
+
+  position: absolute; 
+  top: 0px; 
+  right: 0px; 
+  font-weight: bold;
+  user-select: none;
+  color: MediumOrchid; 
+  z-index: 2;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 

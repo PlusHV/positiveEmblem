@@ -38,6 +38,13 @@ export default class Map extends React.Component{
                 imgClass = "waitHeroFace";
               }
 
+
+              var currentCharge = this.props.G.cells[id].special.charge;
+              if (currentCharge < 0){
+              	currentCharge = "";
+              }
+
+
               cells.push(
                 <td className= {cellClass} key={id} onClick={() => this.props.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
                   id = {id}
@@ -48,6 +55,13 @@ export default class Map extends React.Component{
                   		onDrop = {(e) => this.props.drop(e)}
                   		onDragEnd = {(e) => this.props.dragEnd(e)}>
                   	{this.props.G.cells[id].currentHP}
+                  </span>
+
+                  <span className = "specialText" 
+                  		id =  {JSON.stringify(this.props.G.cells[id])}
+                  		onDrop = {(e) => this.props.drop(e)}
+                  		onDragEnd = {(e) => this.props.dragEnd(e)}>
+                  	{currentCharge}
                   </span>
 
                 <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 

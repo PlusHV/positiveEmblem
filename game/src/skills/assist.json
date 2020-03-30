@@ -13,7 +13,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "health",
-		"effect": ["heal", 10, 10],
+		"effect": {"type": "sacrifice", "healMax": 10, "transferMin": 10},
 		"max": true
 	},
 	"2": {
@@ -30,7 +30,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [-1 , -1],
+		"effect": {"assister": -1, "assistee": -1},
 		"max": true
 	},
 	"4": {
@@ -40,7 +40,7 @@
 		"prf": true,
 		"users": ["Lucina: Glorious Archer"],
 		"type": "movement",
-		"effect": [1 , -1],
+		"effect": {"assister": 1, "assistee": -1},
 		"max": true
 	},
 	"5": {
@@ -58,7 +58,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "status",
-		"effect": [["harsh", "restore"] ],
+		"effect": {"harsh": 1, "restore": 1},
 		"max": true
 	},
 	"7": {
@@ -67,7 +67,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "status",
-		"effect": [ ["harsh"] ],
+		"effect": {"harsh": 1},
 		"max": true
 	},
 	"8": {
@@ -130,7 +130,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [2, 0],
+		"effect": {"assister": 2, "assistee": 0},
 		"max": true
 	},
 	"15": {
@@ -139,7 +139,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 6], ["def", 6]],
+		"effect": {"rally": {"atk": 6, "def": 6} },
 		"max": true
 	},
 	"16": {
@@ -148,7 +148,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 3], ["def", 3]],
+		"effect": {"rally": {"atk": 3, "def": 3} },
 		"max": true
 	},
 	"17": {
@@ -157,7 +157,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 3], ["res", 3]],
+		"effect": {"rally": {"atk": 3, "res": 3} },
 		"max": true
 	},
 	"18": {
@@ -166,7 +166,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 6], ["spd", 6]],
+		"effect": {"rally": {"atk": 6, "spd": 6} },
 		"max": true
 	},
 	"19": {
@@ -175,7 +175,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 6], ["spd", 6]],
+		"effect": {"rally": {"atk": 6, "spd": 6} },
 		"max": true
 	},
 	"20": {
@@ -184,7 +184,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 4]],
+		"effect": {"rally": {"atk": 4} },
 		"max": true
 	},
 	"21": {
@@ -193,7 +193,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["def", 6], ["res", 6]],
+		"effect": {"rally": {"def": 6, "res": 6} },
 		"max": true
 	},
 	"22": {
@@ -202,7 +202,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["def", 3], ["res", 3]],
+		"effect": {"rally": {"def": 3, "res": 3} },
 		"max": true
 	},
 	"23": {
@@ -211,7 +211,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["def", 4]],
+		"effect": {"rally": {"def": 4} },
 		"max": true
 	},
 	"24": {
@@ -220,7 +220,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["res", 4]],
+		"effect": {"rally": {"res": 4} },
 		"max": true
 	},
 	"25": {
@@ -229,7 +229,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["spd", 6], ["def", 6]],
+		"effect": {"rally": {"spd": 6, "def": 6} },
 		"max": true
 	},
 	"26": {
@@ -238,7 +238,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["spd", 3], ["def", 3]],
+		"effect": {"rally": {"spd": 3, "def": 3} },
 		"max": true
 	},
 	"27": {
@@ -247,7 +247,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["spd", 6], ["res", 6]],
+		"effect": {"rally": {"spd": 6, "res": 6} },
 		"max": true
 	},
 	"28": {
@@ -256,7 +256,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["spd", 3], ["res", 3]],
+		"effect": {"rally": {"spd": 3, "res": 3} },
 		"max": true
 	},
 	"29": {
@@ -265,7 +265,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["spd", 4]],
+		"effect": {"rally": {"spd": 4} },
 		"max": true
 	},
 	"30": {
@@ -274,7 +274,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 6], ["up"] ],
+		"effect": {"rally": {"atk": 6, "up": 1} },
 		"max": true
 	},
 	"31": {
@@ -283,7 +283,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 4], ["up"]],
+		"effect": {"rally": {"atk": 4, "up": 1} },
 		"max": true
 	},
 	"32": {
@@ -292,7 +292,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["res", 6], ["up"]],
+		"effect": {"rally": {"res": 6, "up": 1} },
 		"max": true
 	},
 	"33": {
@@ -301,7 +301,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["res", 4], ["up"]],
+		"effect": {"rally": {"res": 4, "up": 1} },
 		"max": true
 	},
 	"34": {
@@ -310,7 +310,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "health",
-		"effect": ["swap"],
+		"effect": {"type": "swap"},
 		"max": true
 	},
 	"35": {
@@ -364,7 +364,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [0, -2],
+		"effect": {"assister": 0, "assistee": -2},
 		"max": true
 	},
 	"41": {
@@ -392,7 +392,7 @@
 		"prf": true,
 		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn"],
 		"type": "health",
-		"effect": ["heal", 99, 0],
+		"effect": {"type": "sacrifice", "healMax": 99, "transferMin":0},
 		"max": true
 	},
 	"44": {
@@ -401,7 +401,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [0, 1],
+		"effect": {"assister": 0, "assistee": 1},
 		"max": true
 	},
 	"45": {
@@ -418,7 +418,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [0 , 2],
+		"effect": {"assister": 0, "assistee": 2},
 		"max": true
 	},
 	"47": {
@@ -427,7 +427,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": [1, -1],
+		"effect": {"assister": 1, "assistee": -1},
 		"max": true
 	},
 	"48": {
@@ -436,7 +436,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "rally",
-		"effect": [["atk", 6], ["res", 6]],
+		"effect": {"rally": {"atk": 6, "res": 6} },
 		"max": true
 	},
 	"49": {
@@ -464,7 +464,7 @@
 		"prf": true,
 		"users": ["Chrom: Crowned Exalt"],
 		"type": "movement",
-		"effect": [0, -2],
+		"effect": {"assister": 0, "assistee": -2},
 		"max": true
 	}
 

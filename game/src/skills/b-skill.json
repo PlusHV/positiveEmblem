@@ -4,6 +4,7 @@
 		"sp": 0,
 		"prf": false,
 		"type": "",
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -11,6 +12,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"2": {
@@ -18,6 +20,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"3": {
@@ -25,6 +28,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -32,6 +36,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"5": {
@@ -39,6 +44,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"6": {
@@ -46,6 +52,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -53,6 +60,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -60,6 +68,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"9": {
@@ -67,6 +76,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -74,6 +84,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"11": {
@@ -81,6 +92,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"12": {
@@ -88,6 +100,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -95,6 +108,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"14": {
@@ -102,6 +116,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"15": {
@@ -109,6 +124,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -116,6 +132,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"17": {
@@ -123,6 +140,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"18": {
@@ -130,6 +148,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -137,6 +156,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -144,6 +164,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"21": {
@@ -151,6 +172,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -158,6 +180,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"23": {
@@ -165,6 +188,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"24": {
@@ -172,6 +196,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -180,6 +205,7 @@
 		"prf": true,
 		"users": ["Berkut: Prideful Prince"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -188,6 +214,7 @@
 		"prf": true,
 		"users": ["Marth: Hero-King"],
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"27": {
@@ -195,6 +222,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"28": {
@@ -202,6 +230,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"29": {
@@ -209,6 +238,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -216,6 +246,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"31": {
@@ -223,6 +254,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"32": {
@@ -230,6 +262,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"33": {
@@ -237,6 +270,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"34": {
@@ -244,6 +278,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"35": {
@@ -251,6 +286,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"36": {
@@ -258,6 +294,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -265,6 +302,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"38": {
@@ -272,6 +310,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"39": {
@@ -280,6 +319,7 @@
 		"prf": true,
 		"users": ["Ryoma: Supreme Samurai"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"40": {
@@ -287,6 +327,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"41": {
@@ -294,6 +335,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -301,6 +343,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"43": {
@@ -308,6 +351,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"44": {
@@ -315,6 +359,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -322,6 +367,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"46": {
@@ -329,6 +375,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"47": {
@@ -336,6 +383,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"48": {
@@ -343,6 +391,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"49": {
@@ -350,6 +399,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"50": {
@@ -357,6 +407,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -364,6 +415,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"52": {
@@ -371,6 +423,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"53": {
@@ -378,6 +431,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"54": {
@@ -385,6 +439,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"55": {
@@ -392,6 +447,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"56": {
@@ -399,6 +455,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"57": {
@@ -407,6 +464,7 @@
 		"prf": true,
 		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"58": {
@@ -415,6 +473,7 @@
 		"prf": true,
 		"users": ["Sigurd: Holy Knight"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"59": {
@@ -422,6 +481,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"60": {
@@ -429,6 +489,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"61": {
@@ -436,6 +497,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"62": {
@@ -443,6 +505,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"63": {
@@ -450,6 +513,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"64": {
@@ -457,6 +521,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"65": {
@@ -464,6 +529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"66": {
@@ -471,6 +537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"67": {
@@ -478,6 +545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"68": {
@@ -485,6 +553,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"69": {
@@ -492,6 +561,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"70": {
@@ -499,6 +569,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"71": {
@@ -506,6 +577,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"72": {
@@ -513,6 +585,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"73": {
@@ -520,6 +593,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"74": {
@@ -527,6 +601,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"75": {
@@ -534,6 +609,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"76": {
@@ -541,6 +617,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": false
 	},
 	"77": {
@@ -548,6 +625,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": false
 	},
 	"78": {
@@ -555,6 +633,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": true
 	},
 	"79": {
@@ -562,6 +641,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-move",
+		"effect": {},
 		"max": false
 	},
 	"80": {
@@ -569,6 +649,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-move",
+		"effect": {},
 		"max": false
 	},
 	"81": {
@@ -576,6 +657,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-move",
+		"effect": {},
 		"max": true
 	},
 	"82": {
@@ -584,6 +666,7 @@
 		"prf": true,
 		"users": ["Celica: Warrior Priestess"],
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"83": {
@@ -591,6 +674,7 @@
 		"sp": 150,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"84": {
@@ -598,6 +682,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"85": {
@@ -605,6 +690,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"86": {
@@ -612,6 +698,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"87": {
@@ -619,6 +706,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"88": {
@@ -626,6 +714,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"89": {
@@ -633,6 +722,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"90": {
@@ -640,6 +730,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"91": {
@@ -647,6 +738,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"92": {
@@ -654,6 +746,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"93": {
@@ -661,6 +754,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"94": {
@@ -668,6 +762,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"95": {
@@ -675,6 +770,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"96": {
@@ -682,6 +778,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"97": {
@@ -689,6 +786,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"98": {
@@ -696,6 +794,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"99": {
@@ -703,6 +802,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"100": {
@@ -710,6 +810,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"101": {
@@ -717,6 +818,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"102": {
@@ -724,6 +826,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"103": {
@@ -732,6 +835,7 @@
 		"prf": true,
 		"users": ["Arden: Strong and Tough"],
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"104": {
@@ -740,6 +844,7 @@
 		"prf": true,
 		"users": ["Hríd: Icy Blade"],
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"105": {
@@ -747,6 +852,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"106": {
@@ -754,6 +860,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"107": {
@@ -761,6 +868,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"108": {
@@ -768,6 +876,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"109": {
@@ -775,6 +884,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"110": {
@@ -782,6 +892,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"111": {
@@ -789,6 +900,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"112": {
@@ -796,6 +908,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"113": {
@@ -803,6 +916,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": false
 	},
 	"114": {
@@ -810,6 +924,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": false
 	},
 	"115": {
@@ -817,6 +932,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": true
 	},
 	"116": {
@@ -824,6 +940,7 @@
 		"sp": 150,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"117": {
@@ -831,6 +948,7 @@
 		"sp": 150,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"118": {
@@ -838,6 +956,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"119": {
@@ -845,6 +964,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"120": {
@@ -852,6 +972,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"121": {
@@ -860,6 +981,7 @@
 		"prf": true,
 		"users": ["Julia: Crusader of Light"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"122": {
@@ -867,6 +989,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "",
+		"effect": {},
 		"max": true
 	},
 	"123": {
@@ -874,6 +997,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "",
+		"effect": {},
 		"max": true
 	},
 	"124": {
@@ -881,6 +1005,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "on-heal",
+		"effect": {},
 		"max": false
 	},
 	"125": {
@@ -888,6 +1013,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "on-heal",
+		"effect": {},
 		"max": false
 	},
 	"126": {
@@ -895,6 +1021,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "on-heal",
+		"effect": {},
 		"max": true
 	},
 	"127": {
@@ -902,6 +1029,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"128": {
@@ -909,6 +1037,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"129": {
@@ -916,6 +1045,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"130": {
@@ -923,6 +1053,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"131": {
@@ -930,6 +1061,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"132": {
@@ -937,6 +1069,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"133": {
@@ -944,6 +1077,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"134": {
@@ -951,6 +1085,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"135": {
@@ -958,6 +1093,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"136": {
@@ -966,6 +1102,7 @@
 		"prf": true,
 		"users": ["Eirika: Graceful Resolve"],
 		"type": "damage-calc",
+		"effect": {"cdTrigger": 1},
 		"max": true
 	},
 	"137": {
@@ -973,6 +1110,7 @@
 		"sp": 150,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"138": {
@@ -980,6 +1118,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"139": {
@@ -987,6 +1126,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"140": {
@@ -994,6 +1134,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"141": {
@@ -1001,6 +1142,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"142": {
@@ -1008,6 +1150,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"143": {
@@ -1015,6 +1158,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"144": {
@@ -1022,6 +1166,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"145": {
@@ -1029,6 +1174,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"146": {
@@ -1036,6 +1182,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"147": {
@@ -1043,6 +1190,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"148": {
@@ -1050,6 +1198,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"149": {
@@ -1057,6 +1206,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"150": {
@@ -1064,6 +1214,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"151": {
@@ -1071,6 +1222,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"152": {
@@ -1078,6 +1230,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"153": {
@@ -1085,6 +1238,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"154": {
@@ -1092,6 +1246,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"155": {
@@ -1099,6 +1254,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"156": {
@@ -1106,6 +1262,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"157": {
@@ -1113,6 +1270,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"158": {
@@ -1120,6 +1278,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"159": {
@@ -1127,6 +1286,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"160": {
@@ -1134,6 +1294,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"161": {
@@ -1141,6 +1302,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"162": {
@@ -1149,6 +1311,7 @@
 		"prf": true,
 		"users": ["Arvis: Emperor of Flame"],
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"163": {
@@ -1156,6 +1319,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"164": {
@@ -1163,6 +1327,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"165": {
@@ -1170,6 +1335,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"166": {
@@ -1177,6 +1343,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"167": {
@@ -1184,6 +1351,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"168": {
@@ -1191,6 +1359,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"169": {
@@ -1198,6 +1367,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"170": {
@@ -1205,6 +1375,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"171": {
@@ -1213,6 +1384,7 @@
 		"prf": true,
 		"users": ["Leif: Prince of Leonster"],
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"172": {
@@ -1220,6 +1392,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"173": {
@@ -1227,6 +1400,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"174": {
@@ -1234,6 +1408,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"175": {
@@ -1241,6 +1416,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"176": {
@@ -1248,6 +1424,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"177": {
@@ -1255,6 +1432,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"178": {
@@ -1262,6 +1440,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"179": {
@@ -1269,6 +1448,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"180": {
@@ -1276,6 +1456,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"181": {
@@ -1284,6 +1465,7 @@
 		"prf": true,
 		"users": ["Lyn: Brave Lady"],
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"182": {
@@ -1291,6 +1473,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"183": {
@@ -1298,6 +1481,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"184": {
@@ -1305,6 +1489,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"185": {
@@ -1312,6 +1497,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"186": {
@@ -1319,6 +1505,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"187": {
@@ -1326,6 +1513,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"188": {
@@ -1333,6 +1521,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"189": {
@@ -1340,6 +1529,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"190": {
@@ -1347,6 +1537,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"191": {
@@ -1354,6 +1545,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"192": {
@@ -1361,6 +1553,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"193": {
@@ -1368,6 +1561,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"194": {
@@ -1375,6 +1569,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"195": {
@@ -1382,6 +1577,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"196": {
@@ -1389,6 +1585,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"197": {
@@ -1396,6 +1593,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"198": {
@@ -1403,6 +1601,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"199": {
@@ -1410,6 +1609,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"200": {
@@ -1417,6 +1617,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"201": {
@@ -1424,6 +1625,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"202": {
@@ -1431,6 +1633,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"203": {
@@ -1438,6 +1641,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"204": {
@@ -1445,6 +1649,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"205": {
@@ -1453,6 +1658,7 @@
 		"prf": true,
 		"users": ["Ephraim: Legendary Lord"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"206": {
@@ -1460,6 +1666,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"207": {
@@ -1467,6 +1674,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"208": {
@@ -1474,6 +1682,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"209": {
@@ -1481,6 +1690,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"210": {
@@ -1488,6 +1698,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"211": {
@@ -1495,6 +1706,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"212": {
@@ -1502,6 +1714,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"213": {
@@ -1509,6 +1722,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": false
 	},
 	"214": {
@@ -1516,6 +1730,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-m-assist",
+		"effect": {},
 		"max": true
 	},
 	"215": {
@@ -1523,6 +1738,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": false
 	},
 	"216": {
@@ -1530,6 +1746,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": false
 	},
 	"217": {
@@ -1537,6 +1754,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-stat",
+		"effect": {},
 		"max": true
 	},
 	"218": {
@@ -1544,6 +1762,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"219": {
@@ -1551,6 +1770,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": false
 	},
 	"220": {
@@ -1558,6 +1778,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "post-battle",
+		"effect": {},
 		"max": true
 	},
 	"221": {
@@ -1565,6 +1786,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"222": {
@@ -1572,6 +1794,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"223": {
@@ -1579,6 +1802,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"224": {
@@ -1586,6 +1810,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"225": {
@@ -1593,6 +1818,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"226": {
@@ -1600,6 +1826,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"227": {
@@ -1607,6 +1834,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"228": {
@@ -1614,6 +1842,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": false
 	},
 	"229": {
@@ -1621,6 +1850,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "on-dance",
+		"effect": {},
 		"max": true
 	},
 	"230": {
@@ -1628,6 +1858,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": false
 	},
 	"231": {
@@ -1635,6 +1866,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": false
 	},
 	"232": {
@@ -1642,6 +1874,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "attack-priority",
+		"effect": {},
 		"max": true
 	},
 	"233": {
@@ -1649,6 +1882,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"234": {
@@ -1656,6 +1890,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"235": {
@@ -1663,6 +1898,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"236": {
@@ -1671,6 +1907,7 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General"],
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"237": {
@@ -1678,6 +1915,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"238": {
@@ -1685,6 +1923,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"239": {
@@ -1692,6 +1931,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"240": {
@@ -1699,6 +1939,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"241": {
@@ -1706,6 +1947,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"242": {
@@ -1713,6 +1955,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"243": {
@@ -1720,6 +1963,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"244": {
@@ -1727,6 +1971,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"245": {
@@ -1734,6 +1979,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"246": {
@@ -1741,6 +1987,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"247": {
@@ -1748,6 +1995,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": false
 	},
 	"248": {
@@ -1755,6 +2003,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
+		"effect": {},
 		"max": true
 	},
 	"249": {
@@ -1762,6 +2011,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"250": {
@@ -1769,6 +2019,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"251": {
@@ -1776,6 +2027,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"252": {
@@ -1783,6 +2035,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"253": {
@@ -1790,6 +2043,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"254": {
@@ -1797,6 +2051,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"255": {
@@ -1805,6 +2060,7 @@
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"256": {
@@ -1813,6 +2069,7 @@
 		"prf": true,
 		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"257": {
@@ -1820,6 +2077,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"258": {
@@ -1827,6 +2085,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"259": {
@@ -1834,6 +2093,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"260": {
@@ -1841,6 +2101,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"261": {
@@ -1848,6 +2109,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"262": {
@@ -1855,6 +2117,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"263": {
@@ -1862,6 +2125,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"264": {
@@ -1869,6 +2133,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"265": {
@@ -1876,6 +2141,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"266": {
@@ -1883,6 +2149,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"267": {
@@ -1890,6 +2157,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": false
 	},
 	"268": {
@@ -1897,6 +2165,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"269": {
@@ -1905,6 +2174,7 @@
 		"prf": true,
 		"users": ["Celica: Queen of Valentia"],
 		"type": "attack-count",
+		"effect": {},
 		"max": true
 	},
 	"270": {
@@ -1912,6 +2182,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"271": {
@@ -1919,6 +2190,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"272": {
@@ -1926,6 +2198,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"273": {
@@ -1933,6 +2206,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"274": {
@@ -1940,6 +2214,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"275": {
@@ -1947,6 +2222,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"276": {
@@ -1954,6 +2230,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"277": {
@@ -1961,6 +2238,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"278": {
@@ -1968,6 +2246,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"279": {
@@ -1975,6 +2254,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"280": {
@@ -1982,6 +2262,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"281": {
@@ -1989,6 +2270,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"282": {
@@ -1997,6 +2279,7 @@
 		"prf": true,
 		"users": ["Líf: Lethal Swordsman"],
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"283": {
@@ -2004,6 +2287,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"284": {
@@ -2011,6 +2295,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"285": {
@@ -2018,6 +2303,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"286": {
@@ -2025,6 +2311,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"287": {
@@ -2032,6 +2319,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"288": {
@@ -2039,6 +2327,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	},
 	"289": {
@@ -2046,6 +2335,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"290": {
@@ -2053,6 +2343,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": false
 	},
 	"291": {
@@ -2060,6 +2351,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"effect": {},
 		"max": true
 	},
 	"292": {
@@ -2067,6 +2359,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"293": {
@@ -2074,6 +2367,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": false
 	},
 	"294": {
@@ -2081,6 +2375,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "damage-calc",
+		"effect": {},
 		"max": true
 	},
 	"295": {
@@ -2088,6 +2383,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": false
 	},
 	"296": {
@@ -2095,6 +2391,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "turn-start",
+		"effect": {},
 		"max": true
 	}
 }

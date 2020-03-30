@@ -390,6 +390,12 @@ class GameBoard extends React.Component{
 
 
     let updatedHero = currentHero;
+
+    let cdTriggerOrg = updatedHero.effects.cdTrigger;
+
+
+    let effect = skillDropdowns[skillType].info[id].effect;
+
     if (skillType === "weapon"){
       let pTemp = updatedHero.passive;
       pTemp["atk"] += skillDropdowns["weapon"].info[id].might; 
@@ -399,30 +405,32 @@ class GameBoard extends React.Component{
 
     } else if (skillType === "assist"){
 
+      updatedHero.assist.effect = effect;
+
+
       //TODO - can simplify this
       if(skillDropdowns[skillType].info[id].type === "movement"){
 
         updatedHero.assist.type = "movement";
-        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
 
       } else if(skillDropdowns[skillType].info[id].type === "rally"){
 
         updatedHero.assist.type = "rally";
-        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
 
       } else if(skillDropdowns[skillType].info[id].type === "health"){
 
         updatedHero.assist.type = "health";
-        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       } else if(skillDropdowns[skillType].info[id].type === "heal"){
 
         updatedHero.assist.type = "heal";
-        updatedHero.assist.effect = skillDropdowns[skillType].info[id].effect;
+
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
       } else if (skillDropdowns[skillType].info[id].type === "dance"){
+        
         updatedHero.assist.type = "dance";
 
         updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
@@ -430,9 +438,17 @@ class GameBoard extends React.Component{
 
     } else if (skillType === "special"){
 
+      updatedHero.special.type = skillDropdowns[skillType].info[id].type;
+
+      var initialCharge = skillDropdowns[skillType].info[id].cd + updatedHero.effects.cdTrigger;
+
+      updatedHero.special.cd = initialCharge;
+      updatedHero.special.charge = initialCharge;
+      //updatedHero.special.effect = skillDropdowns[skillType].info[id].effect;
+
 
     } else if (skillDropdowns[skillType].info[id].type  === "passive") {
-      let statMods = skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
+      let statMods = effect; //effect should contain the list of stats to buff
       let pTemp = updatedHero.passive;
 
 
@@ -455,12 +471,35 @@ class GameBoard extends React.Component{
 
     }
 
+
+    //Check if skill has a cdtrigger effect cdTriggers
+    if ('effect' in skillDropdowns[skillType].info[id] && 'cdTrigger' in effect){
+      updatedHero.effects.cdTrigger+= effect.cdTrigger;
+
+    }
+
+    //if the hero's cdTrigger stat has been changed, recalculate special cd.
+    if (updatedHero.effects.cdTrigger !== cdTriggerOrg){ //check if 
+
+      //get base cd of special and use modified value
+      var newCharge = skillDropdowns["special"].info[updatedHero.heroSkills.special.value].cd + updatedHero.effects.cdTrigger;
+
+      updatedHero.special.cd = newCharge;
+      updatedHero.special.charge = newCharge;
+
+    }
+
     return updatedHero; //hero with new skills
 
   }
 
   removeSkillEffect(id, skillType, currentHero){
     let updatedHero = currentHero; //copy of current hero
+
+    let effect = this.state.skillDropdowns[skillType].info[id].effect;
+    let cdTriggerOrg = updatedHero.effects.cdTrigger;
+
+    //let emptySkill =   Object.assign({}, this.state.skillDropdowns [skillType].info["0"]);
 
     if (skillType === "weapon"){
       let pTemp = updatedHero.passive;
@@ -472,8 +511,13 @@ class GameBoard extends React.Component{
 
       updatedHero.assist = {};
 
+    } else if (skillType === "special"){
+      updatedHero.special = {};
+      updatedHero.special.cd = -10;
+      updatedHero.special.charge = -10;
+
     } else if (this.state.skillDropdowns[skillType].info[id].type  === "passive") {
-      let statMods = this.state.skillDropdowns[skillType].info[id].effect; //effect should contain the list of stats to buff
+      let statMods = effect; //effect should contain the list of stats to buff
       let pTemp = updatedHero.passive;
 
 
@@ -495,6 +539,28 @@ class GameBoard extends React.Component{
       }
 
     }
+
+
+
+    //when removing the skill, a new special will be added, so it will adjust there
+    if ('effect' in this.state.skillDropdowns[skillType].info[id] && 'cdTrigger' in effect){
+      updatedHero.effects.cdTrigger-= effect.cdTrigger;
+
+    }
+
+    if (updatedHero.effects.cdTrigger !== cdTriggerOrg){ //check if 
+
+      //get base cd of special and use modified value
+      var newCharge = this.state.skillDropdowns["special"].info[updatedHero.heroSkills.special.value].cd + updatedHero.effects.cdTrigger;
+
+      updatedHero.special.cd = newCharge;
+      updatedHero.special.charge = newCharge;
+
+    }
+
+
+
+
 
     return updatedHero; //hero with new skills
 
@@ -1003,14 +1069,14 @@ class GameBoard extends React.Component{
 
       let factor = assisteePos[1] - assisterPos[1];
 
-      assisterPos[1]+= factor * effect[0];
+      assisterPos[1]+= factor * effect.assister;
 
-      assisteePos[1]+= factor * effect[1];
+      assisteePos[1]+= factor * effect.assistee;
     } else if (assisterPos[1] === assisteePos[1]){ //same column, move along the column, so change row
 
       let factor = assisteePos[0] - assisterPos[0];
-      assisterPos[0]+= factor * effect[0];
-      assisteePos[0]+= factor * effect[1];
+      assisterPos[0]+= factor * effect.assister;
+      assisteePos[0]+= factor * effect.assistee;
 
     }
 
@@ -1049,13 +1115,17 @@ class GameBoard extends React.Component{
     let aoe = false;
     let buffs = {"atk": 0, "spd": 0, "def": 0, "res": 0};
 
+    let rallyObject = effect.rally;
+
+    let rallyKeys = Object.keys(rallyObject);
+
 
     //get the rally buff that will be applied
-    for (var i = 0; i< effect.length; i++ ){
-      if (effect[i][0] === "up"){
+    for (var i = 0; i< rallyKeys.length; i++ ){
+      if (rallyKeys[i] === "up" && rallyObject["up"] === 1){
         aoe = true;
       } else {
-        buffs[effect[i][0]] =  effect[i][1]; //apply number to the stat
+        buffs[rallyKeys[i]] =  rallyObject[rallyKeys[i]]; //apply number to the stat
       }
 
     }
@@ -1095,7 +1165,7 @@ class GameBoard extends React.Component{
     let newAssisterHP = assister.currentHP;
     let newAssisteeHP = assistee.currentHP;
 
-    if (effect[0] === "swap"){ //reciprocal aid
+    if (effect.type === "swap"){ //reciprocal aid
 
 
       //set hp for assister
@@ -1105,8 +1175,14 @@ class GameBoard extends React.Component{
       newAssisteeHP = Math.min(assister.currentHP, assistee.stats.hp); //keep hp below max
       
 
-    } else if(effect[0] === "heal"){
-      let maxHeal = effect[1]; //the amount transferred is capped
+    } else if(effect.type === "sacrifice"){
+
+      //there are two things with sacrifice assists, the amount transferred and the amount healed.
+
+      //transfer is hp loss
+      //heal is amount gained
+
+      let maxHeal = effect.healMax; //the amount transferred is capped
 
 
 
@@ -1114,9 +1190,9 @@ class GameBoard extends React.Component{
       let maxGet = assistee.stats.hp - assistee.currentHP; //can only transfer amount to fully heal
 
       let healAmount = Math.min(maxHeal, maxGive, maxGet); //the amount healed is the least of these three numbers
-      let transferAmount = Math.max(healAmount, effect[2]); //amount transferred is the amount healed, or the minimum heal (effect[2])
+      let transferAmount = Math.max(healAmount, effect.transferMin); //amount transferred is the amount healed, or the minimum transferMin (because ardent sacrifice)
 
-      if (maxGive < effect[2]){ //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list
+      if (maxGive < effect.transferMin){ //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list
         return list;
       }
 
@@ -1290,7 +1366,7 @@ class GameBoard extends React.Component{
 
   render() {
 
-
+    console.log(this.state.heroList);
     return (
 
       <div>
@@ -1419,6 +1495,7 @@ function makeHeroStruct(){
     this["range"] = -1;
     this["bonus"] = false;
     this["end"] = false;
+    this["effects"] = {"cdTrigger": 0};
 
   }  
   return hero;

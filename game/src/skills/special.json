@@ -2,7 +2,7 @@
 	"0": {
 		"name": "",
 		"sp": 0,
-		"cd": 0,
+		"cd": -10,
 		"prf": false,
 		"type": "",
 		"max": true
