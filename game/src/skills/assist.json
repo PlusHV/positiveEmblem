@@ -94,7 +94,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr"},
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr", "cdTrigger": 1},
 		"max": false
 	},
 	"11": {
@@ -337,7 +337,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "mod2": "", "cdTrigger": 1},
 		"max": false
 	},
 	"38": {
@@ -355,7 +355,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "mod2": "rehab"},
+		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "mod2": "rehab", "cdTrigger": 1},
 		"max": false
 	},
 	"40": {

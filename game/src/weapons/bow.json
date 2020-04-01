@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -18,6 +19,7 @@
 		"users": ["Klein: Silver Nobleman"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -28,6 +30,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"3": {
@@ -38,6 +41,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"4": {
@@ -48,6 +52,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"5": {
@@ -58,6 +63,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"6": {
@@ -68,6 +74,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -78,6 +85,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -88,6 +96,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"9": {
@@ -98,6 +107,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"10": {
@@ -109,6 +119,7 @@
 		"users": ["Faye: Devoted Heart"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -119,6 +130,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"12": {
@@ -129,6 +141,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"13": {
@@ -139,6 +152,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -149,6 +163,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"15": {
@@ -159,6 +174,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -169,6 +185,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"17": {
@@ -180,6 +197,7 @@
 		"users": ["Claude: The Schemer"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -190,6 +208,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -200,6 +219,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -211,6 +231,7 @@
 		"users": ["Lyn: Lady of the Beach"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"21": {
@@ -221,6 +242,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -231,6 +253,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"23": {
@@ -241,6 +264,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -251,6 +275,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"25": {
@@ -261,6 +286,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -271,6 +297,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -281,6 +308,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -291,6 +319,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"29": {
@@ -302,6 +331,7 @@
 		"users": ["Takumi: Wild Card"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -312,6 +342,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"31": {
@@ -322,6 +353,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"32": {
@@ -332,6 +364,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"33": {
@@ -342,6 +375,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"34": {
@@ -352,6 +386,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"35": {
@@ -362,6 +397,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"36": {
@@ -372,6 +408,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -382,6 +419,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"38": {
@@ -392,6 +430,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"39": {
@@ -402,6 +441,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"40": {
@@ -412,6 +452,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"41": {
@@ -423,6 +464,7 @@
 		"users": ["Alm: Saint-King"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -433,6 +475,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"43": {
@@ -443,6 +486,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"44": {
@@ -454,6 +498,7 @@
 		"users": ["Lyn: Brave Lady"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -465,6 +510,7 @@
 		"users": ["Innes: Regal Strategician"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"46": {
@@ -476,6 +522,7 @@
 		"users": ["Niles: Cruel to Be Kind"],
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"47": {
@@ -487,6 +534,7 @@
 		"users": ["Jeorge: Perfect Shot"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"48": {
@@ -497,6 +545,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"49": {
@@ -507,6 +556,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"50": {
@@ -517,6 +567,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -527,6 +578,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"52": {
@@ -537,6 +589,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"53": {
@@ -547,6 +600,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"54": {
@@ -557,6 +611,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"55": {
@@ -567,6 +622,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"56": {
@@ -578,6 +634,7 @@
 		"users": ["Takumi: Empty Vessel"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"57": {
@@ -588,6 +645,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"58": {
@@ -598,6 +656,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"59": {
@@ -608,6 +667,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"60": {
@@ -619,6 +679,7 @@
 		"users": ["Lyn: Lady of the Wind"],
 		"type": "bow",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"61": {
@@ -630,6 +691,7 @@
 		"users": ["Lucina: Glorious Archer"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"62": {
@@ -640,6 +702,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"63": {
@@ -651,6 +714,7 @@
 		"users": ["Hinoka: Blue Sky Warrior"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"64": {
@@ -661,6 +725,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"65": {
@@ -671,6 +736,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"66": {
@@ -682,6 +748,7 @@
 		"users": ["Leif: Unifier of Thracia"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"67": {
@@ -693,6 +760,7 @@
 		"users": ["Igrene: Nabata Protector"],
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"68": {
@@ -704,6 +772,7 @@
 		"users": ["Marth: Royal Altean Duo"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"69": {
@@ -714,6 +783,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"70": {
@@ -724,6 +794,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"71": {
@@ -735,6 +806,7 @@
 		"users": ["Eleonora: Shooting Starlet"],
 		"type": "bow",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"72": {
@@ -745,6 +817,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"73": {
@@ -755,6 +828,7 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"74": {
@@ -766,6 +840,7 @@
 		"users": ["Virion: Elite Archer"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"75": {
@@ -777,6 +852,7 @@
 		"users": ["Gordin: Altean Archer"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"76": {
@@ -788,6 +864,7 @@
 		"users": ["Rebecca: Wildflower"],
 		"type": "bow",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"77": {
@@ -799,6 +876,7 @@
 		"users": ["Chrom: Crowned Exalt"],
 		"type": "bow",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"78": {
@@ -810,6 +888,7 @@
 		"users": ["Bernadetta: Eternal Loner"],
 		"type": "bow",
 		"skills": [],
+		"effect": {},
 		"max": true
 	}
 	

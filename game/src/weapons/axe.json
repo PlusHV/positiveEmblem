@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -17,6 +18,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -27,6 +29,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"3": {
@@ -38,6 +41,7 @@
 		"users": ["Hector: General of Ostia"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -49,6 +53,7 @@
 		"users": ["Bartre: Fearless Warrior"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"5": {
@@ -60,6 +65,7 @@
 		"users": ["Raven: Peerless Fighter", "Linus: Mad Dog"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"6": {
@@ -70,6 +76,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -80,6 +87,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -91,6 +99,7 @@
 		"users": ["Hector: General of Ostia", "Hector: Just Here to Fight"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"9": {
@@ -102,6 +111,7 @@
 		"users": ["Beruka: Quiet Assassin"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"10": {
@@ -112,6 +122,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -122,6 +133,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"12": {
@@ -133,6 +145,7 @@
 		"users": ["Helbindi: Savage Scourge"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -144,6 +157,7 @@
 		"users": ["Athena: Borderland Sword"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -154,6 +168,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"15": {
@@ -164,6 +179,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"16": {
@@ -175,6 +191,7 @@
 		"users": ["Cherche: Wyvern Friend"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"17": {
@@ -186,6 +203,7 @@
 		"users": ["Titania: Mighty Mercenary"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -197,6 +215,7 @@
 		"users": ["Felicia: Off the Menu"],
 		"type": "axe",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -207,6 +226,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"20": {
@@ -217,6 +237,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"21": {
@@ -227,6 +248,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -237,6 +259,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"23": {
@@ -248,6 +271,7 @@
 		"users": ["Hilda: Idle Maiden"],
 		"type": "axe",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -259,6 +283,7 @@
 		"users": ["Ephraim: Sacred Twin Lord"],
 		"type": "axe",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -269,6 +294,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -279,6 +305,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -290,6 +317,7 @@
 		"users": [],
 		"type": "axe",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -301,6 +329,7 @@
 		"users": ["Amelia: Rose of the War"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"29": {
@@ -311,6 +340,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -321,6 +351,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"31": {
@@ -331,6 +362,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"32": {
@@ -341,6 +373,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"33": {
@@ -351,6 +384,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"34": {
@@ -361,6 +395,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"35": {
@@ -371,6 +406,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"36": {
@@ -381,6 +417,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -392,6 +429,7 @@
 		"users": ["Minerva: Red Dragoon", "Michalis: Ambitious King"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"38": {
@@ -403,6 +441,7 @@
 		"users": [],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"39": {
@@ -414,6 +453,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"40": {
@@ -424,6 +464,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"41": {
@@ -434,6 +475,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"42": {
@@ -444,6 +486,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"43": {
@@ -454,6 +497,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"44": {
@@ -464,6 +508,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -474,6 +519,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"46": {
@@ -484,6 +530,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"47": {
@@ -494,6 +541,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"48": {
@@ -505,6 +553,7 @@
 		"users": ["Anna: Commander"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"49": {
@@ -515,6 +564,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"50": {
@@ -525,6 +575,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"51": {
@@ -535,6 +586,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"52": {
@@ -545,6 +597,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"53": {
@@ -555,6 +608,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"54": {
@@ -565,6 +619,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"55": {
@@ -575,6 +630,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"56": {
@@ -585,6 +641,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"57": {
@@ -596,6 +653,7 @@
 		"users": ["Surtr: Ruler of Flame"],
 		"type": "axe",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"58": {
@@ -606,6 +664,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"59": {
@@ -616,6 +675,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"60": {
@@ -626,6 +686,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"61": {
@@ -636,6 +697,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"62": {
@@ -647,6 +709,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"63": {
@@ -658,6 +721,7 @@
 		"users": ["Dorcas: Serene Warrior"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"64": {
@@ -669,6 +733,7 @@
 		"users": ["Hector: Marquess of Ostia"],
 		"type": "axe",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"65": {
@@ -679,6 +744,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"66": {
@@ -690,6 +756,7 @@
 		"users": ["Ike: Brave Mercenary"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"67": {
@@ -701,6 +768,7 @@
 		"users": ["Azura: Lady of Ballads"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"68": {
@@ -712,6 +780,7 @@
 		"users": ["Edelgard: The Future"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"69": {
@@ -722,6 +791,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"70": {
@@ -732,6 +802,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"71": {
@@ -743,6 +814,7 @@
 		"users": ["Walhart: The Conqueror"],
 		"type": "axe",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"72": {
@@ -753,6 +825,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"73": {
@@ -763,6 +836,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"74": {
@@ -773,6 +847,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"75": {
@@ -783,6 +858,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"76": {
@@ -794,6 +870,7 @@
 		"users": ["Osian: Scolded Soldier"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"77": {
@@ -805,6 +882,7 @@
 		"users": ["Mamori: Microwavin' Idol"],
 		"type": "axe",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"78": {
@@ -816,6 +894,7 @@
 		"users": ["Alm: Lovebird Duo"],
 		"type": "axe",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"79": {
@@ -827,6 +906,7 @@
 		"users": ["Hawkeye: Desert Guardian"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"80": {
@@ -838,6 +918,7 @@
 		"users": ["Frederick: Polite Knight"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"81": {
@@ -849,6 +930,7 @@
 		"users": ["Arthur: Hapless Hero"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"82": {
@@ -860,6 +942,7 @@
 		"users": ["Barst: The Hatchet"],
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"83": {
@@ -871,6 +954,7 @@
 		"users": ["Annette: Overachiever"],
 		"type": "axe",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"84": {
@@ -881,6 +965,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"85": {
@@ -891,6 +976,7 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"86": {
@@ -902,6 +988,7 @@
 		"users": ["Fir: Student of Spring"],
 		"type": "axe",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	}
 

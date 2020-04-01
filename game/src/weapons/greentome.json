@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -18,6 +19,7 @@
 		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "greentome",
 		"skills": [["a", "Resistance +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -29,6 +31,7 @@
 		"users": ["Azura: Young Songstress"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"3": {
@@ -39,6 +42,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -49,6 +53,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"5": {
@@ -60,6 +65,7 @@
 		"users": ["Yune: Chaos Goddess"],
 		"type": "greentome",
 		"skills": [["a", "Resistance +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"6": {
@@ -70,6 +76,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -80,6 +87,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -91,6 +99,7 @@
 		"users": ["Sonya: Vengeful Mage", "Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"9": {
@@ -102,6 +111,7 @@
 		"users": ["Deirdre: Lady of the Forest", "Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -113,6 +123,7 @@
 		"users": [],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -123,6 +134,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"12": {
@@ -134,6 +146,7 @@
 		"users": ["Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -145,6 +158,7 @@
 		"users": ["Lewyn: Guiding Breeze"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -156,6 +170,7 @@
 		"users": ["Nino: Pale Flower"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"15": {
@@ -166,6 +181,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -176,6 +192,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"17": {
@@ -186,6 +203,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -196,6 +214,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"19": {
@@ -206,6 +225,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {"cdTrigger": 1},
 		"max": true
 	},
 	"20": {
@@ -216,6 +236,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {"cdTrigger": 1},
 		"max": false
 	},
 	"21": {
@@ -226,6 +247,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -236,6 +258,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"23": {
@@ -246,6 +269,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -256,6 +280,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"25": {
@@ -266,6 +291,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -276,6 +302,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -286,6 +313,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -296,6 +324,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"29": {
@@ -306,6 +335,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -316,6 +346,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"31": {
@@ -326,6 +357,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"32": {
@@ -336,6 +368,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"33": {
@@ -347,6 +380,7 @@
 		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"34": {
@@ -358,6 +392,7 @@
 		"users": ["Boey: Skillful Survivor"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"35": {
@@ -369,6 +404,7 @@
 		"users": ["Nino: Pious Mage"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"36": {
@@ -379,6 +415,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"37": {
@@ -389,6 +426,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"38": {
@@ -400,6 +438,7 @@
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "greentome",
 		"skills": [["a", "Resistance +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"39": {
@@ -411,6 +450,7 @@
 		"users": ["Sharena: Spring Princess"],
 		"type": "greentome",
 		"skills": [["a", "Resistance +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"40": {
@@ -422,6 +462,7 @@
 		"users": ["Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"41": {
@@ -433,6 +474,7 @@
 		"users": ["Sanaki: Apostle in White"],
 		"type": "greentome",
 		"skills": [["a", "Attack +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -443,6 +485,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"43": {
@@ -453,6 +496,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"44": {
@@ -463,6 +507,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -473,6 +518,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"46": {
@@ -483,6 +529,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"47": {
@@ -493,6 +540,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"48": {
@@ -504,6 +552,7 @@
 		"users": ["Robin: Mystery Tactician"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"49": {
@@ -515,6 +564,7 @@
 		"users": ["Olwen: Righteous Knight"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"50": {
@@ -525,6 +575,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"51": {
@@ -536,6 +587,7 @@
 		"users": ["Reinhardt: Lightning's Rondo"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"52": {
@@ -547,6 +599,7 @@
 		"users": ["Veronica: Spring Princess"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"53": {
@@ -558,6 +611,7 @@
 		"users": ["Soren: Shrewd Strategist"],
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"54": {
@@ -568,6 +622,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"55": {
@@ -578,6 +633,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": true
 	},
 	"56": {
@@ -588,6 +644,7 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
+		"effect": {},
 		"max": false
 	},
 	"57": {
@@ -599,6 +656,7 @@
 		"users": ["Celica: Queen of Valentia"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	},
 	"58": {
@@ -610,6 +668,7 @@
 		"users": ["Ced: Hero on the Wind"],
 		"type": "greentome",
 		"skills": [["a", "Speed +3"]], 
+		"effect": {},
 		"max": true
 	}
 }

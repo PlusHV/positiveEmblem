@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -17,6 +18,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -27,6 +29,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"3": {
@@ -37,6 +40,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -47,6 +51,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"5": {
@@ -57,6 +62,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"6": {
@@ -67,6 +73,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"7": {
@@ -78,6 +85,7 @@
 		"users": ["Shiro: Raw Talent"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"8": {
@@ -89,6 +97,7 @@
 		"users": ["Sully: Crimson Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"9": {
@@ -99,6 +108,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -109,6 +119,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"11": {
@@ -119,6 +130,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"12": {
@@ -129,6 +141,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"13": {
@@ -140,6 +153,7 @@
 		"users": ["Valter: Dark Moonstone"],
 		"type": "lance",
 		"skills": [["a", 45]],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"14": {
@@ -151,6 +165,7 @@
 		"users": ["Nephenee: Fierce Halberdier"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"15": {
@@ -162,6 +177,7 @@
 		"users": ["Lukas: Sharp Soldier"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"16": {
@@ -172,6 +188,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"17": {
@@ -182,6 +199,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"18": {
@@ -193,6 +211,7 @@
 		"users": ["Sharena: Princess of Askr"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -204,6 +223,7 @@
 		"users": ["Ephraim: Sparkling Gallantly"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"20": {
@@ -214,6 +234,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"21": {
@@ -224,6 +245,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"22": {
@@ -234,6 +256,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"23": {
@@ -244,6 +267,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"24": {
@@ -255,6 +279,7 @@
 		"users": ["Ephraim: Restoration Lord", "Ephraim: Legendary Lord"],
 		"type": "lance",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -265,6 +290,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -275,6 +301,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -286,6 +313,7 @@
 		"users": ["Florina: Lovely Flier"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -297,6 +325,7 @@
 		"users": ["Quan: Luminous Lancer"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"29": {
@@ -308,6 +337,7 @@
 		"users": ["Lucina: Brave Princess"],
 		"type": "lance",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -319,6 +349,7 @@
 		"users": ["Hardin: Dark Emperor", "Camus: Sable Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"31": {
@@ -329,6 +360,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"32": {
@@ -339,6 +371,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"33": {
@@ -349,6 +382,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"34": {
@@ -359,6 +393,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"35": {
@@ -370,6 +405,7 @@
 		"users": ["Hinoka: Warrior Princess"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"36": {
@@ -380,6 +416,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -390,6 +427,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"38": {
@@ -400,6 +438,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"39": {
@@ -410,6 +449,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"40": {
@@ -420,6 +460,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"41": {
@@ -431,6 +472,7 @@
 		"users": ["Berkut: Purgatorial Prince"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -442,6 +484,7 @@
 		"users": ["Fjorm: Princess of Ice"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"43": {
@@ -452,6 +495,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"44": {
@@ -462,6 +506,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"45": {
@@ -473,6 +518,7 @@
 		"users": ["Oscar: Agile Horseman"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"46": {
@@ -483,6 +529,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"47": {
@@ -493,6 +540,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"48": {
@@ -504,6 +552,7 @@
 		"users": ["Hector: Brave Warrior"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"49": {
@@ -515,6 +564,7 @@
 		"users": ["Eliwood: Marquess Pherae"],
 		"type": "lance",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"50": {
@@ -526,6 +576,7 @@
 		"users": ["Dimitri: The Protector"],
 		"type": "lance",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -537,6 +588,7 @@
 		"users": ["Oboro: Fierce Fighter"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"52": {
@@ -548,6 +600,7 @@
 		"users": ["Abel: The Panther"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"53": {
@@ -559,6 +612,7 @@
 		"users": ["Peri: Playful Slayer"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"54": {
@@ -569,6 +623,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"55": {
@@ -579,6 +634,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"56": {
@@ -590,6 +646,7 @@
 		"users": ["Clair: Highborn Flier"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"57": {
@@ -600,6 +657,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"58": {
@@ -610,6 +668,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"59": {
@@ -620,6 +679,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"60": {
@@ -630,6 +690,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"61": {
@@ -641,6 +702,7 @@
 		"users": ["Death Knight: The Reaper"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"62": {
@@ -652,6 +714,7 @@
 		"users": ["Shanna: Sprightly Flier"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"63": {
@@ -662,6 +725,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"64": {
@@ -672,6 +736,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"65": {
@@ -683,6 +748,7 @@
 		"users": ["Ephraim: Restoration Lord"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"66": {
@@ -693,6 +759,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"67": {
@@ -703,6 +770,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"68": {
@@ -713,6 +781,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"69": {
@@ -723,6 +792,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"70": {
@@ -733,6 +803,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"71": {
@@ -743,6 +814,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"72": {
@@ -754,6 +826,7 @@
 		"users": ["Roderick: Steady Squire"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"73": {
@@ -764,6 +837,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"74": {
@@ -774,6 +848,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"75": {
@@ -784,6 +859,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"76": {
@@ -794,6 +870,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"77": {
@@ -804,6 +881,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"78": {
@@ -814,6 +892,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"79": {
@@ -825,6 +904,7 @@
 		"users": ["Berkut: Debonair Noble"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"80": {
@@ -836,6 +916,7 @@
 		"users": ["Tana: Winged Princess"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"81": {
@@ -846,6 +927,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"82": {
@@ -856,6 +938,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"83": {
@@ -867,6 +950,7 @@
 		"users": ["Catria: Middle Whitewing"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"84": {
@@ -878,6 +962,7 @@
 		"users": ["Est: Junior Whitewing"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"85": {
@@ -889,6 +974,7 @@
 		"users": ["Sirius: Mysterious Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"86": {
@@ -900,6 +986,7 @@
 		"users": ["Forsyth: Loyal Lieutenant"],
 		"type": "lance",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"87": {
@@ -911,6 +998,7 @@
 		"users": ["Ephraim: Dynastic Duo"],
 		"type": "lance",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"88": {
@@ -922,6 +1010,7 @@
 		"users": ["Perceval: Knightly Ideal"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"89": {
@@ -933,6 +1022,7 @@
 		"users": ["Altena: Luminous Rider"],
 		"type": "lance",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"90": {
@@ -944,6 +1034,7 @@
 		"users": ["Tsubasa: Madcap Idol"],
 		"type": "lance",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"91": {
@@ -955,6 +1046,7 @@
 		"users": ["Rudolf: Emperor of Rigel"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"92": {
@@ -965,6 +1057,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"93": {
@@ -975,6 +1068,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"94": {
@@ -986,6 +1080,7 @@
 		"users": ["Subaki: Perfect Expert"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"95": {
@@ -997,6 +1092,7 @@
 		"users": ["Clive: Idealistic Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"96": {
@@ -1008,6 +1104,7 @@
 		"users": ["Mathilda: Legendary Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"97": {
@@ -1019,6 +1116,7 @@
 		"users": ["Cordelia: Knight Paragon"],
 		"type": "lance",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"98": {
@@ -1030,6 +1128,7 @@
 		"users": ["Jagen: Veteran Knight"],
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"99": {
@@ -1040,6 +1139,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"100": {
@@ -1050,6 +1150,7 @@
 		"prf": false,
 		"type": "lance",
 		"skills": [],
+		"effect": {},
 		"max": false
 	}
 

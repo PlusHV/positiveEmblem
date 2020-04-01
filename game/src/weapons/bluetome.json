@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -18,6 +19,7 @@
 		"users": ["Linde: Light Mage"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -28,6 +30,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {"cdTrigger": 1},
 		"max": true
 	},
 	"3": {
@@ -38,6 +41,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {"cdTrigger": 1},
 		"max": false
 	},
 	"4": {
@@ -48,6 +52,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"5": {
@@ -58,6 +63,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"6": {
@@ -68,6 +74,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -78,6 +85,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -88,6 +96,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"9": {
@@ -98,6 +107,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"10": {
@@ -108,6 +118,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -118,6 +129,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"12": {
@@ -128,6 +140,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -138,6 +151,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"14": {
@@ -148,6 +162,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"15": {
@@ -158,6 +173,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"16": {
@@ -168,6 +184,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"17": {
@@ -178,6 +195,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"18": {
@@ -188,6 +206,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -198,6 +217,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -209,6 +229,7 @@
 		"users": ["Mae: Bundle of Energy"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"21": {
@@ -219,6 +240,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -229,6 +251,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"23": {
@@ -240,6 +263,7 @@
 		"users": ["Delthea: Free Spirit", "Linde: Light Mage"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -251,6 +275,7 @@
 		"users": ["Delthea: Tatarrah's Puppet"],
 		"type": "bluetome",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -262,6 +287,7 @@
 		"users": ["Reinhardt: Thunder's Fist", "Olwen: Blue Mage Knight"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -272,6 +298,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -282,6 +309,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"28": {
@@ -292,6 +320,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"29": {
@@ -302,6 +331,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"30": {
@@ -313,6 +343,7 @@
 		"users": ["Catria: Spring Whitewing"],
 		"type": "bluetome",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"31": {
@@ -324,6 +355,7 @@
 		"users": ["L'Arachel: Princess of Light"],
 		"type": "bluetome",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"32": {
@@ -334,6 +366,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"33": {
@@ -344,6 +377,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"34": {
@@ -354,6 +388,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"35": {
@@ -364,6 +399,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"36": {
@@ -374,6 +410,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -385,6 +422,7 @@
 		"users": ["Ophelia: Dramatic Heroine"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"38": {
@@ -396,6 +434,7 @@
 		"users": ["Ishtar: Thunder Goddess"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"39": {
@@ -407,6 +446,7 @@
 		"users": ["Odin: Potent Force"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"40": {
@@ -418,6 +458,7 @@
 		"users": ["Azura: Vallite Songstress"],
 		"type": "bluetome",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"41": {
@@ -429,6 +470,7 @@
 		"users": ["Kliff: Curious Spirit"],
 		"type": "bluetome",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -439,6 +481,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"43": {
@@ -449,6 +492,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"44": {
@@ -459,6 +503,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -469,6 +514,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"46": {
@@ -479,6 +525,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"47": {
@@ -489,6 +536,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"48": {
@@ -500,6 +548,7 @@
 		"users": ["Robin: High Deliverer"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"49": {
@@ -511,6 +560,7 @@
 		"users": ["Micaiah: Priestess of Dawn"],
 		"type": "bluetome",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"50": {
@@ -521,6 +571,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -531,6 +582,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"52": {
@@ -541,6 +593,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"53": {
@@ -552,6 +605,7 @@
 		"users": ["Tailtiu: Thunder Noble"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"54": {
@@ -562,6 +616,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"55": {
@@ -573,6 +628,7 @@
 		"users": [],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"56": {
@@ -583,6 +639,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"57": {
@@ -593,6 +650,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"58": {
@@ -604,6 +662,7 @@
 		"users": ["Julia: Crusader of Light"],
 		"type": "bluetome",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"59": {
@@ -615,6 +674,7 @@
 		"users": ["Saias: Bishop of Flame"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"60": {
@@ -626,6 +686,7 @@
 		"users": ["Lute: Prodigy"],
 		"type": "bluetome",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"61": {
@@ -637,6 +698,7 @@
 		"users": ["Laegjarn: Burning Sun"],
 		"type": "bluetome",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"62": {
@@ -647,6 +709,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"63": {
@@ -657,6 +720,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"64": {
@@ -668,6 +732,7 @@
 		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"65": {
@@ -679,6 +744,7 @@
 		"users": ["Brunnya: Devoted General"],
 		"type": "bluetome",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"66": {
@@ -689,6 +755,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"67": {
@@ -699,6 +766,7 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"68": {
@@ -710,6 +778,7 @@
 		"users": ["Alfonse: Askran Duo"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"69": {
@@ -721,6 +790,7 @@
 		"users": ["Morgan: Lass from Afar"],
 		"type": "bluetome",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"70": {
@@ -732,6 +802,7 @@
 		"users": ["Est: Springtime Flier"],
 		"type": "bluetome",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	}
 }

@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -18,6 +19,7 @@
 		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -29,6 +31,7 @@
 		"users": ["Elincia: Lost Princess"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"3": {
@@ -40,6 +43,7 @@
 		"users": ["Eliwood: Blazing Knight"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -50,6 +54,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"5": {
@@ -60,6 +65,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"6": {
@@ -70,6 +76,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -80,6 +87,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"8": {
@@ -90,7 +98,8 @@
 		"prf": true,
 		"users": ["Joshua: Tempest King"],
 		"type": "sword",
-		"skills": [["a", "Resistance +3"], ["a", 210]],
+		"skills": [["a", "Resistance +3"], ["a", "Resistance +2"]],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"9": {
@@ -102,6 +111,7 @@
 		"users": ["Ayra: Astra's Wielder"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -112,6 +122,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -122,6 +133,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"12": {
@@ -133,6 +145,7 @@
 		"users": ["Celica: Imprisoned Soul"],
 		"type": "sword",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -144,6 +157,7 @@
 		"users": ["Roy: Young Lion"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -155,6 +169,7 @@
 		"users": ["Roy: Brave Lion", "Eliwood: Knight of Lycia"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"15": {
@@ -165,6 +180,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -175,6 +191,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"17": {
@@ -186,6 +203,7 @@
 		"users": ["Cain: The Bull"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -196,6 +214,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -206,6 +225,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -217,6 +237,7 @@
 		"users": ["Byleth: Proven Professor", "Byleth: Tested Professor"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"21": {
@@ -228,6 +249,7 @@
 		"users": ["Siegbert: Future King"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"22": {
@@ -239,6 +261,7 @@
 		"users": ["Ares: Black Knight", "Eldigan: Lionheart"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"23": {
@@ -250,6 +273,7 @@
 		"users": ["Sigurd: Holy Knight", "Seliph: Heir of Light"],
 		"type": "sword",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -261,6 +285,7 @@
 		"users": ["Alm: Imperial Ascent"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -272,6 +297,7 @@
 		"users": ["Roy: Blazing Lion"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -283,6 +309,7 @@
 		"users": ["Eliwood: Knight of Lycia"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"27": {
@@ -294,6 +321,7 @@
 		"users": ["Zephiel: The Liberator"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -305,6 +333,7 @@
 		"users": ["Marth: Hero-King"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"29": {
@@ -316,6 +345,7 @@
 		"users": ["Marth: Enigmatic Blade", "Lucina: Future Witness", "Chrom: Exalted Prince"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -327,6 +357,7 @@
 		"users": ["Alm: Hero of Prophecy"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"31": {
@@ -338,6 +369,7 @@
 		"users": ["Marth: Altean Prince"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"32": {
@@ -348,6 +380,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"33": {
@@ -358,6 +391,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"34": {
@@ -369,6 +403,7 @@
 		"users": ["Alfonse: Prince of Askr"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"35": {
@@ -379,6 +414,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"36": {
@@ -389,6 +425,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"37": {
@@ -400,6 +437,7 @@
 		"users": ["Hríd: Icy Blade"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"38": {
@@ -411,6 +449,7 @@
 		"users": ["Ogma: Loyal Blade"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"39": {
@@ -422,6 +461,7 @@
 		"users": ["Saber: Driven Mercenary"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"40": {
@@ -433,6 +473,7 @@
 		"users": ["Hana: Focused Samurai"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"41": {
@@ -443,6 +484,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"42": {
@@ -453,6 +495,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"43": {
@@ -464,6 +507,7 @@
 		"users": ["Gunnthrá: Year's First Dream"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"44": {
@@ -475,6 +519,7 @@
 		"users": ["Hinata: Wild Samurai"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"45": {
@@ -485,6 +530,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"46": {
@@ -495,6 +541,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"47": {
@@ -505,6 +552,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"48": {
@@ -515,6 +563,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"49": {
@@ -525,6 +574,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"50": {
@@ -536,6 +586,7 @@
 		"users": ["Laevatein: Searing Steel"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -547,6 +598,7 @@
 		"users": ["Leif: Prince of Leonster"],
 		"type": "sword",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"52": {
@@ -558,6 +610,7 @@
 		"users": ["Reinhardt: Thunder's Sword"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"53": {
@@ -569,6 +622,7 @@
 		"users": ["Owain: Chosen One"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"54": {
@@ -580,6 +634,7 @@
 		"users": ["Eldigan: Lionheart"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"55": {
@@ -591,6 +646,7 @@
 		"users": ["Fir: Sword Student", "Karel: Sword Demon"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"56": {
@@ -602,6 +658,7 @@
 		"users": ["Laegjarn: Sheathed Steel"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"57": {
@@ -613,6 +670,7 @@
 		"users": ["Stahl: Viridian Knight"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"58": {
@@ -623,6 +681,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"59": {
@@ -633,6 +692,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"60": {
@@ -644,6 +704,7 @@
 		"users": ["Ike: Vanguard Legend", "Ike: Young Mercenary"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"61": {
@@ -655,6 +716,7 @@
 		"users": ["Ryoma: Peerless Samurai", "Ryoma: Supreme Samurai"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"62": {
@@ -666,6 +728,7 @@
 		"users": ["Lloyd: White Wolf"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"63": {
@@ -677,6 +740,7 @@
 		"users": ["Mia: Lady of Blades"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"64": {
@@ -688,6 +752,7 @@
 		"users": ["Luke: Rowdy Squire"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"65": {
@@ -699,6 +764,7 @@
 		"users": ["Celica: Warrior Priestess"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"66": {
@@ -709,6 +775,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"67": {
@@ -719,6 +786,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"68": {
@@ -729,6 +797,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"69": {
@@ -739,6 +808,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"70": {
@@ -749,6 +819,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"71": {
@@ -759,6 +830,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"72": {
@@ -770,6 +842,7 @@
 		"users": ["Navarre: Scarlet Sword"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"73": {
@@ -781,6 +854,7 @@
 		"users": ["Chrom: Exalted Prince", "Chrom: Knight Exalt", "Lucina: Future Witness", "Marth: Enigmatic Blade"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"74": {
@@ -792,6 +866,7 @@
 		"users": ["Selena: Cutting Wit"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"75": {
@@ -803,6 +878,7 @@
 		"users": ["Mareeta: The Blade's Pawn"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"76": {
@@ -814,6 +890,7 @@
 		"users": ["Xander: Paragon Knight"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"77": {
@@ -825,6 +902,7 @@
 		"users": ["Eirika: Restoration Lady"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"78": {
@@ -835,6 +913,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"79": {
@@ -845,6 +924,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"80": {
@@ -856,6 +936,7 @@
 		"users": ["Seth: Silver Knight"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"81": {
@@ -867,6 +948,7 @@
 		"users": ["Olivia: Sky-High Dancer"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"82": {
@@ -877,6 +959,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"83": {
@@ -887,6 +970,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": false
 	},
 	"84": {
@@ -898,6 +982,7 @@
 		"users": ["Líf: Lethal Swordsman"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"85": {
@@ -909,6 +994,7 @@
 		"users": ["Lyn: Lady of the Plains"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"86": {
@@ -920,6 +1006,7 @@
 		"users": ["Lon'qu: Solitary Blade"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"87": {
@@ -930,6 +1017,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"88": {
@@ -941,6 +1029,7 @@
 		"users": ["Eirika: Graceful Resolve"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"89": {
@@ -952,6 +1041,7 @@
 		"users": ["Seliph: Heir of Light"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"90": {
@@ -962,6 +1052,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"91": {
@@ -973,6 +1064,7 @@
 		"users": ["Karla: Sword Vassal"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"92": {
@@ -984,6 +1076,7 @@
 		"users": ["Palla: Eldest Whitewing"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"93": {
@@ -995,6 +1088,7 @@
 		"users": ["Caeda: Talys's Heart"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"94": {
@@ -1005,6 +1099,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"95": {
@@ -1015,6 +1110,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"96": {
@@ -1026,6 +1122,7 @@
 		"users": ["Corrin: Fateful Prince"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"97": {
@@ -1036,6 +1133,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"98": {
@@ -1046,6 +1144,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"99": {
@@ -1057,6 +1156,7 @@
 		"users": ["Phina: Roving Dancer"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"100": {
@@ -1068,6 +1168,7 @@
 		"users": ["Astram: Midia's Hero"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"101": {
@@ -1079,6 +1180,7 @@
 		"users": ["Hector: Dressed-Up Duo"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"102": {
@@ -1090,6 +1192,7 @@
 		"users": ["Catria: Mild Middle Sister"],
 		"type": "sword",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"103": {
@@ -1101,6 +1204,7 @@
 		"users": ["Altina: Dawn's Trueblade"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"104": {
@@ -1111,6 +1215,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"105": {
@@ -1121,6 +1226,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"106": {
@@ -1132,6 +1238,7 @@
 		"users": ["Mareeta: Sword of Stars"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"107": {
@@ -1143,6 +1250,7 @@
 		"users": ["Kempf: Conniving General"],
 		"type": "sword",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"108": {
@@ -1153,6 +1261,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"109": {
@@ -1163,6 +1272,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"110": {
@@ -1174,6 +1284,7 @@
 		"users": ["Larcei: Keen Kin"],
 		"type": "sword",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"111": {
@@ -1185,6 +1296,7 @@
 		"users": ["Shannan: Wielder of Astra"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"112": {
@@ -1196,6 +1308,7 @@
 		"users": ["Itsuki: Finding a Path"],
 		"type": "sword",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"113": {
@@ -1206,6 +1319,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"114": {
@@ -1216,6 +1330,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"115": {
@@ -1227,6 +1342,7 @@
 		"users": ["Athena: Borderland Sword"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"116": {
@@ -1238,6 +1354,7 @@
 		"users": ["Laslow: Dancing Duelist"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"117": {
@@ -1249,6 +1366,7 @@
 		"users": ["Gray: Wry Comrade"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"118": {
@@ -1260,6 +1378,7 @@
 		"users": ["Tobin: The Clueless One"],
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"119": {
@@ -1270,6 +1389,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"120": {
@@ -1280,6 +1400,7 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
+		"effect": {},
 		"max": false
 	}
 }

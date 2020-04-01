@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -17,6 +18,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"2": {
@@ -27,6 +29,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"3": {
@@ -37,6 +40,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"4": {
@@ -47,6 +51,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"5": {
@@ -58,6 +63,7 @@
 		"users": ["Lethe: Gallia's Valkyrie"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"6": {
@@ -69,6 +75,7 @@
 		"users": ["Yarne: Timid Taguel"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -80,6 +87,7 @@
 		"users": ["Ranulf: Friend of Nations"],
 		"type": "beast",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"8": {
@@ -90,6 +98,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"9": {
@@ -101,6 +110,7 @@
 		"users": ["Selkie: Free Spirit"],
 		"type": "beast",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -111,6 +121,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"11": {
@@ -122,6 +133,7 @@
 		"users": ["Tibarn: Lord of the Air"],
 		"type": "beast",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"12": {
@@ -133,6 +145,7 @@
 		"users": ["Leanne: Forest's Song", "Reyson: White Prince"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"13": {
@@ -144,6 +157,7 @@
 		"users": ["Kaden: Kitsune Braggart"],
 		"type": "beast",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -155,6 +169,7 @@
 		"users": ["Caineghis: Gallia's Lion King"],
 		"type": "beast",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"15": {
@@ -166,6 +181,7 @@
 		"users": ["Naesala: Sky's Shadow"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -177,6 +193,7 @@
 		"users": ["Mordecai: Kindhearted Tiger"],
 		"type": "beast",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"17": {
@@ -188,6 +205,7 @@
 		"users": ["Panne: Proud Taguel"],
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -198,6 +216,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"19": {
@@ -208,6 +227,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -218,6 +238,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"21": {
@@ -229,6 +250,7 @@
 		"users": ["Nailah: Unflinching Eye"],
 		"type": "beast",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"22": {
@@ -240,6 +262,7 @@
 		"users": ["Velouria: Wolf Cub"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"23": {
@@ -251,6 +274,7 @@
 		"users": ["Keaton: Lupine Collector"],
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -261,6 +285,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"25": {
@@ -271,6 +296,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"26": {
@@ -281,6 +307,7 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"27": {
@@ -292,6 +319,7 @@
 		"users": ["Lethe: New Year's Claw"],
 		"type": "beast",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -303,6 +331,7 @@
 		"users": ["Selkie: New Year's Spirit"],
 		"type": "beast",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	}
 }

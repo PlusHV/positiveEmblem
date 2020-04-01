@@ -7,6 +7,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 
@@ -19,6 +20,7 @@
 		"users": ["Garon: King of Nohr"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"2": {
@@ -30,6 +32,7 @@
 		"users": ["Tiki: Dragon Scion", "Tiki: Naga's Voice"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"3": {
@@ -40,6 +43,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"4": {
@@ -50,6 +54,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"5": {
@@ -61,6 +66,7 @@
 		"users": ["Idunn: Dark Priestess"],
 		"type": "breath",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"6": {
@@ -72,6 +78,7 @@
 		"users": ["Naga: Dragon Divinity"],
 		"type": "breath",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"7": {
@@ -83,6 +90,7 @@
 		"users": ["Tiki: Legendary Dragon"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"8": {
@@ -94,6 +102,7 @@
 		"users": ["Corrin: Dream Prince", "Corrin: Dream Princess"],
 		"type": "breath",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"9": {
@@ -105,6 +114,7 @@
 		"users": ["Robin: Fell Reincarnation", "Robin: Fell Vessel"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"10": {
@@ -116,6 +126,7 @@
 		"users": ["Duma: God of Strength"],
 		"type": "breath",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"11": {
@@ -126,6 +137,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"12": {
@@ -136,6 +148,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"13": {
@@ -146,6 +159,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"14": {
@@ -156,6 +170,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"15": {
@@ -166,6 +181,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"16": {
@@ -176,6 +192,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"17": {
@@ -187,6 +204,7 @@
 		"users": ["Myrrh: Great Dragon"],
 		"type": "breath",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"18": {
@@ -197,6 +215,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"19": {
@@ -207,6 +226,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"20": {
@@ -217,6 +237,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {"cdTrigger": 1},
 		"max": true
 	},
 	"21": {
@@ -227,6 +248,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {"cdTrigger": 1},
 		"max": false
 	},
 	"22": {
@@ -238,6 +260,7 @@
 		"users": ["Nah: Little Miss"],
 		"type": "breath",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"23": {
@@ -249,6 +272,7 @@
 		"users": ["Tiki: Torpid Dragon"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"24": {
@@ -260,6 +284,7 @@
 		"users": ["Corrin: Wailing Soul"],
 		"type": "breath",
 		"skills": [["a", "Attack +3"]],
+		"effect": {},
 		"max": true
 	},
 	"25": {
@@ -271,6 +296,7 @@
 		"users": ["Myrrh: Spooky Monster"],
 		"type": "breath",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"26": {
@@ -282,6 +308,7 @@
 		"users": ["Sothis: Girl on the Throne"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"27": {
@@ -293,6 +320,7 @@
 		"users": ["Tiki: Beachside Scion"],
 		"type": "breath",
 		"skills": [["a", "Defense +3"]],
+		"effect": {},
 		"max": true
 	},
 	"28": {
@@ -303,6 +331,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"29": {
@@ -313,6 +342,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"30": {
@@ -323,6 +353,7 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": false
 	},
 	"31": {
@@ -334,6 +365,7 @@
 		"users": ["Nagi: Dragon Avatar"],
 		"type": "breath",
 		"skills": [],
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"32": {
@@ -345,6 +377,7 @@
 		"users": ["Sothis: Silver Specter"],
 		"type": "breath",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
 		"max": true
 	},
 	"33": {
@@ -356,6 +389,7 @@
 		"users": ["Nils: Bright Bard"],
 		"type": "breath",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	},
 	"34": {
@@ -367,6 +401,7 @@
 		"users": ["Kana: Dragon Princess"],
 		"type": "breath",
 		"skills": [],
+		"effect": {},
 		"max": true
 	},
 	"35": {
@@ -378,6 +413,7 @@
 		"users": ["Idunn: Dragonkin Duo"],
 		"type": "breath",
 		"skills": [["a", "Resistance +3"]],
+		"effect": {},
 		"max": true
 	}
 	
