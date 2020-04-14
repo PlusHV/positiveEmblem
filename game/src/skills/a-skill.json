@@ -2204,5 +2204,26 @@
 		"prf": false,
 		"type": "conditional-stat",
 		"max": true
+	},
+	"304": {
+		"name": "Atk/Def Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"305": {
+		"name": "Close Foil",
+		"sp": 300,
+		"prf": false,
+		"type": "attack-count",
+		"max": true
+	},
+	"306": {
+		"name": "Distant Foil",
+		"sp": 300,
+		"prf": false,
+		"type": "attack-count",
+		"max": true
 	}
 }

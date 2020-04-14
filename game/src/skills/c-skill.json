@@ -2326,5 +2326,20 @@
 		"prf": false,
 		"type": "",
 		"max": true
+	},
+	"331": {
+		"name": "Impenetrable Dark",
+		"sp": 300,
+		"prf": true,
+		"users": ["Bramimond: The Enigma"],
+		"type": "",
+		"max": true
+	},
+	"332": {
+		"name": "Joint Drive Atk",
+		"sp": 300,
+		"prf": false,
+		"type": "drive",
+		"max": true
 	}
 }

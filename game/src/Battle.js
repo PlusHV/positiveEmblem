@@ -39,7 +39,7 @@ export function DoBattle(updatedHeroList, attacker, defender){
 export function GetDamageType(weaponType){
     if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
       return "def";
-    } else if (["redtome", "bluetome", "greentome", "breath", "staff"].includes(weaponType)){
+    } else if (["redtome", "bluetome", "greentome", "breath", "staff", "colorlesstome"].includes(weaponType)){
       return "res";
     }
     return "error";

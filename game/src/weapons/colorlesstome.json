@@ -1,0 +1,59 @@
+{
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "colorlesstome",
+		"skills": [], 
+		"effect": {},
+		"max": true
+	},
+	"1": {
+		"name": "Stone",
+		"might": 4,
+		"range": 2,
+		"sp": 50,
+		"prf": false,
+		"type": "colorlesstome",
+		"skills": [], 
+		"effect": {},
+		"max": false
+	},
+	"2": {
+		"name": "Elstone",
+		"might": 6,
+		"range": 2,
+		"sp": 100,
+		"prf": false,
+		"type": "colorlesstome",
+		"skills": [], 
+		"effect": {},
+		"max": false
+	},
+	"3": {
+		"name": "Atlas",
+		"might": 9,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "colorlesstome",
+		"skills": [], 
+		"effect": {},
+		"max": false
+	},
+	"4": {
+		"name": "Void Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "colorlesstome",
+		"users": ["Bramimond: The Enigma"],
+		"skills": [["a", "Attack +3"]], 
+		"effect": {},
+		"max": true
+	}
+
+}

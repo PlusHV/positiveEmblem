@@ -804,5 +804,17 @@
 		"skills": [["a", "Attack +3"]],
 		"effect": {},
 		"max": true
+	},
+	"71": {
+		"name": "Blue-Crow Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ursula: Blue Crow"],
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": true
 	}
 }

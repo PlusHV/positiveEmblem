@@ -990,7 +990,32 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"87": {
+		"name": "Rinkah's Club",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Rinkah: Scion of Flame"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"88": {
+		"name": "Inveterate Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gunter: Inveterate Soldier"],
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
 	}
+
 
 
 }

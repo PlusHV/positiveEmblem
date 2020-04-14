@@ -3403,7 +3403,7 @@
 	},
 	"409": {
 		"name": "Squad Ace AE 1",
-		"sp": 40,
+		"sp": 100,
 		"prf": false,
 		"type": "passive",
 		"effect": {"hp": 3, "atk": 1},
@@ -3412,7 +3412,7 @@
 	"410": {
 
 		"name": "Squad Ace AE 2",
-		"sp": 80,
+		"sp": 200,
 		"prf": false,
 		"type": "passive",
 		"effect": {"hp": 4, "atk": 2},
@@ -3483,7 +3483,7 @@
 	},
 	"420": {
 		"name": "Squad Ace AF 1",
-		"sp": 40,
+		"sp": 100,
 		"prf": false,
 		"type": "passive",
 		"effect": {"hp": 3, "spd": 1},
@@ -3492,10 +3492,10 @@
 	"421": {
 
 		"name": "Squad Ace AF 2",
-		"sp": 80,
+		"sp": 200,
 		"prf": false,
 		"type": "passive",
-		"effect": {"hp": 4, "sod": 2},
+		"effect": {"hp": 4, "spd": 2},
 		"max": true
 	},
 	"422": {
@@ -3544,6 +3544,23 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-rally",
+		"max": true
+	},
+	"428": {
+		"name": "Squad Ace AG 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "def": 1},
+		"max": false
+	},
+	"429": {
+
+		"name": "Squad Ace AG 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "def": 2},
 		"max": true
 	}
 }

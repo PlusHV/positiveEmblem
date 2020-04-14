@@ -890,6 +890,28 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"79": {
+		"name": "Spendthrift Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"80": {
+		"name": "Spendthrift Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 	
 

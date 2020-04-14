@@ -9,6 +9,7 @@ import lance from './weapons/lance.json';
 import redtome from './weapons/redtome.json';
 import staff from './weapons/staff.json';
 import sword from './weapons/sword.json';
+import colorlesstome from './weapons/colorlesstome.json';
 
 export default {
 	"axe" : axe,
@@ -16,6 +17,7 @@ export default {
 	"bluetome": bluetome,
 	"bow": bow,
 	"breath": breath,
+	"colorlesstome": colorlesstome,
 	"dagger": dagger,
 	"greentome": greentome,
 	"lance": lance,

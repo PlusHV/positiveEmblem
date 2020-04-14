@@ -826,5 +826,17 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"73": {
+		"name": "Candied Dagger",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gaius: Candy Stealer"],
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": true
 	}
 }

@@ -415,6 +415,18 @@
 		"skills": [["a", "Resistance +3"]],
 		"effect": {},
 		"max": true
+	},
+	"36": {
+		"name": "Astral Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lilith: Astral Daughter"],
+		"type": "breath",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 	
 }
