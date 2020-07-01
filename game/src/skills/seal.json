@@ -3562,5 +3562,166 @@
 		"type": "passive",
 		"effect": {"hp": 4, "def": 2},
 		"max": true
+	},
+	"430": {
+		"name": "Squad Ace AH 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "res": 1},
+		"max": false
+	},
+	"431": {
+
+		"name": "Squad Ace AH 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "res": 2},
+		"max": true
+	},
+	"432": {
+		"name": "Squad Ace AI 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1},
+		"max": false
+	},
+	"433": {
+
+		"name": "Squad Ace AI 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2},
+		"max": true
+	},
+	"434": {
+		"name": "Sturdy Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"435": {
+		"name": "Sturdy Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"436": {
+
+		"name": "Spd Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"437": {
+
+		"name": "Spd Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"438": {
+
+		"name": "Spd Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"439": {
+
+		"name": "Even Spd Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"440": {
+
+		"name": "Even Spd Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"441": {
+		"name": "Even Spd Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"442": {
+		"name": "Spd/Def Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"443": {
+		"name": "Spd/Def Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"444": {
+		"name": "Spd/Def Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"445": {
+		"name": "Sorcery Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"446": {
+		"name": "Sorcery Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"447": {
+		"name": "Sorcery Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"448": {
+
+		"name": "Brazen Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"449": {
+
+		"name": "Brazen Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"450": {
+
+		"name": "Brazen Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

@@ -427,6 +427,42 @@
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
 		"max": true
+	},
+	"37": {
+		"name": "Gloom Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Corrin: Fateful Princess"],
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"38": {
+		"name": "Brutal Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Corrin: Bloodbound Beast"],
+		"type": "breath",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"39": {
+		"name": "Nurturing Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Mila: Goddess of Love"],
+		"type": "breath",
+		"skills": [["a", "Defense +3"]],
+		"effect": {},
+		"max": true
 	}
 	
 }

@@ -54,6 +54,19 @@
 		"skills": [["a", "Attack +3"]], 
 		"effect": {},
 		"max": true
+	},
+	"5": {
+		"name": "Joyful Vows",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "colorlesstome",
+		"users": ["Micaiah: Dawn Wind's Duo"],
+		"skills": [["a", "Attack +3"]], 
+		"effect": {},
+		"max": true
 	}
+
 
 }

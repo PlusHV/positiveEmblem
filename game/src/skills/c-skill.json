@@ -810,7 +810,7 @@
 		"name": "Glare",
 		"sp": 300,
 		"prf": true,
-		"users": ["Nailah: Unflinching Eye"],
+		"users": ["Nailah: Unflinching Eye", "Nailah: Blessed Queen"],
 		"type": "post-battle",
 		"max": true
 	},
@@ -2341,5 +2341,91 @@
 		"prf": false,
 		"type": "drive",
 		"max": true
+	},
+	"333": {
+		"name": "Spd/Def Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"334": {
+		"name": "Spd/Def Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"335": {
+		"name": "Spd/Def Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"336": {
+		"name": "Armored Stride 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"337": {
+		"name": "Armored Strideh 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"338": {
+		"name": "Armored Stride 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"339": {
+		"name": "Rouse Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"340": {
+		"name": "Rouse Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"341": {
+		"name": "Rouse Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"342": {
+		"name": "Mila's Turnwheel",
+		"sp": 300,
+		"prf": true,
+		"users": ["Mila: Goddess of Love"],
+		"type": "turn-start",
+		"max": true
+	},
+	"343": {
+		"name": "Joint Drive Spd",
+		"sp": 300,
+		"prf": false,
+		"type": "drive",
+		"max": true
+	},
+	"344": {
+		"name": "Fortify Def 4",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
 	}
+
 }

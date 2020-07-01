@@ -912,7 +912,52 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"81": {
+		"name": "Bow of Beauty",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Leon: True of Heart"],
+		"type": "bow",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"82": {
+		"name": "Sniper's Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Clarisse: Sniper in the Dark"],
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"83": {
+		"name": "Coral Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"84": {
+		"name": "Coral Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
-	
 
 }

@@ -1152,6 +1152,66 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"101": {
+		"name": "Weighted Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gwendolyn: Adorable Knight"],
+		"type": "lance",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"102": {
+		"name": "Hewn Lance",
+		"might": 11,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Donnel: Village Hero"],
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"103": {
+		"name": "Dark Royal Spear",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Berkut: Prideful Prince"],
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"104": {
+		"name": "Whitedown Spear",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Palla: Sisterly Trio"],
+		"type": "lance",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
+	},
+	"105": {
+		"name": "Apotheosis Spear",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Anna: Secret Seller"],
+		"type": "lance",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 
 }

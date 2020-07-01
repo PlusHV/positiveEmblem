@@ -593,5 +593,32 @@
 		"users": ["Shannan: Wielder of Astra"],
 		"type": "battle",
 		"max": true
+	},
+	"73": {
+		"name": "Hero's Blood",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Marth: Legacied Hero"],
+		"type": "battle",
+		"max": true
+	},
+	"74": {
+		"name": "Righteous Wind",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Merric: Changing Winds"],
+		"type": "battle",
+		"max": true
+	},
+	"75": {
+		"name": "Mayhem Aether",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"users": ["Ike: Zeal Unleashed"],
+		"type": "battle",
+		"max": true
 	}
 }

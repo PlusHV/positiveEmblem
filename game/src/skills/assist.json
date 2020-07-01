@@ -390,7 +390,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn"],
+		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn", "Micaiah: Dawn Wind's Duo"],
 		"type": "health",
 		"effect": {"type": "sacrifice", "healMax": 99, "transferMin":0},
 		"max": true
@@ -465,6 +465,15 @@
 		"users": ["Chrom: Crowned Exalt"],
 		"type": "movement",
 		"effect": {"assister": 0, "assistee": -2},
+		"max": true
+	},
+	"52": {
+		"name": "Whimsical Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Mirabilis: Daydream"],
+		"type": "dance",
 		"max": true
 	}
 

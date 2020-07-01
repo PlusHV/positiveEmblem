@@ -629,5 +629,17 @@
 		"skills": [["a", "Resistance +3"]],
 		"effect": {},
 		"max": true
+	},
+	"55": {
+		"name": "Dark Scripture",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Julia: Heart Usurped"],
+		"type": "redtome",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
 	}
 }

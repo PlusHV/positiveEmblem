@@ -1014,7 +1014,100 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"89": {
+		"name": "Runeaxe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Narcian: Wyvern General"],
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"90": {
+		"name": "Crimson Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Sheena: Princess of Gra"],
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"91": {
+		"name": "Dragoon Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Minerva: Princess-Knight"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"92": {
+		"name": "Aymr",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Edelgard: Flame Emperor"],
+		"type": "axe",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
+	},
+	"93": {
+		"name": "Huge Fan+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"94": {
+		"name": "Huge Fan",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"95": {
+		"name": "Barrier Axe+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"96": {
+		"name": "Barrier Axe",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
+
 
 
 

@@ -2225,5 +2225,49 @@
 		"prf": false,
 		"type": "attack-count",
 		"max": true
+	},
+	"307": {
+		"name": "Dragoon Shield",
+		"sp": 300,
+		"prf": true,
+		"users": ["Minerva: Princess-Knight"],
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": 3},
+		"max": true
+	},
+	"308": {
+		"name": "Atk/Spd Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"309": {
+		"name": "Darting Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"310": {
+		"name": "Atk/Res Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"311": {
+		"name": "Bracing Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"312": {
+		"name": "Kestrel Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

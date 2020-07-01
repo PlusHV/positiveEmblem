@@ -979,7 +979,7 @@
 		"name": "Light and Dark",
 		"sp": 300,
 		"prf": true,
-		"users": ["Julia: Crusader of Light"],
+		"users": ["Julia: Crusader of Light", "Julia: Heart Usurped"],
 		"type": "damage-calc",
 		"effect": {},
 		"max": true
@@ -2393,5 +2393,154 @@
 		"type": "turn-start",
 		"effect": {},
 		"max": true
+	},
+	"297": {
+		"name": "Belief in Love",
+		"sp": 300,
+		"prf": true,
+		"users": ["Caeda: Princess of Talys"],
+		"type": "damage-calc",
+		"effect": {},
+		"max": true
+	},
+	"298": {
+		"name": "Chill Atk/Spd 1",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": false
+	},
+	"299": {
+		"name": "Chill Atk/Spd 2",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": true
+	},
+	"300": {
+		"name": "Raging Storm",
+		"sp": 300,
+		"prf": true,
+		"users": ["Edelgard: Flame Emperor"],
+		"type": "attack-count",
+		"effect": {},
+		"max": true
+	},
+	"301": {
+		"name": "Chill Spd/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": false
+	},
+	"302": {
+		"name": "Chill Spd/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": true
+	},
+	"303": {
+		"name": "Odd Pulse Tie 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": false
+	},
+	"304": {
+		"name": "Odd Pulse Tie 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": false
+	},
+	"305": {
+		"name": "Odd Pulse Tie 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": true
+	},
+	"306": {
+		"name": "Seal Spd/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "post-battle",
+		"effect": {},
+		"max": false
+	},
+	"307": {
+		"name": "Seal Spd/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "post-battle",
+		"effect": {},
+		"max": true
+	},
+	"308": {
+		"name": "Spd/Def Snag 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": false
+	},
+	"309": {
+		"name": "Spd/Def Snag 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": false
+	},
+	"310": {
+		"name": "Spd/Def Snag 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": true
+	},
+	"311": {
+		"name": "Spd/Res Snag 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": false
+	},
+	"312": {
+		"name": "Spd/Res Snag 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": false
+	},
+	"313": {
+		"name": "Spd/Res Snag 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-m-assist",
+		"effect": {},
+		"max": true
+	},
+	"314": {
+		"name": "Holy War's End",
+		"sp": 300,
+		"prf": true,
+		"users": ["Seliph: Scion of Light"],
+		"type": "attack-priority",
+		"effect": {},
+		"max": true
 	}
+
+
 }

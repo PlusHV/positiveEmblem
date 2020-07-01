@@ -1153,7 +1153,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
-		"users": ["Phina: Roving Dancer"],
+		"users": ["Phina: Roving Dancer", "Marth: Legacied Hero"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
@@ -1402,6 +1402,114 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"121": {
+		"name": "Stalwart Sword",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Draug: Gentle Giant"],
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"122": {
+		"name": "Feather Sword",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Caeda: Princess of Talys"],
+		"type": "sword",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
+	},
+	"123": {
+		"name": "Chaos Ragnell",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ike: Zeal Unleashed"],
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"124": {
+		"name": "Gurgurant",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ashnard: Mad King"],
+		"type": "sword",
+		"skills": [["a", "Defense +3"]],
+		"effect": {},
+		"max": true
+	},
+	"125": {
+		"name": "Pledged Blade+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"126": {
+		"name": "Pledged Blade",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"127": {
+		"name": "Flower of Ease",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Mirabilis: Daydream"],
+		"type": "sword",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"128": {
+		"name": "Amatsu",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Say'ri: Chon'sin's Blade"],
+		"type": "sword",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"129": {
+		"name": "Virtuous Tyrfing",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Seliph: Scion of Light"],
+		"type": "sword",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
 	}
+
+
 }
 

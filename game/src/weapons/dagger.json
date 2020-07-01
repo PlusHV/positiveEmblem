@@ -838,5 +838,29 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"74": {
+		"name": "Levin Dagger",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gangrel: Plegia's Mad King"],
+		"type": "dagger",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"75": {
+		"name": "Summer Strikers",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Mia: Harmonic Blades"],
+		"type": "dagger",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 }

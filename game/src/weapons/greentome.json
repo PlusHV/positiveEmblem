@@ -670,5 +670,42 @@
 		"skills": [["a", "Speed +3"]], 
 		"effect": {},
 		"max": true
+	},
+	"59": {
+		"name": "Winds of Change",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Merric: Changing Winds"],
+		"type": "greentome",
+		"skills": [], 
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"60": {
+		"name": "Blood Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lyon: Demon King"],
+		"type": "greentome",
+		"skills": [["a", "Attack +3"]], 
+		"effect": {},
+		"max": true
+	},
+	"61": {
+		"name": "Exotic Fruit Juice",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Selena: Sandbar Fluorspar"],
+		"type": "greentome",
+		"skills": [["a", "Attack +3"]], 
+		"effect": {},
+		"max": true
 	}
+
 }

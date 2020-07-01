@@ -333,5 +333,29 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"29": {
+		"name": "Bride's Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Nailah: Blessed Queen"],
+		"type": "beast",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"30": {
+		"name": "Groom's Wing",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Rafiel: Blessed Wings"],
+		"type": "beast",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
 	}
 }

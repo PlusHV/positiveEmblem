@@ -266,7 +266,7 @@ class GameBoard extends React.Component{
 
     hero.heroSkills = tSkills; //update the new heroes default skills
 
-
+    console.log(tSkills);
     //Passives/weapons only currently
     //Add the effects of the skills to the hero
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
