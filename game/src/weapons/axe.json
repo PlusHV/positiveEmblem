@@ -1036,7 +1036,7 @@
 		"users": ["Sheena: Princess of Gra"],
 		"type": "axe",
 		"skills": [],
-		"effect": {},
+		"effect": {"cdTrigger": -1},
 		"max": true
 	},
 	"91": {

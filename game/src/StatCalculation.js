@@ -22,12 +22,22 @@ function CalculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
 
 	let growthID = ((3 * orgBase) + offset + Math.trunc(growth * (0.07 * rarity + 0.79))  + bvid) % 64;
 	let growthValue = Math.trunc( Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0  * (39));
+
+	//empty hero with 0 stats was causing issues when they were leveled up.
+	if (growthID <= 0){
+		growthID = 1;
+	}
+	if (growthValue <= 0){
+		growthValue = 1;
+	}
+
 	var levelup = ConvertGrowthVector(growthVectors[growthValue][growthID.toString()], level );
 	
 	return base + levelup;
 }
 
 function ConvertGrowthVector(vect, level){
+
 	return (vect.substring(0, level-1).match(/1/g)|| []).length;
 }
 
@@ -206,7 +216,7 @@ function MergeMods(merge, order, flaw){
 		if (i === 1){
 
 			//First merge bonus
-			if (flaw === 'Neutral'){
+			if (flaw === 'neutral'){
 				statMods[order[0]] +=1;
 				statMods[order[1]] +=1;
 				statMods[order[2]] +=1;

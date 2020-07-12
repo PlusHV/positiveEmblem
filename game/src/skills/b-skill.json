@@ -203,7 +203,7 @@
 		"name": "Beorc's Blessing",
 		"sp": 300,
 		"prf": true,
-		"users": ["Berkut: Prideful Prince"],
+		"users": ["Ike: Brave Mercenary"],
 		"type": "damage-calc",
 		"effect": {},
 		"max": true

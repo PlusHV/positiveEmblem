@@ -180,6 +180,26 @@ export default class Stats extends React.Component{
 	    				</select>
 	    				</td>);
 
+	    		//Special
+	    	} else if (statText[i] === "res"){
+	    		cells.push(<td key = "specialChargeLabel" className= "statText">Special</td>);
+
+
+	    		if (this.props.gameState.selectedMember.special.cd >= 0){
+			    cells.push(<td key = "specialCharge" className= "inputNum">
+			        <input
+	            	className = "numberInput"
+	            	value = {this.props.gameState.selectedMember.special.charge} 
+	            	type = "number"
+	            	min = "0"
+	            	max = {this.props.gameState.selectedMember.special.cd}
+	            	onChange = {(e) => this.props.specialChargeChange(e)} 
+	            	/>  
+
+			       	</td>);
+				} else{
+					cells.push(<td className= "spacing" key = {"space2" + i}></td>);
+				}
 
 	    	} else{
 	    		cells.push(<td className= "spacing" key = {"space1" + i}></td>);

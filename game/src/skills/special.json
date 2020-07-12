@@ -5,6 +5,7 @@
 		"cd": -10,
 		"prf": false,
 		"type": "",
+		"effect": {},
 		"max": true
 	},
 	"1": {
@@ -12,7 +13,9 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.5},
 		"max": true
 	},
 	"2": {
@@ -20,7 +23,8 @@
 		"sp": 500,
 		"cd": 5,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
 		"max": true
 	},
 	"3": {
@@ -28,7 +32,8 @@
 		"sp": 200,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 1.5 },
 		"max": true
 	},
 	"4": {
@@ -37,7 +42,8 @@
 		"cd": 3,
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.8], "heal": 0.5, "amplify": 0.0 },
 		"max": true
 	},
 	"5": {
@@ -46,6 +52,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.5},
 		"max": true
 	},
 	"6": {
@@ -54,6 +61,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.5},
 		"max": true
 	},
 	"7": {
@@ -62,6 +70,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.5},
 		"max": true
 	},
 	"8": {
@@ -70,6 +79,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.5},
 		"max": true
 	},
 	"9": {
@@ -77,7 +87,8 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "flat", 10], "heal": 0.0, "amplify": 0.0, "alt": 25},
 		"max": true
 	},
 	"10": {
@@ -85,7 +96,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"11": {
@@ -93,7 +105,9 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.7},
 		"max": true
 	},
 	"12": {
@@ -101,7 +115,8 @@
 		"sp": 100,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"13": {
@@ -109,7 +124,8 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.3, "amplify": 0.0 },
 		"max": false
 	},
 	"14": {
@@ -117,7 +133,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"15": {
@@ -125,7 +142,8 @@
 		"sp": 200,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"16": {
@@ -133,7 +151,8 @@
 		"sp": 100,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"17": {
@@ -142,6 +161,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 4, "def": 4} },
 		"max": false
 	},
 	"18": {
@@ -150,6 +170,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 6, "def": 6} },
 		"max": true
 	},
 	"19": {
@@ -158,6 +179,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"def": 4, "res": 4} },
 		"max": false
 	},
 	"20": {
@@ -166,6 +188,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"def": 6, "res": 6} },
 		"max": true
 	},
 	"21": {
@@ -173,7 +196,9 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.7},
 		"max": true
 	},
 	"22": {
@@ -182,7 +207,8 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Marth: Hero-King"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "buff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
 		"max": true
 	},
 	"23": {
@@ -191,6 +217,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 4, "res": 4} },
 		"max": false
 	},
 	"24": {
@@ -199,6 +226,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 6, "res": 6} },
 		"max": true
 	},
 	"25": {
@@ -214,7 +242,8 @@
 		"sp": 200,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.8], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"27": {
@@ -222,7 +251,8 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 0.5 },
 		"max": true
 	},
 	"28": {
@@ -230,7 +260,8 @@
 		"sp": 100,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"29": {
@@ -239,6 +270,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": true
 	},
 	"30": {
@@ -247,6 +279,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": true
 	},
 	"31": {
@@ -255,6 +288,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": true
 	},
 	"32": {
@@ -263,6 +297,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": true
 	},
 	"33": {
@@ -271,6 +306,7 @@
 		"cd": 2,
 		"prf": false,
 		"type": "heal",
+		"effect": {"partyHeal": 10},
 		"max": true
 	},
 	"34": {
@@ -278,7 +314,9 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7},
 		"max": false
 	},
 	"35": {
@@ -287,7 +325,9 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Fjorm: Princess of Ice"],
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7, "reflect": true},
 		"max": true
 	},
 	"36": {
@@ -295,7 +335,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"37": {
@@ -303,7 +344,8 @@
 		"sp": 200,
 		"cd": 4,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.8], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"38": {
@@ -312,6 +354,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"flatHeal": 10},
 		"max": true
 	},
 	"39": {
@@ -320,6 +363,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 4} },
 		"max": false
 	},
 	"40": {
@@ -327,7 +371,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"41": {
@@ -336,7 +381,8 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Alm: Saint-King", "Alm: Lovebird Duo"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.2], "damage2": ["attacker", "spd", 0.2], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"42": {
@@ -344,7 +390,9 @@
 		"sp": 200,
 		"cd": 5,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": "miracle"},
 		"max": true
 	},
 	"43": {
@@ -352,7 +400,8 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"44": {
@@ -360,7 +409,8 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"45": {
@@ -368,7 +418,8 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 0.5 },
 		"max": false
 	},
 	"46": {
@@ -376,7 +427,8 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.3, "amplify": 0.0 },
 		"max": true
 	},
 	"47": {
@@ -384,7 +436,9 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.5},
 		"max": true
 	},
 	"48": {
@@ -393,7 +447,8 @@
 		"cd": 4,
 		"prf": true,
 		"users": ["Ike: Stalwart Heart", "Ike: Vanguard Legend"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
 		"max": true
 	},
 	"49": {
@@ -402,7 +457,8 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Ayra: Astra's Wielder"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.4], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"50": {
@@ -410,7 +466,8 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "hp", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"51": {
@@ -418,7 +475,8 @@
 		"sp": 100,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "hp", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"52": {
@@ -427,6 +485,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": false
 	},
 	"53": {
@@ -435,6 +494,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": false
 	},
 	"54": {
@@ -443,6 +503,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": false
 	},
 	"55": {
@@ -451,6 +512,7 @@
 		"cd": 4,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"factor": 1.0},
 		"max": false
 	},
 	"56": {
@@ -458,7 +520,8 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "alt": 0.4},
 		"max": true
 	},
 	"57": {
@@ -466,7 +529,9 @@
 		"sp": 200,
 		"cd": 2,
 		"prf": false,
-		"type": "battle",
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7},
 		"max": true
 	},
 	"58": {
@@ -474,8 +539,9 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": ["Sothis: Girl on the Throne"],
-		"type": "battle",
+		"users": ["Sothis: Girl on the Throne", "Sothis: Silver Specter"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd",  0.3], "heal": 0.3, "amplify": 0.0},
 		"max": true
 	},
 	"59": {
@@ -483,7 +549,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.5, "amplify": 0.0},
 		"max": true
 	},
 	"60": {
@@ -492,6 +559,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+			"effect": {"buff": {"def": 4} },
 		"max": false
 	},
 	"61": {
@@ -500,6 +568,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"res": 4} },
 		"max": false
 	},
 	"62": {
@@ -508,6 +577,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"spd": 4} },
 		"max": false
 	},
 	"63": {
@@ -515,7 +585,8 @@
 		"sp": 0,
 		"cd": 9,
 		"prf": false,
-		"type": "pre-battle",
+		"type": "post-battle",
+		"effect": {"flat": 5, "savage": 5},
 		"max": false
 	},
 	"64": {
@@ -524,6 +595,7 @@
 		"cd": 9,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"flat": 15, "savage": 15},
 		"max": false
 	},
 	"65": {
@@ -532,6 +604,7 @@
 		"cd": 9,
 		"prf": false,
 		"type": "pre-battle",
+		"effect": {"flat": 10, "savage": 10},
 		"max": false
 	},
 	"66": {
@@ -539,7 +612,8 @@
 		"sp": 200,
 		"cd": 3,
 		"prf": false,
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "hp", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"67": {
@@ -548,6 +622,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 4, "spd": 4} },
 		"max": false
 	},
 	"68": {
@@ -556,6 +631,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
+		"effect": {"buff": {"atk": 6, "spd": 6} },
 		"max": true
 	},
 	"69": {
@@ -573,7 +649,7 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade"],
-		"type": "battle",
+		"type": "attack-battle",
 		"max": true
 	},
 	"71": {
@@ -582,7 +658,8 @@
 		"cd": 3,
 		"prf": true,
 		"users": ["Alfonse: Askran Duo", "Líf: Lethal Swordsman"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.25, "amplify": 0.0 },
 		"max": true
 	},
 	"72": {
@@ -591,7 +668,8 @@
 		"cd": 3,
 		"prf": true,
 		"users": ["Shannan: Wielder of Astra"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.4], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"73": {
@@ -600,7 +678,8 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Marth: Legacied Hero"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "buff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
 		"max": true
 	},
 	"74": {
@@ -609,7 +688,8 @@
 		"cd": 2,
 		"prf": true,
 		"users": ["Merric: Changing Winds"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyHeal": 10 },
 		"max": true
 	},
 	"75": {
@@ -618,7 +698,8 @@
 		"cd": 4,
 		"prf": true,
 		"users": ["Ike: Zeal Unleashed"],
-		"type": "battle",
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
 		"max": true
 	}
 }

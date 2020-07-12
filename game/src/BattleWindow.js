@@ -23,10 +23,12 @@ export default class BattleWindow extends React.Component{
 		let aNewHP = 0;
 		let dOrgHP = 0;
 		let dNewHP = 0;
-		let aDmg = "-";
+		let aDmg = {"damage": "-"};
 		let aCount = 0;
-		let dDmg = "-";
+		let dDmg = {"damage": "-"};
 		let dCount = 0;
+	    
+	    //TODO - Show aoe damage(on defender in the forecast) and needs to show markings on board?
 
 
 	    if (attacker !== null && defender !== null && attacker.side !== defender.side){
@@ -50,11 +52,11 @@ export default class BattleWindow extends React.Component{
 
 
 		    if (aCount > 0){
-		    	aDmg = CalculateDamage(attacker, defender, attackerType);
+		    	aDmg = CalculateDamage(attacker, defender, attackerType, attacker.special, defender.special);
 			}
 
 			if (dCount > 0) {
-		    	dDmg = CalculateDamage(defender, attacker, defenderType);
+		    	dDmg = CalculateDamage(defender, attacker, defenderType, defender.special, attacker.special);
 		    }
 
 
@@ -64,11 +66,11 @@ export default class BattleWindow extends React.Component{
 
 		      if (temp === 1){
 
-		        dNewHP = Math.max(0, dNewHP - aDmg);
+		        dNewHP = Math.max(0, dNewHP - aDmg.damage);
 
 		      } else if (temp === 2){
 
-		        aNewHP = Math.max(0, aNewHP - dDmg);
+		        aNewHP = Math.max(0, aNewHP - dDmg.damage);
 		      }
 
 		    }
@@ -126,7 +128,7 @@ export default class BattleWindow extends React.Component{
 	    cells = [];
 
 	    cells.push(<td align = "center" key = "aDamage">
-	    	{aDmg + GetDoubleText(aCount)}
+	    	{aDmg.damage + GetDoubleText(aCount)}
 	    	</td>);
 	    cells.push(<td key = "DamageLabel">
 	    	DMG
@@ -134,7 +136,7 @@ export default class BattleWindow extends React.Component{
 
 
 	    cells.push(<td align = "center" key = "dDamage">
-	    	{dDmg + GetDoubleText(dCount)}
+	    	{dDmg.damage + GetDoubleText(dCount)}
 	    	</td>);
 
 

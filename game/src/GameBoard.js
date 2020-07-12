@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CalculateStats } from './StatCalculation.js';
-import { DoBattle } from './Battle.js';
+import { DoBattle, GetDistance, PositionToRowColumn } from './Battle.js';
 
 import './App.css';
 
@@ -104,6 +104,7 @@ class GameBoard extends React.Component{
     this.onFortLevelChange = this.onFortLevelChange.bind(this);
     this.onSeasonChange = this.onSeasonChange.bind(this);
     this.onHPChange = this.onHPChange.bind(this);
+    this.onSpecialChargeChange = this.onSpecialChargeChange.bind(this);
 
 
     this.getFilledPositions = this.getFilledPositions.bind(this);
@@ -195,7 +196,22 @@ class GameBoard extends React.Component{
     let temp = this.state.heroList;
 
     let hero = temp[this.state.playerSide][this.state.heroIndex];
-    hero[type] = Number(e.target.value);
+
+    let max = 0;
+    let min = 0;
+
+    if (type === "level"){
+      max = 40;
+      min = 1;
+    } else if (type === "merge" || type === "dragonflower"){
+      max = 10;
+      min = 0;
+    } else if (type === "rarity"){
+      max = 5;
+      min = 1;
+    }
+
+    hero[type] = Math.max(min, Math.min(Number(e.target.value), max) );
 
     let oldMaxHP = hero.stats.hp;
 
@@ -266,7 +282,6 @@ class GameBoard extends React.Component{
 
     hero.heroSkills = tSkills; //update the new heroes default skills
 
-    console.log(tSkills);
     //Passives/weapons only currently
     //Add the effects of the skills to the hero
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
@@ -405,40 +420,43 @@ class GameBoard extends React.Component{
 
     } else if (skillType === "assist"){
 
-      updatedHero.assist.effect = effect;
+      updatedHero.assist = skillDropdowns[skillType].info[id];
+      //updatedHero.assist.effect = effect;
 
 
       //TODO - can simplify this
-      if(skillDropdowns[skillType].info[id].type === "movement"){
+      // if(skillDropdowns[skillType].info[id].type === "movement"){
 
-        updatedHero.assist.type = "movement";
+      //   updatedHero.assist.type = "movement";
 
-        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      //   updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
 
-      } else if(skillDropdowns[skillType].info[id].type === "rally"){
+      // } else if(skillDropdowns[skillType].info[id].type === "rally"){
 
-        updatedHero.assist.type = "rally";
-        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      //   updatedHero.assist.type = "rally";
+      //   updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
 
-      } else if(skillDropdowns[skillType].info[id].type === "health"){
+      // } else if(skillDropdowns[skillType].info[id].type === "health"){
 
-        updatedHero.assist.type = "health";
-        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
-      } else if(skillDropdowns[skillType].info[id].type === "heal"){
+      //   updatedHero.assist.type = "health";
+      //   updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      // } else if(skillDropdowns[skillType].info[id].type === "heal"){
 
-        updatedHero.assist.type = "heal";
+      //   updatedHero.assist.type = "heal";
 
-        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
-      } else if (skillDropdowns[skillType].info[id].type === "dance"){
+      //   updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      // } else if (skillDropdowns[skillType].info[id].type === "dance"){
         
-        updatedHero.assist.type = "dance";
+      //   updatedHero.assist.type = "dance";
 
-        updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
-      }
+      //   updatedHero.assist.range = skillDropdowns[skillType].info[id].range;
+      // }
 
     } else if (skillType === "special"){
 
-      updatedHero.special.type = skillDropdowns[skillType].info[id].type;
+      //updatedHero.special.type = skillDropdowns[skillType].info[id].type;
+
+      updatedHero.special = skillDropdowns[skillType].info[id];
 
       var initialCharge = skillDropdowns[skillType].info[id].cd + updatedHero.effects.cdTrigger;
 
@@ -691,7 +709,7 @@ class GameBoard extends React.Component{
 
   onFortLevelChange(e){
 
-    this.setState({fortLevel: Number(e.target.value) });
+    this.setState({fortLevel: Math.max(-20, Math.min(Number(e.target.value), 20 ) ) }); 
 
     let updateHeroList = this.state.heroList;
 
@@ -725,9 +743,17 @@ class GameBoard extends React.Component{
   onHPChange(e){
 
     let temp = this.state.heroList;
-    temp[this.state.playerSide][this.state.heroIndex].currentHP = Number(e.target.value);
+    temp[this.state.playerSide][this.state.heroIndex].currentHP = Math.min(Number(e.target.value),  temp[this.state.playerSide][this.state.heroIndex].stats.hp) ;
     this.setState({heroList: temp});
     this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
+
+  }
+
+  onSpecialChargeChange(e){
+    let temp = this.state.heroList;
+    temp[this.state.playerSide][this.state.heroIndex].special.charge = Math.min(Number(e.target.value), temp[this.state.playerSide][this.state.heroIndex].special.cd);
+    this.setState({heroList: temp});
+    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); 
 
   }
 
@@ -801,7 +827,7 @@ class GameBoard extends React.Component{
 
 
 
-//the board elements
+  //the board elements
   dragBoardMember(ev){
 
     ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
@@ -825,12 +851,12 @@ class GameBoard extends React.Component{
 
 
     for (let i = 0; i < 48; i++) { //rows
-      if (this.GetDistance(pos, i) <= move && this.props.G.cells[i] == null ){
+      if (GetDistance(pos, i) <= move && this.props.G.cells[i] == null ){
         movementList.push(i);
       } else if (this.props.G.cells[i] !== null && dragData.position !== i){ //if there is a hero and is not themselves
-        if (this.GetDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
+        if (GetDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
           assistList.push(i);
-        else if (this.GetDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
+        else if (GetDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
           attackList.push(i);
       }
     }
@@ -868,9 +894,12 @@ class GameBoard extends React.Component{
     //check if cell has a hero and if it is on opposite side
 
     if (cellContent !==null && this.state.draggedHero.side !== cellContent.side){
-      //if it is not the same draggedOver as before or if there was none before
+      //if it is not the same draggedOver as before or if there was none before for battle forecast
       if ( (this.state.draggedOver !== null && this.state.draggedOver.position !== dropPosition) || this.state.draggedOver === null ) {
-        this.setState({draggedOver: this.props.G.cells[dropPosition]});
+        this.setState({draggedOver: this.props.G.cells[dropPosition]}); 
+
+        //TODO add an extra state that is a list of spaces if aoe special would be activated - and a sub list of those spaces of the new hp values of any heroes that would be affected
+        //e.g. have a list of numbers indicating spaces affected. for each space, also have a corresponding text which will be "" if no hero is there and their new hp if otherwise
       }
 
 
@@ -931,7 +960,7 @@ class GameBoard extends React.Component{
 
       //if (this.CheckAdjacent(dragData.position, this.props.G.cells[dropPosition].position )){
         //Check if in range for assist and they are on the same side
-      if (this.GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
+      if (GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
 
 
         if (dragData.assist.type === "movement"){
@@ -961,7 +990,7 @@ class GameBoard extends React.Component{
         }
 
       //Check if in range for attack and if they are on the same die
-      } else if (this.GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
+      } else if (GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
 
         temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
       }
@@ -1060,8 +1089,8 @@ class GameBoard extends React.Component{
   ApplyMovementAssist(updatedHeroList, assister, assistee, effect){
 
     let list = updatedHeroList;
-    let assisterPos = this.PositionToRowColumn(assister.position);
-    let assisteePos = this.PositionToRowColumn(assistee.position);
+    let assisterPos = PositionToRowColumn(assister.position);
+    let assisteePos = PositionToRowColumn(assistee.position);
 
     let participantIDs = [assister.id, assistee.id];
  
@@ -1276,8 +1305,8 @@ class GameBoard extends React.Component{
 
 
   CheckAdjacent(first, second){
-   let firstRC = this.PositionToRowColumn(first);
-   let secondRC = this.PositionToRowColumn(second);
+   let firstRC = PositionToRowColumn(first);
+   let secondRC = PositionToRowColumn(second);
 
 
     //if rows are the same, and column difference is one
@@ -1290,25 +1319,12 @@ class GameBoard extends React.Component{
 
   }
 
-  //Get the amount of spaces from first position to the second position
-  GetDistance(first, second){
-    let firstRC = this.PositionToRowColumn(first);
-    let secondRC = this.PositionToRowColumn(second);
-
-    let distance = 0;
-
-    distance += Math.abs(firstRC[1] - secondRC[1]); //difference in columns
-    distance += Math.abs(firstRC[0] - secondRC[0]); //difference in rows
-
-    return distance;
-
-  }
 
   GetAdjacentAllies(hList, position, excluded){
     let adjacentList = [];
 
     for (let x of hList){
-      if (x.position !== position && x.position !== excluded && this.GetDistance(x.position, position) === 1 ){
+      if (x.position !== position && x.position !== excluded && GetDistance(x.position, position) === 1 ){
         adjacentList.push(x);
       }
 
@@ -1320,7 +1336,7 @@ class GameBoard extends React.Component{
     let distantList = [];
 
     for (let x of hList){
-      if (x.position !== position && x.position !== excluded && this.GetDistance(x.position, position) <= distance ){
+      if (x.position !== position && x.position !== excluded && GetDistance(x.position, position) <= distance ){
         distantList.push(x);
       }
 
@@ -1328,13 +1344,7 @@ class GameBoard extends React.Component{
     return distantList;
   }
 
-  PositionToRowColumn(position){
 
-    let row = Math.floor(position/6);
-    let column = position%6;
-
-    return [row, column];
-  }
 
   RowColumnToPosition(rc){
     return rc[0] * 6 + rc[1];
@@ -1389,7 +1399,8 @@ class GameBoard extends React.Component{
               heroChange = {this.onHeroChange}  
               buffChange = {this.onBuffChange}
               ivChange = {this.onIVChange}
-              hpChange = {this.onHPChange} />
+              hpChange = {this.onHPChange}
+              specialChargeChange = {this.onSpecialChargeChange} />
         </td>
         <td rowSpan = "2">
           <table className= "boardStyle" id="board" align = 'center'>
@@ -1470,7 +1481,7 @@ function makeHeroStruct(){
     this["merge"] = 0;
     this["dragonflower"] = 0;
     this["heroID"] = {value: 0, label: ""};
-    this["iv"] = {asset: "Neutral", flaw: "Neutral"};
+    this["iv"] = {asset: "neutral", flaw: "neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
@@ -1495,7 +1506,7 @@ function makeHeroStruct(){
     this["range"] = -1;
     this["bonus"] = false;
     this["end"] = false;
-    this["effects"] = {"cdTrigger": 0};
+    this["effects"] = {"cdTrigger": 0, "reflect": 0};
 
   }  
   return hero;
