@@ -1507,6 +1507,7 @@ function makeHeroStruct(){
     this["bonus"] = false;
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0, "reflect": 0};
+    this["attack-count"] = {"counter": false};
 
   }  
   return hero;

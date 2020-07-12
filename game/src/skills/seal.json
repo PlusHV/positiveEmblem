@@ -3740,5 +3740,40 @@
 		"type": "passive",
 		"effect": {"atk": 2, "def": 2},
 		"max": true
+	},
+	"453": {
+		"name": "Mirror Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"454": {
+		"name": "Mirror Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
+	},
+	"455": {
+		"name": "Spd/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"456": {
+		"name": "Spd/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"457": {
+		"name": "Spd/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

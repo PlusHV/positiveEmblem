@@ -1212,6 +1212,18 @@
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
 		"max": true
+	},
+	"106": {
+		"name": "Starpoint Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ingrid: Solstice Knight"],
+		"type": "lance",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 
 }

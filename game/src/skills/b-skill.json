@@ -2540,6 +2540,70 @@
 		"type": "attack-priority",
 		"effect": {},
 		"max": true
+	},
+	"315": {
+		"name": "Chill Spd/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": false
+	},
+	"316": {
+		"name": "Chill Spd/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"effect": {},
+		"max": true
+	},
+	"317": {
+		"name": "Atk Cantrip 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-dance",
+		"effect": {},
+		"max": false
+	},
+	"318": {
+		"name": "Atk Cantrip 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-dance",
+		"effect": {},
+		"max": false
+	},
+	"319": {
+		"name": "Atk Cantrip 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-dance",
+		"effect": {},
+		"max": true
+	},
+	"320": {
+		"name": "Guard Bearing 1",
+		"sp": 60,
+		"prf": false,
+		"type": "damage-calc",
+		"effect": {},
+		"max": false
+	},
+	"321": {
+		"name": "Guard Bearing 2",
+		"sp": 120,
+		"prf": false,
+		"type": "damage-calc",
+		"effect": {},
+		"max": false
+	},
+	"322": {
+		"name": "Guard Bearing 3",
+		"sp": 240,
+		"prf": false,
+		"type": "damage-calc",
+		"effect": {},
+		"max": true
 	}
 
 

@@ -862,5 +862,27 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"76": {
+		"name": "Hidden Thorns+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"77": {
+		"name": "Hidden Thorns",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 }
