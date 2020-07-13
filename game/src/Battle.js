@@ -33,6 +33,11 @@ export function DoBattle(updatedHeroList, attacker, defender){
 
     let attackStack = GetAttackOrder(attackCount);
 
+    let attackerPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    let defenderPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+
+    let attackerPartyHeal = 0;
+    let defenderPartyHeal = 0;
 
 
     while (attackStack.length > 0 && newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //do attacks as long as the attack stack is not empty and both heroes are alive
@@ -60,6 +65,13 @@ export function DoBattle(updatedHeroList, attacker, defender){
           newDefender.effects.reflect = damageInfo.reflect; 
         }
 
+        let buffs = damageInfo.partyBuff;
+        Object.keys(buffs).forEach((key, i) => {
+          attackerPartyBuff[key] = Math.max( attackerPartyBuff[key] ,buffs[key]); //apply highest buff
+        });
+
+        attackerPartyHeal = Math.max(damageInfo.partyHeal, attackerPartyHeal ); //take the higher heal so it doesn't get overwritten
+
       } else if (temp === 2){ //defender hits attacker
 
         //Note - CalculateDamage defines attacker as the one attacking, and defender as the one getting hit for the current attack, not by initiator/enemy phase heroes 
@@ -74,8 +86,45 @@ export function DoBattle(updatedHeroList, attacker, defender){
 
         newDefender.effects.reflect = 0; //defender's reflect damage is cleared since they have attacked
 
+        let buffs = damageInfo.partyBuff;
+        Object.keys(buffs).forEach((key, i) => {
+          defenderPartyBuff[key] = Math.max( defenderPartyBuff[key] ,buffs[key]); //apply highest buff
+        });
+        defenderPartyHeal = Math.max(damageInfo.partyHeal, defenderPartyHeal ); //take the higher heal 
       }
 
+    }
+
+    for (let x of list[attacker.side]){
+
+      Object.keys(attackerPartyBuff).forEach((key, i) => {
+        x.buff[key] = Math.max(x.buff[key], attackerPartyBuff[key]);
+      });
+
+    }
+
+    for (let x of list[defender.side]){
+
+      Object.keys(defenderPartyBuff).forEach((key, i) => {
+        x.buff[key] = Math.max(x.buff[key], defenderPartyBuff[key]);
+      });
+
+    }
+
+
+    if (attackerPartyHeal > 0){
+      for (let x of list[attacker.side]){ //for each member of side
+        list[attacker.side][x.listIndex].currentHP = Math.min(list[attacker.side][x.listIndex].currentHP + attackerPartyHeal, list[attacker.side][x.listIndex].stats.hp);
+      }
+      newAttacker.currentHP = Math.min(attacker.stats.hp, newAttacker.currentHP + attackerPartyHeal); //apply heal to this version too
+    }
+
+
+    if (defenderPartyHeal > 0){
+      for (let x of list[defender.side]){ //for each member of side
+        list[defender.side][x.listIndex].currentHP = Math.min(list[defender.side][x.listIndex].currentHP + defenderPartyHeal, list[defender.side][x.listIndex].stats.hp);
+      }
+      newDefender.currentHP = Math.min(defender.stats.hp, newDefender.currentHP + defenderPartyHeal);
     }
 
     //set new current hp values
@@ -163,7 +212,8 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   
   let specialEffect = attackerSpecial.effect;
 
-
+  let partyHeal = 0;
+  let partyBuff = {};
 
   if (attackerSpecialCharge === 0 && attackerSpecial.type === "attack-battle"){ //if charged and an offsensive battle special
     applyAmplify = true;
@@ -194,9 +244,19 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
       }
 
 
+
     } //end special damage calc
 
     attackerSpecialCharge = attackerSpecial.cd; 
+
+    if ("partyHeal" in specialEffect){
+      partyHeal = specialEffect.partyHeal;
+
+    }
+
+    if ("partyBuff" in specialEffect){
+      partyBuff = specialEffect.partyBuff;
+    }
 
   } else{ //special not activated, increment normally
 
@@ -224,7 +284,11 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
     if (defenderSpecial.effect.reflect){
       reflect = true;
     }
-    defenderSpecialCharge = defenderSpecial.cd;
+
+    if (!miracle){
+      defenderSpecialCharge = defenderSpecial.cd;
+    }
+
   } else{
     if (defenderSpecialCharge >= 0){
       defenderSpecialCharge = Math.max(0, defenderSpecialCharge - 1);
@@ -276,7 +340,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   if (miracle){
     if (defender.currentHP > 1 && baseDamage + specialDamage >= defender.currentHP){ //if hp > 1 and their hp would go to 0, activate miracle
       totalDamage =  defender.currentHP - 1; //leave 1 hp
-
+      defenderSpecialCharge = defenderSpecial.cd;
     }
   }
 
@@ -286,7 +350,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
     heal = Math.trunc(specialEffect.heal * totalDamage) ; 
   }
 
-  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal,
+  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "partyBuff": partyBuff, "partyHeal": partyHeal,
   "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge } ; ///glimmer interacts with damage reduction
 
 }

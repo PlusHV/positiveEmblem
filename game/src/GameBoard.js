@@ -51,7 +51,7 @@ class GameBoard extends React.Component{
       "heroList": { 
         "1":[new heroStruct(0), new heroStruct(1), new heroStruct(2), new heroStruct(3), new heroStruct(4)],
         "2": [new heroStruct(6), new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11)]
-      },
+      }, //skips id 5 for listIndex  
       "heroIndex": 0, //The index of the hero in the heroList
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
       "skillDropdowns": initDropdowns,
@@ -420,7 +420,7 @@ class GameBoard extends React.Component{
 
     } else if (skillType === "assist"){
 
-      updatedHero.assist = skillDropdowns[skillType].info[id];
+      updatedHero.assist = Object.assign({}, skillDropdowns[skillType].info[id] );
       //updatedHero.assist.effect = effect;
 
 
@@ -456,7 +456,7 @@ class GameBoard extends React.Component{
 
       //updatedHero.special.type = skillDropdowns[skillType].info[id].type;
 
-      updatedHero.special = skillDropdowns[skillType].info[id];
+      updatedHero.special = Object.assign({}, skillDropdowns[skillType].info[id]);
 
       var initialCharge = skillDropdowns[skillType].info[id].cd + updatedHero.effects.cdTrigger;
 
@@ -1257,6 +1257,7 @@ class GameBoard extends React.Component{
 
     let healCalc = Math.floor(assister.stats.atk * effect.atk) + effect.mod;
 
+
     if (effect.mod2 === "martyr"){
       healCalc += assister.stats.hp - assister.currentHP; //add to calculated healing amount, the damage on assister
       selfHeal = Math.floor( (assister.stats.hp - assister.currentHP)/2); //heal for half of damage on assister
@@ -1272,12 +1273,62 @@ class GameBoard extends React.Component{
       assisteeHeal += assistee.stats.hp - (2 * assistee.currentHP);
     }
 
+    let assisterSpecial = assister.special;
+
+    let participantIDs = [assister.id, assistee.id];
+
+
+    if (assisterSpecial.charge === 0 && assisterSpecial.type === "heal"){ //activate special
+
+      //add flat healing amount from special (currently only imbue)
+      if ("flatHeal" in assisterSpecial.effect){
+        assisteeHeal+= assisterSpecial.effect.flatHeal;
+      }
+
+      if ("teamHeal" in assisterSpecial.effect){ //heal everyone in team except assister and assistee
+        let side = assistee.side;
+
+        for (let x of list[side]){ //for each member of side
+          if (!participantIDs.includes(x.id) ){ //if x is not an assister/assistee
+
+            //heal team according special
+            list[side][x.listIndex].currentHP = Math.min(list[side][x.listIndex].currentHP + assisterSpecial.effect.teamHeal, list[side][x.listIndex].stats.hp);
+
+          }
+        } //end for
+      } //end teamHeal
+
+
+      if ("partyBuff" in assisterSpecial.effect){
+        let side = assistee.side;
+        let buffs = assisterSpecial.effect.partyBuff;
+        for (let x of list[side]){ //for each member of side
+
+          Object.keys(buffs).forEach((key, i) => {
+            x.buff[key] = Math.max( x.buff[key] ,buffs[key]); //apply highest buff
+          });
+
+          list[side][x.listIndex] = x;
+
+        }
+
+      } //end buff
+
+      assisterSpecial.charge = assisterSpecial.cd; //reset special
+    } else{
+
+      if (assisterSpecial.charge >= 0){
+        assisterSpecial.charge = Math.max(0, assisterSpecial.charge - 1);
+      }
+    }
+
     //set new HP values - Keep hp below max;
     newAssisteeHP = Math.min(assistee.stats.hp, assistee.currentHP + assisteeHeal);
     newAssisterHP = Math.min(assister.stats.hp, assister.currentHP + assisterHeal);
     
     
    
+    list[assister.side][assister.listIndex].special.charge = assisterSpecial.charge;
 
     list[assistee.side][assistee.listIndex].currentHP = newAssisteeHP;
     list[assister.side][assister.listIndex].currentHP = newAssisterHP;
@@ -1375,6 +1426,7 @@ class GameBoard extends React.Component{
   }
 
   render() {
+    console.log(this.state.skillDropdowns);
 
     console.log(this.state.heroList);
     return (

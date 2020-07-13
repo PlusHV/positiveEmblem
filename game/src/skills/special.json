@@ -161,7 +161,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 4, "def": 4} },
+		"effect": {"partyBuff": {"atk": 4, "def": 4} },
 		"max": false
 	},
 	"18": {
@@ -170,7 +170,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 6, "def": 6} },
+		"effect": {"partyBuff": {"atk": 6, "def": 6} },
 		"max": true
 	},
 	"19": {
@@ -179,7 +179,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"def": 4, "res": 4} },
+		"effect": {"partyBuff": {"def": 4, "res": 4} },
 		"max": false
 	},
 	"20": {
@@ -188,7 +188,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"def": 6, "res": 6} },
+		"effect": {"partyBuff": {"def": 6, "res": 6} },
 		"max": true
 	},
 	"21": {
@@ -208,7 +208,7 @@
 		"prf": true,
 		"users": ["Marth: Hero-King"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "buff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
 		"max": true
 	},
 	"23": {
@@ -217,7 +217,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 4, "res": 4} },
+		"effect": {"partyBuff": {"atk": 4, "res": 4} },
 		"max": false
 	},
 	"24": {
@@ -226,7 +226,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 6, "res": 6} },
+		"effect": {"partyBuff": {"atk": 6, "res": 6} },
 		"max": true
 	},
 	"25": {
@@ -306,7 +306,7 @@
 		"cd": 2,
 		"prf": false,
 		"type": "heal",
-		"effect": {"partyHeal": 10},
+		"effect": {"teamHeal": 10},
 		"max": true
 	},
 	"34": {
@@ -363,7 +363,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 4} },
+		"effect": {"partyBuff": {"atk": 4} },
 		"max": false
 	},
 	"40": {
@@ -559,7 +559,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-			"effect": {"buff": {"def": 4} },
+		"effect": {"partyBuff": {"def": 4} },
 		"max": false
 	},
 	"61": {
@@ -568,7 +568,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"res": 4} },
+		"effect": {"partyBuff": {"res": 4} },
 		"max": false
 	},
 	"62": {
@@ -577,7 +577,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"spd": 4} },
+		"effect": {"partyBuff": {"spd": 4} },
 		"max": false
 	},
 	"63": {
@@ -622,7 +622,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 4, "spd": 4} },
+		"effect": {"partyBuff": {"atk": 4, "spd": 4} },
 		"max": false
 	},
 	"68": {
@@ -631,7 +631,7 @@
 		"cd": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"buff": {"atk": 6, "spd": 6} },
+		"effect": {"partyBuff": {"atk": 6, "spd": 6} },
 		"max": true
 	},
 	"69": {
@@ -679,7 +679,7 @@
 		"prf": true,
 		"users": ["Marth: Legacied Hero"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "buff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
 		"max": true
 	},
 	"74": {
