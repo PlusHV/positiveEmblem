@@ -10,8 +10,8 @@ export default class BattleWindow extends React.Component{
 	    let tbody = [];
 	    let cells = [];
 
-	    let attacker = this.props.gameState.draggedHero; 
-	    let defender = this.props.gameState.draggedOver;
+	    let dragged = this.props.gameState.draggedHero; //the attacker
+	    let draggedOver = this.props.gameState.draggedOver; // the defender
 
 
 
@@ -23,15 +23,25 @@ export default class BattleWindow extends React.Component{
 		let aNewHP = 0;
 		let dOrgHP = 0;
 		let dNewHP = 0;
+
 		let aDmg = {"damage": "-"};
+		let aDmgHits = [];
 		let aCount = 0;
+		let aSpecial = {};
+
 		let dDmg = {"damage": "-"};
 		let dCount = 0;
-	    
+	   	let dDmgHits = [];
+	   	let dSpecial = {};
+
 	    //TODO - Show aoe damage(on defender in the forecast) and needs to show markings on board?
 
 
-	    if (attacker !== null && defender !== null && attacker.side !== defender.side){
+	    if (dragged !== null && draggedOver !== null && dragged.side !== draggedOver.side){
+
+	    	let attacker = Object.assign({}, dragged);
+	    	let defender = Object.assign({}, draggedOver);
+
 	    	aArt = heroData[attacker.heroID.value].art;
 	    	dArt = heroData[defender.heroID.value].art;
 
@@ -39,6 +49,12 @@ export default class BattleWindow extends React.Component{
 	    	aOrgHP =  aNewHP = attacker.currentHP;
 	    	dOrgHP =  dNewHP = defender.currentHP;
 
+	    	aSpecial = Object.assign({}, attacker.special);
+	    	dSpecial = Object.assign({}, defender.special);
+
+
+	    	console.log(aSpecial);
+	    	console.log(dSpecial);
 		    let attackerType = GetDamageType(heroData[attacker.heroID.value].weapontype);
 		    let defenderType = GetDamageType(heroData[defender.heroID.value].weapontype);
 		    //aDmgType = 
@@ -52,11 +68,11 @@ export default class BattleWindow extends React.Component{
 
 
 		    if (aCount > 0){
-		    	aDmg = CalculateDamage(attacker, defender, attackerType, attacker.special, defender.special);
+		    	
 			}
 
 			if (dCount > 0) {
-		    	dDmg = CalculateDamage(defender, attacker, defenderType, defender.special, attacker.special);
+		    	
 		    }
 
 
@@ -66,11 +82,28 @@ export default class BattleWindow extends React.Component{
 
 		      if (temp === 1){
 
-		        dNewHP = Math.max(0, dNewHP - aDmg.damage);
+		      	aDmg = CalculateDamage(attacker, defender, attackerType, aSpecial, dSpecial);
+
+		      	aSpecial.charge = aDmg.attackerSpecialCharge;
+
+		      	dSpecial.charge = aDmg.defenderSpecialCharge;
+
+
+
+		        defender.currentHP = Math.max(0, defender.currentHP - aDmg.damage);
+		        aDmgHits.push(aDmg.damage);
 
 		      } else if (temp === 2){
+		      	dDmg = CalculateDamage(defender, attacker, defenderType, dSpecial, aSpecial);
 
-		        aNewHP = Math.max(0, aNewHP - dDmg.damage);
+		      	dSpecial.charge = dDmg.attackerSpecialCharge;
+
+		      	aSpecial.charge = dDmg.defenderSpecialCharge;
+
+
+		        attacker.currentHP = Math.max(0, attacker.currentHP - dDmg.damage);
+		        dDmgHits.push(dDmg.damage);
+
 		      }
 
 		    }
@@ -83,6 +116,8 @@ export default class BattleWindow extends React.Component{
 		    	dClass = "forecastHeroGrey";
 		    }
 
+		    aNewHP = attacker.currentHP;
+		    dNewHP = defender.currentHP;
 
 
 	    }
@@ -125,22 +160,67 @@ export default class BattleWindow extends React.Component{
 	    tbody.push(<tr key= "battleRow1" >{cells}</tr>);
 
 
+	    //Might put special charges here?
 	    cells = [];
 
 	    cells.push(<td align = "center" key = "aDamage">
-	    	{aDmg.damage + GetDoubleText(aCount)}
+	    	-
 	    	</td>);
+	    cells.push(<td align = "center" key = "DamageLabel">
+	    	-
+	    	</td>);
+
+
+	    cells.push(<td align = "center" key = "dDamage">
+	    	-
+	    	</td>);
+
+
+	    tbody.push(<tr key= "battleRow2" >{cells}</tr>);
+
+
+	    //show damage from each hit
+	    cells = [];
+
+	    let aDmgText = "-";
+	    let dDmgText = "-";
+
+	    //list the damage hits
+	    for (let i =0; i < aDmgHits.length; i++){
+	    	
+	    	if (i === 0){
+	    		aDmgText = aDmgHits[i];
+	    	} else {
+	    		aDmgText = aDmgText + "+" + aDmgHits[i];
+	    	}
+
+	    }
+
+	    for (let i=0; i < dDmgHits.length; i++){
+	    	
+	    	if (i === 0){
+	    		dDmgText = dDmgHits[i];
+	    	} else {
+	    		dDmgText = dDmgText + "+" + dDmgHits[i];
+	    	}
+
+	    }
+
+
+	    cells.push(<td colspan = "2" align = "center" key = "aDamage">
+	    	{aDmgText}
+	    	</td>);
+
 	    cells.push(<td key = "DamageLabel">
 	    	DMG
 	    	</td>);
 
 
-	    cells.push(<td align = "center" key = "dDamage">
-	    	{dDmg.damage + GetDoubleText(dCount)}
+	    cells.push(<td colspan = "2" align = "center" key = "dDamage">
+	    	{dDmgText}
 	    	</td>);
 
-
-	    tbody.push(<tr key= "battleRow2" >{cells}</tr>);
+	    tbody.push(<tr key= "battleRow3" > {cells}</tr>);
 
     	return(
 	        <table key = "Battle">
@@ -153,10 +233,10 @@ export default class BattleWindow extends React.Component{
     }
 }
 
-function GetDoubleText(count){
-	if (count === 2){
-		return "x2";
-	} else{
-		return "";
-	}
-}
+// function GetDoubleText(count){
+// 	if (count === 2){
+// 		return "x2";
+// 	} else{
+// 		return "";
+// 	}
+// }

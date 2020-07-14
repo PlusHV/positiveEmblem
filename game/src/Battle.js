@@ -208,7 +208,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   let defenderSpecialCharge = defenderSpecial.charge;
 
   let specialDamage = 0;
-  let applyAmplify = false;
+
   
   let specialEffect = attackerSpecial.effect;
 
@@ -216,7 +216,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   let partyBuff = {};
 
   if (attackerSpecialCharge === 0 && attackerSpecial.type === "attack-battle"){ //if charged and an offsensive battle special
-    applyAmplify = true;
+
 
 
     if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list
@@ -239,13 +239,20 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
       if (stat === "flat"){
         specialDamage = factor; //special damage is flat
+      } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
+        specialDamage = Math.floor( (attacker.stats.hp - attacker.currentHP) * factor);
+
+
       } else{
         specialDamage = Math.floor(hero.stats[stat] * factor);
       }
 
-
-
     } //end special damage calc
+
+
+
+    specialDamage = specialDamage + Math.floor( (baseDamage +  specialDamage) * specialEffect.amplify);
+
 
     attackerSpecialCharge = attackerSpecial.cd; 
 
@@ -317,23 +324,23 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
 
 
-  if (applyAmplify){ //amplify damage if special activated
-        //the base and special damgage should be reduced if there is reduction
-    let amplifyDamage =  Math.floor( (totalDamage) * specialEffect.amplify) ; //get the amount of damage added from amplification
+  // if (applyAmplify){ //amplify damage if special activated
+  //       //the base and special damgage should be reduced if there is reduction
+  //   let amplifyDamage =  Math.floor( (totalDamage) * specialEffect.amplify) ; //get the amount of damage added from amplification
     
 
-    //get reflected damage from amplified damage as well
-    if (reflect){
-      reflectDamage+= Math.floor( amplifyDamage * (1- damageReduction) );
-    }
+  //   //get reflected damage from amplified damage as well
+  //   if (reflect){
+  //     reflectDamage+= Math.floor( amplifyDamage * (1- damageReduction) );
+  //   }
 
-    //apply reduction if needed
-    amplifyDamage = Math.ceil(amplifyDamage * damageReduction) ;
-    specialDamage+= amplifyDamage;
+  //   //apply reduction if needed
+  //   amplifyDamage = Math.ceil(amplifyDamage * damageReduction) ;
+  //   specialDamage+= amplifyDamage;
 
-    totalDamage+= amplifyDamage;
+  //   totalDamage+= amplifyDamage;
 
-  } //end amplified damage
+  // } //end amplified damage
 
 
 
@@ -416,3 +423,4 @@ export function PositionToRowColumn(position){
 
   return [row, column];
 }
+
