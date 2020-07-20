@@ -1,5 +1,5 @@
 import heroData from './heroInfo.json';
-
+import {CalculateCombatStats} from './StatCalculation.js'
 
 export function DoBattle(updatedHeroList, attacker, defender){
     let list = updatedHeroList;
@@ -12,16 +12,16 @@ export function DoBattle(updatedHeroList, attacker, defender){
     let defenderSpecial = defender.special;
 
 
-    //TODO - prebattle specials if charged (these also effect other units (using heroList) due to aoe)  
-
-    //check if attacker is using an aoe special and if it is charged
-    if (attackerSpecial.type === "pre-battle" && attackerSpecial.charge === 0){
-      //do aoe
-      attackerSpecial.charge = attackerSpecial.cd;
-    } 
 
     
-    //TODO - apply all combat buffs beforehand
+
+
+
+
+
+    //after call combat buffs are calculated, recalculate their combat stats to use in damage calculation
+    newAttacker.combatStats = CalculateCombatStats(newAttacker);
+    newDefender.combatStats = CalculateCombatStats(newDefender);
 
     //target def or res
     let attackerType = GetDamageType(heroData[attacker.heroID.value].weapontype);
@@ -38,6 +38,11 @@ export function DoBattle(updatedHeroList, attacker, defender){
 
     let attackerPartyHeal = 0;
     let defenderPartyHeal = 0;
+
+
+
+
+    //At this point, battle has started
 
 
     while (attackStack.length > 0 && newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //do attacks as long as the attack stack is not empty and both heroes are alive
@@ -202,7 +207,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
   let WTA = CalculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color ); //get the WTA multiplier
 
-  let baseDamage = Math.max(attacker.stats.atk + Math.floor(attacker.stats.atk * WTA) - defender.stats[damageType], 0) ; //no negative damage
+  let baseDamage = Math.max(attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType], 0) ; //no negative damage
 
   let attackerSpecialCharge = attackerSpecial.charge;
   let defenderSpecialCharge = defenderSpecial.charge;
@@ -240,21 +245,22 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
       if (stat === "flat"){
         specialDamage = factor; //special damage is flat
       } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
-        specialDamage = Math.floor( (attacker.stats.hp - attacker.currentHP) * factor);
+        specialDamage = Math.trunc( (attacker.stats.hp - attacker.currentHP) * factor);
 
 
       } else{
-        specialDamage = Math.floor(hero.stats[stat] * factor);
+        specialDamage = Math.trunc(hero.combatStats[stat] * factor);
       }
 
     } //end special damage calc
 
 
+    //add the amplify special damage (astra, glimmer etc.)
+    specialDamage = specialDamage + Math.trunc( (baseDamage +  specialDamage) * specialEffect.amplify);
 
-    specialDamage = specialDamage + Math.floor( (baseDamage +  specialDamage) * specialEffect.amplify);
 
+    attackerSpecialCharge = attackerSpecial.cd;  //reset cd
 
-    attackerSpecialCharge = attackerSpecial.cd; 
 
     if ("partyHeal" in specialEffect){
       partyHeal = specialEffect.partyHeal;
@@ -275,7 +281,12 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
   specialDamage+= attacker.effects.reflect; //adding the reflect damage
 
-  let damageReduction = 1.0; //damage reduction is multiplicative
+
+  //all damage reduction values are 1 - percent reduced by. 0 damage reduction is thus 1 - 0 = 1.0
+  //When used in calculations, 1 - damage reduction is used 
+  let damageReduction = 1.0; 
+
+
   let miracle = false;
   let reflect = false;
   let reflectDamage = 0;
@@ -302,45 +313,25 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
     }
   }
 
-
+  let totalDamage = (baseDamage + specialDamage);
 
   if (reflect){
-    reflectDamage =  Math.floor( (baseDamage + specialDamage) *  (1 - damageReduction) ); //the amount of reflected damage is the damage reduced by damage reduction
+    reflectDamage =  Math.trunc( totalDamage - totalDamage * damageReduction ); //the amount of reflected damage is the damage reduced by damage reduction
 
   }
 
-  //12 - 1.5 = 10.5
 
 
 
-  //damage reduction is done by reducing by a percent which is done by  DR = damage * (1.00-percent)
-  //so the actual calculation is done as a orgDamage - DR. This resulting value is then floored.
-  //I apply the damage reduction directly so the resulting damage is essentially ceiled.
-
-  let totalDamage = Math.ceil( (baseDamage + specialDamage) * damageReduction); 
-  //apply damgage reductions
-  baseDamage = baseDamage * damageReduction;
-  specialDamage = specialDamage * damageReduction;
+  //[Damage Including Extra Damage] – ([Damage Including Extra Damage] x [Effect of Damage-Mitigating Skill or Special]) = Final Damage After Mitigation
 
 
+  totalDamage = totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction );
 
-  // if (applyAmplify){ //amplify damage if special activated
-  //       //the base and special damgage should be reduced if there is reduction
-  //   let amplifyDamage =  Math.floor( (totalDamage) * specialEffect.amplify) ; //get the amount of damage added from amplification
-    
+  //calculate separately for base and special damage for additional info
+  baseDamage = baseDamage - Math.trunc( baseDamage - baseDamage * damageReduction);
+  specialDamage = specialDamage - Math.trunc( specialDamage - specialDamage * damageReduction);
 
-  //   //get reflected damage from amplified damage as well
-  //   if (reflect){
-  //     reflectDamage+= Math.floor( amplifyDamage * (1- damageReduction) );
-  //   }
-
-  //   //apply reduction if needed
-  //   amplifyDamage = Math.ceil(amplifyDamage * damageReduction) ;
-  //   specialDamage+= amplifyDamage;
-
-  //   totalDamage+= amplifyDamage;
-
-  // } //end amplified damage
 
 
 
@@ -424,3 +415,51 @@ export function PositionToRowColumn(position){
   return [row, column];
 }
 
+//main function that checks if a condition has been met to grant extra effects
+//heroList - the state of the board
+//conditionType - keyword for the type of condition
+//owner - the hero that is the owner of the conditional
+//enemy - the other hero in battle with the owner.
+
+export function CheckCondition(heroList, condition, owner, enemy){
+    //"effect": {"condition": [["phase", "player"]], "statBuff": {"def": 2} },
+    console.log(owner);
+  //let keyWordList = ["phase"];  //this contains the list of keywords that denote at start of a condition
+
+  let result = true;
+
+  for (let i = 0; i < condition.length; i++){ //outer list - all condition lists in this list must be true
+
+    let innerCondition = condition[i]; //loop through the lists in the lists
+    let innerResult = false;
+
+    for (let j = 0; j < innerCondition.length; j++){ //inner list - at least one condition in this list must be true
+
+      let keyWord = innerCondition[j];
+
+      if (keyWord === "phase"){ //owner must be on the correct phase 
+
+        if (innerCondition[j+1] === "player" && owner.initiating){ //if condition requires player phase and owner is initiating
+          innerResult = true;
+        } else if (innerCondition[j+1] === "enemy" && !owner.initiating){
+          innerResult = true;
+        } 
+        j = j + 1; //Skip one element
+      } //end phase
+
+
+
+
+    }//end for j
+
+    if (!innerResult){ //if the innerResult false, then result becomes false
+      result = false;
+    }
+
+
+  } //end for i
+
+
+
+  return result;
+}

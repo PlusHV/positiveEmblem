@@ -348,4 +348,31 @@ function StatOrder(stats){
 
 }
 
+export function CalculateVisibleStats(hero){
+	let stats = object(statName.slice(1), [0, 0, 0, 0]);
+
+
+	//for panic, probably have a check and reverse buffs
+    Object.keys(stats).forEach((key, i) => {
+		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key];
+	});
+
+    return stats;
+}
+
+export function CalculateCombatStats(hero){
+	let stats = object(statName.slice(1), [0, 0, 0, 0]);
+
+
+	//for panic, probably have a check and reverse buffs
+    Object.keys(stats).forEach((key, i) => {
+		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key] + hero.combat[key] + hero.combatEffects.stats[key];
+	});
+
+    return stats;
+
+}
+
+
+
 

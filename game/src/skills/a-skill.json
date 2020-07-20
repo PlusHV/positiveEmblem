@@ -10,301 +10,344 @@
 		"name": "AR-D Atk/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"2": {
 		"name": "AR-D Atk/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"3": {
 		"name": "AR-D Atk/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"4": {
 		"name": "AR-D Def/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"5": {
 		"name": "AR-D Def/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"6": {
 		"name": "AR-D Def/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"7": {
 		"name": "AR-D Spd/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"8": {
 		"name": "AR-D Spd/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"9": {
 		"name": "AR-D Spd/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"10": {
 		"name": "AR-D Spd/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"11": {
 		"name": "AR-D Spd/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"12": {
 		"name": "AR-D Spd/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"13": {
 		"name": "AR-O Atk/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"14": {
 		"name": "AR-O Atk/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"15": {
 		"name": "AR-O Atk/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"16": {
 		"name": "AR-O Atk/Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"17": {
 		"name": "AR-O Atk/Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"18": {
 		"name": "AR-O Atk/Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"19": {
 		"name": "AR-O Spd/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"20": {
 		"name": "AR-O Spd/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"21": {
 		"name": "AR-O Spd/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"22": {
 		"name": "Armored Blow 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 2} }],
 		"max": false
 	},
 	"23": {
 		"name": "Armored Blow 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 4} }],
 		"max": false
 	},
 	"24": {
 		"name": "Armored Blow 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 6} }],
 		"max": true
 	},
 	"25": {
 		"name": "Atk/Def Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"26": {
 		"name": "Atk/Def Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"27": {
 		"name": "Atk/Def Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"28": {
 		"name": "Atk/Def Push 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"29": {
 		"name": "Atk/Def Push 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"30": {
 		"name": "Atk/Def Push 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"31": {
 		"name": "Atk/Def Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"32": {
 		"name": "Atk/Def Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"33": {
 		"name": "Atk/Def Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"34": {
 		"name": "Atk/Res Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"35": {
 		"name": "Atk/Res Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"36": {
 		"name": "Atk/Res Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"37": {
 		"name": "Atk/Res Bond 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"38": {
 		"name": "Atk/Res Push 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"39": {
 		"name": "Atk/Res Push 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"40": {
 		"name": "Atk/Res Push 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"41": {
 		"name": "Atk/Res Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"42": {
 		"name": "Atk/Res Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"43": {
 		"name": "Atk/Res Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"44": {
@@ -327,91 +370,104 @@
 		"name": "Atk/Spd Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"47": {
 		"name": "Atk/Spd Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"48": {
 		"name": "Atk/Spd Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"49": {
 		"name": "Atk/Spd Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"50": {
 		"name": "Atk/Spd Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"51": {
 		"name": "Atk/Spd Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"52": {
 		"name": "Atk/Spd Push 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"53": {
 		"name": "Atk/Spd Push 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"54": {
 		"name": "Atk/Spd Push 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"55": {
 		"name": "Atk/Spd Push 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"56": {
 		"name": "Atk/Spd Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"57": {
 		"name": "Atk/Spd Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"58": {
 		"name": "Atk/Spd Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"59": {
@@ -522,161 +578,184 @@
 		"name": "Bonus Doubler 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"73": {
 		"name": "Bonus Doubler 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"74": {
 		"name": "Bonus Doubler 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"75": {
 		"name": "Bracing Blow 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"76": {
 		"name": "Bracing Blow 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"77": {
 		"name": "Bracing Stance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"78": {
 		"name": "Bracing Stance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"79": {
 		"name": "Brazen Atk/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"80": {
 		"name": "Brazen Atk/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"81": {
 		"name": "Brazen Atk/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"82": {
 		"name": "Brazen Atk/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"83": {
 		"name": "Brazen Atk/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"84": {
 		"name": "Brazen Atk/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"85": {
 		"name": "Brazen Atk/Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"86": {
 		"name": "Brazen Atk/Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"87": {
 		"name": "Brazen Atk/Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"88": {
 		"name": "Brazen Atk/Spd 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"89": {
 		"name": "Brazen Def/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"90": {
 		"name": "Brazen Def/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"91": {
 		"name": "Brazen Def/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"92": {
 		"name": "Brazen Spd/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"93": {
 		"name": "Brazen Spd/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"94": {
 		"name": "Brazen Spd/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"95": {
@@ -707,105 +786,120 @@
 		"name": "Close Counter",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"99": {
 		"name": "Close Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"100": {
 		"name": "Close Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"101": {
 		"name": "Close Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"102": {
 		"name": "Darting Blow 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"103": {
 		"name": "Darting Blow 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"104": {
 		"name": "Darting Blow 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"105": {
 		"name": "Darting Blow 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"106": {
 		"name": "Darting Stance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"107": {
 		"name": "Darting Stance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"108": {
 		"name": "Darting Stance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"109": {
 		"name": "Death Blow 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"110": {
 		"name": "Death Blow 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"111": {
 		"name": "Death Blow 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"112": {
 		"name": "Death Blow 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"113": {
@@ -828,42 +922,48 @@
 		"name": "Def/Res Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"116": {
 		"name": "Def/Res Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"117": {
 		"name": "Def/Res Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"118": {
 		"name": "Def/Res Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"119": {
 		"name": "Def/Res Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"120": {
 		"name": "Def/Res Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"121": {
@@ -985,28 +1085,32 @@
 		"name": "Distant Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"138": {
 		"name": "Distant Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"139": {
 		"name": "Distant Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"140": {
 		"name": "Distant Def 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"141": {
@@ -1014,105 +1118,120 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Robin: Fell Vessel"],
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"142": {
 		"name": "Earth Boost 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"143": {
 		"name": "Earth Boost 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"144": {
 		"name": "Earth Boost 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"145": {
 		"name": "Fierce Breath",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"146": {
 		"name": "Fierce Stance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"147": {
 		"name": "Fierce Stance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"148": {
 		"name": "Fierce Stance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"149": {
 		"name": "Fire Boost 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"150": {
 		"name": "Fire Boost 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"151": {
 		"name": "Fire Boost 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"152": {
 		"name": "Flashing Blade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"153": {
 		"name": "Flashing Blade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"154": {
 		"name": "Flashing Blade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"155": {
 		"name": "Flashing Blade 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"156": {
@@ -1278,21 +1397,24 @@
 		"name": "Heavy Blade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"177": {
 		"name": "Heavy Blade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"178": {
 		"name": "Heavy Blade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"179": {
@@ -1394,14 +1516,16 @@
 		"name": "Kestrel Stance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"192": {
 		"name": "Kestrel Stance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"193": {
@@ -1409,7 +1533,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Lyn: Lady of the Wind"],
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"194": {
@@ -1440,35 +1565,40 @@
 		"name": "Mirror Impact",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"198": {
 		"name": "Mirror Stance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"199": {
 		"name": "Mirror Stance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"200": {
 		"name": "Mirror Strike 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"201": {
 		"name": "Mirror Strike 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"202": {
@@ -1563,21 +1693,24 @@
 		"name": "Sorcery Blade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"214": {
 		"name": "Sorcery Blade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"215": {
 		"name": "Sorcery Blade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"216": {
@@ -1600,63 +1733,72 @@
 		"name": "Spd/Def Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"219": {
 		"name": "Spd/Def Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"220": {
 		"name": "Spd/Def Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"221": {
 		"name": "Spd/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"222": {
 		"name": "Spd/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"223": {
 		"name": "Spd/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"224": {
 		"name": "Spd/Def Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"225": {
 		"name": "Spd/Def Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"226": {
 		"name": "Spd/Def Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"227": {
@@ -1679,21 +1821,24 @@
 		"name": "Spd/Res Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"230": {
 		"name": "Spd/Res Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"231": {
 		"name": "Spd/Res Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"232": {
@@ -1724,98 +1869,112 @@
 		"name": "Steady Blow 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"236": {
 		"name": "Steady Blow 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"237": {
 		"name": "Steady Breath",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"238": {
 		"name": "Steady Posture 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"239": {
 		"name": "Steady Posture 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"240": {
 		"name": "Steady Stance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"241": {
 		"name": "Steady Stance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"242": {
 		"name": "Steady Stance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"243": {
 		"name": "Steady Stance 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"244": {
 		"name": "Sturdy Blow 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"245": {
 		"name": "Sturdy Blow 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"246": {
 		"name": "Sturdy Impact",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"247": {
 		"name": "Sturdy Stance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"248": {
 		"name": "Sturdy Stance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"249": {
@@ -1829,49 +1988,56 @@
 		"name": "Swift Sparrow 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"251": {
 		"name": "Swift Sparrow 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"252": {
 		"name": "Swift Sparrow 3",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"253": {
 		"name": "Swift Stance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"254": {
 		"name": "Swift Stance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"255": {
 		"name": "Swift Strike 1",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"256": {
 		"name": "Swift Strike 2",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"257": {
@@ -1899,161 +2065,184 @@
 		"name": "Warding Blow 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"261": {
 		"name": "Warding Blow 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"262": {
 		"name": "Warding Blow 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"263": {
 		"name": "Warding Breath",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"264": {
 		"name": "Warding Stance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"265": {
 		"name": "Warding Stance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"266": {
 		"name": "Warding Stance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"267": {
 		"name": "Warding Stance 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"268": {
 		"name": "Water Boost 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"269": {
 		"name": "Water Boost 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"270": {
 		"name": "Water Boost 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"271": {
 		"name": "Wind Boost 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"272": {
 		"name": "Wind Boost 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"273": {
 		"name": "Wind Boost 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"274": {
 		"name": "AR-D Atk/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"275": {
 		"name": "AR-D Atk/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"276": {
 		"name": "AR-D Atk/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"277": {
 		"name": "Atk/Spd Bond 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"278": {
 		"name": "Atk/Res Push 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"279": {
 		"name": "Heavy Blade 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"280": {
 		"name": "Brazen Spd/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"281": {
 		"name": "Brazen Spd/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"282": {
 		"name": "Brazen Spd/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"283": {
@@ -2069,35 +2258,40 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade"],
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"285": {
 		"name": "Atk/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"286": {
 		"name": "Atk/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"287": {
 		"name": "Atk/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"288": {
 		"name": "Mirror Stance 3",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"289": {
@@ -2111,105 +2305,120 @@
 		"name": "Spd/Res Solo 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"291": {
 		"name": "Spd/Res Solo 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"292": {
 		"name": "Spd/Res Solo 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"293": {
 		"name": "Steady Posture 3",
 		"sp": 3000,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"294": {
 		"name": "Shield Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"295": {
 		"name": "Shield Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"296": {
 		"name": "Shield Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"297": {
 		"name": "Blade Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"298": {
 		"name": "Blade Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"299": {
 		"name": "Blade Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"300": {
 		"name": "Spd/Res Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"301": {
 		"name": "Spd/Res Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": false
 	},
 	"302": {
 		"name": "Spd/Res Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"303": {
 		"name": "Sturdy Stance 3",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"304": {
 		"name": "Atk/Def Push 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"305": {
@@ -2239,35 +2448,40 @@
 		"name": "Atk/Spd Solo 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"309": {
 		"name": "Darting Breath",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"310": {
 		"name": "Atk/Res Solo 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"311": {
 		"name": "Bracing Stance 3",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	},
 	"312": {
 		"name": "Kestrel Stance 3",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "conditional",
+		"effect": [],
 		"max": true
 	}
 }

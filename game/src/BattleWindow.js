@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import heroData from './heroInfo.json';
 import { GetDamageType, GetAttackCount, GetAttackOrder, CalculateDamage} from './Battle.js';
+import {CalculateCombatStats} from './StatCalculation.js';
 
 export default class BattleWindow extends React.Component{
 
@@ -15,14 +16,20 @@ export default class BattleWindow extends React.Component{
 
 
 
+
 		let aArt = "Blank";
 		let dArt = "Blank";
 		let aClass = "forecastHero";
 		let dClass = "forecastHero";
 		let aOrgHP = 0;
 		let aNewHP = 0;
+		let aOrgSpecial = -10;
+		let aNewSpecial = -10;
+
 		let dOrgHP = 0;
 		let dNewHP = 0;
+		let dOrgSpecial = -10;
+		let dNewSpecial = -10;
 
 		let aDmg = {"damage": "-"};
 		let aDmgHits = [];
@@ -33,6 +40,8 @@ export default class BattleWindow extends React.Component{
 		let dCount = 0;
 	   	let dDmgHits = [];
 	   	let dSpecial = {};
+
+	   	let preBattleDmg = this.props.gameState.preBattleDamage;
 
 	    //TODO - Show aoe damage(on defender in the forecast) and needs to show markings on board?
 
@@ -47,14 +56,16 @@ export default class BattleWindow extends React.Component{
 
 
 	    	aOrgHP =  aNewHP = attacker.currentHP;
-	    	dOrgHP =  dNewHP = defender.currentHP;
+
+	    	dOrgHP =  this.props.gameState.draggedOverOriginalHP;
+	    	dNewHP = defender.currentHP;
 
 	    	aSpecial = Object.assign({}, attacker.special);
 	    	dSpecial = Object.assign({}, defender.special);
 
+	    	aOrgSpecial = aSpecial.charge;
+	    	dOrgSpecial = dSpecial.charge;
 
-	    	console.log(aSpecial);
-	    	console.log(dSpecial);
 		    let attackerType = GetDamageType(heroData[attacker.heroID.value].weapontype);
 		    let defenderType = GetDamageType(heroData[defender.heroID.value].weapontype);
 		    //aDmgType = 
@@ -76,8 +87,15 @@ export default class BattleWindow extends React.Component{
 		    }
 
 
+		    if (preBattleDmg >= 0){
+		    	aDmgHits.push(preBattleDmg);
+		    }
 
-		    while (attackStack.length > 0 && aNewHP > 0 && dNewHP > 0){
+		    attacker.combatStats = CalculateCombatStats(attacker);
+		    defender.combatStats = CalculateCombatStats(defender);
+
+
+		    while (attackStack.length > 0 && attacker.currentHP > 0 && defender.currentHP > 0){
 		      let temp = attackStack.shift();
 
 		      if (temp === 1){
@@ -108,16 +126,20 @@ export default class BattleWindow extends React.Component{
 
 		    }
 
-		    if (aNewHP === 0 ){
+		    if (attacker.currentHP === 0 ){
 		    	aClass = "forecastHeroGrey";
 		    }
 
-		    if (dNewHP === 0 ){
+		    if (defender.currentHP === 0 ){
 		    	dClass = "forecastHeroGrey";
 		    }
 
 		    aNewHP = attacker.currentHP;
 		    dNewHP = defender.currentHP;
+
+		    aNewSpecial = aSpecial.charge;
+		    dNewSpecial = dSpecial.charge;
+
 
 
 	    }
@@ -163,16 +185,27 @@ export default class BattleWindow extends React.Component{
 	    //Might put special charges here?
 	    cells = [];
 
-	    cells.push(<td align = "center" key = "aDamage">
-	    	-
+	    let aSpecialText = "-";
+	    let dSpecialText = "-";
+
+	    if (aOrgSpecial >= 0 && aNewSpecial >= 0){
+	    	aSpecialText = aOrgSpecial + " -> " + aNewSpecial;
+	    }
+
+	    if (dOrgSpecial >= 0 && dNewSpecial >= 0){
+	    	dSpecialText = dOrgSpecial + " -> " + dNewSpecial;
+	    }
+
+	    cells.push(<td align = "center" key = "aSpecial">
+	    	{aSpecialText}
 	    	</td>);
-	    cells.push(<td align = "center" key = "DamageLabel">
-	    	-
+	    cells.push(<td align = "center" key = "SpecialLabel">
+	    	SPEC
 	    	</td>);
 
 
-	    cells.push(<td align = "center" key = "dDamage">
-	    	-
+	    cells.push(<td align = "center" key = "dSpecial">
+	    	{dSpecialText}
 	    	</td>);
 
 
@@ -207,20 +240,20 @@ export default class BattleWindow extends React.Component{
 	    }
 
 
-	    cells.push(<td colspan = "2" align = "center" key = "aDamage">
+	    cells.push(<td colSpan = "2" align = "center" key = "aDamage">
 	    	{aDmgText}
 	    	</td>);
 
-	    cells.push(<td key = "DamageLabel">
-	    	DMG
+	    cells.push(<td align = "center" key = "DamageLabel">
+			DMG
 	    	</td>);
 
 
-	    cells.push(<td colspan = "2" align = "center" key = "dDamage">
+	    cells.push(<td colSpan = "2" align = "center" key = "dDamage">
 	    	{dDmgText}
 	    	</td>);
 
-	    tbody.push(<tr key= "battleRow3" > {cells}</tr>);
+	    tbody.push(<tr key = "battleRow3" >{cells}</tr>);
 
     	return(
 	        <table key = "Battle">
