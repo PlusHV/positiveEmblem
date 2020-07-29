@@ -88,7 +88,7 @@
 		"cd": 3,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "flat", 10], "heal": 0.0, "amplify": 0.0, "alt": 25},
+		"effect": {"damage": ["attacker", "flat", 10], "heal": 0.0, "amplify": 0.0, "condition": [["adjacent", true]], "alt": 25},
 		"max": true
 	},
 	"10": {
@@ -521,7 +521,7 @@
 		"cd": 2,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "alt": 0.4},
+		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "condition": [["enemyInfo", "weapontype", ["breath", "beast"]]], "alt": 0.4},
 		"max": true
 	},
 	"57": {
@@ -650,6 +650,7 @@
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade"],
 		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"71": {

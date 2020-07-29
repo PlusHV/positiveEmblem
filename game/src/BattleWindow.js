@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import heroData from './heroInfo.json';
-import { GetDamageType, GetAttackCount, GetAttackOrder, CalculateDamage} from './Battle.js';
-import {CalculateCombatStats} from './StatCalculation.js';
+import { getDamageType, getAttackCount, getAttackOrder, calculateDamage} from './Battle.js';
+import {calculateCombatStats} from './StatCalculation.js';
 
 export default class BattleWindow extends React.Component{
 
@@ -66,16 +66,16 @@ export default class BattleWindow extends React.Component{
 	    	aOrgSpecial = aSpecial.charge;
 	    	dOrgSpecial = dSpecial.charge;
 
-		    let attackerType = GetDamageType(heroData[attacker.heroID.value].weapontype);
-		    let defenderType = GetDamageType(heroData[defender.heroID.value].weapontype);
+		    let attackerType = getDamageType(heroData[attacker.heroID.value].weapontype, attacker, defender);
+		    let defenderType = getDamageType(heroData[defender.heroID.value].weapontype, defender, attacker);
 		    //aDmgType = 
 
-		    let attackCount = GetAttackCount(attacker, defender);
+		    let attackCount = getAttackCount(attacker, defender);
 		    aCount = attackCount[0];
 		    dCount = attackCount[1];
 
 
-		    let attackStack = GetAttackOrder(attackCount);
+		    let attackStack = getAttackOrder(attackCount);
 
 
 		    if (aCount > 0){
@@ -91,8 +91,8 @@ export default class BattleWindow extends React.Component{
 		    	aDmgHits.push(preBattleDmg);
 		    }
 
-		    attacker.combatStats = CalculateCombatStats(attacker);
-		    defender.combatStats = CalculateCombatStats(defender);
+		    attacker.combatStats = calculateCombatStats(attacker, defender);
+		    defender.combatStats = calculateCombatStats(defender, attacker);
 
 
 		    while (attackStack.length > 0 && attacker.currentHP > 0 && defender.currentHP > 0){
@@ -100,7 +100,7 @@ export default class BattleWindow extends React.Component{
 
 		      if (temp === 1){
 
-		      	aDmg = CalculateDamage(attacker, defender, attackerType, aSpecial, dSpecial);
+		      	aDmg = calculateDamage(attacker, defender, attackerType, aSpecial, dSpecial, this.props.gameState.heroList);
 
 		      	aSpecial.charge = aDmg.attackerSpecialCharge;
 
@@ -109,10 +109,16 @@ export default class BattleWindow extends React.Component{
 
 
 		        defender.currentHP = Math.max(0, defender.currentHP - aDmg.damage);
+
+
+		        if (defender.effects.reflect === 0){ //only get reflect damage if it is not currently set so it can't be overwritten
+		        	defender.effects.reflect = aDmg.reflect;
+		        }
+
 		        aDmgHits.push(aDmg.damage);
 
 		      } else if (temp === 2){
-		      	dDmg = CalculateDamage(defender, attacker, defenderType, dSpecial, aSpecial);
+		      	dDmg = calculateDamage(defender, attacker, defenderType, dSpecial, aSpecial, this.props.gameState.heroList);
 
 		      	dSpecial.charge = dDmg.attackerSpecialCharge;
 
@@ -120,6 +126,9 @@ export default class BattleWindow extends React.Component{
 
 
 		        attacker.currentHP = Math.max(0, attacker.currentHP - dDmg.damage);
+
+		        defender.effects.reflect = 0; //they have attacked, so any reflect damage should be cleared
+
 		        dDmgHits.push(dDmg.damage);
 
 		      }

@@ -4,7 +4,7 @@ import growthVectors from './growthVectors.json';
 
 const statName = ["hp", "atk", "spd", "def", "res"];
 
-function CalculateMinMaxStat(level, rarity, growth, base){
+function calculateMinMaxStat(level, rarity, growth, base){
 		
 
 		if (level === 1){
@@ -18,7 +18,7 @@ function CalculateMinMaxStat(level, rarity, growth, base){
 
 }
 
-function CalculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
+function calculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
 
 	let growthID = ((3 * orgBase) + offset + Math.trunc(growth * (0.07 * rarity + 0.79))  + bvid) % 64;
 	let growthValue = Math.trunc( Math.trunc(growth * (0.07 * rarity + 0.79)) /100.0  * (39));
@@ -31,12 +31,12 @@ function CalculateMidStat(level, rarity, growth, base, bvid, offset, orgBase){
 		growthValue = 1;
 	}
 
-	var levelup = ConvertGrowthVector(growthVectors[growthValue][growthID.toString()], level );
+	var levelup = convertGrowthVector(growthVectors[growthValue][growthID.toString()], level );
 	
 	return base + levelup;
 }
 
-function ConvertGrowthVector(vect, level){
+function convertGrowthVector(vect, level){
 
 	return (vect.substring(0, level-1).match(/1/g)|| []).length;
 }
@@ -46,7 +46,7 @@ function ConvertGrowthVector(vect, level){
 // fort - the fort level
 // blessings - the list of buffs for each season for the side the hero is on
 // seasons - the list of current seasons
-export function CalculateStats(hero, fort, blessings, seasons){
+export function calculateStats(hero, fort, blessings, seasons){
 	var statArray = {};
 
 	var heroInfo = heroData[hero.heroID.value];
@@ -57,32 +57,32 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
   	const growthOffset = [-35, -28, -21, -14, -7];
 
-  	var statOrder = StatOrder(object(statName, bases) ); 
+  	var statOrder = getStatOrder(object(statName, bases) ); 
 
   	//rarity calculation
-  	var rarityMods = RarityMods(hero.rarity, statOrder);
+  	var rarityMods = getRarityMods(hero.rarity, statOrder);
   	
 
   	//iv calculation
-  	var ivMods = IVMods(hero.iv.asset, hero.iv.flaw);
-  	bases = ApplyMods(bases, ivMods.base);
-  	growths = ApplyMods(growths, ivMods.growth);
+  	var ivMods = getIVMods(hero.iv.asset, hero.iv.flaw);
+  	bases = applyMods(bases, ivMods.base);
+  	growths = applyMods(growths, ivMods.growth);
 
 
-  	statOrder = StatOrder(object(statName,bases)); //recalculate with ivs applied
+  	statOrder = getStatOrder(object(statName,bases)); //recalculate with ivs applied
 
   	//merge calculation
-  	var mergeMods = MergeMods(hero.merge, statOrder, hero.iv.flaw);
+  	var mergeMods = getMergeMods(hero.merge, statOrder, hero.iv.flaw);
 
   	//dragonflower calculation
-  	var flowerMods =FlowerMods(hero.dragonflower, statOrder);
+  	var flowerMods = getFlowerMods(hero.dragonflower, statOrder);
 
   	//fort calculation
-  	var fortMods = FortMods(hero.side, fort);
+  	var fortMods = getFortMods(hero.side, fort);
 
   	//summoner support calculation
 
-  	var summonerSupportMods = SummonerSupportMods(hero.summonerSupport);
+  	var summonerSupportMods = getSummonerSupportMods(hero.summonerSupport);
 
 
   	//blessing buff calculation
@@ -98,9 +98,9 @@ export function CalculateStats(hero, fort, blessings, seasons){
 		//if legendary, add in the in season mythic buffs
 		if (heroInfo.type === "legendary"){
 
-			blessingMods = BlessingMods(blessingMods, blessings[seasons["M1"]]);
+			blessingMods = getBlessingMods(blessingMods, blessings[seasons["M1"]]);
 
-			blessingMods = BlessingMods(blessingMods, blessings[seasons["M2"]]);
+			blessingMods = getBlessingMods(blessingMods, blessings[seasons["M2"]]);
 
 		//if mythic, add in the in season legendary buffs - > mythics don't get legendary buffs in AR
 		} else if (heroInfo.type === "mythic"){
@@ -110,7 +110,7 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
 		//if regular unit add in the appropriate blessing buff
 		} else{
-			blessingMods = BlessingMods(blessingMods, blessings[hero.blessing]);
+			blessingMods = getBlessingMods(blessingMods, blessings[hero.blessing]);
 		}
 
 	
@@ -120,24 +120,24 @@ export function CalculateStats(hero, fort, blessings, seasons){
 
   	//apply mods - no more mod calculations should be done below here
 
-  	bases = ApplyMods(bases, flowerMods);
-  	bases = ApplyMods(bases, mergeMods.base);
-  	growths = ApplyMods(growths, mergeMods.growth); //growth is change because first merge removes the bane
-  	bases = ApplyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
-  	bases = ApplyMods(bases, hero.passive);
-  	bases = ApplyMods(bases, summonerSupportMods);
-  	bases = ApplyMods(bases, fortMods);
-  	bases = ApplyMods(bases, blessingMods);
+  	bases = applyMods(bases, flowerMods);
+  	bases = applyMods(bases, mergeMods.base);
+  	growths = applyMods(growths, mergeMods.growth); //growth is change because first merge removes the bane
+  	bases = applyMods(bases, rarityMods); //apply rarityMods at end to not effect merge/dragonflower calc
+  	bases = applyMods(bases, hero.passive);
+  	bases = applyMods(bases, summonerSupportMods);
+  	bases = applyMods(bases, fortMods);
+  	bases = applyMods(bases, blessingMods);
 
   	if (hero.bonus){ //if hero is set as a bonus, they will get the extra stats
-  		bases = ApplyMods(bases, object(statName,[10, 4, 4, 4, 4]));
+  		bases = applyMods(bases, object(statName,[10, 4, 4, 4, 4]));
   	}
 
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){
-  			statArray[statName[i]] = CalculateMinMaxStat(hero.level, hero.rarity, growths[i], bases[i]);
+  			statArray[statName[i]] = calculateMinMaxStat(hero.level, hero.rarity, growths[i], bases[i]);
   		} else{
-  			statArray[statName[i]] = CalculateMidStat(hero.level, hero.rarity, growths[i], bases[i], heroInfo.bvid, growthOffset[i], orgBases[i]);
+  			statArray[statName[i]] = calculateMidStat(hero.level, hero.rarity, growths[i], bases[i], heroInfo.bvid, growthOffset[i], orgBases[i]);
   		}
   	}
 
@@ -146,7 +146,7 @@ export function CalculateStats(hero, fort, blessings, seasons){
 }
 
 
-function ApplyMods(base, mod){
+function applyMods(base, mod){
 	let newBase = [];
 	for (let i =0; i < base.length; i++){
 		newBase[i] = base[i] + mod[statName[i]];
@@ -155,7 +155,7 @@ function ApplyMods(base, mod){
 
 }
 
-function IVMods(asset, flaw){
+function getIVMods(asset, flaw){
 	let statMods = object(statName,[0, 0, 0, 0, 0]);
 	let growthMods = object(statName,[0, 0, 0, 0, 0]);
 	if ( !(asset === "neutral") && !(flaw === "neutral") ){
@@ -171,7 +171,7 @@ function IVMods(asset, flaw){
 }
 
 //Gets the modification to base stats depending on rarity (starting from rarity 5)
-function RarityMods(rarity, order){
+function getRarityMods(rarity, order){
 	//let dict = object(rest(statName), bases);
 	let mods = object(statName,[0, 0, 0, 0, 0]);
 
@@ -204,7 +204,7 @@ function RarityMods(rarity, order){
 	return mods;
 }
 
-function MergeMods(merge, order, flaw){
+function getMergeMods(merge, order, flaw){
 	let statMods = object(statName,[0, 0, 0, 0, 0]);
 	let growthMods = object(statName,[0, 0, 0, 0, 0]);
 
@@ -253,7 +253,7 @@ function MergeMods(merge, order, flaw){
 }
 
 
-function FlowerMods(flowers, order){
+function getFlowerMods(flowers, order){
 	//let dict = object(rest(statName), bases);
 	let mods = object(statName,[0, 0, 0, 0, 0]);
 
@@ -275,7 +275,7 @@ function FlowerMods(flowers, order){
 	return mods;
 }
 
-function FortMods(side, level){
+function getFortMods(side, level){
 
 
 	let buff = 4 * level;
@@ -294,7 +294,7 @@ function FortMods(side, level){
 
 }
 
-function BlessingMods(orgBuffs, addBuffs){
+function getBlessingMods(orgBuffs, addBuffs){
 
     let newBuffs = object(statName,[0, 0, 0, 0, 0]);
 
@@ -306,7 +306,7 @@ function BlessingMods(orgBuffs, addBuffs){
 
 }
 
-function SummonerSupportMods(level){
+function getSummonerSupportMods(level){
 	let statBuffs = object(statName,[0, 0, 0, 0, 0]);
 
 	if (level === "C")
@@ -322,7 +322,7 @@ function SummonerSupportMods(level){
 }
 
 //returns an array of stats from highest to lowest
-function StatOrder(stats){
+function getStatOrder(stats){
 
 	let order = [];
     let statStack = stats;
@@ -348,7 +348,7 @@ function StatOrder(stats){
 
 }
 
-export function CalculateVisibleStats(hero){
+export function calculateVisibleStats(hero){
 	let stats = object(statName.slice(1), [0, 0, 0, 0]);
 
 
@@ -360,13 +360,25 @@ export function CalculateVisibleStats(hero){
     return stats;
 }
 
-export function CalculateCombatStats(hero){
+export function calculateCombatStats(hero, enemy){
 	let stats = object(statName.slice(1), [0, 0, 0, 0]);
 
-
+	let penaltyNeutralize = hero.combatEffects.penaltyNeutralize;
+	let buffNeutralize = enemy.combatEffects.buffNeutralize;
 	//for panic, probably have a check and reverse buffs
     Object.keys(stats).forEach((key, i) => {
-		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key] + hero.combat[key] + hero.combatEffects.stats[key];
+
+    	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
+    	if (penaltyNeutralize[key]){
+    		penaltyNeutralizer = hero.debuff[key];
+    	}
+
+    	let buffNeutralizer = 0; //set neutralizer that will cancel out debuffs
+    	if (buffNeutralize[key]){
+    		buffNeutralizer = hero.buff[key];
+    	}
+
+		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] + penaltyNeutralizer - buffNeutralizer;
 	});
 
     return stats;

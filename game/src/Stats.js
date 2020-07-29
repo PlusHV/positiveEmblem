@@ -105,7 +105,7 @@ export default class Stats extends React.Component{
 	        //CurrentHP input Dragonflowers input
 	        // buff, debuff, drives/spur
 
-	        let modifiers = ["buff", "debuff", "combat"];
+	        let modifiers = ["buff", "debuff", "aura", "combat"];
 
 
 	        //if hp row, get modifier headers
@@ -118,7 +118,7 @@ export default class Stats extends React.Component{
 	        //for rest, give corresponding modifier - buffs, debuffs, combat
 	        } else{
 
-	        	for (let j = 0; j < modifiers.length; j++){
+	        	for (let j = 0; j < modifiers.length - 1; j++){
 			        cells.push(<td key = {statText[i] + modifiers[j]} className= "inputNum">
 			        	<input
 	            		className = "numberInput"
@@ -129,6 +129,25 @@ export default class Stats extends React.Component{
 
 			        	</td>);
 			    }
+
+			    //get combat stats if hero is being dragged or dragged over
+			    let combatText = "-";
+			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position){
+			    	combatText = this.props.gameState.draggedHero.combatEffects.stats[statText[i]];
+
+
+			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position){
+			    	combatText = this.props.gameState.draggedOver.combatEffects.stats[statText[i]];
+			    }
+
+
+			    cells.push(<td key = {statText[i] + modifiers[3]} className= "statNum">
+
+	            	{combatText}
+
+			        </td>);
+
+
 	    	}
 
 

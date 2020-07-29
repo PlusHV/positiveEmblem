@@ -1,8 +1,8 @@
 
 
 import React from 'react';
-import { CalculateStats, CalculateVisibleStats} from './StatCalculation.js'; // CalculateCombatStats 
-import { DoBattle, GetDistance, PositionToRowColumn, GetDamageType, CheckCondition } from './Battle.js';
+import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
+import { doBattle, getDistance, positionToRowColumn, getDamageType, checkCondition, getDistantAllies, calculateVariableEffect, calculateVariableCombat, getConditionalSpecial} from './Battle.js';
 
 import './App.css';
 
@@ -221,11 +221,11 @@ class GameBoard extends React.Component{
 
     let oldMaxHP = hero.stats.hp;
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel,
+    hero.stats = calculateStats(hero, this.state.fortLevel,
        this.state.blessingBuffs[this.state.playerSide], this.state.season);
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.visibleStats = calculateVisibleStats(hero);
 
-    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+    hero.currentHP = this.adjustHP(oldMaxHP, hero);
 
 
 
@@ -310,8 +310,8 @@ class GameBoard extends React.Component{
 
 
     
-    hero.stats = CalculateStats(hero, this.state.fortLevel, tempBlessings[this.state.playerSide], this.state.season); //recalculate stats
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.stats = calculateStats(hero, this.state.fortLevel, tempBlessings[this.state.playerSide], this.state.season); //recalculate stats
+    hero.visibleStats = calculateVisibleStats(hero);
     hero.currentHP = hero.stats.hp;
 
     //Sets the initial position of the on the board 
@@ -348,7 +348,7 @@ class GameBoard extends React.Component{
 
     //if old or new heroes were legendary/mythic, calculate stats for the team
     if (calcAll){
-      temp[this.state.playerSide] = this.RecalculateTeamHeroStats(temp[this.state.playerSide], tempBlessings[this.state.playerSide]);
+      temp[this.state.playerSide] = this.recalculateTeamHeroStats(temp[this.state.playerSide], tempBlessings[this.state.playerSide]);
     }
 
 
@@ -365,7 +365,7 @@ class GameBoard extends React.Component{
 
   }
 
-  findMatchingCondition(item){
+  findMatchingEffect(item){
     return JSON.stringify(item) === this;
   }
 
@@ -399,11 +399,11 @@ class GameBoard extends React.Component{
     //TODO - add other types of skills 
     let oldMaxHP = hero.stats.hp;
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    hero.stats = calculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
 
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.visibleStats = calculateVisibleStats(hero);
 
-    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+    hero.currentHP = this.adjustHP(oldMaxHP, hero);
     
     tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
     //update states
@@ -459,12 +459,29 @@ class GameBoard extends React.Component{
       });
 
       updatedHero.passive = pTemp;
-    } else if (skillDropdowns[skillType].info[id].type === "conditional"){
+    } else if (skillDropdowns[skillType].info[id].type === "conditional-effect"){
 
       for (let x of effect){ //conditional effect list of conditional effects
         updatedHero.conditionalEffects.push(x); //effect should contain the conditional list
       }
+    } else if (skillDropdowns[skillType].info[id].type === "conditional-combat"){
+
+      for (let x of effect){ //conditional effect list of conditional effects
+        updatedHero.conditionalCombat.push(x); //effect should contain the conditional list
+      }
+    } else if (skillDropdowns[skillType].info[id].type === "variable-stats"){
+
+      updatedHero.variableStats.push(effect); //effect should contain the conditional list
+      
+    } else if (skillDropdowns[skillType].info[id].type === "combat-effect"){
+
+      Object.keys(effect).forEach((key, i) => {
+        updatedHero.combatEffects[key] += effect[key];
+      });
+    } else if (skillDropdowns[skillType].info[id].type === "variable-combat"){
+      updatedHero.variableCombat.push(effect);
     }
+
 
 
     if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
@@ -534,15 +551,45 @@ class GameBoard extends React.Component{
 
 
       updatedHero.passive = pTemp;
-    } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional"){
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional-effect"){
       for (let x of effect){
         let condition = JSON.stringify(x); //the conditional in string form
 
-        let conditionIndex = updatedHero.conditionalEffects.findIndex(this.findMatchingCondition , condition);
+        let conditionIndex = updatedHero.conditionalEffects.findIndex(this.findMatchingEffect , condition);
 
         updatedHero.conditionalEffects.splice(conditionIndex, 1); //remove the matched condition
       }
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional-combat"){
+      for (let x of effect){
+        let condition = JSON.stringify(x); //the conditional in string form
 
+        let conditionIndex = updatedHero.conditionalCombat.findIndex(this.findMatchingEffect , condition);
+
+        updatedHero.conditionalCombat.splice(conditionIndex, 1); //remove the matched condition
+      }
+
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-stats"){
+
+      let variableEffect = JSON.stringify(effect); //the variable effect in string form
+
+      let variableIndex = updatedHero.variableStats.findIndex(this.findMatchingEffect , variableEffect);
+
+      updatedHero.variableStats.splice(variableIndex, 1); //remove the matched variable effect
+      
+
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "combat-effect"){
+
+      Object.keys(effect).forEach((key, i) => {
+        updatedHero.combatEffects[key] -= effect[key];
+      });
+
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-combat"){
+
+      let variableEffect = JSON.stringify(effect); //the variable effect in string form
+
+      let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
+
+      updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
     }
 
     if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
@@ -601,7 +648,7 @@ class GameBoard extends React.Component{
     buffList[stat] = Number(e.target.value);
 
     temp[this.state.playerSide][this.state.heroIndex][index] = buffList;
-    temp[this.state.playerSide][this.state.heroIndex].visibleStats = CalculateVisibleStats(temp[this.state.playerSide][this.state.heroIndex]);
+    temp[this.state.playerSide][this.state.heroIndex].visibleStats = calculateVisibleStats(temp[this.state.playerSide][this.state.heroIndex]);
 
     this.setState({heroList: temp});
     this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] });
@@ -617,10 +664,10 @@ class GameBoard extends React.Component{
 
     let oldMaxHP = hero.stats.hp;
 
-    hero.stats =  CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.stats =  calculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    hero.visibleStats = calculateVisibleStats(hero);
     
-    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+    hero.currentHP = this.adjustHP(oldMaxHP, hero);
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -664,10 +711,10 @@ class GameBoard extends React.Component{
 
     let oldMaxHP = hero.stats.hp;
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.stats = calculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    hero.visibleStats = calculateVisibleStats(hero);
     
-    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+    hero.currentHP = this.adjustHP(oldMaxHP, hero);
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -686,10 +733,10 @@ class GameBoard extends React.Component{
 
     let oldMaxHP = hero.stats.hp;
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
-    hero.visibleStats = CalculateVisibleStats(hero);
+    hero.stats = calculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+    hero.visibleStats = calculateVisibleStats(hero);
 
-    hero.currentHP = this.AdjustHP(oldMaxHP, hero);
+    hero.currentHP = this.adjustHP(oldMaxHP, hero);
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -705,7 +752,7 @@ class GameBoard extends React.Component{
 
     hero.allySupport = e;
 
-    hero.stats = CalculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season); //might not need a stat calc since it is combat buff
+    hero.stats = calculateStats(hero, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season); //might not need a stat calc since it is combat buff
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -721,7 +768,7 @@ class GameBoard extends React.Component{
 
     let updateHeroList = this.state.heroList;
 
-    updateHeroList = this.RecalculateAllHeroStats(updateHeroList,  Number(e.target.value), this.state.blessingBuffs, this.state.season);
+    updateHeroList = this.recalculateAllHeroStats(updateHeroList,  Number(e.target.value), this.state.blessingBuffs, this.state.season);
 
 
     this.setState({heroList: updateHeroList});
@@ -739,7 +786,7 @@ class GameBoard extends React.Component{
     let seasonHeroList = this.state.heroList;
 
 
-    seasonHeroList = this.RecalculateAllHeroStats(seasonHeroList, this.state.fortLevel, this.state.blessingBuffs, temp); //update all heroes with new seasons
+    seasonHeroList = this.recalculateAllHeroStats(seasonHeroList, this.state.fortLevel, this.state.blessingBuffs, temp); //update all heroes with new seasons
 
     this.setState({heroList: seasonHeroList });
     this.setState({selectedMember: seasonHeroList[this.state.playerSide][this.state.heroIndex] });
@@ -849,7 +896,7 @@ class GameBoard extends React.Component{
     dragData.initiating = true;
 
     let oldHero = heroData[dragData.heroID.value];
-    let move = this.GetMovement(oldHero.movetype);
+    let move = this.getMovement(oldHero.movetype);
 
 
     let assist = -1;
@@ -866,12 +913,12 @@ class GameBoard extends React.Component{
 
 
     for (let i = 0; i < 48; i++) { //rows
-      if (GetDistance(pos, i) <= move && this.props.G.cells[i] == null ){
+      if (getDistance(pos, i) <= move && this.props.G.cells[i] == null ){
         movementList.push(i);
       } else if (this.props.G.cells[i] !== null && dragData.position !== i){ //if there is a hero and is not themselves
-        if (GetDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
+        if (getDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
           assistList.push(i);
-        else if (GetDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
+        else if (getDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
           attackList.push(i);
       }
     }
@@ -917,8 +964,7 @@ class GameBoard extends React.Component{
 
         let draggedOverHero = JSON.parse(JSON.stringify(this.props.G.cells[dropPosition]) ); // copies hero
         let draggedHero = JSON.parse(JSON.stringify(this.state.draggedHeroOrg)); //get the original dragged hero
-        console.log(draggedHero);
-        console.log(this.state);
+
 
         let preBattleDamage = -1;
         let orgHP = draggedOverHero.currentHP;
@@ -927,41 +973,59 @@ class GameBoard extends React.Component{
         if (draggedHero.special.type === "pre-battle" && draggedHero.special.charge === 0){
           //do aoe
 
-          let damageType = GetDamageType(heroData[draggedHero.heroID.value].weapontype);
+          let damageType = getDamageType(heroData[draggedHero.heroID.value].weapontype, draggedHero, draggedOverHero);
 
-          preBattleDamage =  Math.trunc(draggedHero.visibleStats.atk * draggedHero.special.effect.factor) - draggedOverHero.visibleStats[damageType] ;
+          ///// special trigger effects
+          //check 
+          let oldSpecialTrigger =  Object.assign({}, draggedHero.combatEffects.specialTrigger); //get copy of the special trigger effects
+
+          getConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList);
+
+          let trueDamage = draggedHero.combatEffects.specialTrigger.trueDamage; 
+          draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
+
+          //////
+
+
+          preBattleDamage =  Math.trunc(draggedHero.visibleStats.atk * draggedHero.special.effect.factor) - draggedOverHero.visibleStats[damageType] + trueDamage ;
 
           draggedOverHero.currentHP = Math.max(1, draggedOverHero.currentHP - preBattleDamage); 
 
           draggedHero.special.charge = draggedHero.special.cd;
+
+
         } 
 
         //TODO - aoe special
 
-        //Conditionals
-        for (let x of draggedHero.conditionalEffects){
+        //bonus doubler
+        //TODO - doubler will be disabled if panic or lulled/neutralized
+        Object.keys(draggedHero.combatEffects.stats).forEach((key, i) => {
+          draggedHero.combatEffects.stats[key]+= Math.trunc(draggedHero.buff[key] * draggedHero.combatEffects.bonusDouble);
+        });
 
-          if (x !== null && CheckCondition(this.state.heroList, x.condition, draggedHero, draggedOverHero)){ //if condition is true, then provide the rest of the effects
-
-            for (let y in x){ //loop through 
-              if (y === "statBuff"){
-
-                let buffs = x.statBuff;
-                Object.keys(buffs).forEach((key, i) => {
-                  draggedHero.combatEffects.stats[key]+= buffs[key]; //apply highest buff
-                });
-
-
-              } //stat buffs
-
-
-            } //end loop through gained effects
+        this.getVariableStats(draggedHero, draggedOverHero);
+        this.getVariableStats(draggedOverHero, draggedHero);
 
 
 
-          } //end if condition true
 
-        } //end for 
+        this.getConditionalEffects(draggedHero, draggedOverHero);
+        this.getConditionalEffects(draggedOverHero, draggedHero);
+
+        draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
+        draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
+
+
+
+
+        this.getConditionalCombat(draggedHero, draggedOverHero);
+        this.getConditionalCombat(draggedOverHero, draggedHero);
+
+
+        this.getVariableCombat(draggedHero, draggedOverHero);
+        this.getVariableCombat(draggedOverHero, draggedHero);
+
 
 
         this.setState({draggedHero: draggedHero});
@@ -979,6 +1043,117 @@ class GameBoard extends React.Component{
     }
 
   }
+
+
+
+  getConditionalCombat(owner, enemy){ //not used currently
+
+
+    //Conditionals
+    for (let x of owner.conditionalCombat){
+
+      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+
+        for (let y in x){ //loop through 
+          if (y !== "condition"){ //everything else should be combat effects
+            owner.combatEffects[y]+= x[y]; 
+          }
+
+
+        } //end loop through gained effects
+
+
+
+      } //end if condition true
+
+    } //end for 
+  }
+
+  getConditionalEffects(owner, enemy){
+
+
+    //Conditionals
+    for (let x of owner.conditionalEffects){
+
+      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+
+        for (let y in x){ //loop through 
+
+          if (y === "statBuff"){
+
+            let buffs = x.statBuff;
+            Object.keys(buffs).forEach((key, i) => {
+              owner.combatEffects.stats[key]+= buffs[key]; //apply highest buff
+            });
+
+
+          } else if (y === "penaltyNeutralize"){
+
+            let neutralized = x.penaltyNeutralize;
+
+            for (let i of neutralized){
+              owner.combatEffects.penaltyNeutralize[i] = true; 
+            }
+
+
+          } else if (y === "buffNeutralize"){
+
+            let neutralized = x.buffNeutralize;
+
+            for (let i of neutralized){
+              owner.combatEffects.buffNeutralize[i] = true; 
+            }
+
+
+          } else if (y !== "condition"){ //everything else should be combat effects
+            owner.combatEffects[y]+= x[y]; 
+          }
+
+
+        } //end loop through gained effects
+
+
+
+      } //end if condition true
+
+    } //end for 
+  }
+
+  getVariableStats(owner, enemy){
+
+    for (let x of owner.variableStats){
+
+      if (x !== null ){ //if condition is true, then provide the rest of the effects
+
+
+        let buffs =  calculateVariableEffect(this.state.heroList, x, owner, enemy);
+        Object.keys(buffs).forEach((key, i) => {
+          owner.combatEffects.stats[key]+= buffs[key];
+        });
+
+      } //end if condition true
+
+    } //end for 
+  }
+
+
+  getVariableCombat(owner, enemy){
+
+    for (let x of owner.variableCombat){
+
+      if (x !== null ){ //if condition is true, then provide the rest of the effects
+
+
+        let effectList = calculateVariableCombat(this.state.heroList, x, owner, enemy);
+        Object.keys(effectList).forEach((key, i) => {
+          owner.combatEffects[key]+= effectList[key];
+        });
+
+      } //end if condition true
+
+    } //end for 
+  }
+
 
   dragEnd(ev){
     ev.dataTransfer.clearData();
@@ -1038,11 +1213,11 @@ class GameBoard extends React.Component{
 
       //if (this.CheckAdjacent(dragData.position, this.props.G.cells[dropPosition].position )){
         //Check if in range for assist and they are on the same side
-      if (GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
+      if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
 
 
         if (dragData.assist.type === "movement"){
-          temp = this.ApplyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
+          temp = this.applyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
 
 
           //clear initial positions of assister/assistee
@@ -1054,24 +1229,24 @@ class GameBoard extends React.Component{
           this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
 
         } else if (dragData.assist.type === "rally"){
-          temp = this.ApplyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+          temp = this.applyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
 
 
         } else if (dragData.assist.type === "health"){
-          temp = this.ApplyHealthAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+          temp = this.applyHealthAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
           
         } else if (dragData.assist.type === "heal"){
-          temp = this.ApplyHealAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+          temp = this.applyHealAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
           
         } else if (dragData.assist.type === "dance"){
-          temp = this.ApplyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
+          temp = this.applyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
         }
 
       //Check if in range for attack and if they are on the same side
-      } else if (GetDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
+      } else if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
 
         //temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
-        temp = DoBattle(temp, dragData, this.state.draggedOver);
+        temp = doBattle(temp, dragData, this.state.draggedOver);
 
       }
 
@@ -1080,7 +1255,7 @@ class GameBoard extends React.Component{
 
       //An action has occured which is either an assist or battle. Buffs/debuffs usually go off after these actions so visible stats should be recalculated
 
-      temp = this.RecalculateAllVisibleStats(temp);
+      temp = this.recalculateAllVisibleStats(temp);
 
       this.setState({heroList: temp});
       this.selectNewMember(dragSide, dragIndex);
@@ -1132,17 +1307,17 @@ class GameBoard extends React.Component{
   }
 
   //update the stats of the given team list - should be with new blessing buffs
-  RecalculateTeamHeroStats(currentTeamList, newblessingBuffs){ //newFortLevel, newblessingBuffs, newSeasons){
+  recalculateTeamHeroStats(currentTeamList, newblessingBuffs){ //newFortLevel, newblessingBuffs, newSeasons){
     let tempTeam = currentTeamList;
     Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
 
       let oldMaxHP = tempTeam[memberKey].stats.hp;
 
-      tempTeam[memberKey].stats = CalculateStats(tempTeam[memberKey], this.state.fortLevel, newblessingBuffs, this.state.season); //new stats 
+      tempTeam[memberKey].stats = calculateStats(tempTeam[memberKey], this.state.fortLevel, newblessingBuffs, this.state.season); //new stats 
 
-      tempTeam[memberKey].currentHP = this.AdjustHP(oldMaxHP, tempTeam[memberKey]);
+      tempTeam[memberKey].currentHP = this.adjustHP(oldMaxHP, tempTeam[memberKey]);
 
-      tempTeam[memberKey].visibleStats = CalculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
+      tempTeam[memberKey].visibleStats = calculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
 
     });
     return tempTeam;
@@ -1150,7 +1325,7 @@ class GameBoard extends React.Component{
   }
 
   //get an updated list of heroes and update all of their stats
-  RecalculateAllHeroStats(currentHeroList, newFortLevel, newblessingBuffs, newSeasons){ 
+  recalculateAllHeroStats(currentHeroList, newFortLevel, newblessingBuffs, newSeasons){ 
     let tempList = currentHeroList;
 
     Object.keys(tempList).forEach((key, i) => { //for each team
@@ -1159,11 +1334,11 @@ class GameBoard extends React.Component{
         Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
 
           let oldMaxHP = tempTeam[memberKey].stats.hp;
-          tempTeam[memberKey].stats = CalculateStats(tempTeam[memberKey], newFortLevel, newblessingBuffs[key], newSeasons); //new stats 
+          tempTeam[memberKey].stats = calculateStats(tempTeam[memberKey], newFortLevel, newblessingBuffs[key], newSeasons); //new stats 
 
-          tempTeam[memberKey].currentHP = this.AdjustHP(oldMaxHP, tempTeam[memberKey]);
+          tempTeam[memberKey].currentHP = this.adjustHP(oldMaxHP, tempTeam[memberKey]);
 
-          tempTeam[memberKey].visibleStats = CalculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
+          tempTeam[memberKey].visibleStats = calculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
 
         });
 
@@ -1174,7 +1349,7 @@ class GameBoard extends React.Component{
     return tempList; //the heroList with stats recalculated
   }
 
-  RecalculateAllVisibleStats(currentHeroList){
+  recalculateAllVisibleStats(currentHeroList){
 
     let tempList = currentHeroList;
 
@@ -1183,7 +1358,7 @@ class GameBoard extends React.Component{
 
         Object.keys(tempTeam).forEach((memberKey, j) => { //for each member
 
-          tempTeam[memberKey].visibleStats = CalculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
+          tempTeam[memberKey].visibleStats = calculateVisibleStats(tempTeam[memberKey]); //recalculate visible stats
 
         });
         tempList[key] = tempTeam;
@@ -1193,11 +1368,11 @@ class GameBoard extends React.Component{
   }
 
 
-  ApplyMovementAssist(updatedHeroList, assister, assistee, effect){
+  applyMovementAssist(updatedHeroList, assister, assistee, effect){
 
     let list = updatedHeroList;
-    let assisterPos = PositionToRowColumn(assister.position);
-    let assisteePos = PositionToRowColumn(assistee.position);
+    let assisterPos = positionToRowColumn(assister.position);
+    let assisteePos = positionToRowColumn(assistee.position);
 
     let participantIDs = [assister.id, assistee.id];
  
@@ -1216,8 +1391,8 @@ class GameBoard extends React.Component{
 
     }
 
-    let newAssisterPos = this.RowColumnToPosition(assisterPos);
-    let newAssisteePos = this.RowColumnToPosition(assisteePos);
+    let newAssisterPos = this.rowColumnToPosition(assisterPos);
+    let newAssisteePos = this.rowColumnToPosition(assisteePos);
 
     //TODO - needs to make sure space is not occupied by someone else too
     if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
@@ -1243,7 +1418,7 @@ class GameBoard extends React.Component{
 
   }
 
-  ApplyRallyAssist(updatedHeroList, assister, assistee, effect){
+  applyRallyAssist(updatedHeroList, assister, assistee, effect){
     //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
     //if the first element is just up, then the buff is applied to units around the assistee as well
 
@@ -1274,7 +1449,7 @@ class GameBoard extends React.Component{
 
     //apply the rally to 
     if (aoe){
-      let inRangeAllies = this.GetDistantAllies(list[assistee.side.toString()], assistee.position, assister.position, 2);
+      let inRangeAllies = getDistantAllies(list[assistee.side.toString()], [assistee.position], assister.position, 2);
 
       //apply buff to all allies in range
       for (let x of inRangeAllies){
@@ -1295,7 +1470,7 @@ class GameBoard extends React.Component{
 
   }
 
-  ApplyHealthAssist(updatedHeroList, assister, assistee, effect){
+  applyHealthAssist(updatedHeroList, assister, assistee, effect){
     let list = updatedHeroList;
 
     let newAssisterHP = assister.currentHP;
@@ -1345,7 +1520,7 @@ class GameBoard extends React.Component{
 
   }
 
-  ApplyHealAssist(updatedHeroList, assister, assistee, effect){
+  applyHealAssist(updatedHeroList, assister, assistee, effect){
     let list = updatedHeroList;
 
     let newAssisterHP = assister.currentHP;
@@ -1444,7 +1619,7 @@ class GameBoard extends React.Component{
 
   }
 
-  ApplyDanceAssist(updatedHeroList, assister, assistee){
+  applyDanceAssist(updatedHeroList, assister, assistee){
     let list = updatedHeroList;
 
     if (assistee.end === true){
@@ -1461,10 +1636,10 @@ class GameBoard extends React.Component{
 
 
 
-
-  CheckAdjacent(first, second){
-   let firstRC = PositionToRowColumn(first);
-   let secondRC = PositionToRowColumn(second);
+  //Check if two positions are adjacent
+  checkAdjacent(first, second){
+   let firstRC = positionToRowColumn(first);
+   let secondRC = positionToRowColumn(second);
 
 
     //if rows are the same, and column difference is one
@@ -1478,38 +1653,17 @@ class GameBoard extends React.Component{
   }
 
 
-  GetAdjacentAllies(hList, position, excluded){
-    let adjacentList = [];
-
-    for (let x of hList){
-      if (x.position !== position && x.position !== excluded && GetDistance(x.position, position) === 1 ){
-        adjacentList.push(x);
-      }
-
-    }    
-    return adjacentList;
-  }
-
-  GetDistantAllies(hList, position, excluded, distance){
-    let distantList = [];
-
-    for (let x of hList){
-      if (x.position !== position && x.position !== excluded && GetDistance(x.position, position) <= distance ){
-        distantList.push(x);
-      }
-
-    }    
-    return distantList;
-  }
+  //
 
 
 
-  RowColumnToPosition(rc){
+
+  rowColumnToPosition(rc){
     return rc[0] * 6 + rc[1];
   }
 
   //When max HP is changed, adjust current HP the same amount. Do not bring it below 0 though
-  AdjustHP(oldMax, updatedHero){
+  adjustHP(oldMax, updatedHero){
 
     let newHP = updatedHero.currentHP + updatedHero.stats.hp - oldMax;
 
@@ -1520,7 +1674,7 @@ class GameBoard extends React.Component{
 
   }
 
-  GetMovement(moveType){
+  getMovement(moveType){
 
     if (moveType === "Cavalry")
       return 3;
@@ -1536,7 +1690,7 @@ class GameBoard extends React.Component{
 
 
     //console.log(this.state.heroList);
-    //console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
+    console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
 
 
     return (
@@ -1652,7 +1806,7 @@ function makeHeroStruct(){
 
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    this["combat"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //the actual stats of the hero
@@ -1673,10 +1827,17 @@ function makeHeroStruct(){
     this["bonus"] = false;
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0, "reflect": 0};
-    this["combatEffects"] = {"counter": false, "double": 0, "enemyDouble": 0, "stats": {"atk": 0, "spd": 0, "def": 0, "res": 0} }; //effects the change during battle
-    this["initiating"] = false; 
-    this["conditionalEffects"] = []; //list of conditional effects
-
+    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0,
+      "stats": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "specialTrigger": {"trueDamage": 0, "flatReduction": 0}, 
+      "penaltyNeutralize": {"atk": false, "spd": false, "def": false, "res": false}, "buffNeutralize": {"atk": false, "spd": false, "def": false, "res": false},
+      "bonusDouble": 0 }; //effects the change during battle
+    this["variableStats"] = [];
+    this["variableCombat"] = [];
+    this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
+    this["initiating"] = false;
+    this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
+    this["conditionalSpecial"] = [];
   }  
   return hero;
 }

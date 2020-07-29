@@ -1,7 +1,7 @@
 import heroData from './heroInfo.json';
-import {CalculateCombatStats} from './StatCalculation.js'
+import {calculateCombatStats} from './StatCalculation.js'
 
-export function DoBattle(updatedHeroList, attacker, defender){
+export function doBattle(updatedHeroList, attacker, defender){
     let list = updatedHeroList;
 
     let newAttacker = attacker;
@@ -20,18 +20,18 @@ export function DoBattle(updatedHeroList, attacker, defender){
 
 
     //after call combat buffs are calculated, recalculate their combat stats to use in damage calculation
-    newAttacker.combatStats = CalculateCombatStats(newAttacker);
-    newDefender.combatStats = CalculateCombatStats(newDefender);
+    newAttacker.combatStats = calculateCombatStats(newAttacker, newDefender);
+    newDefender.combatStats = calculateCombatStats(newDefender, newAttacker);
 
     //target def or res
-    let attackerType = GetDamageType(heroData[attacker.heroID.value].weapontype);
-    let defenderType = GetDamageType(heroData[defender.heroID.value].weapontype);
+    let attackerType = getDamageType(heroData[attacker.heroID.value].weapontype, attacker, defender);
+    let defenderType = getDamageType(heroData[defender.heroID.value].weapontype, defender, attacker);
     //aDmgType = 
 
     //get the amount of attacks from each unit
-    let attackCount = GetAttackCount(attacker, defender);
+    let attackCount = getAttackCount(attacker, defender);
 
-    let attackStack = GetAttackOrder(attackCount);
+    let attackStack = getAttackOrder(attackCount);
 
     let attackerPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     let defenderPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -53,7 +53,7 @@ export function DoBattle(updatedHeroList, attacker, defender){
       //check if special is active and 
 
       if (temp === 1){ //attacker hits defender
-        damageInfo = CalculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial); //calculate damage probably needs to send the speicals of both too
+        damageInfo = calculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial, list); //calculate damage probably needs to send the speicals of both too
 
         attackerSpecial.charge = damageInfo.attackerSpecialCharge;
 
@@ -80,7 +80,7 @@ export function DoBattle(updatedHeroList, attacker, defender){
       } else if (temp === 2){ //defender hits attacker
 
         //Note - CalculateDamage defines attacker as the one attacking, and defender as the one getting hit for the current attack, not by initiator/enemy phase heroes 
-        damageInfo = CalculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial);
+        damageInfo = calculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial, list);
 
         defenderSpecial.charge = damageInfo.attackerSpecialCharge; //defender is iniated on, but uses attacker key since they are the one attacking here
         attackerSpecial.charge = damageInfo.defenderSpecialCharge;
@@ -142,8 +142,15 @@ export function DoBattle(updatedHeroList, attacker, defender){
     return list;
   }
 
-export function GetDamageType(weaponType){
-    if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
+export function getDamageType(weaponType, owner, enemy){
+    if (owner.combatEffects.adaptive > 0){
+      if (enemy.combatStats.def <= enemy.combatStats.res){ // if def is lower
+        return "def";
+      } else {
+        return "res";
+      }
+
+    } else if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
       return "def";
     } else if (["redtome", "bluetome", "greentome", "breath", "staff", "colorlesstome"].includes(weaponType)){
       return "res";
@@ -153,29 +160,44 @@ export function GetDamageType(weaponType){
 
   }
   //Get the number of attacks for each unit (e.g. doubling)
-export function GetAttackCount(attacker, defender){
+export function getAttackCount(attacker, defender){
     let attackerCount = 1; //Has at least one
     let defenderCount = 0;
 
     //determine if defender gets to attack at all
-    if (defender.range === attacker.range){ //to do - or if distant counter/close counter, 
+    if (defender.range === attacker.range || defender.combatEffects.counter > 0){ 
       defenderCount = 1;
     }
 
-    //if outspeed (or if have double granting effect)
-    if ( (attacker.stats.spd - defender.stats.spd) >= 5 ) {
+    let attackerDouble = attacker.combatEffects["double"] - defender.combatEffects.enemyDouble;
+    let defenderDouble = defender.combatEffects["double"] - attacker.combatEffects.enemyDouble;
 
+    //out speeding gives and extra double stack
+    if ( (attacker.stats.spd - defender.stats.spd) >= 5) {
+      attackerDouble++;
+
+
+    }
+
+    if ( (defender.stats.spd - attacker.stats.spd) >= 5) {
+      defenderDouble++;
+
+
+    }
+
+    //if double stack is at least 1, give an extra attack
+    if (attackerDouble > 0){
       attackerCount++;
+    }
 
-    } else if ( (defender.stats.spd - attacker.stats.spd) >= 5  && defenderCount > 0) {
+    if (defenderDouble > 0 && defenderCount > 0){
       defenderCount++;
-
     }
 
     return [attackerCount, defenderCount];
   }
   //Given the attack counts, return the order in the form of a stack list
-export function GetAttackOrder(stack){
+export function getAttackOrder(stack){
     //basic attack order without extra skills
     let attackerHits = stack[0];
     let defenderHits = stack[1];
@@ -203,16 +225,18 @@ export function GetAttackOrder(stack){
   }
 
 
-export function CalculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial){
+export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList){
 
-  let WTA = CalculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color ); //get the WTA multiplier
+  let WTA = calculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color ); //get the WTA multiplier
 
-  let baseDamage = Math.max(attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType], 0) ; //no negative damage
+  let baseDamage = attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType] ; //damage can be negative here
 
   let attackerSpecialCharge = attackerSpecial.charge;
   let defenderSpecialCharge = defenderSpecial.charge;
 
   let specialDamage = 0;
+
+  let trueDamage = attacker.combatEffects.trueDamage;
 
   
   let specialEffect = attackerSpecial.effect;
@@ -242,6 +266,12 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
       let factor = specialEffect.damage[2];
 
+      if ("condition" in specialEffect && checkCondition(heroList, specialEffect.condition, attacker, defender) ){
+
+        factor = specialEffect["alt"];
+
+      }
+
       if (stat === "flat"){
         specialDamage = factor; //special damage is flat
       } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
@@ -252,11 +282,21 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
         specialDamage = Math.trunc(hero.combatStats[stat] * factor);
       }
 
+
+      //check 
+      let oldSpecialTrigger =  Object.assign({}, attacker.combatEffects.specialTrigger); //get copy of the special trigger effects
+
+      getConditionalSpecial(attacker, defender, heroList);
+
+      trueDamage = attacker.combatEffects.specialTrigger.trueDamage; 
+
+      attacker.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
+
     } //end special damage calc
 
 
     //add the amplify special damage (astra, glimmer etc.)
-    specialDamage = specialDamage + Math.trunc( (baseDamage +  specialDamage) * specialEffect.amplify);
+    specialDamage = specialDamage + Math.trunc( (baseDamage +  specialDamage) * specialEffect.amplify); //amplify is not applied to true damage
 
 
     attackerSpecialCharge = attackerSpecial.cd;  //reset cd
@@ -274,7 +314,9 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   } else{ //special not activated, increment normally
 
     if (attackerSpecialCharge >= 0){
-      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - 1); //unit attacking
+
+      //charge will not go below 0. attack charge will be at least 1 but maxes out a 2. Guard will be at least 0 but maxes out at 1.
+      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - Math.min(attacker.combatEffects.attackCharge, 2) + Math.min(defender.combatEffects.guard, 1) ); //unit attacking
     }
 
   } //end offensive special check 
@@ -290,9 +332,10 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   let miracle = false;
   let reflect = false;
   let reflectDamage = 0;
+  let flatReduction = 0;
 
   if (defenderSpecialCharge === 0 && defenderSpecial.type === "defend-battle" && 
-    (defenderSpecial.range === 0 || defenderSpecial.range === GetDistance(attacker.position, defender.position)  ) ){
+    (defenderSpecial.range === 0 || defenderSpecial.range === getDistance(attacker.position, defender.position)  ) ){
     if (defenderSpecial.effect.factor === "miracle"){
       miracle = true;
     } else{
@@ -307,16 +350,28 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
       defenderSpecialCharge = defenderSpecial.cd;
     }
 
+    //check 
+    let oldSpecialTrigger =  Object.assign({}, defender.combatEffects.specialTrigger); //get copy of the special trigger effects
+
+    getConditionalSpecial(defender, attacker, heroList);
+
+    flatReduction = defender.combatEffects.specialTrigger.flatReduction; 
+
+    defender.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
+
   } else{
     if (defenderSpecialCharge >= 0){
-      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - 1);
+      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - Math.min(defender.combatEffects.defenseCharge, 2) + Math.min(attacker.combatEffects.guard, 1) );
+
+
+
     }
   }
 
-  let totalDamage = (baseDamage + specialDamage);
+  let totalDamage = Math.max(0, baseDamage + specialDamage) + trueDamage;
 
   if (reflect){
-    reflectDamage =  Math.trunc( totalDamage - totalDamage * damageReduction ); //the amount of reflected damage is the damage reduced by damage reduction
+    reflectDamage =  Math.trunc( totalDamage - totalDamage * damageReduction ) + flatReduction; //the amount of reflected damage is the damage reduced by damage reduction
 
   }
 
@@ -326,7 +381,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
   //[Damage Including Extra Damage] – ([Damage Including Extra Damage] x [Effect of Damage-Mitigating Skill or Special]) = Final Damage After Mitigation
 
 
-  totalDamage = totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction );
+  totalDamage = totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction ) - flatReduction;
 
   //calculate separately for base and special damage for additional info
   baseDamage = baseDamage - Math.trunc( baseDamage - baseDamage * damageReduction);
@@ -353,7 +408,7 @@ export function CalculateDamage(attacker, defender, damageType, attackerSpecial,
 
 }
 
-export function CalculateWeaponTriangleAdvantage(colorAttack, colorDefend){
+export function calculateWeaponTriangleAdvantage(colorAttack, colorDefend){
 	let val = 0.0;
 
 	if (colorAttack === "red"){
@@ -395,11 +450,17 @@ export function CalculateWeaponTriangleAdvantage(colorAttack, colorDefend){
 
 }
 //Get the amount of spaces from first position to the second position
-export function GetDistance(first, second){
-  let firstRC = PositionToRowColumn(first);
-  let secondRC = PositionToRowColumn(second);
+export function getDistance(first, second){
+
+  if (first < 0 || second < 0){
+    return -1;
+  }
+
+  let firstRC = positionToRowColumn(first);
+  let secondRC = positionToRowColumn(second);
 
   let distance = 0;
+
 
   distance += Math.abs(firstRC[1] - secondRC[1]); //difference in columns
   distance += Math.abs(firstRC[0] - secondRC[0]); //difference in rows
@@ -407,12 +468,41 @@ export function GetDistance(first, second){
   return distance;
 
 }
-export function PositionToRowColumn(position){
+export function positionToRowColumn(position){
 
   let row = Math.floor(position/6);
   let column = position%6;
 
   return [row, column];
+}
+
+  //Return list of adjacent allies 
+export function getAdjacentAllies(hList, position){
+  let adjacentList = [];
+
+  for (let x of hList){
+    if (x.position !== position && getDistance(x.position, position) === 1 ){
+      adjacentList.push(x);
+    }
+
+  }
+
+  return adjacentList;
+}
+
+export function getDistantAllies(hList, position, excluded, distance){
+  let distantList = [];
+
+  for (let x of hList){
+
+    let allyDistance = getDistance(x.position, position); 
+
+    if (x.position !== position && !excluded.includes(x.position) && allyDistance <= distance && allyDistance > 0 ){
+      distantList.push(x);
+    }
+
+  }    
+  return distantList;
 }
 
 //main function that checks if a condition has been met to grant extra effects
@@ -421,9 +511,8 @@ export function PositionToRowColumn(position){
 //owner - the hero that is the owner of the conditional
 //enemy - the other hero in battle with the owner.
 
-export function CheckCondition(heroList, condition, owner, enemy){
-    //"effect": {"condition": [["phase", "player"]], "statBuff": {"def": 2} },
-    console.log(owner);
+export function checkCondition(heroList, condition, owner, enemy){
+
   //let keyWordList = ["phase"];  //this contains the list of keywords that denote at start of a condition
 
   let result = true;
@@ -439,15 +528,112 @@ export function CheckCondition(heroList, condition, owner, enemy){
 
       if (keyWord === "phase"){ //owner must be on the correct phase 
 
-        if (innerCondition[j+1] === "player" && owner.initiating){ //if condition requires player phase and owner is initiating
+        if (innerCondition[j+1] === "player" && owner.initiating){ //initiating condition
           innerResult = true;
-        } else if (innerCondition[j+1] === "enemy" && !owner.initiating){
+        } else if (innerCondition[j+1] === "enemy" && !owner.initiating){ //initiated on condition
           innerResult = true;
         } 
         j = j + 1; //Skip one element
-      } //end phase
+      } else if (keyWord === "adjacent"){
+        if (innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length > 0  ){ //adjacent to at least one ally
+          innerResult = true;
+        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length === 0  ){ //adjacent to no allies
+          innerResult = true;
+        }
+
+        j = j + 1;
+
+      } else if (keyWord === "hp"){ //if hp must be at a ceretain threshold
+
+        let hpThreshold =  Math.trunc(innerCondition[j+2] * owner.stats.hp);
+
+        if (innerCondition[j+1] === "greater" && owner.currentHP >= hpThreshold ){
+          innerResult = true;
+        } else if (innerCondition[j+1] === "less" && owner.currentHP <= hpThreshold ){
+          innerResult = true;
+        }
 
 
+
+        j = j + 2;
+      } else if (keyWord === "enemyInfo"){ //needs to check value of enemy hero (e.g. weapon type, movement type etc)
+
+        let info = heroData[enemy.heroID.value];
+
+        if (innerCondition[j+2].includes(info[innerCondition[j+1]])){
+          innerResult = true;
+        }
+
+        j = j + 2;
+      } else if (keyWord === "statCompare"){ //compare stat values between owner and enemy
+
+        let statCheck = innerCondition[j+2];
+        let statType = innerCondition[j+1];
+        let ownerStat = 0;
+        let enemyStat = 0;
+
+        //get appropriate values to compare
+        if (statCheck === "HP"){
+          ownerStat = owner.currentHP;
+          enemyStat = enemy.currentHP;
+        } else if (statType === "visible") {
+          ownerStat = owner.visibleStats[statCheck];
+          enemyStat = enemy.visibleStats[statCheck];
+        } else if (statType === "combat") {
+          ownerStat = owner.combatStats[statCheck];
+          enemyStat = enemy.combatStats[statCheck];
+        }
+
+        if (innerCondition[j+3] === "greater" &&  (ownerStat - enemyStat) >= innerCondition[j+4]  ){
+          innerResult = true;
+        } else if (innerCondition[j+3] === "less" &&  (enemyStat - ownerStat) >= innerCondition[j+4]  ){
+          innerResult = true;
+        }
+
+
+        j = j + 4;
+      } else if (keyWord === "distantAllies"){ //check if a certain number of allies within the range given range
+
+        let distantAllies = getDistantAllies(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+
+        if (innerCondition[j+2] === "greater" && distantAllies.length >= innerCondition[j+3]){
+          innerResult = true;
+        } else if (innerCondition[j+2] === "less" && distantAllies.length <= innerCondition[j+3]){
+          innerResult = true;
+        }
+
+        j = j + 3;
+
+      } else if (keyWord === "allyInfo"){ //check if allies within range are of certain types
+        //    "effect": [{"condition": [["phase", "enemy"], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+
+        let distantAllies = getDistantAllies(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+
+        let validAlliesCount = 0;
+
+        for (let x of distantAllies){
+          let info = heroData[x.heroID.value];
+
+          if (innerCondition[j+3].includes(info[innerCondition[j+2]])){
+            validAlliesCount++;
+
+          }
+
+
+        }
+
+
+        if (innerCondition[j+4] === "all"){
+          if (validAlliesCount === distantAllies.length){ //if all allies in range meet the condition
+            innerResult = true;
+          }
+
+        } else if (validAlliesCount >= innerCondition[j+4]){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        }
+        j = j + 4;
+      }
 
 
     }//end for j
@@ -462,4 +648,118 @@ export function CheckCondition(heroList, condition, owner, enemy){
 
 
   return result;
+} //end CheckCondition
+
+export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
+
+  if (variableEffect.type === "allyDistance"){
+    let distantAllies = Math.min(getDistantAllies(heroList[owner.side], owner.position, [] , variableEffect.distance).length, variableEffect.maxAllies);
+
+    let buff = (variableEffect.multiplier * distantAllies + variableEffect.constant);
+
+
+    if (distantAllies < variableEffect.minAllies){
+      buff = 0;
+    }
+
+    let statBuff = {};
+    for (let x of variableEffect.stats){
+      statBuff[x] = buff;
+    }
+
+    return statBuff;
+  } else if (variableEffect.type === "session"){
+    //    "effect": {"stats": ["def", "res"], "type": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2},
+    let buffValue = 0;
+
+    if (variableEffect.phase === "enemy" && !owner.initiating){
+
+      let enemies = heroList[enemy.side];
+      let enemiesActed = 0;
+
+      for (let y of enemies){
+        if (y.end){
+          enemiesActed++;
+        }
+
+      } 
+
+      buffValue = Math.max( variableEffect.min, variableEffect.constant - (variableEffect.multiplier * enemiesActed) );
+    } else if (variableEffect.phase === "player" && owner.initiating){
+
+      let allies = heroList[owner.side];
+      let alliesActed = 0;
+
+      for (let y of allies){
+        if (y.end){
+          alliesActed++;
+        }
+
+      } 
+
+      buffValue = Math.min( variableEffect.max, variableEffect.constant + (variableEffect.multiplier * alliesActed) );
+
+
+    }
+
+    let statBuff = {};
+    for (let x of variableEffect.stats){
+      statBuff[x] = buffValue;
+    }
+    return statBuff;
+
+  }
+
+
+}
+
+export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
+
+  if (variableEffect.type === "bonusDamage"){
+    let unit = variableEffect.unit;
+    let value = 0;
+
+    if (unit === "owner"){
+      value = Math.trunc(owner.combatStats[variableEffect.stat] * variableEffect.factor);  
+    } else if (unit === "enemy"){
+      value = Math.trunc(enemy.combatStats[variableEffect.stat] * variableEffect.factor); 
+    } else if (unit === "difference"){
+      value = Math.trunc(owner.combatStats[variableEffect.stat] - enemy.combatStats[variableEffect.stat] * variableEffect.factor); 
+    }
+
+
+    value = Math.min(variableEffect.max, value); //variable effect is capped
+
+    let combatEffectList = {};
+    for (let x of variableEffect.combatEffects){
+      combatEffectList[x] = value;
+    }
+    return combatEffectList;
+  }
+
+
+}
+
+export function getConditionalSpecial(owner, enemy, heroList){
+
+  //Conditionals
+  for (let x of owner.conditionalSpecial){
+
+    if (x !== null && checkCondition(heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+
+      for (let y in x){ //loop through 
+        if (y !== "condition"){ //everything else should be combat effects
+          owner.combatEffects.specialTrigger[y]+= x[y]; //conditional specials should give effects changing specialTrigger effects
+        }
+
+
+      } //end loop through gained effects
+
+
+
+    } //end if condition true
+
+  } //end for 
+
+
 }
