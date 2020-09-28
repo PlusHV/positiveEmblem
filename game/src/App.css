@@ -96,6 +96,17 @@ table,tr,td {
   position: relative;
 }
 
+.warpCellStyle{
+  border: 2px solid dodgerblue;
+
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1px;
+  position: relative;
+}
+
 .boardStyle{
   border-collapse: separate;
 }

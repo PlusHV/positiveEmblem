@@ -68,14 +68,20 @@ export default class BattleWindow extends React.Component{
 
 		    let attackerType = getDamageType(heroData[attacker.heroID.value].weapontype, attacker, defender);
 		    let defenderType = getDamageType(heroData[defender.heroID.value].weapontype, defender, attacker);
-		    //aDmgType = 
+
 
 		    let attackCount = getAttackCount(attacker, defender);
 		    aCount = attackCount[0];
 		    dCount = attackCount[1];
 
+		    let attackerSpecialActivated = false;
+		    let defenderSpecialActivated = false;
 
-		    let attackStack = getAttackOrder(attackCount);
+		    if (attacker.specialActivated){ //check if pre battle special used
+		    	attackerSpecialActivated = true;
+		    }
+
+		    let attackStack = getAttackOrder(attackCount, attacker, defender);
 
 
 		    if (aCount > 0){
@@ -94,13 +100,13 @@ export default class BattleWindow extends React.Component{
 		    attacker.combatStats = calculateCombatStats(attacker, defender);
 		    defender.combatStats = calculateCombatStats(defender, attacker);
 
-
-		    while (attackStack.length > 0 && attacker.currentHP > 0 && defender.currentHP > 0){
-		      let temp = attackStack.shift();
+		    let attackIndex = 0;
+		    while (attackIndex < attackStack.length && attacker.currentHP > 0 && defender.currentHP > 0){
+		      let temp = attackStack[attackIndex];
 
 		      if (temp === 1){
 
-		      	aDmg = calculateDamage(attacker, defender, attackerType, aSpecial, dSpecial, this.props.gameState.heroList);
+		      	aDmg = calculateDamage(attacker, defender, attackerType, aSpecial, dSpecial, this.props.gameState.heroList, attackStack, attackIndex);
 
 		      	aSpecial.charge = aDmg.attackerSpecialCharge;
 
@@ -111,14 +117,24 @@ export default class BattleWindow extends React.Component{
 		        defender.currentHP = Math.max(0, defender.currentHP - aDmg.damage);
 
 
+		        attacker.currentHP = Math.min(attacker.stats.hp, attacker.currentHP + aDmg.heal);
+
 		        if (defender.effects.reflect === 0){ //only get reflect damage if it is not currently set so it can't be overwritten
 		        	defender.effects.reflect = aDmg.reflect;
 		        }
 
 		        aDmgHits.push(aDmg.damage);
 
+		        if (aDmg.attackerSpecialActivated){
+		          attackerSpecialActivated = true;
+		        }
+
+		        if (aDmg.defenderSpecialActivated){
+		          defenderSpecialActivated = true;
+		        }
+
 		      } else if (temp === 2){
-		      	dDmg = calculateDamage(defender, attacker, defenderType, dSpecial, aSpecial, this.props.gameState.heroList);
+		      	dDmg = calculateDamage(defender, attacker, defenderType, dSpecial, aSpecial, this.props.gameState.heroList, attackStack, attackIndex);
 
 		      	dSpecial.charge = dDmg.attackerSpecialCharge;
 
@@ -127,11 +143,22 @@ export default class BattleWindow extends React.Component{
 
 		        attacker.currentHP = Math.max(0, attacker.currentHP - dDmg.damage);
 
+		        defender.currentHP = Math.min(defender.stats.hp, defender.currentHP + dDmg.heal);
+
 		        defender.effects.reflect = 0; //they have attacked, so any reflect damage should be cleared
 
 		        dDmgHits.push(dDmg.damage);
 
+		        if (dDmg.attackerSpecialActivated){
+		          defenderSpecialActivated = true;
+		        }
+
+		        if (dDmg.defenderSpecialActivated){
+		          attackerSpecialActivated = true;
+		        }
+
 		      }
+		      attackIndex++;
 
 		    }
 
@@ -142,6 +169,16 @@ export default class BattleWindow extends React.Component{
 		    if (defender.currentHP === 0 ){
 		    	dClass = "forecastHeroGrey";
 		    }
+
+
+		    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
+		      aSpecial.charge = Math.max(0, aSpecial.charge - attacker.combatEffects.spiral);
+		    }
+
+		    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
+		      dSpecial.charge = Math.max(0, dSpecial.charge - defender.combatEffects.spiral);
+		    }
+
 
 		    aNewHP = attacker.currentHP;
 		    dNewHP = defender.currentHP;
@@ -275,10 +312,3 @@ export default class BattleWindow extends React.Component{
     }
 }
 
-// function GetDoubleText(count){
-// 	if (count === 2){
-// 		return "x2";
-// 	} else{
-// 		return "";
-// 	}
-// }

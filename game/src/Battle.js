@@ -1,7 +1,7 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
-export function doBattle(updatedHeroList, attacker, defender){
+export function doBattle(updatedHeroList, attacker, defender, board){
     let list = updatedHeroList;
 
     let newAttacker = attacker;
@@ -10,13 +10,6 @@ export function doBattle(updatedHeroList, attacker, defender){
     //get specials
     let attackerSpecial = attacker.special;
     let defenderSpecial = defender.special;
-
-
-
-    
-
-
-
 
 
     //after call combat buffs are calculated, recalculate their combat stats to use in damage calculation
@@ -31,7 +24,7 @@ export function doBattle(updatedHeroList, attacker, defender){
     //get the amount of attacks from each unit
     let attackCount = getAttackCount(attacker, defender);
 
-    let attackStack = getAttackOrder(attackCount);
+    let attackStack = getAttackOrder(attackCount, attacker, defender);
 
     let attackerPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     let defenderPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -39,21 +32,25 @@ export function doBattle(updatedHeroList, attacker, defender){
     let attackerPartyHeal = 0;
     let defenderPartyHeal = 0;
 
+    let attackerAttacked = false;
+    let defenderAttacked = false;
+    let attackerSpecialActivated = false;
+    let defenderSpecialActivated = false;
 
-
+    if (attacker.specialActivated){ //check if pre battle special was used
+      attackerSpecialActivated = true;
+    }
 
     //At this point, battle has started
+    let attackIndex = 0;
 
-
-    while (attackStack.length > 0 && newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //do attacks as long as the attack stack is not empty and both heroes are alive
-      let temp = attackStack.shift(); //get the front of the stack
+    while (attackIndex < attackStack.length  && newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //do attacks as long as the attack stack is not empty and both heroes are alive
+      let temp = attackStack[attackIndex]; 
       let damageInfo = {};
 
-      //TODO
-      //check if special is active and 
 
       if (temp === 1){ //attacker hits defender
-        damageInfo = calculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial, list); //calculate damage probably needs to send the speicals of both too
+        damageInfo = calculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial, list, attackStack, attackIndex);
 
         attackerSpecial.charge = damageInfo.attackerSpecialCharge;
 
@@ -77,10 +74,21 @@ export function doBattle(updatedHeroList, attacker, defender){
 
         attackerPartyHeal = Math.max(damageInfo.partyHeal, attackerPartyHeal ); //take the higher heal so it doesn't get overwritten
 
+        attackerAttacked = true;
+
+
+        if (damageInfo.attackerSpecialActivated){
+          attackerSpecialActivated = true;
+        }
+
+        if (damageInfo.defenderSpecialActivated){
+          defenderSpecialActivated = true;
+        }
+
       } else if (temp === 2){ //defender hits attacker
 
         //Note - CalculateDamage defines attacker as the one attacking, and defender as the one getting hit for the current attack, not by initiator/enemy phase heroes 
-        damageInfo = calculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial, list);
+        damageInfo = calculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial, list, attackStack, attackIndex);
 
         defenderSpecial.charge = damageInfo.attackerSpecialCharge; //defender is iniated on, but uses attacker key since they are the one attacking here
         attackerSpecial.charge = damageInfo.defenderSpecialCharge;
@@ -96,7 +104,19 @@ export function doBattle(updatedHeroList, attacker, defender){
           defenderPartyBuff[key] = Math.max( defenderPartyBuff[key] ,buffs[key]); //apply highest buff
         });
         defenderPartyHeal = Math.max(damageInfo.partyHeal, defenderPartyHeal ); //take the higher heal 
+
+        defenderAttacked = true;
+
+        if (damageInfo.attackerSpecialActivated){
+          defenderSpecialActivated = true;
+        }
+
+        if (damageInfo.defenderSpecialActivated){
+          attackerSpecialActivated = true;
+        }
       }
+
+      attackIndex++;
 
     }
 
@@ -132,6 +152,109 @@ export function doBattle(updatedHeroList, attacker, defender){
       newDefender.currentHP = Math.min(defender.stats.hp, newDefender.currentHP + defenderPartyHeal);
     }
 
+
+    //Apply battle-movement abilities
+    //Check if attacker has a battle movement effect
+    if (Object.keys(attacker.battleMovement).length > 0 ){
+      let participantIDs = [attacker.id, defender.id]; //their ids (to uniquely identify them)
+
+      let newPositions =  calculateMovementEffect(attacker, defender, attacker.battleMovement);
+
+      let attackerPos = newPositions.owner;
+      let defenderPos = newPositions.other;
+      
+
+
+      //convert back to positions
+      let newAttackerPos = rowColumnToPosition(newPositions.owner);
+      let newDefenderPos = rowColumnToPosition(newPositions.other);
+
+
+      if (checkValidMovement(attackerPos, defenderPos, [-1, -1], participantIDs, board)){ //no issues with given movement positions;
+        list[attacker.side][attacker.listIndex].position = newAttackerPos;
+        list[defender.side][defender.listIndex].position = newDefenderPos;
+      }
+
+    }
+
+
+    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
+      attackerSpecial.charge = Math.max(0, attackerSpecial.charge - attacker.combatEffects.spiral);
+    }
+
+    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
+      defenderSpecial.charge = Math.max(0, defenderSpecial.charge - defender.combatEffects.spiral);
+    }
+
+
+    //on attack combatEffects should just be recoil and stuff (and some debuff stuff)
+    if (attackerAttacked){
+        for (let m of attacker.onAttack){
+          for (let n in m){
+            attacker.combatEffects[n] += m[n];
+          } //for n
+        } //for m
+
+    }
+
+    if (defenderAttacked){
+        for (let m of defender.onAttack){
+          for (let n in m){
+            defender.combatEffects[n] += m[n];
+          } //for n
+        } //for m
+
+    }
+
+    let attackerPostDamage = attacker.combatEffects.recoil;
+    let defenderPostDamage = defender.combatEffects.recoil;
+
+    if (newAttacker.currentHP > 0 && attacker.combatEffects.poison > 0){ //poison strike effect requires user to be alive
+      defenderPostDamage+= attacker.combatEffects.poison //cannot go below 0
+    }
+
+    if (newDefender.currentHP > 0 && defender.combatEffects.poison > 0){
+      attackerPostDamage+= defender.combatEffects.poison;
+    }
+
+
+    if (newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //both users are alive are required for seals to activate
+
+      if (attacker.combatEffects.seal.length > 0){
+
+        for (let x of attacker.combatEffects.seal){
+          for (let y in x){
+
+            list[defender.side][defender.listIndex].debuff[y] = Math.max(defender.debuff[y], x[y]); 
+
+          }
+
+        } //for x
+
+      }
+
+      if (defender.combatEffects.seal.length > 0){
+
+        for (let x of defender.combatEffects.seal){
+          for (let y in x){
+
+            list[attacker.side][attacker.listIndex].debuff[y] = Math.max(attacker.debuff[y], x[y]); 
+
+          }
+
+        } //for x
+
+      }
+
+    } //end if both are alive
+
+    if (newDefender.currentHP > 0){
+      newDefender.currentHP = Math.max(1, newDefender.currentHP - defenderPostDamage); //cannot go below 0 from post battle damage
+    }
+
+    if (newAttacker.currentHP > 0){
+      newAttacker.currentHP = Math.max(1, newAttacker.currentHP - attackerPostDamage); //cannot go below 0
+    }
     //set new current hp values
     list[attacker.side][attacker.listIndex].currentHP = newAttacker.currentHP;
     list[defender.side][defender.listIndex].currentHP = newDefender.currentHP;
@@ -139,6 +262,10 @@ export function doBattle(updatedHeroList, attacker, defender){
     //set new special charges
     list[attacker.side][attacker.listIndex].special = attackerSpecial;
     list[defender.side][defender.listIndex].special = defenderSpecial;
+
+    //increase combat Count
+    list[attacker.side][attacker.listIndex].combatCount++;
+    list[defender.side][defender.listIndex].combatCount++;
     return list;
   }
 
@@ -165,23 +292,53 @@ export function getAttackCount(attacker, defender){
     let defenderCount = 0;
 
     //determine if defender gets to attack at all
-    if (defender.range === attacker.range || defender.combatEffects.counter > 0){ 
+    if ( (defender.range === attacker.range || defender.combatEffects.counter > 0) && (attacker.combatEffects.sweep <= 0 || defender.combatEffects.nullC > 0 ) ){ 
       defenderCount = 1;
     }
 
-    let attackerDouble = attacker.combatEffects["double"] - defender.combatEffects.enemyDouble;
-    let defenderDouble = defender.combatEffects["double"] - attacker.combatEffects.enemyDouble;
 
-    //out speeding gives and extra double stack
-    if ( (attacker.stats.spd - defender.stats.spd) >= 5) {
+
+
+    //add up effects that guarantee doubles and prevents doubles
+    let attackerDouble = attacker.combatEffects["double"] - defender.combatEffects.enemyDouble - attacker.combatEffects.stopDouble;
+    let defenderDouble = defender.combatEffects["double"] - attacker.combatEffects.enemyDouble - defender.combatEffects.stopDouble;
+
+
+    //Brash assault checks if enemy is able to attack to grant the extra double stack for attacker
+    if (attacker.combatEffects.brashAssault > 0 && defenderCount > 0){
       attackerDouble++;
+      attacker.combatEffects["double"]++;
+    }
 
+    //out speeding gives an extra double stack
+    if ( (attacker.combatStats.spd - defender.combatStats.spd) >= 5) {
+      attackerDouble++;
+    }
+
+    if ( (defender.combatStats.spd - attacker.combatStats.spd) >= 5) {
+      defenderDouble++;
+    }
+
+
+
+    if (attacker.combatEffects.nullEnemyFollowUp > 0){
+      defenderDouble-= defender.combatEffects["double"]; //neutralize enemy effects that guarantee their follow up
+    }
+
+    if (attacker.combatEffects.nullStopFollowUp > 0){
+
+      attackerDouble+= defender.combatEffects.enemyDouble; // neutralize enemy effects that prevent follow ups
+      attackerDouble+= attacker.combatEffects.stopDouble; //neutralize own effects that prevent follow ups
 
     }
 
-    if ( (defender.stats.spd - attacker.stats.spd) >= 5) {
-      defenderDouble++;
+    if (defender.combatEffects.nullEnemyFollowUp > 0){
+      attackerDouble-= attacker.combatEffects["double"]; //neutralize enemy effects that guarantee follow ups
+    }
 
+    if (defender.combatEffects.nullStopFollowUp > 0){
+      defenderDouble+= attacker.combatEffects.enemyDouble; // neutralize enemy effects that prevent follow ups
+      defenderDouble+= defender.combatEffects.stopDouble; //neutralize own effects that prevent follow ups
 
     }
 
@@ -190,46 +347,154 @@ export function getAttackCount(attacker, defender){
       attackerCount++;
     }
 
+    if (attacker.combatEffects.brave > 0){ //if brave effect, attack is doubled
+      attackerCount = attackerCount * 2;
+    }
+
     if (defenderDouble > 0 && defenderCount > 0){
       defenderCount++;
+    }
+
+    if (defender.combatEffects.enemyBrave > 0){
+      defenderCount = defenderCount * 2;
     }
 
     return [attackerCount, defenderCount];
   }
   //Given the attack counts, return the order in the form of a stack list
-export function getAttackOrder(stack){
+export function getAttackOrder(stack, attacker, defender){
     //basic attack order without extra skills
+    //
+    //the number of attacks from each hero
     let attackerHits = stack[0];
     let defenderHits = stack[1];
 
+
+    //The amount of hits performed at a time - for brave effects
+    let attackerRoundHits = 1;
+    let defenderRoundHits = 1;
+
+    if (attacker.combatEffects.brave > 0){
+      attackerRoundHits = 2;
+    }
+
+    if (defender.combatEffects.enemyBrave > 0){
+      defenderRoundHits = 2;
+    }
+
     let attackStack = [];
 
-    //todo - add brave effect here where pushes will occur twice in a row
 
-    while (attackerHits > 0 ||  defenderHits > 0){
-
-      if (attackerHits > 0){
-        attackStack.push(1);
-        attackerHits--;
-      }
-
-      if (defenderHits > 0){
+    //vantage attack
+    if (defenderHits > 0 && defender.combatEffects.vantage > 0){
+      
+      for (let i = 0; i < defenderRoundHits; i++){
         attackStack.push(2);
-        defenderHits--;
       }
 
+      defenderHits-= defenderRoundHits;
+
+      if (defenderHits > 0 && defender.combatEffects.desperation > 0){ //if desperation is active get follow up attack immediately
+        
+        for (let j = 0; j < defenderRoundHits; j++){
+          attackStack.push(2);
+        }
+
+        defenderHits-= defenderRoundHits;
+
+      }
 
     }
+
+
+
+    //first attacker attack
+    if (attackerHits > 0){
+
+      for (let i = 0; i < attackerRoundHits; i++){
+        attackStack.push(1);
+      }
+
+      attackerHits-= attackerRoundHits;
+
+      //if desperation and can double, attack does their second before defender 
+      if (attackerHits > 0 && attacker.combatEffects.desperation > 0){
+
+        for (let j = 0; j < attackerRoundHits; j++){
+          attackStack.push(1);
+        }
+
+        attackerHits-= attackerRoundHits;
+
+      }
+
+    }
+
+
+
+    //first defender attack
+
+    if (defenderHits > 0){
+      
+      for (let i = 0; i < defenderRoundHits; i++){
+        attackStack.push(2);
+      }
+
+      defenderHits-= defenderRoundHits;
+
+      if (defenderHits > 0 && defender.combatEffects.desperation > 0){ //if desperation is active get follow up attack immediately 
+        
+        for (let j = 0; j < defenderRoundHits; j++){
+          attackStack.push(2);
+        }
+
+        defenderHits-= defenderRoundHits;
+
+      }
+    }
+
+
+
+    //if there are still follow up attacks to occur, then do remaining attacks
+    if (attackerHits > 0){
+
+      for (let i = 0; i < attackerRoundHits; i++){
+        attackStack.push(1);
+      }
+
+      attackerHits-= attackerRoundHits;
+
+    }
+
+    if (defenderHits > 0){
+      
+      for (let i = 0; i < attackerRoundHits; i++){
+        attackStack.push(2);
+      }
+
+      defenderHits-= defenderRoundHits;
+    }
+
+
+
+    //}
 
     return attackStack;
   }
 
 
-export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList){
+export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList, attackStack, attackIndex){
 
   let WTA = calculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color ); //get the WTA multiplier
 
   let baseDamage = attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType] ; //damage can be negative here
+
+
+  //staff damage reduction 
+  if (heroData[attacker.heroID.value].weapontype === "staff" && attacker.combatEffects.wrathful === 0){
+    baseDamage = Math.trunc(baseDamage / 2); 
+  }
+
 
   let attackerSpecialCharge = attackerSpecial.charge;
   let defenderSpecialCharge = defenderSpecial.charge;
@@ -243,6 +508,9 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   let partyHeal = 0;
   let partyBuff = {};
+
+  let attackerSpecialActivated = false;
+  let defenderSpecialActivated = false;
 
   if (attackerSpecialCharge === 0 && attackerSpecial.type === "attack-battle"){ //if charged and an offsensive battle special
 
@@ -283,15 +551,72 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       }
 
 
-      //check 
-      let oldSpecialTrigger =  Object.assign({}, attacker.combatEffects.specialTrigger); //get copy of the special trigger effects
+      for (let i of attacker.onSpecial){ //loop through effects that activate on special
+        if (i !== null){
 
-      getConditionalSpecial(attacker, defender, heroList);
+          for (let j in i){ 
+            if (j === "damage"){
+              //let onSpecialDamage = i.damage;
 
-      trueDamage = attacker.combatEffects.specialTrigger.trueDamage; 
+              let sHero;
 
-      attacker.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
+              if (i.damage[0] === "attacker"){
+                sHero = attacker;
+              } else if (i.damage[0] === "defender"){
+                sHero = defender;
+              }
 
+
+              let sStat = i.damage[1];
+              if (sStat === "defensive"){
+                sStat = damageType;
+              }
+
+
+              let sFactor = i.damage[2];
+
+              if ("condition" in i && checkCondition(heroList, i.condition, attacker, defender) ){
+
+                sFactor = i["alt"];
+
+              }
+
+              let extraDamage = 0;
+
+              if (sStat === "flat"){
+                extraDamage+= sFactor; //special damage is flat
+              } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
+
+                extraDamage+= Math.trunc( (attacker.stats.hp - attacker.currentHP) * sFactor);
+
+              } else{
+
+                extraDamage+= Math.trunc(sHero.combatStats[sStat] * sFactor);
+              }
+
+              if (i.damage[3] === "trueDamage"){
+                trueDamage+= extraDamage;
+              } else if (i.damage[3] === "specialDamage" ){
+                specialDamage+= extraDamage
+              }
+
+
+            } //end for damage
+          } //end for i
+
+
+
+        }
+
+      } //end for onSpecial
+
+
+
+      getConditionalSpecial(attacker, defender, heroList); 
+
+      trueDamage+= attacker.combatEffects.specialTrueDamage; 
+
+      removeConditionalSpecial(attacker, defender, heroList);
     } //end special damage calc
 
 
@@ -311,12 +636,14 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       partyBuff = specialEffect.partyBuff;
     }
 
+    attackerSpecialActivated = true;
+
   } else{ //special not activated, increment normally
 
     if (attackerSpecialCharge >= 0){
 
       //charge will not go below 0. attack charge will be at least 1 but maxes out a 2. Guard will be at least 0 but maxes out at 1.
-      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - Math.min(attacker.combatEffects.attackCharge, 2) + Math.min(defender.combatEffects.guard, 1) ); //unit attacking
+      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - Math.min(attacker.combatEffects.attackCharge, 2) + Math.min(defender.combatEffects.guard + attacker.combatEffects.guardStatus, 1) ); //unit attacking
     }
 
   } //end offensive special check 
@@ -326,7 +653,36 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   //all damage reduction values are 1 - percent reduced by. 0 damage reduction is thus 1 - 0 = 1.0
   //When used in calculations, 1 - damage reduction is used 
-  let damageReduction = 1.0; 
+  let damageReduction = defender.combatEffects.damageReduction;
+
+
+  let currentAttacker = attackStack[attackIndex];
+
+  //if adding the first damage reduction
+
+  let indexCounter = attackIndex - 1;
+  let firstAttack = true;
+  while (indexCounter > 0){ //loop back until start of stack is reached
+
+    //an attack from the current attack has been found, thus this is not their first attack
+    if (attackStack[indexCounter] === currentAttacker){
+      firstAttack = false;
+    }
+    indexCounter--;
+
+  }
+
+  //first attack damage reduction
+  if (firstAttack){
+    damageReduction = damageReduction * defender.combatEffects.firstReduction;
+  }
+
+  //if adding the consecutive damage reduction 
+  //check if an attack has been made before this, then check if it was the current attacker (thus a consecutive attkack)
+
+  if (attackIndex - 1 >= 0 && attackStack[attackIndex - 1] === currentAttacker){ 
+    damageReduction = damageReduction * defender.combatEffects.consecutiveReduction;
+  }
 
 
   let miracle = false;
@@ -348,20 +704,18 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
     if (!miracle){
       defenderSpecialCharge = defenderSpecial.cd;
+
+      defenderSpecialActivated = true; //if its not miracle, then it is activated
+      flatReduction = defender.combatEffects.specialFlatReduction; //flat reduction does not apply to miracle
     }
 
-    //check 
-    let oldSpecialTrigger =  Object.assign({}, defender.combatEffects.specialTrigger); //get copy of the special trigger effects
 
-    getConditionalSpecial(defender, attacker, heroList);
+    //getConditionalSpecial(defender, attacker, heroList);
 
-    flatReduction = defender.combatEffects.specialTrigger.flatReduction; 
-
-    defender.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
 
   } else{
     if (defenderSpecialCharge >= 0){
-      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - Math.min(defender.combatEffects.defenseCharge, 2) + Math.min(attacker.combatEffects.guard, 1) );
+      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - Math.min(defender.combatEffects.defenseCharge, 2) + Math.min(attacker.combatEffects.guard + defender.combatEffects.guardStatus, 1) );
 
 
 
@@ -388,23 +742,26 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   specialDamage = specialDamage - Math.trunc( specialDamage - specialDamage * damageReduction);
 
 
-
-
   if (miracle){
     if (defender.currentHP > 1 && baseDamage + specialDamage >= defender.currentHP){ //if hp > 1 and their hp would go to 0, activate miracle
       totalDamage =  defender.currentHP - 1; //leave 1 hp
       defenderSpecialCharge = defenderSpecial.cd;
+
+      defenderSpecialActivated = true;
     }
   }
 
-  let heal = 0;
+  let damageDealt = Math.min(defender.currentHP, totalDamage); //damage dealt maxes out at the current HP of defender (for healing purposes)
 
+  let heal = 0;
+  heal = Math.trunc(attacker.combatEffects.specialHeal * damageDealt);
   if ("heal" in specialEffect){
-    heal = Math.trunc(specialEffect.heal * totalDamage) ; 
+    heal+= Math.trunc(specialEffect.heal * damageDealt); 
   }
 
   return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "partyBuff": partyBuff, "partyHeal": partyHeal,
-  "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge } ; ///glimmer interacts with damage reduction
+  "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge, 
+  "attackerSpecialActivated": attackerSpecialActivated, "defenderSpecialActivated": defenderSpecialActivated } ; ///glimmer interacts with damage reduction
 
 }
 
@@ -476,6 +833,10 @@ export function positionToRowColumn(position){
   return [row, column];
 }
 
+export function rowColumnToPosition(rc){
+    return rc[0] * 6 + rc[1];
+}
+
   //Return list of adjacent allies 
 export function getAdjacentAllies(hList, position){
   let adjacentList = [];
@@ -490,7 +851,7 @@ export function getAdjacentAllies(hList, position){
   return adjacentList;
 }
 
-export function getDistantAllies(hList, position, excluded, distance){
+export function getDistantHeroes(hList, position, excluded, distance){
   let distantList = [];
 
   for (let x of hList){
@@ -511,22 +872,27 @@ export function getDistantAllies(hList, position, excluded, distance){
 //owner - the hero that is the owner of the conditional
 //enemy - the other hero in battle with the owner.
 
-export function checkCondition(heroList, condition, owner, enemy){
+export function checkCondition(heroList, condition, owner, enemy, turn){
 
   //let keyWordList = ["phase"];  //this contains the list of keywords that denote at start of a condition
 
   let result = true;
 
-  for (let i = 0; i < condition.length; i++){ //outer list - all condition lists in this list must be true
+  for (let i = 0; i < condition.length; i++){ //outer list - all condition lists in this list must be true - and conditions
 
     let innerCondition = condition[i]; //loop through the lists in the lists
     let innerResult = false;
 
-    for (let j = 0; j < innerCondition.length; j++){ //inner list - at least one condition in this list must be true
+    for (let j = 0; j < innerCondition.length; j++){ //inner list - at least one condition in this list must be true - or conditions
 
       let keyWord = innerCondition[j];
 
-      if (keyWord === "phase"){ //owner must be on the correct phase 
+
+      //so always on effects can be mixed with conditional effects easily
+      if (keyWord === "always"){
+        innerResult = true;
+        
+      } else if (keyWord === "phase"){ //owner must be on the correct phase 
 
         if (innerCondition[j+1] === "player" && owner.initiating){ //initiating condition
           innerResult = true;
@@ -556,6 +922,21 @@ export function checkCondition(heroList, condition, owner, enemy){
 
 
         j = j + 2;
+
+      } else if (keyWord === "enemyhp"){ //if hp must be at a ceretain threshold
+
+        let hpThreshold =  Math.trunc(innerCondition[j+2] * enemy.stats.hp);
+
+        if (innerCondition[j+1] === "greater" && enemy.currentHP >= hpThreshold ){
+          innerResult = true;
+        } else if (innerCondition[j+1] === "less" && enemy.currentHP <= hpThreshold ){
+          innerResult = true;
+        }
+
+
+
+        j = j + 2;
+
       } else if (keyWord === "enemyInfo"){ //needs to check value of enemy hero (e.g. weapon type, movement type etc)
 
         let info = heroData[enemy.heroID.value];
@@ -565,6 +946,17 @@ export function checkCondition(heroList, condition, owner, enemy){
         }
 
         j = j + 2;
+
+
+      } else if (keyWord === "specialType"){ //needs to check value of enemy hero (e.g. weapon type, movement type etc)
+
+        
+
+        if (innerCondition[j+1].includes(owner.special.type) ){
+          innerResult = true;
+        }
+
+        j = j + 1;
       } else if (keyWord === "statCompare"){ //compare stat values between owner and enemy
 
         let statCheck = innerCondition[j+2];
@@ -594,7 +986,7 @@ export function checkCondition(heroList, condition, owner, enemy){
         j = j + 4;
       } else if (keyWord === "distantAllies"){ //check if a certain number of allies within the range given range
 
-        let distantAllies = getDistantAllies(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+        let distantAllies = getDistantHeroes(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
 
         if (innerCondition[j+2] === "greater" && distantAllies.length >= innerCondition[j+3]){
           innerResult = true;
@@ -605,9 +997,8 @@ export function checkCondition(heroList, condition, owner, enemy){
         j = j + 3;
 
       } else if (keyWord === "allyInfo"){ //check if allies within range are of certain types
-        //    "effect": [{"condition": [["phase", "enemy"], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 
-        let distantAllies = getDistantAllies(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+        let distantAllies = getDistantHeroes(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
 
         let validAlliesCount = 0;
 
@@ -633,6 +1024,59 @@ export function checkCondition(heroList, condition, owner, enemy){
           innerResult = true;
         }
         j = j + 4;
+      } else if (keyWord === "turn"){ //check turn
+
+        let factor = innerCondition[j+1];
+
+        let mod = innerCondition[j+2];
+
+        let check = (turn - 1) + mod;
+
+        if (factor === 0 && turn === mod){ //no factor, asking for a specific turn
+          innerResult = true;
+        } else if ( (check) % factor === 0){ //check if nth turn has been reached
+          innerResult = true;
+        }
+
+
+        j = j + 2;
+      } else if (keyWord === "penalty"){
+        
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        if (check.debuff.atk > 0 || check.debuff.spd > 0 ||  check.debuff.def > 0 || check.debuff.res > 0
+         || check.combatEffects.guardStatus > 0 || check.combatEffects.panicStatus > 0){
+          innerResult = true;
+        }
+
+        j = j + 1;
+      } else if (keyWord === "bonus"){
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        if (check.buff.atk > 0 || check.buff.spd > 0 ||  check.buff.def > 0 || check.buff.res > 0){
+          innerResult = true;
+        }
+
+
+        j = j + 1;
+      } else if (keyWord === "combatCount"){ //
+
+        if (owner.combatCount === innerCondition[j+1] ){
+          innerResult = true;
+        }
+
+        j = j + 1;
       }
 
 
@@ -652,8 +1096,8 @@ export function checkCondition(heroList, condition, owner, enemy){
 
 export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
 
-  if (variableEffect.type === "allyDistance"){
-    let distantAllies = Math.min(getDistantAllies(heroList[owner.side], owner.position, [] , variableEffect.distance).length, variableEffect.maxAllies);
+  if (variableEffect.key === "allyDistance"){
+    let distantAllies = Math.min(getDistantHeroes(heroList[owner.side], owner.position, [] , variableEffect.distance).length, variableEffect.maxAllies);
 
     let buff = (variableEffect.multiplier * distantAllies + variableEffect.constant);
 
@@ -668,8 +1112,8 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
     }
 
     return statBuff;
-  } else if (variableEffect.type === "session"){
-    //    "effect": {"stats": ["def", "res"], "type": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2},
+  } else if (variableEffect.key === "session"){
+
     let buffValue = 0;
 
     if (variableEffect.phase === "enemy" && !owner.initiating){
@@ -714,8 +1158,8 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
 }
 
 export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
-
-  if (variableEffect.type === "bonusDamage"){
+//    "effect": {"combatEffects": ["trueDamage"], "type": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+  if (variableEffect.key === "bonusDamage"){
     let unit = variableEffect.unit;
     let value = 0;
 
@@ -735,11 +1179,59 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
       combatEffectList[x] = value;
     }
     return combatEffectList;
+  } else if (variableEffect.key === "statDifferenceEffect"){
+
+    let statCheck = variableEffect.stat;
+    let factor = variableEffect.factor;
+    let max = variableEffect.max;
+
+    let visibleDifference = owner.visibleStats[statCheck] - enemy.visibleStats[statCheck];
+    let combatDifference = owner.combatStats[statCheck] - enemy.combatStats[statCheck];
+
+    let visibleValue = Math.trunc(visibleDifference * factor);
+    let combatValue = Math.trunc(combatDifference * factor);
+
+
+
+    visibleValue = Math.min(max, visibleValue );
+
+    combatValue = Math.min(max, combatValue );
+
+    let combatEffectList = {};
+    for (let x of variableEffect.combatEffects){
+      
+      if (x.includes("Reduction")){
+
+        if (x === "preBattleReduction" && visibleValue > 0){
+          combatEffectList[x] = 1 - (visibleValue / 100.0 );
+        } else if (combatValue > 0) {
+          combatEffectList[x] = 1 - (combatValue / 100.0 );
+        }
+
+      } else if (x === "lull" && visibleValue > 0){
+
+          let lullStats = variableEffect.debuffStats;
+          combatEffectList.lull = {};
+
+
+          for (let m of lullStats){
+            combatEffectList.lull[m]= visibleValue;
+          }
+
+      } else {
+        combatEffectList[x] = combatValue;
+      }
+
+    } //end for
+
+    return combatEffectList;
   }
 
 
 }
 
+
+//This function is for combat effects where the condition check occurs at the time the special activates (e.g. wrath)
 export function getConditionalSpecial(owner, enemy, heroList){
 
   //Conditionals
@@ -748,8 +1240,8 @@ export function getConditionalSpecial(owner, enemy, heroList){
     if (x !== null && checkCondition(heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
 
       for (let y in x){ //loop through 
-        if (y !== "condition"){ //everything else should be combat effects
-          owner.combatEffects.specialTrigger[y]+= x[y]; //conditional specials should give effects changing specialTrigger effects
+        if (y !== "condition" && y !== "type"){ //everything else should be combat effects
+          owner.combatEffects[y]+= x[y]; //conditional specials should give effects changing specialTrigger effects
         }
 
 
@@ -761,5 +1253,108 @@ export function getConditionalSpecial(owner, enemy, heroList){
 
   } //end for 
 
+
+}
+
+export function removeConditionalSpecial(owner, enemy, heroList){
+
+  //Conditionals
+  for (let x of owner.conditionalSpecial){
+
+    //this check should be done before any changes to either hero, such that it passes the same conditons as when the getConditionalSpecial function is used
+    if (x !== null && checkCondition(heroList, x.condition, owner, enemy)){ 
+
+      for (let y in x){ //loop through 
+        if (y !== "condition" && y !== "type"){ //everything else should be combat effects
+          owner.combatEffects[y]-= x[y]; //remove the effects
+        }
+
+
+      } //end loop through gained effects
+
+
+
+    } //end if condition true
+
+  } //end for 
+
+
+}
+
+export function checkValidMovement(owner, other, otherAlt, participantIDs, board){
+
+    if (other[0] === -1 || other[1] === -1){
+      return false;
+    }
+
+    //otherAlt needs to be checked for trepassable terrain (e.g. not a wall) and if it is an actual space (not [-1, -1])
+
+    if (owner[1] > 5 || owner[1] < 0 || other[1] > 5 || other[1] < 0 //column out of bounds
+      || owner[0] > 7 || owner[0] < 0 || other[0] > 7 || other[0] < 0) { //row out of bounds
+
+
+      return false; 
+
+    }
+    //convert to positions to check if board space is available
+    let newOwnerPosition = rowColumnToPosition(owner);
+    let newOtherPosition = rowColumnToPosition(other);
+
+    if (board[newOwnerPosition] !== null &&  !participantIDs.includes(board[newOwnerPosition].id) ){ //new assistee position is occupied by other hero
+      return false;
+
+    }
+
+    if (board[newOtherPosition] !== null &&  !participantIDs.includes(board[newOtherPosition].id) ){ //new assister position is occupied by other hero
+      return false;
+    }
+
+    return true; //no issues found, movement is valid
+}
+
+//Get new positions (as row columns)
+export function calculateMovementEffect(owner, other, effect){
+
+  let ownerPos = positionToRowColumn(owner.position);
+  let otherPos = positionToRowColumn(other.position);
+
+  let otherAlt = [-1, -1];
+
+
+  if (ownerPos[0] === otherPos[0]){ //same row, move along the row so change column
+
+    let factor = otherPos[1] - ownerPos[1]; //factor determines how the participants are positioned and which way the assist applies 
+
+    ownerPos[1]+= factor * effect.owner;
+
+    //the other hero is moving away 2 spaces from the owner (only occurs with smite currently). Need to also get the position in between
+    //This position will be used instead if the other hero cannot occupy the new position (short stop).
+    //This position will also be checked if it can be occupied (e.g. if it is a wall) which would prevent the assist from working at all.
+    //If movement effects are added that such that more than 1 space will have to be checked for short stopping and walls, this will have to be modified
+    if (effect.other >= 2){ 
+      otherAlt[0] = otherPos[0];
+      otherAlt[1] = otherPos[1] + factor * (effect.other - 1);
+    }
+
+    otherPos[1]+= factor * effect.other;
+
+
+
+  } else if (ownerPos[1] === otherPos[1]){ //same column, move along the column, so change row
+
+    let factor = otherPos[0] - ownerPos[0];
+
+    ownerPos[0]+= factor * effect.owner;
+
+    if (effect.other >= 2){ 
+      otherAlt[1] = otherPos[0];
+      otherAlt[0] = otherPos[0] + factor * (effect.other - 1);
+    }
+
+    
+    otherPos[0]+= factor * effect.other;
+
+  }
+  return {"owner": ownerPos, "other": otherPos, "otherAlt": otherAlt};
 
 }

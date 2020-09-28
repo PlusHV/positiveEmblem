@@ -20,13 +20,15 @@ export default class Map extends React.Component{
             let cellClass = "cellStyle";
 
             if (id  === highLightedCell){
-              cellClass = "highlightedCellStyle";
+				cellClass = "highlightedCellStyle";
             } else if ( this.props.gameState.availableMovement.includes(id)){
-              cellClass = "movementCellStyle";
+				cellClass = "movementCellStyle";
             } else if ( this.props.gameState.availableAssist.includes(id)){
-              cellClass =  "assistCellStyle";
+				cellClass =  "assistCellStyle";
             } else if ( this.props.gameState.availableAttack.includes(id)){
-              cellClass =  "attackCellStyle";
+				cellClass =  "attackCellStyle";
+            } else if ( this.props.gameState.availableWarp.includes(id)){
+            	cellClass = "warpCellStyle";
             }
             
             let positions = this.props.filledPositions();

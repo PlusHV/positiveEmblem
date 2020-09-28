@@ -12,7 +12,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
 		"max": false
 	},
 	"2": {
@@ -20,7 +20,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "greater", 0.5]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
 		"max": false
 	},
 	"3": {
@@ -28,175 +28,175 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
 		"max": true
 	},
 	"4": {
 		"name": "Atk/Def Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 2, "def": 2}},
 		"max": false
 	},
 	"5": {
 		"name": "Atk/Def Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 4, "def": 4}},
 		"max": false
 	},
 	"6": {
 		"name": "Atk/Def Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 6, "def": 6}},
 		"max": true
 	},
 	"7": {
 		"name": "Atk Feint 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"atk": 3}},
 		"max": false
 	},
 	"8": {
 		"name": "Atk Feint 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"atk": 5}},
 		"max": false
 	},
 	"9": {
 		"name": "Atk Feint 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"atk": 7}},
 		"max": true
 	},
 	"10": {
 		"name": "Atk/Res Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 2, "res": 2}},
 		"max": false
 	},
 	"11": {
 		"name": "Atk/Res Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 4, "res": 4}},
 		"max": false
 	},
 	"12": {
 		"name": "Atk/Res Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 6, "res": 6}},
 		"max": true
 	},
 	"13": {
 		"name": "Atk/Spd Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 2, "spd": 2}},
 		"max": false
 	},
 	"14": {
 		"name": "Atk/Spd Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 4, "spd": 4}},
 		"max": false
 	},
 	"15": {
 		"name": "Atk/Spd Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"atk": 6, "spd": 6}},
 		"max": true
 	},
 	"16": {
 		"name": "Atk/Spd Ruse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 1, "spd": 1}},
 		"max": false
 	},
 	"17": {
 		"name": "Atk/Spd Ruse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 3, "spd": 3}},
 		"max": false
 	},
 	"18": {
 		"name": "Atk/Spd Ruse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 5, "spd": 5}},
 		"max": true
 	},
 	"19": {
 		"name": "Axebreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"20": {
 		"name": "Axebreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"21": {
 		"name": "Axebreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"22": {
 		"name": "B Tomebreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"23": {
 		"name": "B Tomebreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"24": {
 		"name": "B Tomebreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"25": {
@@ -204,8 +204,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Ike: Brave Mercenary"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "movetype", ["Cavalry", "Flying"] ] ], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"26": {
@@ -213,104 +213,104 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Marth: Hero-King"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["breath"] ] ], "enemyDouble": 1, "double": 1, "sweep": 1 }],
 		"max": true
 	},
 	"27": {
 		"name": "Blaze Dance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 2}},
 		"max": false
 	},
 	"28": {
 		"name": "Blaze Dance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 3}},
 		"max": false
 	},
 	"29": {
 		"name": "Blaze Dance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 4}},
 		"max": true
 	},
 	"30": {
 		"name": "Bold Fighter 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["phase", "player"]], "double": 1, "attackCharge": 1 }],
 		"max": false
 	},
 	"31": {
 		"name": "Bold Fighter 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["phase", "player"]], "double": 1, "attackCharge": 1 }],
 		"max": false
 	},
 	"32": {
 		"name": "Bold Fighter 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "double": 1, "attackCharge": 1 }],
 		"max": true
 	},
 	"33": {
 		"name": "Bowbreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"34": {
 		"name": "Bowbreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"35": {
 		"name": "Bowbreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"36": {
 		"name": "Brash Assault 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.3] ], "brashAssault": 1 }],
 		"max": false
 	},
 	"37": {
 		"name": "Brash Assault 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.4] ], "brashAssault": 1 }],
 		"max": false
 	},
 	"38": {
 		"name": "Brash Assault 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.5] ], "brashAssault": 1 }],
 		"max": true
 	},
 	"39": {
@@ -318,24 +318,24 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Ryoma: Supreme Samurai"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"specialTrueDamage": 10},
 		"max": true
 	},
 	"40": {
 		"name": "Caldera Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 2, "def": 3}},
 		"max": false
 	},
 	"41": {
 		"name": "Caldera Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 3, "def": 4}},
 		"max": true
 	},
 	"42": {
@@ -366,96 +366,96 @@
 		"name": "Chill Atk 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk"], "debuff": 3} }],
 		"max": false
 	},
 	"46": {
 		"name": "Chill Atk 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk"], "debuff": 5} }],
 		"max": false
 	},
 	"47": {
 		"name": "Chill Atk 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk"], "debuff": 7} }],
 		"max": true
 	},
 	"48": {
 		"name": "Chill Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["def"], "debuff": 3} }],
 		"max": false
 	},
 	"49": {
 		"name": "Chill Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["def"], "debuff": 5} }],
 		"max": false
 	},
 	"50": {
 		"name": "Chill Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["def"], "debuff": 7} }],
 		"max": true
 	},
 	"51": {
 		"name": "Chill Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["res"], "debuff": 3} }],
 		"max": false
 	},
 	"52": {
 		"name": "Chill Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["res"], "debuff": 5} }],
 		"max": false
 	},
 	"53": {
 		"name": "Chill Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["res"], "debuff": 7} }],
 		"max": true
 	},
 	"54": {
 		"name": "Chill Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd"], "debuff": 3} }],
 		"max": false
 	},
 	"55": {
 		"name": "Chill Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd"], "debuff": 5} }],
 		"max": false
 	},
 	"56": {
 		"name": "Chill Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd"], "debuff": 7} }],
 		"max": true
 	},
 	"57": {
@@ -463,8 +463,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Gunnthrá: Voice of Dreams"],
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "niflSeal": {"debuff": 6, "debuffStats": ["atk", "spd"], "checkStats": ["def"]} }],
 		"max": false
 	},
 	"58": {
@@ -472,175 +472,175 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Sigurd: Holy Knight"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "consecutiveReduction": 0.2}],
 		"max": true
 	},
 	"59": {
 		"name": "Daggerbreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"60": {
 		"name": "Daggerbreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"61": {
 		"name": "Daggerbreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"62": {
 		"name": "Dazzling Staff 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0]], "sweep": 1  }],
 		"max": false
 	},
 	"63": {
 		"name": "Dazzling Staff 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5]], "sweep": 1  }],
 		"max": false
 	},
 	"64": {
 		"name": "Dazzling Staff 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"sweep": 1},
 		"max": true
 	},
 	"65": {
 		"name": "Def Feint 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"def": 3}},
 		"max": false
 	},
 	"66": {
 		"name": "Def Feint 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"def": 5}},
 		"max": false
 	},
 	"67": {
 		"name": "Def Feint 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"def": 7}},
 		"max": true
 	},
 	"68": {
 		"name": "Def/Res Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"def": 2, "res": 2}},
 		"max": false
 	},
 	"69": {
 		"name": "Def/Res Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"def": 4, "res": 4}},
 		"max": false
 	},
 	"70": {
 		"name": "Def/Res Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"def": 6, "res": 6}},
 		"max": true
 	},
 	"71": {
 		"name": "Def/Res Ruse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"def": 1, "res": 1}},
 		"max": false
 	},
 	"72": {
 		"name": "Def/Res Ruse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"def": 3, "res": 3}},
 		"max": false
 	},
 	"73": {
 		"name": "Def/Res Ruse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"def": 5, "res": 5}},
 		"max": true
 	},
 	"74": {
 		"name": "Deluge Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 2, "res": 3}},
 		"max": false
 	},
 	"75": {
 		"name": "Deluge Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 3, "res": 4}},
 		"max": true
 	},
 	"76": {
 		"name": "Desperation 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.25]], "desperation": 1  }],
 		"max": false
 	},
 	"77": {
 		"name": "Desperation 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.5]], "desperation": 1  }],
 		"max": false
 	},
 	"78": {
 		"name": "Desperation 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": true
 	},
 	"79": {
 		"name": "Disarm Trap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-move",
+		"type": "on-assist",
 		"effect": {},
 		"max": false
 	},
@@ -648,7 +648,7 @@
 		"name": "Disarm Trap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-move",
+		"type": "on-assist",
 		"effect": {},
 		"max": false
 	},
@@ -656,7 +656,7 @@
 		"name": "Disarm Trap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-move",
+		"type": "on-assist",
 		"effect": {},
 		"max": true
 	},
@@ -665,88 +665,88 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Celica: Warrior Priestess"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "greater", 1.0]], "brave": 1  }],
 		"max": true
 	},
 	"83": {
 		"name": "Drag Back",
 		"sp": 150,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "battle-movement",
+		"effect": {"owner": -1, "other": -1},
 		"max": true
 	},
 	"84": {
 		"name": "Dull Close 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"85": {
 		"name": "Dull Close 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"86": {
 		"name": "Dull Close 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"87": {
 		"name": "Dull Ranged 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"88": {
 		"name": "Dull Ranged 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"89": {
 		"name": "Dull Ranged 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"90": {
 		"name": "Earth Dance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"def": 3}},
 		"max": false
 	},
 	"91": {
 		"name": "Earth Dance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"def": 4}},
 		"max": false
 	},
 	"92": {
 		"name": "Earth Dance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"def": 5}},
 		"max": true
 	},
 	"93": {
@@ -754,7 +754,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "less", 0.3]], "allyReq": {"type": "all"} },
 		"max": false
 	},
 	"94": {
@@ -762,7 +762,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "less", 0.4]], "allyReq": {"type": "all"} },
 		"max": false
 	},
 	"95": {
@@ -770,39 +770,39 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "less", 0.5]], "allyReq": {"type": "all"} },
 		"max": true
 	},
 	"96": {
 		"name": "Fireflood Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 2, "res": 3}},
 		"max": false
 	},
 	"97": {
 		"name": "Fireflood Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 3, "res": 4}},
 		"max": true
 	},
 	"98": {
 		"name": "Firestorm Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 2, "spd": 2}},
 		"max": false
 	},
 	"99": {
 		"name": "Firestorm Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"atk": 3, "spd": 3}},
 		"max": true
 	},
 	"100": {
@@ -810,7 +810,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
 		"max": false
 	},
 	"101": {
@@ -818,7 +818,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "greater", 0.5]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
 		"max": false
 	},
 	"102": {
@@ -826,7 +826,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
 		"max": true
 	},
 	"103": {
@@ -834,8 +834,8 @@
 		"sp": 200,
 		"prf": true,
 		"users": ["Arden: Strong and Tough"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5]], "double": 1}],
 		"max": true
 	},
 	"104": {
@@ -843,136 +843,136 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Hríd: Icy Blade"],
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "niflSeal": {"debuff": 6, "debuffStats": ["atk", "spd"], "checkStats": ["res"]} }],
 		"max": true
 	},
 	"105": {
 		"name": "G Tomebreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"106": {
 		"name": "G Tomebreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"107": {
 		"name": "G Tomebreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"108": {
 		"name": "Gale Dance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 2}},
 		"max": false
 	},
 	"109": {
 		"name": "Gale Dance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 3}},
 		"max": false
 	},
 	"110": {
 		"name": "Gale Dance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 4}},
 		"max": true
 	},
 	"111": {
 		"name": "Geyser Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"def": 3, "res": 3}},
 		"max": false
 	},
 	"112": {
 		"name": "Geyser Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"def": 4, "res": 4}},
 		"max": true
 	},
 	"113": {
 		"name": "Guard 1",
 		"sp": 50,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0]], "guard": 1 }],
 		"max": false
 	},
 	"114": {
 		"name": "Guard 2",
 		"sp": 100,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9]], "guard": 1 }],
 		"max": false
 	},
 	"115": {
 		"name": "Guard 3",
 		"sp": 200,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.8]], "guard": 1 }],
 		"max": true
 	},
 	"116": {
 		"name": "Hit and Run",
 		"sp": 150,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "battle-movement",
+		"effect": {"owner": -1, "other": 0},
 		"max": true
 	},
 	"117": {
 		"name": "Knock Back",
 		"sp": 150,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "battle-movement",
+		"effect": {"owner": 0, "other": 1},
 		"max": true
 	},
 	"118": {
 		"name": "Lancebreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"119": {
 		"name": "Lancebreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"120": {
 		"name": "Lancebreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"121": {
@@ -980,8 +980,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Julia: Crusader of Light", "Julia: Heart Usurped"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "spd", "def", "res"], "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2} },
 		"max": true
 	},
 	"122": {
@@ -1004,96 +1004,99 @@
 		"name": "Live to Serve 1",
 		"sp": 40,
 		"prf": false,
-		"type": "on-heal",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "heal", "selfHeal": 0.5},
 		"max": false
 	},
 	"125": {
 		"name": "Live to Serve 2",
 		"sp": 80,
 		"prf": false,
-		"type": "on-heal",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "heal", "selfHeal": 0.75},
 		"max": false
 	},
 	"126": {
 		"name": "Live to Serve 3",
 		"sp": 160,
 		"prf": false,
-		"type": "on-heal",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "heal", "selfHeal": 1.0},
 		"max": true
 	},
 	"127": {
 		"name": "Lull Atk/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "def"], "lull": {"atk": 1, "def": 1} },
 		"max": false
 	},
 	"128": {
 		"name": "Lull Atk/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "def"], "lull": {"atk": 2, "def": 2} },
+
 		"max": false
 	},
 	"129": {
 		"name": "Lull Atk/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "def"], "lull": {"atk": 3, "def": 3} },
+
 		"max": true
 	},
 	"130": {
 		"name": "Lull Atk/Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "spd"], "lull": {"atk": 1, "spd": 1} },
+
 		"max": false
 	},
 	"131": {
 		"name": "Lull Atk/Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "spd"], "lull": {"atk": 2, "spd": 2} },
 		"max": false
 	},
 	"132": {
 		"name": "Lull Atk/Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["atk", "spd"], "lull": {"atk": 3, "spd": 3} },
 		"max": true
 	},
 	"133": {
 		"name": "Lull Spd/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 1, "def": 1} },
 		"max": false
 	},
 	"134": {
 		"name": "Lull Spd/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 2, "def": 2} },
 		"max": false
 	},
 	"135": {
 		"name": "Lull Spd/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 3, "def": 3} },
 		"max": true
 	},
 	"136": {
@@ -1101,95 +1104,95 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Eirika: Graceful Resolve"],
-		"type": "damage-calc",
-		"effect": {"cdTrigger": 1},
+		"type": "on-special",
+		"effect": {"cdTrigger": 1, "damage": ["defender", "def", 0.5, "trueDamage"]},
 		"max": true
 	},
 	"137": {
 		"name": "Lunge",
 		"sp": 150,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "battle-movement",
+		"effect": {"owner": 1, "other": -1},
 		"max": true
 	},
 	"138": {
 		"name": "Mystic Boost 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"onAttack": {"recoil": -2} },
 		"max": false
 	},
 	"139": {
 		"name": "Mystic Boost 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"onAttack": {"recoil": -4} },
 		"max": false
 	},
 	"140": {
 		"name": "Mystic Boost 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"onAttack": {"recoil": -6} },
 		"max": true
 	},
 	"141": {
 		"name": "Null C-Disrupt 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0]], "nullC": 1  }],
 		"max": false
 	},
 	"142": {
 		"name": "Null C-Disrupt 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5]], "nullC": 1  }],
 		"max": false
 	},
 	"143": {
 		"name": "Null C-Disrupt 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"nullC": 1  },
 		"max": true
 	},
 	"144": {
 		"name": "Null Follow-Up 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1  }],
 		"max": false
 	},
 	"145": {
 		"name": "Null Follow-Up 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1   }],
 		"max": false
 	},
 	"146": {
 		"name": "Null Follow-Up 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"nullEnemyFollowUp": 1, "nullStopFollowUp": 1   },
 		"max": true
 	},
 	"147": {
 		"name": "Obstruct 1",
 		"sp": 50,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": false
 	},
@@ -1197,7 +1200,7 @@
 		"name": "Obstruct 2",
 		"sp": 100,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": false
 	},
@@ -1205,7 +1208,7 @@
 		"name": "Obstruct 3",
 		"sp": 200,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": true
 	},
@@ -1213,7 +1216,7 @@
 		"name": "Pass 1",
 		"sp": 50,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": false
 	},
@@ -1221,7 +1224,7 @@
 		"name": "Pass 2",
 		"sp": 100,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": false
 	},
@@ -1229,7 +1232,7 @@
 		"name": "Pass 3",
 		"sp": 200,
 		"prf": false,
-		"type": "warp",
+		"type": "anti-warp",
 		"effect": {},
 		"max": true
 	},
@@ -1237,72 +1240,72 @@
 		"name": "Poison Strike 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "poison": 4}],
 		"max": false
 	},
 	"154": {
 		"name": "Poison Strike 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "poison": 7}],
 		"max": false
 	},
 	"155": {
 		"name": "Poison Strike 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "poison": 10}],
 		"max": true
 	},
 	"156": {
 		"name": "Quick Riposte 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.9]], "double": 1 }],
 		"max": false
 	},
 	"157": {
 		"name": "Quick Riposte 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.8]], "double": 1 }],
 		"max": false
 	},
 	"158": {
 		"name": "Quick Riposte 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.7]], "double": 1 }],
 		"max": true
 	},
 	"159": {
 		"name": "R Tomebreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"160": {
 		"name": "R Tomebreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"161": {
 		"name": "R Tomebreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"162": {
@@ -1310,72 +1313,72 @@
 		"sp": 200,
 		"prf": true,
 		"users": ["Arvis: Emperor of Flame"],
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "renewal": 10}],
 		"max": true
 	},
 	"163": {
 		"name": "Renewal 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 4, 0]], "renewal": 10}],
 		"max": false
 	},
 	"164": {
 		"name": "Renewal 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 3, 0]], "renewal": 10}],
 		"max": false
 	},
 	"165": {
 		"name": "Renewal 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "renewal": 10}],
 		"max": true
 	},
 	"166": {
 		"name": "Res Feint 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"res": 3}},
 		"max": false
 	},
 	"167": {
 		"name": "Res Feint 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"res": 5}},
 		"max": false
 	},
 	"168": {
 		"name": "Res Feint 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"res": 7}},
 		"max": true
 	},
 	"169": {
 		"name": "Rockslide Dance 1",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 2, "def": 3}},
 		"max": false
 	},
 	"170": {
 		"name": "Rockslide Dance 2",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"spd": 3, "def": 4}},
 		"max": true
 	},
 	"171": {
@@ -1383,80 +1386,80 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Leif: Prince of Leonster"],
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "renewal": 99, "specialCount": 1}],
 		"max": true
 	},
 	"172": {
 		"name": "Sabotage Atk 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"173": {
 		"name": "Sabotage Atk 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"174": {
 		"name": "Sabotage Atk 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"175": {
 		"name": "Sabotage Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"176": {
 		"name": "Sabotage Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"177": {
 		"name": "Sabotage Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"178": {
 		"name": "Sabotage Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"179": {
 		"name": "Sabotage Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"180": {
 		"name": "Sabotage Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"181": {
@@ -1464,192 +1467,194 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Lyn: Brave Lady"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["sword", "lance", "axe"]]], "sweep": 1 }],
 		"max": true
 	},
 	"182": {
 		"name": "Seal Atk 1",
 		"sp": 40,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 3}},
 		"max": false
 	},
 	"183": {
 		"name": "Seal Atk 2",
 		"sp": 80,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 5}},
 		"max": false
 	},
 	"184": {
 		"name": "Seal Atk 3",
 		"sp": 160,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 7}},
 		"max": true
 	},
 	"185": {
 		"name": "Seal Atk/Def 1",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 3, "def": 3}},
 		"max": false
 	},
 	"186": {
 		"name": "Seal Atk/Def 2",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 5, "def": 5}},
 		"max": true
 	},
 	"187": {
 		"name": "Seal Atk/Spd 1",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 3, "spd": 3}},
 		"max": false
 	},
 	"188": {
 		"name": "Seal Atk/Spd 2",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"atk": 5, "spd": 5}},
 		"max": true
 	},
 	"189": {
 		"name": "Seal Def 1",
 		"sp": 40,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"def": 3}},
 		"max": false
 	},
 	"190": {
 		"name": "Seal Def 2",
 		"sp": 80,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"def": 5}},
 		"max": false
 	},
 	"191": {
 		"name": "Seal Def 3",
 		"sp": 160,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"def": 7}},
 		"max": true
 	},
 	"192": {
 		"name": "Seal Def/Res 1",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"def": 3, "res": 3}},
 		"max": false
 	},
 	"193": {
 		"name": "Seal Def/Res 2",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"def": 5, "res": 5}},
 		"max": true
 	},
 	"194": {
 		"name": "Seal Res 1",
 		"sp": 40,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"res": 3}},
 		"max": false
 	},
 	"195": {
 		"name": "Seal Res 2",
 		"sp": 80,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"res": 5}},
 		"max": false
 	},
 	"196": {
 		"name": "Seal Res 3",
 		"sp": 160,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"res": 7}},
 		"max": true
 	},
 	"197": {
 		"name": "Seal Spd 1",
 		"sp": 40,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 3}},
 		"max": false
 	},
 	"198": {
 		"name": "Seal Spd 2",
 		"sp": 80,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 5}},
 		"max": false
 	},
 	"199": {
 		"name": "Seal Spd 3",
 		"sp": 160,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 7}},
 		"max": true
 	},
 	"200": {
 		"name": "Seal Spd/Def 1",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 3, "def": 3}},
 		"max": false
 	},
 	"201": {
 		"name": "Seal Spd/Def 2",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 5, "def": 5}},
 		"max": true
 	},
 	"202": {
 		"name": "Shield Pulse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1], ["specialType", ["defend-battle"] ]], "specialCount": 1}],
 		"max": false
 	},
 	"203": {
 		"name": "Shield Pulse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1], ["specialType", ["defend-battle"] ]], "specialCount": 1}, 
+			{"type": "effect", "condition": [["specialType", ["defend-battle"]] ], "specialFlatReduction": 5 } ],
 		"max": false
 	},
 	"204": {
 		"name": "Shield Pulse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1], ["specialType", ["defend-battle"] ]], "specialCount": 2}, 
+			{"type": "effect", "condition": [["specialType", ["defend-battle"]] ], "specialFlatReduction": 5 } ],
 		"max": true
 	},
 	"205": {
@@ -1657,248 +1662,248 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Ephraim: Legendary Lord"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"specialHeal": 0.3},
 		"max": true
 	},
 	"206": {
 		"name": "Spd/Def Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 2, "def": 2}},
 		"max": false
 	},
 	"207": {
 		"name": "Spd/Def Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 4, "def": 4}},
 		"max": false
 	},
 	"208": {
 		"name": "Spd/Def Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 6, "def": 6}},
 		"max": true
 	},
 	"209": {
 		"name": "Spd Feint 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"spd": 3}},
 		"max": false
 	},
 	"210": {
 		"name": "Spd Feint 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"spd": 5}},
 		"max": false
 	},
 	"211": {
 		"name": "Spd Feint 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "feint": {"spd": 7}},
 		"max": true
 	},
 	"212": {
 		"name": "Spd/Res Link 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 2, "res": 2}},
 		"max": false
 	},
 	"213": {
 		"name": "Spd/Res Link 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 4, "res": 4}},
 		"max": false
 	},
 	"214": {
 		"name": "Spd/Res Link 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "buff": {"spd": 6, "res": 6}},
 		"max": true
 	},
 	"215": {
 		"name": "Special Fighter 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9]], "attackCharge": 1, "defenseCharge": 1, "guard": 1 }],
 		"max": false
 	},
 	"216": {
 		"name": "Special Fighter 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7]], "attackCharge": 1, "defenseCharge": 1, "guard": 1 }],
 		"max": false
 	},
 	"217": {
 		"name": "Special Fighter 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5]], "attackCharge": 1, "defenseCharge": 1, "guard": 1 }],
 		"max": true
 	},
 	"218": {
 		"name": "Special Spiral 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "spiral": 1 }],
 		"max": false
 	},
 	"219": {
 		"name": "Special Spiral 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"spiral": 1},
 		"max": false
 	},
 	"220": {
 		"name": "Special Spiral 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"spiral": 2},
 		"max": true
 	},
 	"221": {
 		"name": "Sudden Panic 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -5} }],
 		"max": false
 	},
 	"222": {
 		"name": "Sudden Panic 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -3} }],
 		"max": false
 	},
 	"223": {
 		"name": "Sudden Panic 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -1} }],
 		"max": true
 	},
 	"224": {
 		"name": "Swordbreaker 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"225": {
 		"name": "Swordbreaker 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"226": {
 		"name": "Swordbreaker 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"227": {
 		"name": "Torrent Dance 1",
 		"sp": 50,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"res": 3}},
 		"max": false
 	},
 	"228": {
 		"name": "Torrent Dance 2",
 		"sp": 100,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"res": 4}},
 		"max": false
 	},
 	"229": {
 		"name": "Torrent Dance 3",
 		"sp": 200,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "buff": {"res": 5}},
 		"max": true
 	},
 	"230": {
 		"name": "Vantage 1",
 		"sp": 50,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.25], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": false
 	},
 	"231": {
 		"name": "Vantage 2",
 		"sp": 100,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.5], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": false
 	},
 	"232": {
 		"name": "Vantage 3",
 		"sp": 200,
 		"prf": false,
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.75], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": true
 	},
 	"233": {
 		"name": "Vengeful Fighter 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.9]], "double": 1, "attackCharge": 1 }],
 		"max": false
 	},
 	"234": {
 		"name": "Vengeful Fighter 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.7]], "double": 1, "attackCharge": 1 }],
 		"max": false
 	},
 	"235": {
 		"name": "Vengeful Fighter 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.5]], "double": 1, "attackCharge": 1 }],
 		"max": true
 	},
 	"236": {
@@ -1907,79 +1912,85 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General"],
 		"type": "warp",
-		"effect": {},
+		"effect": {"condition": [["hp", "greater", 0.8]], "range": 2, "allyReq": {"type": "allyRange"} },
 		"max": true
 	},
 	"237": {
 		"name": "Wary Fighter 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [ ["hp", "greater", 0.9]], "stopDouble": 1, "enemyDouble": 1 }],
 		"max": false
 	},
 	"238": {
 		"name": "Wary Fighter 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [ ["hp", "greater", 0.7]], "stopDouble": 1, "enemyDouble": 1 }],
 		"max": false
 	},
 	"239": {
 		"name": "Wary Fighter 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [ ["hp", "greater", 0.5]], "stopDouble": 1, "enemyDouble": 1 }],
 		"max": true
 	},
 	"240": {
 		"name": "Watersweep 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"241": {
 		"name": "Watersweep 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"242": {
 		"name": "Watersweep 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": true
 	},
 	"243": {
 		"name": "Windsweep 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"244": {
 		"name": "Windsweep 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"245": {
 		"name": "Windsweep 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": true
 	},
 	"246": {
@@ -1987,7 +1998,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"allyReq": {"type": "allyHP", "req": 0.3, "factor": "less" } },
 		"max": false
 	},
 	"247": {
@@ -1995,7 +2006,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"allyReq": {"type": "allyHP", "req": 0.4, "factor": "less" } },
 		"max": false
 	},
 	"248": {
@@ -2003,55 +2014,58 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {},
+		"effect": {"allyReq": {"type": "allyHP", "req": 0.5, "factor": "less" } },
 		"max": true
 	},
 	"249": {
 		"name": "Wrath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [ ["hp", "less", 0.25], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.25], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 10 } ],
 		"max": false
 	},
 	"250": {
 		"name": "Wrath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [ ["hp", "less", 0.5], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.5], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 10 } ],
 		"max": false
 	},
 	"251": {
 		"name": "Wrath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [ ["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 10 } ],
 		"max": true
 	},
 	"252": {
 		"name": "Wrathful Staff 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [ ["hp", "greater", 1.0]], "wrathful": 1}],
 		"max": false
 	},
 	"253": {
 		"name": "Wrathful Staff 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [ ["hp", "greater", 0.5]], "wrathful": 1}],
 		"max": false
 	},
 	"254": {
 		"name": "Wrathful Staff 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"wrathful": 1},
 		"max": true
 	},
 	"255": {
@@ -2059,8 +2073,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 6, "debuffStats": ["atk", "spd"], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"256": {
@@ -2068,104 +2082,113 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Thrasir: Omnicidal Witch"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["enemyhp", "less", 0.99, "penalty", "enemy"]], "desperation": 1, "lull": {"spd": 5, "res": 5} }],
 		"max": true
 	},
 	"257": {
 		"name": "Odd Follow-Up 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["turn", 2, 0] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"258": {
 		"name": "Odd Follow-Up 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["turn", 2, 0] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"259": {
 		"name": "Odd Follow-Up 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["turn", 2, 0] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"260": {
 		"name": "Spd/Res Ruse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 1, "res": 1}},
 		"max": false
 	},
 	"261": {
 		"name": "Spd/Res Ruse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 3, "res": 3}},
 		"max": false
 	},
 	"262": {
 		"name": "Spd/Res Ruse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 5, "res": 5}},
 		"max": true
 	},
 	"263": {
 		"name": "Close Call 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20}],
+		"skills": [["b", "Hit and Run"]],
 		"max": false
 	},
 	"264": {
 		"name": "Close Call 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30}],
+		"skills": [["b", "Hit and Run"]],
 		"max": false
 	},
 	"265": {
 		"name": "Close Call 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
+		"skills": [["b", "Hit and Run"]],
 		"max": true
 	},
 	"266": {
 		"name": "Daring Fighter 1",
 		"sp": 60,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "nullStopFollowUp": 1  },
+			{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.4]], "desperation": 1  }],
 		"max": false
 	},
 	"267": {
 		"name": "Daring Fighter 2",
 		"sp": 120,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "nullStopFollowUp": 1   },
+			{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.6]], "desperation": 1  }],
 		"max": false
 	},
 	"268": {
 		"name": "Daring Fighter 3",
 		"sp": 240,
 		"prf": false,
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "nullStopFollowUp": 1   },
+			{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.8]], "desperation": 1  }],
 		"max": true
 	},
 	"269": {
@@ -2173,104 +2196,111 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Celica: Queen of Valentia"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["always"]], "nullStopFollowUp": 1, "nullEnemyFollowUp": 1   },
+			{"type": "effect", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": true
 	},
 	"270": {
 		"name": "Sabotage Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"271": {
 		"name": "Sabotage Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"272": {
 		"name": "Sabotage Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"273": {
 		"name": "Repel 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20}],
+		"skills": [["b", "Knock Back"]],
 		"max": false
 	},
 	"274": {
 		"name": "Repel 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30}],
+		"skills": [["b", "Knock Back"]],
 		"max": false
 	},
 	"275": {
 		"name": "Repel 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
+		"skills": [["b", "Knock Back"]],
 		"max": true
 	},
 	"276": {
 		"name": "Spd/Def Ruse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 1, "def": 1}},
 		"max": false
 	},
 	"277": {
 		"name": "Spd/Def Ruse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 3, "def": 3}},
 		"max": false
 	},
 	"278": {
 		"name": "Spd/Def Ruse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"spd": 5, "def": 5}},
 		"max": true
 	},
 	"279": {
 		"name": "Lull Atk/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"atk": 1, "res": 1} },
 		"max": false
 	},
 	"280": {
 		"name": "Lull Atk/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"atk": 2, "res": 2} },
 		"max": false
 	},
 	"281": {
 		"name": "Lull Atk/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"atk": 3, "res": 3} },
 		"max": true
 	},
 	"282": {
@@ -2278,120 +2308,123 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Líf: Lethal Swordsman"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5, "penalty", "player"]], "defenseCharge": 1, "lull": {"atk": 5, "def": 5} }],
 		"max": true
 	},
 	"283": {
 		"name": "Pegasus Flight 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "spd", "greater", -7]], 
+			"variableEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.3, "max": 3, "debuffStats": ["atk", "def"]}] }],
 		"max": false
 	},
 	"284": {
 		"name": "Pegasus Flight 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "spd", "greater", -7]], 
+			"variableEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.4, "max": 5, "debuffStats": ["atk", "def"]}] }],
 		"max": false
 	},
 	"285": {
 		"name": "Pegasus Flight 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "spd", "greater", -7]], 
+			"variableEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.5, "max": 7, "debuffStats": ["atk", "def"]}] }],
 		"max": true
 	},
 	"286": {
 		"name": "Even Pulse Tie 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "pulseTie": {"hp": 5 , "specialCharge": 2} }],
 		"max": false
 	},
 	"287": {
 		"name": "Even Pulse Tie 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "pulseTie": {"hp": 3 , "specialCharge": 2} }],
 		"max": false
 	},
 	"288": {
 		"name": "Even Pulse Tie 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "pulseTie": {"hp": 1 , "specialCharge": 2} }],
 		"max": true
 	},
 	"289": {
 		"name": "Atk/Def Ruse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 1, "def": 1}},
 		"max": false
 	},
 	"290": {
 		"name": "Atk/Def Ruse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 3, "def": 3}},
 		"max": false
 	},
 	"291": {
 		"name": "Atk/Def Ruse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-rally",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "rally", "ruse": {"atk": 5, "def": 5}},
 		"max": true
 	},
 	"292": {
 		"name": "Lull Spd/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 1, "res": 1} },
 		"max": false
 	},
 	"293": {
 		"name": "Lull Spd/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 2, "res": 2} },
 		"max": false
 	},
 	"294": {
 		"name": "Lull Spd/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"buffNeutralize": ["spd", "def"], "lull": {"spd": 3, "res": 3} },
 		"max": true
 	},
 	"295": {
 		"name": "Chill Atk/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "res"], "debuff": 3} }],
 		"max": false
 	},
 	"296": {
 		"name": "Chill Atk/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "res"], "debuff": 5} }],
 		"max": true
 	},
 	"297": {
@@ -2399,24 +2432,24 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Caeda: Princess of Talys"],
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy", "enemyhp", "greater", 1.0]], "lull": {"atk": 5, "def": 5} }],
 		"max": true
 	},
 	"298": {
 		"name": "Chill Atk/Spd 1",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "spd"], "debuff": 3} }],
 		"max": false
 	},
 	"299": {
 		"name": "Chill Atk/Spd 2",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "spd"], "debuff": 5} }],
 		"max": true
 	},
 	"300": {
@@ -2424,112 +2457,113 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Edelgard: Flame Emperor"],
-		"type": "attack-count",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["adjacent", false]], "galeforce": 1 },
+			{"type": "effect", "condition": [["adjacent", false], ["enemyInfo", "weapontype", ["beast", "breath"]] ], "double": 1 } ],
 		"max": true
 	},
 	"301": {
 		"name": "Chill Spd/Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd", "def"], "debuff": 3} }],
 		"max": false
 	},
 	"302": {
 		"name": "Chill Spd/Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd", "def"], "debuff": 5} }],
 		"max": true
 	},
 	"303": {
 		"name": "Odd Pulse Tie 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "pulseTie": {"hp": 5, "specialCharge": 2} }],
 		"max": false
 	},
 	"304": {
 		"name": "Odd Pulse Tie 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "pulseTie": {"hp": 3, "specialCharge": 2} }],
 		"max": false
 	},
 	"305": {
 		"name": "Odd Pulse Tie 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "pulseTie": {"hp": 1, "specialCharge": 2} }],
 		"max": true
 	},
 	"306": {
 		"name": "Seal Spd/Res 1",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 3, "res": 3}},
 		"max": false
 	},
 	"307": {
 		"name": "Seal Spd/Res 2",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
-		"effect": {},
+		"type": "combat-effect",
+		"effect": {"seal":{"spd": 5, "res": 5}},
 		"max": true
 	},
 	"308": {
 		"name": "Spd/Def Snag 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 2, "def": 2}, "range": 4, "from": ["assister", "assistee"]},
 		"max": false
 	},
 	"309": {
 		"name": "Spd/Def Snag 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 4, "def": 4}, "range": 4, "from": ["assister", "assistee"]},
 		"max": false
 	},
 	"310": {
 		"name": "Spd/Def Snag 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 6, "def": 6}, "range": 4, "from": ["assister", "assistee"]},
 		"max": true
 	},
 	"311": {
 		"name": "Spd/Res Snag 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 2, "res": 2}, "range": 4, "from": ["assister", "assistee"]},
 		"max": false
 	},
 	"312": {
 		"name": "Spd/Res Snag 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 4, "res": 4}, "range": 4, "from": ["assister", "assistee"]},
 		"max": false
 	},
 	"313": {
 		"name": "Spd/Res Snag 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-m-assist",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "movement", "debuff": {"spd": 6, "res": 6}, "range": 4, "from": ["assister", "assistee"]},
 		"max": true
 	},
 	"314": {
@@ -2537,72 +2571,72 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Seliph: Scion of Light"],
-		"type": "attack-priority",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["phase", "enemy" ] ], "double": 1, "desperation": 1 }],
 		"max": true
 	},
 	"315": {
 		"name": "Chill Spd/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd", "res"], "debuff": 3} }],
 		"max": false
 	},
 	"316": {
 		"name": "Chill Spd/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["spd", "res"], "debuff": 5} }],
 		"max": true
 	},
 	"317": {
 		"name": "Atk Cantrip 1",
 		"sp": 60,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"atk": 3}, "range": 4, "from": ["assister"]},
 		"max": false
 	},
 	"318": {
 		"name": "Atk Cantrip 2",
 		"sp": 120,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"atk": 5}, "range": 4, "from": ["assister"]},
 		"max": false
 	},
 	"319": {
 		"name": "Atk Cantrip 3",
 		"sp": 240,
 		"prf": false,
-		"type": "on-dance",
-		"effect": {},
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"atk": 7}, "range": 4, "from": ["assister"]},
 		"max": true
 	},
 	"320": {
 		"name": "Guard Bearing 1",
 		"sp": 60,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.7 }],
 		"max": false
 	},
 	"321": {
 		"name": "Guard Bearing 2",
 		"sp": 120,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.6 }],
 		"max": false
 	},
 	"322": {
 		"name": "Guard Bearing 3",
 		"sp": 240,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.5 }],
 		"max": true
 	}
 

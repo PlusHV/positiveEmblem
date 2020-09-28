@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
-import { doBattle, getDistance, positionToRowColumn, getDamageType, checkCondition, getDistantAllies, calculateVariableEffect, calculateVariableCombat, getConditionalSpecial} from './Battle.js';
+import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial} from './Battle.js';
 
 import './App.css';
 
@@ -61,6 +62,7 @@ class GameBoard extends React.Component{
       "weaponList": weapons["sword"],
       "selectedHeroInfo": heroData["0"], //The current hero's info
       "maxFilter": false,
+      "currentTurn": 0,
       "fortLevel": 0,
       "blessingBuffs": { //the buffs each season will give a team - one for each team
         "1": {
@@ -88,6 +90,7 @@ class GameBoard extends React.Component{
       "availableMovement": [],
       "availableAssist": [],
       "availableAttack": [],
+      "availableWarp": [],
       "draggedHero": null,
       "draggedHeroOrg": null,
       "draggedOver": null,
@@ -108,6 +111,8 @@ class GameBoard extends React.Component{
     this.onSupportLevelChange = this.onSupportLevelChange.bind(this);
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
     this.onFortLevelChange = this.onFortLevelChange.bind(this);
+    this.onTurnChange = this.onTurnChange.bind(this);
+
     this.onSeasonChange = this.onSeasonChange.bind(this);
     this.onHPChange = this.onHPChange.bind(this);
     this.onSpecialChargeChange = this.onSpecialChargeChange.bind(this);
@@ -124,6 +129,9 @@ class GameBoard extends React.Component{
     this.dragTeamMember = this.dragTeamMember.bind(this);
     this.dragOverTeamMember = this.dragOverTeamMember.bind(this);
     this.dropTeamMember = this.dropTeamMember.bind(this);
+
+    this.startTurn = this.startTurn.bind(this);
+    this.endTurn = this.endTurn.bind(this);
   } //end constructor
 
 
@@ -462,25 +470,101 @@ class GameBoard extends React.Component{
     } else if (skillDropdowns[skillType].info[id].type === "conditional-effect"){
 
       for (let x of effect){ //conditional effect list of conditional effects
-        updatedHero.conditionalEffects.push(x); //effect should contain the conditional list
-      }
-    } else if (skillDropdowns[skillType].info[id].type === "conditional-combat"){
 
-      for (let x of effect){ //conditional effect list of conditional effects
-        updatedHero.conditionalCombat.push(x); //effect should contain the conditional list
+        if (x.type === "effect"){
+          updatedHero.conditionalEffects.push(x); //effect should contain the conditional list
+        } else if (x.type === "combat"){
+          updatedHero.conditionalCombat.push(x);
+        } else if (x.type === "turnStart"){
+          updatedHero.turnStart.push(x);
+        } else if (x.type === "special"){
+          updatedHero.conditionalSpecial.push(x);
+        }
       }
-    } else if (skillDropdowns[skillType].info[id].type === "variable-stats"){
+    // } else if (skillDropdowns[skillType].info[id].type === "conditional-combat"){
 
-      updatedHero.variableStats.push(effect); //effect should contain the conditional list
+    //   for (let x of effect){ //conditional effect list of conditional effects
+    //     updatedHero.conditionalCombat.push(x); //effect should contain the conditional list
+    //   }
+    } else if (skillDropdowns[skillType].info[id].type === "variable-effect"){
+
+      for (let x of effect){
+
+        if (x.type === "variableStats"){
+          updatedHero.variableStats.push(x); //effect should contain the conditional list
+        } else if (x.type === "variableCombat"){
+          updatedHero.variableCombat.push(x);
+        } else if (x.type === "variablePreCombat"){
+          updatedHero.variablePreCombat.push(x);
+        }
+
+      }
+    // } else if (skillDropdowns[skillType].info[id].type === "variable-combat"){
+    //   updatedHero.variableCombat.push(effect);
       
     } else if (skillDropdowns[skillType].info[id].type === "combat-effect"){
 
       Object.keys(effect).forEach((key, i) => {
-        updatedHero.combatEffects[key] += effect[key];
+
+        if (key === "penaltyNeutralize"){
+
+          let neutralized = effect.penaltyNeutralize;
+
+          for (let m of neutralized){
+            updatedHero.combatEffects.penaltyNeutralize[m]++; 
+          }
+
+
+        } else if (key === "buffNeutralize"){
+
+          let neutralized = effect.buffNeutralize;
+
+          for (let m of neutralized){
+            updatedHero.combatEffects.buffNeutralize[m]++; 
+          }
+
+
+        } else if (key === "lull"){
+
+          let lullStats = effect.lull;
+          for (let m in lullStats){
+            updatedHero.combatEffects.lull[m]+= lullStats[m];
+          }
+
+        } else if (key === "seal"){
+
+
+          updatedHero.combatEffects.seal.push(effect.seal);
+          
+
+        } else if (key === "onAttack"){
+
+          updatedHero.onAttack.push(effect.onAttack);
+
+        } else {
+
+          updatedHero.combatEffects[key] += effect[key];
+        }
+
       });
-    } else if (skillDropdowns[skillType].info[id].type === "variable-combat"){
-      updatedHero.variableCombat.push(effect);
+
+    } else if (skillDropdowns[skillType].info[id].type === "warp"){
+      updatedHero.warp.push(effect);
+    } else if (skillDropdowns[skillType].info[id].type === "on-assist"){
+
+      updatedHero.onAssist.push(effect);
+    // } else if (skillDropdowns[skillType].info[id].type === "on-rally"){
+    //   updatedHero.onRally.push(effect);
+    // } else if (skillDropdowns[skillType].info[id].type === "on-dance"){
+    //   updatedHero.onDance.push(effect);
+    // } else if (skillDropdowns[skillType].info[id].type === "turn-start"){
+    //   updatedHero.turnStart.push(effect);
+    } else if (skillDropdowns[skillType].info[id].type === "battle-movement"){
+      updatedHero.battleMovement = Object.assign({}, effect);
+    } else if (skillDropdowns[skillType].info[id].type === "on-special"){
+      updatedHero.onSpecial.push(effect);
     }
+
 
 
 
@@ -555,42 +639,158 @@ class GameBoard extends React.Component{
       for (let x of effect){
         let condition = JSON.stringify(x); //the conditional in string form
 
-        let conditionIndex = updatedHero.conditionalEffects.findIndex(this.findMatchingEffect , condition);
+        if (x.type === "effect"){
+          let conditionIndex = updatedHero.conditionalEffects.findIndex(this.findMatchingEffect , condition);
 
-        updatedHero.conditionalEffects.splice(conditionIndex, 1); //remove the matched condition
-      }
-    } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional-combat"){
+          updatedHero.conditionalEffects.splice(conditionIndex, 1); //remove the matched condition
+
+        } else if (x.type === "combat"){
+          let conditionIndex = updatedHero.conditionalCombat.findIndex(this.findMatchingEffect , condition);
+
+          updatedHero.conditionalCombat.splice(conditionIndex, 1); //remove the matched condition
+
+        } else if (x.type === "turnStart"){
+
+          let conditionIndex = updatedHero.turnStart.findIndex(this.findMatchingEffect , condition);
+
+          updatedHero.turnStart.splice(conditionIndex, 1); //remove the matched variable effect
+        } else if (x.type === "special"){
+
+          let conditionIndex = updatedHero.conditionalSpecial.findIndex(this.findMatchingEffect , condition);
+
+          updatedHero.conditionalSpecial.splice(conditionIndex, 1); //remove the matched variable effect
+        }
+
+      } //end of effect
+
+
+    // } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional-combat"){
+    //   for (let x of effect){
+    //     let condition = JSON.stringify(x); //the conditional in string form
+
+    //     let conditionIndex = updatedHero.conditionalCombat.findIndex(this.findMatchingEffect , condition);
+
+    //     updatedHero.conditionalCombat.splice(conditionIndex, 1); //remove the matched condition
+    //   }
+
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-effect"){
       for (let x of effect){
-        let condition = JSON.stringify(x); //the conditional in string form
+        let variableEffect = JSON.stringify(x);
 
-        let conditionIndex = updatedHero.conditionalCombat.findIndex(this.findMatchingEffect , condition);
+        if (x.type === "variableStats"){
+          let variableIndex = updatedHero.variableStats.findIndex(this.findMatchingEffect , variableEffect);
+          updatedHero.variableStats.splice(variableIndex, 1); //remove the matched variable effect
 
-        updatedHero.conditionalCombat.splice(conditionIndex, 1); //remove the matched condition
+        } else if (x.type === "variableCombat"){
+
+          let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
+          updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
+
+
+        } else if (x.type === "variablePreCombat"){
+          let variableIndex = updatedHero.variablePreCombat.findIndex(this.findMatchingEffect , variableEffect);
+          updatedHero.variablePreCombat.splice(variableIndex, 1); //remove the matched variable effect
+
+        }
       }
 
-    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-stats"){
 
-      let variableEffect = JSON.stringify(effect); //the variable effect in string form
+    // } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-combat"){
 
-      let variableIndex = updatedHero.variableStats.findIndex(this.findMatchingEffect , variableEffect);
+    //   let variableEffect = JSON.stringify(effect); //the variable effect in string form
 
-      updatedHero.variableStats.splice(variableIndex, 1); //remove the matched variable effect
+    //   let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
+
+    //   updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
       
 
     } else if (this.state.skillDropdowns[skillType].info[id].type === "combat-effect"){
 
       Object.keys(effect).forEach((key, i) => {
-        updatedHero.combatEffects[key] -= effect[key];
+
+
+
+        if (key === "penaltyNeutralize"){
+
+          let neutralized = effect.penaltyNeutralize;
+
+          for (let m of neutralized){
+            updatedHero.combatEffects.penaltyNeutralize[m]--; 
+          }
+
+
+        } else if (key === "buffNeutralize"){
+
+          let neutralized = effect.buffNeutralize;
+
+          for (let m of neutralized){
+            updatedHero.combatEffects.buffNeutralize[m]--; 
+          }
+
+        } else if (key === "lull"){
+
+          let lullStats = effect.lull;
+          for (let m in lullStats){
+            updatedHero.combatEffects.lull[m]-= lullStats[m];
+          }
+
+        } else if (key === "seal"){
+
+          let sealEffect = JSON.stringify(effect.seal);
+
+          let sealIndex = updatedHero.combatEffects.seal.findIndex(this.findMatchingEffect, sealEffect);
+          updatedHero.combatEffects.seal.splice(sealIndex, 1);
+
+        } else if (key === "onAttack"){
+
+          let attackEffect = JSON.stringify(effect.onAttack); //the variable effect in string form
+
+          let effectIndex = updatedHero.onAttack.findIndex(this.findMatchingEffect, attackEffect);
+
+          updatedHero.onAttack.splice(effectIndex, 1); //remove the matched variable effect
+
+        } else {
+        
+
+          updatedHero.combatEffects[key] -= effect[key];
+        }
       });
 
-    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-combat"){
 
-      let variableEffect = JSON.stringify(effect); //the variable effect in string form
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "warp"){
 
-      let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
+      let warpEffect = JSON.stringify(effect); //the variable effect in string form
 
-      updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
+      let warpIndex = updatedHero.warp.findIndex(this.findMatchingEffect , warpEffect);
+
+      updatedHero.warp.splice(warpIndex, 1); //remove the matched variable effect
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "on-assist"){
+
+      let assistEffect = JSON.stringify(effect); //the variable effect in string form
+
+      let assistIndex = updatedHero.onAssist.findIndex(this.findMatchingEffect , assistEffect);
+
+      updatedHero.onAssist.splice(assistIndex, 1); //remove the matched variable effect
+
+    // } else if (this.state.skillDropdowns[skillType].info[id].type === "turn-start"){
+
+    //   let assistEffect = JSON.stringify(effect); //the variable effect in string form
+
+    //   let assistIndex = updatedHero.turnStart.findIndex(this.findMatchingEffect , assistEffect);
+
+    //   updatedHero.turnStart.splice(assistIndex, 1); //remove the matched variable effect
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "battle-movement"){
+      updatedHero.battleMovement = {};
+    } else if (this.state.skillDropdowns[skillType].info[id].type === "on-special"){
+
+      let specialEffect = JSON.stringify(effect); //the variable effect in string form
+
+      let onSpecialIndex = updatedHero.onSpecial.findIndex(this.findMatchingEffect , specialEffect);
+
+      updatedHero.onSpecial.splice(onSpecialIndex, 1); //remove the matched variable effect
     }
+
+
 
     if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of this.state.skillDropdowns[skillType].info[id].skills) {
@@ -777,6 +977,13 @@ class GameBoard extends React.Component{
 
   }
 
+  onTurnChange(e){
+
+    this.setState({currentTurn: Number(e.target.value)  }); 
+
+
+  }
+
   onSeasonChange(e, type){
     var temp = this.state.season;
     temp[type] = e.target.value;
@@ -907,13 +1114,16 @@ class GameBoard extends React.Component{
 
 
     let pos = dragData.position;
+
+    //these lists contain positions that have those actions available
     let movementList = [];
     let assistList = [];
     let attackList = [];
+    let warpList = []; //contains positions that can be warped to
 
 
     for (let i = 0; i < 48; i++) { //rows
-      if (getDistance(pos, i) <= move && this.props.G.cells[i] == null ){
+      if (getDistance(pos, i) <= move && this.props.G.cells[i] === null ){
         movementList.push(i);
       } else if (this.props.G.cells[i] !== null && dragData.position !== i){ //if there is a hero and is not themselves
         if (getDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
@@ -923,9 +1133,26 @@ class GameBoard extends React.Component{
       }
     }
 
+    let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to
+
+
+      //get adjacent
+    let warpSpaces = this.getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
+
+    //adds the warp spaces that are empty to the warp list 
+    for (let x of warpSpaces){
+
+      if (this.props.G.cells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
+        warpList.push(x);
+      }
+
+    }
+
+
 
     this.setState({draggedHero: dragData});
     this.setState({draggedHeroOrg: Object.assign({}, dragData) });
+    this.setState({availableWarp: warpList});
     this.setState({availableMovement: movementList});
     this.setState({availableAssist: assistList});
     this.setState({availableAttack: attackList});
@@ -933,6 +1160,123 @@ class GameBoard extends React.Component{
 
 
   }
+
+
+  getAdjacentSpaces(warpPositions){
+
+    let spaces = [];
+
+    for (let x of warpPositions){
+
+      //left
+      if ( (x % 6) - 1 >= 0 && !spaces.includes(x - 1) ){ //get the column number and check if it is not the left-most column
+        spaces.push(x - 1);
+      }
+      //right
+      if ( (x % 6) + 1 <= 5 && !spaces.includes(x + 1) ){ //get the column number and check if it is not the right-most column
+        spaces.push(x + 1);
+      }
+      //up
+      if ( (x / 6) - 1 >= 0 && !spaces.includes(x -6) ){ //get the row number and check if it is not the top-most column
+        spaces.push(x - 6);
+      }
+      //down
+      if ( (x / 6) + 1 <= 7 && !spaces.includes(x + 6) ){ //get the row number and check if it is not the bottom-most column
+        spaces.push(x + 6);
+      }
+    }
+    return spaces;
+
+
+
+  }
+
+    //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+  getWarpTargets(allyList, owner ){
+    let warpTargets = [];
+
+
+    let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+    for (let x in allyList){
+      if (allyList[x].position >= 0 && allyList[x].currentHP > 0){
+        allyListValid.push(allyList[x]);
+      }
+    } 
+
+
+    for (let x of owner.warp){ //loop through all warp effects
+
+      if (x !== null){
+
+        if ( !("condition" in x) || ( "condition" in x && checkCondition(this.state.heroList, x.condition, owner, owner)) ){//first check if they meet condition to get warp effect
+
+          let allyReq = x.allyReq;
+
+          if (allyReq.type === "all"){
+            for (let y of allyListValid){
+
+              if (!warpTargets.includes(y.position)){ 
+                warpTargets.push(y.position);
+              }
+
+
+            }
+
+
+          } else if (allyReq.type === "allyInfo"){ //requires ally to have certain attributes (e.g. movetype, weapontype etc)
+
+            let alliesInRange = getDistantHeroes(allyListValid, owner.position, [], x.range);
+
+            for (let y of alliesInRange){ //loop through allies in range
+              let info = heroData[y.heroID.value];
+
+              if (allyReq.req.includes(info[allyReq.key]) && !warpTargets.includes(y.position) ){ //if ally meets the requirement and is not in the list already
+                warpTargets.push(y.position);
+
+              }
+            } //end loop allies
+
+
+          } else if (allyReq.type === "allyHP"){
+            for (let y of allyListValid){
+              let hpThreshold = Math.trunc(allyReq.req * y.stats.hp);
+
+              if (allyReq.factor === "greater" && y.currentHP >= hpThreshold && !warpTargets.includes(y.position)){
+                warpTargets.push(y.position);
+              } else if (allyReq.factor === "less" && y.currentHP <= hpThreshold && !warpTargets.includes(y.position)){
+                warpTargets.push(y.position);
+              }
+
+            }
+          } else if (allyReq.type === "allyRange"){ //requires ally to have certain attributes (e.g. movetype, weapontype etc)
+
+            let alliesInRange = getDistantHeroes(allyListValid, owner.position, [], x.range);
+
+            for (let y of alliesInRange){ //loop through allies in range
+
+              warpTargets.push(y.position);
+
+            
+            } //end loop allies
+
+
+          }
+
+
+
+        } //heroList, condition, owner, enemy
+
+
+
+      } //if no warp effects, then no targets 
+
+    } //end loop through effect
+
+    return warpTargets;
+
+  }
+
+
   dragOverBoard(ev){
     ev.preventDefault();
 
@@ -977,22 +1321,93 @@ class GameBoard extends React.Component{
 
           ///// special trigger effects
           //check 
-          let oldSpecialTrigger =  Object.assign({}, draggedHero.combatEffects.specialTrigger); //get copy of the special trigger effects
+          //let oldSpecialTrigger =  Object.assign({}, draggedHero.combatEffects.specialTrigger); //get copy of the special trigger effects
+
+          
+          this.getVariablePreCombat(draggedHero, draggedOverHero);
+          this.getVariablePreCombat(draggedOverHero, draggedHero);
+
+          let onSpecialDamage = 0;
+          let trueDamage = 0;
+
+          for (let i of draggedHero.onSpecial){ //loop through each on move assist effect on the assister
+            if (i !== null){
+
+              for (let j in i){ //    "effect": {"cdTrigger": 1, "damage": ["defender", "def", 0.5, "trueDamage"]},
+                if (j === "damage"){
+                  //let onSpecialDamage = i.damage;
+
+                  let sHero;
+
+                  if (i.damage[0] === "attacker"){
+                    sHero = draggedHero;
+                  } else if (i.damage[0] === "defender"){
+                    sHero = draggedOverHero;
+                  }
+
+
+                  let sStat = i.damage[1];
+                  if (sStat === "defensive"){
+                    sStat = damageType;
+                  }
+
+
+                  let sFactor = i.damage[2];
+
+                  if ("condition" in i && checkCondition(this.state.heroList, i.condition, draggedHero, draggedOverHero, this.state.currentTurn) ){
+
+                    sFactor = i["alt"];
+
+                  }
+
+                  let extraDamage = 0;
+
+                  if (sStat === "flat"){
+                    extraDamage+= sFactor; //special damage is flat
+                  } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
+                    extraDamage+= Math.trunc( (draggedHero.stats.hp - draggedHero.currentHP) * sFactor);
+
+
+                  } else{
+                    extraDamage+= Math.trunc(sHero.visibleStats[sStat] * sFactor);
+                  }
+
+                  if (i.damage[3] === "trueDamage"){
+                    trueDamage+= extraDamage;
+                  } else if (i.damage[3] === "specialDamage" ){
+                    onSpecialDamage+= extraDamage
+                  }
+
+
+                } //end for damage
+              } //end for i
+
+
+
+            }
+
+          } //end for onSpecial
 
           getConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList);
 
-          let trueDamage = draggedHero.combatEffects.specialTrigger.trueDamage; 
-          draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
+          trueDamage+= draggedHero.combatEffects.specialTrueDamage; 
+          //draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
 
           //////
+          let damageReduction = draggedOverHero.combatEffects.preBattleReduction;
 
+//totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction ) - flatReduction;
+          preBattleDamage = Math.trunc(  (draggedHero.visibleStats.atk - draggedOverHero.visibleStats[damageType]) * draggedHero.special.effect.factor) + onSpecialDamage + trueDamage;
 
-          preBattleDamage =  Math.trunc(draggedHero.visibleStats.atk * draggedHero.special.effect.factor) - draggedOverHero.visibleStats[damageType] + trueDamage ;
+          preBattleDamage = preBattleDamage - Math.trunc( preBattleDamage - preBattleDamage * damageReduction );
+
+          //remove any effects from conditional specials (before any changes to the dragged hero is applied so that the same conditions pass)
+          removeConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList);
 
           draggedOverHero.currentHP = Math.max(1, draggedOverHero.currentHP - preBattleDamage); 
 
           draggedHero.special.charge = draggedHero.special.cd;
-
+          draggedHero.specialActivated = true;
 
         } 
 
@@ -1026,8 +1441,6 @@ class GameBoard extends React.Component{
         this.getVariableCombat(draggedHero, draggedOverHero);
         this.getVariableCombat(draggedOverHero, draggedHero);
 
-
-
         this.setState({draggedHero: draggedHero});
         this.setState({draggedOverOriginalHP: orgHP});
         this.setState({preBattleDamage: preBattleDamage});
@@ -1052,10 +1465,10 @@ class GameBoard extends React.Component{
     //Conditionals
     for (let x of owner.conditionalCombat){
 
-      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
 
         for (let y in x){ //loop through 
-          if (y !== "condition"){ //everything else should be combat effects
+          if (y !== "condition" && y !== "type"){ //everything else should be combat effects
             owner.combatEffects[y]+= x[y]; 
           }
 
@@ -1075,7 +1488,7 @@ class GameBoard extends React.Component{
     //Conditionals
     for (let x of owner.conditionalEffects){
 
-      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
 
         for (let y in x){ //loop through 
 
@@ -1092,7 +1505,7 @@ class GameBoard extends React.Component{
             let neutralized = x.penaltyNeutralize;
 
             for (let i of neutralized){
-              owner.combatEffects.penaltyNeutralize[i] = true; 
+              owner.combatEffects.penaltyNeutralize[i]++; 
             }
 
 
@@ -1101,11 +1514,43 @@ class GameBoard extends React.Component{
             let neutralized = x.buffNeutralize;
 
             for (let i of neutralized){
-              owner.combatEffects.buffNeutralize[i] = true; 
+              owner.combatEffects.buffNeutralize[i]++; 
             }
 
 
-          } else if (y !== "condition"){ //everything else should be combat effects
+          } else if (y === "lull"){
+
+            let lullStats = x.lull;
+            for (let i in lullStats){
+              owner.combatEffects.lull[i]+= lullStats[i];
+            }
+
+          } else if (y === "onAttack"){
+
+            for (let i in x.onAttack){
+              owner.combatEffects[i]+= x.onAttack[i]; // onAttack should only give onAttack combat effects
+            }
+          
+          } else if (y === "variableEffect"){
+
+            for (let i of x.variableEffect){
+              if (i.type === "variableStats"){
+                owner.variableStats.push(i); //effect should contain the conditional list
+              } else if (i.type === "variableCombat"){
+                owner.variableCombat.push(i);
+              } else if (i.type === "variablePreCombat"){
+                owner.variablePreCombat.push(i);
+              }
+
+
+
+            }
+
+          } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(y) ){
+            owner.combatEffects[y]*= x[y];
+
+
+          } else if (y !== "condition" && y !== "type"){ //everything else should be combat effects
             owner.combatEffects[y]+= x[y]; 
           }
 
@@ -1145,19 +1590,72 @@ class GameBoard extends React.Component{
 
 
         let effectList = calculateVariableCombat(this.state.heroList, x, owner, enemy);
-        Object.keys(effectList).forEach((key, i) => {
+
+        for (let key in effectList){
+          
+          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(key) ){
+
+            owner.combatEffects[key]*= effectList[key];
+
+
+          } else if (key === "lull"){
+
+            let lullStats = effectList.lull;
+            for (let i in lullStats){
+              owner.combatEffects.lull[i]+= lullStats[i];
+            }
+
+
+
+          } else {
+
+          
           owner.combatEffects[key]+= effectList[key];
-        });
+          
+          }
+
+        }
+        //});
 
       } //end if condition true
 
     } //end for 
   }
 
+  getVariablePreCombat(owner, enemy){
+
+    for (let x of owner.variablePreCombat){
+
+      if (x !== null ){ //if condition is true, then provide the rest of the effects
+
+
+        let effectList = calculateVariableCombat(this.state.heroList, x, owner, enemy);
+        //Object.keys(effectList).forEach((key, i) => {
+        for (let key in effectList){
+          
+          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(key) ){
+
+            owner.combatEffects[key]*= effectList[key];
+
+          } else {
+
+          
+          owner.combatEffects[key]+= effectList[key];
+          
+          }
+
+        }
+        //});
+
+      } //end if condition true
+
+    } //end for 
+  }
 
   dragEnd(ev){
     ev.dataTransfer.clearData();
     this.setState({availableMovement: []});
+    this.setState({availableWarp: []});
     this.setState({availableAssist: []});
     this.setState({availableAttack: []});
 
@@ -1208,7 +1706,7 @@ class GameBoard extends React.Component{
       //todo initiate battle if in proper range and it is opposite side as dragged
 
       //todo use assist skills if in proper range and it is on same side
-      let tempOrg = temp;
+      //let tempOrg = temp;
 
 
       //if (this.CheckAdjacent(dragData.position, this.props.G.cells[dropPosition].position )){
@@ -1217,12 +1715,15 @@ class GameBoard extends React.Component{
 
 
         if (dragData.assist.type === "movement"){
+
+          let orgAssisterPos = temp[dragSide][dragIndex].position;
+          let orgAssisteePos = temp[dropSide][dropIndex].position;
           temp = this.applyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
 
 
           //clear initial positions of assister/assistee
-          this.props.G.cells[tempOrg[dragSide][dragIndex].position] = null;
-          this.props.G.cells[dropPosition] = null;
+          this.props.G.cells[orgAssisterPos] = null;
+          this.props.G.cells[orgAssisteePos] = null;
 
           //move the assistee/assister to their new positions 
           this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
@@ -1244,9 +1745,19 @@ class GameBoard extends React.Component{
 
       //Check if in range for attack and if they are on the same side
       } else if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
+        let orgAttackerPos = temp[dragSide][dragIndex].position;
+        let orgDefenderPos = temp[dropSide][dropIndex].position;
 
         //temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
-        temp = doBattle(temp, dragData, this.state.draggedOver);
+        temp = doBattle(temp, dragData, this.state.draggedOver, this.props.G.cells);
+
+        //clear initial positions of assister/assistee
+        this.props.G.cells[orgAttackerPos] = null;
+        this.props.G.cells[orgDefenderPos] = null;
+
+        //move the assistee/assister to their new positions 
+        this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+        this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
 
       }
 
@@ -1371,52 +1882,174 @@ class GameBoard extends React.Component{
   applyMovementAssist(updatedHeroList, assister, assistee, effect){
 
     let list = updatedHeroList;
-    let assisterPos = positionToRowColumn(assister.position);
-    let assisteePos = positionToRowColumn(assistee.position);
 
-    let participantIDs = [assister.id, assistee.id];
- 
-    if (assisterPos[0] === assisteePos[0]){ //same row, move along the row so change column
-
-      let factor = assisteePos[1] - assisterPos[1];
-
-      assisterPos[1]+= factor * effect.assister;
-
-      assisteePos[1]+= factor * effect.assistee;
-    } else if (assisterPos[1] === assisteePos[1]){ //same column, move along the column, so change row
-
-      let factor = assisteePos[0] - assisterPos[0];
-      assisterPos[0]+= factor * effect.assister;
-      assisteePos[0]+= factor * effect.assistee;
-
-    }
-
-    let newAssisterPos = this.rowColumnToPosition(assisterPos);
-    let newAssisteePos = this.rowColumnToPosition(assisteePos);
-
-    //TODO - needs to make sure space is not occupied by someone else too
-    if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
-      || assisterPos[0] > 7 || assisterPos[0] < 0 || assisteePos[0] > 7 || assisteePos[0] < 0) { //row out of bounds
+    let participantIDs = [assister.id, assistee.id]; //their ids (to uniquely identify them)
+    //original location of both heroes
+    // let assisterPos = positionToRowColumn(assister.position);
+    // let assisteePos = positionToRowColumn(assistee.position);
 
 
-      return updatedHeroList; //return original list
+    //Calculate row column positions from assist
+    let newPositions = calculateMovementEffect(assister, assistee, effect);
 
-    } else if (this.props.G.cells[newAssisteePos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisteePos].id) ){ //new assistee position is occupied by other hero
-      return updatedHeroList;
+    let assisterPos = newPositions.owner;
+    let assisteePos = newPositions.other;
+    let assisteeAlt = newPositions.otherAlt;
+    
 
-    } else if (this.props.G.cells[newAssisterPos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisterPos].id) ){ //new assister position is occupied by other hero
-      return updatedHeroList;
+    //convert back to positions
+    let newAssisterPos = rowColumnToPosition(newPositions.owner);
+    let newAssisteePos = rowColumnToPosition(newPositions.other);
 
-    } else{
+    //The above values can still be invalid if out of bounds
+    //Battle does not have access to the board, but does it need it?
+
+
+    // if (assisterPos[1] > 5 || assisterPos[1] < 0 || assisteePos[1] > 5 || assisteePos[1] < 0 //column out of bounds
+    //   || assisterPos[0] > 7 || assisterPos[0] < 0 || assisteePos[0] > 7 || assisteePos[0] < 0) { //row out of bounds
+
+
+    //   return updatedHeroList; //return original list
+
+    // } else if (this.props.G.cells[newAssisteePos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisteePos].id) ){ //new assistee position is occupied by other hero
+    //   return updatedHeroList;
+
+    // } else if (this.props.G.cells[newAssisterPos] !== null &&  !participantIDs.includes(this.props.G.cells[newAssisterPos].id) ){ //new assister position is occupied by other hero
+    //   return updatedHeroList;
+
+    if (checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, this.props.G.cells) || checkValidMovement(assisterPos, assisteeAlt, [-1, -1], participantIDs, this.props.G.cells)  ){ //no issues with given movement positions
+
+      if (!checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, this.props.G.cells)) { //if only alt space was balid
+        newAssisteePos = rowColumnToPosition(assisteeAlt); //use the alt position
+      } 
 
       list[assister.side][assister.listIndex].position = newAssisterPos;
       list[assistee.side][assistee.listIndex].position = newAssisteePos;
 
+
+      for (let i of assister.onAssist){ //loop through each on move assist effect on the assister
+        if (i !== null && i["type"] === "movement"){
+
+          for (let j in i){ //
+            if (j === "buff"){
+
+              let buffs = i.buff;
+              for (let key in buffs){
+              
+                assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
+                assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
+              }
+
+
+            } else if (j === "debuff"){
+
+              let range = i.range;
+              let debuff = i.debuff;
+
+              let heroesInRange = [];
+
+
+              if (i["from"].includes("assister") ){
+                heroesInRange = getDistantHeroes(updatedHeroList[this.getEnemySide(assister.side)], newAssisterPos, [], range);
+              }
+
+              if (i["from"].includes("assistee") ){
+                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[this.getEnemySide(assistee.side)], newAssisteePos, [], range)); 
+              }
+             
+              
+              
+              //loop through heroes
+              for (let hero of heroesInRange){
+
+                //loop through debuff values
+                for (let key in debuff){
+
+                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
+
+                }
+
+              } //end hero in range
+
+
+            }
+
+          }
+
+
+
+        }
+
+      } //end for assister moveAssist
+
+      for (let i of assistee.onAssist){ //loop through each on move assist effect on the assistee
+        if (i !== null && i["type"] === "movement"){
+
+
+          for (let j in i){ //
+            if (j === "buff"){
+
+              let buffs = i.buff;
+              for (let key in buffs){
+                assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
+                assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
+              }
+
+
+            } else if (j === "debuff"){
+
+              let range = i.range;
+              let debuff = i.debuff;
+
+
+              let heroesInRange = [];
+
+
+              if (i["from"].includes("assister") ){
+                heroesInRange = getDistantHeroes(updatedHeroList[this.getEnemySide(assister.side)], newAssisterPos, [], range);
+              }
+
+              if (i["from"].includes("assistee") ){
+                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[this.getEnemySide(assistee.side)], newAssisteePos, [], range)); 
+              }
+             
+              
+              //loop through heroes
+              for (let hero of heroesInRange){
+
+                //loop through debuff values
+                for (let key in debuff){
+
+                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
+
+                }
+
+              } //end hero in range
+
+
+            }
+
+          }
+
+
+
+        }
+
+      } //end for assistee moveAssist
+
+      list[assister.side][assister.listIndex].buff = assister.buff;
+      list[assistee.side][assistee.listIndex].buff = assistee.buff;
+
+      return list;
+
+    } else {
       return list;
     }
 
 
   }
+
+
 
   applyRallyAssist(updatedHeroList, assister, assistee, effect){
     //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
@@ -1449,7 +2082,7 @@ class GameBoard extends React.Component{
 
     //apply the rally to 
     if (aoe){
-      let inRangeAllies = getDistantAllies(list[assistee.side.toString()], [assistee.position], assister.position, 2);
+      let inRangeAllies = getDistantHeroes(list[assistee.side.toString()], [assistee.position], [assister.position], 2);
 
       //apply buff to all allies in range
       for (let x of inRangeAllies){
@@ -1463,9 +2096,207 @@ class GameBoard extends React.Component{
 
     }
 
+      for (let i of assister.onAssist){ //loop through each on rally effect on the assister
+        if (i !== null && i["type"] === "rally"){
+
+          for (let j in i){ //
+            if (j === "feint"){
+
+              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, []); //cardinal hero positions in relation to assister
+
+              for (let k of cardinalHeroes){ //apply
+                let side = this.props.G.cells[k].side;
+                let index = this.props.G.cells[k].listIndex;
+
+                if (side !== assister.side){ //if on enemy team apply debuffs
+                  let debuffs = i.feint;
+
+                  for (let l in debuffs) {
+                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+                  }
+
+
+                }
+
+
+              } //end apply for each cardinal hero
+
+
+
+
+            } else if (j === "ruse"){
+
+              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
+
+              cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
+
+              for (let k of cardinalHeroes){ //apply
+                let side = this.props.G.cells[k].side;
+                let index = this.props.G.cells[k].listIndex;
+
+                if (side !== assister.side){ //if on enemy team apply debuffs
+                  let debuffs = i.ruse;
+
+                  list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
+
+
+                  for (let l in debuffs) {
+                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+                  }
+
+
+                }
+
+
+              }
+
+
+
+
+            }
+
+
+          } //end j loop
+
+
+
+        }
+
+      } //end for assister onRally
+
+      for (let i of assistee.onAssist){ //loop through each on rally effect on the assistee
+        if (i !== null && i["type"] === "rally"){
+
+
+          for (let j in i){ //
+            if (j === "feint"){
+
+              let cardinalHeroes = this.getCardinalHeroPositions(assistee.position, []); //cardinal hero positions in relation to assister
+
+              for (let k of cardinalHeroes){ //apply
+                let side = this.props.G.cells[k].side;
+                let index = this.props.G.cells[k].listIndex;
+
+                if (side !== assistee.side){ //if on enemy team apply debuffs
+                  let debuffs = i.feint;
+
+                  for (let l in debuffs) {
+                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+                  }
+
+
+                }
+
+
+              }
+
+
+
+
+            } else if (j === "ruse"){
+
+              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
+
+              cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
+
+              for (let k of cardinalHeroes){ //apply
+                let side = this.props.G.cells[k].side;
+                let index = this.props.G.cells[k].listIndex;
+
+                if (side !== assister.side){ //if on enemy team apply debuffs
+                  let debuffs = i.ruse;
+
+                  list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
+
+
+                  for (let l in debuffs) {
+                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+                  }
+
+
+                }
+
+
+              }
+
+
+
+
+            }
+          } //enfr for j
+
+
+
+        }
+
+      } //end for assistee onRally
+
+
     list[assistee.side][assistee.listIndex] = assistee;
 
     return list;
+
+
+  }
+
+
+  getCardinalHeroPositions(position, excluded){
+
+    let cardinalList = [];
+
+    let col = position; //start from position
+
+
+    //checking west
+    while ( (col % 6) - 1 >= 0){ //get col and reduce by and 
+      col--;
+      if (this.props.G.cells[col] !== null && !excluded.includes(this.props.G.cells[col].position) ){ //if a hero is in that space
+        cardinalList.push(col);
+      }
+
+    }
+
+    col = position;
+    //checking east
+    while ( (col % 6) + 1 <= 5){ //get col and reduce by and 
+      col++;
+      if (this.props.G.cells[col] !== null && !excluded.includes(this.props.G.cells[col].position) ){ //if a hero is in that space
+        cardinalList.push(col);
+      }
+
+    }
+
+
+    let row = position;
+
+    //checking north
+    while ( (row / 6) - 1 >= 0){ //get col and reduce by and 
+      row+= -6;
+
+      if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
+        cardinalList.push(row);
+      }
+
+    }
+
+    row = position;
+    //checking south
+    while ( (row / 6) + 1 <= 7){ //get col and reduce by and 
+      row+= 6;
+
+      if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
+        cardinalList.push(row);
+      }
+
+    }
+    //get left to right spaces
+
+    return cardinalList;
+
 
 
   }
@@ -1523,6 +2354,10 @@ class GameBoard extends React.Component{
   applyHealAssist(updatedHeroList, assister, assistee, effect){
     let list = updatedHeroList;
 
+    if (assistee.currentHP === assistee.stats.hp){ //full hp, assist does not go through
+      return list;
+    }
+
     let newAssisterHP = assister.currentHP;
     let newAssisteeHP = assistee.currentHP;
 
@@ -1550,9 +2385,12 @@ class GameBoard extends React.Component{
     assisteeHeal = Math.max(min, healCalc); //Get the highest of the two
     assisterHeal = selfHeal;
 
-
+    // 20 /41 -> qualifies 
+    // 40- 40
     if (effect.mod2 === "rehab"){ //rehab's bonus is applied after the maximum is found
-      assisteeHeal += assistee.stats.hp - (2 * assistee.currentHP);
+      if (assistee.currentHP <= Math.trunc(assistee.stats.hp) * 0.5 ){ //hp must be <= 50%
+        assisteeHeal += assistee.stats.hp - (2 * assistee.currentHP);
+      }
     }
 
     let assisterSpecial = assister.special;
@@ -1604,9 +2442,35 @@ class GameBoard extends React.Component{
       }
     }
 
+    //cut off healing  from going over max hp
+    if (assistee.currentHP + assisteeHeal > assistee.stats.hp){
+      assisteeHeal = assistee.stats.hp - assistee.currentHP;
+    }
+
+    for (let i of assister.onAssist){ //loop through each dance effect
+      if (i !== null && i["type"] === "heal"){
+
+        for (let j in i){ //
+          if (j === "selfHeal"){
+            assisterHeal+= Math.trunc(i[j] * assisteeHeal); //live to serve effect (heal assister according to the assistee's heal)
+
+          }
+        }
+
+
+
+      }
+
+    } //end for assister heal assist
+
+    //cut off healing  from going over max hp
+    if (assister.currentHP + assisterHeal > assister.stats.hp){
+      assisterHeal = assister.stats.hp - assister.currentHP;
+    }
+
     //set new HP values - Keep hp below max;
-    newAssisteeHP = Math.min(assistee.stats.hp, assistee.currentHP + assisteeHeal);
-    newAssisterHP = Math.min(assister.stats.hp, assister.currentHP + assisterHeal);
+    newAssisteeHP = assistee.currentHP + assisteeHeal;
+    newAssisterHP = assister.currentHP + assisterHeal;
     
     
    
@@ -1624,9 +2488,62 @@ class GameBoard extends React.Component{
 
     if (assistee.end === true){
       list[assistee.side][assistee.listIndex].end = false;
+    } else {
+      return list;
     }
 
     
+    for (let i of assister.onAssist){ //loop through each dance effect
+      if (i !== null && i["type"] === "dance"){
+
+        for (let j in i){ //
+          if (j === "buff"){
+
+            let buffs = i.buff;
+            Object.keys(buffs).forEach((key, i) => {
+
+              assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); //apply buff to assistee
+            });
+
+
+          } else if (j === "debuff"){
+
+              let range = i.range;
+              let debuff = i.debuff;
+
+              let heroesInRange = [];
+
+
+              if (i["from"].includes("assister") ){
+                heroesInRange = getDistantHeroes(updatedHeroList[this.getEnemySide(assister.side)], assister.position, [], range);
+              }
+
+              if (i["from"].includes("assistee") ){
+                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[this.getEnemySide(assistee.side)], assistee.position, [], range)); 
+              }
+
+              
+              //loop through heroes
+              for (let hero of heroesInRange){
+
+                //loop through debuff values
+                for (let key in debuff){
+
+                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
+
+                }
+
+              } //end hero in range
+
+
+            }
+        }
+
+
+
+      }
+
+    } //end for assister dance assist
 
     return list;
 
@@ -1658,9 +2575,7 @@ class GameBoard extends React.Component{
 
 
 
-  rowColumnToPosition(rc){
-    return rc[0] * 6 + rc[1];
-  }
+
 
   //When max HP is changed, adjust current HP the same amount. Do not bring it below 0 though
   adjustHP(oldMax, updatedHero){
@@ -1684,6 +2599,215 @@ class GameBoard extends React.Component{
       return 1;
     else
       return 0;
+  }
+
+  getEnemySide(side){
+
+    if (side === "1"){
+      return "2";
+    } else {
+      return "1";
+    }
+  }
+
+  startTurn(){
+    let side = this.state.playerSide;
+    let tempList = this.state.heroList;
+
+    let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference
+
+    let enemySide = this.getEnemySide(side);
+
+
+
+    for (let i of this.state.heroList[side]){ //loop through each hero
+
+
+      for (let j of i.turnStart){ //loop through each turnstart abilities
+        if (j === null || j === undefined) {continue;}
+
+        if ( "condition" in j && !checkCondition(heroList, j.condition, i, i, this.state.currentTurn) ){ //check if condition has not been met skip
+          continue;
+        }
+
+        for (let k in j){
+          if (k === "chill"){
+
+            let stats = j[k].stats;
+            let debuff = j[k].debuff;
+
+            let debuffList = [];
+            let max = 0;
+
+            for (let m of heroList[enemySide]){ //loop through enemy team
+              let sum = 0;
+
+              for (let n of stats){ //go through the stat list and get the summed value
+                sum+= m.visibleStats[n];
+              }
+
+              if (sum === max){ // add to list of heroes to debuff
+                debuffList.push(m.listIndex);
+              } else if (sum > max && m.position >= 0){ //sum is greater than current, clear list and add
+                debuffList = [];
+                debuffList.push(m.listIndex); 
+                max = sum;
+              }
+
+
+            } //end loop enemy team
+            for (let m of debuffList){ //apply for each hero that have the highest sums
+              for (let n of stats){ //apply for each applicable stat
+                tempList[enemySide][m].debuff[n] = Math.max(tempList[enemySide][m].debuff[n], debuff); 
+              }
+
+            }
+
+
+          } //end chill
+          else if (k === "niflSeal"){ //nifl seal - check for lowest of a stat, then apply debuffs to that target (not neccessarily in same stat). Temp name for now
+
+            let checkStats = j[k].checkStats;
+            let debuff = j[k].debuff;
+            let debuffStats = j[k].debuffStats;
+
+            let debuffList = [];
+            let min = 999;
+
+            for (let m of heroList[enemySide]){ //loop through enemy team
+              let sum = 0;
+
+              for (let n of checkStats){ //go through the stat list and get the summed value
+                sum+= m.visibleStats[n];
+              }
+
+              if (sum === min){ // add to list of heroes to debuff
+                debuffList.push(m.listIndex);
+              } else if (sum < min && m.position >= 0){ //sum is less than current, clear list and add
+                debuffList = [];
+                debuffList.push(m.listIndex); 
+                min = sum;
+              }
+
+
+            } //end loop enemy team
+            for (let m of debuffList){ //apply for each hero that have the highest sums
+              for (let n of debuffStats){ //apply for each applicable stat
+                tempList[enemySide][m].debuff[n] = Math.max(tempList[enemySide][m].debuff[n], debuff); 
+              }
+
+            }
+
+          } else if (k === "renewal"){
+
+            tempList[side][i.listIndex].currentHP = Math.min(tempList[side][i.listIndex].currentHP + j[k],  tempList[side][i.listIndex].stats.hp);
+
+
+          } else if (k === "specialCount"){
+
+            tempList[side][i.listIndex].special.charge = Math.max(tempList[side][i.listIndex].special.charge - j[k],  0); //reduce special charge by 1
+          } else if (k === "sabotage"){
+            let checkStat = j.sabotage.checkStats;
+            let checkValue = i.visibleStats[checkStat] + j.sabotage.mod; //value to check against
+            let debuffStats = j.sabotage.debuffStats; //stats to debuff
+            let debuff = j.sabotage.debuff; //how much to debuff stats
+
+            if (checkStat === "hp"){
+              checkValue = i.currentHP + j.sabotage.mod; 
+            }
+
+            let debuffList = [];
+            for (let m of heroList[enemySide]){
+              let enemyCheck = -1;
+              if (checkStat === "hp"){
+                enemyCheck = m.currentHP;
+              } else {
+                enemyCheck = m.visibleStats[checkStat];
+              }
+
+              if (enemyCheck <= checkValue && getDistantHeroes(heroList[enemySide], m.position, [], 1).length > 0 ){ //check if enemy fails stat check and is beside their ally
+                debuffList.push(m.listIndex);
+
+
+              }//end if
+            }
+
+            for (let m of debuffList){ //apply for each hero that meet sabotage reqs
+              for (let n of debuffStats){ //apply for each applicable stat
+
+                if (n === "panic"){
+                  tempList[enemySide][m].combatEffects.panicStatus+= 1;
+                } else {
+                  tempList[enemySide][m].debuff[n] = Math.max(tempList[enemySide][m].debuff[n], debuff); 
+                }              
+              } //end for
+
+            } //end loop debuff list
+
+          } else if (k === "pulseTie"){
+
+
+            let checkHP = i.currentHP;
+
+            let debuffList = [];
+            let min = 999;
+
+            for (let m of heroList[enemySide]){ //loop through enemy team
+            
+              let currentHP = m.currentHP;
+
+
+              //if not below owner's hp and special is charged, then skip to next enemy
+              if (currentHP + j.pulseTie.hp > checkHP || m.special.charge !== 0){
+                continue;
+              }
+
+              if (currentHP === min){ // add to list of heroes to debuff
+                debuffList.push(m.listIndex);
+              } else if (currentHP < min && m.currentHP > 0){ //sum is less than current, clear list and add
+                debuffList = [];
+                debuffList.push(m.listIndex); 
+                min = currentHP;
+              }
+              //    this["special"] = {"cd": -10, "charge": -10};
+
+            } //end loop enemy team
+            for (let m of debuffList){ //apply for each hero in the list
+              //set charged specials to given value or to their cd if it is less than the given value  
+              tempList[enemySide][m].special.charge = Math.min(tempList[enemySide][m].special.cd, j.pulseTie.specialCharge); 
+
+            }
+
+
+          }
+
+        } //end k
+
+      } //end j
+
+
+    }
+
+    this.setState({heroList: tempList }); //updates the hero list state
+
+  } //end startTurn
+
+  endTurn(){
+    let tempList = this.state.heroList;
+
+    //loop through each team
+    for (let i in tempList){
+
+      //loop through each hero on team
+      for (let j of tempList[i]){
+
+        tempList[i][j.listIndex].combatCount = 0; //reset their combat counts
+
+      }
+
+    } //end i
+
+    this.setState({heroList: tempList});
   }
 
   render() {
@@ -1763,7 +2887,10 @@ class GameBoard extends React.Component{
           <Field  
             gameState = {this.state}
             fortChange = {this.onFortLevelChange}
-            seasonChange = {this.onSeasonChange} />
+            turnChange = {this.onTurnChange}
+            seasonChange = {this.onSeasonChange} 
+            startTurn = {this.startTurn}
+            endTurn = {this.endTurn} />
           
         </td>
 
@@ -1827,17 +2954,36 @@ function makeHeroStruct(){
     this["bonus"] = false;
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0, "reflect": 0};
-    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0,
+    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0,
+      "panicStatus": 0, "guardStatus": 0,
+      "brashAssault": 0, "desperation": 0, "vantage": 0, 
+      "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0,
+      "brave": 0, "enemyBrave": 0,
+      "recoil": 0, "galeforce": 0,
+      "wrathful": 0,
+      "poison": 0, "pain": 0, "savageBlow": 0,
+      "specialTrueDamage": 0, "specialFlatReduction": 0, "specialHeal": 0.0,
+      "seal": [], "spiral": 0,
       "stats": {"atk": 0, "spd": 0, "def": 0, "res": 0},
-      "specialTrigger": {"trueDamage": 0, "flatReduction": 0}, 
-      "penaltyNeutralize": {"atk": false, "spd": false, "def": false, "res": false}, "buffNeutralize": {"atk": false, "spd": false, "def": false, "res": false},
+      "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0,
+      "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
+    this["variablePreCombat"] = [];
     this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
-    this["initiating"] = false;
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
     this["conditionalSpecial"] = [];
+    this["initiating"] = false;
+    this["warp"] = [];
+    this["onAssist"] = [];
+    this["onSpecial"] = [];
+    this["turnStart"] = [];
+    this["battleMovement"] = {};
+    this["onAttack"] = [];
+    this["specialActivated"] = false;
+    this["combatCount"] = 0;
   }  
   return hero;
 }

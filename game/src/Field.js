@@ -67,8 +67,43 @@ export default class Field extends React.Component{
 	    tbody.push(<tr key= {seasons[i] + "Row"} >{cells}</tr>);  
     }
 
-    
-//{this.state.team[i].id}
+    cells = [];
+
+    //Fort level
+	cells.push(<td className = "statText" key = "turnLabel">Turn</td>);
+	cells.push(<td className = "inputNum" key = "turnValue">
+	            <input
+	            className = "numberInput"
+	            value = {this.props.gameState.currentTurn} 
+	            type = "number" 
+	            min = '0' 
+	            onChange = {(e) => this.props.turnChange(e)} 
+	            />  
+	      </td>);
+
+    tbody.push(<tr key= "turnRow" >{cells}</tr>);
+
+
+
+    cells = [];
+
+    cells.push(<td key = "startTurn"> 
+    		<button onClick = {this.props.startTurn}>
+    			Start Turn
+
+    		</button>
+
+    		</td>);
+
+    cells.push(<td key = "endTurn"> 
+    		<button onClick = {this.props.endTurn}>
+    			End Turn
+
+    		</button>
+
+    		</td>);
+
+    tbody.push(<tr key= "turnButtons" >{cells}</tr>);  
 
     return(
         <table id = "Field">

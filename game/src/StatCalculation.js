@@ -365,20 +365,28 @@ export function calculateCombatStats(hero, enemy){
 
 	let penaltyNeutralize = hero.combatEffects.penaltyNeutralize;
 	let buffNeutralize = enemy.combatEffects.buffNeutralize;
-	//for panic, probably have a check and reverse buffs
+
     Object.keys(stats).forEach((key, i) => {
 
     	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
-    	if (penaltyNeutralize[key]){
+    	if (penaltyNeutralize[key] > 0){
     		penaltyNeutralizer = hero.debuff[key];
     	}
 
-    	let buffNeutralizer = 0; //set neutralizer that will cancel out debuffs
-    	if (buffNeutralize[key]){
+    	let buffNeutralizer = 0; //set neutralizer that will cancel out buffs
+    	if (buffNeutralize[key] > 0){
     		buffNeutralizer = hero.buff[key];
     	}
 
-		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] + penaltyNeutralizer - buffNeutralizer;
+    	let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
+
+    	if (hero.combatEffects.panicStatus > 0){
+    		panicFactor = -1;
+    	}
+
+		//
+		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] - enemy.combatEffects.lull[key] + penaltyNeutralizer - buffNeutralizer;
+	
 	});
 
     return stats;

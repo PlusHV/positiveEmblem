@@ -179,7 +179,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"def": 2} }],
 		"max": false
 	},
 	"23": {
@@ -187,7 +187,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"def": 4} }],
 		"max": false
 	},
 	"24": {
@@ -195,7 +195,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"def": 6} }],
 		"max": true
 	},
 	"25": {
@@ -203,7 +203,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 3, "def": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "def": 3} }],
 		"max": false
 	},
 	"26": {
@@ -211,7 +211,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": false
 	},
 	"27": {
@@ -219,7 +219,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 5, "def": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "def": 5} }],
 		"max": true
 	},
 	"28": {
@@ -227,7 +227,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "def": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "def": 3} }],
 		"max": false
 	},
 	"29": {
@@ -235,7 +235,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": false
 	},
 	"30": {
@@ -243,7 +243,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "def": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "def": 5} }],
 		"max": true
 	},
 	"31": {
@@ -251,7 +251,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "def": 2} }],
 		"max": false
 	},
 	"32": {
@@ -259,7 +259,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": false
 	},
 	"33": {
@@ -267,7 +267,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 6, "def": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "def": 6} }],
 		"max": true
 	},
 	"34": {
@@ -275,7 +275,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "res": 3} }],
 		"max": false
 	},
 	"35": {
@@ -283,7 +283,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": false
 	},
 	"36": {
@@ -291,7 +291,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "res": 5} }],
 		"max": true
 	},
 	"37": {
@@ -299,7 +299,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 7, "res": 7}, "penaltyNeutralize": ["atk", "res"] }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "res": 7}, "penaltyNeutralize": ["atk", "res"] }],
 		"max": true
 	},
 	"38": {
@@ -307,7 +307,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "res": 3} }],
 		"max": false
 	},
 	"39": {
@@ -315,7 +315,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": false
 	},
 	"40": {
@@ -323,7 +323,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "res": 5} }],
 		"max": true
 	},
 	"41": {
@@ -331,7 +331,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "res": 2} }],
 		"max": false
 	},
 	"42": {
@@ -339,7 +339,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": false
 	},
 	"43": {
@@ -347,7 +347,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
 		"max": true
 	},
 	"44": {
@@ -371,7 +371,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3} }],
 		"max": false
 	},
 	"47": {
@@ -379,7 +379,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 4, "spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"48": {
@@ -387,31 +387,31 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 5, "spd": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"49": {
 		"name": "Atk/Spd Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"],  "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"50": {
 		"name": "Atk/Spd Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"51": {
 		"name": "Atk/Spd Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"], "type": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
 	"52": {
@@ -419,7 +419,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "spd": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "spd": 3} }],
 		"max": false
 	},
 	"53": {
@@ -427,7 +427,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"54": {
@@ -435,7 +435,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "spd": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"55": {
@@ -443,7 +443,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "spd": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "spd": 7} }],
 		"max": true
 	},
 	"56": {
@@ -451,7 +451,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2} }],
 		"max": false
 	},
 	"57": {
@@ -459,7 +459,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 4, "spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"58": {
@@ -467,7 +467,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
 		"max": true
 	},
 	"59": {
@@ -603,7 +603,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"76": {
@@ -611,7 +611,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"def": 4, "res": 4} }],
 		"max": true
 	},
 	"77": {
@@ -619,7 +619,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"78": {
@@ -627,7 +627,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
 		"max": true
 	},
 	"79": {
@@ -635,7 +635,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 3} }],
 		"max": false
 	},
 	"80": {
@@ -643,7 +643,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "def": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "def": 5} }],
 		"max": false
 	},
 	"81": {
@@ -651,7 +651,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 7} }],
 		"max": true
 	},
 	"82": {
@@ -659,7 +659,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "res": 3} }],
 		"max": false
 	},
 	"83": {
@@ -667,7 +667,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "res": 5} }],
 		"max": false
 	},
 	"84": {
@@ -675,7 +675,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "res": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "res": 7} }],
 		"max": true
 	},
 	"85": {
@@ -683,7 +683,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "spd": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "spd": 3} }],
 		"max": false
 	},
 	"86": {
@@ -691,7 +691,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "spd": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": false
 	},
 	"87": {
@@ -699,7 +699,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "spd": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "spd": 7} }],
 		"max": true
 	},
 	"88": {
@@ -707,7 +707,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"atk": 9, "spd": 10} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 9, "spd": 10} }],
 		"max": true
 	},
 	"89": {
@@ -715,7 +715,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"def": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 3, "res": 3} }],
 		"max": false
 	},
 	"90": {
@@ -723,7 +723,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"def": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 5, "res": 5} }],
 		"max": false
 	},
 	"91": {
@@ -731,7 +731,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"def": 7, "res": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 7, "res": 7} }],
 		"max": true
 	},
 	"92": {
@@ -739,7 +739,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "def": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "def": 3} }],
 		"max": false
 	},
 	"93": {
@@ -747,7 +747,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "def": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "def": 5} }],
 		"max": false
 	},
 	"94": {
@@ -755,7 +755,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "def": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "def": 7} }],
 		"max": true
 	},
 	"95": {
@@ -795,7 +795,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"100": {
@@ -803,7 +803,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"101": {
@@ -811,7 +811,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"102": {
@@ -819,7 +819,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 2} }],
 		"max": false
 	},
 	"103": {
@@ -827,7 +827,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 4} }],
 		"max": false
 	},
 	"104": {
@@ -835,7 +835,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 6} }],
 		"max": true
 	},
 	"105": {
@@ -843,7 +843,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 9} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 9} }],
 		"max": true
 	},
 	"106": {
@@ -851,7 +851,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2} }],
 		"max": false
 	},
 	"107": {
@@ -859,7 +859,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4} }],
 		"max": false
 	},
 	"108": {
@@ -867,7 +867,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6} }],
 		"max": true
 	},
 	"109": {
@@ -875,7 +875,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 2} }],
 		"max": false
 	},
 	"110": {
@@ -883,7 +883,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 4} }],
 		"max": false
 	},
 	"111": {
@@ -891,7 +891,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 6} }],
 		"max": true
 	},
 	"112": {
@@ -899,7 +899,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 8} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 8} }],
 		"max": true
 	},
 	"113": {
@@ -923,7 +923,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"def": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"def": 3, "res": 3} }],
 		"max": false
 	},
 	"116": {
@@ -931,7 +931,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"117": {
@@ -939,7 +939,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"def": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"def": 5, "res": 5} }],
 		"max": true
 	},
 	"118": {
@@ -947,7 +947,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"119": {
@@ -955,7 +955,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"120": {
@@ -963,7 +963,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"def": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"121": {
@@ -1087,7 +1087,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"138": {
@@ -1095,7 +1095,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"139": {
@@ -1103,7 +1103,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"140": {
@@ -1111,7 +1111,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"141": {
@@ -1120,7 +1120,7 @@
 		"prf": true,
 		"users": ["Robin: Fell Vessel"],
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
 		"max": true
 	},
 	"142": {
@@ -1128,7 +1128,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 2} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 2} }],
 		"max": false
 	},
 	"143": {
@@ -1136,7 +1136,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 4} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 4} }],
 		"max": false
 	},
 	"144": {
@@ -1144,7 +1144,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 6} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 6} }],
 		"max": true
 	},
 	"145": {
@@ -1152,7 +1152,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4}, "attackCharge": 1, "defenseCharge": 1 }],
 		"max": true
 	},
 	"146": {
@@ -1160,7 +1160,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2} }],
 		"max": false
 	},
 	"147": {
@@ -1168,7 +1168,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4} }],
 		"max": false
 	},
 	"148": {
@@ -1176,7 +1176,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6} }],
 		"max": true
 	},
 	"149": {
@@ -1184,7 +1184,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
 		"max": false
 	},
 	"150": {
@@ -1192,7 +1192,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
 		"max": false
 	},
 	"151": {
@@ -1200,39 +1200,39 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 6} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 6} }],
 		"max": true
 	},
 	"152": {
 		"name": "Flashing Blade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "spd", "greater", 5]], "attackCharge": 1 }],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "spd", "greater", 5]], "attackCharge": 1 }],
 		"max": false
 	},
 	"153": {
 		"name": "Flashing Blade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "spd", "greater", 3]], "attackCharge": 1 }],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "spd", "greater", 3]], "attackCharge": 1 }],
 		"max": false
 	},
 	"154": {
 		"name": "Flashing Blade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1 }],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1 }],
 		"max": true
 	},
 	"155": {
 		"name": "Flashing Blade 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1, "trueDamage": 5 }],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1, "trueDamage": 5 }],
 		"max": true
 	},
 	"156": {
@@ -1398,24 +1398,24 @@
 		"name": "Heavy Blade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}],
 		"max": false
 	},
 	"177": {
 		"name": "Heavy Blade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}],
 		"max": false
 	},
 	"178": {
 		"name": "Heavy Blade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}],
 		"max": true
 	},
 	"179": {
@@ -1518,7 +1518,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2} }],
 		"max": false
 	},
 	"192": {
@@ -1526,7 +1526,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"193": {
@@ -1535,7 +1535,7 @@
 		"prf": true,
 		"users": ["Lyn: Lady of the Wind"],
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"], ["distantAllies", 2, "greater", 2]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["distantAllies", 2, "greater", 2]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"194": {
@@ -1567,7 +1567,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 6, "res": 10}, "enemyDouble": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "res": 10}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"198": {
@@ -1575,7 +1575,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "res": 2} }],
 		"max": false
 	},
 	"199": {
@@ -1583,7 +1583,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": true
 	},
 	"200": {
@@ -1591,7 +1591,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "res": 2} }],
 		"max": false
 	},
 	"201": {
@@ -1599,7 +1599,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": true
 	},
 	"202": {
@@ -1608,7 +1608,7 @@
 		"prf": true,
 		"users": ["Hector: Brave Warrior"],
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
 		"skills": [["a", "Distant Counter"]],
 		"max": true
 	},
@@ -1689,8 +1689,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Alm: Imperial Ascent"],
-		"type": "variable-combat",
-		"effect": {"combatEffects": ["trueDamage"], "type": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+		"type": "variable-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}],
 		"max": true
 	},
 	"213": {
@@ -1698,7 +1698,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 1], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
 		"max": false
 	},
 	"214": {
@@ -1706,7 +1706,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 0.5], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
 		"max": false
 	},
 	"215": {
@@ -1714,7 +1714,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "effect", "condition": [["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
 		"max": true
 	},
 	"216": {
@@ -1738,7 +1738,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 3, "def": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 3, "def": 3} }],
 		"max": false
 	},
 	"219": {
@@ -1746,7 +1746,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 4, "def": 4} }],
 		"max": false
 	},
 	"220": {
@@ -1754,31 +1754,31 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 5, "def": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 5, "def": 5} }],
 		"max": true
 	},
 	"221": {
 		"name": "Spd/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "def"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"222": {
 		"name": "Spd/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "def"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"223": {
 		"name": "Spd/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "def"], "type": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
 	"224": {
@@ -1786,7 +1786,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 2, "def": 2} }],
 		"max": false
 	},
 	"225": {
@@ -1794,7 +1794,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 4, "def": 4} }],
 		"max": false
 	},
 	"226": {
@@ -1802,7 +1802,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 6, "def": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 6, "def": 6} }],
 		"max": true
 	},
 	"227": {
@@ -1826,7 +1826,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 3, "res": 3} }],
 		"max": false
 	},
 	"230": {
@@ -1834,7 +1834,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 4, "res": 4} }],
 		"max": false
 	},
 	"231": {
@@ -1842,7 +1842,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"spd": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"spd": 5, "res": 5} }],
 		"max": true
 	},
 	"232": {
@@ -1874,7 +1874,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 2, "def": 2} }],
 		"max": false
 	},
 	"236": {
@@ -1882,7 +1882,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 4, "def": 4} }],
 		"max": true
 	},
 	"237": {
@@ -1890,7 +1890,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 4}, "attackCharge": 1, "defenseCharge": 1 }],
 		"max": true
 	},
 	"238": {
@@ -1898,7 +1898,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "def": 2} }],
 		"max": false
 	},
 	"239": {
@@ -1906,7 +1906,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4} }],
 		"max": true
 	},
 	"240": {
@@ -1914,7 +1914,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 2} }],
 		"max": false
 	},
 	"241": {
@@ -1922,7 +1922,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 4} }],
 		"max": false
 	},
 	"242": {
@@ -1930,7 +1930,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 6} }],
 		"max": true
 	},
 	"243": {
@@ -1938,7 +1938,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 8}, "guard": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 8}, "guard": 1 }],
 		"max": true
 	},
 	"244": {
@@ -1946,7 +1946,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "def": 2} }],
 		"max": false
 	},
 	"245": {
@@ -1954,7 +1954,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": true
 	},
 	"246": {
@@ -1962,7 +1962,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 6, "def": 10}, "enemyDouble": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "def": 10}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"247": {
@@ -1970,7 +1970,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "def": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "def": 2} }],
 		"max": false
 	},
 	"248": {
@@ -1978,7 +1978,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": true
 	},
 	"249": {
@@ -1993,7 +1993,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2} }],
 		"max": false
 	},
 	"251": {
@@ -2001,7 +2001,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"252": {
@@ -2009,7 +2009,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 7} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 7} }],
 		"max": true
 	},
 	"253": {
@@ -2017,7 +2017,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "res": 2} }],
 		"max": false
 	},
 	"254": {
@@ -2025,7 +2025,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "res": 4} }],
 		"max": true
 	},
 	"255": {
@@ -2033,7 +2033,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 2, "res": 2} }],
 		"max": false
 	},
 	"256": {
@@ -2041,7 +2041,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"spd": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 4, "res": 4} }],
 		"max": true
 	},
 	"257": {
@@ -2070,7 +2070,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"res": 2} }],
 		"max": false
 	},
 	"261": {
@@ -2078,7 +2078,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"res": 4} }],
 		"max": false
 	},
 	"262": {
@@ -2086,7 +2086,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "player"]], "statBuff": {"res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"res": 6} }],
 		"max": true
 	},
 	"263": {
@@ -2094,7 +2094,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"res": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"res": 4}, "attackCharge": 1, "defenseCharge": 1 }],
 		"max": true
 	},
 	"264": {
@@ -2102,7 +2102,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"res": 2} }],
 		"max": false
 	},
 	"265": {
@@ -2110,7 +2110,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"res": 4} }],
 		"max": false
 	},
 	"266": {
@@ -2118,7 +2118,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"res": 6} }],
 		"max": true
 	},
 	"267": {
@@ -2126,7 +2126,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"res": 8}, "guard": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"res": 8}, "guard": 1 }],
 		"max": true
 	},
 	"268": {
@@ -2134,7 +2134,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 2} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 2} }],
 		"max": false
 	},
 	"269": {
@@ -2142,7 +2142,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 4} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 4} }],
 		"max": false
 	},
 	"270": {
@@ -2150,7 +2150,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 6} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 6} }],
 		"max": true
 	},
 	"271": {
@@ -2158,7 +2158,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 2} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 2} }],
 		"max": false
 	},
 	"272": {
@@ -2166,7 +2166,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 4} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 4} }],
 		"max": false
 	},
 	"273": {
@@ -2174,7 +2174,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 6} }],
+		"effect": [{"type": "effect", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 6} }],
 		"max": true
 	},
 	"274": {
@@ -2206,7 +2206,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", true]], "statBuff": {"atk": 7, "spd": 7}, "penaltyNeutralize": ["atk", "spd"] }],
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "spd": 7}, "penaltyNeutralize": ["atk", "spd"]}],
 		"max": true
 	},
 	"278": {
@@ -2214,15 +2214,15 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "res": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "res": 7}, "onAttack": {"recoil": 5} }],
 		"max": true
 	},
 	"279": {
 		"name": "Heavy Blade 4",
 		"sp": 300,
 		"prf": false,
-		"type": "conditional-combat",
-		"effect": [{"condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1, "trueDamage": 5}],
+		"type": "conditional-effect",
+		"effect": [{"type": "combat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1, "trueDamage": 5}],
 		"max": true
 	},
 	"280": {
@@ -2230,7 +2230,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "res": 3} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "res": 3} }],
 		"max": false
 	},
 	"281": {
@@ -2238,7 +2238,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "res": 5} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "res": 5} }],
 		"max": false
 	},
 	"282": {
@@ -2246,7 +2246,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "res": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "res": 7} }],
 		"max": true
 	},
 	"283": {
@@ -2263,31 +2263,31 @@
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade"],
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all"  ]], "statBuff": {"atk": 6, "def": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all"  ]], "statBuff": {"atk": 6, "def": 6} }],
 		"max": true
 	},
 	"285": {
 		"name": "Atk/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "def"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"286": {
 		"name": "Atk/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "def"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"287": {
 		"name": "Atk/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "def"], "type": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
 	"288": {
@@ -2295,7 +2295,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "res": 6}, "guard": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "res": 6}, "guard": 1 }],
 		"max": true
 	},
 	"289": {
@@ -2303,7 +2303,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
 		"max": true
 	},
 	"290": {
@@ -2311,7 +2311,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 2, "res": 2} }],
 		"max": false
 	},
 	"291": {
@@ -2319,7 +2319,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 4, "res": 4} }],
 		"max": false
 	},
 	"292": {
@@ -2327,7 +2327,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"spd": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"spd": 6, "res": 6} }],
 		"max": true
 	},
 	"293": {
@@ -2335,79 +2335,79 @@
 		"sp": 3000,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4}, "guard": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4}, "guard": 1 }],
 		"max": true
 	},
 	"294": {
 		"name": "Shield Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["def", "res"], "type": "session", "phase": "enemy", "multiplier": 1, "constant": 3, "min": 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 1, "constant": 3, "min": 1}],
 		"max": false
 	},
 	"295": {
 		"name": "Shield Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["def", "res"], "type": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2}],
 		"max": false
 	},
 	"296": {
 		"name": "Shield Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["def", "res"], "type": "session", "phase": "enemy", "multiplier": 3, "constant": 9, "min": 3},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 3, "constant": 9, "min": 3}],
 		"max": true
 	},
 	"297": {
 		"name": "Blade Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"], "type": "session", "phase": "player", "multiplier": 1, "constant": 1, "max": 3},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 1, "constant": 1, "max": 3}],
 		"max": false
 	},
 	"298": {
 		"name": "Blade Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"], "type": "session", "phase": "player", "multiplier": 2, "constant": 2, "max": 6},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 2, "constant": 2, "max": 6}],
 		"max": false
 	},
 	"299": {
 		"name": "Blade Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["atk", "spd"], "type": "session", "phase": "player", "multiplier": 3, "constant": 3, "max": 9},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 3, "constant": 3, "max": 9}],
 		"max": true
 	},
 	"300": {
 		"name": "Spd/Res Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "res"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"301": {
 		"name": "Spd/Res Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "res"], "type": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
 	"302": {
 		"name": "Spd/Res Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-stats",
-		"effect": {"stats": ["spd", "res"], "type": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1},
+		"type": "variable-effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
 	"303": {
@@ -2415,7 +2415,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "def": 6}, "guard": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "def": 6}, "guard": 1 }],
 		"max": true
 	},
 	"304": {
@@ -2423,7 +2423,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "def": 7} }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "def": 7} }],
 		"max": true
 	},
 	"305": {
@@ -2431,7 +2431,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
 		"max": true
 	},
 	"306": {
@@ -2439,7 +2439,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
 		"max": true
 	},
 	"307": {
@@ -2456,7 +2456,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 7, "spd": 7} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "spd": 7} }],
 		"max": true
 	},
 	"309": {
@@ -2464,7 +2464,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"spd": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4}, "attackCharge": 1, "defenseCharge": 1 }],
 		"max": true
 	},
 	"310": {
@@ -2472,7 +2472,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["adjacent", false]], "statBuff": {"atk": 7, "res": 7} }],
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "res": 7} }],
 		"max": true
 	},
 	"311": {
@@ -2480,7 +2480,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"def": 6, "res": 6}, "guard": 1}],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"def": 6, "res": 6}, "guard": 1}],
 		"max": true
 	},
 	"312": {
@@ -2488,7 +2488,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "spd": 6}, "guard": 1}],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "spd": 6}, "guard": 1}],
 		"max": true
 	}
 }

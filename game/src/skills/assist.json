@@ -30,7 +30,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": -1, "assistee": -1},
+		"effect": {"owner": -1, "other": -1},
 		"max": true
 	},
 	"4": {
@@ -40,7 +40,7 @@
 		"prf": true,
 		"users": ["Lucina: Glorious Archer"],
 		"type": "movement",
-		"effect": {"assister": 1, "assistee": -1},
+		"effect": {"owner": 1, "other": -1},
 		"max": true
 	},
 	"5": {
@@ -130,7 +130,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": 2, "assistee": 0},
+		"effect": {"owner": 2, "other": 0},
 		"max": true
 	},
 	"15": {
@@ -364,7 +364,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": 0, "assistee": -2},
+		"effect": {"owner": 0, "other": -2},
 		"max": true
 	},
 	"41": {
@@ -401,7 +401,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": 0, "assistee": 1},
+		"effect": {"owner": 0, "other": 1},
 		"max": true
 	},
 	"45": {
@@ -418,7 +418,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": 0, "assistee": 2},
+		"effect": {"owner": 0, "other": 2},
 		"max": true
 	},
 	"47": {
@@ -427,7 +427,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "movement",
-		"effect": {"assister": 1, "assistee": -1},
+		"effect": {"owner": 1, "other": -1},
 		"max": true
 	},
 	"48": {
@@ -464,7 +464,7 @@
 		"prf": true,
 		"users": ["Chrom: Crowned Exalt"],
 		"type": "movement",
-		"effect": {"assister": 0, "assistee": -2},
+		"effect": {"owner": 0, "other": -2},
 		"max": true
 	},
 	"52": {
