@@ -2138,7 +2138,7 @@
 		"name": "Close Call 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20}],
 		"skills": [["b", "Hit and Run"]],
@@ -2148,7 +2148,7 @@
 		"name": "Close Call 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30}],
 		"skills": [["b", "Hit and Run"]],
@@ -2158,7 +2158,7 @@
 		"name": "Close Call 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"skills": [["b", "Hit and Run"]],
@@ -2229,7 +2229,7 @@
 		"name": "Repel 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20}],
 		"skills": [["b", "Knock Back"]],
@@ -2239,7 +2239,7 @@
 		"name": "Repel 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30}],
 		"skills": [["b", "Knock Back"]],
@@ -2249,7 +2249,7 @@
 		"name": "Repel 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"skills": [["b", "Knock Back"]],
@@ -2638,7 +2638,132 @@
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.5 }],
 		"max": true
+	},
+	"323": {
+		"name": "Spurn 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "turnStart", "condition": [ ["hp", "less", 0.25], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.25], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 5 } ],
+		"max": false
+	},
+	"324": {
+		"name": "Spurn 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "turnStart", "condition": [ ["hp", "less", 0.5], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.5], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 5 } ],
+		"max": false
+	},
+	"325": {
+		"name": "Spurn 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "turnStart", "condition": [ ["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialCount": 1},
+			{"type": "special", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 5 } ],
+		"max": true
+	},
+	"326": {
+		"name": "Dive-Bomb 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "greater", 1], ["enemyhp", "greater", 1]], "desperation": 1  }],
+		"max": false
+	},
+	"327": {
+		"name": "Dive-Bomb 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "greater", 0.9], ["enemyhp", "greater", 0.9]], "desperation": 1  }],
+		"max": false
+	},
+	"328": {
+		"name": "Dive-Bomb 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"], ["hp", "greater", 0.8], ["enemyhp", "greater", 0.8]], "desperation": 1  }],
+		"max": true
+	},
+	"329": {
+		"name": "Blue Lion Rule",
+		"sp": 300,
+		"prf": true,
+		"users": ["Dimitri: King of Faerghus"],
+		"type": "conditional-effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "def", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "def", "factor": 4.0, "max": 40},
+			{"type": "combat", "condition": [["phase", "enemy"], ["statCompare", "combat", "def", "greater", 1]], "double": 1 }],
+		"max": true
+	},
+	"330": {
+		"name": "Black Eagle Rule",
+		"sp": 300,
+		"prf": true,
+		"users": ["Edelgard: Adrestian Emperor"],
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.25]], "double": 1  },
+			{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "followUpReduction": 0.2 }],
+		"max": true
+	},
+	"331": {
+		"name": "Def Cantrip 1",
+		"sp": 60,
+		"prf": false,
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"def": 3}, "range": 4, "from": ["assister"]},
+		"max": false
+	},
+	"332": {
+		"name": "Def Cantrip 2",
+		"sp": 120,
+		"prf": false,
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"def": 5}, "range": 4, "from": ["assister"]},
+		"max": false
+	},
+	"333": {
+		"name": "Def Cantrip 3",
+		"sp": 240,
+		"prf": false,
+		"type": "on-assist",
+		"effect": {"type": "dance", "debuff": {"def": 7}, "range": 4, "from": ["assister"]},
+		"max": true
+	},
+	"334": {
+		"name": "Crafty Fighter 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.75]], "double": 1, "guard": 1 }],
+		"max": false
+	},
+	"335": {
+		"name": "Crafty Fighter 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.5]], "double": 1, "guard": 1 }],
+		"max": false
+	},
+	"336": {
+		"name": "Crafty Fighter 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "double": 1, "guard": 1 }],
+		"max": true
 	}
-
 
 }

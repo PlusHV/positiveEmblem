@@ -475,6 +475,15 @@
 		"users": ["Mirabilis: Daydream"],
 		"type": "dance",
 		"max": true
+	},
+	"53": {
+		"name": "Sweet Dreams",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Plumeria: Lewd Dream"],
+		"type": "dance",
+		"max": true
 	}
 
 }

@@ -2490,5 +2490,61 @@
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "spd": 6}, "guard": 1}],
 		"max": true
+	},
+	"313": {
+		"name": "Steady Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "player"]], "statBuff": {"spd": 7, "def": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"314": {
+		"name": "Atk/Def Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "def": 7} }],
+		"max": true
+	},
+	"315": {
+		"name": "Atk/Def Unity",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyReverse": ["atk", "def"]}],
+		"max": true
+	},
+	"316": {
+		"name": "Atk/Def Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "def": 7}, "penaltyNeutralize": ["atk", "def"] }],
+		"max": true
+	},
+	"317": {
+		"name": "AR-D Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [],
+		"max": false
+	},
+	"318": {
+		"name": "AR-D Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [],
+		"max": false
+	},
+	"319": {
+		"name": "AR-D Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [],
+		"max": true
 	}
 }

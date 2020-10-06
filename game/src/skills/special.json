@@ -328,7 +328,7 @@
 		"users": ["Fjorm: Princess of Ice"],
 		"type": "defend-battle",
 		"range": 2,
-		"effect": {"factor": 0.7, "reflect": true},
+		"effect": {"factor": 0.7, "reflect": {"damage": ["mirror"]}},
 		"max": true
 	},
 	"36": {
@@ -703,6 +703,26 @@
 		"users": ["Ike: Zeal Unleashed"],
 		"type": "attack-battle",
 		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"max": true
+	},
+	"76": {
+		"name": "Negating Fang",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Corrin: Child of Dusk"],
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": 0.7, "reflect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 }},
+		"max": true
+	},
+	"77": {
+		"name": "Deadeye",
+		"sp": 500,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"factor": 0.7, "reflect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 1.0 }},
 		"max": true
 	}
 }

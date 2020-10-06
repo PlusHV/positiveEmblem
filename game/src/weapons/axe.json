@@ -1106,6 +1106,88 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"97": {
+		"name": "Hel's Reaper",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Hel: Death Sovereign"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"98": {
+		"name": "Sneering Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Legion: Masked Maniac"],
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"99": {
+		"name": "Gate-Anchor Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Veronica: Harmonic Pirates"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"100": {
+		"name": "Deck Swabber+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"101": {
+		"name": "Deck Swabber",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"102": {
+		"name": "Flower Hauteclere",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Edelgard: Adrestian Emperor"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"103": {
+		"name": "Talregan Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Jill: Fiery Dracoknight"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 
 

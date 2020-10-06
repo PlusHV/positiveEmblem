@@ -366,6 +366,7 @@ export function calculateCombatStats(hero, enemy){
 	let penaltyNeutralize = hero.combatEffects.penaltyNeutralize;
 	let buffNeutralize = enemy.combatEffects.buffNeutralize;
 
+	let penaltyReverse = hero.combatEffects.penaltyReverse;
     Object.keys(stats).forEach((key, i) => {
 
     	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
@@ -384,8 +385,18 @@ export function calculateCombatStats(hero, enemy){
     		panicFactor = -1;
     	}
 
+    	let penaltyReverser = 0; //penalty reverser is buff that is double the value of penalties on hero -
+    	if (penaltyReverse[key] > 0){
+    		penaltyReverser = hero.debuff[key] * 2;
+
+    		if (panicFactor < 0){ //if panicked, also add a buff that is double of that to reverse it
+    			penaltyReverser += hero.buff[key] * 2;
+    		}
+    	}
+
 		//
-		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] - enemy.combatEffects.lull[key] + penaltyNeutralizer - buffNeutralizer;
+		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] - enemy.combatEffects.lull[key]
+		 + penaltyNeutralizer - buffNeutralizer + penaltyReverser;
 	
 	});
 

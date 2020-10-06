@@ -354,21 +354,22 @@
 		"name": "Close Guard 1",
 		"sp": 60,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
+		"effect": {},
 		"max": false
 	},
 	"51": {
 		"name": "Close Guard 2",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"52": {
 		"name": "Close Guard 3",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"53": {
@@ -480,21 +481,21 @@
 		"name": "Distant Guard 1",
 		"sp": 60,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"69": {
 		"name": "Distant Guard 2",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"70": {
 		"name": "Distant Guard 3",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"71": {
@@ -530,56 +531,56 @@
 		"name": "Drive Atk 1",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"76": {
 		"name": "Drive Atk 2",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"77": {
 		"name": "Drive Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"78": {
 		"name": "Drive Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"79": {
 		"name": "Drive Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"80": {
 		"name": "Drive Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"81": {
 		"name": "Drive Spd 1",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"82": {
 		"name": "Drive Spd 2",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"83": {
@@ -818,35 +819,35 @@
 		"name": "Goad Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"117": {
 		"name": "Goad Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"118": {
 		"name": "Goad Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"119": {
 		"name": "Goad Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"120": {
 		"name": "Goad Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"121": {
@@ -874,21 +875,21 @@
 		"name": "Guidance 1",
 		"sp": 60,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"125": {
 		"name": "Guidance 2",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"126": {
 		"name": "Guidance 3",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"127": {
@@ -994,63 +995,63 @@
 		"name": "Inf. Hexblade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"142": {
 		"name": "Inf. Hexblade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"143": {
 		"name": "Inf. Hexblade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"144": {
 		"name": "Infantry Breath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"145": {
 		"name": "Infantry Breath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"146": {
 		"name": "Infantry Breath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"147": {
 		"name": "Infantry Flash 1",
 		"sp": 60,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"148": {
 		"name": "Infantry Flash 2",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"149": {
 		"name": "Infantry Flash 3",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"150": {
@@ -1078,21 +1079,21 @@
 		"name": "Infantry Rush 1",
 		"sp": 60,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"154": {
 		"name": "Infantry Rush 2",
 		"sp": 120,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": false
 	},
 	"155": {
 		"name": "Infantry Rush 3",
 		"sp": 240,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"156": {
@@ -1536,168 +1537,168 @@
 		"name": "Spur Atk 1",
 		"sp": 50,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"219": {
 		"name": "Spur Atk 2",
 		"sp": 100,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"220": {
 		"name": "Spur Atk 3",
 		"sp": 200,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"221": {
 		"name": "Spur Atk/Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"222": {
 		"name": "Spur Atk/Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"223": {
 		"name": "Spur Atk/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"224": {
 		"name": "Spur Atk/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"225": {
 		"name": "Spur Atk/Spd 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"226": {
 		"name": "Spur Atk/Spd 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"227": {
 		"name": "Spur Def 1",
 		"sp": 50,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"228": {
 		"name": "Spur Def 2",
 		"sp": 100,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"229": {
 		"name": "Spur Def 3",
 		"sp": 200,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"230": {
 		"name": "Spur Def/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"231": {
 		"name": "Spur Def/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"232": {
 		"name": "Spur Res 1",
 		"sp": 50,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"233": {
 		"name": "Spur Res 2",
 		"sp": 100,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"234": {
 		"name": "Spur Res 3",
 		"sp": 200,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"235": {
 		"name": "Spur Spd 1",
 		"sp": 50,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"236": {
 		"name": "Spur Spd 2",
 		"sp": 100,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"237": {
 		"name": "Spur Spd 3",
 		"sp": 200,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"238": {
 		"name": "Spur Spd/Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"239": {
 		"name": "Spur Spd/Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"240": {
 		"name": "Spur Spd/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": false
 	},
 	"241": {
 		"name": "Spur Spd/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "spur",
+		"type": "aura",
 		"max": true
 	},
 	"242": {
@@ -1917,35 +1918,35 @@
 		"name": "Ward Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"273": {
 		"name": "Ward Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"274": {
 		"name": "Ward Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"275": {
 		"name": "Ward Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"276": {
 		"name": "Ward Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"277": {
@@ -2339,7 +2340,7 @@
 		"name": "Joint Drive Atk",
 		"sp": 300,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"333": {
@@ -2371,7 +2372,7 @@
 		"max": false
 	},
 	"337": {
-		"name": "Armored Strideh 2",
+		"name": "Armored Stride 2",
 		"sp": 120,
 		"prf": false,
 		"type": "turn-start",
@@ -2417,7 +2418,7 @@
 		"name": "Joint Drive Spd",
 		"sp": 300,
 		"prf": false,
-		"type": "drive",
+		"type": "aura",
 		"max": true
 	},
 	"344": {
@@ -2425,6 +2426,91 @@
 		"sp": 300,
 		"prf": false,
 		"type": "turn-start",
+		"max": true
+	},
+	"345": {
+		"name": "Inevitable Death",
+		"sp": 300,
+		"prf": true,
+		"users": ["Hel: Death Sovereign"],
+		"type": "turn-start",
+		"max": true
+	},
+	"346": {
+		"name": "Joint Drive Res",
+		"sp": 300,
+		"prf": false,
+		"type": "aura",
+		"max": true
+	},
+	"347": {
+		"name": "Atk/Spd Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"348": {
+		"name": "Atk/Spd Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"349": {
+		"name": "Atk/Spd Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "aura",
+		"max": true
+	},
+	"350": {
+		"name": "Joint Hone Res",
+		"sp": 300,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"351": {
+		"name": "Spd/Def Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"352": {
+		"name": "Spd/Def Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"353": {
+		"name": "Spd/Def Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "aura",
+		"max": true
+	},
+	"354": {
+		"name": "Atk/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"355": {
+		"name": "Atk/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"356": {
+		"name": "Atk/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "aura",
 		"max": true
 	}
 

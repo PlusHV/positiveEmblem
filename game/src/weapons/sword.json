@@ -1508,6 +1508,18 @@
 		"skills": [["a", "Resistance +3"]],
 		"effect": {},
 		"max": true
+	},
+	"130": {
+		"name": "Blade of Shadow",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Kris: Unknown Hero"],
+		"type": "sword",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 
 

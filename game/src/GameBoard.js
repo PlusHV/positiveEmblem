@@ -3,7 +3,7 @@
 import React from 'react';
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage} from './Battle.js';
 
 import './App.css';
 
@@ -479,28 +479,14 @@ class GameBoard extends React.Component{
           updatedHero.turnStart.push(x);
         } else if (x.type === "special"){
           updatedHero.conditionalSpecial.push(x);
-        }
-      }
-    // } else if (skillDropdowns[skillType].info[id].type === "conditional-combat"){
-
-    //   for (let x of effect){ //conditional effect list of conditional effects
-    //     updatedHero.conditionalCombat.push(x); //effect should contain the conditional list
-    //   }
-    } else if (skillDropdowns[skillType].info[id].type === "variable-effect"){
-
-      for (let x of effect){
-
-        if (x.type === "variableStats"){
+        } else if (x.type === "variableStats"){
           updatedHero.variableStats.push(x); //effect should contain the conditional list
         } else if (x.type === "variableCombat"){
           updatedHero.variableCombat.push(x);
         } else if (x.type === "variablePreCombat"){
           updatedHero.variablePreCombat.push(x);
         }
-
       }
-    // } else if (skillDropdowns[skillType].info[id].type === "variable-combat"){
-    //   updatedHero.variableCombat.push(effect);
       
     } else if (skillDropdowns[skillType].info[id].type === "combat-effect"){
 
@@ -550,19 +536,16 @@ class GameBoard extends React.Component{
 
     } else if (skillDropdowns[skillType].info[id].type === "warp"){
       updatedHero.warp.push(effect);
-    } else if (skillDropdowns[skillType].info[id].type === "on-assist"){
 
+    } else if (skillDropdowns[skillType].info[id].type === "on-assist"){
       updatedHero.onAssist.push(effect);
-    // } else if (skillDropdowns[skillType].info[id].type === "on-rally"){
-    //   updatedHero.onRally.push(effect);
-    // } else if (skillDropdowns[skillType].info[id].type === "on-dance"){
-    //   updatedHero.onDance.push(effect);
-    // } else if (skillDropdowns[skillType].info[id].type === "turn-start"){
-    //   updatedHero.turnStart.push(effect);
+
     } else if (skillDropdowns[skillType].info[id].type === "battle-movement"){
       updatedHero.battleMovement = Object.assign({}, effect);
+
     } else if (skillDropdowns[skillType].info[id].type === "on-special"){
       updatedHero.onSpecial.push(effect);
+
     }
 
 
@@ -659,50 +642,23 @@ class GameBoard extends React.Component{
           let conditionIndex = updatedHero.conditionalSpecial.findIndex(this.findMatchingEffect , condition);
 
           updatedHero.conditionalSpecial.splice(conditionIndex, 1); //remove the matched variable effect
-        }
-
-      } //end of effect
-
-
-    // } else if (this.state.skillDropdowns[skillType].info[id].type === "conditional-combat"){
-    //   for (let x of effect){
-    //     let condition = JSON.stringify(x); //the conditional in string form
-
-    //     let conditionIndex = updatedHero.conditionalCombat.findIndex(this.findMatchingEffect , condition);
-
-    //     updatedHero.conditionalCombat.splice(conditionIndex, 1); //remove the matched condition
-    //   }
-
-    } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-effect"){
-      for (let x of effect){
-        let variableEffect = JSON.stringify(x);
-
-        if (x.type === "variableStats"){
-          let variableIndex = updatedHero.variableStats.findIndex(this.findMatchingEffect , variableEffect);
+        } else if (x.type === "variableStats"){
+          let variableIndex = updatedHero.variableStats.findIndex(this.findMatchingEffect , condition);
           updatedHero.variableStats.splice(variableIndex, 1); //remove the matched variable effect
 
         } else if (x.type === "variableCombat"){
 
-          let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
+          let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , condition);
           updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
 
 
         } else if (x.type === "variablePreCombat"){
-          let variableIndex = updatedHero.variablePreCombat.findIndex(this.findMatchingEffect , variableEffect);
+          let variableIndex = updatedHero.variablePreCombat.findIndex(this.findMatchingEffect , condition);
           updatedHero.variablePreCombat.splice(variableIndex, 1); //remove the matched variable effect
 
         }
-      }
 
-
-    // } else if (this.state.skillDropdowns[skillType].info[id].type === "variable-combat"){
-
-    //   let variableEffect = JSON.stringify(effect); //the variable effect in string form
-
-    //   let variableIndex = updatedHero.variableCombat.findIndex(this.findMatchingEffect , variableEffect);
-
-    //   updatedHero.variableCombat.splice(variableIndex, 1); //remove the matched variable effect
-      
+      } //end of effect
 
     } else if (this.state.skillDropdowns[skillType].info[id].type === "combat-effect"){
 
@@ -772,13 +728,6 @@ class GameBoard extends React.Component{
 
       updatedHero.onAssist.splice(assistIndex, 1); //remove the matched variable effect
 
-    // } else if (this.state.skillDropdowns[skillType].info[id].type === "turn-start"){
-
-    //   let assistEffect = JSON.stringify(effect); //the variable effect in string form
-
-    //   let assistIndex = updatedHero.turnStart.findIndex(this.findMatchingEffect , assistEffect);
-
-    //   updatedHero.turnStart.splice(assistIndex, 1); //remove the matched variable effect
     } else if (this.state.skillDropdowns[skillType].info[id].type === "battle-movement"){
       updatedHero.battleMovement = {};
     } else if (this.state.skillDropdowns[skillType].info[id].type === "on-special"){
@@ -802,8 +751,6 @@ class GameBoard extends React.Component{
 
     }
 
-
-
     //when removing the skill, a new special will be added, so it will adjust there
     if ('effect' in this.state.skillDropdowns[skillType].info[id] && 'cdTrigger' in effect){
       updatedHero.effects.cdTrigger-= effect.cdTrigger;
@@ -819,10 +766,6 @@ class GameBoard extends React.Component{
       updatedHero.special.charge = newCharge;
 
     }
-
-
-
-
 
     return updatedHero; //hero with new skills
 
@@ -1333,44 +1276,12 @@ class GameBoard extends React.Component{
           for (let i of draggedHero.onSpecial){ //loop through each on move assist effect on the assister
             if (i !== null){
 
-              for (let j in i){ //    "effect": {"cdTrigger": 1, "damage": ["defender", "def", 0.5, "trueDamage"]},
+              for (let j in i){
                 if (j === "damage"){
-                  //let onSpecialDamage = i.damage;
-
-                  let sHero;
-
-                  if (i.damage[0] === "attacker"){
-                    sHero = draggedHero;
-                  } else if (i.damage[0] === "defender"){
-                    sHero = draggedOverHero;
-                  }
 
 
-                  let sStat = i.damage[1];
-                  if (sStat === "defensive"){
-                    sStat = damageType;
-                  }
+                  let extraDamage = getSpecialDamage(i, draggedHero, draggedOverHero, this.state.heroList, damageType);
 
-
-                  let sFactor = i.damage[2];
-
-                  if ("condition" in i && checkCondition(this.state.heroList, i.condition, draggedHero, draggedOverHero, this.state.currentTurn) ){
-
-                    sFactor = i["alt"];
-
-                  }
-
-                  let extraDamage = 0;
-
-                  if (sStat === "flat"){
-                    extraDamage+= sFactor; //special damage is flat
-                  } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
-                    extraDamage+= Math.trunc( (draggedHero.stats.hp - draggedHero.currentHP) * sFactor);
-
-
-                  } else{
-                    extraDamage+= Math.trunc(sHero.visibleStats[sStat] * sFactor);
-                  }
 
                   if (i.damage[3] === "trueDamage"){
                     trueDamage+= extraDamage;
@@ -1393,10 +1304,10 @@ class GameBoard extends React.Component{
           trueDamage+= draggedHero.combatEffects.specialTrueDamage; 
           //draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
 
-          //////
+
           let damageReduction = draggedOverHero.combatEffects.preBattleReduction;
 
-//totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction ) - flatReduction;
+
           preBattleDamage = Math.trunc(  (draggedHero.visibleStats.atk - draggedOverHero.visibleStats[damageType]) * draggedHero.special.effect.factor) + onSpecialDamage + trueDamage;
 
           preBattleDamage = preBattleDamage - Math.trunc( preBattleDamage - preBattleDamage * damageReduction );
@@ -1411,10 +1322,8 @@ class GameBoard extends React.Component{
 
         } 
 
-        //TODO - aoe special
 
-        //bonus doubler
-        //TODO - doubler will be disabled if panic or lulled/neutralized
+
         Object.keys(draggedHero.combatEffects.stats).forEach((key, i) => {
           draggedHero.combatEffects.stats[key]+= Math.trunc(draggedHero.buff[key] * draggedHero.combatEffects.bonusDouble);
         });
@@ -1440,6 +1349,7 @@ class GameBoard extends React.Component{
 
         this.getVariableCombat(draggedHero, draggedOverHero);
         this.getVariableCombat(draggedOverHero, draggedHero);
+
 
         this.setState({draggedHero: draggedHero});
         this.setState({draggedOverOriginalHP: orgHP});
@@ -1546,7 +1456,7 @@ class GameBoard extends React.Component{
 
             }
 
-          } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(y) ){
+          } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(y) ){
             owner.combatEffects[y]*= x[y];
 
 
@@ -1593,7 +1503,7 @@ class GameBoard extends React.Component{
 
         for (let key in effectList){
           
-          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(key) ){
+          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(key) ){
 
             owner.combatEffects[key]*= effectList[key];
 
@@ -1633,7 +1543,7 @@ class GameBoard extends React.Component{
         //Object.keys(effectList).forEach((key, i) => {
         for (let key in effectList){
           
-          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction"].includes(key) ){
+          if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(key) ){
 
             owner.combatEffects[key]*= effectList[key];
 
@@ -1747,6 +1657,7 @@ class GameBoard extends React.Component{
       } else if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
         let orgAttackerPos = temp[dragSide][dragIndex].position;
         let orgDefenderPos = temp[dropSide][dropIndex].position;
+
 
         //temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
         temp = doBattle(temp, dragData, this.state.draggedOver, this.props.G.cells);
@@ -2953,7 +2864,7 @@ function makeHeroStruct(){
     this["range"] = -1;
     this["bonus"] = false;
     this["end"] = false;
-    this["effects"] = {"cdTrigger": 0, "reflect": 0};
+    this["effects"] = {"cdTrigger": 0};
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0,
       "panicStatus": 0, "guardStatus": 0,
       "brashAssault": 0, "desperation": 0, "vantage": 0, 
@@ -2961,13 +2872,14 @@ function makeHeroStruct(){
       "brave": 0, "enemyBrave": 0,
       "recoil": 0, "galeforce": 0,
       "wrathful": 0,
+      "reflect": 0,
       "poison": 0, "pain": 0, "savageBlow": 0,
       "specialTrueDamage": 0, "specialFlatReduction": 0, "specialHeal": 0.0,
       "seal": [], "spiral": 0,
       "stats": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
-      "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0,
-      "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0,
+      "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];

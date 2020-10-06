@@ -674,6 +674,42 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"59": {
+		"name": "Dark Spikes T",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lysithea: Earnest Seeker"],
+		"type": "redtome",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"60": {
+		"name": "Gilt Goblet",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Sigurd: Destined Duo"],
+		"type": "redtome",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
+	},
+	"61": {
+		"name": "Flower of Plenty",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Plumeria: Lewd Dream"],
+		"type": "redtome",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
 	}
 
 }

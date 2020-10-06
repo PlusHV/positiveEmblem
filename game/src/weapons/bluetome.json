@@ -838,5 +838,27 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"74": {
+		"name": "Blárfox+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"75": {
+		"name": "Blárfox",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 }

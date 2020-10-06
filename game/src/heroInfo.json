@@ -51,9 +51,8 @@
 		"sseal": "",
 		"bvid": 198,
 		"art": "Abel",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"2": {  
 		"id": 2,
@@ -80,9 +79,8 @@
 		"sseal": "",
 		"bvid": 23,
 		"art": "Alfonse",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"3": {  
 		"id": 3,
@@ -109,9 +107,8 @@
 		"sseal": "",
 		"bvid": 233,
 		"art": "Alfonse - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"4": {  
 		"id": 4,
@@ -138,9 +135,8 @@
 		"sseal": "",
 		"bvid": 205,
 		"art": "Alm",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"5": {  
 		"id": 5,
@@ -167,9 +163,8 @@
 		"sseal": "",
 		"bvid": 109,
 		"art": "Alm - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"6": {  
 		"id": 6,
@@ -198,9 +193,8 @@
 		"art": "Alm - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Echoes"]
 	},
 	"7": {  
 		"id": 7,
@@ -227,9 +221,8 @@
 		"sseal": "",
 		"bvid": 175,
 		"art": "Amelia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"8": {  
 		"id": 8,
@@ -256,9 +249,8 @@
 		"sseal": "",
 		"bvid": 255,
 		"art": "Anna",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"9": {  
 		"id": 9,
@@ -285,9 +277,8 @@
 		"sseal": "",
 		"bvid": 241,
 		"art": "Arden",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"10": {  
 		"id": 10,
@@ -314,9 +305,8 @@
 		"sseal": "",
 		"bvid": 231,
 		"art": "Ares",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"11": {  
 		"id": 11,
@@ -343,9 +333,8 @@
 		"sseal": "",
 		"bvid": 208,
 		"art": "Arthur",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"12": {  
 		"id": 12,
@@ -372,9 +361,8 @@
 		"sseal": "",
 		"bvid": 125,
 		"art": "Arvis",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"13": {  
 		"id": 13,
@@ -401,9 +389,8 @@
 		"sseal": "",
 		"bvid": 146,
 		"art": "Athena",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"14": {  
 		"id": 14,
@@ -430,9 +417,8 @@
 		"sseal": "",
 		"bvid": 188,
 		"art": "Aversa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"15": {  
 		"id": 15,
@@ -459,9 +445,8 @@
 		"sseal": "",
 		"bvid": 143,
 		"art": "Ayra",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"16": {  
 		"id": 16,
@@ -488,9 +473,8 @@
 		"sseal": "",
 		"bvid": 149,
 		"art": "Azama",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"17": {  
 		"id": 17,
@@ -517,9 +501,8 @@
 		"sseal": "",
 		"bvid": 102,
 		"art": "Azura - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"18": {  
 		"id": 18,
@@ -546,9 +529,8 @@
 		"sseal": "",
 		"bvid": 255,
 		"art": "Azura - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"19": {  
 		"id": 19,
@@ -575,9 +557,8 @@
 		"sseal": "",
 		"bvid": 83,
 		"art": "Azura",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"20": {  
 		"id": 20,
@@ -606,9 +587,8 @@
 		"art": "Azura - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4},
+		"entry": ["Fates"]
 	},
 	"21": {  
 		"id": 21,
@@ -635,9 +615,8 @@
 		"sseal": "",
 		"bvid": 32,
 		"art": "Azura - Dreaming",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"22": {  
 		"id": 22,
@@ -664,9 +643,8 @@
 		"sseal": "",
 		"bvid": 48,
 		"art": "Barst",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"23": {  
 		"id": 23,
@@ -693,9 +671,8 @@
 		"sseal": "",
 		"bvid": 133,
 		"art": "Bartre",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"24": {  
 		"id": 24,
@@ -722,9 +699,8 @@
 		"sseal": "",
 		"bvid": 200,
 		"art": "Berkut - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"25": {  
 		"id": 25,
@@ -751,9 +727,8 @@
 		"sseal": "",
 		"bvid": 155,
 		"art": "Berkut",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"26": {  
 		"id": 26,
@@ -780,9 +755,8 @@
 		"sseal": "",
 		"bvid": 162,
 		"art": "Berkut - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"27": {  
 		"id": 27,
@@ -809,9 +783,8 @@
 		"sseal": "",
 		"bvid": 207,
 		"art": "Beruka",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"28": {  
 		"id": 28,
@@ -838,9 +811,8 @@
 		"sseal": "",
 		"bvid": 159,
 		"art": "Black Knight",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"29": {  
 		"id": 29,
@@ -867,9 +839,8 @@
 		"sseal": "",
 		"bvid": 220,
 		"art": "Boey",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"30": {  
 		"id": 30,
@@ -896,9 +867,8 @@
 		"sseal": "",
 		"bvid": 140,
 		"art": "Brady",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"31": {  
 		"id": 31,
@@ -925,9 +895,8 @@
 		"sseal": "",
 		"bvid": 189,
 		"art": "Bruno - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"32": {  
 		"id": 32,
@@ -954,9 +923,8 @@
 		"sseal": "",
 		"bvid": 222,
 		"art": "Byleth - Female",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"33": {  
 		"id": 33,
@@ -983,9 +951,8 @@
 		"sseal": "",
 		"bvid": 45,
 		"art": "Byleth - Male",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"34": {  
 		"id": 34,
@@ -1012,9 +979,8 @@
 		"sseal": "",
 		"bvid": 69,
 		"art": "Caeda - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"35": {  
 		"id": 35,
@@ -1041,9 +1007,8 @@
 		"sseal": "",
 		"bvid": 211,
 		"art": "Caeda",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"36": {  
 		"id": 36,
@@ -1070,9 +1035,8 @@
 		"sseal": "",
 		"bvid": 226,
 		"art": "Cain",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"37": {  
 		"id": 37,
@@ -1099,9 +1063,8 @@
 		"sseal": "",
 		"bvid": 35,
 		"art": "Caineghis",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"38": {  
 		"id": 38,
@@ -1128,9 +1091,8 @@
 		"sseal": "",
 		"bvid": 211,
 		"art": "Camilla",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"39": {  
 		"id": 39,
@@ -1157,9 +1119,8 @@
 		"sseal": "",
 		"bvid": 53,
 		"art": "Camilla - Dreaming",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"40": {  
 		"id": 40,
@@ -1186,9 +1147,8 @@
 		"sseal": "",
 		"bvid": 230,
 		"art": "Camilla - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"41": {  
 		"id": 41,
@@ -1215,9 +1175,8 @@
 		"sseal": "",
 		"bvid": 115,
 		"art": "Camilla - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"42": {  
 		"id": 42,
@@ -1244,9 +1203,8 @@
 		"sseal": "",
 		"bvid": 165,
 		"art": "Camilla - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"43": {  
 		"id": 43,
@@ -1273,9 +1231,8 @@
 		"sseal": "",
 		"bvid": 197,
 		"art": "Camilla - Spa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"44": {  
 		"id": 44,
@@ -1302,9 +1259,8 @@
 		"sseal": "",
 		"bvid": 71,
 		"art": "Camilla - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"45": {  
 		"id": 45,
@@ -1331,9 +1287,8 @@
 		"sseal": "",
 		"bvid": 207,
 		"art": "Camus",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"46": {  
 		"id": 46,
@@ -1360,9 +1315,8 @@
 		"sseal": "",
 		"bvid": 142,
 		"art": "Canas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"47": {  
 		"id": 47,
@@ -1389,9 +1343,8 @@
 		"sseal": "",
 		"bvid": 83,
 		"art": "Catria",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"48": {  
 		"id": 48,
@@ -1418,9 +1371,8 @@
 		"sseal": "",
 		"bvid": 37,
 		"art": "Catria - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"49": {  
 		"id": 49,
@@ -1438,7 +1390,7 @@
 		"basespd": 6,
 		"basedef": 5,
 		"baseres": 7,
-		"weapon": "Gronnraven+",
+		"weapon": "Tome of Order",
 		"assist": "Rally Resistance",
 		"special": "",
 		"askill": "Attack +3",
@@ -1447,9 +1399,8 @@
 		"sseal": "",
 		"bvid": 94,
 		"art": "Cecilia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"50": {  
 		"id": 50,
@@ -1476,9 +1427,8 @@
 		"sseal": "",
 		"bvid": 183,
 		"art": "Cecilia - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"51": {  
 		"id": 51,
@@ -1505,9 +1455,8 @@
 		"sseal": "",
 		"bvid": 240,
 		"art": "Celica",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"52": {  
 		"id": 52,
@@ -1534,9 +1483,8 @@
 		"sseal": "",
 		"bvid": 183,
 		"art": "Celica - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"53": {  
 		"id": 53,
@@ -1563,9 +1511,8 @@
 		"sseal": "",
 		"bvid": 16,
 		"art": "Celica - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"54": {  
 		"id": 54,
@@ -1592,9 +1539,8 @@
 		"sseal": "",
 		"bvid": 222,
 		"art": "Charlotte - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"55": {  
 		"id": 55,
@@ -1621,9 +1567,8 @@
 		"sseal": "",
 		"bvid": 227,
 		"art": "Cherche",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"56": {  
 		"id": 56,
@@ -1650,9 +1595,8 @@
 		"sseal": "",
 		"bvid": 220,
 		"art": "Chrom",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"57": {  
 		"id": 57,
@@ -1679,9 +1623,8 @@
 		"sseal": "",
 		"bvid": 53,
 		"art": "Chrom - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"58": {  
 		"id": 58,
@@ -1708,9 +1651,8 @@
 		"sseal": "",
 		"bvid": 14,
 		"art": "Chrom - Exalt",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"59": {  
 		"id": 59,
@@ -1737,9 +1679,8 @@
 		"sseal": "",
 		"bvid": 174,
 		"art": "Chrom - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"60": {  
 		"id": 60,
@@ -1766,9 +1707,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Clair",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"61": {  
 		"id": 61,
@@ -1795,9 +1735,8 @@
 		"sseal": "",
 		"bvid": 235,
 		"art": "Clarine",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"62": {  
 		"id": 62,
@@ -1824,9 +1763,8 @@
 		"sseal": "",
 		"bvid": 169,
 		"art": "Clarisse",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"63": {  
 		"id": 63,
@@ -1853,9 +1791,8 @@
 		"sseal": "",
 		"bvid": 193,
 		"art": "Claude",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"64": {  
 		"id": 64,
@@ -1882,9 +1819,8 @@
 		"sseal": "",
 		"bvid": 208,
 		"art": "Clive",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"65": {  
 		"id": 65,
@@ -1911,9 +1847,8 @@
 		"sseal": "",
 		"bvid": 193,
 		"art": "Cordelia - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"66": {  
 		"id": 66,
@@ -1940,9 +1875,8 @@
 		"sseal": "",
 		"bvid": 77,
 		"art": "Cordelia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"67": {  
 		"id": 67,
@@ -1969,9 +1903,8 @@
 		"sseal": "",
 		"bvid": 255,
 		"art": "Cordelia - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"68": {  
 		"id": 68,
@@ -1998,9 +1931,8 @@
 		"sseal": "",
 		"bvid": 40,
 		"art": "Corrin M - Dreaming",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"69": {  
 		"id": 69,
@@ -2027,9 +1959,8 @@
 		"sseal": "",
 		"bvid": 100,
 		"art": "Corrin F - Dreaming",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"70": {  
 		"id": 70,
@@ -2056,9 +1987,8 @@
 		"sseal": "",
 		"bvid": 153,
 		"art": "Corrin - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"71": {  
 		"id": 71,
@@ -2085,9 +2015,8 @@
 		"sseal": "",
 		"bvid": 198,
 		"art": "Corrin M",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"72": {  
 		"id": 72,
@@ -2114,9 +2043,8 @@
 		"sseal": "",
 		"bvid": 2,
 		"art": "Corrin F",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"73": {  
 		"id": 73,
@@ -2143,9 +2071,8 @@
 		"sseal": "",
 		"bvid": 182,
 		"art": "Corrin F - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"74": {  
 		"id": 74,
@@ -2172,9 +2099,8 @@
 		"sseal": "",
 		"bvid": 102,
 		"art": "Corrin - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"75": {  
 		"id": 75,
@@ -2201,9 +2127,8 @@
 		"sseal": "",
 		"bvid": 163,
 		"art": "Cynthia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"76": {  
 		"id": 76,
@@ -2230,9 +2155,8 @@
 		"sseal": "",
 		"bvid": 114,
 		"art": "Death Knight",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"77": {  
 		"id": 77,
@@ -2259,9 +2183,8 @@
 		"sseal": "",
 		"bvid": 30,
 		"art": "Deirdre",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"78": {  
 		"id": 78,
@@ -2288,9 +2211,8 @@
 		"sseal": "",
 		"bvid": 206,
 		"art": "Delthea",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"79": {  
 		"id": 79,
@@ -2317,9 +2239,8 @@
 		"sseal": "",
 		"bvid": 154,
 		"art": "Delthea - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"80": {  
 		"id": 80,
@@ -2346,9 +2267,8 @@
 		"sseal": "",
 		"bvid": 91,
 		"art": "Dimitri",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"81": {  
 		"id": 81,
@@ -2375,9 +2295,8 @@
 		"sseal": "",
 		"bvid": 52,
 		"art": "Donnel",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"82": {  
 		"id": 82,
@@ -2404,9 +2323,8 @@
 		"sseal": "",
 		"bvid": 116,
 		"art": "Dorcas - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"83": {  
 		"id": 83,
@@ -2433,9 +2351,8 @@
 		"sseal": "",
 		"bvid": 184,
 		"art": "Dorcas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"84": {  
 		"id": 84,
@@ -2462,9 +2379,8 @@
 		"sseal": "",
 		"bvid": 209,
 		"art": "Draug",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"85": {  
 		"id": 85,
@@ -2493,9 +2409,8 @@
 		"art": "Duma",
 		"type": "mythic",
 		"blessing": "Anima",
-		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Echoes"]
 	},
 	"86": {  
 		"id": 86,
@@ -2522,9 +2437,8 @@
 		"sseal": "",
 		"bvid": 21,
 		"art": "Edelgard",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"87": {  
 		"id": 87,
@@ -2551,9 +2465,8 @@
 		"sseal": "",
 		"bvid": 171,
 		"art": "Effie",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"88": {  
 		"id": 88,
@@ -2582,9 +2495,8 @@
 		"art": "Eir",
 		"type": "mythic",
 		"blessing": "Light",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5},
+		"entry": ["Heroes"]
 	},
 	"89": {  
 		"id": 89,
@@ -2611,9 +2523,8 @@
 		"sseal": "",
 		"bvid": 179,
 		"art": "Eirika - Memories",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"90": {  
 		"id": 90,
@@ -2640,9 +2551,8 @@
 		"sseal": "",
 		"bvid": 90,
 		"art": "Eirika - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"91": {  
 		"id": 91,
@@ -2671,9 +2581,8 @@
 		"art": "Eirika - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0},
+		"entry": ["The Sacred Stones"]
 	},
 	"92": {  
 		"id": 92,
@@ -2700,9 +2609,8 @@
 		"sseal": "",
 		"bvid": 65,
 		"art": "Eirika",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"93": {  
 		"id": 93,
@@ -2729,9 +2637,8 @@
 		"sseal": "",
 		"bvid": 72,
 		"art": "Eldigan",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"94": {  
 		"id": 94,
@@ -2758,9 +2665,8 @@
 		"sseal": "",
 		"bvid": 250,
 		"art": "Elincia - Festival",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"95": {  
 		"id": 95,
@@ -2787,9 +2693,8 @@
 		"sseal": "",
 		"bvid": 126,
 		"art": "Elincia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"96": {  
 		"id": 96,
@@ -2816,9 +2721,8 @@
 		"sseal": "",
 		"bvid": 156,
 		"art": "Elise - Spa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"97": {  
 		"id": 97,
@@ -2845,9 +2749,8 @@
 		"sseal": "",
 		"bvid": 234,
 		"art": "Elise",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"98": {  
 		"id": 98,
@@ -2874,9 +2777,8 @@
 		"sseal": "",
 		"bvid": 30,
 		"art": "Elise - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"99": {  
 		"id": 99,
@@ -2905,9 +2807,8 @@
 		"art": "Eliwood - Legendary",
 		"type": "legendary",
 		"blessing": "Wind",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["The Blazing Blade"]
 	},
 	"100": {  
 		"id": 100,
@@ -2934,9 +2835,8 @@
 		"sseal": "",
 		"bvid": 26,
 		"art": "Eliwood - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"101": {  
 		"id": 101,
@@ -2963,9 +2863,8 @@
 		"sseal": "",
 		"bvid": 100,
 		"art": "Eliwood",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"102": {  
 		"id": 102,
@@ -2992,9 +2891,8 @@
 		"sseal": "",
 		"bvid": 132,
 		"art": "Eliwood - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"103": {  
 		"id": 103,
@@ -3023,9 +2921,8 @@
 		"art": "Ephraim - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0},
+		"entry": ["The Sacred Stones"]
 	},
 	"104": {  
 		"id": 104,
@@ -3052,9 +2949,8 @@
 		"sseal": "",
 		"bvid": 230,
 		"art": "Ephraim",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"105": {  
 		"id": 105,
@@ -3081,9 +2977,8 @@
 		"sseal": "",
 		"bvid": 6,
 		"art": "Ephraim - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"106": {  
 		"id": 106,
@@ -3110,9 +3005,8 @@
 		"sseal": "",
 		"bvid": 255,
 		"art": "Ephraim - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"107": {  
 		"id": 107,
@@ -3139,9 +3033,8 @@
 		"sseal": "",
 		"bvid": 137,
 		"art": "Est",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"108": {  
 		"id": 108,
@@ -3168,9 +3061,8 @@
 		"sseal": "",
 		"bvid": 158,
 		"art": "Ethlyn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"109": {  
 		"id": 109,
@@ -3197,9 +3089,8 @@
 		"sseal": "",
 		"bvid": 214,
 		"art": "Fae",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"110": {  
 		"id": 110,
@@ -3226,9 +3117,8 @@
 		"sseal": "",
 		"bvid": 47,
 		"art": "Fae - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"111": {  
 		"id": 111,
@@ -3255,9 +3145,8 @@
 		"sseal": "",
 		"bvid": 128,
 		"art": "Faye",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"112": {  
 		"id": 112,
@@ -3284,9 +3173,8 @@
 		"sseal": "",
 		"bvid": 31,
 		"art": "Felicia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"113": {  
 		"id": 113,
@@ -3313,9 +3201,8 @@
 		"sseal": "",
 		"bvid": 40,
 		"art": "Felicia - Picnic",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"114": {  
 		"id": 114,
@@ -3342,9 +3229,8 @@
 		"sseal": "",
 		"bvid": 203,
 		"art": "Finn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"115": {  
 		"id": 115,
@@ -3371,9 +3257,8 @@
 		"sseal": "",
 		"bvid": 219,
 		"art": "Fiora - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"116": {  
 		"id": 116,
@@ -3400,9 +3285,8 @@
 		"sseal": "",
 		"bvid": 195,
 		"art": "Fir",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"117": {  
 		"id": 117,
@@ -3429,9 +3313,8 @@
 		"sseal": "",
 		"bvid": 61,
 		"art": "Fjorm - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"118": {  
 		"id": 118,
@@ -3458,9 +3341,8 @@
 		"sseal": "",
 		"bvid": 13,
 		"art": "Fjorm - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"119": {  
 		"id": 119,
@@ -3489,9 +3371,8 @@
 		"art": "Fjorm",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0},
+		"entry": ["Heroes"]
 	},
 	"120": {  
 		"id": 120,
@@ -3518,9 +3399,8 @@
 		"sseal": "",
 		"bvid": 7,
 		"art": "Flora",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"121": {  
 		"id": 121,
@@ -3547,9 +3427,8 @@
 		"sseal": "",
 		"bvid": 208,
 		"art": "Flora - Picnic",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"122": {  
 		"id": 122,
@@ -3576,9 +3455,8 @@
 		"sseal": "",
 		"bvid": 210,
 		"art": "Florina",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"123": {  
 		"id": 123,
@@ -3605,9 +3483,8 @@
 		"sseal": "",
 		"bvid": 53,
 		"art": "Frederick - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"124": {  
 		"id": 124,
@@ -3634,9 +3511,8 @@
 		"sseal": "",
 		"bvid": 129,
 		"art": "Frederick",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"125": {  
 		"id": 125,
@@ -3663,9 +3539,8 @@
 		"sseal": "",
 		"bvid": 82,
 		"art": "Gaius",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"126": {  
 		"id": 126,
@@ -3692,9 +3567,8 @@
 		"sseal": "",
 		"bvid": 198,
 		"art": "Gaius - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"127": {  
 		"id": 127,
@@ -3721,9 +3595,8 @@
 		"sseal": "",
 		"bvid": 44,
 		"art": "Garon",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"128": {  
 		"id": 128,
@@ -3750,9 +3623,8 @@
 		"sseal": "",
 		"bvid": 79,
 		"art": "Genny - Picnic",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"129": {  
 		"id": 129,
@@ -3779,9 +3651,8 @@
 		"sseal": "",
 		"bvid": 134,
 		"art": "Genny",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"130": {  
 		"id": 130,
@@ -3808,9 +3679,8 @@
 		"sseal": "",
 		"bvid": 136,
 		"art": "Gerome",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"131": {  
 		"id": 131,
@@ -3837,9 +3707,8 @@
 		"sseal": "",
 		"bvid": 234,
 		"art": "Gharnef",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"132": {  
 		"id": 132,
@@ -3866,9 +3735,8 @@
 		"sseal": "",
 		"bvid": 204,
 		"art": "Gordin",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"133": {  
 		"id": 133,
@@ -3895,9 +3763,8 @@
 		"sseal": "",
 		"bvid": 224,
 		"art": "Gray",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"134": {  
 		"id": 134,
@@ -3924,9 +3791,8 @@
 		"sseal": "",
 		"bvid": 129,
 		"art": "Greil - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"135": {  
 		"id": 135,
@@ -3953,9 +3819,8 @@
 		"sseal": "",
 		"bvid": 109,
 		"art": "Gunnthra - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"136": {  
 		"id": 136,
@@ -3984,9 +3849,8 @@
 		"art": "Gunnthra",
 		"type": "legendary",
 		"blessing": "Wind",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4},
+		"entry": ["Heroes"]
 	},
 	"137": {  
 		"id": 137,
@@ -4013,9 +3877,8 @@
 		"sseal": "",
 		"bvid": 123,
 		"art": "Gunnthra - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"138": {  
 		"id": 138,
@@ -4042,9 +3905,8 @@
 		"sseal": "",
 		"bvid": 225,
 		"art": "Gunther",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"139": {  
 		"id": 139,
@@ -4071,9 +3933,8 @@
 		"sseal": "",
 		"bvid": 10,
 		"art": "Gwendolyn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"140": {  
 		"id": 140,
@@ -4100,9 +3961,8 @@
 		"sseal": "",
 		"bvid": 22,
 		"art": "Haar",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"141": {  
 		"id": 141,
@@ -4129,9 +3989,8 @@
 		"sseal": "",
 		"bvid": 90,
 		"art": "Hana",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"142": {  
 		"id": 142,
@@ -4158,9 +4017,8 @@
 		"sseal": "",
 		"bvid": 49,
 		"art": "Hardin - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"143": {  
 		"id": 143,
@@ -4187,9 +4045,8 @@
 		"sseal": "",
 		"bvid": 108,
 		"art": "Hawkeye",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"144": {  
 		"id": 144,
@@ -4216,9 +4073,8 @@
 		"sseal": "",
 		"bvid": 58,
 		"art": "Hector - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"145": {  
 		"id": 145,
@@ -4245,9 +4101,8 @@
 		"sseal": "",
 		"bvid": 154,
 		"art": "Hector",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"146": {  
 		"id": 146,
@@ -4274,9 +4129,8 @@
 		"sseal": "",
 		"bvid": 144,
 		"art": "Hector - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"147": {  
 		"id": 147,
@@ -4305,9 +4159,8 @@
 		"art": "Hector - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0},
+		"entry": ["The Blazing Blade"]
 	},
 	"148": {  
 		"id": 148,
@@ -4334,9 +4187,8 @@
 		"sseal": "",
 		"bvid": 191,
 		"art": "Helbindi",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"149": {  
 		"id": 149,
@@ -4363,9 +4215,8 @@
 		"sseal": "",
 		"bvid": 199,
 		"art": "Helbindi Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"150": {  
 		"id": 150,
@@ -4392,9 +4243,8 @@
 		"sseal": "",
 		"bvid": 205,
 		"art": "Henry - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"151": {  
 		"id": 151,
@@ -4421,9 +4271,8 @@
 		"sseal": "",
 		"bvid": 17,
 		"art": "Henry",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"152": {  
 		"id": 152,
@@ -4450,9 +4299,8 @@
 		"sseal": "",
 		"bvid": 221,
 		"art": "Hilda",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"153": {  
 		"id": 153,
@@ -4479,9 +4327,8 @@
 		"sseal": "",
 		"bvid": 251,
 		"art": "Hinata",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"154": {  
 		"id": 154,
@@ -4508,9 +4355,8 @@
 		"sseal": "",
 		"bvid": 221,
 		"art": "Hinoka - Kinshi",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"155": {  
 		"id": 155,
@@ -4537,9 +4383,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Hinoka - Spa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"156": {  
 		"id": 156,
@@ -4566,9 +4411,8 @@
 		"sseal": "",
 		"bvid": 235,
 		"art": "Hinoka",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"157": {  
 		"id": 157,
@@ -4597,9 +4441,8 @@
 		"art": "Hrid",
 		"type": "legendary",
 		"blessing": "Wind",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0},
+		"entry": ["Heroes"]
 	},
 	"158": {  
 		"id": 158,
@@ -4626,9 +4469,8 @@
 		"sseal": "",
 		"bvid": 87,
 		"art": "Hrid - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"159": {  
 		"id": 159,
@@ -4655,9 +4497,8 @@
 		"sseal": "",
 		"bvid": 159,
 		"art": "Hubert",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"160": {  
 		"id": 160,
@@ -4684,9 +4525,8 @@
 		"sseal": "",
 		"bvid": 165,
 		"art": "Idunn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"161": {  
 		"id": 161,
@@ -4713,9 +4553,8 @@
 		"sseal": "",
 		"bvid": 245,
 		"art": "Ike - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"162": {  
 		"id": 162,
@@ -4742,9 +4581,8 @@
 		"sseal": "",
 		"bvid": 75,
 		"art": "Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"163": {  
 		"id": 163,
@@ -4773,9 +4611,8 @@
 		"art": "Ike - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Radiant Dawn"]
 	},
 	"164": {  
 		"id": 164,
@@ -4802,9 +4639,8 @@
 		"sseal": "",
 		"bvid": 85,
 		"art": "Ike",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"165": {  
 		"id": 165,
@@ -4831,9 +4667,8 @@
 		"sseal": "",
 		"bvid": 125,
 		"art": "Inigo - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"166": {  
 		"id": 166,
@@ -4860,9 +4695,8 @@
 		"sseal": "",
 		"bvid": 200,
 		"art": "Innes - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"167": {  
 		"id": 167,
@@ -4889,9 +4723,8 @@
 		"sseal": "",
 		"bvid": 84,
 		"art": "Innes",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"168": {  
 		"id": 168,
@@ -4918,9 +4751,8 @@
 		"sseal": "",
 		"bvid": 74,
 		"art": "Ishtar",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"169": {  
 		"id": 169,
@@ -4947,9 +4779,8 @@
 		"sseal": "",
 		"bvid": 183,
 		"art": "Ishtar - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"170": {  
 		"id": 170,
@@ -4976,9 +4807,8 @@
 		"sseal": "",
 		"bvid": 92,
 		"art": "Jaffar",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"171": {  
 		"id": 171,
@@ -5005,9 +4835,8 @@
 		"sseal": "",
 		"bvid": 2,
 		"art": "Jagen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"172": {  
 		"id": 172,
@@ -5034,9 +4863,8 @@
 		"sseal": "",
 		"bvid": 94,
 		"art": "Jakob - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"173": {  
 		"id": 173,
@@ -5063,9 +4891,8 @@
 		"sseal": "",
 		"bvid": 226,
 		"art": "Jakob",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"174": {  
 		"id": 174,
@@ -5092,9 +4919,8 @@
 		"sseal": "",
 		"bvid": 134,
 		"art": "Jamke",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"175": {  
 		"id": 175,
@@ -5121,9 +4947,8 @@
 		"sseal": "",
 		"bvid": 135,
 		"art": "Jeorge",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"176": {  
 		"id": 176,
@@ -5150,9 +4975,8 @@
 		"sseal": "",
 		"bvid": 134,
 		"art": "Joshua",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"177": {  
 		"id": 177,
@@ -5181,9 +5005,8 @@
 		"art": "Julia - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"178": {  
 		"id": 178,
@@ -5210,9 +5033,8 @@
 		"sseal": "",
 		"bvid": 210,
 		"art": "Julia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"179": {  
 		"id": 179,
@@ -5239,9 +5061,8 @@
 		"sseal": "",
 		"bvid": 143,
 		"art": "Julius",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"180": {  
 		"id": 180,
@@ -5268,9 +5089,8 @@
 		"sseal": "",
 		"bvid": 143,
 		"art": "Kaden",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"181": {  
 		"id": 181,
@@ -5297,9 +5117,8 @@
 		"sseal": "",
 		"bvid": 12,
 		"art": "Kagero - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"182": {  
 		"id": 182,
@@ -5326,9 +5145,8 @@
 		"sseal": "",
 		"bvid": 80,
 		"art": "Kagero",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"183": {  
 		"id": 183,
@@ -5355,9 +5173,8 @@
 		"sseal": "",
 		"bvid": 34,
 		"art": "Kagero - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"184": {  
 		"id": 184,
@@ -5384,9 +5201,8 @@
 		"sseal": "",
 		"bvid": 123,
 		"art": "Kana F",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"185": {  
 		"id": 185,
@@ -5413,9 +5229,8 @@
 		"sseal": "",
 		"bvid": 63,
 		"art": "Kana M",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"186": {  
 		"id": 186,
@@ -5442,9 +5257,8 @@
 		"sseal": "",
 		"bvid": 34,
 		"art": "Karel",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"187": {  
 		"id": 187,
@@ -5471,9 +5285,8 @@
 		"sseal": "",
 		"bvid": 150,
 		"art": "Karla",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"188": {  
 		"id": 188,
@@ -5500,9 +5313,8 @@
 		"sseal": "",
 		"bvid": 190,
 		"art": "Katarina",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"189": {  
 		"id": 189,
@@ -5529,9 +5341,8 @@
 		"sseal": "",
 		"bvid": 122,
 		"art": "Kaze",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"190": {  
 		"id": 190,
@@ -5558,9 +5369,8 @@
 		"sseal": "",
 		"bvid": 201,
 		"art": "Keaton",
-		"type": "normal" 		
-
-
+		"type": "normal" 		,
+		"entry": ["Fates"]
 	},
 	"191": {  
 		"id": 191,
@@ -5587,9 +5397,8 @@
 		"sseal": "",
 		"bvid": 177,
 		"art": "Kjelle",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"192": {  
 		"id": 192,
@@ -5616,9 +5425,8 @@
 		"sseal": "",
 		"bvid": 146,
 		"art": "Klein",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"193": {  
 		"id": 193,
@@ -5645,9 +5453,8 @@
 		"sseal": "",
 		"bvid": 206,
 		"art": "Kliff",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"194": {  
 		"id": 194,
@@ -5674,9 +5481,8 @@
 		"sseal": "",
 		"bvid": 175,
 		"art": "Kronya",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"195": {  
 		"id": 195,
@@ -5703,9 +5509,8 @@
 		"sseal": "",
 		"bvid": 152,
 		"art": "L_Arachel",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"196": {  
 		"id": 196,
@@ -5732,9 +5537,8 @@
 		"sseal": "",
 		"bvid": 170,
 		"art": "Lachesis",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"197": {  
 		"id": 197,
@@ -5761,9 +5565,8 @@
 		"sseal": "",
 		"bvid": 107,
 		"art": "Laegjarn - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"198": {  
 		"id": 198,
@@ -5790,9 +5593,8 @@
 		"sseal": "",
 		"bvid": 121,
 		"art": "Laegjarn - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"199": {  
 		"id": 199,
@@ -5819,9 +5621,8 @@
 		"sseal": "",
 		"bvid": 35,
 		"art": "Laegjarn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"200": {  
 		"id": 200,
@@ -5848,9 +5649,8 @@
 		"sseal": "",
 		"bvid": 238,
 		"art": "Laevatain - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"201": {  
 		"id": 201,
@@ -5877,9 +5677,8 @@
 		"sseal": "",
 		"bvid": 252,
 		"art": "Laevatein - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"202": {  
 		"id": 202,
@@ -5906,9 +5705,8 @@
 		"sseal": "",
 		"bvid": 166,
 		"art": "Laevatein",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"203": {  
 		"id": 203,
@@ -5935,9 +5733,8 @@
 		"sseal": "",
 		"bvid": 230,
 		"art": "Laslow",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"204": {  
 		"id": 204,
@@ -5964,9 +5761,8 @@
 		"sseal": "",
 		"bvid": 245,
 		"art": "Leanne",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"205": {  
 		"id": 205,
@@ -5993,9 +5789,8 @@
 		"sseal": "",
 		"bvid": 232,
 		"art": "Legault",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"206": {  
 		"id": 206,
@@ -6013,7 +5808,7 @@
 		"basespd": 9,
 		"basedef": 5,
 		"baseres": 3,
-		"weapon": "Legion's Axe+",
+		"weapon": "Sneering Axe",
 		"assist": "",
 		"special": "Reprisal",
 		"askill": "Fury 3",
@@ -6022,9 +5817,8 @@
 		"sseal": "",
 		"bvid": 114,
 		"art": "Legion",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"207": {  
 		"id": 207,
@@ -6051,9 +5845,8 @@
 		"sseal": "",
 		"bvid": 27,
 		"art": "Leif",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"208": {  
 		"id": 208,
@@ -6080,9 +5873,8 @@
 		"sseal": "",
 		"bvid": 121,
 		"art": "Lene",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"209": {  
 		"id": 209,
@@ -6109,9 +5901,8 @@
 		"sseal": "",
 		"bvid": 242,
 		"art": "Leo - Picnic",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"210": {  
 		"id": 210,
@@ -6138,9 +5929,8 @@
 		"sseal": "",
 		"bvid": 93,
 		"art": "Leo - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"211": {  
 		"id": 211,
@@ -6167,9 +5957,8 @@
 		"sseal": "",
 		"bvid": 41,
 		"art": "Leo",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"212": {  
 		"id": 212,
@@ -6196,9 +5985,8 @@
 		"sseal": "",
 		"bvid": 54,
 		"art": "Leon",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"213": {  
 		"id": 213,
@@ -6225,9 +6013,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Lethe",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"214": {  
 		"id": 214,
@@ -6254,9 +6041,8 @@
 		"sseal": "",
 		"bvid": 214,
 		"art": "Lewyn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"215": {  
 		"id": 215,
@@ -6283,9 +6069,8 @@
 		"sseal": "",
 		"bvid": 12,
 		"art": "Libra",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"216": {  
 		"id": 216,
@@ -6312,9 +6097,8 @@
 		"sseal": "",
 		"bvid": 174,
 		"art": "Lilina - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"217": {  
 		"id": 217,
@@ -6341,9 +6125,8 @@
 		"sseal": "",
 		"bvid": 48,
 		"art": "Lilina - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"218": {  
 		"id": 218,
@@ -6370,9 +6153,8 @@
 		"sseal": "",
 		"bvid": 58,
 		"art": "Lilina",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"219": {  
 		"id": 219,
@@ -6399,9 +6181,8 @@
 		"sseal": "",
 		"bvid": 61,
 		"art": "Linde",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"220": {  
 		"id": 220,
@@ -6428,9 +6209,8 @@
 		"sseal": "",
 		"bvid": 177,
 		"art": "Linde - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"221": {  
 		"id": 221,
@@ -6457,9 +6237,8 @@
 		"sseal": "",
 		"bvid": 176,
 		"art": "Linus",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"222": {  
 		"id": 222,
@@ -6486,9 +6265,8 @@
 		"sseal": "",
 		"bvid": 29,
 		"art": "Lissa - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"223": {  
 		"id": 223,
@@ -6515,9 +6293,8 @@
 		"sseal": "",
 		"bvid": 4,
 		"art": "Lissa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"224": {  
 		"id": 224,
@@ -6544,9 +6321,8 @@
 		"sseal": "",
 		"bvid": 250,
 		"art": "Lloyd",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"225": {  
 		"id": 225,
@@ -6573,9 +6349,8 @@
 		"sseal": "",
 		"bvid": 140,
 		"art": "Loki - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"226": {  
 		"id": 226,
@@ -6602,9 +6377,8 @@
 		"sseal": "",
 		"bvid": 102,
 		"art": "Loki",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"227": {  
 		"id": 227,
@@ -6631,9 +6405,8 @@
 		"sseal": "",
 		"bvid": 43,
 		"art": "Lon_qu",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"228": {  
 		"id": 228,
@@ -6660,9 +6433,8 @@
 		"sseal": "",
 		"bvid": 23,
 		"art": "Louise - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"229": {  
 		"id": 229,
@@ -6689,9 +6461,8 @@
 		"sseal": "",
 		"bvid": 98,
 		"art": "Lucina - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"230": {  
 		"id": 230,
@@ -6718,9 +6489,8 @@
 		"sseal": "",
 		"bvid": 194,
 		"art": "Lucina",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"231": {  
 		"id": 231,
@@ -6749,9 +6519,8 @@
 		"art": "Lucina - Legendary",
 		"type": "legendary",
 		"blessing": "Wind",
-		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0},
+		"entry": ["Awakening"]
 	},
 	"232": {  
 		"id": 232,
@@ -6778,9 +6547,8 @@
 		"sseal": "",
 		"bvid": 84,
 		"art": "Lucina - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"233": {  
 		"id": 233,
@@ -6807,9 +6575,8 @@
 		"sseal": "",
 		"bvid": 232,
 		"art": "Lucius",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"234": {  
 		"id": 234,
@@ -6836,9 +6603,8 @@
 		"sseal": "",
 		"bvid": 48,
 		"art": "Lugh",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"235": {  
 		"id": 235,
@@ -6865,9 +6631,8 @@
 		"sseal": "",
 		"bvid": 255,
 		"art": "Lukas - Picnic",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"236": {  
 		"id": 236,
@@ -6894,9 +6659,8 @@
 		"sseal": "",
 		"bvid": 54,
 		"art": "Lukas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"237": {  
 		"id": 237,
@@ -6923,9 +6687,8 @@
 		"sseal": "",
 		"bvid": 54,
 		"art": "Luke",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"238": {  
 		"id": 238,
@@ -6952,9 +6715,8 @@
 		"sseal": "",
 		"bvid": 13,
 		"art": "Lute",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"239": {  
 		"id": 239,
@@ -6981,9 +6743,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Lyn - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"240": {  
 		"id": 240,
@@ -7010,9 +6771,8 @@
 		"sseal": "",
 		"bvid": 239,
 		"art": "Lyn - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"241": {  
 		"id": 241,
@@ -7039,9 +6799,8 @@
 		"sseal": "",
 		"bvid": 241,
 		"art": "Lyn - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"242": {  
 		"id": 242,
@@ -7068,9 +6827,8 @@
 		"sseal": "",
 		"bvid": 125,
 		"art": "Lyn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"243": {  
 		"id": 243,
@@ -7099,9 +6857,8 @@
 		"art": "Lyn - Legendary",
 		"type": "legendary",
 		"blessing": "Wind",
-		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 2, "spd": 0, "def": 0, "res": 0},
+		"entry": ["The Blazing Blade"]
 	},
 	"244": {  
 		"id": 244,
@@ -7128,9 +6885,8 @@
 		"sseal": "",
 		"bvid": 115,
 		"art": "Lyn - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"245": {  
 		"id": 245,
@@ -7157,9 +6913,8 @@
 		"sseal": "",
 		"bvid": 39,
 		"art": "Lyon",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"246": {  
 		"id": 246,
@@ -7186,9 +6941,8 @@
 		"sseal": "",
 		"bvid": 37,
 		"art": "Mae",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"247": {  
 		"id": 247,
@@ -7215,9 +6969,8 @@
 		"sseal": "",
 		"bvid": 154,
 		"art": "Mareeta - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"248": {  
 		"id": 248,
@@ -7244,9 +6997,8 @@
 		"sseal": "",
 		"bvid": 202,
 		"art": "Maria",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"249": {  
 		"id": 249,
@@ -7273,9 +7025,8 @@
 		"sseal": "",
 		"bvid": 142,
 		"art": "Maribelle",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"250": {  
 		"id": 250,
@@ -7302,9 +7053,8 @@
 		"sseal": "",
 		"bvid": 211,
 		"art": "Marisa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"251": {  
 		"id": 251,
@@ -7331,9 +7081,8 @@
 		"sseal": "",
 		"bvid": 165,
 		"art": "Marisa - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"252": {  
 		"id": 252,
@@ -7360,9 +7109,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Marth - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"253": {  
 		"id": 253,
@@ -7389,9 +7137,8 @@
 		"sseal": "",
 		"bvid": 34,
 		"art": "Marth",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"254": {  
 		"id": 254,
@@ -7418,9 +7165,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Marth_F",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"255": {  
 		"id": 255,
@@ -7449,9 +7195,8 @@
 		"art": "Marth - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 4},
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"256": {  
 		"id": 256,
@@ -7478,9 +7223,8 @@
 		"sseal": "",
 		"bvid": 234,
 		"art": "Mathilda",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"257": {  
 		"id": 257,
@@ -7507,9 +7251,8 @@
 		"sseal": "",
 		"bvid": 214,
 		"art": "Matthew",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"258": {  
 		"id": 258,
@@ -7536,9 +7279,8 @@
 		"sseal": "",
 		"bvid": 167,
 		"art": "Mercedes",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"259": {  
 		"id": 259,
@@ -7565,9 +7307,8 @@
 		"sseal": "",
 		"bvid": 215,
 		"art": "Merric",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"260": {  
 		"id": 260,
@@ -7594,9 +7335,8 @@
 		"sseal": "",
 		"bvid": 117,
 		"art": "Mia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"261": {  
 		"id": 261,
@@ -7623,9 +7363,8 @@
 		"sseal": "",
 		"bvid": 49,
 		"art": "Mia - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"262": {  
 		"id": 262,
@@ -7652,9 +7391,8 @@
 		"sseal": "",
 		"bvid": 206,
 		"art": "Micaiah",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"263": {  
 		"id": 263,
@@ -7681,9 +7419,8 @@
 		"sseal": "",
 		"bvid": 110,
 		"art": "Micaiah - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"264": {  
 		"id": 264,
@@ -7710,9 +7447,8 @@
 		"sseal": "",
 		"bvid": 74,
 		"art": "Micaiah - Festival",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"265": {  
 		"id": 265,
@@ -7739,9 +7475,8 @@
 		"sseal": "",
 		"bvid": 108,
 		"art": "Michalis",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"266": {  
 		"id": 266,
@@ -7768,9 +7503,8 @@
 		"sseal": "",
 		"bvid": 220,
 		"art": "Mikoto - Dreaming",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"267": {  
 		"id": 267,
@@ -7797,9 +7531,8 @@
 		"sseal": "",
 		"bvid": 199,
 		"art": "Minerva",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"268": {  
 		"id": 268,
@@ -7826,9 +7559,8 @@
 		"sseal": "",
 		"bvid": 192,
 		"art": "Mist",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"269": {  
 		"id": 269,
@@ -7855,9 +7587,8 @@
 		"sseal": "",
 		"bvid": 246,
 		"art": "Mist - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"270": {  
 		"id": 270,
@@ -7884,9 +7615,8 @@
 		"sseal": "",
 		"bvid": 81,
 		"art": "Mordecai",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"271": {  
 		"id": 271,
@@ -7913,9 +7643,8 @@
 		"sseal": "",
 		"bvid": 96,
 		"art": "Morgan M",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"272": {  
 		"id": 272,
@@ -7942,9 +7671,8 @@
 		"sseal": "",
 		"bvid": 92,
 		"art": "Morgan F",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"273": {  
 		"id": 273,
@@ -7971,9 +7699,8 @@
 		"sseal": "",
 		"bvid": 19,
 		"art": "Myrhh",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"274": {  
 		"id": 274,
@@ -8000,9 +7727,8 @@
 		"sseal": "",
 		"bvid": 207,
 		"art": "Myrrh - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"275": {  
 		"id": 275,
@@ -8029,9 +7755,8 @@
 		"sseal": "",
 		"bvid": 203,
 		"art": "Naesala",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"276": {  
 		"id": 276,
@@ -8060,9 +7785,8 @@
 		"art": "Naga",
 		"type": "mythic",
 		"blessing": "Astra",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0},
+		"entry": ["Awakening"]
 	},
 	"277": {  
 		"id": 277,
@@ -8089,9 +7813,8 @@
 		"sseal": "",
 		"bvid": 70,
 		"art": "Nah",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"278": {  
 		"id": 278,
@@ -8118,9 +7841,8 @@
 		"sseal": "",
 		"bvid": 220,
 		"art": "Nailah",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"279": {  
 		"id": 279,
@@ -8147,9 +7869,8 @@
 		"sseal": "",
 		"bvid": 39,
 		"art": "Nanna",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"280": {  
 		"id": 280,
@@ -8176,9 +7897,8 @@
 		"sseal": "",
 		"bvid": 183,
 		"art": "Narcian",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"281": {  
 		"id": 281,
@@ -8205,9 +7925,8 @@
 		"sseal": "",
 		"bvid": 33,
 		"art": "Navarre",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"282": {  
 		"id": 282,
@@ -8234,9 +7953,8 @@
 		"sseal": "",
 		"bvid": 176,
 		"art": "Nephenee",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"283": {  
 		"id": 283,
@@ -8263,9 +7981,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Nephenee - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"284": {  
 		"id": 284,
@@ -8292,9 +8009,8 @@
 		"sseal": "",
 		"bvid": 9,
 		"art": "Niles",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"285": {  
 		"id": 285,
@@ -8321,9 +8037,8 @@
 		"sseal": "",
 		"bvid": 197,
 		"art": "Niles - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"286": {  
 		"id": 286,
@@ -8350,9 +8065,8 @@
 		"sseal": "",
 		"bvid": 184,
 		"art": "Nina",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"287": {  
 		"id": 287,
@@ -8379,9 +8093,8 @@
 		"sseal": "",
 		"bvid": 61,
 		"art": "Ninian - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"288": {  
 		"id": 288,
@@ -8408,9 +8121,8 @@
 		"sseal": "",
 		"bvid": 139,
 		"art": "Ninian",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"289": {  
 		"id": 289,
@@ -8437,9 +8149,8 @@
 		"sseal": "",
 		"bvid": 107,
 		"art": "Nino - Fangs",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"290": {  
 		"id": 290,
@@ -8466,9 +8177,8 @@
 		"sseal": "",
 		"bvid": 57,
 		"art": "Nino",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"291": {  
 		"id": 291,
@@ -8495,9 +8205,8 @@
 		"sseal": "",
 		"bvid": 184,
 		"art": "Noire - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"292": {  
 		"id": 292,
@@ -8524,9 +8233,8 @@
 		"sseal": "",
 		"bvid": 248,
 		"art": "Nowi - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"293": {  
 		"id": 293,
@@ -8553,9 +8261,8 @@
 		"sseal": "",
 		"bvid": 60,
 		"art": "Nowi",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"294": {  
 		"id": 294,
@@ -8582,9 +8289,8 @@
 		"sseal": "",
 		"bvid": 211,
 		"art": "Oboro",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"295": {  
 		"id": 295,
@@ -8611,9 +8317,8 @@
 		"sseal": "",
 		"bvid": 163,
 		"art": "Odin",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"296": {  
 		"id": 296,
@@ -8640,9 +8345,8 @@
 		"sseal": "",
 		"bvid": 152,
 		"art": "Ogma",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"297": {  
 		"id": 297,
@@ -8669,9 +8373,8 @@
 		"sseal": "",
 		"bvid": 133,
 		"art": "Oliver",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"298": {  
 		"id": 298,
@@ -8698,9 +8401,8 @@
 		"sseal": "",
 		"bvid": 115,
 		"art": "Olivia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"299": {  
 		"id": 299,
@@ -8727,9 +8429,8 @@
 		"sseal": "",
 		"bvid": 205,
 		"art": "Olivia - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"300": {  
 		"id": 300,
@@ -8756,9 +8457,8 @@
 		"sseal": "",
 		"bvid": 165,
 		"art": "Olivia - Ylissean",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"301": {  
 		"id": 301,
@@ -8785,9 +8485,8 @@
 		"sseal": "",
 		"bvid": 144,
 		"art": "Olwen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"302": {  
 		"id": 302,
@@ -8814,9 +8513,8 @@
 		"sseal": "",
 		"bvid": 194,
 		"art": "Olwen - Thracia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"303": {  
 		"id": 303,
@@ -8843,9 +8541,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Ophelia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"304": {  
 		"id": 304,
@@ -8872,9 +8569,8 @@
 		"sseal": "",
 		"bvid": 170,
 		"art": "Oscar",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"305": {  
 		"id": 305,
@@ -8901,9 +8597,8 @@
 		"sseal": "",
 		"bvid": 203,
 		"art": "Owain",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"306": {  
 		"id": 306,
@@ -8930,9 +8625,8 @@
 		"sseal": "",
 		"bvid": 86,
 		"art": "Palla - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"307": {  
 		"id": 307,
@@ -8959,9 +8653,8 @@
 		"sseal": "",
 		"bvid": 196,
 		"art": "Palla",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"308": {  
 		"id": 308,
@@ -8988,9 +8681,8 @@
 		"sseal": "",
 		"bvid": 136,
 		"art": "Panne",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"309": {  
 		"id": 309,
@@ -9017,9 +8709,8 @@
 		"sseal": "",
 		"bvid": 28,
 		"art": "Pent - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"310": {  
 		"id": 310,
@@ -9046,9 +8737,8 @@
 		"sseal": "",
 		"bvid": 198,
 		"art": "Peri",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"311": {  
 		"id": 311,
@@ -9075,9 +8765,8 @@
 		"sseal": "",
 		"bvid": 43,
 		"art": "Petra",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"312": {  
 		"id": 312,
@@ -9104,9 +8793,8 @@
 		"sseal": "",
 		"bvid": 193,
 		"art": "Priscilla",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"313": {  
 		"id": 313,
@@ -9133,9 +8821,8 @@
 		"sseal": "",
 		"bvid": 135,
 		"art": "Quan",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"314": {  
 		"id": 314,
@@ -9162,9 +8849,8 @@
 		"sseal": "",
 		"bvid": 48,
 		"art": "Raigh",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"315": {  
 		"id": 315,
@@ -9191,9 +8877,8 @@
 		"sseal": "",
 		"bvid": 45,
 		"art": "Ranulf",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"316": {  
 		"id": 316,
@@ -9220,9 +8905,8 @@
 		"sseal": "",
 		"bvid": 184,
 		"art": "Raven",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"317": {  
 		"id": 317,
@@ -9249,9 +8933,8 @@
 		"sseal": "",
 		"bvid": 147,
 		"art": "Rebecca",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"318": {  
 		"id": 318,
@@ -9278,9 +8961,8 @@
 		"sseal": "",
 		"bvid": 143,
 		"art": "Reinhardt - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"319": {  
 		"id": 319,
@@ -9307,9 +8989,8 @@
 		"sseal": "",
 		"bvid": 162,
 		"art": "Reinhardt",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"320": {  
 		"id": 320,
@@ -9336,9 +9017,8 @@
 		"sseal": "",
 		"bvid": 148,
 		"art": "Reinhardt - Thracia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"321": {  
 		"id": 321,
@@ -9365,9 +9045,8 @@
 		"sseal": "",
 		"bvid": 131,
 		"art": "Reyson",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"322": {  
 		"id": 322,
@@ -9394,9 +9073,8 @@
 		"sseal": "",
 		"bvid": 35,
 		"art": "Rhajat",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"323": {  
 		"id": 323,
@@ -9423,9 +9101,8 @@
 		"sseal": "",
 		"bvid": 38,
 		"art": "Rinea - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"324": {  
 		"id": 324,
@@ -9452,9 +9129,8 @@
 		"sseal": "",
 		"bvid": 201,
 		"art": "Robin M - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"325": {  
 		"id": 325,
@@ -9483,9 +9159,8 @@
 		"art": "Robin F - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 3, "def": 0, "res": 0},
+		"entry": ["Awakening"]
 	},
 	"326": {  
 		"id": 326,
@@ -9512,9 +9187,8 @@
 		"sseal": "",
 		"bvid": 92,
 		"art": "Robin M - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"327": {  
 		"id": 327,
@@ -9541,9 +9215,8 @@
 		"sseal": "",
 		"bvid": 67,
 		"art": "Robin M",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"328": {  
 		"id": 328,
@@ -9570,9 +9243,8 @@
 		"sseal": "",
 		"bvid": 191,
 		"art": "Robin F",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"329": {  
 		"id": 329,
@@ -9599,9 +9271,8 @@
 		"sseal": "",
 		"bvid": 51,
 		"art": "Robin F - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"330": {  
 		"id": 330,
@@ -9628,9 +9299,8 @@
 		"sseal": "",
 		"bvid": 247,
 		"art": "Roderick",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"331": {  
 		"id": 331,
@@ -9659,9 +9329,8 @@
 		"art": "Roy - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["The Binding Blade"]
 	},
 	"332": {  
 		"id": 332,
@@ -9688,9 +9357,8 @@
 		"sseal": "",
 		"bvid": 81,
 		"art": "Roy - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"333": {  
 		"id": 333,
@@ -9717,9 +9385,8 @@
 		"sseal": "",
 		"bvid": 49,
 		"art": "Roy",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"334": {  
 		"id": 334,
@@ -9746,9 +9413,8 @@
 		"sseal": "",
 		"bvid": 39,
 		"art": "Roy - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"335": {  
 		"id": 335,
@@ -9775,9 +9441,8 @@
 		"sseal": "",
 		"bvid": 251,
 		"art": "Rutger",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"336": {  
 		"id": 336,
@@ -9804,9 +9469,8 @@
 		"sseal": "",
 		"bvid": 113,
 		"art": "Ryoma - Festival",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"337": {  
 		"id": 337,
@@ -9833,9 +9497,8 @@
 		"sseal": "",
 		"bvid": 245,
 		"art": "Ryoma",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"338": {  
 		"id": 338,
@@ -9862,9 +9525,8 @@
 		"sseal": "",
 		"bvid": 231,
 		"art": "Ryoma - Spa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"339": {  
 		"id": 339,
@@ -9893,9 +9555,8 @@
 		"art": "Ryoma - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0},
+		"entry": ["Fates"]
 	},
 	"340": {  
 		"id": 340,
@@ -9922,9 +9583,8 @@
 		"sseal": "",
 		"bvid": 35,
 		"art": "Saber",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"341": {  
 		"id": 341,
@@ -9951,9 +9611,8 @@
 		"sseal": "",
 		"bvid": 20,
 		"art": "Saias",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"342": {  
 		"id": 342,
@@ -9980,9 +9639,8 @@
 		"sseal": "",
 		"bvid": 29,
 		"art": "Saizo",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"343": {  
 		"id": 343,
@@ -10009,9 +9667,8 @@
 		"sseal": "",
 		"bvid": 169,
 		"art": "Sakura - Halloween",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"344": {  
 		"id": 344,
@@ -10038,9 +9695,8 @@
 		"sseal": "",
 		"bvid": 159,
 		"art": "Sakura - Spa",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"345": {  
 		"id": 345,
@@ -10067,9 +9723,8 @@
 		"sseal": "",
 		"bvid": 237,
 		"art": "Sakura",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"346": {  
 		"id": 346,
@@ -10096,9 +9751,8 @@
 		"sseal": "",
 		"bvid": 62,
 		"art": "Sanaki - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"347": {  
 		"id": 347,
@@ -10125,9 +9779,8 @@
 		"sseal": "",
 		"bvid": 140,
 		"art": "Sanaki",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"348": {  
 		"id": 348,
@@ -10154,9 +9807,8 @@
 		"sseal": "",
 		"bvid": 17,
 		"art": "Selena",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"349": {  
 		"id": 349,
@@ -10183,9 +9835,8 @@
 		"sseal": "",
 		"bvid": 254,
 		"art": "Seliph",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"350": {  
 		"id": 350,
@@ -10212,9 +9863,8 @@
 		"sseal": "",
 		"bvid": 217,
 		"art": "Selkie",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"351": {  
 		"id": 351,
@@ -10241,9 +9891,8 @@
 		"sseal": "",
 		"bvid": 0,
 		"art": "Serra",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"352": {  
 		"id": 352,
@@ -10270,9 +9919,8 @@
 		"sseal": "",
 		"bvid": 36,
 		"art": "Seth",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"353": {  
 		"id": 353,
@@ -10290,7 +9938,7 @@
 		"basespd": 9,
 		"basedef": 5,
 		"baseres": 6,
-		"weapon": "Assassin's Bow+",
+		"weapon": "Setsuna's Yumi",
 		"assist": "Reciprocal Aid",
 		"special": "",
 		"askill": "HP +5",
@@ -10299,9 +9947,8 @@
 		"sseal": "",
 		"bvid": 233,
 		"art": "Setsuna",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"354": {  
 		"id": 354,
@@ -10328,9 +9975,8 @@
 		"sseal": "",
 		"bvid": 193,
 		"art": "Shanna",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"355": {  
 		"id": 355,
@@ -10357,9 +10003,8 @@
 		"sseal": "",
 		"bvid": 218,
 		"art": "Sharena",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"356": {  
 		"id": 356,
@@ -10386,9 +10031,8 @@
 		"sseal": "",
 		"bvid": 172,
 		"art": "Sharena - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"357": {  
 		"id": 357,
@@ -10415,9 +10059,8 @@
 		"sseal": "",
 		"bvid": 49,
 		"art": "Sheena",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"358": {  
 		"id": 358,
@@ -10444,9 +10087,8 @@
 		"sseal": "",
 		"bvid": 77,
 		"art": "Shigure - Dancer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"359": {  
 		"id": 359,
@@ -10473,9 +10115,8 @@
 		"sseal": "",
 		"bvid": 243,
 		"art": "Shigure",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"360": {  
 		"id": 360,
@@ -10502,9 +10143,8 @@
 		"sseal": "",
 		"bvid": 148,
 		"art": "Shiro",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"361": {  
 		"id": 361,
@@ -10531,9 +10171,8 @@
 		"sseal": "",
 		"bvid": 79,
 		"art": "Siegbert",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"362": {  
 		"id": 362,
@@ -10560,9 +10199,8 @@
 		"sseal": "",
 		"bvid": 225,
 		"art": "Sigrun",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"363": {  
 		"id": 363,
@@ -10589,9 +10227,8 @@
 		"sseal": "",
 		"bvid": 19,
 		"art": "Sigrun - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"364": {  
 		"id": 364,
@@ -10618,9 +10255,8 @@
 		"sseal": "",
 		"bvid": 187,
 		"art": "Sigurd",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"365": {  
 		"id": 365,
@@ -10647,9 +10283,8 @@
 		"sseal": "",
 		"bvid": 91,
 		"art": "Silas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"366": {  
 		"id": 366,
@@ -10676,9 +10311,8 @@
 		"sseal": "",
 		"bvid": 123,
 		"art": "Silvia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"367": {  
 		"id": 367,
@@ -10705,9 +10339,8 @@
 		"sseal": "",
 		"bvid": 147,
 		"art": "Soleil",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"368": {  
 		"id": 368,
@@ -10734,9 +10367,8 @@
 		"sseal": "",
 		"bvid": 138,
 		"art": "Sonya",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"369": {  
 		"id": 369,
@@ -10763,9 +10395,8 @@
 		"sseal": "",
 		"bvid": 181,
 		"art": "Sophia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"370": {  
 		"id": 370,
@@ -10792,9 +10423,8 @@
 		"sseal": "",
 		"bvid": 178,
 		"art": "Soren - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"371": {  
 		"id": 371,
@@ -10821,9 +10451,8 @@
 		"sseal": "",
 		"bvid": 188,
 		"art": "Soren",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"372": {  
 		"id": 372,
@@ -10850,9 +10479,8 @@
 		"sseal": "",
 		"bvid": 203,
 		"art": "Sothe",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"373": {  
 		"id": 373,
@@ -10881,9 +10509,8 @@
 		"art": "Sothis",
 		"type": "mythic",
 		"blessing": "Dark",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5},
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"374": {  
 		"id": 374,
@@ -10910,9 +10537,8 @@
 		"sseal": "",
 		"bvid": 4,
 		"art": "Stahl",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"375": {  
 		"id": 375,
@@ -10939,9 +10565,8 @@
 		"sseal": "",
 		"bvid": 225,
 		"art": "Subaki",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"376": {  
 		"id": 376,
@@ -10968,9 +10593,8 @@
 		"sseal": "",
 		"bvid": 21,
 		"art": "Sue",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"377": {  
 		"id": 377,
@@ -10997,9 +10621,8 @@
 		"sseal": "",
 		"bvid": 56,
 		"art": "Sully",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"378": {  
 		"id": 378,
@@ -11026,9 +10649,8 @@
 		"sseal": "",
 		"bvid": 154,
 		"art": "Sumia",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"379": {  
 		"id": 379,
@@ -11055,9 +10677,8 @@
 		"sseal": "",
 		"bvid": 56,
 		"art": "Surtr",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"380": {  
 		"id": 380,
@@ -11084,9 +10705,8 @@
 		"sseal": "",
 		"bvid": 95,
 		"art": "Tailtiu",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"381": {  
 		"id": 381,
@@ -11113,9 +10733,8 @@
 		"sseal": "",
 		"bvid": 66,
 		"art": "Takumi - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"382": {  
 		"id": 382,
@@ -11142,9 +10761,8 @@
 		"sseal": "",
 		"bvid": 97,
 		"art": "Takumi - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"383": {  
 		"id": 383,
@@ -11171,9 +10789,8 @@
 		"sseal": "",
 		"bvid": 128,
 		"art": "Takumi - New Years",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"384": {  
 		"id": 384,
@@ -11200,9 +10817,8 @@
 		"sseal": "",
 		"bvid": 237,
 		"art": "Takumi",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"385": {  
 		"id": 385,
@@ -11229,9 +10845,8 @@
 		"sseal": "",
 		"bvid": 89,
 		"art": "Tana - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"386": {  
 		"id": 386,
@@ -11258,9 +10873,8 @@
 		"sseal": "",
 		"bvid": 37,
 		"art": "Tana",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"387": {  
 		"id": 387,
@@ -11287,9 +10901,8 @@
 		"sseal": "",
 		"bvid": 21,
 		"art": "Tanith - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"388": {  
 		"id": 388,
@@ -11316,9 +10929,8 @@
 		"sseal": "",
 		"bvid": 55,
 		"art": "Tharja - Christmas",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"389": {  
 		"id": 389,
@@ -11345,9 +10957,8 @@
 		"sseal": "",
 		"bvid": 222,
 		"art": "Tharja",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"390": {  
 		"id": 390,
@@ -11374,9 +10985,8 @@
 		"sseal": "",
 		"bvid": 80,
 		"art": "Tharja - Bride",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"391": {  
 		"id": 391,
@@ -11403,9 +11013,8 @@
 		"sseal": "",
 		"bvid": 145,
 		"art": "Thea",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"392": {  
 		"id": 392,
@@ -11432,9 +11041,8 @@
 		"sseal": "",
 		"bvid": 136,
 		"art": "Tibarn",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"393": {  
 		"id": 393,
@@ -11461,9 +11069,8 @@
 		"sseal": "",
 		"bvid": 66,
 		"art": "Tiki SD - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"394": {  
 		"id": 394,
@@ -11490,9 +11097,8 @@
 		"sseal": "",
 		"bvid": 206,
 		"art": "Tiki",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"395": {  
 		"id": 395,
@@ -11521,9 +11127,8 @@
 		"art": "Tiki - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0}
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 4, "res": 0},
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"396": {  
 		"id": 396,
@@ -11550,9 +11155,8 @@
 		"sseal": "",
 		"bvid": 58,
 		"art": "Tiki Awakening",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"397": {  
 		"id": 397,
@@ -11579,9 +11183,8 @@
 		"sseal": "",
 		"bvid": 174,
 		"art": "Tiki - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"398": {  
 		"id": 398,
@@ -11608,9 +11211,8 @@
 		"sseal": "",
 		"bvid": 154,
 		"art": "Tiki - Fallen",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"399": {  
 		"id": 399,
@@ -11637,9 +11239,8 @@
 		"sseal": "",
 		"bvid": 17,
 		"art": "Titania",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"400": {  
 		"id": 400,
@@ -11666,9 +11267,8 @@
 		"sseal": "",
 		"bvid": 7,
 		"art": "Titania - Valentines",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"401": {  
 		"id": 401,
@@ -11695,9 +11295,8 @@
 		"sseal": "",
 		"bvid": 19,
 		"art": "Tobin",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"402": {  
 		"id": 402,
@@ -11724,9 +11323,8 @@
 		"sseal": "",
 		"bvid": 147,
 		"art": "Ursula",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"403": {  
 		"id": 403,
@@ -11753,9 +11351,8 @@
 		"sseal": "",
 		"bvid": 7,
 		"art": "Ursula - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"404": {  
 		"id": 404,
@@ -11782,9 +11379,8 @@
 		"sseal": "",
 		"bvid": 155,
 		"art": "Valter",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"405": {  
 		"id": 405,
@@ -11811,9 +11407,8 @@
 		"sseal": "",
 		"bvid": 200,
 		"art": "Velouria",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"406": {  
 		"id": 406,
@@ -11840,9 +11435,8 @@
 		"sseal": "",
 		"bvid": 254,
 		"art": "Veronica - CYL",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"407": {  
 		"id": 407,
@@ -11869,9 +11463,8 @@
 		"sseal": "",
 		"bvid": 48,
 		"art": "Veronica - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"408": {  
 		"id": 408,
@@ -11898,9 +11491,8 @@
 		"sseal": "",
 		"bvid": 136,
 		"art": "Virion",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"409": {  
 		"id": 409,
@@ -11927,9 +11519,8 @@
 		"sseal": "",
 		"bvid": 162,
 		"art": "Walhart",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"410": {  
 		"id": 410,
@@ -11956,9 +11547,8 @@
 		"sseal": "",
 		"bvid": 214,
 		"art": "Wolt - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"411": {  
 		"id": 411,
@@ -11985,9 +11575,8 @@
 		"sseal": "",
 		"bvid": 31,
 		"art": "Wrys",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"412": {  
 		"id": 412,
@@ -12014,9 +11603,8 @@
 		"sseal": "",
 		"bvid": 30,
 		"art": "Xander - Festival",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"413": {  
 		"id": 413,
@@ -12043,9 +11631,8 @@
 		"sseal": "",
 		"bvid": 226,
 		"art": "Xander",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"414": {  
 		"id": 414,
@@ -12072,9 +11659,8 @@
 		"sseal": "",
 		"bvid": 116,
 		"art": "Xander - Spring",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"415": {  
 		"id": 415,
@@ -12101,9 +11687,8 @@
 		"sseal": "",
 		"bvid": 22,
 		"art": "Xander - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"416": {  
 		"id": 416,
@@ -12130,9 +11715,8 @@
 		"sseal": "",
 		"bvid": 235,
 		"art": "Yarne",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"417": {  
 		"id": 417,
@@ -12159,9 +11743,8 @@
 		"sseal": "",
 		"bvid": 85,
 		"art": "Ylgr - Summer",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"418": {  
 		"id": 418,
@@ -12188,9 +11771,8 @@
 		"sseal": "",
 		"bvid": 33,
 		"art": "Ylgr",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"419": {  
 		"id": 419,
@@ -12219,9 +11801,8 @@
 		"art": "Yune",
 		"type": "mythic",
 		"blessing": "Dark",
-		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0}
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0},
+		"entry": ["Radiant Dawn"]
 	},
 	"420": {  
 		"id": 420,
@@ -12248,9 +11829,8 @@
 		"sseal": "",
 		"bvid": 20,
 		"art": "Zelgius",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"421": {  
 		"id": 421,
@@ -12277,9 +11857,8 @@
 		"sseal": "",
 		"bvid": 187,
 		"art": "Zephiel",
-		"type": "normal" 			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"422": {  
 		"id": 422,
@@ -12306,9 +11885,8 @@
 		"sseal": "",
 		"bvid": 169,
 		"art": "Bantu",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"423": {  
 		"id": 423,
@@ -12335,9 +11913,8 @@
 		"sseal": "",
 		"bvid": 216,
 		"art": "Nagi",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"424": {  
 		"id": 424,
@@ -12364,9 +11941,8 @@
 		"sseal": "",
 		"bvid": 12,
 		"art": "Norne",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"425": {  
 		"id": 425,
@@ -12393,9 +11969,8 @@
 		"sseal": "",
 		"bvid": 158,
 		"art": "Phina",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"426": {  
 		"id": 426,
@@ -12422,9 +11997,8 @@
 		"sseal": "",
 		"bvid": 160,
 		"art": "Sirius",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"427": {  
 		"id": 427,
@@ -12451,9 +12025,8 @@
 		"sseal": "",
 		"bvid": 15,
 		"art": "Astram",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"428": {  
 		"id": 428,
@@ -12482,9 +12055,8 @@
 		"art": "Thrasir",
 		"type": "mythic",
 		"blessing": "Anima",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}			
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0},
+		"entry": ["Heroes"]
 	},
 	"429": {  
 		"id": 429,
@@ -12511,9 +12083,8 @@
 		"sseal": "",
 		"bvid": 136,
 		"art": "Dozla - Halloween",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"430": {  
 		"id": 430,
@@ -12540,9 +12111,8 @@
 		"sseal": "",
 		"bvid": 170,
 		"art": "Hector - Duo",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"431": {  
 		"id": 431,
@@ -12569,9 +12139,8 @@
 		"sseal": "",
 		"bvid": 161,
 		"art": "Ilyana - Halloween",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"432": {  
 		"id": 432,
@@ -12598,9 +12167,8 @@
 		"sseal": "",
 		"bvid": 84,
 		"art": "L_Arachel - Halloween",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"433": {  
 		"id": 433,
@@ -12627,9 +12195,8 @@
 		"sseal": "",
 		"bvid": 186,
 		"art": "Rolf - Halloween",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"434": {  
 		"id": 434,
@@ -12656,9 +12223,8 @@
 		"sseal": "",
 		"bvid": 134,
 		"art": "Catria - Echoes",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"435": {  
 		"id": 435,
@@ -12685,9 +12251,8 @@
 		"sseal": "",
 		"bvid": 130,
 		"art": "Forsyth",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"436": {  
 		"id": 436,
@@ -12714,9 +12279,8 @@
 		"sseal": "",
 		"bvid": 133,
 		"art": "Python",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"437": {  
 		"id": 437,
@@ -12743,9 +12307,8 @@
 		"sseal": "",
 		"bvid": 241,
 		"art": "Silque",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"438": {  
 		"id": 438,
@@ -12772,9 +12335,8 @@
 		"sseal": "",
 		"bvid": 55,
 		"art": "Valbar",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"439": {  
 		"id": 439,
@@ -12801,9 +12363,8 @@
 		"sseal": "",
 		"bvid": 243,
 		"art": "Conrad",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"440": {  
 		"id": 440,
@@ -12832,9 +12393,8 @@
 		"art": "Leif - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}		
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}		,
+		"entry": ["Thracia 776"]
 	},
 	"441": {  
 		"id": 441,
@@ -12861,9 +12421,8 @@
 		"sseal": "",
 		"bvid": 182,
 		"art": "Ephraim - Duo",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"442": {  
 		"id": 442,
@@ -12890,9 +12449,8 @@
 		"sseal": "",
 		"bvid": 219,
 		"art": "Ewan",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"443": {  
 		"id": 443,
@@ -12919,9 +12477,8 @@
 		"sseal": "",
 		"bvid": 153,
 		"art": "Gerik",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"444": {  
 		"id": 444,
@@ -12948,9 +12505,8 @@
 		"sseal": "",
 		"bvid": 6,
 		"art": "Ross",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"445": {  
 		"id": 445,
@@ -12977,9 +12533,8 @@
 		"sseal": "",
 		"bvid": 72,
 		"art": "Tethys",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"446": {  
 		"id": 446,
@@ -13006,9 +12561,8 @@
 		"sseal": "",
 		"bvid": 243,
 		"art": "Cormag",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"447": {  
 		"id": 447,
@@ -13035,9 +12589,8 @@
 		"sseal": "",
 		"bvid": 205,
 		"art": "Chad",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"448": {  
 		"id": 448,
@@ -13064,9 +12617,8 @@
 		"sseal": "",
 		"bvid": 72,
 		"art": "Echidna",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"449": {  
 		"id": 449,
@@ -13093,9 +12645,8 @@
 		"sseal": "",
 		"bvid": 168,
 		"art": "Igrene",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"450": {  
 		"id": 450,
@@ -13122,9 +12673,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Larum",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"451": {  
 		"id": 451,
@@ -13151,9 +12701,8 @@
 		"sseal": "",
 		"bvid": 159,
 		"art": "Perceval",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"452": {  
 		"id": 452,
@@ -13180,9 +12729,8 @@
 		"sseal": "",
 		"bvid": 203,
 		"art": "Brunnya",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"453": {  
 		"id": 453,
@@ -13211,9 +12759,8 @@
 		"art": "Altina",
 		"type": "mythic",
 		"blessing": "Astra",
-		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}		
-
-
+		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Radiant Dawn"]
 	},
 	"454": {  
 		"id": 454,
@@ -13240,9 +12787,8 @@
 		"sseal": "",
 		"bvid": 138,
 		"art": "Eyvel",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"455": {  
 		"id": 455,
@@ -13269,9 +12815,8 @@
 		"sseal": "",
 		"bvid": 35,
 		"art": "Mareeta",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"456": {  
 		"id": 456,
@@ -13298,9 +12843,8 @@
 		"sseal": "",
 		"bvid": 240,
 		"art": "Osian",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"457": {  
 		"id": 457,
@@ -13329,9 +12873,8 @@
 		"art": "Peony",
 		"type": "mythic",
 		"blessing": "Light",
-		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0}			
-
-
+		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0},
+		"entry": ["Heroes"]
 	},
 	"458": {  
 		"id": 458,
@@ -13358,9 +12901,8 @@
 		"sseal": "",
 		"bvid": 140,
 		"art": "Tanya",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"459": {  
 		"id": 459,
@@ -13387,9 +12929,8 @@
 		"sseal": "",
 		"bvid": 240,
 		"art": "Kempf",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Thracia 776"]
 	},
 	"460": {  
 		"id": 460,
@@ -13416,9 +12957,8 @@
 		"sseal": "",
 		"bvid": 181,
 		"art": "Jaffar - Christmas",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"461": {  
 		"id": 461,
@@ -13445,9 +12985,8 @@
 		"sseal": "",
 		"bvid": 242,
 		"art": "Marth - Duo Christmas",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"462": {  
 		"id": 462,
@@ -13474,9 +13013,8 @@
 		"sseal": "",
 		"bvid": 18,
 		"art": "Nino - Christmas",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"463": {  
 		"id": 463,
@@ -13503,9 +13041,8 @@
 		"sseal": "",
 		"bvid": 88,
 		"art": "Sothis - Christmas",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"464": {  
 		"id": 464,
@@ -13532,9 +13069,8 @@
 		"sseal": "",
 		"bvid": 185,
 		"art": "Zephiel - Christmas",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"465": {  
 		"id": 465,
@@ -13563,9 +13099,8 @@
 		"art": "Celica - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}			
-
-
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Echoes"]
 	},
 	"466": {  
 		"id": 466,
@@ -13592,9 +13127,8 @@
 		"sseal": "",
 		"bvid": 39,
 		"art": "Alfonse - New Years Duo",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"467": {  
 		"id": 467,
@@ -13621,9 +13155,8 @@
 		"sseal": "",
 		"bvid": 65,
 		"art": "Anna - New Years",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"468": {  
 		"id": 468,
@@ -13650,9 +13183,8 @@
 		"sseal": "",
 		"bvid": 25,
 		"art": "Eir - New Years",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"469": {  
 		"id": 469,
@@ -13679,9 +13211,8 @@
 		"sseal": "",
 		"bvid": 148,
 		"art": "Lethe - New Years",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"470": {  
 		"id": 470,
@@ -13708,9 +13239,8 @@
 		"sseal": "",
 		"bvid": 91,
 		"art": "Selkie - New Years",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Heroes"]
 	},
 	"471": {  
 		"id": 471,
@@ -13737,9 +13267,8 @@
 		"sseal": "",
 		"bvid": 189,
 		"art": "Altena",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"472": {  
 		"id": 472,
@@ -13766,9 +13295,8 @@
 		"sseal": "",
 		"bvid": 132,
 		"art": "Ced",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"473": {  
 		"id": 473,
@@ -13795,9 +13323,8 @@
 		"sseal": "",
 		"bvid": 160,
 		"art": "Larcei",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"474": {  
 		"id": 474,
@@ -13824,9 +13351,8 @@
 		"sseal": "",
 		"bvid": 247,
 		"art": "Shannan",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"475": {  
 		"id": 475,
@@ -13853,9 +13379,8 @@
 		"sseal": "",
 		"bvid": 156,
 		"art": "Travant",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"476": {  
 		"id": 476,
@@ -13882,9 +13407,8 @@
 		"sseal": "",
 		"bvid": 81,
 		"art": "Eleonora",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Tokyo Mirage Sessions ♯FE Encore"]
 	},
 	"477": {  
 		"id": 477,
@@ -13911,9 +13435,8 @@
 		"sseal": "",
 		"bvid": 153,
 		"art": "Itsuki",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Tokyo Mirage Sessions ♯FE Encore"]
 	},
 	"478": {  
 		"id": 478,
@@ -13940,9 +13463,8 @@
 		"sseal": "",
 		"bvid": 99,
 		"art": "Kiria",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Tokyo Mirage Sessions ♯FE Encore"]
 	},
 	"479": {  
 		"id": 479,
@@ -13969,9 +13491,8 @@
 		"sseal": "",
 		"bvid": 42,
 		"art": "Mamori",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Tokyo Mirage Sessions ♯FE Encore"]
 	},
 	"480": {  
 		"id": 480,
@@ -13998,9 +13519,8 @@
 		"sseal": "",
 		"bvid": 137,
 		"art": "Tsubasa",
-		"type": "normal"			
-
-
+		"type": "normal",
+		"entry": ["Tokyo Mirage Sessions ♯FE Encore"]
 	},
 	"481": {  
 		"id": 481,
@@ -14029,7 +13549,8 @@
 		"art": "Lif",
 		"type": "mythic",
 		"blessing": "Anima",
-		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0}			
+		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0},
+		"entry": ["Heroes"]
 	},
 	"482": {  
 		"id": 482,
@@ -14056,7 +13577,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Alm - Valentines Duo",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"483": {  
 		"id": 483,
@@ -14083,7 +13605,8 @@
 		"sseal": "",
 		"bvid": 233,
 		"art": "Conrad - Valentines",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"484": {  
 		"id": 484,
@@ -14110,7 +13633,8 @@
 		"sseal": "",
 		"bvid": 182,
 		"art": "Faye - Valentines",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"485": {  
 		"id": 485,
@@ -14137,7 +13661,8 @@
 		"sseal": "",
 		"bvid": 202,
 		"art": "Rudolf - Valentines",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 	"486": {  
 		"id": 486,
@@ -14164,7 +13689,8 @@
 		"sseal": "",
 		"bvid": 231,
 		"art": "Silque - Valentines",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Echoes"]
 	},
 
 	"487": {  
@@ -14192,7 +13718,8 @@
 		"sseal": "",
 		"bvid": 167,
 		"art": "Fiora",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"488": {  
 		"id": 488,
@@ -14219,7 +13746,8 @@
 		"sseal": "",
 		"bvid": 39,
 		"art": "Heath",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"489": {  
 		"id": 489,
@@ -14246,7 +13774,8 @@
 		"sseal": "",
 		"bvid": 217,
 		"art": "Leila",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"490": {  
 		"id": 490,
@@ -14273,7 +13802,8 @@
 		"sseal": "",
 		"bvid": 207,
 		"art": "Nils",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"491": {  
 		"id": 491,
@@ -14300,7 +13830,8 @@
 		"sseal": "",
 		"bvid": 2,
 		"art": "Rath",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Blazing Blade"]
 	},
 	"492": {  
 		"id": 492,
@@ -14329,7 +13860,8 @@
 		"art": "Chrom - Legendary",
 		"type": "legendary",
 		"blessing": "Water",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}			
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Awakening"]
 	},
 	"493": {  
 		"id": 493,
@@ -14356,7 +13888,8 @@
 		"sseal": "",
 		"bvid": 90,
 		"art": "Annette",
-		"type": "normal"			
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"494": {  
 		"id": 494,
@@ -14383,7 +13916,8 @@
 		"sseal": "",
 		"bvid": 119,
 		"art": "Bernadetta",
-		"type": "normal"			
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"495": {  
 		"id": 495,
@@ -14410,7 +13944,8 @@
 		"sseal": "",
 		"bvid": 246,
 		"art": "Ferdinand von Aegir",
-		"type": "normal"			
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"496": {  
 		"id": 496,
@@ -14437,7 +13972,8 @@
 		"sseal": "",
 		"bvid": 169,
 		"art": "Lysithea",
-		"type": "normal"			
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"497": {  
 		"id": 497,
@@ -14464,7 +14000,8 @@
 		"sseal": "",
 		"bvid": 11,
 		"art": "Flame Emperor",
-		"type": "normal"			
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"498": {  
 		"id": 498,
@@ -14491,7 +14028,8 @@
 		"sseal": "",
 		"bvid": 23,
 		"art": "Bartre - Spring",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"499": {  
 		"id": 499,
@@ -14518,7 +14056,8 @@
 		"sseal": "",
 		"bvid": 27,
 		"art": "Est - Spring",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"500": {  
 		"id": 500,
@@ -14545,7 +14084,8 @@
 		"sseal": "",
 		"bvid": 85,
 		"art": "Fir - Spring",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"501": {  
 		"id": 501,
@@ -14572,7 +14112,8 @@
 		"sseal": "",
 		"bvid": 117,
 		"art": "Idunn - Spring",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"502": {  
 		"id": 502,
@@ -14599,7 +14140,8 @@
 		"sseal": "",
 		"bvid": 9,
 		"art": "Narcian - Spring",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["The Binding Blade"]
 	},
 	"503": {  
 		"id": 503,
@@ -14628,7 +14170,8 @@
 		"art": "Bramimond",
 		"type": "mythic",
 		"blessing": "Dark",
-		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}		
+		"buff": {"hp": 5, "atk": 3, "spd": 0, "def": 0, "res": 0}		,
+		"entry": ["The Blazing Blade"]
 	},
 	"504": {  
 		"id": 504,
@@ -14655,7 +14198,8 @@
 		"sseal": "",
 		"bvid": 180,
 		"art": "Forrest",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"505": {  
 		"id": 505,
@@ -14682,7 +14226,8 @@
 		"sseal": "",
 		"bvid": 191,
 		"art": "Iago",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"506": {  
 		"id": 506,
@@ -14709,7 +14254,8 @@
 		"sseal": "",
 		"bvid": 45,
 		"art": "Lilith",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"507": {  
 		"id": 507,
@@ -14736,7 +14282,8 @@
 		"sseal": "",
 		"bvid": 229,
 		"art": "Midori",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"508": {  
 		"id": 508,
@@ -14763,7 +14310,8 @@
 		"sseal": "",
 		"bvid": 40,
 		"art": "Rinkah",
-		"type": "normal"			
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"509": {
 		"id": 509,
@@ -14790,7 +14338,8 @@
 		"sseal": "",
 		"bvid": 160,
 		"art": "Caeda - Young",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"510": {
 		"id": 510,
@@ -14817,7 +14366,8 @@
 		"sseal": "",
 		"bvid": 175,
 		"art": "Marth - Young",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"511": {
 		"id": 511,
@@ -14844,7 +14394,8 @@
 		"sseal": "",
 		"bvid": 164,
 		"art": "Merric - Young",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"512": {
 		"id": 512,
@@ -14871,7 +14422,8 @@
 		"sseal": "",
 		"bvid": 148,
 		"art": "Palla - Trio",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"513": {
 		"id": 513,
@@ -14898,7 +14450,8 @@
 		"sseal": "",
 		"bvid": 84,
 		"art": "Minerva - Young",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
 	},
 	"514": {
 		"id": 514,
@@ -14927,7 +14480,8 @@
 		"art": "Edelgard - Legendary",
 		"type": "legendary",
 		"blessing": "Fire",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}	
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}	,
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"515": {
 		"id": 515,
@@ -14954,7 +14508,8 @@
 		"sseal": "",
 		"bvid": 42,
 		"art": "Corrin M - Fallen",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"516": {
 		"id": 516,
@@ -14981,7 +14536,8 @@
 		"sseal": "",
 		"bvid": 185,
 		"art": "Ike - Fallen",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"517": {
 		"id": 517,
@@ -15008,7 +14564,8 @@
 		"sseal": "",
 		"bvid": 158,
 		"art": "Julia - Fallen",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"518": {
 		"id": 518,
@@ -15035,7 +14592,8 @@
 		"sseal": "",
 		"bvid": 198,
 		"art": "Lyon - Fallen",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"519": {
 		"id": 519,
@@ -15062,7 +14620,8 @@
 		"sseal": "",
 		"bvid": 81,
 		"art": "Ashnard - Fallen",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Path of Radiance"]
 	},
 	"520": {
 		"id": 520,
@@ -15089,7 +14648,8 @@
 		"sseal": "",
 		"bvid": 158,
 		"art": "Micaiah - Duo",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"521": {
 		"id": 521,
@@ -15116,7 +14676,8 @@
 		"sseal": "",
 		"bvid": 78,
 		"art": "Nailah - Wedding",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"522": {
 		"id": 522,
@@ -15143,7 +14704,8 @@
 		"sseal": "",
 		"bvid": 69,
 		"art": "Oboro - Wedding",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"523": {
 		"id": 523,
@@ -15170,7 +14732,8 @@
 		"sseal": "",
 		"bvid": 132,
 		"art": "Rafiel - Wedding",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"524": {
 		"id": 524,
@@ -15197,7 +14760,8 @@
 		"sseal": "",
 		"bvid": 43,
 		"art": "Hinata - Wedding",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Fates"]
 	},
 	"525": {
 		"id": 525,
@@ -15226,7 +14790,8 @@
 		"art": "Mila",
 		"type": "mythic",
 		"blessing": "Light",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}	
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0}	,
+		"entry": ["Echoes"]
 	},
 	"526": {
 		"id": 526,
@@ -15253,7 +14818,8 @@
 		"sseal": "",
 		"bvid": 43,
 		"art": "Anna - Awakening",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"527": {
 		"id": 527,
@@ -15280,7 +14846,8 @@
 		"sseal": "",
 		"bvid": 157,
 		"art": "Emmeryn",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"528": {
 		"id": 528,
@@ -15309,7 +14876,8 @@
 		"art": "Mirabilis",
 		"type": "mythic",
 		"blessing": "Anima",
-		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}	
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5}	,
+		"entry": ["Heroes"]
 	},
 	"529": {
 		"id": 529,
@@ -15336,7 +14904,8 @@
 		"sseal": "",
 		"bvid": 106,
 		"art": "Mustafa",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"530": {
 		"id": 530,
@@ -15363,7 +14932,8 @@
 		"sseal": "",
 		"bvid": 227,
 		"art": "Say_ri",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"531": {
 		"id": 531,
@@ -15390,7 +14960,8 @@
 		"sseal": "",
 		"bvid": 251,
 		"art": "Gangrel",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Awakening"]
 	},
 	"532": {
 		"id": 532,
@@ -15417,7 +14988,8 @@
 		"sseal": "",
 		"bvid": 58,
 		"art": "Joshua - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"533": {
 		"id": 533,
@@ -15444,7 +15016,8 @@
 		"sseal": "",
 		"bvid": 129,
 		"art": "Lute - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"534": {
 		"id": 534,
@@ -15471,7 +15044,8 @@
 		"sseal": "",
 		"bvid": 77,
 		"art": "Mia - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn", "Awakening"]
 	},
 	"535": {
 		"id": 535,
@@ -15498,7 +15072,8 @@
 		"sseal": "",
 		"bvid": 38,
 		"art": "Selena - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["The Sacred Stones"]
 	},
 	"536": {
 		"id": 536,
@@ -15525,7 +15100,8 @@
 		"sseal": "",
 		"bvid": 61,
 		"art": "Rhys - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
 	},
 	"537": {
 		"id": 537,
@@ -15554,7 +15130,8 @@
 		"art": "Seliph - Legendary",
 		"type": "legendary",
 		"blessing": "Earth",
-		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0}
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Genealogy of the Holy War"]
 	},
 	"538": {
 		"id": 538,
@@ -15581,7 +15158,8 @@
 		"sseal": "",
 		"bvid": 238,
 		"art": "Byleth - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": ["Three Houses"]
 	},
 	"539": {
 		"id": 539,
@@ -15608,7 +15186,8 @@
 		"sseal": "",
 		"bvid": 50,
 		"art": "Dorothea - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"540": {
 		"id": 540,
@@ -15635,7 +15214,8 @@
 		"sseal": "",
 		"bvid": 144,
 		"art": "Ingrid - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"541": {
 		"id": 541,
@@ -15662,7 +15242,8 @@
 		"sseal": "",
 		"bvid": 62,
 		"art": "Sylvain - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
 	},
 	"542": {
 		"id": 542,
@@ -15689,7 +15270,798 @@
 		"sseal": "",
 		"bvid": 160,
 		"art": "Lorenz - Summer",
-		"type": "normal"
+		"type": "normal",
+		"entry": "Fire Emblem: Three Houses"
+	},
+	"543": {
+		"id": 543,
+		"name": "Julian: Tender Thief",
+		"movetype": "Infantry",
+		"weapontype": "dagger",
+		"color": "colorless",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 65,
+		"growthdef": 60,
+		"growthres": 30,
+		"basehp": 18,
+		"baseatk": 8,
+		"basespd": 10,
+		"basedef": 7,
+		"baseres": 5,
+		"weapon": "Caltrop Dagger+",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Close Foil",
+		"bskill": "Lull Atk/Spd 3",
+		"cskill": "",
+		"sseal": "",
+		"bvid": 188,
+		"art": "Julian",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"544": {
+		"id": 544,
+		"name": "Kris: Unknown Hero",
+		"movetype": "Infantry",
+		"weapontype": "sword",
+		"color": "red",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 50,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 9,
+		"basespd": 10,
+		"basedef": 8,
+		"baseres": 6,
+		"weapon": "Blade of Shadow",
+		"assist": "",
+		"special": "Noontime",
+		"askill": "HP/Spd 2",
+		"bskill": "Spurn 3",
+		"cskill": "Joint Drive Atk",
+		"sseal": "",
+		"bvid": 41,
+		"art": "Kris M",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"545": {
+		"id": 545,
+		"name": "Kris: Unsung Hero",
+		"movetype": "Infantry",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 50,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 9,
+		"basespd": 10,
+		"basedef": 8,
+		"baseres": 6,
+		"weapon": "Spear of Shadow",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Fury 4",
+		"bskill": "Spurn 3",
+		"cskill": "Rouse Spd/Res 3",
+		"sseal": "",
+		"bvid": 101,
+		"art": "Kris F",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"546": {
+		"id": 546,
+		"name": "Lena: Tender Angel",
+		"movetype": "Infantry",
+		"weapontype": "staff",
+		"color": "colorless",
+		"growthhp": 50,
+		"growthatk": 55,
+		"growthspd": 50,
+		"growthdef": 45,
+		"growthres": 65,
+		"basehp": 18,
+		"baseatk": 8,
+		"basespd": 7,
+		"basedef": 5,
+		"baseres": 9,
+		"weapon": "Gravity+",
+		"assist": "Recover+",
+		"special": "Heavenly Light",
+		"askill": "Def/Res 2",
+		"bskill": "",
+		"cskill": "Atk Ploy 3",
+		"sseal": "",
+		"bvid": 22,
+		"art": "Lena",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"547": {
+		"id": 547,
+		"name": "Eremiya: Bishop of Woe",
+		"movetype": "Infantry",
+		"weapontype": "staff",
+		"color": "colorless",
+		"growthhp": 60,
+		"growthatk": 60,
+		"growthspd": 60,
+		"growthdef": 40,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 6,
+		"basespd": 9,
+		"basedef": 6,
+		"baseres": 8,
+		"weapon": "Panic+",
+		"assist": "Physic+",
+		"special": "Miracle",
+		"askill": "Atk/Res Push 3",
+		"bskill": "",
+		"cskill": "Distant Guard 3",
+		"sseal": "",
+		"bvid": 247,
+		"art": "Eremiya",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"548": {
+		"id": 548,
+		"name": "Hel: Death Sovereign",
+		"movetype": "Flying",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 50,
+		"growthres": 35,
+		"basehp": 18,
+		"baseatk": 10,
+		"basespd": 11,
+		"basedef": 8,
+		"baseres": 3,
+		"weapon": "Hel's Reaper",
+		"assist": "",
+		"special": "Luna",
+		"askill": "Distant Counter",
+		"bskill": "Guard Bearing 3",
+		"cskill": "Inevitable Death",
+		"sseal": "",
+		"bvid": 79,
+		"art": "Hel",
+		"type": "mythic",
+		"blessing": "Dark",
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 5, "res": 0},
+		"entry": ["Heroes"]
+	},
+	"549": {
+		"id": 549,
+		"name": "Brigid: Orgahil Pirate",
+		"movetype": "Infantry",
+		"weapontype": "bow",
+		"color": "red",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 55,
+		"growthres": 35,
+		"basehp": 19,
+		"baseatk": 9,
+		"basespd": 10,
+		"basedef": 6,
+		"baseres": 4,
+		"weapon": "Helm Bow+",
+		"assist": "Harsh Command+",
+		"special": "",
+		"askill": "Steady Impact",
+		"bskill": "",
+		"cskill": "Pulse Smoke 3",
+		"sseal": "",
+		"bvid": 155,
+		"art": "Brigid - Pirate",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"550": {
+		"id": 550,
+		"name": "Geese: A Life at Sea",
+		"movetype": "Infantry",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 60,
+		"growthatk": 70,
+		"growthspd": 60,
+		"growthdef": 55,
+		"growthres": 35,
+		"basehp": 20,
+		"baseatk": 8,
+		"basespd": 9,
+		"basedef": 8,
+		"baseres": 6,
+		"weapon": "Flowing Lance+",
+		"assist": "Reposition",
+		"special": "",
+		"askill": "Fire Boost 3",
+		"bskill": "",
+		"cskill": "Infantry Pulse 3",
+		"sseal": "",
+		"bvid": 4,
+		"art": "Geese - Pirate",
+		"type": "normal",
+		"entry": ["The Binding Blade"]
+	},
+	"551": {
+		"id": 551,
+		"name": "Tibarn: Shipless Pirate",
+		"movetype": "Flying",
+		"weapontype": "beast",
+		"color": "colorless",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 55,
+		"growthdef": 60,
+		"growthres": 35,
+		"basehp": 20,
+		"baseatk": 11,
+		"basespd": 6,
+		"basedef": 10,
+		"baseres": 3,
+		"weapon": "Sky-Pirate Claw",
+		"assist": "",
+		"special": "Galeforce",
+		"askill": "Heavy Blade 4",
+		"bskill": "Dive-Bomb 3",
+		"cskill": "Atk Smoke 3",
+		"sseal": "",
+		"bvid": 201,
+		"art": "Tibarn - Pirate",
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
+	},
+	"552": {
+		"id": 552,
+		"name": "Veronica: Harmonic Pirates",
+		"movetype": "Cavalry",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 45,
+		"growthatk": 70,
+		"growthspd": 35,
+		"growthdef": 65,
+		"growthres": 50,
+		"basehp": 19,
+		"baseatk": 9,
+		"basespd": 4,
+		"basedef": 8,
+		"baseres": 7,
+		"weapon": "Gate-Anchor Axe",
+		"assist": "",
+		"special": "Bonfire",
+		"askill": "Atk/Def Solo 4",
+		"bskill": "Lull Atk/Def 3",
+		"cskill": "Atk/Def Gap 3",
+		"sseal": "",
+		"bvid": 182,
+		"art": "Veronica - Duo",
+		"type": "normal",
+		"entry": ["Heroes"]
+	},
+	"553": {
+		"id": 553,
+		"name": "Darros: Seawalker",
+		"movetype": "Infantry",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 60,
+		"growthatk": 60,
+		"growthspd": 60,
+		"growthdef": 65,
+		"growthres": 35,
+		"basehp": 20,
+		"baseatk": 10,
+		"basespd": 6,
+		"basedef": 9,
+		"baseres": 6,
+		"weapon": "Deck Swabber+",
+		"assist": "Shove",
+		"special": "",
+		"askill": "Earth Boost 3",
+		"bskill": "",
+		"cskill": "Odd Def Wave 3",
+		"sseal": "",
+		"bvid": 7,
+		"art": "Daros - Pirate",
+		"type": "normal",
+		"entry": ["Shadow Dragon / (New) Mystery"]
+	},
+	"554": {
+		"id": 554,
+		"name": "Claude: Almyra's King",
+		"movetype": "Flying",
+		"weapontype": "bow",
+		"color": "colorless",
+		"growthhp": 55,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 40,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 8,
+		"basespd": 10,
+		"basedef": 6,
+		"baseres": 6,
+		"weapon": "Wind Parthia",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Fury 4",
+		"bskill": "Chill Spd/Def 2",
+		"cskill": "Atk/Spd Rein 3",
+		"sseal": "",
+		"bvid": 97,
+		"art": "Claude - CYL",
+		"type": "normal",
+		"entry": ["Three Houses"]
+	},
+	"555": {
+		"id": 555,
+		"name": "Dimitri: King of Faerghus",
+		"movetype": "Infantry",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 65,
+		"growthdef": 70,
+		"growthres": 30,
+		"basehp": 19,
+		"baseatk": 10,
+		"basespd": 8,
+		"basedef": 10,
+		"baseres": 6,
+		"weapon": "Moon Gradivus",
+		"assist": "",
+		"special": "Noontime",
+		"askill": "Atk/Def Unity",
+		"bskill": "Blue Lion Rule",
+		"cskill": "Joint Hone Atk",
+		"sseal": "",
+		"bvid": 251,
+		"art": "Dimitri - CYL",
+		"type": "normal",
+		"entry": ["Three Houses"]
+	},
+	"556": {
+		"id": 556,
+		"name": "Edelgard: Adrestian Emperor",
+		"movetype": "Armored",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 60,
+		"growthatk": 75,
+		"growthspd": 30,
+		"growthdef": 70,
+		"growthres": 60,
+		"basehp": 20,
+		"baseatk": 12,
+		"basespd": 3,
+		"basedef": 13,
+		"baseres": 9,
+		"weapon": "Flower Hauteclere",
+		"assist": "",
+		"special": "Noontime",
+		"askill": "Distant Ward",
+		"bskill": "Black Eagle Rule",
+		"cskill": "Joint Drive Res",
+		"sseal": "",
+		"bvid": 22,
+		"art": "Edelgard - CYL",
+		"type": "normal",
+		"entry": ["Three Houses"]
+	},
+	"557": {
+		"id": 557,
+		"name": "Lysithea: Earnest Seeker",
+		"movetype": "Infantry",
+		"weapontype": "redtome",
+		"color": "red",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 70,
+		"growthdef": 40,
+		"growthres": 40,
+		"basehp": 18,
+		"baseatk": 10,
+		"basespd": 9,
+		"basedef": 4,
+		"baseres": 8,
+		"weapon": "Dark Spikes T",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Atk/Spd Push 4",
+		"bskill": "Lull Spd/Res 3",
+		"cskill": "Hone Spd 4",
+		"sseal": "",
+		"bvid": 201,
+		"art": "Lysithea - CYL",
+		"type": "normal",
+		"entry": ["Three Houses"]
+	},
+	"558": {
+		"id": 558,
+		"name": "Jorge: Traveling Peddler",
+		"movetype": "Infantry",
+		"weapontype": "bow",
+		"color": "blue",
+		"growthhp": 60,
+		"growthatk": 65,
+		"growthspd": 50,
+		"growthdef": 55,
+		"growthres": 50,
+		"basehp": 19,
+		"baseatk": 8,
+		"basespd": 5,
+		"basedef": 11,
+		"baseres": 7,
+		"weapon": "Daniel-Made Bow",
+		"assist": "",
+		"special": "Ignis",
+		"askill": "",
+		"bskill": "Chill Def 3",
+		"cskill": "Atk Opening 3",
+		"sseal": "",
+		"bvid": 243,
+		"art": "Jorge",
+		"type": "normal",
+		"entry": ["Radiant Dawn"]
+	},
+	"559": {
+		"id": 559,
+		"name": "Corrin: Child of Dusk",
+		"movetype": "Infantry",
+		"weapontype": "breath",
+		"color": "colorless",
+		"growthhp": 60,
+		"growthatk": 70,
+		"growthspd": 75,
+		"growthdef": 60,
+		"growthres": 50,
+		"basehp": 15,
+		"baseatk": 8,
+		"basespd": 7,
+		"basedef": 8,
+		"baseres": 7,
+		"weapon": "Primordial Breath",
+		"assist": "",
+		"special": "Negating Fang",
+		"askill": "Distant Counter",
+		"bskill": "Shield Pulse 3",
+		"cskill": "Joint Drive Atk",
+		"sseal": "",
+		"bvid": 158,
+		"art": "Corrin F - Legendary",
+		"type": "legendary",
+		"blessing": "Wind",
+		"buff": {"hp": 3, "atk": 0, "spd": 0, "def": 0, "res": 0},
+		"entry": ["Fates"]
+	},
+	"560": {
+		"id": 560,
+		"name": "Eldigan: Strutting Lion",
+		"movetype": "Flying",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 60,
+		"growthatk": 70,
+		"growthspd": 50,
+		"growthdef": 65,
+		"growthres": 30,
+		"basehp": 17,
+		"baseatk": 8,
+		"basespd": 4,
+		"basedef": 9,
+		"baseres": 5,
+		"weapon": "Courtly Candle+",
+		"assist": "Dance",
+		"special": "",
+		"askill": "",
+		"bskill": "Caldera Dance 2",
+		"cskill": "Def Opening 3",
+		"sseal": "",
+		"bvid": 181,
+		"art": "Eldigan - Dancer",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"561": {
+		"id": 561,
+		"name": "Ethlyn: Glimmering Lady",
+		"movetype": "Flying",
+		"weapontype": "dagger",
+		"color": "colorless",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 75,
+		"growthdef": 30,
+		"growthres": 50,
+		"basehp": 15,
+		"baseatk": 8,
+		"basespd": 8,
+		"basedef": 3,
+		"baseres": 6,
+		"weapon": "Courtly Fan+",
+		"assist": "Dance",
+		"special": "",
+		"askill": "AR-D Atk/Spd 3",
+		"bskill": "Windsweep 3",
+		"cskill": "Joint Drive Spd",
+		"sseal": "",
+		"bvid": 203,
+		"art": "Ethlyn - Dancer",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"562": {
+		"id": 562,
+		"name": "Lachesis: Ballroom Bloom",
+		"movetype": "Flying",
+		"weapontype": "dagger",
+		"color": "green",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 50,
+		"growthdef": 35,
+		"growthres": 65,
+		"basehp": 15,
+		"baseatk": 7,
+		"basespd": 5,
+		"basedef": 4,
+		"baseres": 9,
+		"weapon": "Courtly Mask+",
+		"assist": "Dance",
+		"special": "",
+		"askill": "",
+		"bskill": "Def Cantrip 3",
+		"cskill": "Air Orders 3",
+		"sseal": "",
+		"bvid": 151,
+		"art": "Lachesis - Dancer",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"563": {
+		"id": 563,
+		"name": "Quan: Lightfoot Prince",
+		"movetype": "Flying",
+		"weapontype": "bow",
+		"color": "blue",
+		"growthhp": 55,
+		"growthatk": 75,
+		"growthspd": 35,
+		"growthdef": 70,
+		"growthres": 35,
+		"basehp": 16,
+		"baseatk": 8,
+		"basespd": 5,
+		"basedef": 6,
+		"baseres": 5,
+		"weapon": "Courtly Bow+",
+		"assist": "Dance",
+		"special": "",
+		"askill": "Atk/Def Bond 4",
+		"bskill": "Flier Formation 3",
+		"cskill": "Joint Hone Def",
+		"sseal": "",
+		"bvid": 244,
+		"art": "Quan - Dancer",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"564": {
+		"id": 564,
+		"name": "Sigurd: Destined Duo",
+		"movetype": "Cavalry",
+		"weapontype": "redtome",
+		"color": "red",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 35,
+		"growthdef": 30,
+		"growthres": 70,
+		"basehp": 16,
+		"baseatk": 8,
+		"basespd": 3,
+		"basedef": 3,
+		"baseres": 7,
+		"weapon": "Gilt Goblet",
+		"assist": "Dance",
+		"special": "",
+		"askill": "Atk/Res Bond 4",
+		"bskill": "Lull Atk/Res 3",
+		"cskill": "Joint Hone Res",
+		"sseal": "",
+		"bvid": 75,
+		"art": "Sigurd - Duo",
+		"type": "normal",
+		"entry": ["Genealogy of the Holy War"]
+	},
+	"565": {
+		"id": 565,
+		"name": "Gatrie: Armored Amour",
+		"movetype": "Armored",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 65,
+		"growthatk": 65,
+		"growthspd": 30,
+		"growthdef": 75,
+		"growthres": 60,
+		"basehp": 19,
+		"baseatk": 14,
+		"basespd": 4,
+		"basedef": 11,
+		"baseres": 9,
+		"weapon": "Spirited Spear+",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Fort. Def/Res 3",
+		"bskill": "Crafty Fighter 3",
+		"cskill": "",
+		"sseal": "",
+		"bvid": 250,
+		"art": "Gatrie",
+		"type": "normal",
+		"entry": ["Path of Radiance"]
+	},
+	"566": {
+		"id": 566,
+		"name": "Ilyana: Hungering Mage",
+		"movetype": "Infantry",
+		"weapontype": "bluetome",
+		"color": "blue",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 55,
+		"growthdef": 30,
+		"growthres": 70,
+		"basehp": 17,
+		"baseatk": 10,
+		"basespd": 8,
+		"basedef": 4,
+		"baseres": 10,
+		"weapon": "Blárfox+",
+		"assist": "",
+		"special": "Iceberg",
+		"askill": "Mirror Strike 2",
+		"bskill": "",
+		"cskill": "Res Ploy 3",
+		"sseal": "",
+		"bvid": 229,
+		"art": "Ilyana",
+		"type": "normal",
+		"entry": ["Path of Radiance"]
+	},
+	"567": {
+		"id": 567,
+		"name": "Jill: Fiery Dracoknight",
+		"movetype": "Flying",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 70,
+		"growthdef": 60,
+		"growthres": 30,
+		"basehp": 18,
+		"baseatk": 9,
+		"basespd": 10,
+		"basedef": 10,
+		"baseres": 4,
+		"weapon": "Talregan Axe",
+		"assist": "",
+		"special": "Moonbow",
+		"askill": "Atk/Spd Push 4",
+		"bskill": "Chill Atk/Spd 2",
+		"cskill": "Spd/Def Rein 3",
+		"sseal": "",
+		"bvid": 3,
+		"art": "Jill",
+		"type": "normal",
+		"entry": ["Path of Radiance"]
+	},
+	"568": {
+		"id": 568,
+		"name": "Shinon: Scathing Archer",
+		"movetype": "Infantry",
+		"weapontype": "bow",
+		"color": "colorless",
+		"growthhp": 50,
+		"growthatk": 65,
+		"growthspd": 70,
+		"growthdef": 50,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 10,
+		"basespd": 12,
+		"basedef": 5,
+		"baseres": 5,
+		"weapon": "Double Bow",
+		"assist": "",
+		"special": "Deadeye",
+		"askill": "Atk/Def Solo 4",
+		"bskill": "Lull Atk/Spd 3",
+		"cskill": "Time's Pulse 3",
+		"sseal": "",
+		"bvid": 216,
+		"art": "Shinon",
+		"type": "normal",
+		"entry": ["Path of Radiance"]
+	},
+	"569": {
+		"id": 569,
+		"name": "Petrine: Icy Flame-Lancer",
+		"movetype": "Cavalry",
+		"weapontype": "lance",
+		"color": "blue",
+		"growthhp": 55,
+		"growthatk": 60,
+		"growthspd": 65,
+		"growthdef": 50,
+		"growthres": 45,
+		"basehp": 18,
+		"baseatk": 9,
+		"basespd": 9,
+		"basedef": 8,
+		"baseres": 5,
+		"weapon": "Flame Lance",
+		"assist": "",
+		"special": "Ignis",
+		"askill": "Atk/Spd Push 3",
+		"bskill": "",
+		"cskill": "Threat. Atk/Def 2",
+		"sseal": "",
+		"bvid": 47,
+		"art": "Petrine",
+		"type": "normal",
+		"entry": ["Path of Radiance"]
+	},
+	"570": {
+		"id": 570,
+		"name": "Plumeria: Lewd Dream",
+		"movetype": "Flying",
+		"weapontype": "redtome",
+		"color": "red",
+		"growthhp": 55,
+		"growthatk": 70,
+		"growthspd": 30,
+		"growthdef": 30,
+		"growthres": 75,
+		"basehp": 17,
+		"baseatk": 10,
+		"basespd": 5,
+		"basedef": 3,
+		"baseres": 4,
+		"weapon": "Flower of Plenty",
+		"assist": "Sweet Dreams",
+		"special": "",
+		"askill": "Atk/Res Push 4",
+		"bskill": "Sabotage Spd 3",
+		"cskill": "Atk/Res Rein 3",
+		"sseal": "",
+		"bvid": 251,
+		"art": "Plumeria",
+		"type": "mythic",
+		"blessing": "Astra",
+		"buff": {"hp": 5, "atk": 0, "spd": 4, "def": 0, "res": 0},
+		"entry": ["Heroes"]
 	}
 
 }

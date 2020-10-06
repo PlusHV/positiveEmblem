@@ -1224,6 +1224,108 @@
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
 		"max": true
+	},
+	"107": {
+		"name": "Spear of Shadow",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Kris: Unsung Hero"],
+		"type": "lance",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"108": {
+		"name": "Flowing Lance+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"109": {
+		"name": "Flowing Lance",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"110": {
+		"name": "Moon Gradivus",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Dimitri: King of Faerghus"],
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"111": {
+		"name": "Courtly Candle+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"112": {
+		"name": "Courtly Candle",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"113": {
+		"name": "Spirited Spear+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"114": {
+		"name": "Spirited Spear",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"115": {
+		"name": "Flame Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Petrine: Icy Flame-Lancer"],
+		"type": "lance",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 
 }

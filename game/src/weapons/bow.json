@@ -958,6 +958,98 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"85": {
+		"name": "Helm Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"86": {
+		"name": "Helm Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"87": {
+		"name": "Setsuna's Yumi",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Setsuna: Absent Archer"],
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"88": {
+		"name": "Wind Parthia",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Claude: Almyra's King"],
+		"type": "bow",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"89": {
+		"name": "Daniel-Made Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Jorge: Traveling Peddler"],
+		"type": "bow",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"90": {
+		"name": "Courtly Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"91": {
+		"name": "Courtly Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"92": {
+		"name": "Double Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Shinon: Scathing Archer"],
+		"type": "bow",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 
 }

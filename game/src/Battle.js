@@ -63,8 +63,14 @@ export function doBattle(updatedHeroList, attacker, defender, board){
         newAttacker.currentHP = Math.min(newAttacker.stats.hp, newAttacker.currentHP + damageInfo.heal); //heal hp from attack
 
         //the only reflecting special is currently ice mirror (range = 2), so can only be activated  by a melee defender (og fjorm) that is initated on  
-        if (newDefender.effects.reflect === 0){ //only get reflect damage if it is currently not set (so can't get overwritten)
-          newDefender.effects.reflect = damageInfo.reflect; 
+
+        if (newDefender.combatEffects.reflect === 0){ //only get reflect damage if it is currently not set (so can't get overwritten from stuff like brave attacks)
+          newDefender.combatEffects.reflect = damageInfo.reflect; 
+        }
+
+
+        if (newAttacker.combatEffects.reflect !== 0){ //The attacker has just attacked, so its reflect boost is now reset
+          newAttacker.combatEffects.reflect = 0;
         }
 
         let buffs = damageInfo.partyBuff;
@@ -97,7 +103,14 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         newDefender.currentHP = Math.min(newDefender.stats.hp, newDefender.currentHP + damageInfo.heal);
 
-        newDefender.effects.reflect = 0; //defender's reflect damage is cleared since they have attacked
+        if (newAttacker.combatEffects.reflect === 0){ 
+          newAttacker.combatEffects.reflect = damageInfo.reflect;
+        }
+
+
+        if (newDefender.combatEffects.reflect !== 0){ //The defender has just attacked, so its reflect is now reset
+          newDefender.combatEffects.reflect = 0;
+        }
 
         let buffs = damageInfo.partyBuff;
         Object.keys(buffs).forEach((key, i) => {
@@ -518,37 +531,37 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
     if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list
       
+      specialDamage = getSpecialDamage(specialEffect, attacker, defender, heroList, damageType);
+      // let hero; //which hero to base the damage off of
+      // if (specialEffect.damage[0] === "attacker"){
+      //   hero = attacker;
+      // } else if (specialEffect.damage[0] === "defender"){
+      //   hero = defender;
+      // }
 
-      let hero; //which hero to base the damage off of
-      if (specialEffect.damage[0] === "attacker"){
-        hero = attacker;
-      } else if (specialEffect.damage[0] === "defender"){
-        hero = defender;
-      }
-
-      let stat = specialEffect.damage[1];
-      if (stat === "defensive"){
-        stat = damageType;
-      }
-
-
-      let factor = specialEffect.damage[2];
-
-      if ("condition" in specialEffect && checkCondition(heroList, specialEffect.condition, attacker, defender) ){
-
-        factor = specialEffect["alt"];
-
-      }
-
-      if (stat === "flat"){
-        specialDamage = factor; //special damage is flat
-      } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
-        specialDamage = Math.trunc( (attacker.stats.hp - attacker.currentHP) * factor);
+      // let stat = specialEffect.damage[1];
+      // if (stat === "defensive"){
+      //   stat = damageType;
+      // }
 
 
-      } else{
-        specialDamage = Math.trunc(hero.combatStats[stat] * factor);
-      }
+      // let factor = specialEffect.damage[2];
+
+      // if ("condition" in specialEffect && checkCondition(heroList, specialEffect.condition, attacker, defender) ){
+
+      //   factor = specialEffect["alt"];
+
+      // }
+
+      // if (stat === "flat"){
+      //   specialDamage = factor; //special damage is flat
+      // } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
+      //   specialDamage = Math.trunc( (attacker.stats.hp - attacker.currentHP) * factor);
+
+
+      // } else{
+      //   specialDamage = Math.trunc(hero.combatStats[stat] * factor);
+      // }
 
 
       for (let i of attacker.onSpecial){ //loop through effects that activate on special
@@ -557,42 +570,42 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
           for (let j in i){ 
             if (j === "damage"){
               //let onSpecialDamage = i.damage;
+              let extraDamage = getSpecialDamage(i, attacker, defender, heroList, damageType);
+              // let sHero;
 
-              let sHero;
-
-              if (i.damage[0] === "attacker"){
-                sHero = attacker;
-              } else if (i.damage[0] === "defender"){
-                sHero = defender;
-              }
-
-
-              let sStat = i.damage[1];
-              if (sStat === "defensive"){
-                sStat = damageType;
-              }
+              // if (i.damage[0] === "attacker"){
+              //   sHero = attacker;
+              // } else if (i.damage[0] === "defender"){
+              //   sHero = defender;
+              // }
 
 
-              let sFactor = i.damage[2];
+              // let sStat = i.damage[1];
+              // if (sStat === "defensive"){
+              //   sStat = damageType;
+              // }
 
-              if ("condition" in i && checkCondition(heroList, i.condition, attacker, defender) ){
 
-                sFactor = i["alt"];
+              // let sFactor = i.damage[2];
 
-              }
+              // if ("condition" in i && checkCondition(heroList, i.condition, attacker, defender) ){
 
-              let extraDamage = 0;
+              //   sFactor = i["alt"];
 
-              if (sStat === "flat"){
-                extraDamage+= sFactor; //special damage is flat
-              } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
+              // }
 
-                extraDamage+= Math.trunc( (attacker.stats.hp - attacker.currentHP) * sFactor);
+              // let extraDamage = 0;
 
-              } else{
+              // if (sStat === "flat"){
+              //   extraDamage+= sFactor; //special damage is flat
+              // } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
 
-                extraDamage+= Math.trunc(sHero.combatStats[sStat] * sFactor);
-              }
+              //   extraDamage+= Math.trunc( (attacker.stats.hp - attacker.currentHP) * sFactor);
+
+              // } else{
+
+              //   extraDamage+= Math.trunc(sHero.combatStats[sStat] * sFactor);
+              // }
 
               if (i.damage[3] === "trueDamage"){
                 trueDamage+= extraDamage;
@@ -618,6 +631,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
       removeConditionalSpecial(attacker, defender, heroList);
     } //end special damage calc
+
 
 
     //add the amplify special damage (astra, glimmer etc.)
@@ -648,7 +662,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   } //end offensive special check 
 
-  specialDamage+= attacker.effects.reflect; //adding the reflect damage
+  specialDamage+= attacker.combatEffects.reflect; //adding the reflect damage
 
 
   //all damage reduction values are 1 - percent reduced by. 0 damage reduction is thus 1 - 0 = 1.0
@@ -661,19 +675,19 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   //if adding the first damage reduction
 
   let indexCounter = attackIndex - 1;
-  let firstAttack = true;
-  while (indexCounter > 0){ //loop back until start of stack is reached
+  let previousAttacks = 0; //the number of attacks from current attacker before this attack
+  while (indexCounter >= 0){ //loop back until start of stack is reached
 
-    //an attack from the current attack has been found, thus this is not their first attack
+    //an attack from the current attacker has been found, increment previous attack counter
     if (attackStack[indexCounter] === currentAttacker){
-      firstAttack = false;
+      previousAttacks++;
     }
     indexCounter--;
 
   }
 
   //first attack damage reduction
-  if (firstAttack){
+  if (previousAttacks === 0){
     damageReduction = damageReduction * defender.combatEffects.firstReduction;
   }
 
@@ -684,11 +698,19 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     damageReduction = damageReduction * defender.combatEffects.consecutiveReduction;
   }
 
+  //Follow-up reduction - if not brave then just check second attack, otherwise check 3rd and 4th
+  if (attacker.combatEffects.brave > 0 && previousAttacks >= 2){ //if brave, check if 2 other attacks have been made (so it is now the 3rd or 4th)
+     damageReduction = damageReduction * defender.combatEffects.followUpReduction;
+
+  } else if (previousAttacks >= 1) { //not brave attack, check if they have done at least one attack (should only 1 since no brave effect)
+    damageReduction = damageReduction * defender.combatEffects.followUpReduction;
+  }
 
   let miracle = false;
   let reflect = false;
   let reflectDamage = 0;
   let flatReduction = 0;
+
 
   if (defenderSpecialCharge === 0 && defenderSpecial.type === "defend-battle" && 
     (defenderSpecial.range === 0 || defenderSpecial.range === getDistance(attacker.position, defender.position)  ) ){
@@ -698,9 +720,16 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       damageReduction = damageReduction * defenderSpecial.effect.factor;
     }
 
-    if (defenderSpecial.effect.reflect){
-      reflect = true;
+    if ("reflect" in defenderSpecial.effect){
+
+      if (defenderSpecial.effect.reflect["damage"].includes("mirror")){ //if the damage key of the reflect effect is a mirror image
+        reflect = true; //reflect damage is calculated later
+      } else {
+        reflectDamage = getSpecialDamage(defenderSpecial.effect.reflect, defender, attacker, heroList, damageType); 
+      }
+      
     }
+
 
     if (!miracle){
       defenderSpecialCharge = defenderSpecial.cd;
@@ -722,7 +751,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     }
   }
 
-  let totalDamage = Math.max(0, baseDamage + specialDamage) + trueDamage;
+  let totalDamage = Math.max(0, baseDamage + specialDamage) + trueDamage; //total damage before reductions
 
   if (reflect){
     reflectDamage =  Math.trunc( totalDamage - totalDamage * damageReduction ) + flatReduction; //the amount of reflected damage is the damage reduced by damage reduction
@@ -735,7 +764,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   //[Damage Including Extra Damage] – ([Damage Including Extra Damage] x [Effect of Damage-Mitigating Skill or Special]) = Final Damage After Mitigation
 
 
-  totalDamage = totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction ) - flatReduction;
+  totalDamage = totalDamage - Math.trunc( totalDamage - totalDamage * damageReduction ) - flatReduction; //total damage after reductions
 
   //calculate separately for base and special damage for additional info
   baseDamage = baseDamage - Math.trunc( baseDamage - baseDamage * damageReduction);
@@ -760,9 +789,44 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   }
 
   return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "partyBuff": partyBuff, "partyHeal": partyHeal,
-  "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge, 
+  "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge,
   "attackerSpecialActivated": attackerSpecialActivated, "defenderSpecialActivated": defenderSpecialActivated } ; ///glimmer interacts with damage reduction
 
+}
+
+export function getSpecialDamage(effect, owner, enemy, heroList, damageType){
+    let specialDamage = 0;
+    let hero; //which hero to base the damage off of
+    if (effect.damage[0] === "attacker"){
+      hero = owner;
+    } else if (effect.damage[0] === "defender"){
+      hero = enemy;
+    }
+
+    let stat = effect.damage[1];
+    if (stat === "defensive"){
+      stat = damageType;
+    }
+
+
+    let factor = effect.damage[2];
+
+    if ("condition" in effect && checkCondition(heroList, effect.condition, owner, enemy) ){
+
+      factor = effect["alt"];
+
+    }
+
+    if (stat === "flat"){
+      specialDamage = factor; //special damage is flat
+    } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
+      specialDamage = Math.trunc( (owner.stats.hp - owner.currentHP) * factor);
+
+    } else{
+      specialDamage = Math.trunc(hero.combatStats[stat] * factor);
+    }
+
+    return specialDamage;
 }
 
 export function calculateWeaponTriangleAdvantage(colorAttack, colorDefend){

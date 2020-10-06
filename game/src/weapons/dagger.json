@@ -884,5 +884,71 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"78": {
+		"name": "Caltrop Dagger+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"79": {
+		"name": "Caltrop Dagger",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"80": {
+		"name": "Courtly Fan+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"81": {
+		"name": "Courtly Fan",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"82": {
+		"name": "Courtly Mask+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"83": {
+		"name": "Courtly Mask",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "dagger",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 }
