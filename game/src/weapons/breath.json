@@ -475,6 +475,85 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"41": {
+		"name": "Blackfire Breath+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"42": {
+		"name": "Blackfire Breath",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"43": {
+		"name": "Pale Breath+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"44": {
+		"name": "Pale Breath",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"45": {
+		"name": "Moonless Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Robin: Fall Vessel"],
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"46": {
+		"name": "Frostfire Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Tiki: Harmonic Hope"],
+		"type": "breath",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
+	},
+	"47": {
+		"name": "Eternal Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Fae: Divine Dragon"],
+		"type": "breath",
+		"skills": [],
+		"effect": {},
+		"max": true
 	}
-	
 }

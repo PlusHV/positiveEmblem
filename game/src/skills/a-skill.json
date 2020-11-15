@@ -394,7 +394,7 @@
 		"name": "Atk/Spd Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -402,7 +402,7 @@
 		"name": "Atk/Spd Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -410,7 +410,7 @@
 		"name": "Atk/Spd Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
@@ -1689,7 +1689,7 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Alm: Imperial Ascent"],
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}],
 		"max": true
 	},
@@ -1761,7 +1761,7 @@
 		"name": "Spd/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -1769,7 +1769,7 @@
 		"name": "Spd/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -1777,7 +1777,7 @@
 		"name": "Spd/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
@@ -2270,7 +2270,7 @@
 		"name": "Atk/Def Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -2278,7 +2278,7 @@
 		"name": "Atk/Def Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -2286,7 +2286,7 @@
 		"name": "Atk/Def Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
@@ -2342,7 +2342,7 @@
 		"name": "Shield Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 1, "constant": 3, "min": 1}],
 		"max": false
 	},
@@ -2350,7 +2350,7 @@
 		"name": "Shield Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2}],
 		"max": false
 	},
@@ -2358,7 +2358,7 @@
 		"name": "Shield Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 3, "constant": 9, "min": 3}],
 		"max": true
 	},
@@ -2366,7 +2366,7 @@
 		"name": "Blade Session 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 1, "constant": 1, "max": 3}],
 		"max": false
 	},
@@ -2374,7 +2374,7 @@
 		"name": "Blade Session 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 2, "constant": 2, "max": 6}],
 		"max": false
 	},
@@ -2382,7 +2382,7 @@
 		"name": "Blade Session 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 3, "constant": 3, "max": 9}],
 		"max": true
 	},
@@ -2390,7 +2390,7 @@
 		"name": "Spd/Res Form 1",
 		"sp": 60,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -2398,7 +2398,7 @@
 		"name": "Spd/Res Form 2",
 		"sp": 120,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
 		"max": false
 	},
@@ -2406,7 +2406,7 @@
 		"name": "Spd/Res Form 3",
 		"sp": 240,
 		"prf": false,
-		"type": "variable-effect",
+		"type": "conditional-effect",
 		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	},
@@ -2545,6 +2545,39 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [],
+		"max": true
+	},
+	"320": {
+		"name": "Atk/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"],  "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"max": false
+	},
+	"321": {
+		"name": "Atk/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"max": false
+	},
+	"322": {
+		"name": "Atk/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"max": true
+	},
+	"323": {
+		"name": "Dragonscale",
+		"sp": 300,
+		"prf": true,
+		"users": ["Robin: Fall Vessel"],
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy", "enemyhp", "greater", 1.00]], "lull": {"atk": 6, "res": 6}, "defenseCharge": 1 }],
 		"max": true
 	}
 }

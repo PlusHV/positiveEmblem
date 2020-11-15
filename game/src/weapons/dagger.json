@@ -950,5 +950,17 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"84": {
+		"name": "Tailwind Shuriken",
+		"might": 9,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lyn: Ninja-Friend Duo"],
+		"type": "dagger",
+		"skills": [["a", "Speed +3"], ["a", "Speed +1"]],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 }

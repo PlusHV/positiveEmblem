@@ -1188,6 +1188,40 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"104": {
+		"name": "Twin Star Axe",
+		"might": 11,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Laevatein: Ninja of Múspell"],
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"105": {
+		"name": "Ninja Masakari+",
+		"might": 9,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"106": {
+		"name": "Ninja Masakari",
+		"might": 6,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 
 

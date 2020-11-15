@@ -188,6 +188,15 @@ table,tr,td {
   min-width: 50px;
 
 }
+.statusText {
+        
+  border: 2px solid #930322;
+  width: 150px;
+  text-align: left;
+  max-width: 90px;
+  min-width: 50px;
+
+}
 .equipText {
   border: 2px solid #930322;
   width: 50px;

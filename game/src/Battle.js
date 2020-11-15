@@ -657,7 +657,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     if (attackerSpecialCharge >= 0){
 
       //charge will not go below 0. attack charge will be at least 1 but maxes out a 2. Guard will be at least 0 but maxes out at 1.
-      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - Math.min(attacker.combatEffects.attackCharge, 2) + Math.min(defender.combatEffects.guard + attacker.combatEffects.guardStatus, 1) ); //unit attacking
+      attackerSpecialCharge = Math.max(0, attackerSpecialCharge - Math.min(attacker.combatEffects.attackCharge, 2) + Math.min(defender.combatEffects.guard + attacker.statusEffect.guard, 1) ); //unit attacking
     }
 
   } //end offensive special check 
@@ -744,7 +744,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   } else{
     if (defenderSpecialCharge >= 0){
-      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - Math.min(defender.combatEffects.defenseCharge, 2) + Math.min(attacker.combatEffects.guard + defender.combatEffects.guardStatus, 1) );
+      defenderSpecialCharge = Math.max(0, defenderSpecialCharge - Math.min(defender.combatEffects.defenseCharge, 2) + Math.min(attacker.combatEffects.guard + defender.statusEffect.guard, 1) );
 
 
 
@@ -1114,7 +1114,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         if (check.debuff.atk > 0 || check.debuff.spd > 0 ||  check.debuff.def > 0 || check.debuff.res > 0
-         || check.combatEffects.guardStatus > 0 || check.combatEffects.panicStatus > 0){
+         || check.statusEffect.guard > 0 || check.statusEffect.panic > 0){
           innerResult = true;
         }
 

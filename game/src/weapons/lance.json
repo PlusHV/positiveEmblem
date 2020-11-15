@@ -1326,6 +1326,64 @@
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
 		"max": true
+	},
+	"116": {
+		"name": "Effie's Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Effie: Army of One"],
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"117": {
+		"name": "Spear of Assal",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Seteth: Seiros Adherent"],
+		"type": "lance",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"118": {
+		"name": "Areadbhar",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Dimitri: Savior King"],
+		"type": "lance",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"119": {
+		"name": "Ninja Yari+",
+		"might": 9,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"120": {
+		"name": "Ninja Yari",
+		"might": 6,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 
 }

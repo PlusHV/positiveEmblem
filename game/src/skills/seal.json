@@ -3468,5 +3468,90 @@
 		"type": "passive",
 		"effect": {"spd": 2, "def": 2},
 		"max": true
+	},
+	"472": {
+		"name": "Brazen Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 3, "res": 3} }],
+		"max": false
+	},
+	"473": {
+		"name": "Brazen Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 5, "res": 5} }],
+		"max": false
+	},
+	"474": {
+		"name": "Brazen Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 7, "res": 7} }],
+		"max": true
+	},
+	"475": {
+		"name": "Atk/Def Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"476": {
+		"name": "Atk/Def Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": false
+	},
+	"477": {
+		"name": "Atk/Def Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "def": 6} }],
+		"max": true
+	},
+	"478": {
+		"name": "Squad Ace AN 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1, "res": 1},
+		"max": false
+	},
+	"479": {
+		"name": "Squad Ace AN 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2, "res": 2},
+		"max": true
+	},
+	"480": {
+		"name": "Hone Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"481": {
+		"name": "Kestrel Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": false
+	},
+	"482": {
+		"name": "Kestrel Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-stat",
+		"max": true
 	}
 }

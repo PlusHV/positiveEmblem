@@ -1520,6 +1520,52 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"131": {
+		"name": "Thunderbrand",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Catherine: Thunder Knight"],
+		"type": "sword",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"132": {
+		"name": "Dark Creator S",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Nemesis: King of Liberation"],
+		"type": "sword",
+		"skills": [["a", "Defense +3"]],
+		"effect": {},
+		"max": true
+	},
+	"133": {
+		"name": "Ninja Katana+",
+		"might": 9,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"134": {
+		"name": "Ninja Katana",
+		"might": 6,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 
 

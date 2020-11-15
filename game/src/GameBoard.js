@@ -95,7 +95,9 @@ class GameBoard extends React.Component{
       "draggedHeroOrg": null,
       "draggedOver": null,
       "preBattleDamage": -1,
-      "draggedOverOriginalHP": 0
+      "draggedOverOriginalHP": 0,
+      "selectedStatusBuff": "bonusDouble",
+      "selectedStatusEffect": "guard" 
 
     }
 
@@ -117,6 +119,8 @@ class GameBoard extends React.Component{
     this.onHPChange = this.onHPChange.bind(this);
     this.onSpecialChargeChange = this.onSpecialChargeChange.bind(this);
 
+    this.onSelectedStatusChange = this.onSelectedStatusChange.bind(this);
+    this.onStatusChange = this.onStatusChange.bind(this);
 
     this.getFilledPositions = this.getFilledPositions.bind(this);
 
@@ -827,6 +831,12 @@ class GameBoard extends React.Component{
 
     hero.end = e.target.checked;
 
+    //only reset if unit has used their action
+    if (e.target.checked){
+      hero.debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+      hero.statusEffect = {"guard": 0, "panic": 0}; 
+    }
+
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
     this.setState({heroList: temp});
@@ -950,7 +960,7 @@ class GameBoard extends React.Component{
     let temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex].currentHP = Math.min(Number(e.target.value),  temp[this.state.playerSide][this.state.heroIndex].stats.hp) ;
     this.setState({heroList: temp});
-    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] }); //update the selectedHero according to changed level //todo
 
   }
 
@@ -958,7 +968,39 @@ class GameBoard extends React.Component{
     let temp = this.state.heroList;
     temp[this.state.playerSide][this.state.heroIndex].special.charge = Math.min(Number(e.target.value), temp[this.state.playerSide][this.state.heroIndex].special.cd);
     this.setState({heroList: temp});
-    this.setState({selectedMember: this.state.heroList[this.state.playerSide][this.state.heroIndex] }); 
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] }); 
+
+  }
+
+  onSelectedStatusChange(e, type){
+
+    if (type === "statusBuff"){
+      this.setState({selectedStatusBuff: e.target.value});
+    } else if (type === "statusEffect"){
+      this.setState({selectedStatusEffect: e.target.value});
+    }
+
+  }
+
+  onStatusChange(e, type){
+
+    let temp = this.state.heroList;
+    
+
+    let statusValue = 0;
+    if (e.target.checked){ //if box is checked
+      statusValue = 1;
+    }
+
+
+    if (type === "statusBuff"){
+      temp[this.state.playerSide][this.state.heroIndex].statusBuff[this.state.selectedStatusBuff] = statusValue;
+    } else if (type === "statusEffect"){
+      temp[this.state.playerSide][this.state.heroIndex].statusEffect[this.state.selectedStatusEffect] = statusValue;
+    }
+
+    this.setState({heroList: temp});
+    this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] }); 
 
   }
 
@@ -1613,9 +1655,7 @@ class GameBoard extends React.Component{
 
       let dropIndex = this.props.G.cells[dropPosition].listIndex;
       let dropSide = this.props.G.cells[dropPosition].side;
-      //todo initiate battle if in proper range and it is opposite side as dragged
 
-      //todo use assist skills if in proper range and it is on same side
       //let tempOrg = temp;
 
 
@@ -1624,12 +1664,15 @@ class GameBoard extends React.Component{
       if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.assist.range && dragData.side === this.props.G.cells[dropPosition].side ){
 
 
+        //Note - These apply functions currently use a copy of the the assister (drag data) and assistee (dropPosition in cell list) 
+        //Only one change is done at a time for the most part so this is fine, but for movement heal, it applies two effects, so the applyHealAssist portion uses the updated assister
         if (dragData.assist.type === "movement"){
 
           let orgAssisterPos = temp[dragSide][dragIndex].position;
           let orgAssisteePos = temp[dropSide][dropIndex].position;
           temp = this.applyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
 
+          temp[dragSide][dragIndex].moveAssistSuccess = false; //reset value
 
           //clear initial positions of assister/assistee
           this.props.G.cells[orgAssisterPos] = null;
@@ -1638,6 +1681,8 @@ class GameBoard extends React.Component{
           //move the assistee/assister to their new positions 
           this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
           this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+
 
         } else if (dragData.assist.type === "rally"){
           temp = this.applyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
@@ -1651,6 +1696,31 @@ class GameBoard extends React.Component{
           
         } else if (dragData.assist.type === "dance"){
           temp = this.applyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
+
+        } else if (dragData.assist.type === "movement-heal"){
+
+          //apply movement
+          //save original positions to clear out later
+          let orgAssisterPos = temp[dragSide][dragIndex].position;
+          let orgAssisteePos = temp[dropSide][dropIndex].position;
+          temp = this.applyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
+
+
+          //apply heal
+          temp = this.applyHealAssist(temp, temp[dragSide][dragIndex], this.props.G.cells[dropPosition], dragData.assist.effect);
+
+          temp[dragSide][dragIndex].moveAssistSuccess = false; //reset value
+
+          //clear initial positions of assister/assistee
+          this.props.G.cells[orgAssisterPos] = null;
+          this.props.G.cells[orgAssisteePos] = null;
+
+          //move the assistee/assister to their new positions 
+          this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+          this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+
+
         }
 
       //Check if in range for attack and if they are on the same side
@@ -1838,6 +1908,9 @@ class GameBoard extends React.Component{
       list[assistee.side][assistee.listIndex].position = newAssisteePos;
 
 
+      list[assister.side][assister.listIndex].moveAssistSuccess = true;
+
+
       for (let i of assister.onAssist){ //loop through each on move assist effect on the assister
         if (i !== null && i["type"] === "movement"){
 
@@ -1953,7 +2026,7 @@ class GameBoard extends React.Component{
 
       return list;
 
-    } else {
+    } else { //invalid movemnt, return original list
       return list;
     }
 
@@ -2011,62 +2084,105 @@ class GameBoard extends React.Component{
         if (i !== null && i["type"] === "rally"){
 
           for (let j in i){ //
-            if (j === "feint"){
+    //"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"},
+            if (j === "range"){ //range determines who is affected and is main identifier to apply this effect
 
-              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, []); //cardinal hero positions in relation to assister
+              let affectedHeroes = [];
 
-              for (let k of cardinalHeroes){ //apply
+              if (i.range === "cardinal"){
+
+                  if (i["from"].includes("owner") ){
+                    affectedHeroes = this.getCardinalHeroPositions(assister.position, []);
+                  }
+
+                  if (i["from"].includes("ally") ){
+                    affectedHeroes = affectedHeroes.concat( this.getCardinalHeroPositions(assistee.position, [...affectedHeroes, assister.position]) );
+                  }
+
+              } //check for cardinal range
+
+              for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
                 let side = this.props.G.cells[k].side;
                 let index = this.props.G.cells[k].listIndex;
 
-                if (side !== assister.side){ //if on enemy team apply debuffs
-                  let debuffs = i.feint;
+                if (side !== assister.side){ //only apply if on enemy team
+
+                  let debuffs = i.debuff;
 
                   for (let l in debuffs) {
                     list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
 
                   }
 
+                  let statusEffects = i.statusEffect;
 
-                }
-
-
-              } //end apply for each cardinal hero
-
-
-
-
-            } else if (j === "ruse"){
-
-              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
-
-              cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
-
-              for (let k of cardinalHeroes){ //apply
-                let side = this.props.G.cells[k].side;
-                let index = this.props.G.cells[k].listIndex;
-
-                if (side !== assister.side){ //if on enemy team apply debuffs
-                  let debuffs = i.ruse;
-
-                  list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
-
-
-                  for (let l in debuffs) {
-                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
+                  for (let l of statusEffects){
+                    list[side][index].statusEffect[l]++; //apply the status effect
                   }
 
-
                 }
 
 
-              }
+              } //end apply for each affected hero
+
+            } //end if range
+
+            // if (j === "feint"){
+
+            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, []); //cardinal hero positions in relation to assister
+
+            //   for (let k of cardinalHeroes){ //apply
+            //     let side = this.props.G.cells[k].side;
+            //     let index = this.props.G.cells[k].listIndex;
+
+            //     if (side !== assister.side){ //if on enemy team apply debuffs
+            //       let debuffs = i.feint;
+
+            //       for (let l in debuffs) {
+            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+            //       }
+
+
+            //     }
+
+
+            //   } //end apply for each cardinal hero
 
 
 
 
-            }
+            // } else if (j === "ruse"){
+
+            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
+
+            //   cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
+
+            //   for (let k of cardinalHeroes){ //apply
+            //     let side = this.props.G.cells[k].side;
+            //     let index = this.props.G.cells[k].listIndex;
+
+            //     if (side !== assister.side){ //if on enemy team apply debuffs
+            //       let debuffs = i.ruse;
+
+            //       list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
+
+
+            //       for (let l in debuffs) {
+            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+            //       }
+
+
+            //     }
+
+
+            //   }
+
+
+
+
+            // }
 
 
           } //end j loop
@@ -2082,63 +2198,104 @@ class GameBoard extends React.Component{
 
 
           for (let j in i){ //
-            if (j === "feint"){
+            if (j === "range"){ //range determines who is affected and is main identifier to apply this effect
 
-              let cardinalHeroes = this.getCardinalHeroPositions(assistee.position, []); //cardinal hero positions in relation to assister
+              let affectedHeroes = [];
 
-              for (let k of cardinalHeroes){ //apply
+              if (i.range === "cardinal"){
+
+                  if (i["from"].includes("owner") ){
+                    affectedHeroes = this.getCardinalHeroPositions(assistee.position, []);
+                  }
+
+                  if (i["from"].includes("ally") ){
+                    affectedHeroes = affectedHeroes.concat( this.getCardinalHeroPositions(assister.position, [...affectedHeroes, assistee.position]) );
+                  }
+
+              } //check for cardinal range
+
+              for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
                 let side = this.props.G.cells[k].side;
                 let index = this.props.G.cells[k].listIndex;
 
-                if (side !== assistee.side){ //if on enemy team apply debuffs
-                  let debuffs = i.feint;
+                if (side !== assistee.side){ //only apply if on enemy team
+
+                  let debuffs = i.debuff;
 
                   for (let l in debuffs) {
                     list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
 
                   }
 
+                  let statusEffects = i.statusEffect;
 
-                }
-
-
-              }
-
-
-
-
-            } else if (j === "ruse"){
-
-              let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
-
-              cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
-
-              for (let k of cardinalHeroes){ //apply
-                let side = this.props.G.cells[k].side;
-                let index = this.props.G.cells[k].listIndex;
-
-                if (side !== assister.side){ //if on enemy team apply debuffs
-                  let debuffs = i.ruse;
-
-                  list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
-
-
-                  for (let l in debuffs) {
-                    list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
+                  for (let l of statusEffects){
+                    list[side][index].statusEffect[l]++; //apply the status effect
                   }
 
-
                 }
 
 
-              }
+              } //end apply for each affected hero
+
+            } //end if range
+            // if (j === "feint"){
+
+            //   let cardinalHeroes = this.getCardinalHeroPositions(assistee.position, []); //cardinal hero positions in relation to assister
+
+            //   for (let k of cardinalHeroes){ //apply
+            //     let side = this.props.G.cells[k].side;
+            //     let index = this.props.G.cells[k].listIndex;
+
+            //     if (side !== assistee.side){ //if on enemy team apply debuffs
+            //       let debuffs = i.feint;
+
+            //       for (let l in debuffs) {
+            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+            //       }
+
+
+            //     }
+
+
+            //   }
 
 
 
 
-            }
-          } //enfr for j
+            // } else if (j === "ruse"){
+
+            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
+
+            //   cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
+
+            //   for (let k of cardinalHeroes){ //apply
+            //     let side = this.props.G.cells[k].side;
+            //     let index = this.props.G.cells[k].listIndex;
+
+            //     if (side !== assister.side){ //if on enemy team apply debuffs
+            //       let debuffs = i.ruse;
+
+            //       list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
+
+
+            //       for (let l in debuffs) {
+            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
+
+            //       }
+
+
+            //     }
+
+
+            //   }
+
+
+
+
+            // }
+          } //end for j
 
 
 
@@ -2265,7 +2422,10 @@ class GameBoard extends React.Component{
   applyHealAssist(updatedHeroList, assister, assistee, effect){
     let list = updatedHeroList;
 
-    if (assistee.currentHP === assistee.stats.hp){ //full hp, assist does not go through
+    //full hp, assist does not go through. 
+    //Also checks if has done a movement assist (e.g. rescue) in which case, the assist will go through (no healing should still occur in this case but special will activate)
+    if (assistee.currentHP === assistee.stats.hp && !assister.moveAssistSuccess){ 
+
       return list;
     }
 
@@ -2286,7 +2446,7 @@ class GameBoard extends React.Component{
     let healCalc = Math.floor(assister.stats.atk * effect.atk) + effect.mod;
 
 
-    if (effect.mod2 === "martyr"){
+    if (effect.modifiers.includes("martyr")){
       healCalc += assister.stats.hp - assister.currentHP; //add to calculated healing amount, the damage on assister
       selfHeal = Math.floor( (assister.stats.hp - assister.currentHP)/2); //heal for half of damage on assister
 
@@ -2298,7 +2458,7 @@ class GameBoard extends React.Component{
 
     // 20 /41 -> qualifies 
     // 40- 40
-    if (effect.mod2 === "rehab"){ //rehab's bonus is applied after the maximum is found
+    if (effect.modifiers.includes("rehab")){ //rehab's bonus is applied after the maximum is found
       if (assistee.currentHP <= Math.trunc(assistee.stats.hp) * 0.5 ){ //hp must be <= 50%
         assisteeHeal += assistee.stats.hp - (2 * assistee.currentHP);
       }
@@ -2346,9 +2506,10 @@ class GameBoard extends React.Component{
       } //end buff
 
       assisterSpecial.charge = assisterSpecial.cd; //reset special
-    } else{
+    } else{ //special not activated
 
-      if (assisterSpecial.charge >= 0){
+      //special not fully charged and does not have nullCharge modifier
+      if (assisterSpecial.charge >= 0 && !effect.modifiers.includes("nullCharge") ){
         assisterSpecial.charge = Math.max(0, assisterSpecial.charge - 1);
       }
     }
@@ -2523,13 +2684,22 @@ class GameBoard extends React.Component{
 
   startTurn(){
     let side = this.state.playerSide;
-    let tempList = this.state.heroList;
+    let tempList = this.state.heroList; //this is the copy that will be modified
 
-    let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference
+
 
     let enemySide = this.getEnemySide(side);
+    // this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //visible buffs
+    // this["statusBuff"] = {};
+    for (let i of tempList[side]){ 
 
+      //These effects last for 1 turn which means there are reset at the start of the turn
+      tempList[side][i.listIndex].buff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //reset buffs
+      tempList[side][i.listIndex].statusBuff = {"bonusDouble": 0}; //reset status buffs
 
+    }
+
+    let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference (so that calculations are done at the same time)
 
     for (let i of this.state.heroList[side]){ //loop through each hero
 
@@ -2621,6 +2791,7 @@ class GameBoard extends React.Component{
             let checkStat = j.sabotage.checkStats;
             let checkValue = i.visibleStats[checkStat] + j.sabotage.mod; //value to check against
             let debuffStats = j.sabotage.debuffStats; //stats to debuff
+            let debuffStatuses = j.sabotage.debuffStatus;
             let debuff = j.sabotage.debuff; //how much to debuff stats
 
             if (checkStat === "hp"){
@@ -2644,14 +2815,14 @@ class GameBoard extends React.Component{
             }
 
             for (let m of debuffList){ //apply for each hero that meet sabotage reqs
-              for (let n of debuffStats){ //apply for each applicable stat
 
-                if (n === "panic"){
-                  tempList[enemySide][m].combatEffects.panicStatus+= 1;
-                } else {
-                  tempList[enemySide][m].debuff[n] = Math.max(tempList[enemySide][m].debuff[n], debuff); 
-                }              
+              for (let n of debuffStats){ //apply for each applicable stat
+                tempList[enemySide][m].debuff[n] = Math.max(tempList[enemySide][m].debuff[n], debuff); 
               } //end for
+
+              for (let n of debuffStatuses){
+                tempList[enemySide][m].statusEffect[n]++;
+              }
 
             } //end loop debuff list
 
@@ -2714,9 +2885,22 @@ class GameBoard extends React.Component{
 
         tempList[i][j.listIndex].combatCount = 0; //reset their combat counts
 
+        if (j.side === this.state.playerSide && !j.end){ //if on current side and has not finished their action yet
+          tempList[i][j.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+          tempList[i][j.listIndex].statusEffect = {"guard": 0, "panic": 0}; 
+
+        }
+
+
       }
 
     } //end i
+
+    //TODO
+    //Loop through current team and check for heroes that have not waited yet
+    //These heroes will need to reset their debuffs. 
+    //Also change selected hero to first of the opposite side
+
 
     this.setState({heroList: tempList});
   }
@@ -2726,7 +2910,6 @@ class GameBoard extends React.Component{
 
     //console.log(this.state.heroList);
     console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
-
 
     return (
 
@@ -2751,7 +2934,9 @@ class GameBoard extends React.Component{
               buffChange = {this.onBuffChange}
               ivChange = {this.onIVChange}
               hpChange = {this.onHPChange}
-              specialChargeChange = {this.onSpecialChargeChange} />
+              specialChargeChange = {this.onSpecialChargeChange}
+              selectedStatusChange = {this.onSelectedStatusChange}
+              statusChange = {this.onStatusChange} />
         </td>
         <td rowSpan = "2">
           <table className= "boardStyle" id="board" align = 'center'>
@@ -2841,10 +3026,16 @@ function makeHeroStruct(){
                         };
 
     this["side"] = (Math.floor(arguments[0] / 6) + 1).toString();
+    // these are reset at the start of the hero's turn
+    this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //visible buffs
+    this["statusBuff"] = {"bonusDouble": 0};
 
-    this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    //these are reset when the hero's action is taken (action is also considered taken if action was available but their turn ended)
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    this["statusEffect"] = {"guard": 0, "panic": 0}; //
+
+
+    this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //stats changed by auras
     
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //the actual stats of the hero
@@ -2865,8 +3056,8 @@ function makeHeroStruct(){
     this["bonus"] = false;
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0};
+
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0,
-      "panicStatus": 0, "guardStatus": 0,
       "brashAssault": 0, "desperation": 0, "vantage": 0, 
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0,
       "brave": 0, "enemyBrave": 0,
@@ -2896,6 +3087,7 @@ function makeHeroStruct(){
     this["onAttack"] = [];
     this["specialActivated"] = false;
     this["combatCount"] = 0;
+    this["moveAssistSuccess"] = false;
   }  
   return hero;
 }

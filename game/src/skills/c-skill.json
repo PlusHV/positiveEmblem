@@ -1953,7 +1953,7 @@
 		"name": "With Everyone!",
 		"sp": 300,
 		"prf": true,
-		"users": ["Tiki: Legendary Dragon"],
+		"users": ["Tiki: Legendary Dragon", "Tiki: Harmonic Hope"],
 		"type": "turn-start",
 		"max": true
 	},
@@ -2512,6 +2512,89 @@
 		"prf": false,
 		"type": "aura",
 		"max": true
+	},
+	"357": {
+		"name": "Rouse Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"358": {
+		"name": "Rouse Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"359": {
+		"name": "Rouse Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"360": {
+		"name": "Odd Tempest 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"361": {
+		"name": "Odd Tempest 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"362": {
+		"name": "Odd Tempest 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"363": {
+		"name": "Spd/Def Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"364": {
+		"name": "Spd/Def Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "turn-start",
+		"max": false
+	},
+	"365": {
+		"name": "Spd/Def Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "turn-start",
+		"max": true
+	},
+	"366": {
+		"name": "Atk/Def Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"367": {
+		"name": "Atk/Def Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "aura",
+		"max": false
+	},
+	"368": {
+		"name": "Atk/Def Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "aura",
+		"max": true
 	}
-
 }

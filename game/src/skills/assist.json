@@ -76,7 +76,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 5, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0, "min": 5, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
 	"9": {
@@ -85,7 +85,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0.5, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr"},
+		"effect": {"atk": 0.5, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"]},
 		"max": true
 	},
 	"10": {
@@ -94,7 +94,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "mod2": "martyr", "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"], "cdTrigger": 1},
 		"max": false
 	},
 	"11": {
@@ -103,7 +103,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 10, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0, "min": 10, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
 	"12": {
@@ -112,7 +112,7 @@
 		"range": 2,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": true
 	},
 	"13": {
@@ -121,7 +121,7 @@
 		"range": 2,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
 	"14": {
@@ -319,7 +319,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": 7, "mod2": ""},
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": 7, "modifiers": []},
 		"max": false
 	},
 	"36": {
@@ -328,7 +328,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0.5, "min": 15, "mod": 10, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0.5, "min": 15, "mod": 10, "selfHeal": 0, "modifiers": []},
 		"max": true
 	},
 	"37": {
@@ -337,7 +337,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "mod2": "", "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "modifiers": [], "cdTrigger": 1},
 		"max": false
 	},
 	"38": {
@@ -346,7 +346,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0.5, "min": 7, "mod": -10, "selfHeal": 0, "mod2": "rehab"},
+		"effect": {"atk": 0.5, "min": 7, "mod": -10, "selfHeal": 0, "modifiers": ["rehab"]},
 		"max": true
 	},
 	"39": {
@@ -355,7 +355,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "mod2": "rehab", "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "modifiers": ["rehab"], "cdTrigger": 1},
 		"max": false
 	},
 	"40": {
@@ -373,7 +373,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": true
 	},
 	"42": {
@@ -382,7 +382,7 @@
 		"range": 1,
 		"prf": false,
 		"type": "heal",
-		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "mod2": ""},
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
 	"43": {
@@ -484,6 +484,44 @@
 		"users": ["Plumeria: Lewd Dream"],
 		"type": "dance",
 		"max": true
+	},
+	"54": {
+		"name": "Rally Up Spd+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": "rally",
+		"effect": {"rally": {"spd": 6, "up": 1} },
+		"max": true
+	},
+	"55": {
+		"name": "Rally Up Spd",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": "rally",
+		"effect": {"rally": {"spd": 4, "up": 1} },
+		"max": true
+	},
+	"56": {
+		"name": "Rescue+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": "movement-heal",
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": -1, "other": -1},
+		"max": true
+	},
+	"57": {
+		"name": "Rescue",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": "movement-heal",
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": -1, "other": -1},
+		"max": false
 	}
 
 }

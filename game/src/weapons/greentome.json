@@ -740,5 +740,17 @@
 		"skills": [], 
 		"effect": {},
 		"max": true
+	},
+	"65": {
+		"name": "Obsessive Curse",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Rhajat: Black Magician"],
+		"type": "greentome",
+		"skills": [], 
+		"effect": {},
+		"max": true
 	}
 }

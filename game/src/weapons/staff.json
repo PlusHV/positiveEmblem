@@ -475,5 +475,29 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"43": {
+		"name": "Caduceus Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Flayn: Playing Innocent"],
+		"type": "staff",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"44": {
+		"name": "Elise's Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Elise: Budding Flower"],
+		"type": "staff",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 }

@@ -221,15 +221,122 @@ export default class Stats extends React.Component{
 				}
 
 	    	} else{
-	    		cells.push(<td className= "spacing" key = {"space1" + i}></td>);
-	    		cells.push(<td className= "spacing" key = {"space2" + i}></td>);
+	    		cells.push(<td className= "spacing" key = {"doubleSpace" + i} colSpan = "2"></td>);
+	    		//cells.push(<td className= "spacing" key = {"space2" + i}></td>);
 	    	}
 
 // cells.push(<td className = "inputNum" key = {levelText[i] + " value"}>
 //             
 	        tbody.push(<tr key={"row"+i}>{cells}</tr>);
+
+
+
+
+
       	}
 
+        cells = [];
+        cells.push(<td className= "spacing" key = "StatusBuffText">Status Buff</td>);
+
+ 		let options = [];
+ 		for (let i of Object.keys(this.props.gameState.selectedMember.statusBuff)){
+ 			options.push(<option key = {i} value = {i}>{capitalize(i, true)}</option>);
+
+ 		}
+
+
+        cells.push(<td className= "spacing" key = "StatusBuffDrop">
+					<select
+							onChange = {(e, type) => this.props.selectedStatusChange(e, "statusBuff")} >>
+						{options}
+					</select>
+        		</td>);
+
+
+        let statusVal = false;
+
+        if (this.props.gameState.selectedMember.statusBuff[this.props.gameState.selectedStatusBuff] > 0){
+        	statusVal = true;
+        }
+
+        cells.push(<td className= "spacing" key = "StatusBuffCheck">
+		            <input 
+		            type = "checkbox"
+		            value = {statusVal}
+		            checked = {statusVal}
+		            onChange = {(e, type) => this.props.statusChange(e, "statusBuff")}
+		              />
+
+
+        		</td>);
+
+		cells.push(<td className= "spacing" key = "statusSpace1" ></td>);
+
+        cells.push(<td className= "spacing" key = "StatusEffectText">Status Effect</td>);
+
+        options = [];
+ 		for (let i of Object.keys(this.props.gameState.selectedMember.statusEffect)){
+ 			options.push(<option key = {i} value = {i}>{capitalize(i, true)}</option>);
+
+ 		}
+
+
+        cells.push(<td className= "spacing" key = "StatusEffectDrop">
+					<select
+							onChange = {(e, type) => this.props.selectedStatusChange(e, "statusEffect")} >>
+						{options}
+					</select>
+        		</td>);
+
+		statusVal = false;
+
+        if (this.props.gameState.selectedMember.statusEffect[this.props.gameState.selectedStatusEffect] > 0){
+        	statusVal = true;
+        }
+
+        cells.push(<td className= "spacing" key = "StatusEffectCheck">
+		            <input 
+		            type = "checkbox"
+		            value = {statusVal}
+		            checked = {statusVal}
+		            onChange = {(e, type) => this.props.statusChange(e, "statusEffect")}
+		              />
+
+        		</td>);
+        cells.push(<td className= "spacing" key = {"statusSpace2"} colSpan = "2"></td>);
+
+        tbody.push(<tr key={"statusRow"}>{cells}</tr>);
+
+
+        cells = [];
+        let status = this.props.gameState.selectedMember.statusBuff;
+        let statusBuffList = [];
+
+        for (let i in status){
+        	if (status[i] > 0){
+        		statusBuffList.push(capitalize(i, true));
+        	}
+
+        }
+
+        status = this.props.gameState.selectedMember.statusEffect;
+        let statusEffectList = [];
+
+        for (let i in status){
+
+        	//console.log(status.i);
+        	if (status[i] > 0){
+        		statusEffectList.push(capitalize(i, true));
+        	}
+        }
+
+
+
+        cells.push(<td className= "statusText" key = {"activeStatusBuffs"} colSpan = "4">Status Buffs: {statusBuffList.toString()}</td>);
+        cells.push(<td className= "statusText" key = {"activeStatusEffects"} colSpan = "5">Status Effects: {statusEffectList.toString()}</td>);
+
+
+        tbody.push(<tr key={"activeStatusRow"}>{cells}</tr>);
 
       return (
 

@@ -724,5 +724,23 @@
 		"type": "attack-battle",
 		"effect": {"factor": 0.7, "reflect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 1.0 }},
 		"max": true
+	},
+	"78": {
+		"name": "Deluge Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"spd": 4, "res": 4} },
+		"max": false
+	},
+	"79": {
+		"name": "Deluge Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"spd": 6, "res": 6} },
+		"max": true
 	}
 }

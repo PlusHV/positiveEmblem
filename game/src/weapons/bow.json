@@ -1050,6 +1050,18 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"93": {
+		"name": "Survivalist Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Shamir: Archer Apart"],
+		"type": "bow",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 
 }

@@ -60,7 +60,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"atk": 3}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"8": {
@@ -68,7 +68,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"atk": 5}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 5}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"9": {
@@ -76,7 +76,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"atk": 7}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 7}, "from": ["owner"], "range": "cardinal"},
 		"max": true
 	},
 	"10": {
@@ -132,7 +132,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 1, "spd": 1}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "spd": 1}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"17": {
@@ -140,7 +140,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 3, "spd": 3}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "spd": 3}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"18": {
@@ -148,7 +148,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 5, "spd": 5}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "spd": 5}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": true
 	},
 	"19": {
@@ -529,7 +529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"def": 3}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"def": 3}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"66": {
@@ -537,7 +537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"def": 5}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"def": 5}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"67": {
@@ -545,7 +545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"def": 7}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"def": 7}, "from": ["owner"], "range": "cardinal"},
 		"max": true
 	},
 	"68": {
@@ -577,7 +577,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"def": 1, "res": 1}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"def": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"72": {
@@ -585,7 +585,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"def": 3, "res": 3}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"def": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"73": {
@@ -593,7 +593,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"def": 5, "res": 5}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"def": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": true
 	},
 	"74": {
@@ -1346,7 +1346,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"res": 3}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"res": 3}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"167": {
@@ -1354,7 +1354,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"res": 5}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"res": 5}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"168": {
@@ -1362,7 +1362,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"res": 7}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"res": 7}, "from": ["owner"], "range": "cardinal"},
 		"max": true
 	},
 	"169": {
@@ -1395,7 +1395,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"173": {
@@ -1403,7 +1403,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"174": {
@@ -1411,7 +1411,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["atk"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"175": {
@@ -1419,7 +1419,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"176": {
@@ -1427,7 +1427,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"177": {
@@ -1435,7 +1435,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["def"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"178": {
@@ -1443,7 +1443,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"179": {
@@ -1451,7 +1451,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"180": {
@@ -1459,7 +1459,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["res"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"181": {
@@ -1695,7 +1695,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"spd": 3}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"spd": 3}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"210": {
@@ -1703,7 +1703,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"spd": 5}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"spd": 5}, "from": ["owner"], "range": "cardinal"},
 		"max": false
 	},
 	"211": {
@@ -1711,7 +1711,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "feint": {"spd": 7}},
+		"effect": {"type": "rally", "statusEffect": [], "debuff": {"spd": 7}, "from": ["owner"], "range": "cardinal"},
 		"max": true
 	},
 	"212": {
@@ -1791,7 +1791,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -5} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -5} }],
 		"max": false
 	},
 	"222": {
@@ -1799,7 +1799,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -3} }],
 		"max": false
 	},
 	"223": {
@@ -1807,7 +1807,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": ["panic"], "checkStats": "hp", "mod": -1} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -1} }],
 		"max": true
 	},
 	"224": {
@@ -2074,7 +2074,7 @@
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 6, "debuffStats": ["atk", "spd"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 6, "debuffStats": ["atk", "spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"256": {
@@ -2115,7 +2115,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 1, "res": 1}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"261": {
@@ -2123,7 +2123,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 3, "res": 3}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"262": {
@@ -2131,7 +2131,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 5, "res": 5}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": true
 	},
 	"263": {
@@ -2206,7 +2206,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"271": {
@@ -2214,7 +2214,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": false
 	},
 	"272": {
@@ -2222,7 +2222,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["spd"], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
 		"max": true
 	},
 	"273": {
@@ -2260,7 +2260,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 1, "def": 1}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"277": {
@@ -2268,7 +2268,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 3, "def": 3}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"278": {
@@ -2276,7 +2276,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"spd": 5, "def": 5}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": true
 	},
 	"279": {
@@ -2368,7 +2368,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 1, "def": 1}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"290": {
@@ -2376,7 +2376,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 3, "def": 3}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": false
 	},
 	"291": {
@@ -2384,7 +2384,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "on-assist",
-		"effect": {"type": "rally", "ruse": {"atk": 5, "def": 5}},
+		"effect": {"type": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"},
 		"max": true
 	},
 	"292": {
@@ -2764,6 +2764,79 @@
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "double": 1, "guard": 1 }],
 		"max": true
+	},
+	"337": {
+		"name": "Dragon's Ire 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 1.00]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": false
+	},
+	"338": {
+		"name": "Dragon's Ire 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.75]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": false
+	},
+	"339": {
+		"name": "Dragon's Ire 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.5]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": true
+	},
+	"340": {
+		"name": "Slick Fighter 1",
+		"sp": 60,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.75]], "double": 1, "penaltyNeutralize": ["atk", "spd", "def", "res"] }],
+		"max": false
+	},
+	"341": {
+		"name": "Slick Fighter 2",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.5]], "double": 1, "penaltyNeutralize": ["atk", "spd", "def", "res"] }],
+		"max": false
+	},
+	"342": {
+		"name": "Slick Fighter 3",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "double": 1, "penaltyNeutralize": ["atk", "spd", "def", "res"]}],
+		"max": true
+	},
+	"343": {
+		"name": "Atrocity",
+		"sp": 300,
+		"prf": true,
+		"users": ["Dimitri: Savior King"],
+		"type": "conditional-effect",
+		"effect": [{"type": "effect", "condition": [["enemyhp", "greater", 0.5]], 
+			"variableEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}] }],
+		"max": true
+	},
+	"344": {
+		"name": "Chill Atk/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "def"], "debuff": 3} }],
+		"max": false
+	},
+	"345": {
+		"name": "Chill Atk/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "chill": {"stats": ["atk", "def"], "debuff": 5} }],
+		"max": true
 	}
-
 }
