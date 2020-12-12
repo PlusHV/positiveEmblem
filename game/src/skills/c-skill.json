@@ -10,126 +10,142 @@
 		"name": "Air Orders 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "buffList": ["airOrders"], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1] ] }],
 		"max": false
 	},
 	"2": {
 		"name": "Air Orders 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "buffList": ["airOrders"], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1] ] }],
 		"max": false
 	},
 	"3": {
 		"name": "Air Orders 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "buffList": ["airOrders"], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1] ] }],
 		"max": true
 	},
 	"4": {
 		"name": "Armor March 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "buffList": ["mobility+"], "allyReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfBuffReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
 		"max": false
 	},
 	"5": {
 		"name": "Armor March 2",
 		"sp": 120,
-		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "buffList": ["mobility+"], "allyReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfBuffReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
 		"max": false
 	},
 	"6": {
 		"name": "Armor March 3",
 		"sp": 240,
-		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "buffList": ["mobility+"], "allyReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfBuffReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
 		"max": true
 	},
 	"7": {
 		"name": "Atk Opening 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "opening": {"stats": ["atk"], "buff": 2} }],
 		"max": false
 	},
 	"8": {
 		"name": "Atk Opening 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "opening": {"stats": ["atk"], "buff": 4} }],
 		"max": false
 	},
 	"9": {
 		"name": "Atk Opening 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "opening": {"stats": ["atk"], "buff": 6} }],
 		"max": true
 	},
 	"10": {
 		"name": "Atk Ploy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["atk"], "debuffReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"11": {
 		"name": "Atk Ploy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 4, "debuffStats": ["atk"], "debuffReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"12": {
 		"name": "Atk Ploy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["atk"], "debuffReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"13": {
 		"name": "Atk/Res Oath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "buffList": ["statBuff"], "buff": "3", "buffStats": ["atk", "spd"], "selfBuffReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"14": {
 		"name": "Atk/Res Oath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "buffList": ["statBuff"], "buff": "4", "buffStats": ["atk", "spd"], "selfBuffReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"15": {
 		"name": "Atk/Res Oath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "buffList": ["statBuff"], "buff": "5", "buffStats": ["atk", "spd"], "selfBuffReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"16": {
 		"name": "Atk Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "conditional-effect",
+		"effect": [{"type": "postCombat", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["atk"], "debuffRange": 2, "targetDebuff": false }],
 		"max": false
 	},
 	"17": {
 		"name": "Atk Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "conditional-effect",
+		"effect": [{"type": "postCombat", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["atk"], "debuffRange": 2, "targetDebuff": false }],
 		"max": false
 	},
 	"18": {
 		"name": "Atk Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "conditional-effect",
+		"effect": [{"type": "postCombat", "debuffList": ["statDebuff"], "debuff": 7, "debuffStats": ["atk"], "debuffRange": 2, "targetDebuff": false }],
 		"max": true
 	},
 	"19": {

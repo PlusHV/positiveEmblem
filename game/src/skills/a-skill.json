@@ -795,7 +795,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"100": {
@@ -803,7 +803,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"101": {
@@ -811,7 +811,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"102": {
@@ -994,84 +994,96 @@
 		"name": "Defiant Atk 1",
 		"sp": 40,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "3", "buffStats": ["atk"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"125": {
 		"name": "Defiant Atk 2",
 		"sp": 80,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "5", "buffStats": ["atk"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"126": {
 		"name": "Defiant Atk 3",
 		"sp": 160,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "7", "buffStats": ["atk"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": true
 	},
 	"127": {
 		"name": "Defiant Def 1",
 		"sp": 40,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "3", "buffStats": ["def"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"128": {
 		"name": "Defiant Def 2",
 		"sp": 80,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "5", "buffStats": ["def"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"129": {
 		"name": "Defiant Def 3",
 		"sp": 160,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "7", "buffStats": ["def"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": true
 	},
 	"130": {
 		"name": "Defiant Res 1",
 		"sp": 40,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "3", "buffStats": ["res"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"131": {
 		"name": "Defiant Res 2",
 		"sp": 80,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "5", "buffStats": ["res"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"132": {
 		"name": "Defiant Res 3",
 		"sp": 160,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "7", "buffStats": ["res"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": true
 	},
 	"133": {
 		"name": "Defiant Spd 1",
 		"sp": 40,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "3", "buffStats": ["spd"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"134": {
 		"name": "Defiant Spd 2",
 		"sp": 80,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "5", "buffStats": ["spd"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": false
 	},
 	"135": {
 		"name": "Defiant Spd 3",
 		"sp": 160,
 		"prf": false,
-		"type": "turn-start",
+		"type": "conditional-effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "buffList": ["statBuff"], "buff": "7", "buffStats": ["spd"], "selfBuffReq": [["hp", "less", 0.5]] }],
 		"max": true
 	},
 	"136": {
@@ -1087,7 +1099,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"138": {
@@ -1095,7 +1107,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }],
 		"max": false
 	},
 	"139": {
@@ -1103,7 +1115,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"140": {
@@ -1111,7 +1123,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"141": {
@@ -2303,7 +2315,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
 		"max": true
 	},
 	"290": {
@@ -2431,7 +2443,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
 		"max": true
 	},
 	"306": {
@@ -2439,7 +2451,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"effect": [{"type": "effect", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
 		"max": true
 	},
 	"307": {

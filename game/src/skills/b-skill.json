@@ -12,7 +12,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+		"effect": {"condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] },
 		"max": false
 	},
 	"2": {
@@ -20,7 +20,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "greater", 0.5]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+		"effect": {"condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] },
 		"max": false
 	},
 	"3": {
@@ -28,7 +28,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {"range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+		"effect": {"allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] },
 		"max": true
 	},
 	"4": {
@@ -156,7 +156,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"20": {
@@ -164,7 +164,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"21": {
@@ -172,7 +172,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["axe"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"22": {
@@ -180,7 +180,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"23": {
@@ -188,7 +188,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"24": {
@@ -196,7 +196,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["bluetome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"25": {
@@ -205,7 +205,7 @@
 		"prf": true,
 		"users": ["Ike: Brave Mercenary"],
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "movetype", ["Cavalry", "Flying"] ] ], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "movetype", ["Cavalry", "Flying"] ] ], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"26": {
@@ -214,7 +214,7 @@
 		"prf": true,
 		"users": ["Marth: Hero-King"],
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["breath"] ] ], "enemyDouble": 1, "double": 1, "sweep": 1 }],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "weapontype", ["breath"] ] ], "enemyDouble": 1, "double": 1, "sweep": 1 }],
 		"max": true
 	},
 	"27": {
@@ -270,7 +270,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"34": {
@@ -278,7 +278,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"35": {
@@ -286,7 +286,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["bow"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"36": {
@@ -473,7 +473,7 @@
 		"prf": true,
 		"users": ["Sigurd: Holy Knight"],
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "consecutiveReduction": 0.2}],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "consecutiveReduction": 0.2}],
 		"max": true
 	},
 	"59": {
@@ -481,7 +481,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["dagger"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"60": {
@@ -489,7 +489,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["dagger"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"61": {
@@ -497,7 +497,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["dagger"]], ["enemyInfo", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["dagger"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"62": {
@@ -682,7 +682,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"85": {
@@ -690,7 +690,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"86": {
@@ -698,7 +698,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"87": {
@@ -706,7 +706,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 1.0], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"88": {
@@ -714,7 +714,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": false
 	},
 	"89": {
@@ -722,7 +722,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": ["atk", "spd", "def", "res"] }],
 		"max": true
 	},
 	"90": {
@@ -754,7 +754,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "less", 0.3]], "allyReq": {"type": "all"} },
+		"effect": {"condition": [["hp", "less", 0.3]], "allyReq": [["always"]] },
 		"max": false
 	},
 	"94": {
@@ -762,7 +762,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "less", 0.4]], "allyReq": {"type": "all"} },
+		"effect": {"condition": [["hp", "less", 0.4]], "allyReq": [["always"]] },
 		"max": false
 	},
 	"95": {
@@ -770,7 +770,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "less", 0.5]], "allyReq": {"type": "all"} },
+		"effect": {"condition": [["hp", "less", 0.5]], "allyReq": [["always"]] },
 		"max": true
 	},
 	"96": {
@@ -810,7 +810,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
+		"effect": {"condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] },
 		"max": false
 	},
 	"101": {
@@ -818,7 +818,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {"condition": [["hp", "greater", 0.5]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
+		"effect": {"condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] },
 		"max": false
 	},
 	"102": {
@@ -826,7 +826,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {"range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Flying"] } },
+		"effect": {"allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] },
 		"max": true
 	},
 	"103": {
@@ -852,7 +852,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"106": {
@@ -860,7 +860,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"107": {
@@ -868,7 +868,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["greentome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"108": {
@@ -956,7 +956,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"119": {
@@ -964,7 +964,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"120": {
@@ -972,7 +972,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["lance"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"121": {
@@ -1289,7 +1289,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"160": {
@@ -1297,7 +1297,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"161": {
@@ -1305,7 +1305,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["redtome"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"162": {
@@ -1395,7 +1395,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["atk"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"173": {
@@ -1403,7 +1403,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["atk"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"174": {
@@ -1411,7 +1411,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["atk"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 7, "debuffStats": ["atk"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": true
 	},
 	"175": {
@@ -1419,7 +1419,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["def"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"176": {
@@ -1427,7 +1427,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["def"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"177": {
@@ -1435,7 +1435,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["def"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 7, "debuffStats": ["def"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": true
 	},
 	"178": {
@@ -1443,7 +1443,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["res"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"179": {
@@ -1451,7 +1451,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["res"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"180": {
@@ -1459,7 +1459,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["res"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 7, "debuffStats": ["res"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": true
 	},
 	"181": {
@@ -1468,7 +1468,7 @@
 		"prf": true,
 		"users": ["Lyn: Brave Lady"],
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["enemyInfo", "weapontype", ["sword", "lance", "axe"]]], "sweep": 1 }],
+		"effect": [{"type": "effect", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe"]]], "sweep": 1 }],
 		"max": true
 	},
 	"182": {
@@ -1791,7 +1791,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -5} }],
+		"effect": [{"type": "turnStart", "debuffList": ["panic"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "HP", "greater", 5] ] }],
 		"max": false
 	},
 	"222": {
@@ -1799,7 +1799,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["panic"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "HP", "greater", 3] ] }],
 		"max": false
 	},
 	"223": {
@@ -1807,7 +1807,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 0, "debuffStats": [], "debuffStatus": ["panic"], "checkStats": "hp", "mod": -1} }],
+		"effect": [{"type": "turnStart", "debuffList": ["panic"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "HP", "greater", 1] ] }],
 		"max": true
 	},
 	"224": {
@@ -1815,7 +1815,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.9], ["heroInfoCheck", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"225": {
@@ -1823,7 +1823,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.7], ["heroInfoCheck", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"226": {
@@ -1831,7 +1831,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["enemyInfo", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
+		"effect": [{"type": "effect", "condition": [["hp", "greater", 0.5], ["heroInfoCheck", "weapontype", ["sword"] ] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"227": {
@@ -1912,7 +1912,7 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General"],
 		"type": "warp",
-		"effect": {"condition": [["hp", "greater", 0.8]], "range": 2, "allyReq": {"type": "allyRange"} },
+		"effect": {"condition": [["hp", "greater", 0.8]], "allyReq": [["distanceCheck", 2]] },
 		"max": true
 	},
 	"237": {
@@ -1945,7 +1945,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"241": {
@@ -1954,7 +1954,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"242": {
@@ -1963,7 +1963,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1],  ["enemyInfo", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]] ], "sweep": 1 }],
 		"max": true
 	},
 	"243": {
@@ -1972,7 +1972,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"244": {
@@ -1981,7 +1981,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 3], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": false
 	},
 	"245": {
@@ -1990,7 +1990,7 @@
 		"prf": false,
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"]], "stopDouble": 1 }, 
-			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1], ["enemyInfo", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
+			{"type": "combat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]] ], "sweep": 1 }],
 		"max": true
 	},
 	"246": {
@@ -1998,7 +1998,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "warp",
-		"effect": {"allyReq": {"type": "allyHP", "req": 0.3, "factor": "less" } },
+		"effect": {"allyReq": [["enemyhp", "less", 0.3]] },
 		"max": false
 	},
 	"247": {
@@ -2006,7 +2006,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "warp",
-		"effect": {"allyReq": {"type": "allyHP", "req": 0.4, "factor": "less" } },
+		"effect": {"allyReq": [["enemyhp", "less", 0.4]] },
 		"max": false
 	},
 	"248": {
@@ -2014,7 +2014,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "warp",
-		"effect": {"allyReq": {"type": "allyHP", "req": 0.5, "factor": "less" } },
+		"effect": {"allyReq": [["enemyhp", "less", 0.5]] },
 		"max": true
 	},
 	"249": {
@@ -2074,7 +2074,7 @@
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 6, "debuffStats": ["atk", "spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 6, "debuffStats": ["atk", 	"spd"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": true
 	},
 	"256": {
@@ -2206,7 +2206,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 3, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 3, "debuffStats": ["spd"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"271": {
@@ -2214,7 +2214,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 5, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 5, "debuffStats": ["spd"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": false
 	},
 	"272": {
@@ -2222,7 +2222,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "conditional-effect",
-		"effect": [{"type": "turnStart", "sabotage": {"debuff": 7, "debuffStats": ["spd"], "debuffStatus": [], "checkStats": "res", "mod": -3} }],
+		"effect": [{"type": "turnStart", "debuffList": ["statDebuff"], "debuff": 7, "debuffStats": ["spd"], "debuffReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3] ] }],
 		"max": true
 	},
 	"273": {
@@ -2459,7 +2459,7 @@
 		"users": ["Edelgard: Flame Emperor"],
 		"type": "conditional-effect",
 		"effect": [{"type": "effect", "condition": [["phase", "player"], ["adjacent", false]], "galeforce": 1 },
-			{"type": "effect", "condition": [["adjacent", false], ["enemyInfo", "weapontype", ["beast", "breath"]] ], "double": 1 } ],
+			{"type": "effect", "condition": [["adjacent", false], ["heroInfoCheck", "weapontype", ["beast", "breath"]] ], "double": 1 } ],
 		"max": true
 	},
 	"301": {

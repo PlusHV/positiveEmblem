@@ -133,6 +133,15 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
+    //combat has now ended, post combat effects activate
+
+    //First, the attacker needs to be waited and clear debuffs/status effects
+    list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    list[attacker.side][attacker.listIndex].statusEffect = {"guard": 0, "panic": 0}; 
+    list[attacker.side][attacker.listIndex].end = true;
+
+
+    //Party buffs
     for (let x of list[attacker.side]){
 
       Object.keys(attackerPartyBuff).forEach((key, i) => {
@@ -149,7 +158,8 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
-
+    //party Heals
+    //these need to build up with recoil damage -> as negative recoil damage
     if (attackerPartyHeal > 0){
       for (let x of list[attacker.side]){ //for each member of side
         list[attacker.side][x.listIndex].currentHP = Math.min(list[attacker.side][x.listIndex].currentHP + attackerPartyHeal, list[attacker.side][x.listIndex].stats.hp);
@@ -200,10 +210,14 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     }
 
 
-    //on attack combatEffects should just be recoil and stuff (and some debuff stuff)
+    //on attack combatEffects (strike effects) should just be recoil and stuff (and some debuff stuff)
+
+    //stuff like recoil should wear off and this works fine - combat effects fine
+    //buffs or status buffs need to be applied to the list version tho
+
     if (attackerAttacked){
-        for (let m of attacker.onAttack){
-          for (let n in m){
+        for (let m of attacker.onAttack){ //loops through list of onAttack effects
+          for (let n in m){ //go through each key and add additional effects (debuffs won't stack)
             attacker.combatEffects[n] += m[n];
           } //for n
         } //for m
@@ -222,44 +236,126 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     let attackerPostDamage = attacker.combatEffects.recoil;
     let defenderPostDamage = defender.combatEffects.recoil;
 
-    if (newAttacker.currentHP > 0 && attacker.combatEffects.poison > 0){ //poison strike effect requires user to be alive
-      defenderPostDamage+= attacker.combatEffects.poison //cannot go below 0
+    // if (newAttacker.currentHP > 0 && attacker.combatEffects.poison > 0){ //poison strike effect requires user to be alive
+    //   defenderPostDamage+= attacker.combatEffects.poison //cannot go below 0
+    // }
+
+    // if (newDefender.currentHP > 0 && defender.combatEffects.poison > 0){
+    //   attackerPostDamage+= defender.combatEffects.poison;
+    // }
+
+    //Post combat effects (requires owner to survive)
+    if (newAttacker.currentHP > 0){
+       for (let m of newAttacker.postCombat){ //loop through post combat effects
+          for (let n in m){ //loop through keys
+
+            if (n === "burn"){
+              defenderPostDamage+= m.burn; //add burn damage
+            } else if (n === "buffList"){
+
+
+              //get heroes in range
+              let heroesInRange = [];
+              heroesInRange = getDistantHeroes(list[newAttacker.side], newAttacker.position, [], m.buffRange);
+
+              if (m.selfBuff){
+                heroesInRange = heroesInRange.concat([attacker]);
+              }
+
+              applyBuffList(list, heroesInRange, m);
+              // for (let y of heroesInRange){
+              //   for (let x of m.buffList){ //loop through status buffs to apply
+
+              //     if (x === "statBuff"){
+              //       for (let b of m.buffStats){
+              //         list[y.side][y.listIndex].buff[b] = Math.max(list[y.side][y.listIndex].buff[b], m.buff); 
+              //       }
+
+
+
+              //     } else { //otherwise, it should be a status buff
+              //       list[y.side][y.listIndex].statusBuff[x]++; //give the status buff
+              //     }
+
+
+              //   }
+              // }
+
+            } else if (n === "debuffList"){
+
+
+              //get heroes in range
+              let heroesInRange = [];
+              heroesInRange = getDistantHeroes(list[newDefender.side], newDefender.position, [], m.debuffRange);
+
+              if (m.targetDebuff){
+                heroesInRange = heroesInRange.concat([defender]);
+              }
+
+              applyDebuffList(list, heroesInRange, m);
+
+              // for (let y of heroesInRange){
+              //   for (let x of m.debuffList){ //loop through status buffs to apply
+
+              //     if (x === "statDebuff"){
+              //       for (let b of m.debuffStats){
+              //         list[y.side][y.listIndex].debuff[b] = Math.max(list[y.side][y.listIndex].debuff[b], m.debuff); 
+              //       }
+
+
+
+              //     } else { //otherwise, it should be a status buff
+              //       list[y.side][y.listIndex].statusEffect[x]++; //give the status buff
+              //     }
+
+
+              //   }
+              // }
+
+            } //end bufflist
+
+
+//
+          } //end for loop through keys
+
+
+       } //end for post combat
+
     }
 
-    if (newDefender.currentHP > 0 && defender.combatEffects.poison > 0){
-      attackerPostDamage+= defender.combatEffects.poison;
+    if (newDefender.currentHP > 0){
+
     }
 
+    // if (newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //both users alive are required for seals to activate
 
-    if (newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //both users are alive are required for seals to activate
+    //   if (attacker.combatEffects.seal.length > 0){
 
-      if (attacker.combatEffects.seal.length > 0){
+    //     for (let x of attacker.combatEffects.seal){
+    //       for (let y in x){
 
-        for (let x of attacker.combatEffects.seal){
-          for (let y in x){
+    //         list[defender.side][defender.listIndex].debuff[y] = Math.max(defender.debuff[y], x[y]); 
 
-            list[defender.side][defender.listIndex].debuff[y] = Math.max(defender.debuff[y], x[y]); 
+    //       }
 
-          }
+    //     } //for x
 
-        } //for x
+    //   }
 
-      }
+    //   if (defender.combatEffects.seal.length > 0){
 
-      if (defender.combatEffects.seal.length > 0){
+    //     for (let x of defender.combatEffects.seal){
+    //       for (let y in x){
 
-        for (let x of defender.combatEffects.seal){
-          for (let y in x){
+    //         list[attacker.side][attacker.listIndex].debuff[y] = Math.max(attacker.debuff[y], x[y]); 
 
-            list[attacker.side][attacker.listIndex].debuff[y] = Math.max(attacker.debuff[y], x[y]); 
+    //       }
 
-          }
+    //     } //for x
 
-        } //for x
+    //   }
 
-      }
-
-    } //end if both are alive
+    // } //end if both are alive
 
     if (newDefender.currentHP > 0){
       newDefender.currentHP = Math.max(1, newDefender.currentHP - defenderPostDamage); //cannot go below 0 from post battle damage
@@ -922,7 +1018,7 @@ export function getDistantHeroes(hList, position, excluded, distance){
 
     let allyDistance = getDistance(x.position, position); 
 
-    if (x.position !== position && !excluded.includes(x.position) && allyDistance <= distance && allyDistance > 0 ){
+    if (x.position !== position && !excluded.includes(x.position) && allyDistance <= distance && allyDistance > 0  && x.position >= 0 && x.currentHP > 0){
       distantList.push(x);
     }
 
@@ -947,6 +1043,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
     let innerCondition = condition[i]; //loop through the lists in the lists
     let innerResult = false;
 
+
     for (let j = 0; j < innerCondition.length; j++){ //inner list - at least one condition in this list must be true - or conditions
 
       let keyWord = innerCondition[j];
@@ -968,6 +1065,15 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         if (innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length > 0  ){ //adjacent to at least one ally
           innerResult = true;
         } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length === 0  ){ //adjacent to no allies
+          innerResult = true;
+        }
+
+        j = j + 1;
+
+      } else if (keyWord === "enemyAdjacent"){
+        if (innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy.position).length > 0  ){ //adjacent to at least one ally
+          innerResult = true;
+        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy.position).length === 0  ){ //adjacent to no allies
           innerResult = true;
         }
 
@@ -1001,7 +1107,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 2;
 
-      } else if (keyWord === "enemyInfo"){ //needs to check value of enemy hero (e.g. weapon type, movement type etc)
+      } else if (keyWord === "heroInfoCheck"){ //needs to check value of the other  hero (e.g. weapon type, movement type etc)
 
         let info = heroData[enemy.heroID.value];
 
@@ -1011,7 +1117,14 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 2;
 
+      } else if (keyWord === "distanceCheck"){
 
+
+        if (getDistance(owner.position, enemy.position) <= innerCondition[j+1]){
+          innerResult = true;
+        }
+
+        j = j + 1;
       } else if (keyWord === "specialType"){ //needs to check value of enemy hero (e.g. weapon type, movement type etc)
 
         
@@ -1060,7 +1173,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 3;
 
-      } else if (keyWord === "allyInfo"){ //check if allies within range are of certain types
+      } else if (keyWord === "allyInfo"){ //check if there are enough allies within range are of certain types
 
         let distantAllies = getDistantHeroes(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
 
@@ -1068,6 +1181,8 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         for (let x of distantAllies){
           let info = heroData[x.heroID.value];
+
+
 
           if (innerCondition[j+3].includes(info[innerCondition[j+2]])){
             validAlliesCount++;
@@ -1114,7 +1229,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         if (check.debuff.atk > 0 || check.debuff.spd > 0 ||  check.debuff.def > 0 || check.debuff.res > 0
-         || check.statusEffect.guard > 0 || check.statusEffect.panic > 0){
+         ||  Object.keys(check.statusEffect).filter(m =>  check.statusEffect[m] >= 1).length >= 1  ){//check.statusEffect.guard > 0 || check.statusEffect.panic > 0){
           innerResult = true;
         }
 
@@ -1128,7 +1243,8 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           check = enemy;
         }
 
-        if (check.buff.atk > 0 || check.buff.spd > 0 ||  check.buff.def > 0 || check.buff.res > 0){
+        if (check.buff.atk > 0 || check.buff.spd > 0 ||  check.buff.def > 0 || check.buff.res > 0
+          || Object.keys(check.statusBuff).filter(m =>  check.statusBuff[m] >= 1).length >= 1  ){
           innerResult = true;
         }
 
@@ -1138,6 +1254,15 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         if (owner.combatCount === innerCondition[j+1] ){
           innerResult = true;
+        }
+
+        j = j + 1;
+      } else if (keyWord === "cardinal"){
+
+        if (innerCondition[j+1] && checkCardinal(owner, enemy)){ //condition requires cardinal and they are cardinal
+          innerResult = true;
+        } else if (!innerCondition[j+1] && !checkCardinal(owner, enemy)){ //condition requires not cardinal and they are not cardinal
+          innerResult = true
         }
 
         j = j + 1;
@@ -1420,5 +1545,63 @@ export function calculateMovementEffect(owner, other, effect){
 
   }
   return {"owner": ownerPos, "other": otherPos, "otherAlt": otherAlt};
+
+}
+
+//given heroes, check if they are cardinal to eachother
+export function checkCardinal(hero1, hero2){
+  let pos1 = positionToRowColumn(hero1.position);
+  let pos2 = positionToRowColumn(hero2.position);
+
+  if (pos1[0] === pos2[0] || pos1[1] === pos2[1]){
+    return true;
+  } else {
+    return false;
+  }
+
+}
+
+
+//given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
+export function applyBuffList(heroList, affectedHeroes, effect){
+  for (let y of heroList){
+    for (let x of effect.buffList){ //loop through status buffs to apply
+
+      if (x === "statBuff"){
+        for (let z of effect.buffStats){
+          heroList[y.side][y.listIndex].buff[z] = Math.max(heroList[y.side][y.listIndex].buff[z], effect.buff); 
+        }
+
+
+
+      } else { //otherwise, it should be a status buff
+        heroList[y.side][y.listIndex].statusBuff[x]++; //give the status buff
+      }
+
+
+    }
+  }
+
+}
+
+export function applyDebuffList(heroList, affectedHeroes, effect){
+
+
+  for (let y of affectedHeroes){
+    for (let x of effect.debuffList){ //loop through status buffs to apply
+
+      if (x === "statDebuff"){
+        for (let z of effect.debuffStats){
+          heroList[y.side][y.listIndex].debuff[z] = Math.max(heroList[y.side][y.listIndex].debuff[z], effect.debuff); 
+        }
+
+
+      } else { //otherwise, it should be a status buff
+        heroList[y.side][y.listIndex].statusEffect[x]++; //give the status buff
+      }
+
+
+    }
+  }
 
 }

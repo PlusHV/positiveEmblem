@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
   calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage} from './Battle.js';
@@ -489,6 +490,8 @@ class GameBoard extends React.Component{
           updatedHero.variableCombat.push(x);
         } else if (x.type === "variablePreCombat"){
           updatedHero.variablePreCombat.push(x);
+        } else if (x.type === "postCombat"){
+          updatedHero.postCombat.push(x);
         }
       }
       
@@ -530,6 +533,11 @@ class GameBoard extends React.Component{
         } else if (key === "onAttack"){
 
           updatedHero.onAttack.push(effect.onAttack);
+
+        } else if (key === "postCombat"){
+
+          updatedHero.postCombat.push(effect.postCombat);
+
 
         } else {
 
@@ -660,6 +668,15 @@ class GameBoard extends React.Component{
           let variableIndex = updatedHero.variablePreCombat.findIndex(this.findMatchingEffect , condition);
           updatedHero.variablePreCombat.splice(variableIndex, 1); //remove the matched variable effect
 
+        } else if (x.type === "onAttack"){
+          let variableIndex = updatedHero.onAttack.findIndex(this.findMatchingEffect , condition);
+          updatedHero.onAttack.splice(variableIndex, 1); //remove the matched post combat effect
+
+
+        } else if (x.type === "postCombat"){
+          let variableIndex = updatedHero.postCombat.findIndex(this.findMatchingEffect , condition);
+          updatedHero.postCombat.splice(variableIndex, 1); //remove the matched post combat effect
+
         }
 
       } //end of effect
@@ -708,6 +725,14 @@ class GameBoard extends React.Component{
           let effectIndex = updatedHero.onAttack.findIndex(this.findMatchingEffect, attackEffect);
 
           updatedHero.onAttack.splice(effectIndex, 1); //remove the matched variable effect
+
+        } else if (key === "postCombat"){
+
+          let postCombatEffect = JSON.stringify(effect.postCombat); //the variable effect in string form
+
+          let effectIndex = updatedHero.postCombat.findIndex(this.findMatchingEffect, postCombatEffect);
+
+          updatedHero.postCombat.splice(effectIndex, 1); //remove the matched variable effect
 
         } else {
         
@@ -1090,6 +1115,11 @@ class GameBoard extends React.Component{
     let oldHero = heroData[dragData.heroID.value];
     let move = this.getMovement(oldHero.movetype);
 
+    //increase movement by one if they have mobility buff
+    if (dragData.statusBuff["mobility+"] > 0){
+      move++; 
+    }
+
 
     let assist = -1;
 
@@ -1118,7 +1148,7 @@ class GameBoard extends React.Component{
       }
     }
 
-    let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to
+    let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to (as positions)
 
 
       //get adjacent
@@ -1162,11 +1192,11 @@ class GameBoard extends React.Component{
         spaces.push(x + 1);
       }
       //up
-      if ( (x / 6) - 1 >= 0 && !spaces.includes(x -6) ){ //get the row number and check if it is not the top-most column
+      if ( Math.floor(x / 6) - 1 >= 0 && !spaces.includes(x -6) ){ //get the row number and check if it is not the top-most column
         spaces.push(x - 6);
       }
       //down
-      if ( (x / 6) + 1 <= 7 && !spaces.includes(x + 6) ){ //get the row number and check if it is not the bottom-most column
+      if ( Math.floor(x / 6) + 1 <= 7 && !spaces.includes(x + 6) ){ //get the row number and check if it is not the bottom-most column
         spaces.push(x + 6);
       }
     }
@@ -1188,64 +1218,31 @@ class GameBoard extends React.Component{
       }
     } 
 
+    if (owner.statusBuff.airOrders > 0){
+      owner.warp.push({"allyReq": [["distanceCheck", 2]] } );
+
+    }
+
 
     for (let x of owner.warp){ //loop through all warp effects
 
       if (x !== null){
 
-        if ( !("condition" in x) || ( "condition" in x && checkCondition(this.state.heroList, x.condition, owner, owner)) ){//first check if they meet condition to get warp effect
+        if ( !("condition" in x) || ( "condition" in x && checkCondition(this.state.heroList, x.condition, owner, owner)) ){ //first check if they meet condition to get warp effect
 
           let allyReq = x.allyReq;
 
-          if (allyReq.type === "all"){
-            for (let y of allyListValid){
-
-              if (!warpTargets.includes(y.position)){ 
-                warpTargets.push(y.position);
-              }
+          let passedAllyList = this.heroReqCheck(owner, allyListValid, allyReq); //Get the list of allies that pass the req check
 
 
-            }
+          for (let y of passedAllyList){
 
-
-          } else if (allyReq.type === "allyInfo"){ //requires ally to have certain attributes (e.g. movetype, weapontype etc)
-
-            let alliesInRange = getDistantHeroes(allyListValid, owner.position, [], x.range);
-
-            for (let y of alliesInRange){ //loop through allies in range
-              let info = heroData[y.heroID.value];
-
-              if (allyReq.req.includes(info[allyReq.key]) && !warpTargets.includes(y.position) ){ //if ally meets the requirement and is not in the list already
-                warpTargets.push(y.position);
-
-              }
-            } //end loop allies
-
-
-          } else if (allyReq.type === "allyHP"){
-            for (let y of allyListValid){
-              let hpThreshold = Math.trunc(allyReq.req * y.stats.hp);
-
-              if (allyReq.factor === "greater" && y.currentHP >= hpThreshold && !warpTargets.includes(y.position)){
-                warpTargets.push(y.position);
-              } else if (allyReq.factor === "less" && y.currentHP <= hpThreshold && !warpTargets.includes(y.position)){
-                warpTargets.push(y.position);
-              }
-
-            }
-          } else if (allyReq.type === "allyRange"){ //requires ally to have certain attributes (e.g. movetype, weapontype etc)
-
-            let alliesInRange = getDistantHeroes(allyListValid, owner.position, [], x.range);
-
-            for (let y of alliesInRange){ //loop through allies in range
-
+            if (!warpTargets.includes(y.position)){
               warpTargets.push(y.position);
-
-            
-            } //end loop allies
-
+            }
 
           }
+
 
 
 
@@ -1257,8 +1254,37 @@ class GameBoard extends React.Component{
 
     } //end loop through effect
 
+
+
+
+
     return warpTargets;
 
+  }
+
+  checkConditionHero(owner, condition, heroList){
+    return function(other){
+
+        return checkCondition(heroList, condition, owner, other);
+    }
+  }
+
+  //given an list of allies and a requirement object, return a list of heroes that meet the requirements
+  //loop through given list of allies, and remove/filter any that do that pass the requirement
+  //do we want to do it by hero references or 
+  heroReqCheck(owner, teamList, heroReq){
+
+    let filteredList = [];//[...allyList]; //copy of allyList
+
+    //for (let x of allyReq){ //loop through conditional list, then for each hero, if hero passes conditional 
+      //console.log(x);
+    filteredList = teamList.filter(this.checkConditionHero(owner, heroReq, this.state.heroList) ); //filter out 
+      //console.log(filteredList);
+    //}
+
+    //checkCondition(heroList, x.condition, owner, enemy, this.state.currentTurn);
+
+    return filteredList;
   }
 
 
@@ -1479,9 +1505,16 @@ class GameBoard extends React.Component{
 
           } else if (y === "onAttack"){
 
-            for (let i in x.onAttack){
-              owner.combatEffects[i]+= x.onAttack[i]; // onAttack should only give onAttack combat effects
-            }
+            // for (let i in x.onAttack){
+            //   owner.combatEffects[i]+= x.onAttack[i]; // onAttack should only give onAttack combat effects
+            // }
+            //for (let i in x.onAttack){
+              owner.onAttack.push(x.onAttack); //[i]+= x.onAttack[i]; // onAttack should only give onAttack combat effects
+            //}
+
+          } else if (y === "postCombat"){
+            owner.postCombat.push(x.postCombat);
+
           
           } else if (y === "variableEffect"){
 
@@ -2127,63 +2160,6 @@ class GameBoard extends React.Component{
 
             } //end if range
 
-            // if (j === "feint"){
-
-            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, []); //cardinal hero positions in relation to assister
-
-            //   for (let k of cardinalHeroes){ //apply
-            //     let side = this.props.G.cells[k].side;
-            //     let index = this.props.G.cells[k].listIndex;
-
-            //     if (side !== assister.side){ //if on enemy team apply debuffs
-            //       let debuffs = i.feint;
-
-            //       for (let l in debuffs) {
-            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-            //       }
-
-
-            //     }
-
-
-            //   } //end apply for each cardinal hero
-
-
-
-
-            // } else if (j === "ruse"){
-
-            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
-
-            //   cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
-
-            //   for (let k of cardinalHeroes){ //apply
-            //     let side = this.props.G.cells[k].side;
-            //     let index = this.props.G.cells[k].listIndex;
-
-            //     if (side !== assister.side){ //if on enemy team apply debuffs
-            //       let debuffs = i.ruse;
-
-            //       list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
-
-
-            //       for (let l in debuffs) {
-            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-            //       }
-
-
-            //     }
-
-
-            //   }
-
-
-
-
-            // }
-
 
           } //end j loop
 
@@ -2239,62 +2215,7 @@ class GameBoard extends React.Component{
               } //end apply for each affected hero
 
             } //end if range
-            // if (j === "feint"){
 
-            //   let cardinalHeroes = this.getCardinalHeroPositions(assistee.position, []); //cardinal hero positions in relation to assister
-
-            //   for (let k of cardinalHeroes){ //apply
-            //     let side = this.props.G.cells[k].side;
-            //     let index = this.props.G.cells[k].listIndex;
-
-            //     if (side !== assistee.side){ //if on enemy team apply debuffs
-            //       let debuffs = i.feint;
-
-            //       for (let l in debuffs) {
-            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-            //       }
-
-
-            //     }
-
-
-            //   }
-
-
-
-
-            // } else if (j === "ruse"){
-
-            //   let cardinalHeroes = this.getCardinalHeroPositions(assister.position, [assistee.position]); //cardinal hero positions in relation to assister
-
-            //   cardinalHeroes = cardinalHeroes.concat(this.getCardinalHeroPositions(assistee.position, [...cardinalHeroes, assister.position] ) ); //also get cardinal positions in relation to assistee
-
-            //   for (let k of cardinalHeroes){ //apply
-            //     let side = this.props.G.cells[k].side;
-            //     let index = this.props.G.cells[k].listIndex;
-
-            //     if (side !== assister.side){ //if on enemy team apply debuffs
-            //       let debuffs = i.ruse;
-
-            //       list[side][index].combatEffects.guardStatus += 1; //apply a stack of guard status
-
-
-            //       for (let l in debuffs) {
-            //         list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-            //       }
-
-
-            //     }
-
-
-            //   }
-
-
-
-
-            // }
           } //end for j
 
 
@@ -2312,6 +2233,9 @@ class GameBoard extends React.Component{
   }
 
 
+
+
+  //from a position, get a list of heroes that are cardinal to the position (and get their positions)
   getCardinalHeroPositions(position, excluded){
 
     let cardinalList = [];
@@ -2342,7 +2266,7 @@ class GameBoard extends React.Component{
     let row = position;
 
     //checking north
-    while ( (row / 6) - 1 >= 0){ //get col and reduce by and 
+    while ( Math.floor(row / 6) - 1 >= 0){ //get col and reduce by and 
       row+= -6;
 
       if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
@@ -2353,7 +2277,7 @@ class GameBoard extends React.Component{
 
     row = position;
     //checking south
-    while ( (row / 6) + 1 <= 7){ //get col and reduce by and 
+    while ( Math.floor(row / 6) + 1 <= 7){ //get col and reduce by and 
       row+= 6;
 
       if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
@@ -2682,6 +2606,17 @@ class GameBoard extends React.Component{
     }
   }
 
+
+  //checks if hero is on the board and not dead
+  heroValid(hero){
+    if (hero.position >= 0 && hero.currentHP > 0){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
   startTurn(){
     let side = this.state.playerSide;
     let tempList = this.state.heroList; //this is the copy that will be modified
@@ -2695,14 +2630,18 @@ class GameBoard extends React.Component{
 
       //These effects last for 1 turn which means there are reset at the start of the turn
       tempList[side][i.listIndex].buff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //reset buffs
-      tempList[side][i.listIndex].statusBuff = {"bonusDouble": 0}; //reset status buffs
+      tempList[side][i.listIndex].statusBuff = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
 
     }
 
     let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference (so that calculations are done at the same time)
 
-    for (let i of this.state.heroList[side]){ //loop through each hero
+    for (let i of heroList[side]){ //this.state.heroList[side]){ //loop through each hero
 
+
+      if (i.position < 0 || i.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
+
+      //Turn Start skills
 
       for (let j of i.turnStart){ //loop through each turnstart abilities
         if (j === null || j === undefined) {continue;}
@@ -2729,7 +2668,7 @@ class GameBoard extends React.Component{
 
               if (sum === max){ // add to list of heroes to debuff
                 debuffList.push(m.listIndex);
-              } else if (sum > max && m.position >= 0){ //sum is greater than current, clear list and add
+              } else if (sum > max && this.heroValid(m)){ //sum is greater than current, clear list and add
                 debuffList = [];
                 debuffList.push(m.listIndex); 
                 max = sum;
@@ -2764,7 +2703,7 @@ class GameBoard extends React.Component{
 
               if (sum === min){ // add to list of heroes to debuff
                 debuffList.push(m.listIndex);
-              } else if (sum < min && m.position >= 0){ //sum is less than current, clear list and add
+              } else if (sum < min && this.heroValid(m)){ //sum is less than current, clear list and add
                 debuffList = [];
                 debuffList.push(m.listIndex); 
                 min = sum;
@@ -2787,6 +2726,7 @@ class GameBoard extends React.Component{
           } else if (k === "specialCount"){
 
             tempList[side][i.listIndex].special.charge = Math.max(tempList[side][i.listIndex].special.charge - j[k],  0); //reduce special charge by 1
+
           } else if (k === "sabotage"){
             let checkStat = j.sabotage.checkStats;
             let checkValue = i.visibleStats[checkStat] + j.sabotage.mod; //value to check against
@@ -2846,7 +2786,7 @@ class GameBoard extends React.Component{
 
               if (currentHP === min){ // add to list of heroes to debuff
                 debuffList.push(m.listIndex);
-              } else if (currentHP < min && m.currentHP > 0){ //sum is less than current, clear list and add
+              } else if (currentHP < min && this.heroValid(m)){ //sum is less than current, clear list and add
                 debuffList = [];
                 debuffList.push(m.listIndex); 
                 min = currentHP;
@@ -2861,7 +2801,180 @@ class GameBoard extends React.Component{
             }
 
 
-          }
+          } else if (k === "buffList"){
+
+
+            //for status buff, we can then buff those heroes instead
+            let allyList = heroList[side];
+
+            let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+            for (let x in allyList){
+              if (allyList[x].position >= 0 && allyList[x].currentHP > 0 ){
+                allyListValid.push(allyList[x]);
+              }
+            } 
+
+           // for (let m of heroList[side]){ //loop through friendly heroes
+
+            let allyReq = j.allyReq;
+
+
+
+            let passedAllyList = [];
+
+            if ("allyReq" in j){
+              passedAllyList = this.heroReqCheck(i, allyListValid, allyReq); //Get the list of allies that pass the req check
+
+
+              for (let y of passedAllyList){
+
+                if (y.id !== i.id){ //ally is not themselves
+
+
+                  for (let x of j.buffList){ //loop through status buffs to apply
+
+                    if (x === "statBuff"){
+                      for (let m of j.buffStats){
+                        tempList[y.side][y.listIndex].buff[m] = Math.max(tempList[y.side][y.listIndex].buff[m], j.buff); 
+                      }
+
+
+
+                    } else { //otherwise, it should be a status buff
+                      tempList[y.side][y.listIndex].statusBuff[x]++; //give the status buff
+                    }
+
+
+                  }
+                }
+
+              } //end loop passedAllyList
+
+            } //end ally req
+            
+
+            //if there is a requirement for the buff to apply to themselves
+            if ("selfBuffReq" in j && checkCondition(heroList, j.selfBuffReq, i, i)){ 
+              for (let x of j.buffList){
+                  if (x === "statBuff"){
+                    for (let m of j.buffStats){
+                      tempList[i.side][i.listIndex].buff[m] = Math.max(tempList[i.side][i.listIndex].buff[m], j.buff); 
+                    }
+
+
+
+                  } else { //otherwise, it should be a status buff
+                    tempList[i.side][i.listIndex].statusBuff[x]++; //give the status buff
+                  }
+
+              }
+            } 
+
+          } else if (k === "debuffList"){
+
+
+            //for status buff, we can then buff those heroes instead
+            let enemyList = heroList[enemySide];
+
+            let enemyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+            for (let x in enemyList){
+              if (enemyList[x].position >= 0 && enemyList[x].currentHP > 0 ){
+                enemyListValid.push(enemyList[x]);
+              }
+            } 
+
+
+
+            let debuffReq = j.debuffReq;
+
+
+
+            let passedEnemyList = [];
+
+            if ("debuffReq" in j){
+              passedEnemyList = this.heroReqCheck(i, enemyListValid, debuffReq); //Get the list of allies that pass the req check
+
+
+              for (let y of passedEnemyList){
+
+                if (y.id !== i.id){ //ally is not themselves
+
+
+                  for (let x of j.debuffList){ //loop through status buffs to apply
+
+                    if (x === "statDebuff"){ //if debuff key is stat debuffs
+
+                      for (let m of j.debuffStats){ //loop through debuff stats
+
+                        tempList[y.side][y.listIndex].debuff[m] = Math.max(tempList[y.side][y.listIndex].debuff[m], j.debuff); 
+
+
+                      }
+
+
+                    } else { //for status effects
+                      tempList[y.side][y.listIndex].statusEffect[x]++; //give the status effect
+                    }
+
+
+
+
+                  }
+                }
+
+              } //end loop passedAllyList
+
+            } //end ally req
+            
+
+            // //if there is a requirement for the buff to apply to themselves
+            // if ("selfBuffReq" in j && checkCondition(heroList, j.selfBuffReq, i, i)){ 
+            //   for (let x of j.debuffList){
+            //     tempList[i.side][i.listIndex].statusBuff[x]++;
+            //   }
+            // } 
+
+
+
+          } else if (k === "opening"){
+
+
+            let stats = j[k].stats;
+            let buff = j[k].buff;
+
+            let buffList = [];
+            let max = 0;
+
+            for (let m of heroList[side]){ //loop through allied team
+
+              if (m.id === i.id){ continue;} //skip owner
+
+              let sum = 0;
+
+              for (let n of stats){ //go through the stat list and get the summed value
+                sum+= m.visibleStats[n];
+              }
+
+              if (sum === max){ // add to list of heroes to buff if tied with max
+                buffList.push(m.listIndex);
+              } else if (sum > max && this.heroValid(m)){ //sum is greater than current, clear list and add
+                buffList = [];
+                buffList.push(m.listIndex); 
+                max = sum;
+              }
+
+
+            } //end loop allied team
+            for (let m of buffList){ //apply for each hero that have the highest sums
+              for (let n of stats){ //apply for each applicable stat
+                tempList[side][m].buff[n] = Math.max(tempList[side][m].buff[n], buff); 
+              }
+
+            }
+
+          } //end opening
+
+
 
         } //end k
 
@@ -3028,7 +3141,7 @@ function makeHeroStruct(){
     this["side"] = (Math.floor(arguments[0] / 6) + 1).toString();
     // these are reset at the start of the hero's turn
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //visible buffs
-    this["statusBuff"] = {"bonusDouble": 0};
+    this["statusBuff"] = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0};
 
     //these are reset when the hero's action is taken (action is also considered taken if action was available but their turn ended)
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -3064,7 +3177,8 @@ function makeHeroStruct(){
       "recoil": 0, "galeforce": 0,
       "wrathful": 0,
       "reflect": 0,
-      "poison": 0, "pain": 0, "savageBlow": 0,
+      "burn": 0,
+      //"poison": 0, "pain": 0, "savageBlow": 0,
       "specialTrueDamage": 0, "specialFlatReduction": 0, "specialHeal": 0.0,
       "seal": [], "spiral": 0,
       "stats": {"atk": 0, "spd": 0, "def": 0, "res": 0},
@@ -3085,9 +3199,11 @@ function makeHeroStruct(){
     this["turnStart"] = [];
     this["battleMovement"] = {};
     this["onAttack"] = [];
+    this["postCombat"] = [];
     this["specialActivated"] = false;
     this["combatCount"] = 0;
     this["moveAssistSuccess"] = false;
+
   }  
   return hero;
 }

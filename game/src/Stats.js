@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select-v2';
 
 import {capitalize} from 'underscore.string';
+import {upperFirst} from 'lodash';
 import './App.css';
 
 export default class Stats extends React.Component{
@@ -240,7 +241,7 @@ export default class Stats extends React.Component{
 
  		let options = [];
  		for (let i of Object.keys(this.props.gameState.selectedMember.statusBuff)){
- 			options.push(<option key = {i} value = {i}>{capitalize(i, true)}</option>);
+ 			options.push(<option key = {i} value = {i}>{upperFirst(i)}</option>);
 
  		}
 
@@ -276,7 +277,7 @@ export default class Stats extends React.Component{
 
         options = [];
  		for (let i of Object.keys(this.props.gameState.selectedMember.statusEffect)){
- 			options.push(<option key = {i} value = {i}>{capitalize(i, true)}</option>);
+ 			options.push(<option key = {i} value = {i}>{upperFirst(i)}</option>);
 
  		}
 

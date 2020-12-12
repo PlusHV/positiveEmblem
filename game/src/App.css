@@ -38,15 +38,15 @@ table,tr,td {
   border-collapse: collapse;
 
   border: 2px solid #930322;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 
 .cellStyle{
   border: 2px solid #555;
-
-  width: 70px;
+  min-width: 70px;
   height: 70px;
+  width: auto;
   text-align: center;
   box-sizing: border-box;
   position: relative;
