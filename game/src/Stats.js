@@ -116,7 +116,7 @@ export default class Stats extends React.Component{
 	        		cells.push(<td key = {modifiers[j]} className= "statText">{capitalize(modifiers[j], true)}</td>);
 	        	}
 
-	        //for rest, give corresponding modifier - buffs, debuffs, combat
+	        ///for rest, give corresponding modifier - buffs, debuffs, combat
 	        } else{
 
 	        	for (let j = 0; j < modifiers.length - 1; j++){
@@ -133,12 +133,24 @@ export default class Stats extends React.Component{
 
 			    //get combat stats if hero is being dragged or dragged over
 			    let combatText = "-";
-			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position){
-			    	combatText = this.props.gameState.draggedHero.combatEffects.stats[statText[i]];
+
+ 
+			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position){ //the dragged hero is the selected hero - combat stats will be its stats
+			    	//Add the combat stats of the dragged
+			    	combatText = this.props.gameState.draggedHero.combatEffects.statBuff[statText[i]];
+
+			    	if (this.props.gameState.draggedOver !== null){
+			    		combatText-= this.props.gameState.draggedOver.combatEffects.lull[statText[i]];
+			    	}
 
 
-			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position){
-			    	combatText = this.props.gameState.draggedOver.combatEffects.stats[statText[i]];
+			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position){ //the dragged over hero is the selected hero
+			    	combatText = this.props.gameState.draggedOver.combatEffects.statBuff[statText[i]];
+
+			    	if (this.props.gameState.draggedHero !== null){
+			    		combatText-= this.props.gameState.draggedHero.combatEffects.lull[statText[i]];
+			    	}
+
 			    }
 
 

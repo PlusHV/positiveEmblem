@@ -348,6 +348,8 @@ function getStatOrder(stats){
 
 }
 
+
+//calculate the visible stats on a hero
 export function calculateVisibleStats(hero){
 	let stats = object(statName.slice(1), [0, 0, 0, 0]);
 
@@ -402,7 +404,7 @@ export function calculateCombatStats(hero, enemy){
     	}
 
 		//
-		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.stats[key] - enemy.combatEffects.lull[key]
+		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.statBuff[key] - enemy.combatEffects.lull[key]
 		 + penaltyNeutralizer - buffNeutralizer + penaltyReverser;
 	
 	});

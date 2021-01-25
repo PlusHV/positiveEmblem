@@ -1,0 +1,51 @@
+{
+	"0": {
+		"name": "Recoil 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": 2}]
+	},
+	"1": {
+		"name": "Recoil 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": 4}]
+	},
+	"2": {
+		"name": "Recoil 3",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": 6}]
+	},
+	"3": {
+		"name": "Recoil 4",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": 8}]
+	},
+	"4": {
+		"name": "Post Heal 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": -2}]
+	},
+	"5": {
+		"name": "Post Heal 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": -4}]
+	},
+	"6": {
+		"name": "Post Heal 3",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "recoil": -6}]
+	}
+}

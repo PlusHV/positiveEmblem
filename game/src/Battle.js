@@ -1,6 +1,8 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
+import {applyCombatEffect} from './GameBoard.js'
+
 export function doBattle(updatedHeroList, attacker, defender, board){
     let list = updatedHeroList;
 
@@ -133,6 +135,10 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
+    //set new special charges before any post combat changes to it
+    list[attacker.side][attacker.listIndex].special = attackerSpecial;
+    list[defender.side][defender.listIndex].special = defenderSpecial;
+
     //combat has now ended, post combat effects activate
 
     //First, the attacker needs to be waited and clear debuffs/status effects
@@ -158,22 +164,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
-    //party Heals
-    //these need to build up with recoil damage -> as negative recoil damage
-    if (attackerPartyHeal > 0){
-      for (let x of list[attacker.side]){ //for each member of side
-        list[attacker.side][x.listIndex].currentHP = Math.min(list[attacker.side][x.listIndex].currentHP + attackerPartyHeal, list[attacker.side][x.listIndex].stats.hp);
-      }
-      newAttacker.currentHP = Math.min(attacker.stats.hp, newAttacker.currentHP + attackerPartyHeal); //apply heal to this version too
-    }
 
-
-    if (defenderPartyHeal > 0){
-      for (let x of list[defender.side]){ //for each member of side
-        list[defender.side][x.listIndex].currentHP = Math.min(list[defender.side][x.listIndex].currentHP + defenderPartyHeal, list[defender.side][x.listIndex].stats.hp);
-      }
-      newDefender.currentHP = Math.min(defender.stats.hp, newDefender.currentHP + defenderPartyHeal);
-    }
 
 
     //Apply battle-movement abilities
@@ -201,13 +192,6 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     }
 
 
-    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
-      attackerSpecial.charge = Math.max(0, attackerSpecial.charge - attacker.combatEffects.spiral);
-    }
-
-    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
-      defenderSpecial.charge = Math.max(0, defenderSpecial.charge - defender.combatEffects.spiral);
-    }
 
 
     //on attack combatEffects (strike effects) should just be recoil and stuff (and some debuff stuff)
@@ -216,107 +200,30 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     //buffs or status buffs need to be applied to the list version tho
 
     if (attackerAttacked){
-        for (let m of attacker.onAttack){ //loops through list of onAttack effects
-          for (let n in m){ //go through each key and add additional effects (debuffs won't stack)
-            attacker.combatEffects[n] += m[n];
-          } //for n
+        for (let effectElement of newAttacker.onAttack){ //loops through list of onAttack effects
+
+          applyCombatEffect(newAttacker, effectElement);
+
+
         } //for m
 
     }
 
     if (defenderAttacked){
-        for (let m of defender.onAttack){
-          for (let n in m){
-            defender.combatEffects[n] += m[n];
-          } //for n
-        } //for m
+        for (let effectElement of newDefender.onAttack){
+
+          applyCombatEffect(newDefender, effectElement);
+
+        } //
 
     }
 
-    let attackerPostDamage = attacker.combatEffects.recoil;
-    let defenderPostDamage = defender.combatEffects.recoil;
-
-    // if (newAttacker.currentHP > 0 && attacker.combatEffects.poison > 0){ //poison strike effect requires user to be alive
-    //   defenderPostDamage+= attacker.combatEffects.poison //cannot go below 0
-    // }
-
-    // if (newDefender.currentHP > 0 && defender.combatEffects.poison > 0){
-    //   attackerPostDamage+= defender.combatEffects.poison;
-    // }
 
     //Post combat effects (requires owner to survive)
     if (newAttacker.currentHP > 0){
-       for (let m of newAttacker.postCombat){ //loop through post combat effects
-          for (let n in m){ //loop through keys
+       for (let effectElement of newAttacker.postCombat){ //loop through post combat effects
+          applyCombatEffect(newAttacker, effectElement);
 
-            if (n === "burn"){
-              defenderPostDamage+= m.burn; //add burn damage
-            } else if (n === "buffList"){
-
-
-              //get heroes in range
-              let heroesInRange = [];
-              heroesInRange = getDistantHeroes(list[newAttacker.side], newAttacker.position, [], m.buffRange);
-
-              if (m.selfBuff){
-                heroesInRange = heroesInRange.concat([attacker]);
-              }
-
-              applyBuffList(list, heroesInRange, m);
-              // for (let y of heroesInRange){
-              //   for (let x of m.buffList){ //loop through status buffs to apply
-
-              //     if (x === "statBuff"){
-              //       for (let b of m.buffStats){
-              //         list[y.side][y.listIndex].buff[b] = Math.max(list[y.side][y.listIndex].buff[b], m.buff); 
-              //       }
-
-
-
-              //     } else { //otherwise, it should be a status buff
-              //       list[y.side][y.listIndex].statusBuff[x]++; //give the status buff
-              //     }
-
-
-              //   }
-              // }
-
-            } else if (n === "debuffList"){
-
-
-              //get heroes in range
-              let heroesInRange = [];
-              heroesInRange = getDistantHeroes(list[newDefender.side], newDefender.position, [], m.debuffRange);
-
-              if (m.targetDebuff){
-                heroesInRange = heroesInRange.concat([defender]);
-              }
-
-              applyDebuffList(list, heroesInRange, m);
-
-              // for (let y of heroesInRange){
-              //   for (let x of m.debuffList){ //loop through status buffs to apply
-
-              //     if (x === "statDebuff"){
-              //       for (let b of m.debuffStats){
-              //         list[y.side][y.listIndex].debuff[b] = Math.max(list[y.side][y.listIndex].debuff[b], m.debuff); 
-              //       }
-
-
-
-              //     } else { //otherwise, it should be a status buff
-              //       list[y.side][y.listIndex].statusEffect[x]++; //give the status buff
-              //     }
-
-
-              //   }
-              // }
-
-            } //end bufflist
-
-
-//
-          } //end for loop through keys
 
 
        } //end for post combat
@@ -325,52 +232,171 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     if (newDefender.currentHP > 0){
 
+       for (let effectElement of newDefender.postCombat){ //loop through post combat effects
+          applyCombatEffect(newDefender, effectElement);
+
+       } //end for post combat
+
     }
 
-    // if (newAttacker.currentHP > 0 && newDefender.currentHP > 0){ //both users alive are required for seals to activate
 
-    //   if (attacker.combatEffects.seal.length > 0){
 
-    //     for (let x of attacker.combatEffects.seal){
-    //       for (let y in x){
 
-    //         list[defender.side][defender.listIndex].debuff[y] = Math.max(defender.debuff[y], x[y]); 
+    //include burn
+    let attackerPostDamage = attacker.combatEffects.recoil + defender.combatEffects.burn;
+    let defenderPostDamage = defender.combatEffects.recoil + attacker.combatEffects.burn;
 
-    //       }
+    //set initial recoil values - theese will have values for the attacker and defender but those values will be overwritten by the above values
+    let attackerTeamPost = new Array(6).fill(0);
+    let defenderTeamPost = new Array(6).fill(0);
 
-    //     } //for x
 
-    //   }
+    let attackerTeamSpecial = new Array(6).fill(0);
+    let defenderTeamSpecial = new Array(6).fill(0);
 
-    //   if (defender.combatEffects.seal.length > 0){
 
-    //     for (let x of defender.combatEffects.seal){
-    //       for (let y in x){
 
-    //         list[attacker.side][attacker.listIndex].debuff[y] = Math.max(attacker.debuff[y], x[y]); 
+    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
+      attackerTeamSpecial[attacker.listIndex]+= attacker.combatEffects.spiral;
+      //attackerSpecial.charge = Math.max(0, attackerSpecial.charge - attacker.combatEffects.spiral);
+    }
 
-    //       }
+    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
+      defenderTeamSpecial[defender.listIndex]+= defender.combatEffects.spiral;
+      //defenderSpecial.charge = Math.max(0, defenderSpecial.charge - defender.combatEffects.spiral);
+    }
 
-    //     } //for x
 
-    //   }
+    //party Heals
+    //these need to build up with recoil damage -> as negative recoil damage
+    if (attackerPartyHeal > 0){
+      for (let x of list[attacker.side]){ //for each member of side
+        attackerTeamPost[x.listIndex]-= attackerPartyHeal; //heals are subtracted
+      }
+      attackerPostDamage-= attackerPartyHeal; //for the attacker
+    }
 
-    // } //end if both are alive
+
+    if (defenderPartyHeal > 0){
+      for (let x of list[defender.side]){ //for each member of side
+        defenderTeamPost[x.listIndex]-= defenderPartyHeal;
+      }
+      defenderPostDamage-= defenderPartyHeal;
+    }
+
+
+
+    for (let element of attacker.postCombatBuffDebuff){
+
+
+          let reference;
+
+
+          if (element.from === "owner"){
+            reference = attacker
+          } else if (element.from === "enemy"){
+            reference = defender
+          }
+
+
+          let side = 0;
+          let postSide;
+          let specialSide;
+
+          if (element.team === "owner"){
+            side = attacker.side;
+            postSide = attackerTeamPost;
+            specialSide = attackerTeamSpecial;
+          } else if (element.team === "enemy") {
+            side = defender.side;
+            postSide = defenderTeamPost;
+            specialSide = defenderTeamSpecial;
+          }
+
+
+
+        //get heroes in range
+        let heroesInRange = [];
+        heroesInRange = getDistantHeroes(list[side], reference.position, [], element.range);
+
+        if (element.reference){
+          heroesInRange = heroesInRange.concat([reference]);
+        }
+
+        applyBuffList(list, heroesInRange, element, postSide, specialSide);
+
+
+    }
+
+    for (let element of defender.postCombatBuffDebuff){
+
+
+          let reference;
+
+
+          if (element.from === "owner"){
+            reference = defender;
+          } else if (element.from === "enemy"){
+            reference = attacker;
+          }
+
+
+          let side = 0;
+          let postSide;
+          let specialSide;
+          if (element.team === "owner"){
+            side = defender.side;
+            postSide = defenderTeamPost;
+            specialSide = defenderTeamSpecial;
+          } else if (element.team === "enemy") {
+            side = attacker.side;
+            postSide = attackerTeamPost;
+            specialSide = attackerTeamSpecial;
+          }
+
+
+        //get heroes in range
+        let heroesInRange = [];
+        heroesInRange = getDistantHeroes(list[side], reference.position, [], element.range);
+
+        if (element.reference){
+          heroesInRange = heroesInRange.concat([reference]);
+        }
+
+        applyBuffList(list, heroesInRange, element, postSide, specialSide);
+
+
+    }
+
+
+
+    //apply post combat damage to both teams
+
+    for (let x of list[attacker.side]){ //for each member of side
+      list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
+      list[attacker.side][x.listIndex].special.charge = Math.min(Math.max(0, list[attacker.side][x.listIndex].special.charge - attackerTeamSpecial[x.listIndex]),list[attacker.side][x.listIndex].special.cd);
+
+    }
+
+    for (let x of list[defender.side]){ //for each member of side
+      list[defender.side][x.listIndex].currentHP = Math.min(Math.max(1,list[defender.side][x.listIndex].currentHP - defenderTeamPost[x.listIndex]), list[defender.side][x.listIndex].stats.hp);
+      list[defender.side][x.listIndex].special.charge = Math.min(Math.max(0, list[defender.side][x.listIndex].special.charge - defenderTeamSpecial[x.listIndex]),list[defender.side][x.listIndex].special.cd);
+    }
+
+    //apply post combat damage to defender/attacker
 
     if (newDefender.currentHP > 0){
-      newDefender.currentHP = Math.max(1, newDefender.currentHP - defenderPostDamage); //cannot go below 0 from post battle damage
+      newDefender.currentHP = Math.min(Math.max(1, newDefender.currentHP - defenderPostDamage), newDefender.stats.hp); //cannot go below 0 from post battle damage and hp is capped
     }
 
     if (newAttacker.currentHP > 0){
-      newAttacker.currentHP = Math.max(1, newAttacker.currentHP - attackerPostDamage); //cannot go below 0
+      newAttacker.currentHP = Math.min(Math.max(1, newAttacker.currentHP - attackerPostDamage), newAttacker.stats.hp); //cannot go below 0
     }
     //set new current hp values
     list[attacker.side][attacker.listIndex].currentHP = newAttacker.currentHP;
     list[defender.side][defender.listIndex].currentHP = newDefender.currentHP;
 
-    //set new special charges
-    list[attacker.side][attacker.listIndex].special = attackerSpecial;
-    list[defender.side][defender.listIndex].special = defenderSpecial;
+
 
     //increase combat Count
     list[attacker.side][attacker.listIndex].combatCount++;
@@ -1011,6 +1037,7 @@ export function getAdjacentAllies(hList, position){
   return adjacentList;
 }
 
+//Get heroes within a distance from a position. Does not include the hero in position
 export function getDistantHeroes(hList, position, excluded, distance){
   let distantList = [];
 
@@ -1266,6 +1293,46 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 1;
+
+      } else if (keyWord === "cardinalRC"){
+
+        if (innerCondition[j+1] && checkCardinalRowColumn(owner, enemy, innerCondition[j+2], innerCondition[j+3])){ //condition requires cardinal and they are cardinal
+          innerResult = true;
+        } else if (!innerCondition[j+1] && !checkCardinalRowColumn(owner, enemy, innerCondition[j+2], innerCondition[j+3])){ //condition requires not cardinal and they are not cardinal
+          innerResult = true
+        }
+
+        j = j + 3;
+
+      } else if (keyWord === "tactic"){
+
+        if (innerCondition[j+1] && checkTactic(enemy, heroList)){ 
+          innerResult = true;
+        } else if (!innerCondition[j+1] && !checkTactic(enemy, heroList)){ 
+          innerResult = true
+        }
+
+
+
+        j = j + 1;
+      } else if (keyWord === "specialReady"){
+
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        //check if their special is charged
+        if (innerCondition[j+2] && check.special.charge === 0){ 
+          innerResult = true;
+        } else if (!innerCondition[j+2] && check.special.charge !== 0){ 
+          innerResult = true
+        }
+
+        j = j + 2;
       }
 
 
@@ -1339,7 +1406,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
     for (let x of variableEffect.stats){
       statBuff[x] = buffValue;
     }
-    return statBuff;
+    return {"statBuff": statBuff}; //return as combat effect object
 
   }
 
@@ -1347,7 +1414,13 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
 }
 
 export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
-//    "effect": {"combatEffects": ["trueDamage"], "type": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+
+  
+  //combatEffect contains a list of combat effects that will be granted
+  //The value of the combat effect is then calculated depending on the key
+
+
+  //bonus damage uses stats and factor
   if (variableEffect.key === "bonusDamage"){
     let unit = variableEffect.unit;
     let value = 0;
@@ -1368,6 +1441,8 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
       combatEffectList[x] = value;
     }
     return combatEffectList;
+
+
   } else if (variableEffect.key === "statDifferenceEffect"){
 
     let statCheck = variableEffect.stat;
@@ -1389,7 +1464,8 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
     let combatEffectList = {};
     for (let x of variableEffect.combatEffects){
       
-      if (x.includes("Reduction")){
+      if (x.includes("Reduction")){ //damage reduction effects 
+
 
         if (x === "preBattleReduction" && visibleValue > 0){
           combatEffectList[x] = 1 - (visibleValue / 100.0 );
@@ -1397,17 +1473,17 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy){
           combatEffectList[x] = 1 - (combatValue / 100.0 );
         }
 
-      } else if (x === "lull" && visibleValue > 0){
+      } else if (visibleValue > 0 && "stats" in variableEffect){ //if it has a stats key, then make a combat object for it (for stuff like lulls)
 
-          let lullStats = variableEffect.debuffStats;
-          combatEffectList.lull = {};
+          let statList = variableEffect.stats;
+          combatEffectList[x] = {};
 
 
-          for (let m of lullStats){
-            combatEffectList.lull[m]= visibleValue;
+          for (let m of statList){
+            combatEffectList[x][m]= visibleValue;
           }
 
-      } else {
+      } else { //just add to effect list
         combatEffectList[x] = combatValue;
       }
 
@@ -1561,21 +1637,137 @@ export function checkCardinal(hero1, hero2){
 
 }
 
+export function checkCardinalRowColumn(hero1, hero2, width, height){
+  let pos1 = positionToRowColumn(hero1.position);
+  let pos2 = positionToRowColumn(hero2.position);
+
+
+  //width = 0 means ignore column and only check row
+  if (width === 0){
+
+    if (Math.abs(pos1[0] - pos2[0]) <= height){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  //height = 0 means ignore row and only check column
+  if (height === 0){
+
+    if (Math.abs(pos1[1] - pos2[1]) <= width){
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  //within both required columns and rows - NOTE - don't think any skills would use this
+  if (Math.abs(pos1[1] - pos2[1]) <= width && Math.abs(pos1[0] - pos2[0]) <= height){
+    return true;
+  } else {
+    return false;
+  }
+
+
+
+}
+
+
+//tactic requirement is always <= 2 
+export function checkTactic(hero, heroList){
+  let allyCount = 0;  
+  let moveTypeCheck = heroData[hero.heroID.value].movetype;
+
+  for (let x of heroList[hero.side]){
+
+
+    if (heroData[x.heroID.value].movetype === moveTypeCheck && heroValid(x)){ //movetype is the same and different ally
+      allyCount++;
+    }
+
+  }
+
+
+  if (allyCount <= 2){
+    return true;
+  } else {
+    return false;
+  }
+
+}
+
 
 //given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
-export function applyBuffList(heroList, affectedHeroes, effect){
-  for (let y of heroList){
-    for (let x of effect.buffList){ //loop through status buffs to apply
+export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specialPost){
+  for (let y of affectedHeroes){
+    for (let x of effect.list){ //loop through status buffs to apply
 
-      if (x === "statBuff"){
-        for (let z of effect.buffStats){
-          heroList[y.side][y.listIndex].buff[z] = Math.max(heroList[y.side][y.listIndex].buff[z], effect.buff); 
+      if (x === "stats"){
+        for (let z of effect.stats){ //loop through the stats list
+
+
+          if (z === "highest"){
+
+            //get the highest stats 
+            let max = 0;
+            let highestStat = [];
+            for (let stat in effect.highMod){
+
+              let val  = y.visibleStats[stat] + effect.highMod[stat];
+              if (val === max){
+                highestStat.push(stat);
+              } else if (val > max){
+                highestStat = [];
+                highestStat.push(stat);
+                max = val;
+              }
+            }
+
+            //apply debuff to highest stats
+            for (let i of highestStat){
+
+              heroList[y.side][y.listIndex][effect.subtype][i] = Math.max(heroList[y.side][y.listIndex][effect.subtype][i], effect.value); 
+            }
+
+
+          } else if (z === "hp"){ //special case - effects that 
+
+              if (effect.subtype === "buff"){
+                teamPost[y.listIndex]-=  effect.value; //lowers the amount of post damage
+              } else if (effect.subtype === "debuff"){
+                teamPost[y.listIndex]+=  effect.value; //raises the amount of psot damage
+              }
+
+          } else if (z === "special"){
+
+              if (effect.subtype === "buff"){
+                specialPost[y.listIndex]+= effect.value; //raises the amount special is reduced
+              } else if (effect.subtype === "debuff"){
+                specialPost[y.listIndex]-= effect.value; //raises the amount special is increased
+              }
+
+
+
+          } else {
+
+            heroList[y.side][y.listIndex][effect.subtype][z] = Math.max(heroList[y.side][y.listIndex][effect.subtype][z], effect.value); 
+          }
+
+          
         }
 
-
-
       } else { //otherwise, it should be a status buff
-        heroList[y.side][y.listIndex].statusBuff[x]++; //give the status buff
+
+        if (effect.subtype === "buff"){
+
+          heroList[y.side][y.listIndex].statusBuff[x]++; //give the status buff
+        } else if (effect.subtype === "debuff"){
+          heroList[y.side][y.listIndex].statusEffect[x]++; //give the status buff
+        }
+
       }
 
 
@@ -1584,24 +1776,13 @@ export function applyBuffList(heroList, affectedHeroes, effect){
 
 }
 
-export function applyDebuffList(heroList, affectedHeroes, effect){
 
-
-  for (let y of affectedHeroes){
-    for (let x of effect.debuffList){ //loop through status buffs to apply
-
-      if (x === "statDebuff"){
-        for (let z of effect.debuffStats){
-          heroList[y.side][y.listIndex].debuff[z] = Math.max(heroList[y.side][y.listIndex].debuff[z], effect.debuff); 
-        }
-
-
-      } else { //otherwise, it should be a status buff
-        heroList[y.side][y.listIndex].statusEffect[x]++; //give the status buff
-      }
-
-
-    }
+//checks if hero is on the board and not dead
+export function heroValid(hero){
+  if (hero.position >= 0 && hero.currentHP > 0){
+    return true;
+  } else {
+    return false;
   }
 
 }
