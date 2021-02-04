@@ -860,5 +860,53 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"76": {
+		"name": "Aureola",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Guinivere: Princess of Bern"],
+		"type": "bluetome",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"77": {
+		"name": "Tome of Favors",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Oliver: Admirer of Beauty"],
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"78": {
+		"name": "Tome of Storms",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Selena: Fluorspar"],
+		"type": "bluetome",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"79": {
+		"name": "Fell Flambeau",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Katarina: Torchlit Wanderer"],
+		"type": "bluetome",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 }

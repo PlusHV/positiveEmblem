@@ -1,8 +1,10 @@
 import React from 'react';
 import Select from 'react-select-v2';
 
+import {calculateCombatStatModifier} from './StatCalculation.js';
 import {capitalize} from 'underscore.string';
 import {upperFirst} from 'lodash';
+
 import './App.css';
 
 export default class Stats extends React.Component{
@@ -135,21 +137,24 @@ export default class Stats extends React.Component{
 			    let combatText = "-";
 
  
-			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position){ //the dragged hero is the selected hero - combat stats will be its stats
+			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position && this.props.gameState.draggedOver !== null){ //the dragged hero is the selected hero - combat stats will be its stats
 			    	//Add the combat stats of the dragged
-			    	combatText = this.props.gameState.draggedHero.combatEffects.statBuff[statText[i]];
+			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedHero, this.props.gameState.draggedOver, statText[i]);
+			    	// combatText = this.props.gameState.draggedHero.combatEffects.statBuff[statText[i]];
 
-			    	if (this.props.gameState.draggedOver !== null){
-			    		combatText-= this.props.gameState.draggedOver.combatEffects.lull[statText[i]];
-			    	}
+			    	// if (this.props.gameState.draggedOver !== null){
+			    	// 	combatText-= this.props.gameState.draggedOver.combatEffects.lull[statText[i]];
+			    	// }
 
 
-			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position){ //the dragged over hero is the selected hero
-			    	combatText = this.props.gameState.draggedOver.combatEffects.statBuff[statText[i]];
+			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position && this.props.gameState.draggedHero !== null){ //the dragged over hero is the selected hero
 
-			    	if (this.props.gameState.draggedHero !== null){
-			    		combatText-= this.props.gameState.draggedHero.combatEffects.lull[statText[i]];
-			    	}
+			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedOver, this.props.gameState.draggedHero, statText[i]);
+			    	// combatText = this.props.gameState.draggedOver.combatEffects.statBuff[statText[i]];
+
+			    	// if (this.props.gameState.draggedHero !== null){
+			    	// 	combatText-= this.props.gameState.draggedHero.combatEffects.lull[statText[i]];
+			    	// }
 
 			    }
 

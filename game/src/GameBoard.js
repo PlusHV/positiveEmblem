@@ -25,7 +25,9 @@ import skills from './skillList.js';
 
 var heroStruct = makeHeroStruct();
 
+const statusBuffs = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
 
+const statusDebuffs = {"guard": 0, "panic": 0};
 
 
 //handles the gameboard as well as the heroes which
@@ -55,7 +57,7 @@ class GameBoard extends React.Component{
     this.state = {
       "heroList": { 
         "1":[new heroStruct(0), new heroStruct(1), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
-        "2": [new heroStruct(6), new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11)]
+        "2": [new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]
       }, //skips id 5 for listIndex  
       "heroIndex": 0, //The index of the hero in the heroList
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
@@ -647,7 +649,7 @@ class GameBoard extends React.Component{
     //only reset if unit has used their action
     if (e.target.checked){
       hero.debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-      hero.statusEffect = {"guard": 0, "panic": 0}; 
+      hero.statusEffect = JSON.parse(JSON.stringify(statusDebuffs));//{"guard": 0, "panic": 0}; 
     }
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
@@ -1179,9 +1181,9 @@ class GameBoard extends React.Component{
 
 
 
-        Object.keys(draggedHero.combatEffects.statBuff).forEach((key, i) => {
-          draggedHero.combatEffects.statBuff[key]+= Math.trunc(draggedHero.buff[key] * draggedHero.combatEffects.bonusDouble);
-        });
+        // Object.keys(draggedHero.combatEffects.statBuff).forEach((key, i) => {
+        //   draggedHero.combatEffects.statBuff[key]+= Math.trunc(draggedHero.buff[key] * draggedHero.combatEffects.bonusDouble);
+        // });
 
         this.getAuraEffects(draggedHero, this.state.heroList);
         this.getAuraEffects(draggedOverHero, this.state.heroList);
@@ -1245,10 +1247,13 @@ class GameBoard extends React.Component{
           continue;
         }
 
-        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, hero, this.state.currentTurn) ){ //check if the hero meets the allyReq to gain the aura effects
+        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, hero, this.state.currentTurn) && teammate.id !== hero.id  ){ //check if the hero meets the allyReq to gain the aura effects - Also check if its not themselves
 
             addEffect(hero, effect.auraEffect); //adds the effects to the hero
 
+        } else if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, teammate, hero, this.state.currentTurn) && teammate.id === hero.id ){
+
+          addEffect(hero, effect.auraEffect);
         }
 
         
@@ -1316,7 +1321,7 @@ class GameBoard extends React.Component{
 
 
         let buffs =  calculateVariableEffect(this.state.heroList, x, owner, enemy);
-        console.log(buffs);
+
         addEffect(owner, buffs);
 
       } //end if condition true
@@ -2453,7 +2458,7 @@ class GameBoard extends React.Component{
 
       //These effects last for 1 turn which means there are reset at the start of the turn
       tempList[side][i.listIndex].buff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //reset buffs
-      tempList[side][i.listIndex].statusBuff = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
+      tempList[side][i.listIndex].statusBuff = JSON.parse(JSON.stringify(statusBuffs)); //{"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
 
     }
     tempList = this.recalculateAllVisibleStats(tempList);//get most up to date visible stats for all heroes
@@ -2640,7 +2645,7 @@ class GameBoard extends React.Component{
 
         if (j.side === this.state.playerSide && !j.end){ //if on current side and has not finished their action yet
           tempList[i][j.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-          tempList[i][j.listIndex].statusEffect = {"guard": 0, "panic": 0}; 
+          tempList[i][j.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));// {"guard": 0, "panic": 0}; 
 
         }
 
@@ -2773,7 +2778,7 @@ function makeHeroStruct(){
 
   function hero(){
     this["id"] = arguments[0];
-    this["listIndex"] = arguments[0] % 6; //index of the hero for the list of heroes
+    this["listIndex"] = arguments[0] % 7; //index of the hero for the list of heroes
     this["level"] = 40;
     this["merge"] = 0;
     this["dragonflower"] = 0;
@@ -2783,14 +2788,14 @@ function makeHeroStruct(){
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
 
-    this["side"] = (Math.floor(arguments[0] / 6) + 1).toString();
+    this["side"] = (Math.floor(arguments[0] / 7) + 1).toString();
     // these are reset at the start of the hero's turn
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //visible buffs
-    this["statusBuff"] = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0};
+    this["statusBuff"] =  JSON.parse(JSON.stringify(statusBuffs));//{"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
 
     //these are reset when the hero's action is taken (action is also considered taken if action was available but their turn ended)
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    this["statusEffect"] = {"guard": 0, "panic": 0}; //
+    this["statusEffect"] =  JSON.parse(JSON.stringify(statusDebuffs));//{"guard": 0, "panic": 0}; //
 
 
     this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //stats changed by auras
@@ -2831,6 +2836,7 @@ function makeHeroStruct(){
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0,
       "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
@@ -2879,9 +2885,9 @@ function addEffect(hero, effect){
 function removeEffect(hero, effect){
 
   if (Array.isArray(effect) ){ //list effects
-    console.log(effect);
+
     for (let elementEffect of effect){
-      console.log(elementEffect);
+
       let elementEffectCopy = JSON.stringify(elementEffect); //copy of the effect in string form
       let copyIndex = hero[elementEffect.type].findIndex(findMatchingEffect, elementEffectCopy);
 
@@ -2911,8 +2917,9 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
 
 
 
-    } else if (Array.isArray(effect[key])){ //list value - add an effect
-
+    } else if (Array.isArray(effect[key])){ 
+    //list value - add an effect  - actually not sure what should use this but neutralizers used this before e.g ("buffNeutralize": ["atk", "def"]) would add one stack for each stat. we now specify the stack amount in an object (below this if)
+    //keeping this in case it is needed
       for (let subkey of effect[key]){
         hero.combatEffects[key][subkey]++;
     

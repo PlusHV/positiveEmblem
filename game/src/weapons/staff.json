@@ -499,5 +499,51 @@
 		"skills": [["a", "Speed +3"]],
 		"effect": {},
 		"max": true
+	},
+	"45": {
+		"name": "Elena's Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Mist: Helpful Sister"],
+		"type": "staff",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"46": {
+		"name": "Tannenbaton+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"47": {
+		"name": "Tannenbaton",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "staff",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"48": {
+		"name": "Kia Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Sara: Lady of Loptr"],
+		"type": "staff",
+		"skills": [],
+		"effect": {},
+		"max": true
 	}
 }

@@ -2840,5 +2840,196 @@
 		"type": "effect",
 		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "enemy", "peak": "max" }],
 		"max": true
+	},
+	"346": {
+		"name": "Wyvern Flight 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "spd", "greater", -10]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.3, "max": 3, "stats": ["atk", "def"]}] }],
+		"max": false
+	},
+	"347": {
+		"name": "Wyvern Flight 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "spd", "greater", -10]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.4, "max": 5, "stats": ["atk", "def"]}] }],
+		"max": false
+	},
+	"348": {
+		"name": "Wyvern Flight 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "spd", "greater", -10]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.5, "max": 7, "stats": ["atk", "def"]}] }],
+		"max": true
+	},
+	"349": {
+		"name": "Binding Necklace",
+		"sp": 300,
+		"prf": true,
+		"users": ["Freyja: Lady of Nightmare"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "bonusCopy": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "bonusNull": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"max": true
+	},
+	"350": {
+		"name": "Atk/Res Ruse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"max": false
+	},
+	"351": {
+		"name": "Atk/Res Ruse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"max": false
+	},
+	"352": {
+		"name": "Atk/Res Ruse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"max": true
+	},
+	"353": {
+		"name": "Even Follow-Up 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0], ["turn", 2, 1] ], "enemyDouble": 1, "double": 1  }],
+		"max": false
+	},
+	"354": {
+		"name": "Even Follow-Up 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5], ["turn", 2, 1] ], "enemyDouble": 1, "double": 1  }],
+		"max": false
+	},
+	"355": {
+		"name": "Even Follow-Up 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["turn", 2, 1] ], "enemyDouble": 1, "double": 1  }],
+		"max": true
+	},
+	"356": {
+		"name": "Res Cantrip 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 3}, "range": 4, "from": ["assister"]}],
+		"max": false
+	},
+	"357": {
+		"name": "Res Cantrip 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 5}, "range": 4, "from": ["assister"]}],
+		"max": false
+	},
+	"358": {
+		"name": "Res Cantrip 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 7}, "range": 4, "from": ["assister"]}],
+		"max": true
+	},
+	"359": {
+		"name": "Atk/Def Snag 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 2, "def": 2}, "range": 4, "from": ["assister", "assistee"]}],
+		"max": false
+	},
+	"360": {
+		"name": "Atk/Def Snag 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 4, "def": 4}, "range": 4, "from": ["assister", "assistee"]}],
+		"max": false
+	},
+	"361": {
+		"name": "Atk/Def Snag 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 6, "def": 6}, "range": 4, "from": ["assister", "assistee"]}],
+		"max": true
+	},
+	"362": {
+		"name": "Seal Atk/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"363": {
+		"name": "Seal Atk/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"364": {
+		"name": "Chill Def/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "enemy", "peak": "max" }],
+		"max": false
+	},
+	"365": {
+		"name": "Chill Def/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "enemy", "peak": "max" }],
+		"max": true
+	},
+	"366": {
+		"name": "Dragon Wall 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 2.0, "max": 20},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 2.0, "max": 20}],
+		"max": false
+	},
+	"367": {
+		"name": "Dragon Wall 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 3.0, "max": 30},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 3.0, "max": 30}],
+		"max": false
+	},
+	"368": {
+		"name": "Dragon Wall 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40}],
+		"max": true
 	}
 }

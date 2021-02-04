@@ -379,7 +379,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }] }],
 		"max": false
 	},
 	"51": {
@@ -387,7 +387,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 3, "res": 3} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"52": {
@@ -395,7 +395,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"53": {
@@ -423,105 +423,120 @@
 		"name": "Def Opening 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"57": {
 		"name": "Def Opening 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"58": {
 		"name": "Def Opening 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"59": {
 		"name": "Def Ploy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"60": {
 		"name": "Def Ploy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"61": {
 		"name": "Def Ploy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"62": {
 		"name": "Def Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"63": {
 		"name": "Def Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"64": {
 		"name": "Def Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"65": {
 		"name": "Def Tactic 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"66": {
 		"name": "Def Tactic 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"67": {
 		"name": "Def Tactic 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": true
 	},
 	"68": {
 		"name": "Distant Guard 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }] }],
 		"max": false
 	},
 	"69": {
 		"name": "Distant Guard 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"70": {
 		"name": "Distant Guard 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"71": {
@@ -529,7 +544,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Naga: Dragon Divinity"],
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["dragonEffective"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"72": {
@@ -557,238 +573,249 @@
 		"name": "Drive Atk 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 2}],
 		"max": false
 	},
 	"76": {
 		"name": "Drive Atk 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 3}],
 		"max": true
 	},
 	"77": {
 		"name": "Drive Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 2}],
 		"max": false
 	},
 	"78": {
 		"name": "Drive Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 3}],
 		"max": true
 	},
 	"79": {
 		"name": "Drive Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 2}],
 		"max": false
 	},
 	"80": {
 		"name": "Drive Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 3}],
 		"max": true
 	},
 	"81": {
 		"name": "Drive Spd 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 2}],
 		"max": false
 	},
 	"82": {
 		"name": "Drive Spd 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 3}],
 		"max": true
 	},
 	"83": {
 		"name": "Even Atk Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"84": {
 		"name": "Even Atk Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"85": {
 		"name": "Even Atk Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"86": {
 		"name": "Even Def Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"87": {
 		"name": "Even Def Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"88": {
 		"name": "Even Def Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"89": {
 		"name": "Even Res Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"90": {
 		"name": "Even Res Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"91": {
 		"name": "Even Res Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"92": {
 		"name": "Even Spd Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"93": {
 		"name": "Even Spd Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"94": {
 		"name": "Even Spd Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"95": {
 		"name": "Flier Guidance 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"96": {
 		"name": "Flier Guidance 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"97": {
 		"name": "Flier Guidance 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"98": {
 		"name": "Fortify Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"99": {
 		"name": "Fortify Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"100": {
 		"name": "Fortify Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"101": {
 		"name": "Fortify Def 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"102": {
 		"name": "Fortify Def 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"103": {
 		"name": "Fortify Def 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"104": {
 		"name": "Fortify Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"105": {
 		"name": "Fortify Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"106": {
 		"name": "Fortify Res 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"107": {
 		"name": "Fortify Res 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"108": {
 		"name": "Fortify Res 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"109": {
@@ -838,175 +865,175 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Nailah: Unflinching Eye", "Nailah: Blessed Queen"],
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"116": {
 		"name": "Goad Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"117": {
 		"name": "Goad Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"118": {
 		"name": "Goad Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"119": {
 		"name": "Goad Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"120": {
 		"name": "Goad Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"121": {
 		"name": "Ground Orders 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"122": {
 		"name": "Ground Orders 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"123": {
 		"name": "Ground Orders 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"124": {
 		"name": "Guidance 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"125": {
 		"name": "Guidance 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"126": {
 		"name": "Guidance 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"127": {
 		"name": "Hone Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"128": {
 		"name": "Hone Atk 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"129": {
 		"name": "Hone Atk 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"130": {
 		"name": "Hone Atk 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"131": {
 		"name": "Hone Atk 4",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"132": {
 		"name": "Hone Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"133": {
 		"name": "Hone Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"134": {
 		"name": "Hone Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"135": {
 		"name": "Hone Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"136": {
 		"name": "Hone Spd 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"137": {
 		"name": "Hone Spd 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"138": {
 		"name": "Hone Spd 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"139": {
 		"name": "Hone Spd 4",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"140": {
@@ -1014,126 +1041,126 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Roy: Blazing Lion"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"141": {
 		"name": "Inf. Hexblade 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"142": {
 		"name": "Inf. Hexblade 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"143": {
 		"name": "Inf. Hexblade 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"144": {
 		"name": "Infantry Breath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"145": {
 		"name": "Infantry Breath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"146": {
 		"name": "Infantry Breath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"147": {
 		"name": "Infantry Flash 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"148": {
 		"name": "Infantry Flash 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"149": {
 		"name": "Infantry Flash 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"150": {
 		"name": "Infantry Pulse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"151": {
 		"name": "Infantry Pulse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"152": {
 		"name": "Infantry Pulse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"153": {
 		"name": "Infantry Rush 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"154": {
 		"name": "Infantry Rush 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"155": {
 		"name": "Infantry Rush 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"156": {
 		"name": "Joint Hone Atk",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"157": {
 		"name": "Joint Hone Spd",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"158": {
@@ -1161,84 +1188,84 @@
 		"name": "Odd Atk Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"162": {
 		"name": "Odd Atk Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"163": {
 		"name": "Odd Atk Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"164": {
 		"name": "Odd Def Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"165": {
 		"name": "Odd Def Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"166": {
 		"name": "Odd Def Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"167": {
 		"name": "Odd Res Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"168": {
 		"name": "Odd Res Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"169": {
 		"name": "Odd Res Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"170": {
 		"name": "Odd Spd Wave 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"171": {
 		"name": "Odd Spd Wave 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"172": {
 		"name": "Odd Spd Wave 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"173": {
@@ -1246,49 +1273,49 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Hector: Marquess of Ostia"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"174": {
 		"name": "Panic Ploy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"175": {
 		"name": "Panic Ploy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"176": {
 		"name": "Panic Ploy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"177": {
 		"name": "Pulse Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"178": {
 		"name": "Pulse Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"179": {
 		"name": "Pulse Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"180": {
@@ -1337,126 +1364,126 @@
 		"name": "Res Opening 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"187": {
 		"name": "Res Opening 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"188": {
 		"name": "Res Opening 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"189": {
 		"name": "Res Ploy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"190": {
 		"name": "Res Ploy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"191": {
 		"name": "Res Ploy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"192": {
 		"name": "Res Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"193": {
 		"name": "Res Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"194": {
 		"name": "Res Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"195": {
 		"name": "Res Tactic 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"196": {
 		"name": "Res Tactic 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"197": {
 		"name": "Res Tactic 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"198": {
 		"name": "Rouse Atk/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"199": {
 		"name": "Rouse Atk/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"200": {
 		"name": "Rouse Atk/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"201": {
 		"name": "Savage Blow 1",
 		"sp": 50,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"202": {
 		"name": "Savage Blow 2",
 		"sp": 100,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"203": {
 		"name": "Savage Blow 3",
 		"sp": 200,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"204": {
@@ -1464,7 +1491,7 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Tiki: Torpid Dragon"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"205": {
@@ -1472,91 +1499,91 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Eir: Merciful Death"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"206": {
 		"name": "Spd Opening 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"207": {
 		"name": "Spd Opening 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"208": {
 		"name": "Spd Opening 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"209": {
 		"name": "Spd Ploy 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"210": {
 		"name": "Spd Ploy 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"211": {
 		"name": "Spd Ploy 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"212": {
 		"name": "Spd Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"213": {
 		"name": "Spd Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"214": {
 		"name": "Spd Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"215": {
 		"name": "Spd Tactic 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"216": {
 		"name": "Spd Tactic 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"217": {
 		"name": "Spd Tactic 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"218": {
@@ -1587,147 +1614,147 @@
 		"name": "Spur Atk/Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"222": {
 		"name": "Spur Atk/Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"223": {
 		"name": "Spur Atk/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"224": {
 		"name": "Spur Atk/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"225": {
 		"name": "Spur Atk/Spd 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"226": {
 		"name": "Spur Atk/Spd 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"227": {
 		"name": "Spur Def 1",
 		"sp": 50,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"228": {
 		"name": "Spur Def 2",
 		"sp": 100,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"229": {
 		"name": "Spur Def 3",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"230": {
 		"name": "Spur Def/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"231": {
 		"name": "Spur Def/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"232": {
 		"name": "Spur Res 1",
 		"sp": 50,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"233": {
 		"name": "Spur Res 2",
 		"sp": 100,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"234": {
 		"name": "Spur Res 3",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"235": {
 		"name": "Spur Spd 1",
 		"sp": 50,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"236": {
 		"name": "Spur Spd 2",
 		"sp": 100,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"237": {
 		"name": "Spur Spd 3",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"238": {
 		"name": "Spur Spd/Def 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"239": {
 		"name": "Spur Spd/Def 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"240": {
 		"name": "Spur Spd/Res 1",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"241": {
 		"name": "Spur Spd/Res 2",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"242": {
@@ -1756,7 +1783,7 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Surtr: Ruler of Flame"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"246": {
@@ -1805,126 +1832,126 @@
 		"name": "Threat. Atk/Spd 1",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"253": {
 		"name": "Threat. Atk/Spd 2",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"254": {
 		"name": "Threat. Atk/Spd 3",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"255": {
 		"name": "Threaten Atk 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"256": {
 		"name": "Threaten Atk 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"257": {
 		"name": "Threaten Atk 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"258": {
 		"name": "Threaten Def 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"259": {
 		"name": "Threaten Def 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"260": {
 		"name": "Threaten Def 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"261": {
 		"name": "Threaten Res 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"262": {
 		"name": "Threaten Res 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"263": {
 		"name": "Threaten Res 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"264": {
 		"name": "Threaten Spd 1",
 		"sp": 50,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"265": {
 		"name": "Threaten Spd 2",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"266": {
 		"name": "Threaten Spd 3",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"267": {
 		"name": "Time's Pulse 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"268": {
 		"name": "Time's Pulse 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"269": {
 		"name": "Time's Pulse 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"270": {
@@ -1932,7 +1959,7 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Duma: God of Strength"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"271": {
@@ -1940,42 +1967,42 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Eliwood: Blazing Knight"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"272": {
 		"name": "Ward Armor",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"273": {
 		"name": "Ward Beasts",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"274": {
 		"name": "Ward Cavalry",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"275": {
 		"name": "Ward Dragons",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"276": {
 		"name": "Ward Fliers",
 		"sp": 200,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"277": {
@@ -1983,56 +2010,56 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Tiki: Legendary Dragon", "Tiki: Harmonic Hope"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"278": {
 		"name": "Panic Smoke 1",
 		"sp": 60,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"279": {
 		"name": "Panic Smoke 2",
 		"sp": 120,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": false
 	},
 	"280": {
 		"name": "Panic Smoke 3",
 		"sp": 240,
 		"prf": false,
-		"type": "post-battle",
+		"type": "effect",
 		"max": true
 	},
 	"281": {
 		"name": "Atk/Res Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"282": {
 		"name": "Atk/Res Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"283": {
 		"name": "Atk/Res Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"284": {
 		"name": "Joint Hone Def",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"285": {
@@ -2060,63 +2087,63 @@
 		"name": "Spd/Res Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"289": {
 		"name": "Spd/Res Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"290": {
 		"name": "Spd/Res Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"291": {
 		"name": "Rouse Def/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"292": {
 		"name": "Rouse Def/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"293": {
 		"name": "Rouse Def/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"294": {
 		"name": "Atk/Def Oath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"295": {
 		"name": "Atk/Def Oath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"296": {
 		"name": "Atk/Def Oath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"297": {
@@ -2144,196 +2171,196 @@
 		"name": "Fortify Res 4",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"301": {
 		"name": "Threat. Atk/Res 1",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"302": {
 		"name": "Threat. Atk/Res 2",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"303": {
 		"name": "Threat. Atk/Res 3",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"304": {
 		"name": "Def/Res Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"305": {
 		"name": "Def/Res Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"306": {
 		"name": "Def/Res Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"307": {
 		"name": "Atk/Spd Oath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"308": {
 		"name": "Atk/Spd Oath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"309": {
 		"name": "Atk/Spd Oath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"310": {
 		"name": "Def/Res Oath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"311": {
 		"name": "Def/Res Oath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"312": {
 		"name": "Def/Res Oath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"313": {
 		"name": "Atk/Spd Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"314": {
 		"name": "Atk/Spd Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"315": {
 		"name": "Atk/Spd Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"316": {
 		"name": "Rouse Spd/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"317": {
 		"name": "Rouse Spd/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"318": {
 		"name": "Rouse Spd/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"319": {
 		"name": "Threat. Atk/Def 1",
 		"sp": 100,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"320": {
 		"name": "Threat. Atk/Def 2",
 		"sp": 200,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"321": {
 		"name": "Threat. Atk/Def 3",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"322": {
 		"name": "Atk/Def Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"323": {
 		"name": "Atk/Def Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"324": {
 		"name": "Atk/Def Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"325": {
 		"name": "Rouse Spd/Def 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"326": {
 		"name": "Rouse Spd/Def 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"327": {
 		"name": "Rouse Spd/Def 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"328": {
@@ -2369,70 +2396,70 @@
 		"name": "Joint Drive Atk",
 		"sp": 300,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"333": {
 		"name": "Spd/Def Oath 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"334": {
 		"name": "Spd/Def Oath 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"335": {
 		"name": "Spd/Def Oath 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"336": {
 		"name": "Armored Stride 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"337": {
 		"name": "Armored Stride 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"338": {
 		"name": "Armored Stride 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"339": {
 		"name": "Rouse Atk/Res 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"340": {
 		"name": "Rouse Atk/Res 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"341": {
 		"name": "Rouse Atk/Res 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"342": {
@@ -2440,21 +2467,21 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Mila: Goddess of Love"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"343": {
 		"name": "Joint Drive Spd",
 		"sp": 300,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"344": {
 		"name": "Fortify Def 4",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"345": {
@@ -2462,168 +2489,242 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Hel: Death Sovereign"],
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"346": {
 		"name": "Joint Drive Res",
 		"sp": 300,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"347": {
 		"name": "Atk/Spd Rein 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"348": {
 		"name": "Atk/Spd Rein 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"349": {
 		"name": "Atk/Spd Rein 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"350": {
 		"name": "Joint Hone Res",
 		"sp": 300,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"351": {
 		"name": "Spd/Def Rein 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"352": {
 		"name": "Spd/Def Rein 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"353": {
 		"name": "Spd/Def Rein 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"354": {
 		"name": "Atk/Res Rein 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"355": {
 		"name": "Atk/Res Rein 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"356": {
 		"name": "Atk/Res Rein 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": true
 	},
 	"357": {
 		"name": "Rouse Atk/Spd 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"358": {
 		"name": "Rouse Atk/Spd 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"359": {
 		"name": "Rouse Atk/Spd 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"360": {
 		"name": "Odd Tempest 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"361": {
 		"name": "Odd Tempest 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"362": {
 		"name": "Odd Tempest 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"363": {
 		"name": "Spd/Def Gap 1",
 		"sp": 60,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"364": {
 		"name": "Spd/Def Gap 2",
 		"sp": 120,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": false
 	},
 	"365": {
 		"name": "Spd/Def Gap 3",
 		"sp": 240,
 		"prf": false,
-		"type": "turn-start",
+		"type": "effect",
 		"max": true
 	},
 	"366": {
 		"name": "Atk/Def Rein 1",
 		"sp": 60,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"367": {
 		"name": "Atk/Def Rein 2",
 		"sp": 120,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
 		"max": false
 	},
 	"368": {
 		"name": "Atk/Def Rein 3",
 		"sp": 240,
 		"prf": false,
-		"type": "aura",
+		"type": "effect",
+		"max": true
+	},
+	"369": {
+		"name": "Spd/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"370": {
+		"name": "Spd/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"371": {
+		"name": "Spd/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"max": true
+	},
+	"372": {
+		"name": "Odd Recovery 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"373": {
+		"name": "Odd Recovery 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"374": {
+		"name": "Odd Recovery 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"max": true
+	},
+	"375": {
+		"name": "Spd/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"376": {
+		"name": "Spd/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"377": {
+		"name": "Spd/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"378": {
+		"name": "Wings of Light",
+		"sp": 300,
+		"prf": true,
+		"users": ["Seiros: Saint of Legend"],
+		"type": "effect",
 		"max": true
 	}
 }

@@ -1201,7 +1201,7 @@
 		"range": 1,
 		"sp":400,
 		"prf": true,
-		"users": ["Altina: Dawn's Trueblade"],
+		"users": ["Altina: Dawn's Trueblade", "Altina: Cross-Time Duo"],
 		"type": "sword",
 		"skills": [],
 		"effect": {},
@@ -1566,6 +1566,18 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"135": {
+		"name": "Lyngheiðr",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Reginn: Bearing Hope"],
+		"type": "sword",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
 	}
 
 

@@ -444,7 +444,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": ["Peony: Sweet Dream"],
+		"users": ["Peony: Sweet Dream", "Peony: Álfar Dream Duo"],
 		"type": "dance",
 		"max": true
 	},
@@ -481,7 +481,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": true,
-		"users": ["Plumeria: Lewd Dream"],
+		"users": ["Plumeria: Lewd Dream", "Plumeria: Temptation Anew"],
 		"type": "dance",
 		"max": true
 	},
@@ -521,6 +521,35 @@
 		"type": "movement-heal",
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": -1, "other": -1},
+		"max": false
+	},
+	"58": {
+		"name": "Frightful Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Triandra: Nightmare"],
+		"type": "dance",
+		"max": true
+	},
+	"59": {
+		"name": "Return+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": "movement-heal",
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": -2},
+		"max": true
+	},
+	"60": {
+		"name": "Return",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": "movement-heal",
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": -2},
 		"max": false
 	}
 

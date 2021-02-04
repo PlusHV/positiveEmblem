@@ -356,63 +356,116 @@ export function calculateVisibleStats(hero){
 
 	//for panic, probably have a check and reverse buffs
     Object.keys(stats).forEach((key, i) => {
-		stats[key] = hero.stats[key] + hero.buff[key] - hero.debuff[key];
+
+		let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
+
+		if (hero.statusEffect.panic > 0){
+			panicFactor = -1;
+		}
+
+		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key];
 	});
 
     return stats;
 }
 
 export function calculateCombatStats(hero, enemy){
-	let stats = object(statName.slice(1), [0, 0, 0, 0]);
+	let combatStats = object(statName.slice(1), [0, 0, 0, 0]);
 
-	let penaltyNeutralize = hero.combatEffects.penaltyNeutralize;
-	let buffNeutralize = enemy.combatEffects.buffNeutralize;
-
-	let penaltyReverse = hero.combatEffects.penaltyReverse;
-    Object.keys(stats).forEach((key, i) => {
-
-    	let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
-
-    	if (hero.statusEffect.panic > 0){
-    		panicFactor = -1;
-    	}
-
-    	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
-    	if (penaltyNeutralize[key] > 0){
-    		penaltyNeutralizer = hero.debuff[key]; //to neutralize debuff
-
-    		if (panicFactor < 0){ //if panicked, then neutralizer will also neutralize the panicked stat 
-    			penaltyNeutralizer+= hero.buff[key];
-    		}
-
-    	}
-
-    	let buffNeutralizer = 0; //set neutralizer that will cancel out buffs
-    	if (buffNeutralize[key] > 0){
-    		buffNeutralizer = hero.buff[key];
-    	}
+	let visibleStats = calculateVisibleStats(hero);
 
 
-    	let penaltyReverser = 0; //penalty reverser is buff that is double the value of penalties on hero - This is unaffected by penalty neutralizers <- no longer true
-    	//After version 4.6, neutralized stats are no longer used for this effect
-    	if (penaltyReverse[key] > 0 && penaltyNeutralize[key] <= 0){ //also check if those penalties are neutralized
-    		penaltyReverser = hero.debuff[key]  * 2;
+	for (let stat in combatStats){
+		combatStats[stat] = visibleStats[stat] +  hero.aura[stat] + calculateCombatStatModifier(hero, enemy, stat);
+	}
 
-    		if (panicFactor < 0){ //if panicked, also add a buff that is double of that to reverse it
-    			penaltyReverser += hero.buff[key] * 2;
-    		}
-    	}
 
-		//
-		stats[key] = hero.stats[key] + (panicFactor * hero.buff[key]) - hero.debuff[key] + hero.aura[key] + hero.combatEffects.statBuff[key] - enemy.combatEffects.lull[key]
-		 + penaltyNeutralizer - buffNeutralizer + penaltyReverser;
-	
-	});
-
-    return stats;
+    return combatStats;
 
 }
 
+export function calculateCombatStatModifier(hero, enemy, stat){
+	let modifier = 0;
+
+	//Hero effects that affect stats
+	let penaltyNeutralize = hero.combatEffects.penaltyNeutralize;
+	let penaltyReverse = hero.combatEffects.penaltyReverse;
+	let bonusCopy = hero.combatEffects.bonusCopy;
+	let bonusDoubleCombatEffect = hero.combatEffects.bonusDouble;
+	let bonusDoubleStatus = hero.statusEffect.bonusDouble;
+
+	//Enemy effects that affefct stats
+	let buffNeutralize = enemy.combatEffects.buffNeutralize;
+	let bonusNull = enemy.combatEffects.bonusNull;
+
+	let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
+
+	if (hero.statusEffect.panic > 0){
+		panicFactor = -1;
+	}
+
+	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
+	if (penaltyNeutralize[stat] > 0){
+		penaltyNeutralizer = hero.debuff[stat]; //neutralizer will have same value as debuff to cancel it out
+
+		if (panicFactor < 0){ //also if panicked, then neutralizer will also neutralize the panicked stat 
+			penaltyNeutralizer+= hero.buff[stat];
+		}
+
+	}
+
+
+	let penaltyReverser = 0; //penalty reverser is buff that is double the value of penalties on hero - This is unaffected by penalty neutralizers <- no longer true
+	//After version 4.6, neutralized stats are no longer used for this effect
+	if (penaltyReverse[stat] > 0 && penaltyNeutralize[stat] <= 0){ //also check if those penalties are neutralized
+		penaltyReverser = hero.debuff[stat]  * 2;
+
+		if (panicFactor < 0){ //if panicked, also add a buff that is double of that to reverse it
+			penaltyReverser += hero.buff[stat] * 2;
+		}
+	}
+
+	let bonusCopier = 0;
+
+	if (bonusCopy[stat] > 0 && hero.combatEffects.buffNeutralize[stat] <= 0 && enemy.statusEffect.panic <= 0){ //copy buffs from enemy - cannot copy buffs if hero is neutralizing enemy or enemy is panicked
+		bonusCopier = enemy.buff[stat];
+	}
+
+	let bonusDoublerCombat = 0;
+
+	if (bonusDoubleCombatEffect > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //double buffs - cannot double if neutralized or panicked
+		bonusDoublerCombat = Math.trunc(hero.buff[stat] * bonusDoubleCombatEffect);
+
+	}
+
+	let bonusDoublerStatus = 0;
+
+	if (bonusDoubleStatus > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //double buffs - cannot double if neutralized or panicked
+		bonusDoublerStatus = hero.buff[stat];
+
+	}
+
+
+	//effects from the enemy\
+
+	let buffNeutralizer = 0; //set neutralizer that will cancel out buffs
+	if (buffNeutralize[stat] > 0){
+		buffNeutralizer = hero.buff[stat];
+	}
+
+	let bonusNuller = 0; //nulls buffs on themselves by debuffing by same amount - kinda does the same thing as buff neutralize but it also allows bonusCopy to work as well
+
+	if (bonusNull[stat] > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //to null your bonuses, the enemy must not be already neutralizing your bonus and you must not be panicked 
+		bonusNuller = hero.buff[stat];
+	}
+
+	//
+	modifier = /*(panicFactor * hero.buff[stat]) - hero.debuff[stat] + hero.aura[stat] + */hero.combatEffects.statBuff[stat] - enemy.combatEffects.lull[stat]
+	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer; 
+
+
+	return modifier;
+}
 
 
 

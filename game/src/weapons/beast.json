@@ -369,5 +369,53 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"32": {
+		"name": "Nightmare Horn",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Freyja: Lady of Nightmare"],
+		"type": "beast",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"33": {
+		"name": "Refreshed Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Kaden: Refreshed Kitsune"],
+		"type": "beast",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"34": {
+		"name": "Resolved Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Keaton: Resolved Wolfskin"],
+		"type": "beast",
+		"skills": [["a", "Defense +3"]],
+		"effect": {},
+		"max": true
+	},
+	"35": {
+		"name": "Renewed Fang",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Velouria: Renewed Wolfpup"],
+		"type": "beast",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 }

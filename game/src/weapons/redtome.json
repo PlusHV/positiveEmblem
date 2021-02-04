@@ -710,6 +710,42 @@
 		"skills": [["a", "Resistance +3"]],
 		"effect": {},
 		"max": true
+	},
+	"62": {
+		"name": "Studied Forblaze",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lilina: Firelight Leader"],
+		"type": "redtome",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"63": {
+		"name": "Petrify",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Veld: Manfroy's Rock"],
+		"type": "redtome",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"64": {
+		"name": "Fell Candelabra",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Dorothea: Twilit Harmony"],
+		"type": "redtome",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
 	}
 
 }

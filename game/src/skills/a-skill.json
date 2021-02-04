@@ -1123,7 +1123,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": ["atk", "spd", "def", "res"] }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"141": {
@@ -2595,6 +2595,54 @@
 		"users": ["Robin: Fall Vessel"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1.00]], "lull": {"atk": 6, "res": 6}, "defenseCharge": 1 }],
+		"max": true
+	},
+	"324": {
+		"name": "Close Def 4",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"max": true
+	},
+	"325": {
+		"name": "Def/Res Solo 4",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 7, "res": 7} }],
+		"max": true
+	},
+	"326": {
+		"name": "Atk/Res Unity",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"327": {
+		"name": "Close Ward",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
+		"max": true
+	},
+	"328": {
+		"name": "Swift Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6, "res": 6}, "guard": 1 }],
+		"max": true
+	},
+	"329": {
+		"name": "Swift Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 7, "res": 10}, "enemyDouble": 1 }],
 		"max": true
 	}
 }

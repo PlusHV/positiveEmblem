@@ -15,7 +15,7 @@ export default class TeamElement extends React.Component{
 
     let idIndex = 0;
     if (this.props.name === "2"){
-      idIndex = 6;
+      idIndex = 7;
     }
 
 

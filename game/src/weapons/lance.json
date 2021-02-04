@@ -1384,6 +1384,62 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"121": {
+		"name": "Instant Lance+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"122": {
+		"name": "Instant Lance",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"123": {
+		"name": "Obsidian Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Duessel: Obsidian"],
+		"type": "lance",
+		"skills": [["a", "Defense +3"]],
+		"effect": {},
+		"max": true
+	},
+	"124": {
+		"name": "Candy Cane+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"125": {
+		"name": "Candy Cane",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 
 }

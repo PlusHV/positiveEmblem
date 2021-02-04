@@ -650,7 +650,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": ["Altina: Dawn's Trueblade"],
+		"users": ["Altina: Dawn's Trueblade", "Altina: Cross-Time Duo"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0 },
 		"max": true
@@ -741,6 +741,27 @@
 		"prf": false,
 		"type": "heal",
 		"effect": {"partyBuff": {"spd": 6, "res": 6} },
+		"max": true
+	},
+	"80": {
+		"name": "Seiðr Shell",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Reginn: Bearing Hope"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "flat", 15], "heal": 0.0, "amplify": 0.0, "adaptive": true},
+		"skills": [["o", "Turn 1, CD 3"]],
+		"max": true
+	},
+	"81": {
+		"name": "Gifted Magic",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Lilina: Firelight Leader"],
+		"type": "pre-battle",
+		"effect": {"factor": 0.8},
 		"max": true
 	}
 }

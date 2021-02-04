@@ -1062,6 +1062,75 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"94": {
+		"name": "Reindeer Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"95": {
+		"name": "Reindeer Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
+	},
+	"96": {
+		"name": "First-Dream Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Plumeria: Temptation Anew"],
+		"type": "bow",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"97": {
+		"name": "Indignant Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ronan: Villager of Iz"],
+		"type": "bow",
+		"skills": [["a", "Resistance +3"]],
+		"effect": {},
+		"max": true
+	},
+	"98": {
+		"name": "Plegian Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"99": {
+		"name": "Plegian Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
+
 
 }

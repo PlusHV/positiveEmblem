@@ -555,5 +555,30 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"48": {
+		"name": "Purifying Breath",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Nowi: Eternal Youth"],
+		"type": "breath",
+		"skills": [],
+		"effect": {"cdTrigger": 1},
+		"max": true
+	},
+	"49": {
+		"name": "Aurora Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Seiros: Saint of Legend"],
+		"type": "breath",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
 	}
+
 }

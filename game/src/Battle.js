@@ -404,13 +404,17 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     return list;
   }
 
+function getAdaptiveDamage(enemy){
+  if (enemy.combatStats.def <= enemy.combatStats.res){ // if def is lower
+    return "def";
+  } else {
+    return "res";
+  }
+}
+
 export function getDamageType(weaponType, owner, enemy){
     if (owner.combatEffects.adaptive > 0){
-      if (enemy.combatStats.def <= enemy.combatStats.res){ // if def is lower
-        return "def";
-      } else {
-        return "res";
-      }
+      return getAdaptiveDamage(enemy);
 
     } else if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
       return "def";
@@ -649,7 +653,12 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   if (attackerSpecialCharge === 0 && attackerSpecial.type === "attack-battle"){ //if charged and an offsensive battle special
 
-
+    if ("adaptive" in specialEffect){
+      
+      damageType = getAdaptiveDamage(defender);
+      baseDamage = attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType] ; //recalc base damage
+      
+    }
 
     if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list
       
@@ -771,6 +780,8 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     if ("partyBuff" in specialEffect){
       partyBuff = specialEffect.partyBuff;
     }
+
+
 
     attackerSpecialActivated = true;
 

@@ -752,5 +752,76 @@
 		"skills": [], 
 		"effect": {},
 		"max": true
+	},
+	"66": {
+		"name": "Flower of Sorrow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Triandra: Nightmare"],
+		"type": "greentome",
+		"skills": [["a", "Attack +3"]], 
+		"effect": {},
+		"max": true
+	},
+	"67": {
+		"name": "Hrist",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Bernadetta: Frosty Shut-In"],
+		"type": "bluetome",
+		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"68": {
+		"name": "Bond of the Álfar",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Peony: Álfar Dream Duo"],
+		"type": "greentome",
+		"skills": [["a", "Speed +3"]], 
+		"effect": {},
+		"max": true
+	},
+	"69": {
+		"name": "Grafcalibur",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Asbel: Windswept Youth"],
+		"type": "greentome",
+		"skills": [], 
+		"effect": {"cdTrigger": -1},
+		"max": true
+	},
+	"70": {
+		"name": "Plegian Torch+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [], 
+		"effect": {},
+		"max": true
+	},
+	"71": {
+		"name": "Plegian Torch",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome",
+		"skills": [], 
+		"effect": {},
+		"max": false
 	}
+
 }
