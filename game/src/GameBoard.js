@@ -25,9 +25,9 @@ import skills from './skillList.js';
 
 var heroStruct = makeHeroStruct();
 
-const statusBuffs = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
+export const statusBuffs = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
 
-const statusDebuffs = {"guard": 0, "panic": 0};
+export const statusDebuffs = {"gravity": 0, "guard": 0, "panic": 0};
 
 
 //handles the gameboard as well as the heroes which
@@ -101,7 +101,7 @@ class GameBoard extends React.Component{
       "preBattleDamage": -1,
       "draggedOverOriginalHP": 0,
       "selectedStatusBuff": "bonusDouble",
-      "selectedStatusEffect": "guard" 
+      "selectedStatusEffect": "gravity" 
 
     }
 
@@ -911,6 +911,9 @@ class GameBoard extends React.Component{
       move++; 
     }
 
+    if (dragData.statusEffect["gravity"] > 0){
+      move = 1;
+    }
 
     let assist = -1;
 
@@ -926,23 +929,97 @@ class GameBoard extends React.Component{
     let assistList = [];
     let attackList = [];
     let warpList = []; //contains positions that can be warped to
+    let obstructList = [];
+
+    //Obstruct is calculated the same way as a warp - it only takes away from normal movement though
 
 
-    for (let i = 0; i < 48; i++) { //rows
-      if (getDistance(pos, i) <= move && this.props.G.cells[i] === null ){
-        movementList.push(i);
-      } else if (this.props.G.cells[i] !== null && dragData.position !== i){ //if there is a hero and is not themselves
-        if (getDistance(pos,i) === assist && this.props.G.cells[i].side === dragData.side) //in range of assist and same side
-          assistList.push(i);
-        else if (getDistance(pos,i) === dragData.range && this.props.G.cells[i].side !== dragData.side) //in range of attack and opposite sides
-          attackList.push(i);
-      }
+    //Currently loops through each space which doesn't allow for path finding
+    //Instead should do some kind of adjacency check
+    //Movement starts at 1 and increments until over movement range
+    //Have 2 lists, mList, and mList done - mList is current adjacency checks to do, Done version has positions already done the checl
+    //Start with mlist with just original space
+    //a. For each space in mList, get adjacent spaces - for spaces that have already done adjacency checks skip e.g. First pass checks adjacent spots around initial space, but not for the second pass
+    //loop through list of adjacent spaces and add accordingly. If added to movementList OR space is occupied by an ally, then add to mList
+
+    //Pass does two things
+      //spaces will be added  to mList if they are occupied by an enemy too
+      //obstruct can't disqualify spaces 
+
+
+    if (dragData.statusBuff.airOrders > 0){
+      dragData.warp.push({"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2] ] });
+
     }
 
-    let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to (as positions)
+    let warpInfo = this.getWarpEffects(dragData, this.state.heroList);
+    //let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to (as positions)
+    let warpTargets = warpInfo.warpList;
+    let obstructTargets = warpInfo.obstructList;
+    let pass = warpInfo.pass;
 
 
-      //get adjacent
+    obstructList = this.getAdjacentSpaces(obstructTargets);
+
+    //Movement Calculation
+
+    let movementCheck = this.getAdjacentSpaces([dragData.position]); //spaces to check for adjacency
+    let movementCheckDone = []; //spaces that have already been checked for adjacency
+
+    let currentMovement = 0;
+
+    while (currentMovement < move){
+
+
+      let nextMovementCheck = [];
+      for (let pos of movementCheck) { //loop through positions to check
+
+
+        //if this position has already been checked, move to next position
+        if (movementCheckDone.includes(pos)){ continue;}
+
+        //Add to next movement check list if 
+        //is empty and (have pass or space is not obstructed) 
+        //or
+        //ally in spot 
+        //or 
+        //if pass is active and enemy is in the pos
+        //if (  (this.props.G.cells[pos] === null && (pass > 0 || !obstructList.includes(pos))) || this.props.G.cells[pos].side === dragData.side || (pass > 0 && this.props.G.cells[pos].side !== dragData.side) ){
+        if (  (this.props.G.cells[pos] === null) || this.props.G.cells[pos].side === dragData.side || (pass > 0 && this.props.G.cells[pos].side !== dragData.side) ){
+
+          if (this.props.G.cells[pos] === null && (pass < 1 && obstructList.includes(pos)) ){ //obstructed
+            movementCheckDone.push(pos);
+            continue;
+          } 
+
+          nextMovementCheck.push(pos); //position can be moved to, add it for the next check
+
+
+          if (this.props.G.cells[pos] === null){ //add to movementList if no hero is occupying it
+            
+            movementList.push(pos);
+          }
+          
+          
+
+        }
+        
+        movementCheckDone.push(pos); //space has been checked and add it to list
+        
+
+      } //end for
+
+      movementCheck = this.getAdjacentSpaces(nextMovementCheck);
+
+
+
+      currentMovement++;
+    }
+
+    
+
+    //Warp space calculation
+
     let warpSpaces = this.getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
 
     //adds the warp spaces that are empty to the warp list 
@@ -950,6 +1027,36 @@ class GameBoard extends React.Component{
 
       if (this.props.G.cells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
         warpList.push(x);
+      }
+
+    }
+
+
+    //Assist space calculation
+
+    if (assist > 0){
+
+
+      let assistSpaces = this.getSpacesInRange(pos, assist);
+
+      for (let s of assistSpaces){
+        if (this.props.G.cells[s] !== null && this.props.G.cells[s].side === dragData.side){
+          assistList.push(s);
+        }
+      }
+
+    }
+
+    //Attack space calculation
+    if (dragData.range > 0){
+
+
+      let attackSpaces = this.getSpacesInRange(pos, dragData.range);
+
+      for (let s of attackSpaces){
+        if (this.props.G.cells[s] !== null && this.props.G.cells[s].side !== dragData.side){
+          attackList.push(s);
+        }
       }
 
     }
@@ -967,7 +1074,7 @@ class GameBoard extends React.Component{
 
   }
 
-
+  //Given a list of positions, get all the spaces adjacent to it
   getAdjacentSpaces(warpPositions){
 
     let spaces = [];
@@ -997,57 +1104,139 @@ class GameBoard extends React.Component{
 
   }
 
-    //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
-  getWarpTargets(allyList, owner ){
-    let warpTargets = [];
 
+  //Given a position, get spaces that are exactly at that range
+  getSpacesInRange(origin, range){
+
+    let checkSpaces = [origin];
+    let checkedSpaces = [origin];
+    let counter = 0;
+
+    while (counter < range){
+
+      let adjacent = this.getAdjacentSpaces(checkSpaces);
+      checkSpaces = []; //reset
+
+      for (let x of adjacent){ //loop through adjacent spaces add them to checkSpaces if not already checked
+
+        if (!checkedSpaces.includes(x)){
+          checkSpaces.push(x);
+          checkedSpaces.push(x);
+        }
+
+      } //end for
+
+      counter++;
+    }
+
+
+    return checkSpaces;
+
+
+
+  }
+
+  getWarpEffects(owner, heroList){
+
+    //provides a couple of things
+    //pass (just a 1 or 0 for pass effect)
+    //warp list - target that can be warped to
+    //obstruct list
+
+    let warpList = [];
+    let obstructList = [];
+    let pass = 0;
+
+    for (let team in heroList){ //loop through each team
+      for (let hero of heroList[team]){ //loop through each hero on team
+
+        if (hero.position < 0 || hero.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
+
+
+        let warpEffects = hero.warp;
+        if (hero.id === owner.id){
+          warpEffects = owner.warp;
+        }
+
+        for (let effect of warpEffects){ //loop through loop effects
+          if (effect === null || effect === undefined) {continue;}
+        
+
+          if ("condition" in effect && !checkCondition(heroList, effect.condition, hero, hero, this.state.currentTurn) ){ //check if condition has not been met to skip
+              continue;
+          }
+
+          if (effect.subtype === "warpReq"){
+            //warp reqs - check team for allies that pass req to warp to -- only applies to self
+            if (hero.id === owner.id){
+              this.getWarpTargets(effect, heroList, owner, warpList);
+            }
+
+          } else if (effect.subtype === "warpTarget"){
+
+            if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, hero, owner, this.state.currentTurn)){
+
+
+              if (effect.effect === "obstruct"){
+
+
+                if (!obstructList.includes(hero.position) && hero.side !== owner.side){
+                  obstructList.push(hero.position);
+                }  
+
+              } else if (effect.effect === "warp"){
+
+                if (!warpList.includes(hero.position)){
+                  warpList.push(hero.position);
+                }  
+
+
+              }
+            } //end check condition
+
+          } else if (effect.subtype === "pass"){
+            pass++;
+          }
+        } //end warp loop
+        //"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }], 
+        //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.25]], "subtype": "pass"}],
+        //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+
+
+      }
+    } //end heroList loop
+
+    return {"warpList": warpList, "obstructList": obstructList, "pass": pass};
+
+  }
+
+    //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+  getWarpTargets(effect, heroList, owner, warpList){
+    
 
     let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+    let allyList = heroList[owner.side];
     for (let x in allyList){
-      if (allyList[x].position >= 0 && allyList[x].currentHP > 0){
+      if (allyList[x].position >= 0 && allyList[x].currentHP > 0 && allyList[x].id !== owner.id){
         allyListValid.push(allyList[x]);
       }
     } 
 
-    if (owner.statusBuff.airOrders > 0){
-      owner.warp.push({"allyReq": [["distanceCheck", 2]] } );
 
-    }
+        let allyReq = effect.allyReq;
 
-
-    for (let x of owner.warp){ //loop through all warp effects
-
-      if (x !== null){
-
-        if ( !("condition" in x) || ( "condition" in x && checkCondition(this.state.heroList, x.condition, owner, owner)) ){ //first check if they meet condition to get warp effect
-
-          let allyReq = x.allyReq;
-
-          let passedAllyList = this.heroReqCheck(owner, allyListValid, allyReq); //Get the list of allies that pass the req check
+        let passedAllyList = this.heroReqCheck(owner, allyListValid, allyReq); //Get the list of allies that pass the req check
 
 
-          for (let y of passedAllyList){
+        for (let y of passedAllyList){
 
-            if (!warpTargets.includes(y.position)){
-              warpTargets.push(y.position);
-            }
-
+          if (!warpList.includes(y.position)){
+            warpList.push(y.position);
           }
 
-
-        } //heroList, condition, owner, enemy
-
+        }
 
 
-      } //if no warp effects, then no targets 
-
-    } //end loop through effect
-
-
-
-
-
-    return warpTargets;
 
   }
 
@@ -2685,7 +2874,8 @@ class GameBoard extends React.Component{
             selector = {this.selectNewMember}
             drag = {this.dragTeamMember}
             dragOver = {this.dragOverTeamMember}
-            drop = {this.dropTeamMember} />
+            drop = {this.dropTeamMember}
+            dragEnd = {this.dragEnd} />
         </td>
 
         <td colSpan = "3">
@@ -2800,7 +2990,8 @@ function makeHeroStruct(){
 
     this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //stats changed by auras
     this["auraEffects"] = []; //auras that grant some kind of effect or conditional effect
-    this["auraStats"] = []; //auras that provide only stats (and can be calculated in ) 
+    this["auraStats"] = []; //auras that provide only stats (and can be calculated in )
+    this["auraWarps"] = [];
 
     this["rarity"] = 5;
     this["stats"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //the actual stats of the hero
@@ -2870,7 +3061,15 @@ function addEffect(hero, effect){
   if (Array.isArray(effect) ){ //a list of effects will push each element to the hero depending on the type of effect - E.g. effects to be applied at certain times (conditionals for example), will be in a list with their subtype to put them in appropriate place
 
     for (let elementEffect of effect){
-      hero[elementEffect.type].push(elementEffect);
+
+      //If combat effect in list, then add effect
+      if (effect.type === "combatEffect"){
+        applyCombatEffect(hero, elementEffect); 
+      } else {
+
+        hero[elementEffect.type].push(elementEffect);
+      }
+
     }
 
   } else if (typeof effect === 'object' && effect !== null){ //if the effect is just an object, then it will apply effects by looping through keys

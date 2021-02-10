@@ -3716,5 +3716,61 @@
 		"type": "passive",
 		"effect": {"hp": 4, "spd": 2},
 		"max": true
+	},
+	"503": {
+		"name": "Squad Ace AQ 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "def": 1},
+		"max": false
+	},
+	"504": {
+		"name": "Squad Ace AQ 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "def": 2},
+		"max": true
+	},
+	"505": {
+		"name": "Bracing Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"506": {
+		"name": "Bracing Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"max": true
+	},
+	"507": {
+		"name": "Life and Death 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": -3, "res": -3},
+		"max": false
+	},
+	"508": {
+		"name": "Life and Death 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 4, "spd": 4, "def": -4, "res": -4},
+		"max": false
+	},
+	"509": {
+		"name": "Life and Death 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 5, "spd": 5, "def": -5, "res": -5},
+		"max": true
 	}
 }

@@ -662,6 +662,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"87": {
@@ -669,6 +670,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"88": {
@@ -676,6 +678,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"89": {
@@ -683,6 +686,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"90": {
@@ -690,6 +694,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"91": {
@@ -697,6 +702,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"92": {
@@ -704,6 +710,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"93": {
@@ -711,6 +718,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"94": {
@@ -718,6 +726,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"95": {
@@ -725,6 +734,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": false
 	},
 	"96": {
@@ -732,6 +742,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": false
 	},
 	"97": {
@@ -739,6 +750,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": true
 	},
 	"98": {
@@ -746,6 +758,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"99": {
@@ -753,6 +766,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"100": {
@@ -760,6 +774,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"101": {
@@ -767,6 +782,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"102": {
@@ -774,6 +790,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"103": {
@@ -781,6 +798,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"104": {
@@ -788,6 +806,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"105": {
@@ -795,6 +814,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"106": {
@@ -802,6 +822,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"107": {
@@ -809,6 +830,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"108": {
@@ -816,6 +838,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"109": {
@@ -866,6 +889,7 @@
 		"prf": true,
 		"users": ["Nailah: Unflinching Eye", "Nailah: Blessed Queen"],
 		"type": "effect",
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"116": {
@@ -873,6 +897,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
 		"max": true
 	},
 	"117": {
@@ -880,6 +905,8 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+
 		"max": true
 	},
 	"118": {
@@ -887,6 +914,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
 		"max": true
 	},
 	"119": {
@@ -894,6 +922,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
 		"max": true
 	},
 	"120": {
@@ -901,6 +930,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
 		"max": true
 	},
 	"121": {
@@ -908,6 +938,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
 		"max": false
 	},
 	"122": {
@@ -915,6 +946,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
 		"max": false
 	},
 	"123": {
@@ -922,6 +954,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"124": {
@@ -929,6 +962,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": false
 	},
 	"125": {
@@ -936,6 +970,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": false
 	},
 	"126": {
@@ -943,6 +978,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
 		"max": true
 	},
 	"127": {
@@ -950,6 +986,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"128": {
@@ -957,6 +994,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"129": {
@@ -964,6 +1002,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"130": {
@@ -971,6 +1010,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"131": {
@@ -978,6 +1018,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"132": {
@@ -985,6 +1026,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"133": {
@@ -992,6 +1034,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"134": {
@@ -999,6 +1042,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"135": {
@@ -1006,6 +1050,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"136": {
@@ -1013,6 +1058,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"137": {
@@ -1020,6 +1066,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"138": {
@@ -1027,6 +1074,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"139": {
@@ -1034,6 +1082,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"140": {
@@ -1042,6 +1091,9 @@
 		"prf": true,
 		"users": ["Roy: Blazing Lion"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner",
+			"effectReq": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"]], ["distanceCheck", 1]],
+			"selfReq": [["allyInfo", 1, "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"], 1]] }],
 		"max": true
 	},
 	"141": {
@@ -1049,6 +1101,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "auraEffect": {"type": "combatEffect", "adaptive": 1} }],
 		"max": false
 	},
 	"142": {
@@ -1056,6 +1109,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "auraEffect": {"type": "combatEffect", "adaptive": 1, "statBuff": {"atk": 1, "spd": 1}} }],
 		"max": false
 	},
 	"143": {
@@ -1063,6 +1117,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "auraEffect": {"type": "combatEffect", "adaptive": 1, "statBuff": {"atk": 2, "spd": 2}} }],
 		"max": true
 	},
 	"144": {
@@ -1070,6 +1125,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "attackCharge": 1, "defenseCharge": 1 }] }],
 		"max": false
 	},
 	"145": {
@@ -1077,6 +1133,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 1, "res": 1}, "attackCharge": 1, "defenseCharge": 1 }] }],
 		"max": false
 	},
 	"146": {
@@ -1084,6 +1141,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2}, "attackCharge": 1, "defenseCharge": 1 }] }],
 		"max": true
 	},
 	"147": {
@@ -1091,6 +1149,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 5]], "attackCharge": 1 }] }],
 		"max": false
 	},
 	"148": {
@@ -1098,6 +1157,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 3]], "attackCharge": 1 }] }],
 		"max": false
 	},
 	"149": {
@@ -1105,6 +1165,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1 }] }],
 		"max": true
 	},
 	"150": {
@@ -1112,6 +1173,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 5]] }],
 		"max": false
 	},
 	"151": {
@@ -1119,6 +1181,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 3]] }],
 		"max": false
 	},
 	"152": {
@@ -1126,6 +1189,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 1]] }],
 		"max": true
 	},
 	"153": {
@@ -1133,6 +1197,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}] }],
 		"max": false
 	},
 	"154": {
@@ -1140,6 +1205,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}] }],
 		"max": false
 	},
 	"155": {
@@ -1147,6 +1213,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}] }],
 		"max": true
 	},
 	"156": {
@@ -2724,6 +2791,69 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Seiros: Saint of Legend"],
+		"type": "effect",
+		"max": true
+	},
+	"379": {
+		"name": "D/R Near Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"380": {
+		"name": "D/R Near Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"381": {
+		"name": "D/R Near Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"max": true
+	},
+	"382": {
+		"name": "A/R Far Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"383": {
+		"name": "A/R Far Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"384": {
+		"name": "A/R Far Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"max": true
+	},
+	"385": {
+		"name": "Fatal Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"386": {
+		"name": "Fatal Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"max": false
+	},
+	"387": {
+		"name": "Fatal Smoke 3",
+		"sp": 240,
+		"prf": false,
 		"type": "effect",
 		"max": true
 	}

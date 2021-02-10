@@ -12,7 +12,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"2": {
@@ -20,7 +20,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"3": {
@@ -28,7 +28,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
 		"max": true
 	},
 	"4": {
@@ -319,7 +319,7 @@
 		"prf": true,
 		"users": ["Ryoma: Supreme Samurai"],
 		"type": "effect",
-		"effect": {"specialTrueDamage": 10},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"40": {
@@ -521,7 +521,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"sweep": 1},
+		"effect": {"type": "combatEffect", "sweep": 1},
 		"max": true
 	},
 	"65": {
@@ -754,7 +754,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "less", 0.3]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.3]], "allyReq": [["always"]] }],
 		"max": false
 	},
 	"94": {
@@ -762,7 +762,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]] }],
 		"max": false
 	},
 	"95": {
@@ -770,7 +770,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "less", 0.5]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.5]], "allyReq": [["always"]] }],
 		"max": true
 	},
 	"96": {
@@ -810,7 +810,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"101": {
@@ -818,7 +818,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"102": {
@@ -826,7 +826,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
 		"max": true
 	},
 	"103": {
@@ -981,7 +981,7 @@
 		"prf": true,
 		"users": ["Julia: Crusader of Light", "Julia: Heart Usurped"],
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2} },
 		"max": true
 	},
 	"122": {
@@ -1029,7 +1029,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 1, "def": 1} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 1, "def": 1} },
 		"max": false
 	},
 	"128": {
@@ -1037,7 +1037,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 2, "def": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 2, "def": 2} },
 
 		"max": false
 	},
@@ -1046,7 +1046,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 3, "def": 3} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "def": 1}, "lull": {"atk": 3, "def": 3} },
 
 		"max": true
 	},
@@ -1055,7 +1055,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 1, "spd": 1} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 1, "spd": 1} },
 
 		"max": false
 	},
@@ -1064,7 +1064,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 2, "spd": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 2, "spd": 2} },
 		"max": false
 	},
 	"132": {
@@ -1072,7 +1072,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 3, "spd": 3} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1}, "lull": {"atk": 3, "spd": 3} },
 		"max": true
 	},
 	"133": {
@@ -1080,7 +1080,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 1, "def": 1} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 1, "def": 1} },
 		"max": false
 	},
 	"134": {
@@ -1088,7 +1088,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 2, "def": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 2, "def": 2} },
 		"max": false
 	},
 	"135": {
@@ -1096,7 +1096,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 3, "def": 3} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "def": 1}, "lull": {"spd": 3, "def": 3} },
 		"max": true
 	},
 	"136": {
@@ -1164,7 +1164,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"nullC": 1  },
+		"effect": {"type": "combatEffect", "nullC": 1  },
 		"max": true
 	},
 	"144": {
@@ -1188,55 +1188,55 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"nullEnemyFollowUp": 1, "nullStopFollowUp": 1   },
+		"effect": {"type": "combatEffect", "nullEnemyFollowUp": 1, "nullStopFollowUp": 1   },
 		"max": true
 	},
 	"147": {
 		"name": "Obstruct 1",
 		"sp": 50,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.9]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
 		"max": false
 	},
 	"148": {
 		"name": "Obstruct 2",
 		"sp": 100,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.7]],"subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
 		"max": false
 	},
 	"149": {
 		"name": "Obstruct 3",
 		"sp": 200,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
 		"max": true
 	},
 	"150": {
 		"name": "Pass 1",
 		"sp": 50,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.75]], "subtype": "pass"}],
 		"max": false
 	},
 	"151": {
 		"name": "Pass 2",
 		"sp": 100,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "pass"}],
 		"max": false
 	},
 	"152": {
 		"name": "Pass 3",
 		"sp": 200,
 		"prf": false,
-		"type": "anti-warp",
-		"effect": {},
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.25]], "subtype": "pass"}],
 		"max": true
 	},
 	"153": {
@@ -1667,7 +1667,7 @@
 		"prf": true,
 		"users": ["Ephraim: Legendary Lord"],
 		"type": "effect",
-		"effect": {"specialHeal": 0.3},
+		"effect": {"type": "combatEffect", "specialHeal": 0.3},
 		"max": true
 	},
 	"206": {
@@ -1779,7 +1779,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"spiral": 1},
+		"effect": {"type": "combatEffect", "spiral": 1},
 		"max": false
 	},
 	"220": {
@@ -1787,7 +1787,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"spiral": 2},
+		"effect": {"type": "combatEffect", "spiral": 2},
 		"max": true
 	},
 	"221": {
@@ -1916,7 +1916,7 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General"],
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.8]], "allyReq": [["distanceCheck", 2]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.8]], "allyReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"237": {
@@ -2002,7 +2002,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "allyReq": [["enemyhp", "less", 0.3]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.3]] }],
 		"max": false
 	},
 	"247": {
@@ -2010,7 +2010,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "allyReq": [["enemyhp", "less", 0.4]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.4]] }],
 		"max": false
 	},
 	"248": {
@@ -2018,7 +2018,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "allyReq": [["enemyhp", "less", 0.5]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.5]] }],
 		"max": true
 	},
 	"249": {
@@ -2069,7 +2069,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"wrathful": 1},
+		"effect": {"type": "combatEffect", "wrathful": 1},
 		"max": true
 	},
 	"255": {
@@ -2288,7 +2288,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 1, "res": 1} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 1, "res": 1} },
 		"max": false
 	},
 	"280": {
@@ -2296,7 +2296,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 2, "res": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 2, "res": 2} },
 		"max": false
 	},
 	"281": {
@@ -2304,7 +2304,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 3, "res": 3} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "res": 1}, "lull": {"atk": 3, "res": 3} },
 		"max": true
 	},
 	"282": {
@@ -2397,7 +2397,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 1, "res": 1} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 1, "res": 1} },
 		"max": false
 	},
 	"293": {
@@ -2405,7 +2405,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 2, "res": 2} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 2, "res": 2} },
 		"max": false
 	},
 	"294": {
@@ -2413,7 +2413,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 3, "res": 3} },
+		"effect": {"type": "combatEffect", "buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 3, "res": 3} },
 		"max": true
 	},
 	"295": {

@@ -603,7 +603,7 @@
 	},
 	"52": {
 		"name": "Meisterschwert",
-		"might": 999,
+		"might": 11,
 		"range": 1,
 		"sp":400,
 		"prf": true,
@@ -1576,6 +1576,18 @@
 		"users": ["Reginn: Bearing Hope"],
 		"type": "sword",
 		"skills": [["a", "Speed +3"]],
+		"effect": {},
+		"max": true
+	},
+	"136": {
+		"name": "Arden's Blade",
+		"might": 10,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Arden: Strong and Tough"],
+		"type": "sword",
+		"skills": [],
 		"effect": {},
 		"max": true
 	}

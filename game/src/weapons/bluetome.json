@@ -908,5 +908,27 @@
 		"skills": [],
 		"effect": {"cdTrigger": -1},
 		"max": true
+	},
+	"80": {
+		"name": "Pact Blooms+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": true
+	},
+	"81": {
+		"name": "Pact Blooms",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"effect": {},
+		"max": false
 	}
 }

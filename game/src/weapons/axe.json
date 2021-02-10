@@ -1278,6 +1278,18 @@
 		"skills": [],
 		"effect": {},
 		"max": false
+	},
+	"112": {
+		"name": "Loyalist Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gustav: Majestic Love"],
+		"type": "axe",
+		"skills": [],
+		"effect": {"cdTrigger": -1},
+		"max": true
 	}
 
 

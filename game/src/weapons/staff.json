@@ -545,5 +545,17 @@
 		"skills": [],
 		"effect": {},
 		"max": true
+	},
+	"49": {
+		"name": "Springtime Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Genny: Endearing Ally"],
+		"type": "staff",
+		"skills": [["a", "Attack +3"]],
+		"effect": {},
+		"max": true
 	}
 }

@@ -579,7 +579,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"bonusDouble": 0.5},
+		"effect": {"type": "combatEffect", "bonusDouble": 0.5},
 		"max": false
 	},
 	"73": {
@@ -587,7 +587,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"bonusDouble": 0.75},
+		"effect": {"type": "combatEffect", "bonusDouble": 0.75},
 		"max": false
 	},
 	"74": {
@@ -595,7 +595,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"bonusDouble": 1},
+		"effect": {"type": "combatEffect", "bonusDouble": 1},
 		"max": true
 	},
 	"75": {
@@ -787,7 +787,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": {"counter": 1},
+		"effect": {"type": "combatEffect", "counter": 1},
 		"max": true
 	},
 	"99": {
@@ -1091,7 +1091,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": {"counter": 1},
+		"effect": {"type": "combatEffect", "counter": 1},
 		"max": true
 	},
 	"137": {
@@ -2643,6 +2643,30 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 7, "res": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"330": {
+		"name": "Def/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"max": false
+	},
+	"331": {
+		"name": "Def/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"max": false
+	},
+	"332": {
+		"name": "Def/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
 		"max": true
 	}
 }

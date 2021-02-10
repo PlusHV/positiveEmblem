@@ -1,7 +1,9 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
-import {applyCombatEffect} from './GameBoard.js'
+import {applyCombatEffect, statusDebuffs} from './GameBoard.js'
+
+
 
 export function doBattle(updatedHeroList, attacker, defender, board){
     let list = updatedHeroList;
@@ -143,7 +145,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     //First, the attacker needs to be waited and clear debuffs/status effects
     list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    list[attacker.side][attacker.listIndex].statusEffect = {"guard": 0, "panic": 0}; 
+    list[attacker.side][attacker.listIndex].statusEffect = statusDebuffs;
     list[attacker.side][attacker.listIndex].end = true;
 
 
@@ -368,7 +370,8 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
-
+    console.log(attacker);
+    console.log(defender);
 
     //apply post combat damage to both teams
 
@@ -663,36 +666,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list
       
       specialDamage = getSpecialDamage(specialEffect, attacker, defender, heroList, damageType);
-      // let hero; //which hero to base the damage off of
-      // if (specialEffect.damage[0] === "attacker"){
-      //   hero = attacker;
-      // } else if (specialEffect.damage[0] === "defender"){
-      //   hero = defender;
-      // }
 
-      // let stat = specialEffect.damage[1];
-      // if (stat === "defensive"){
-      //   stat = damageType;
-      // }
-
-
-      // let factor = specialEffect.damage[2];
-
-      // if ("condition" in specialEffect && checkCondition(heroList, specialEffect.condition, attacker, defender) ){
-
-      //   factor = specialEffect["alt"];
-
-      // }
-
-      // if (stat === "flat"){
-      //   specialDamage = factor; //special damage is flat
-      // } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
-      //   specialDamage = Math.trunc( (attacker.stats.hp - attacker.currentHP) * factor);
-
-
-      // } else{
-      //   specialDamage = Math.trunc(hero.combatStats[stat] * factor);
-      // }
 
 
       for (let i of attacker.onSpecial){ //loop through effects that activate on special
@@ -704,39 +678,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
               let extraDamage = getSpecialDamage(i, attacker, defender, heroList, damageType);
               // let sHero;
 
-              // if (i.damage[0] === "attacker"){
-              //   sHero = attacker;
-              // } else if (i.damage[0] === "defender"){
-              //   sHero = defender;
-              // }
 
-
-              // let sStat = i.damage[1];
-              // if (sStat === "defensive"){
-              //   sStat = damageType;
-              // }
-
-
-              // let sFactor = i.damage[2];
-
-              // if ("condition" in i && checkCondition(heroList, i.condition, attacker, defender) ){
-
-              //   sFactor = i["alt"];
-
-              // }
-
-              // let extraDamage = 0;
-
-              // if (sStat === "flat"){
-              //   extraDamage+= sFactor; //special damage is flat
-              // } else if (sStat === "hp"){ //HP specials are based on missing hp and only for attackers
-
-              //   extraDamage+= Math.trunc( (attacker.stats.hp - attacker.currentHP) * sFactor);
-
-              // } else{
-
-              //   extraDamage+= Math.trunc(sHero.combatStats[sStat] * sFactor);
-              // }
 
               if (i.damage[3] === "trueDamage"){
                 trueDamage+= extraDamage;
