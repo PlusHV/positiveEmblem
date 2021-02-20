@@ -32,21 +32,21 @@
 		"sp": 0,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "recoil": -2}]
+		"effect": [{"type": "postCombat", "postHeal": 2}]
 	},
 	"5": {
 		"name": "Post Heal 2",
 		"sp": 0,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "recoil": -4}]
+		"effect": [{"type": "postCombat", "postHeal": 4}]
 	},
 	"6": {
 		"name": "Post Heal 3",
 		"sp": 0,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "recoil": -6}]
+		"effect": [{"type": "postCombat", "postHeal": 6}]
 	},
 	"7": {
 		"name": "Turn 1, CD 3",
@@ -54,5 +54,12 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"8": {
+		"name": "Turn 1, CD 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
 	}
 }

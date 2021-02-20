@@ -457,7 +457,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": ["Ayra: Astra's Wielder"],
+		"users": ["Ayra: Astra's Wielder", "Larcei: Keen Kin"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "spd", 0.4], "heal": 0.0, "amplify": 0.0 },
 		"max": true
@@ -762,6 +762,28 @@
 		"users": ["Lilina: Firelight Leader"],
 		"type": "pre-battle",
 		"effect": {"factor": 0.8},
+		"max": true
+	},
+	"82": {
+		"name": "Ice Mirror II",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Fjorm: Princess of Ice"],
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.6, "reflect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0 }},
+		"max": true
+	},
+	"83": {
+		"name": "Radiant Aether II",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"users": ["Ike: Vanguard Legend"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"skills": [["o", "Turn 1, CD 2"]],
 		"max": true
 	}
 }

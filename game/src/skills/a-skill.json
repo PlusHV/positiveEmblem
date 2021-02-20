@@ -1715,7 +1715,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
 		"max": false
 	},
 	"214": {
@@ -1723,7 +1723,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
 		"max": false
 	},
 	"215": {
@@ -1731,7 +1731,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1] ], "adaptive": 1 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
 		"max": true
 	},
 	"216": {
@@ -2280,7 +2280,7 @@
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all"  ]], "statBuff": {"atk": 6, "def": 6} }],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], "statBuff": {"atk": 6, "def": 6} }],
 		"max": true
 	},
 	"285": {

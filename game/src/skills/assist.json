@@ -2,9 +2,9 @@
 	"0": {
 		"name": "",
 		"sp": 0,
-		"range": 1,
+		"range": 0,
 		"prf": false,
-		"type": "",
+		"type": [""],
 		"max": true
 	},
 	"1": {
@@ -12,8 +12,8 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "health",
-		"effect": {"type": "sacrifice", "healMax": 10, "transferMin": 10},
+		"type": ["health"],
+		"effect": {"healthType": "sacrifice", "healMax": 10, "transferMin": 10},
 		"max": true
 	},
 	"2": {
@@ -21,7 +21,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"3": {
@@ -29,7 +29,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": -1, "other": -1},
 		"max": true
 	},
@@ -39,7 +39,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Lucina: Glorious Archer"],
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 1, "other": -1},
 		"max": true
 	},
@@ -49,7 +49,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Azura: Vallite Songstress"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"6": {
@@ -57,8 +57,8 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "status",
-		"effect": {"harsh": 1, "restore": 1},
+		"type": ["neutralize"],
+		"effect": {"neutralize": ["harsh", "restore"]},
 		"max": true
 	},
 	"7": {
@@ -66,8 +66,8 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "status",
-		"effect": {"harsh": 1},
+		"type": ["neutralize"],
+		"effect": {"neutralize": ["harsh"]},
 		"max": true
 	},
 	"8": {
@@ -75,7 +75,7 @@
 		"sp": 50,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 5, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
@@ -84,7 +84,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0.5, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"]},
 		"max": true
 	},
@@ -93,7 +93,7 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"], "cdTrigger": 1},
 		"max": false
 	},
@@ -102,7 +102,7 @@
 		"sp": 100,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 10, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
@@ -111,7 +111,7 @@
 		"sp": 300,
 		"range": 2,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": true
 	},
@@ -120,7 +120,7 @@
 		"sp": 200,
 		"range": 2,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
 		"max": false
 	},
@@ -129,7 +129,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 2, "other": 0},
 		"max": true
 	},
@@ -138,7 +138,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 6, "def": 6} },
 		"max": true
 	},
@@ -147,7 +147,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 3, "def": 3} },
 		"max": true
 	},
@@ -156,7 +156,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 3, "res": 3} },
 		"max": true
 	},
@@ -165,7 +165,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 6, "spd": 6} },
 		"max": true
 	},
@@ -174,7 +174,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 6, "spd": 6} },
 		"max": true
 	},
@@ -183,7 +183,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 4} },
 		"max": true
 	},
@@ -192,7 +192,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"def": 6, "res": 6} },
 		"max": true
 	},
@@ -201,7 +201,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"def": 3, "res": 3} },
 		"max": true
 	},
@@ -210,7 +210,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"def": 4} },
 		"max": true
 	},
@@ -219,7 +219,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"res": 4} },
 		"max": true
 	},
@@ -228,7 +228,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 6, "def": 6} },
 		"max": true
 	},
@@ -237,7 +237,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 3, "def": 3} },
 		"max": true
 	},
@@ -246,7 +246,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 6, "res": 6} },
 		"max": true
 	},
@@ -255,7 +255,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 3, "res": 3} },
 		"max": true
 	},
@@ -264,7 +264,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 4} },
 		"max": true
 	},
@@ -273,7 +273,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 6, "up": 1} },
 		"max": true
 	},
@@ -282,7 +282,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 4, "up": 1} },
 		"max": true
 	},
@@ -291,7 +291,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"res": 6, "up": 1} },
 		"max": true
 	},
@@ -300,7 +300,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"res": 4, "up": 1} },
 		"max": true
 	},
@@ -309,8 +309,8 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "health",
-		"effect": {"type": "swap"},
+		"type": ["health"],
+		"effect": {"healthType": "swap"},
 		"max": true
 	},
 	"35": {
@@ -318,7 +318,7 @@
 		"sp": 100,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": 7, "modifiers": []},
 		"max": false
 	},
@@ -327,7 +327,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0.5, "min": 15, "mod": 10, "selfHeal": 0, "modifiers": []},
 		"max": true
 	},
@@ -336,7 +336,7 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "modifiers": [], "cdTrigger": 1},
 		"max": false
 	},
@@ -345,7 +345,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0.5, "min": 7, "mod": -10, "selfHeal": 0, "modifiers": ["rehab"]},
 		"max": true
 	},
@@ -354,7 +354,7 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
+		"type": ["heal"],
 		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "modifiers": ["rehab"], "cdTrigger": 1},
 		"max": false
 	},
@@ -363,7 +363,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 0, "other": -2},
 		"max": true
 	},
@@ -372,8 +372,8 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
-		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["restore"]},
 		"max": true
 	},
 	"42": {
@@ -381,8 +381,8 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "heal",
-		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["restore"]},
 		"max": false
 	},
 	"43": {
@@ -391,8 +391,8 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn", "Micaiah: Dawn Wind's Duo"],
-		"type": "health",
-		"effect": {"type": "sacrifice", "healMax": 99, "transferMin":0},
+		"type": ["health", "neutralize"],
+		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":0, "neutralize": ["harsh"]},
 		"max": true
 	},
 	"44": {
@@ -400,7 +400,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 0, "other": 1},
 		"max": true
 	},
@@ -409,7 +409,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"46": {
@@ -417,7 +417,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 0, "other": 2},
 		"max": true
 	},
@@ -426,7 +426,7 @@
 		"sp": 150,
 		"range": 1,
 		"prf": false,
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 1, "other": -1},
 		"max": true
 	},
@@ -435,7 +435,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"atk": 6, "res": 6} },
 		"max": true
 	},
@@ -445,7 +445,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Peony: Sweet Dream", "Peony: Álfar Dream Duo"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"50": {
@@ -454,7 +454,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Nils: Bright Bard"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"51": {
@@ -463,7 +463,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Chrom: Crowned Exalt"],
-		"type": "movement",
+		"type": ["movement"],
 		"effect": {"owner": 0, "other": -2},
 		"max": true
 	},
@@ -473,7 +473,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Mirabilis: Daydream"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"53": {
@@ -482,7 +482,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Plumeria: Lewd Dream", "Plumeria: Temptation Anew"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"54": {
@@ -490,7 +490,7 @@
 		"sp": 400,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 6, "up": 1} },
 		"max": true
 	},
@@ -499,7 +499,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "rally",
+		"type": ["rally"],
 		"effect": {"rally": {"spd": 4, "up": 1} },
 		"max": true
 	},
@@ -508,7 +508,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "movement-heal",
+		"type": ["movement", "heal"],
 		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": -1, "other": -1},
 		"max": true
@@ -518,7 +518,7 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "movement-heal",
+		"type": ["movement", "heal"],
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": -1, "other": -1},
 		"max": false
@@ -529,7 +529,7 @@
 		"range": 1,
 		"prf": true,
 		"users": ["Triandra: Nightmare"],
-		"type": "dance",
+		"type": ["dance"],
 		"max": true
 	},
 	"59": {
@@ -537,7 +537,7 @@
 		"sp": 300,
 		"range": 1,
 		"prf": false,
-		"type": "movement-heal",
+		"type": ["movement", "heal"],
 		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": 0, "other": -2},
 		"max": true
@@ -547,7 +547,7 @@
 		"sp": 200,
 		"range": 1,
 		"prf": false,
-		"type": "movement-heal",
+		"type": ["movement", "heal"],
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": 0, "other": -2},
 		"max": false

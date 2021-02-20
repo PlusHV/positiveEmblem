@@ -1,7 +1,7 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
-import {applyCombatEffect, statusDebuffs} from './GameBoard.js'
+import {applyCombatEffect, statusDebuffs, getEnemySide} from './GameBoard.js'
 
 
 
@@ -63,8 +63,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         newDefender.currentHP = Math.max(0, newDefender.currentHP - damageInfo.damage);
 
-
-        newAttacker.currentHP = Math.min(newAttacker.stats.hp, newAttacker.currentHP + damageInfo.heal); //heal hp from attack
+        if (newAttacker.statusEffect.deepWounds < 1){
+          newAttacker.currentHP = Math.min(newAttacker.stats.hp, newAttacker.currentHP + damageInfo.heal); //heal hp from attack
+        }
 
         //the only reflecting special is currently ice mirror (range = 2), so can only be activated  by a melee defender (og fjorm) that is initated on  
 
@@ -105,7 +106,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         newAttacker.currentHP = Math.max(0, newAttacker.currentHP - damageInfo.damage);
 
-        newDefender.currentHP = Math.min(newDefender.stats.hp, newDefender.currentHP + damageInfo.heal);
+        if (newDefender.statusEffect.deepWounds < 1){
+          newDefender.currentHP = Math.min(newDefender.stats.hp, newDefender.currentHP + damageInfo.heal);
+        }
 
         if (newAttacker.combatEffects.reflect === 0){ 
           newAttacker.combatEffects.reflect = damageInfo.reflect;
@@ -120,6 +123,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
         Object.keys(buffs).forEach((key, i) => {
           defenderPartyBuff[key] = Math.max( defenderPartyBuff[key] ,buffs[key]); //apply highest buff
         });
+
         defenderPartyHeal = Math.max(damageInfo.partyHeal, defenderPartyHeal ); //take the higher heal 
 
         defenderAttacked = true;
@@ -143,6 +147,10 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     //combat has now ended, post combat effects activate
 
+    //Deep wounds gets cleared post combat, but will still reduce healing effects before it is cleared
+    let attackerWounds = attacker.statusEffect.deepWounds;
+    let defenderWounds = defender.statusEffect.deepWounds;
+
     //First, the attacker needs to be waited and clear debuffs/status effects
     list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     list[attacker.side][attacker.listIndex].statusEffect = statusDebuffs;
@@ -151,18 +159,26 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     //Party buffs
     for (let x of list[attacker.side]){
+      for (let key in attackerPartyBuff){
+      //Object.keys(attackerPartyBuff).forEach((key, i) => {
 
-      Object.keys(attackerPartyBuff).forEach((key, i) => {
-        x.buff[key] = Math.max(x.buff[key], attackerPartyBuff[key]);
-      });
+        if (x.id !== attacker.saveID){ //saved ally does not get post combat effects
+          x.buff[key] = Math.max(x.buff[key], attackerPartyBuff[key]);
+        }
+      }
 
     }
 
     for (let x of list[defender.side]){
 
-      Object.keys(defenderPartyBuff).forEach((key, i) => {
-        x.buff[key] = Math.max(x.buff[key], defenderPartyBuff[key]);
-      });
+      for (let key in defenderPartyBuff){
+        
+        if (x.id !== defender.saveID){
+          x.buff[key] = Math.max(x.buff[key], defenderPartyBuff[key]);
+        }
+      }
+    
+
 
     }
 
@@ -170,8 +186,8 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
 
     //Apply battle-movement abilities
-    //Check if attacker has a battle movement effect
-    if (Object.keys(attacker.battleMovement).length > 0 ){
+    //Check if attacker has a battle movement effect and both battlers are not saving someone currently (attacker can't really be saving currentlyit)
+    if (Object.keys(attacker.battleMovement).length > 0  && !defender.saving && !attacker.saving){
       let participantIDs = [attacker.id, defender.id]; //their ids (to uniquely identify them)
 
       let newPositions =  calculateMovementEffect(attacker, defender, attacker.battleMovement);
@@ -245,16 +261,24 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
 
     //include burn
-    let attackerPostDamage = attacker.combatEffects.recoil + defender.combatEffects.burn;
-    let defenderPostDamage = defender.combatEffects.recoil + attacker.combatEffects.burn;
+    let attackerPostDamage = attacker.combatEffects.recoil - attacker.combatEffects.postHeal + defender.combatEffects.burn;
+    let defenderPostDamage = defender.combatEffects.recoil - defender.combatEffects.postHeal + attacker.combatEffects.burn;
+
+    if (attackerWounds > 0){
+      attackerPostDamage+= attacker.combatEffects.postHeal;
+    }
+
+    if (defenderWounds > 0){
+      defenderPostDamage+= defender.combatEffects.postHeal;
+    }
 
     //set initial recoil values - theese will have values for the attacker and defender but those values will be overwritten by the above values
-    let attackerTeamPost = new Array(6).fill(0);
-    let defenderTeamPost = new Array(6).fill(0);
+    let attackerTeamPost = new Array(7).fill(0);
+    let defenderTeamPost = new Array(7).fill(0);
 
 
-    let attackerTeamSpecial = new Array(6).fill(0);
-    let defenderTeamSpecial = new Array(6).fill(0);
+    let attackerTeamSpecial = new Array(7).fill(0);
+    let defenderTeamSpecial = new Array(7).fill(0);
 
 
 
@@ -273,17 +297,30 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     //these need to build up with recoil damage -> as negative recoil damage
     if (attackerPartyHeal > 0){
       for (let x of list[attacker.side]){ //for each member of side
-        attackerTeamPost[x.listIndex]-= attackerPartyHeal; //heals are subtracted
+
+        if (x.statusEffect.deepWounds < 1 && !(x.id === attacker.saveID) ){
+          attackerTeamPost[x.listIndex]-= attackerPartyHeal; //heals are subtracted
+        }
       }
-      attackerPostDamage-= attackerPartyHeal; //for the attacker
+
+      if (attackerWounds < 1){
+        attackerPostDamage-= attackerPartyHeal; //for the attacker
+      }
     }
 
 
     if (defenderPartyHeal > 0){
       for (let x of list[defender.side]){ //for each member of side
-        defenderTeamPost[x.listIndex]-= defenderPartyHeal;
+
+        if (x.statusEffect.deepWounds < 1 && !(x.id === defender.saveID) ){ 
+          defenderTeamPost[x.listIndex]-= defenderPartyHeal;
+        }
+
       }
-      defenderPostDamage-= defenderPartyHeal;
+
+      if (defenderWounds < 1){
+        defenderPostDamage-= defenderPartyHeal;
+      }
     }
 
 
@@ -319,7 +356,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         //get heroes in range
         let heroesInRange = [];
-        heroesInRange = getDistantHeroes(list[side], reference.position, [], element.range);
+        heroesInRange = getDistantHeroes(list[side], reference, [attacker.saveID, defender.saveID], element.range); //excludes hero that is saved
 
         if (element.reference){
           heroesInRange = heroesInRange.concat([reference]);
@@ -359,7 +396,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         //get heroes in range
         let heroesInRange = [];
-        heroesInRange = getDistantHeroes(list[side], reference.position, [], element.range);
+        heroesInRange = getDistantHeroes(list[side], reference, [attacker.saveID, defender.saveID], element.range);
 
         if (element.reference){
           heroesInRange = heroesInRange.concat([reference]);
@@ -376,14 +413,17 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     //apply post combat damage to both teams
 
     for (let x of list[attacker.side]){ //for each member of side
-      list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
-      list[attacker.side][x.listIndex].special.charge = Math.min(Math.max(0, list[attacker.side][x.listIndex].special.charge - attackerTeamSpecial[x.listIndex]),list[attacker.side][x.listIndex].special.cd);
-
+      if (heroValid(list[attacker.side][x.listIndex])){
+        list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
+        list[attacker.side][x.listIndex].special.charge = Math.min(Math.max(0, list[attacker.side][x.listIndex].special.charge - attackerTeamSpecial[x.listIndex]),list[attacker.side][x.listIndex].special.cd);
+      }
     }
 
     for (let x of list[defender.side]){ //for each member of side
-      list[defender.side][x.listIndex].currentHP = Math.min(Math.max(1,list[defender.side][x.listIndex].currentHP - defenderTeamPost[x.listIndex]), list[defender.side][x.listIndex].stats.hp);
-      list[defender.side][x.listIndex].special.charge = Math.min(Math.max(0, list[defender.side][x.listIndex].special.charge - defenderTeamSpecial[x.listIndex]),list[defender.side][x.listIndex].special.cd);
+      if (heroValid(list[defender.side][x.listIndex])){
+        list[defender.side][x.listIndex].currentHP = Math.min(Math.max(1,list[defender.side][x.listIndex].currentHP - defenderTeamPost[x.listIndex]), list[defender.side][x.listIndex].stats.hp);
+        list[defender.side][x.listIndex].special.charge = Math.min(Math.max(0, list[defender.side][x.listIndex].special.charge - defenderTeamSpecial[x.listIndex]),list[defender.side][x.listIndex].special.cd);
+      }
     }
 
     //apply post combat damage to defender/attacker
@@ -977,11 +1017,15 @@ export function rowColumnToPosition(rc){
 }
 
   //Return list of adjacent allies 
-export function getAdjacentAllies(hList, position){
+export function getAdjacentAllies(hList, hero){
   let adjacentList = [];
+  let position = hero.position;
 
   for (let x of hList){
-    if (x.position !== position && getDistance(x.position, position) === 1 ){
+
+    let distance = getDistance(x.position, position);
+
+    if (x.id !== hero.id && distance >= 0 && distance <= 1 ){
       adjacentList.push(x);
     }
 
@@ -991,14 +1035,16 @@ export function getAdjacentAllies(hList, position){
 }
 
 //Get heroes within a distance from a position. Does not include the hero in position
-export function getDistantHeroes(hList, position, excluded, distance){
+export function getDistantHeroes(hList, hero, excluded, distance){
   let distantList = [];
+
+  let position = hero.position;
 
   for (let x of hList){
 
     let allyDistance = getDistance(x.position, position); 
 
-    if (x.position !== position && !excluded.includes(x.position) && allyDistance <= distance && allyDistance > 0  && x.position >= 0 && x.currentHP > 0){
+    if (x.id !== hero.id && !excluded.includes(x.id) && allyDistance <= distance && allyDistance >= 0  && heroValid(x)){
       distantList.push(x);
     }
 
@@ -1042,18 +1088,18 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         } 
         j = j + 1; //Skip one element
       } else if (keyWord === "adjacent"){
-        if (innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length > 0  ){ //adjacent to at least one ally
+        if (innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner).length > 0  ){ //adjacent to at least one ally
           innerResult = true;
-        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner.position).length === 0  ){ //adjacent to no allies
+        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[owner.side], owner).length === 0  ){ //adjacent to no allies
           innerResult = true;
         }
 
         j = j + 1;
 
       } else if (keyWord === "enemyAdjacent"){
-        if (innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy.position).length > 0  ){ //adjacent to at least one ally
+        if (innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy).length > 0  ){ //adjacent to at least one ally
           innerResult = true;
-        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy.position).length === 0  ){ //adjacent to no allies
+        } else if (!innerCondition[j+1] && getAdjacentAllies(heroList[enemy.side], enemy).length === 0  ){ //adjacent to no allies
           innerResult = true;
         }
 
@@ -1143,7 +1189,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         j = j + 4;
       } else if (keyWord === "distantAllies"){ //check if a certain number of allies within the range given range
 
-        let distantAllies = getDistantHeroes(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+        let distantAllies = getDistantHeroes(heroList[owner.side], owner, [], innerCondition[j+1]); //get the allies within the range
 
         if (innerCondition[j+2] === "greater" && distantAllies.length >= innerCondition[j+3]){
           innerResult = true;
@@ -1153,9 +1199,33 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 3;
 
+
+      } else if (keyWord === "distantEnemies"){ //check if a certain number of enemies are within the range given range 
+
+
+        //enemyside has to be calculated since the enemy might be a placeholder (which is sometimes themsel)
+        let enemySide = getEnemySide(owner.side); //
+
+        let distantEnemies = getDistantHeroes(heroList[enemySide], owner, [], innerCondition[j+1]); //get the allies within the range
+
+        if (innerCondition[j+2] === "greater" && distantEnemies.length >= innerCondition[j+3]){ //chec for amount
+          innerResult = true;
+        } else if (innerCondition[j+2] === "less" && distantEnemies.length <= innerCondition[j+3]){
+          innerResult = true;
+        }
+
+        j = j + 3;
+
+
       } else if (keyWord === "allyInfo"){ //check if there are enough allies within range are of certain types
 
-        let distantAllies = getDistantHeroes(heroList[owner.side], owner.position, [], innerCondition[j+1]); //get the allies within the range
+        //j+1 is range
+        //j+2 is the allyInfo type
+        //j+3 is the acceptable allyInfo values
+        //j+4 minimum needed
+        //j+5 greater/less 
+
+        let distantAllies = getDistantHeroes(heroList[owner.side], owner, [], innerCondition[j+1]); //get the allies within the range
 
         let validAlliesCount = 0;
 
@@ -1178,11 +1248,40 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
             innerResult = true;
           }
 
-        } else if (validAlliesCount >= innerCondition[j+4]){ //sufficient allies that are in range meet the condition
+        } else if (validAlliesCount >= innerCondition[j+4] && innerCondition[j+5] === "greater"){ //sufficient allies that are in range meet the condition
 
           innerResult = true;
-        }
+        } else if (validAlliesCount <= innerCondition[j+4] && innerCondition[j+5] === "less"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } 
+
+        j = j + 5;
+
+      } else if (keyWord === "teamInfo"){
+
+        let validAlliesCount = 0;
+
+        for (let ally of heroList[owner.side]){
+          let info = heroData[ally.heroID.value];
+
+
+          if (innerCondition[j+2].includes(info[innerCondition[j+1]])){
+            validAlliesCount++;
+          }
+
+        } //end for loop team
+
+        if (validAlliesCount >= innerCondition[j+3] && innerCondition[j+4] === "greater"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } else if (validAlliesCount <= innerCondition[j+3] && innerCondition[j+4] === "less"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } 
+
         j = j + 4;
+
       } else if (keyWord === "turn"){ //check turn
 
         let factor = innerCondition[j+1];
@@ -1199,6 +1298,38 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
 
         j = j + 2;
+
+      } else if (keyWord === "turnRange"){
+
+        //j+1 is the lower bound
+        //j+2 is the upper bound
+        //bounds are inclusive
+        //j+3 asks if you want to be within the range or out of range
+
+        if (turn >= innerCondition[j+1] && turn <= innerCondition[j+2] && innerCondition[j+3]){
+          innerResult = true;
+        } else if ( (turn < innerCondition[j+1] || turn > innerCondition[j+2]) && !innerCondition[j+3]){
+          innerResult = true;
+        }
+
+        j = j + 3;
+
+
+      } else if (keyWord === "statPenalty"){
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        if (check.debuff.atk > 0 || check.debuff.spd > 0 ||  check.debuff.def > 0 || check.debuff.res > 0){
+          innerResult = true;
+        }
+
+        j = j + 1;
+
       } else if (keyWord === "penalty"){
         
         let check = {};
@@ -1286,6 +1417,23 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 2;
+      } else if (keyWord === "specialMax"){
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        //check if their special is charged
+        if (innerCondition[j+2] && check.special.charge === check.special.cd){ 
+          innerResult = true;
+        } else if (!innerCondition[j+2] && check.special.charge !== check.special.cd){ 
+          innerResult = true
+        }
+
+        j = j + 2;
       }
 
 
@@ -1306,7 +1454,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 export function calculateVariableEffect(heroList, variableEffect, owner, enemy){
 
   if (variableEffect.key === "allyDistance"){
-    let distantAllies = Math.min(getDistantHeroes(heroList[owner.side], owner.position, [] , variableEffect.distance).length, variableEffect.maxAllies);
+    let distantAllies = Math.min(getDistantHeroes(heroList[owner.side], owner, [] , variableEffect.distance).length, variableEffect.maxAllies);
 
     let buff = (variableEffect.multiplier * distantAllies + variableEffect.constant);
 
@@ -1501,6 +1649,8 @@ export function removeConditionalSpecial(owner, enemy, heroList){
 
 export function checkValidMovement(owner, other, otherAlt, participantIDs, board){
 
+
+    //Invalid position
     if (other[0] === -1 || other[1] === -1){
       return false;
     }
@@ -1654,11 +1804,15 @@ export function checkTactic(hero, heroList){
 
 
 //given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
-export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specialPost){
+export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specialPost, turn){
   for (let y of affectedHeroes){
     for (let x of effect.list){ //loop through status buffs to apply
 
       if (x === "stats"){
+
+        let value = effect.value;
+
+
         for (let z of effect.stats){ //loop through the stats list
 
 
@@ -1682,14 +1836,17 @@ export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specia
             //apply debuff to highest stats
             for (let i of highestStat){
 
-              heroList[y.side][y.listIndex][effect.subtype][i] = Math.max(heroList[y.side][y.listIndex][effect.subtype][i], effect.value); 
+              heroList[y.side][y.listIndex][effect.subtype][i] = Math.max(heroList[y.side][y.listIndex][effect.subtype][i], value); 
             }
 
 
           } else if (z === "hp"){ //special case - effects that 
 
               if (effect.subtype === "buff"){
-                teamPost[y.listIndex]-=  effect.value; //lowers the amount of post damage
+
+                if (y.statusEffect.deepWounds < 1){                
+                  teamPost[y.listIndex]-=  effect.value; //lowers the amount of post damage
+                }
               } else if (effect.subtype === "debuff"){
                 teamPost[y.listIndex]+=  effect.value; //raises the amount of psot damage
               }
@@ -1706,11 +1863,17 @@ export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specia
 
           } else {
 
-            heroList[y.side][y.listIndex][effect.subtype][z] = Math.max(heroList[y.side][y.listIndex][effect.subtype][z], effect.value); 
+            heroList[y.side][y.listIndex][effect.subtype][z] = Math.max(heroList[y.side][y.listIndex][effect.subtype][z], value); 
           }
 
           
         }
+
+      } else if (x === "restore"){ //restore the unit (remove debuffs and status effects)
+
+        heroList[y.side][y.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+        heroList[y.side][y.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
+
 
       } else { //otherwise, it should be a status buff
 

@@ -116,9 +116,9 @@ export default class BattleWindow extends React.Component{
 
 		        defender.currentHP = Math.max(0, defender.currentHP - aDmg.damage);
 
-
-		        attacker.currentHP = Math.min(attacker.stats.hp, attacker.currentHP + aDmg.heal);
-
+		        if (attacker.statusEffect.deepWounds < 1){
+		        	attacker.currentHP = Math.min(attacker.stats.hp, attacker.currentHP + aDmg.heal);
+		        }
 
 		        if (defender.combatEffects.reflect === 0){ //only get reflect damage if it is not currently set so it can't be overwritten
 		        	defender.combatEffects.reflect = aDmg.reflect;
@@ -148,7 +148,11 @@ export default class BattleWindow extends React.Component{
 
 		        attacker.currentHP = Math.max(0, attacker.currentHP - dDmg.damage);
 
-		        defender.currentHP = Math.min(defender.stats.hp, defender.currentHP + dDmg.heal);
+
+		        if (defender.statusEffect.deepWounds < 1){
+		        	defender.currentHP = Math.min(defender.stats.hp, defender.currentHP + dDmg.heal);
+		        }
+
 
 		        if (attacker.combatEffects.reflect === 0){ //only get reflect damage if it is not currently set so it can't be overwritten
 		        	attacker.combatEffects.reflect = dDmg.reflect;

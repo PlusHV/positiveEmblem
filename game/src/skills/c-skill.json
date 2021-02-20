@@ -35,21 +35,21 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
 		"max": false
 	},
 	"5": {
 		"name": "Armor March 2",
 		"sp": 120,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
 		"max": false
 	},
 	"6": {
 		"name": "Armor March 3",
 		"sp": 240,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1]] }],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
 		"max": true
 	},
 	"7": {
@@ -105,7 +105,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"14": {
@@ -113,7 +113,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"15": {
@@ -121,7 +121,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"16": {
@@ -345,7 +345,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"47": {
@@ -353,7 +353,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"48": {
@@ -361,7 +361,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"49": {
@@ -1093,7 +1093,7 @@
 		"type": "effect",
 		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner",
 			"effectReq": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"]], ["distanceCheck", 1]],
-			"selfReq": [["allyInfo", 1, "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"], 1]] }],
+			"selfReq": [["allyInfo", 1, "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"], 1, "greater"]] }],
 		"max": true
 	},
 	"141": {
@@ -1221,6 +1221,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"157": {
@@ -1228,6 +1229,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"158": {
@@ -1256,6 +1258,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"162": {
@@ -1263,6 +1266,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"163": {
@@ -1270,6 +1274,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"164": {
@@ -1277,6 +1282,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"165": {
@@ -1284,6 +1290,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"166": {
@@ -1291,6 +1298,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"167": {
@@ -1298,6 +1306,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"168": {
@@ -1305,6 +1314,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"169": {
@@ -1312,6 +1322,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"170": {
@@ -1319,6 +1330,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"171": {
@@ -1326,6 +1338,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"172": {
@@ -1333,6 +1346,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"173": {
@@ -1341,6 +1355,7 @@
 		"prf": true,
 		"users": ["Hector: Marquess of Ostia"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["tactic", "true"]] }],
 		"max": true
 	},
 	"174": {
@@ -1348,6 +1363,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 5] ] }],
 		"max": false
 	},
 	"175": {
@@ -1355,6 +1371,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3] ] }],
 		"max": false
 	},
 	"176": {
@@ -1362,6 +1379,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 1] ] }],
 		"max": true
 	},
 	"177": {
@@ -1369,6 +1387,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"178": {
@@ -1376,6 +1395,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"179": {
@@ -1383,6 +1403,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"180": {
@@ -1432,6 +1453,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"187": {
@@ -1439,6 +1461,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"188": {
@@ -1446,6 +1469,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"189": {
@@ -1453,6 +1477,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"190": {
@@ -1460,6 +1485,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"191": {
@@ -1467,6 +1493,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"192": {
@@ -1474,6 +1501,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"193": {
@@ -1481,6 +1509,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"194": {
@@ -1488,6 +1517,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"195": {
@@ -1495,6 +1525,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"196": {
@@ -1502,6 +1533,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"197": {
@@ -1509,6 +1541,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": true
 	},
 	"198": {
@@ -1516,6 +1549,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"199": {
@@ -1523,6 +1557,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"200": {
@@ -1530,6 +1565,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"201": {
@@ -1537,6 +1573,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"202": {
@@ -1544,6 +1581,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"203": {
@@ -1551,6 +1589,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": true
 	},
 	"204": {
@@ -1559,6 +1598,7 @@
 		"prf": true,
 		"users": ["Tiki: Torpid Dragon"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "mobility+"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"205": {
@@ -1567,6 +1607,7 @@
 		"prf": true,
 		"users": ["Eir: Merciful Death"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 10, "stats": ["hp"], "checkStats": ["damage"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"206": {
@@ -1574,6 +1615,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"207": {
@@ -1581,6 +1623,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"208": {
@@ -1588,6 +1631,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"209": {
@@ -1595,6 +1639,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"210": {
@@ -1602,6 +1647,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": false
 	},
 	"211": {
@@ -1609,6 +1655,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"212": {
@@ -1616,6 +1663,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"213": {
@@ -1623,6 +1671,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"214": {
@@ -1630,6 +1679,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"215": {
@@ -1637,6 +1687,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"216": {
@@ -1644,6 +1695,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": false
 	},
 	"217": {
@@ -1651,6 +1703,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
 		"max": true
 	},
 	"218": {
@@ -1682,6 +1735,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 2}],
 		"max": false
 	},
 	"222": {
@@ -1689,6 +1743,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 3}],
 		"max": true
 	},
 	"223": {
@@ -1696,6 +1751,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 2}],
 		"max": false
 	},
 	"224": {
@@ -1703,6 +1759,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 3}],
 		"max": true
 	},
 	"225": {
@@ -1710,6 +1767,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 2}],
 		"max": false
 	},
 	"226": {
@@ -1717,6 +1775,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 3}],
 		"max": true
 	},
 	"227": {
@@ -1724,6 +1783,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 2}],
 		"max": false
 	},
 	"228": {
@@ -1731,6 +1791,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 3}],
 		"max": false
 	},
 	"229": {
@@ -1738,6 +1799,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 4}],
 		"max": true
 	},
 	"230": {
@@ -1745,6 +1807,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": false
 	},
 	"231": {
@@ -1752,6 +1815,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
 		"max": true
 	},
 	"232": {
@@ -1759,6 +1823,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 2}],
 		"max": false
 	},
 	"233": {
@@ -1766,6 +1831,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 3}],
 		"max": false
 	},
 	"234": {
@@ -1773,6 +1839,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 4}],
 		"max": true
 	},
 	"235": {
@@ -1780,6 +1847,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 2}],
 		"max": false
 	},
 	"236": {
@@ -1787,6 +1855,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 3}],
 		"max": false
 	},
 	"237": {
@@ -1794,6 +1863,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 4}],
 		"max": true
 	},
 	"238": {
@@ -1801,6 +1871,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 2}],
 		"max": false
 	},
 	"239": {
@@ -1808,6 +1879,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 3}],
 		"max": true
 	},
 	"240": {
@@ -1815,6 +1887,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 2}],
 		"max": false
 	},
 	"241": {
@@ -1822,6 +1895,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 3}],
 		"max": true
 	},
 	"242": {
@@ -1851,6 +1925,8 @@
 		"prf": true,
 		"users": ["Surtr: Ruler of Flame"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"246": {
@@ -1900,6 +1976,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"253": {
@@ -1907,6 +1984,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"254": {
@@ -1914,6 +1992,8 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"255": {
@@ -1921,6 +2001,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"256": {
@@ -1928,6 +2009,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"257": {
@@ -1935,6 +2017,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"258": {
@@ -1942,6 +2025,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"259": {
@@ -1949,6 +2033,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"260": {
@@ -1956,6 +2041,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"261": {
@@ -1963,6 +2049,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"262": {
@@ -1970,6 +2057,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"263": {
@@ -1977,6 +2065,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"264": {
@@ -1984,6 +2073,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"265": {
@@ -1991,6 +2081,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"266": {
@@ -1998,6 +2089,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"267": {
@@ -2005,6 +2097,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true], ["turn", 3, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true], ["turn", 3, 0]] }],
 		"max": false
 	},
 	"268": {
@@ -2012,6 +2105,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true], ["turn", 2, 0]] }],
 		"max": false
 	},
 	"269": {
@@ -2019,6 +2113,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true]] }],
 		"max": true
 	},
 	"270": {
@@ -2027,6 +2122,7 @@
 		"prf": true,
 		"users": ["Duma: God of Strength"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "enemy", "effectReq": [["always"]] }],
 		"max": true
 	},
 	"271": {
@@ -2035,6 +2131,7 @@
 		"prf": true,
 		"users": ["Eliwood: Blazing Knight"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["teamInfo", "weapontype", ["beast", "breath"], 1, "greater"]], "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"272": {
@@ -2042,6 +2139,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	},
 	"273": {
@@ -2049,6 +2147,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	},
 	"274": {
@@ -2056,6 +2155,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	},
 	"275": {
@@ -2063,6 +2163,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	},
 	"276": {
@@ -2070,6 +2171,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	},
 	"277": {
@@ -2078,6 +2180,7 @@
 		"prf": true,
 		"users": ["Tiki: Legendary Dragon", "Tiki: Harmonic Hope"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"278": {
@@ -2085,6 +2188,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"279": {
@@ -2092,6 +2196,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"280": {
@@ -2099,6 +2204,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"281": {
@@ -2106,6 +2212,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"282": {
@@ -2113,6 +2220,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"283": {
@@ -2120,6 +2228,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"284": {
@@ -2127,6 +2236,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"285": {
@@ -2155,6 +2265,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"289": {
@@ -2162,6 +2273,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"290": {
@@ -2169,6 +2281,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"291": {
@@ -2176,6 +2289,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"292": {
@@ -2183,6 +2297,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"293": {
@@ -2190,6 +2305,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"294": {
@@ -2197,6 +2313,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"295": {
@@ -2204,6 +2321,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"296": {
@@ -2211,6 +2329,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"297": {
@@ -2239,6 +2358,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"301": {
@@ -2246,6 +2366,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"302": {
@@ -2253,6 +2374,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"303": {
@@ -2260,6 +2382,8 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"304": {
@@ -2267,6 +2391,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"305": {
@@ -2274,6 +2399,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"306": {
@@ -2281,6 +2407,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"307": {
@@ -2288,6 +2415,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"308": {
@@ -2295,6 +2423,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"309": {
@@ -2302,6 +2431,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"310": {
@@ -2309,6 +2439,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"311": {
@@ -2316,6 +2447,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"312": {
@@ -2323,6 +2455,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"313": {
@@ -2330,6 +2463,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"314": {
@@ -2337,6 +2471,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"315": {
@@ -2344,6 +2479,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"316": {
@@ -2351,6 +2487,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"317": {
@@ -2358,6 +2495,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"318": {
@@ -2365,6 +2503,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"319": {
@@ -2372,6 +2511,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"320": {
@@ -2379,6 +2519,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"321": {
@@ -2386,6 +2527,8 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+			{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "redef"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"322": {
@@ -2393,6 +2536,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"323": {
@@ -2400,6 +2544,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"324": {
@@ -2407,6 +2552,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"325": {
@@ -2414,6 +2560,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"326": {
@@ -2421,6 +2568,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"327": {
@@ -2428,6 +2576,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"328": {
@@ -2456,7 +2605,8 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Bramimond: The Enigma"],
-		"type": "",
+		"type": "effect",
+		"effect": {"type": "combatEffect", "teamNihil": 1},
 		"max": true
 	},
 	"332": {
@@ -2464,6 +2614,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
 	"333": {
@@ -2471,6 +2622,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"334": {
@@ -2478,6 +2630,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"335": {
@@ -2485,6 +2638,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"336": {
@@ -2492,6 +2646,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"337": {
@@ -2499,6 +2654,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"338": {
@@ -2506,6 +2662,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"339": {
@@ -2513,6 +2670,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"340": {
@@ -2520,6 +2678,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"341": {
@@ -2527,6 +2686,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"342": {
@@ -2535,6 +2695,7 @@
 		"prf": true,
 		"users": ["Mila: Goddess of Love"],
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["isolation"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "def", "greater", 1] ] }],
 		"max": true
 	},
 	"343": {
@@ -2542,6 +2703,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
 	"344": {
@@ -2549,6 +2711,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"345": {
@@ -2557,6 +2720,7 @@
 		"prf": true,
 		"users": ["Hel: Death Sovereign"],
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd", "def", "res"], "value": 4}],
 		"max": true
 	},
 	"346": {
@@ -2564,6 +2728,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
 	"347": {
@@ -2571,6 +2736,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 2}],
 		"max": false
 	},
 	"348": {
@@ -2578,6 +2744,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 3}],
 		"max": false
 	},
 	"349": {
@@ -2585,6 +2752,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 4}],
 		"max": true
 	},
 	"350": {
@@ -2592,6 +2760,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"351": {
@@ -2599,6 +2768,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 2}],
 		"max": false
 	},
 	"352": {
@@ -2606,6 +2776,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 3}],
 		"max": false
 	},
 	"353": {
@@ -2613,6 +2784,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 4}],
 		"max": true
 	},
 	"354": {
@@ -2620,6 +2792,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 2}],
 		"max": false
 	},
 	"355": {
@@ -2627,6 +2800,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 3}],
 		"max": false
 	},
 	"356": {
@@ -2634,6 +2808,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 4}],
 		"max": true
 	},
 	"357": {
@@ -2641,6 +2816,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"358": {
@@ -2648,6 +2824,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": false
 	},
 	"359": {
@@ -2655,6 +2832,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
 		"max": true
 	},
 	"360": {
@@ -2662,6 +2840,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
 		"max": false
 	},
 	"361": {
@@ -2669,6 +2848,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
 		"max": false
 	},
 	"362": {
@@ -2676,6 +2856,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
 		"max": true
 	},
 	"363": {
@@ -2683,6 +2864,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"364": {
@@ -2690,6 +2872,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"365": {
@@ -2697,6 +2880,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"366": {
@@ -2704,6 +2888,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 2}],
 		"max": false
 	},
 	"367": {
@@ -2711,6 +2896,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 3}],
 		"max": false
 	},
 	"368": {
@@ -2718,6 +2904,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 4}],
 		"max": true
 	},
 	"369": {
@@ -2725,6 +2912,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 2}],
 		"max": false
 	},
 	"370": {
@@ -2732,6 +2920,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 3}],
 		"max": false
 	},
 	"371": {
@@ -2739,6 +2928,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 4}],
 		"max": true
 	},
 	"372": {
@@ -2746,6 +2936,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 5, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"373": {
@@ -2753,6 +2944,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 10, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
 	},
 	"374": {
@@ -2760,6 +2952,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"375": {
@@ -2792,6 +2985,7 @@
 		"prf": true,
 		"users": ["Seiros: Saint of Legend"],
 		"type": "effect",
+		"effect": [{"type": "auraStats", "condition": [["teamInfo", "type", ["mythic"], 3, "less"], ["turnRange", 1, 5, true] ], "effectReq": [["heroInfoCheck", "type", ["mythic"]] ], "subtype": "buff", "team": "owner", "stats": ["atk", "def", "spd", "res"], "value": 2, "varValue": "turn"}],
 		"max": true
 	},
 	"379": {
@@ -2799,6 +2993,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 1, "res": 1} }],
 		"max": false
 	},
 	"380": {
@@ -2806,6 +3001,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 2, "res": 2} }],
 		"max": false
 	},
 	"381": {
@@ -2813,6 +3009,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 4, "res": 4} }],
 		"max": true
 	},
 	"382": {
@@ -2820,6 +3017,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 1, "res": 1} }],
 		"max": false
 	},
 	"383": {
@@ -2827,6 +3025,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 2, "res": 2} }],
 		"max": false
 	},
 	"384": {
@@ -2834,6 +3033,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 4, "res": 4} }],
 		"max": true
 	},
 	"385": {
@@ -2841,6 +3041,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"386": {
@@ -2848,6 +3049,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"387": {
@@ -2855,6 +3057,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	}
 }

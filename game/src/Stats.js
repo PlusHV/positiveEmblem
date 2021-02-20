@@ -115,17 +115,30 @@ export default class Stats extends React.Component{
 	        if ( statText[i] === "hp"){
 
 	        	for (let j = 0; j < modifiers.length; j++){
-	        		cells.push(<td key = {modifiers[j]} className= "statText">{capitalize(modifiers[j], true)}</td>);
+	        		cells.push(<td key = {modifiers[j]} className= "statText">{capitalize(modifiers[j], true)}</td>); //get modifier header
 	        	}
 
 	        ///for rest, give corresponding modifier - buffs, debuffs, combat
 	        } else{
 
 	        	for (let j = 0; j < modifiers.length - 1; j++){
+
+	        		let hero = this.props.gameState.selectedMember;
+	        		if (j === 2){ //auras
+	        			if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.id === this.props.gameState.draggedHero.id){
+	        				hero = this.props.gameState.draggedHero;
+	        			} else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.id === this.props.gameState.draggedOver.id){
+	        				hero = this.props.gameState.draggedOver;
+	        			}
+
+
+
+	        		}
+
 			        cells.push(<td key = {statText[i] + modifiers[j]} className= "inputNum">
 			        	<input
 	            		className = "numberInput"
-	            		value = {this.props.gameState.selectedMember[modifiers[j]][statText[i]]} 
+	            		value = {hero[modifiers[j]][statText[i]]} 
 	            		type = "number" 
 	            		onChange = {(e, index, stat) => this.props.buffChange(e, modifiers[j], statText[i])} 
 	            		/>  
@@ -137,7 +150,7 @@ export default class Stats extends React.Component{
 			    let combatText = "-";
 
  
-			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedHero.position && this.props.gameState.draggedOver !== null){ //the dragged hero is the selected hero - combat stats will be its stats
+			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.id === this.props.gameState.draggedHero.id && this.props.gameState.draggedOver !== null){ //the dragged hero is the selected hero - combat stats will be its stats
 			    	//Add the combat stats of the dragged
 			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedHero, this.props.gameState.draggedOver, statText[i]);
 			    	// combatText = this.props.gameState.draggedHero.combatEffects.statBuff[statText[i]];
@@ -147,7 +160,7 @@ export default class Stats extends React.Component{
 			    	// }
 
 
-			    } else if (this.props.gameState.draggedOver !== null && this.props.gameState.selectedMember.position === this.props.gameState.draggedOver.position && this.props.gameState.draggedHero !== null){ //the dragged over hero is the selected hero
+			    } else if (this.props.gameState.draggedOver !== null && (this.props.gameState.selectedMember.id === this.props.gameState.draggedOver.id) && this.props.gameState.draggedHero !== null){ //the dragged over hero is the selected hero
 
 			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedOver, this.props.gameState.draggedHero, statText[i]);
 			    	// combatText = this.props.gameState.draggedOver.combatEffects.statBuff[statText[i]];
