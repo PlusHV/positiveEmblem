@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/HVPositive/positiveEmblem/issues"
   },
-  "homepage": "https://github.com/HVPositive/positiveEmblem#readme"
+  "homepage": "https://github.com/HVPositive/positiveEmblem#readme",
+  "dependencies": {
+    "immer": "^8.0.1",
+    "socket.io": "^3.1.1",
+    "urijs": "^1.19.6"
+  }
 }
