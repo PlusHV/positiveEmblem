@@ -1,0 +1,20 @@
+{
+  "name": "positiveEmblem",
+  "version": "1.0.0",
+  "description": "Positive Emblem is a React JS application that is being made to simulate the mobile game Fire Emblem Heroes. In addition to the regular functions of Fire Emblem Heroes, it aims to have additional features to help the player such as AI prediction, enemy skill forecast (e.g dark shrine will hit which unit) and full buff displays. It is currently, only being built to simulate the mode Aether Raids.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HVPositive/positiveEmblem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HVPositive/positiveEmblem/issues"
+  },
+  "homepage": "https://github.com/HVPositive/positiveEmblem#readme"
+}
