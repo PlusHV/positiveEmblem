@@ -453,15 +453,31 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 		buffNeutralizer = hero.buff[stat];
 	}
 
-	let bonusNuller = 0; //nulls buffs on themselves by debuffing by same amount - kinda does the same thing as buff neutralize but it also allows bonusCopy to work as well
+	let bonusNuller = 0; //enemy nulls buffs on owner by debuffing by same amount - kinda does the same thing as buff neutralize but it also allows bonusCopy to work as well
 
 	if (bonusNull[stat] > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //to null your bonuses, the enemy must not be already neutralizing your bonus and you must not be panicked 
 		bonusNuller = hero.buff[stat];
 	}
 
+
+	//blade tome buff
+	let bladeBuff = 0;
+
+	if (hero.combatEffects.blade > 0 && stat === "atk" && panicFactor > 0){ //blade buff only applies to atk and requires not being panicked
+
+ 		for (let s in buffNeutralize){ //loop through neutralizers
+ 			if (buffNeutralize[s] <= 0){ //check if neutralizer is off first
+ 				bladeBuff+= hero.buff[s]; //add the current buff value to the bladebuff value
+ 			}
+
+ 		}
+
+	}
+
+
 	//
 	modifier = /*(panicFactor * hero.buff[stat]) - hero.debuff[stat] + hero.aura[stat] + */hero.combatEffects.statBuff[stat] - enemy.combatEffects.lull[stat]
-	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer; 
+	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer + bladeBuff; 
 
 
 	return modifier;

@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,7 +19,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -29,7 +31,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"3": {
@@ -40,7 +43,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"4": {
@@ -51,7 +55,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"5": {
@@ -62,7 +67,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"6": {
@@ -73,7 +79,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -84,7 +91,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"8": {
@@ -95,7 +103,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"9": {
@@ -106,7 +115,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"10": {
@@ -118,7 +128,8 @@
 		"users": ["Fjorm: Bride of Rime"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"11": {
@@ -129,7 +140,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"12": {
@@ -140,7 +152,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"13": {
@@ -151,7 +164,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"14": {
@@ -162,7 +176,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"15": {
@@ -174,7 +189,8 @@
 		"users": ["Veronica: Brave Princess"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"16": {
@@ -185,7 +201,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"17": {
@@ -196,7 +213,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"18": {
@@ -207,7 +225,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"19": {
@@ -218,7 +237,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"20": {
@@ -229,7 +249,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"21": {
@@ -240,7 +261,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"22": {
@@ -251,7 +273,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"23": {
@@ -262,7 +285,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"24": {
@@ -273,7 +297,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"25": {
@@ -284,7 +309,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"26": {
@@ -296,7 +322,8 @@
 		"users": ["Camilla: Light of Nohr"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"27": {
@@ -307,7 +334,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"28": {
@@ -318,7 +346,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"29": {
@@ -330,7 +359,8 @@
 		"users": ["Loki: The Trickster"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"30": {
@@ -341,7 +371,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"31": {
@@ -352,7 +383,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"32": {
@@ -363,7 +395,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"33": {
@@ -374,7 +407,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"34": {
@@ -385,7 +419,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"35": {
@@ -396,7 +431,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"36": {
@@ -407,7 +443,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"37": {
@@ -418,7 +455,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"38": {
@@ -429,7 +467,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"39": {
@@ -440,7 +479,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"40": {
@@ -451,7 +491,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"41": {
@@ -462,7 +503,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"42": {
@@ -473,7 +515,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"43": {
@@ -485,7 +528,8 @@
 		"users": ["Flayn: Playing Innocent"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"44": {
@@ -496,8 +540,9 @@
 		"prf": true,
 		"users": ["Elise: Budding Flower"],
 		"type": "staff",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"45": {
@@ -508,8 +553,9 @@
 		"prf": true,
 		"users": ["Mist: Helpful Sister"],
 		"type": "staff",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"46": {
@@ -520,7 +566,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"47": {
@@ -531,7 +578,8 @@
 		"prf": false,
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"48": {
@@ -543,7 +591,8 @@
 		"users": ["Sara: Lady of Loptr"],
 		"type": "staff",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"49": {
@@ -554,8 +603,9 @@
 		"prf": true,
 		"users": ["Genny: Endearing Ally"],
 		"type": "staff",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	}
 }

@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 
@@ -20,7 +21,8 @@
 		"users": ["Garon: King of Nohr"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -32,7 +34,8 @@
 		"users": ["Tiki: Dragon Scion", "Tiki: Naga's Voice"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"3": {
@@ -43,7 +46,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"4": {
@@ -54,7 +58,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"5": {
@@ -65,8 +70,9 @@
 		"prf": true,
 		"users": ["Idunn: Dark Priestess"],
 		"type": "breath",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"6": {
@@ -77,8 +83,9 @@
 		"prf": true,
 		"users": ["Naga: Dragon Divinity"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -90,7 +97,8 @@
 		"users": ["Tiki: Legendary Dragon"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"8": {
@@ -102,7 +110,9 @@
 		"users": ["Corrin: Dream Prince", "Corrin: Dream Princess"],
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"9": {
@@ -114,7 +124,8 @@
 		"users": ["Robin: Fell Reincarnation", "Robin: Fell Vessel"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"10": {
@@ -125,8 +136,9 @@
 		"prf": true,
 		"users": ["Duma: God of Strength"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"11": {
@@ -137,7 +149,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"12": {
@@ -148,7 +161,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"13": {
@@ -159,7 +173,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"14": {
@@ -170,7 +185,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"15": {
@@ -181,7 +197,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"16": {
@@ -192,7 +209,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"17": {
@@ -203,8 +221,9 @@
 		"prf": true,
 		"users": ["Myrrh: Great Dragon"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"18": {
@@ -215,7 +234,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"19": {
@@ -226,7 +246,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"20": {
@@ -237,7 +258,9 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": true
 	},
 	"21": {
@@ -248,7 +271,9 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": false
 	},
 	"22": {
@@ -259,8 +284,9 @@
 		"prf": true,
 		"users": ["Nah: Little Miss"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"23": {
@@ -272,7 +298,8 @@
 		"users": ["Tiki: Torpid Dragon"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"24": {
@@ -283,8 +310,9 @@
 		"prf": true,
 		"users": ["Corrin: Wailing Soul"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"25": {
@@ -295,8 +323,9 @@
 		"prf": true,
 		"users": ["Myrrh: Spooky Monster"],
 		"type": "breath",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"26": {
@@ -308,7 +337,8 @@
 		"users": ["Sothis: Girl on the Throne"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"27": {
@@ -319,8 +349,9 @@
 		"prf": true,
 		"users": ["Tiki: Beachside Scion"],
 		"type": "breath",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"28": {
@@ -331,7 +362,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"29": {
@@ -342,7 +374,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"30": {
@@ -353,7 +386,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"31": {
@@ -365,7 +399,9 @@
 		"users": ["Nagi: Dragon Avatar"],
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"32": {
@@ -376,8 +412,9 @@
 		"prf": true,
 		"users": ["Sothis: Silver Specter"],
 		"type": "breath",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"33": {
@@ -388,8 +425,9 @@
 		"prf": true,
 		"users": ["Nils: Bright Bard"],
 		"type": "breath",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"34": {
@@ -401,7 +439,8 @@
 		"users": ["Kana: Dragon Princess"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"35": {
@@ -412,8 +451,9 @@
 		"prf": true,
 		"users": ["Idunn: Dragonkin Duo"],
 		"type": "breath",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"36": {
@@ -424,8 +464,9 @@
 		"prf": true,
 		"users": ["Lilith: Astral Daughter"],
 		"type": "breath",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"37": {
@@ -437,7 +478,8 @@
 		"users": ["Corrin: Fateful Princess"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"38": {
@@ -448,8 +490,9 @@
 		"prf": true,
 		"users": ["Corrin: Bloodbound Beast"],
 		"type": "breath",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"39": {
@@ -460,8 +503,9 @@
 		"prf": true,
 		"users": ["Mila: Goddess of Love"],
 		"type": "breath",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"40": {
@@ -473,7 +517,9 @@
 		"users": ["Corrin: Child of Dusk"],
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"41": {
@@ -484,7 +530,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"42": {
@@ -495,7 +542,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"43": {
@@ -506,7 +554,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"44": {
@@ -517,7 +566,8 @@
 		"prf": false,
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"45": {
@@ -529,7 +579,8 @@
 		"users": ["Robin: Fall Vessel"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"46": {
@@ -540,8 +591,9 @@
 		"prf": true,
 		"users": ["Tiki: Harmonic Hope"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"47": {
@@ -553,7 +605,8 @@
 		"users": ["Fae: Divine Dragon"],
 		"type": "breath",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"48": {
@@ -565,7 +618,9 @@
 		"users": ["Nowi: Eternal Youth"],
 		"type": "breath",
 		"skills": [],
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": true
 	},
 	"49": {
@@ -576,8 +631,9 @@
 		"prf": true,
 		"users": ["Seiros: Saint of Legend"],
 		"type": "breath",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	}
 

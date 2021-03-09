@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,7 +19,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"2": {
@@ -29,7 +31,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"3": {
@@ -40,7 +43,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"4": {
@@ -51,7 +55,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"5": {
@@ -62,8 +67,9 @@
 		"prf": true,
 		"users": ["Lethe: Gallia's Valkyrie"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"6": {
@@ -74,8 +80,9 @@
 		"prf": true,
 		"users": ["Yarne: Timid Taguel"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -86,8 +93,9 @@
 		"prf": true,
 		"users": ["Ranulf: Friend of Nations"],
 		"type": "beast",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"8": {
@@ -98,7 +106,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"9": {
@@ -109,8 +118,9 @@
 		"prf": true,
 		"users": ["Selkie: Free Spirit"],
 		"type": "beast",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"10": {
@@ -121,7 +131,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"11": {
@@ -132,8 +143,9 @@
 		"prf": true,
 		"users": ["Tibarn: Lord of the Air"],
 		"type": "beast",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"12": {
@@ -144,8 +156,9 @@
 		"prf": true,
 		"users": ["Leanne: Forest's Song", "Reyson: White Prince"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"13": {
@@ -156,8 +169,9 @@
 		"prf": true,
 		"users": ["Kaden: Kitsune Braggart"],
 		"type": "beast",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"14": {
@@ -168,8 +182,9 @@
 		"prf": true,
 		"users": ["Caineghis: Gallia's Lion King"],
 		"type": "beast",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"15": {
@@ -180,8 +195,9 @@
 		"prf": true,
 		"users": ["Naesala: Sky's Shadow"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"16": {
@@ -192,8 +208,9 @@
 		"prf": true,
 		"users": ["Mordecai: Kindhearted Tiger"],
 		"type": "beast",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"17": {
@@ -205,7 +222,8 @@
 		"users": ["Panne: Proud Taguel"],
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"18": {
@@ -216,7 +234,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"19": {
@@ -227,7 +246,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"20": {
@@ -238,7 +258,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"21": {
@@ -250,7 +271,9 @@
 		"users": ["Nailah: Unflinching Eye"],
 		"type": "beast",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"22": {
@@ -261,8 +284,9 @@
 		"prf": true,
 		"users": ["Velouria: Wolf Cub"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"23": {
@@ -274,7 +298,8 @@
 		"users": ["Keaton: Lupine Collector"],
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"24": {
@@ -285,7 +310,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"25": {
@@ -296,7 +322,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"26": {
@@ -307,7 +334,8 @@
 		"prf": false,
 		"type": "beast",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"27": {
@@ -318,8 +346,9 @@
 		"prf": true,
 		"users": ["Lethe: New Year's Claw"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"28": {
@@ -331,7 +360,9 @@
 		"users": ["Selkie: New Year's Spirit"],
 		"type": "beast",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"29": {
@@ -343,7 +374,9 @@
 		"users": ["Nailah: Blessed Queen"],
 		"type": "beast",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"30": {
@@ -354,8 +387,9 @@
 		"prf": true,
 		"users": ["Rafiel: Blessed Wings"],
 		"type": "beast",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"31": {
@@ -367,7 +401,9 @@
 		"users": ["Tibarn: Shipless Pirate"],
 		"type": "beast",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"32": {
@@ -378,8 +414,9 @@
 		"prf": true,
 		"users": ["Freyja: Lady of Nightmare"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"33": {
@@ -390,8 +427,9 @@
 		"prf": true,
 		"users": ["Kaden: Refreshed Kitsune"],
 		"type": "beast",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"34": {
@@ -402,8 +440,9 @@
 		"prf": true,
 		"users": ["Keaton: Resolved Wolfskin"],
 		"type": "beast",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"35": {
@@ -415,7 +454,9 @@
 		"users": ["Velouria: Renewed Wolfpup"],
 		"type": "beast",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	}
 }

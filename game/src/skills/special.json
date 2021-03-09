@@ -43,7 +43,7 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
 		"type": "attack-battle",
-		"effect": {"damage": ["defender", "defensive", 0.8], "heal": 0.5, "amplify": 0.0 },
+		"effect": {"damage": ["defender", "defensive", 0.8], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"5": {

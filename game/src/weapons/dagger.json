@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,8 +19,9 @@
 		"prf": true,
 		"users": ["Kronya: Gleaming Blade"],
 		"type": "dagger",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -30,7 +32,9 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"3": {
@@ -41,7 +45,9 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": false
 	},
 	"4": {
@@ -52,7 +58,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"5": {
@@ -63,7 +70,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"6": {
@@ -74,7 +82,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -85,7 +94,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"8": {
@@ -96,7 +106,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"9": {
@@ -107,7 +118,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"10": {
@@ -118,7 +130,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"11": {
@@ -129,7 +142,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"12": {
@@ -141,7 +155,8 @@
 		"users": ["Jaffar: Angel of Death"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"13": {
@@ -152,7 +167,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"14": {
@@ -163,7 +179,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"15": {
@@ -175,7 +192,8 @@
 		"users": ["Felicia: Maid Mayhem"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"16": {
@@ -186,7 +204,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"17": {
@@ -197,7 +216,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"18": {
@@ -209,7 +229,9 @@
 		"users": ["Flora: Cold as Ice"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"19": {
@@ -221,7 +243,9 @@
 		"users": ["Petra: Princess of Brigid"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"20": {
@@ -232,7 +256,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"21": {
@@ -243,7 +268,9 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"22": {
@@ -254,7 +281,9 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": false
 	},
 	"23": {
@@ -266,7 +295,8 @@
 		"users": ["Kagero: Honorable Ninja"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"24": {
@@ -277,7 +307,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"25": {
@@ -288,7 +319,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"26": {
@@ -299,7 +331,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"27": {
@@ -310,7 +343,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"28": {
@@ -322,7 +356,8 @@
 		"users": ["Eir: Merciful Death"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"29": {
@@ -333,7 +368,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"30": {
@@ -344,7 +380,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"31": {
@@ -355,7 +392,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"32": {
@@ -366,7 +404,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"33": {
@@ -378,7 +417,8 @@
 		"users": ["Sothe: Zephyr"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"34": {
@@ -389,7 +429,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"35": {
@@ -400,7 +441,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"36": {
@@ -411,7 +453,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"37": {
@@ -422,7 +465,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"38": {
@@ -433,7 +477,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"39": {
@@ -444,7 +489,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"40": {
@@ -456,7 +502,8 @@
 		"users": ["Saizo: Angry Ninja"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"41": {
@@ -467,7 +514,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"42": {
@@ -478,7 +526,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"43": {
@@ -489,7 +538,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"44": {
@@ -500,7 +550,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"45": {
@@ -511,7 +562,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"46": {
@@ -522,7 +574,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"47": {
@@ -533,7 +586,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"48": {
@@ -544,7 +598,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"49": {
@@ -555,7 +610,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"50": {
@@ -566,7 +622,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"51": {
@@ -577,7 +634,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"52": {
@@ -588,7 +646,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"53": {
@@ -600,7 +659,8 @@
 		"users": ["Matthew: Faithful Spy"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"54": {
@@ -611,7 +671,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"55": {
@@ -622,7 +683,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"56": {
@@ -633,7 +695,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"57": {
@@ -644,8 +707,9 @@
 		"prf": true,
 		"users": ["Ylgr: Fresh Snowfall"],
 		"type": "dagger",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"58": {
@@ -656,8 +720,9 @@
 		"prf": true,
 		"users": ["Flora: Signature Dish"],
 		"type": "dagger",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"59": {
@@ -668,7 +733,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"60": {
@@ -679,7 +745,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"61": {
@@ -690,7 +757,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"62": {
@@ -701,7 +769,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"63": {
@@ -712,7 +781,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"64": {
@@ -723,7 +793,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"65": {
@@ -734,7 +805,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"66": {
@@ -745,7 +817,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"67": {
@@ -756,7 +829,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"68": {
@@ -767,7 +841,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"69": {
@@ -778,7 +853,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"70": {
@@ -789,7 +865,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"71": {
@@ -800,7 +877,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"72": {
@@ -811,8 +889,9 @@
 		"prf": true,
 		"users": ["Leila: Rose amid Fangs"],
 		"type": "dagger",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"72": {
@@ -824,7 +903,8 @@
 		"users": ["Jakob: Devoted Servant"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"73": {
@@ -836,7 +916,8 @@
 		"users": ["Gaius: Candy Stealer"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"74": {
@@ -847,8 +928,9 @@
 		"prf": true,
 		"users": ["Gangrel: Plegia's Mad King"],
 		"type": "dagger",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"75": {
@@ -860,7 +942,9 @@
 		"users": ["Mia: Harmonic Blades"],
 		"type": "dagger",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"76": {
@@ -871,7 +955,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"77": {
@@ -882,7 +967,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"78": {
@@ -893,7 +979,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"79": {
@@ -904,7 +991,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"80": {
@@ -915,7 +1003,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"81": {
@@ -926,7 +1015,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"82": {
@@ -937,7 +1027,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"83": {
@@ -948,7 +1039,8 @@
 		"prf": false,
 		"type": "dagger",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"84": {
@@ -959,8 +1051,10 @@
 		"prf": true,
 		"users": ["Lyn: Ninja-Friend Duo"],
 		"type": "dagger",
-		"skills": [["a", "Speed +3"], ["a", "Speed +1"]],
-		"effect": {"cdTrigger": -1},
+		"skills": [],
+		"passive": {"spd": 4, "def": -4, "res": -4},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	}
 }

@@ -4,7 +4,7 @@ import React from 'react';
 
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck} from './Battle.js';
 
 import './App.css';
 
@@ -27,7 +27,8 @@ var heroStruct = makeHeroStruct();
 
 export const statusBuffs = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
 
-export const statusDebuffs = {"deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0};
+export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0};
+
 
 
 //handles the gameboard as well as the heroes which
@@ -45,30 +46,7 @@ class GameBoard extends React.Component{
                          "o":{list: [], info: skills.o}
                         };
 
-
-
-
-    // eslint-disable-next-line
-    for (var [key, value] of Object.entries(initDropdowns)) {
-
-      this.fillDropdown(value.list, value.info, new heroStruct(0));
-    }                
-
-    this.state = {
-      "heroList": { 
-        "1":[new heroStruct(0), new heroStruct(1), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
-        "2": [new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]
-      }, //skips id 5 for listIndex  
-      "heroIndex": 0, //The index of the hero in the heroList
-      "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
-      "skillDropdowns": initDropdowns,
-      "selectedMember": new heroStruct(0), //The current struct in heroList
-      "weaponList": weapons["sword"],
-      "selectedHeroInfo": heroData["0"], //The current hero's info
-      "maxFilter": false,
-      "currentTurn": 0,
-      "fortLevel": 0,
-      "blessingBuffs": { //the buffs each season will give a team - one for each team
+    let blessings = { //the buffs each season will give a team - one for each team
         "1": {
           "Water": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
           "Earth": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
@@ -89,8 +67,52 @@ class GameBoard extends React.Component{
           "Astra": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0},
           "Anima": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}
         }
-      },
-      "season": {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"},
+    }
+
+    let cells = Array(48).fill(null);
+    let fortLevel = 0;
+    let season = {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"};
+
+    let heroList = {"1":[new heroStruct(0, {"value": 2, "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": 92, "label": "Eirika: Restoration Lady"}), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
+        "2": [new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]};
+     //skips id 5 for listIndex  
+
+    for (let team in heroList){
+      for (let teammate of heroList[team]){
+        setHero(teammate, blessings, cells); //initialize heroes
+      }
+
+    }
+
+    for (let team in heroList){
+      for (let teammate of heroList[team]){
+        teammate.stats = calculateStats(teammate, fortLevel, blessings, season); //initialize heroes
+        teammate.currentHP = teammate.stats.hp;
+      }//alculateStats(hero, fort, blessings, seasons
+
+    }
+
+    // eslint-disable-next-line
+    for (var [key, value] of Object.entries(initDropdowns)) {
+
+      fillDropdown(value.list, value.info, heroList["1"][0]);
+    }                
+    let initialHero = heroList["1"][0];
+    let initialHeroData = heroData[initialHero.heroID.value];
+
+    this.state = {
+      "heroList": heroList,
+      "heroIndex": 0, //The index of the hero in the heroList
+      "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
+      "skillDropdowns": initDropdowns,
+      "selectedMember": initialHero, //The current struct in heroList
+      "weaponList": weapons[initialHeroData.weapontype],
+      "selectedHeroInfo": initialHeroData, //The current hero's info
+      "maxFilter": false,
+      "currentTurn": 0,
+      "fortLevel": fortLevel,
+      "blessingBuffs": blessings,
+      "season": season,
       "availableMovement": [],
       "availableAssist": [],
       "availableAttack": [],
@@ -101,7 +123,8 @@ class GameBoard extends React.Component{
       "preBattleDamage": -1,
       "draggedOverOriginalHP": 0,
       "selectedStatusBuff": "bonusDouble",
-      "selectedStatusEffect": "deepWounds" 
+      "selectedStatusEffect": "counterDisrupt",
+      "cells": cells 
 
     }
 
@@ -195,13 +218,11 @@ class GameBoard extends React.Component{
           }
       }
     }
-    dropdownList.sort(this.compareLabels);
+    dropdownList.sort(compareLabels);
 
   }
 
-  compareLabels(a, b){
-    return a.label > b.label ? 1 : b.label > a.label ? -1 : 0;
-  }
+
 
 
 
@@ -296,20 +317,20 @@ class GameBoard extends React.Component{
        hero = this.removeSkillEffect(tSkills[key].value , key, hero);
     });
 
-    tSkills["weapon"] = updatedDropdowns["weapon"].list.find(this.findSkillWithName, newHero.weapon);
-    tSkills["assist"] = updatedDropdowns["assist"].list.find(this.findSkillWithName, newHero.assist);
-    tSkills["special"] = updatedDropdowns["special"].list.find(this.findSkillWithName, newHero.special);
-    tSkills["a"] = updatedDropdowns["a"].list.find(this.findSkillWithName, newHero.askill);
-    tSkills["b"] = updatedDropdowns["b"].list.find(this.findSkillWithName, newHero.bskill);
-    tSkills["c"] = updatedDropdowns["c"].list.find(this.findSkillWithName, newHero.cskill);
-    tSkills["seal"] = updatedDropdowns["seal"].list.find(this.findSkillWithName, newHero.sseal);
+    tSkills["weapon"] = updatedDropdowns["weapon"].list.find(findSkillWithName, newHero.weapon);
+    tSkills["assist"] = updatedDropdowns["assist"].list.find(findSkillWithName, newHero.assist);
+    tSkills["special"] = updatedDropdowns["special"].list.find(findSkillWithName, newHero.special);
+    tSkills["a"] = updatedDropdowns["a"].list.find(findSkillWithName, newHero.askill);
+    tSkills["b"] = updatedDropdowns["b"].list.find(findSkillWithName, newHero.bskill);
+    tSkills["c"] = updatedDropdowns["c"].list.find(findSkillWithName, newHero.cskill);
+    tSkills["seal"] = updatedDropdowns["seal"].list.find(findSkillWithName, newHero.sseal);
 
     hero.heroSkills = tSkills; //update the new heroes default skills
 
     //Passives/weapons only currently
     //Add the effects of the skills to the hero
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
-       hero = this.getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+       hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
     });
 
 
@@ -331,6 +352,8 @@ class GameBoard extends React.Component{
     hero.visibleStats = calculateVisibleStats(hero);
     hero.currentHP = hero.stats.hp;
 
+    let newCells = this.state.cells;
+
     //Sets the initial position of the on the board 
     if (hero.position < 0 && e.value !== "0"){ //if hero was blank
       hero.side = this.state.playerSide;
@@ -346,7 +369,7 @@ class GameBoard extends React.Component{
       while (hero.position === -1 && (y >=0 && y<=42) ){ //not filled and rows are not out of bound
         if (! (pos.includes(y+x)) ){ //space is free
           hero.position = y+x;
-          this.props.G.cells[y+x] = hero;
+          newCells[y+x] = hero;
         } else if (x <5){ //move to next column
           x+=1;
         } else if (x>=5){ //end of row, start at first column and increment row
@@ -359,11 +382,11 @@ class GameBoard extends React.Component{
     } else{ //put new hero in the old position
       
       if (e.value === "0"){ //if blank hero, take it off the board
-        this.props.G.cells[hero.position] = null;
+        newCells[hero.position] = null;
         hero.position = -1;
       } else {
 
-        this.props.G.cells[hero.position] = hero;
+        newCells[hero.position] = hero;
       }
 
     }
@@ -388,13 +411,12 @@ class GameBoard extends React.Component{
 
 
     this.setState({weaponList: weapons[heroData[newHero.id].weapontype]});
+    this.setState({cells: newCells});
 
 
   }
 
-  findSkillWithName(item){
-    return item.label === this;
-  }
+
 
   checkLabelExists(item){
     return item.name === this;
@@ -414,7 +436,7 @@ class GameBoard extends React.Component{
     
     //TODO - implement skills  - weapons first
     //Add skill effect to the hero
-    hero = this.getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
+    hero = getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
 
     //TODO - add other types of skills 
     let oldMaxHP = hero.stats.hp;
@@ -438,95 +460,6 @@ class GameBoard extends React.Component{
 
   }
 
-  getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype refers to the slot the skill originates from
-
-
-    let updatedHero = currentHero;
-
-    let cdTriggerOrg = updatedHero.effects.cdTrigger;
-
-
-    let effect = skillDropdowns[skillType].info[id].effect;
-
-    if (skillType === "weapon"){
-      let pTemp = updatedHero.passive;
-      pTemp["atk"] += skillDropdowns["weapon"].info[id].might; 
-      updatedHero.passive = pTemp;
-      updatedHero.range = skillDropdowns["weapon"].info[id].range;
-
-
-    } else if (skillType === "assist"){
-
-      updatedHero.assist = Object.assign({}, skillDropdowns[skillType].info[id] );
-
-    } else if (skillType === "special"){
-
-      //updatedHero.special.type = skillDropdowns[skillType].info[id].type;
-
-      updatedHero.special = Object.assign({}, skillDropdowns[skillType].info[id]);
-
-      var initialCharge = skillDropdowns[skillType].info[id].cd + updatedHero.effects.cdTrigger;
-
-      updatedHero.special.cd = initialCharge;
-      updatedHero.special.charge = initialCharge;
-      //updatedHero.special.effect = skillDropdowns[skillType].info[id].effect;
-
-
-    } else if (skillDropdowns[skillType].info[id].type  === "passive") {
-      let statMods = effect; //effect should contain the list of stats to buff
-      let pTemp = updatedHero.passive;
-
-
-      Object.keys(statMods).forEach((key, i) => {
-        pTemp[key] += statMods[key];
-      });
-
-      updatedHero.passive = pTemp;
-
-    } else if (skillDropdowns[skillType].info[id].type === "battle-movement"){
-      updatedHero.battleMovement = Object.assign({}, effect);
-
-    } else if (skillDropdowns[skillType].info[id].type === "effect"){
-
-      addEffect(updatedHero, effect);
-
-    } //end effect
-
-
-
-
-    if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
-      for (var x of skillDropdowns[skillType].info[id].skills) {
-
-
-        var additionalSkill  = skillDropdowns[x[0]].list.find(this.findSkillWithName, x[1]).value;
-
-        updatedHero = this.getSkillEffect(additionalSkill, x[0], updatedHero, skillDropdowns); //add the extra skills as well
-      }
-
-    }
-
-
-    //Check if skill has a cdtrigger effect cdTriggers
-    if ('effect' in skillDropdowns[skillType].info[id] && 'cdTrigger' in effect){
-      updatedHero.effects.cdTrigger+= effect.cdTrigger;
-
-    }
-
-    //if the hero's cdTrigger stat has been changed, recalculate special cd.
-    if (updatedHero.effects.cdTrigger !== cdTriggerOrg){ //check if 
-
-      //get base cd of special and use modified value
-      var newCharge = skillDropdowns["special"].info[updatedHero.heroSkills.special.value].cd + updatedHero.effects.cdTrigger;
-
-      updatedHero.special.cd = newCharge;
-      updatedHero.special.charge = newCharge;
-
-    }
-
-    return updatedHero; //hero with new skills
-
-  }
 
   removeSkillEffect(id, skillType, currentHero){
     let updatedHero = currentHero; //copy of current hero
@@ -539,6 +472,21 @@ class GameBoard extends React.Component{
     if (skillType === "weapon"){
       let pTemp = updatedHero.passive;
       pTemp["atk"] -= this.state.weaponList[id]["might"]; //remove the weapon's attack
+
+
+      //Add the passive stats from the weapon
+      let passiveStats = this.state.weaponList[id].passive;
+
+      for (let key in passiveStats){
+        pTemp[key] -= passiveStats[key];
+
+      }
+
+      if ("effect" in this.state.skillDropdowns[skillType].info[id]){
+        removeEffect(updatedHero, effect);
+      }
+
+
       updatedHero.passive = pTemp;
       updatedHero.range = -1;
 
@@ -556,9 +504,9 @@ class GameBoard extends React.Component{
       let pTemp = updatedHero.passive;
 
 
-      Object.keys(statMods).forEach((key, i) => {
+      for (let key in statMods){
         pTemp[key] -= statMods[key];
-      });
+      }
 
 
       updatedHero.passive = pTemp;
@@ -577,7 +525,7 @@ class GameBoard extends React.Component{
     if ('skills' in this.state.skillDropdowns[skillType].info[id]) { // if the skill has additional skills
       for (var x of this.state.skillDropdowns[skillType].info[id].skills) {
 
-        var additionalSkill  = this.state.skillDropdowns[x[0]].list.find(this.findSkillWithName, x[1]).value;
+        var additionalSkill  = this.state.skillDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
 
         updatedHero = this.removeSkillEffect(additionalSkill, x[0], updatedHero); //remove the extra skills as well
       }
@@ -585,8 +533,8 @@ class GameBoard extends React.Component{
     }
 
     //when removing the skill, a new special will be added, so it will adjust there
-    if ('effect' in this.state.skillDropdowns[skillType].info[id] && 'cdTrigger' in effect){
-      updatedHero.effects.cdTrigger-= effect.cdTrigger;
+    if ('cdTrigger' in this.state.skillDropdowns[skillType].info[id]){
+      updatedHero.effects.cdTrigger-= this.state.skillDropdowns[skillType].info[id].cdTrigger;
 
     }
 
@@ -986,7 +934,7 @@ class GameBoard extends React.Component{
     let movementCheckDone = []; //spaces that have already been checked for adjacency
 
     let currentMovement = 0;
-
+    let newCells = this.state.cells;
     while (currentMovement < move){
 
 
@@ -1003,10 +951,10 @@ class GameBoard extends React.Component{
         //ally in spot 
         //or 
         //if pass is active and enemy is in the pos
-        //if (  (this.props.G.cells[pos] === null && (pass > 0 || !obstructList.includes(pos))) || this.props.G.cells[pos].side === dragData.side || (pass > 0 && this.props.G.cells[pos].side !== dragData.side) ){
-        if (  (this.props.G.cells[pos] === null) || this.props.G.cells[pos].side === dragData.side || (pass > 0 && this.props.G.cells[pos].side !== dragData.side) ){
+        //if (  (newCells[pos] === null && (pass > 0 || !obstructList.includes(pos))) || newCells[pos].side === dragData.side || (pass > 0 && newCells[pos].side !== dragData.side) ){
+        if (  (newCells[pos] === null) || newCells[pos].side === dragData.side || (pass > 0 && newCells[pos].side !== dragData.side) ){
 
-          if (this.props.G.cells[pos] === null && (pass < 1 && obstructList.includes(pos)) ){ //obstructed
+          if (newCells[pos] === null && (pass < 1 && obstructList.includes(pos)) ){ //obstructed
             movementCheckDone.push(pos);
             continue;
           } 
@@ -1014,7 +962,7 @@ class GameBoard extends React.Component{
           nextMovementCheck.push(pos); //position can be moved to, add it for the next check
 
 
-          if (this.props.G.cells[pos] === null){ //add to movementList if no hero is occupying it
+          if (newCells[pos] === null){ //add to movementList if no hero is occupying it
             
             movementList.push(pos);
           }
@@ -1044,7 +992,7 @@ class GameBoard extends React.Component{
     //adds the warp spaces that are empty to the warp list 
     for (let x of warpSpaces){
 
-      if (this.props.G.cells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
+      if (newCells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
         warpList.push(x);
       }
 
@@ -1059,7 +1007,7 @@ class GameBoard extends React.Component{
       let assistSpaces = this.getSpacesInRange(pos, assist);
 
       for (let s of assistSpaces){
-        if (this.props.G.cells[s] !== null && this.props.G.cells[s].side === dragData.side && this.props.G.cells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
+        if (newCells[s] !== null && newCells[s].side === dragData.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
 
 
 
@@ -1069,23 +1017,23 @@ class GameBoard extends React.Component{
 
             if (assistType === "movement"){
 
-              assistValid = this.checkMovementAssist(this.state.heroList, dragData, this.props.G.cells[s], dragData.assist.effect); 
+              assistValid = this.checkMovementAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect); 
 
 
             } else if (assistType === "rally"){
-              assistValid = this.checkRallyAssist(this.state.heroList, dragData, this.props.G.cells[s], dragData.assist.effect);
+              assistValid = this.checkRallyAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
 
 
             } else if (assistType === "health"){
-              assistValid = this.checkHealthAssist(this.state.heroList, dragData, this.props.G.cells[s], dragData.assist.effect);
+              assistValid = this.checkHealthAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
               
             } else if (assistType === "heal"){
-              assistValid = this.checkHealAssist(this.state.heroList, dragData, this.props.G.cells[s], dragData.assist.effect);
+              assistValid = this.checkHealAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
               
             } else if (assistType === "dance"){
-              assistValid = this.checkDanceAssist(this.state.heroList, dragData, this.props.G.cells[s]);
+              assistValid = this.checkDanceAssist(this.state.heroList, dragData, newCells[s]);
             } else if (assistType === "neutralize"){
-              assistValid = this.checkNeutralizeAssist(this.state.heroList, dragData, this.props.G.cells[s], dragData.assist.effect);
+              assistValid = this.checkNeutralizeAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
             }
 
             if (assistValid){
@@ -1111,7 +1059,7 @@ class GameBoard extends React.Component{
       let attackSpaces = this.getSpacesInRange(pos, dragData.range);
 
       for (let s of attackSpaces){
-        if (this.props.G.cells[s] !== null && this.props.G.cells[s].side !== dragData.side){
+        if (newCells[s] !== null && newCells[s].side !== dragData.side){
           attackList.push(s);
         }
       }
@@ -1126,7 +1074,7 @@ class GameBoard extends React.Component{
     this.setState({availableMovement: movementList});
     this.setState({availableAssist: assistList});
     this.setState({availableAttack: attackList});
-
+    this.setState({cells: newCells});    
 
 
   }
@@ -1297,12 +1245,6 @@ class GameBoard extends React.Component{
 
   }
 
-  checkConditionHero(owner, condition, heroList, turn){
-    return function(other){
-
-        return checkCondition(heroList, condition, owner, other, turn);
-    }
-  }
 
   //given an list of allies and a requirement object, return a list of heroes that meet the requirements
   //loop through given list of allies, and remove/filter any that do that pass the requirement
@@ -1313,7 +1255,7 @@ class GameBoard extends React.Component{
 
     //for (let x of allyReq){ //loop through conditional list, then for each hero, if hero passes conditional 
       //console.log(x);
-    filteredList = teamList.filter(this.checkConditionHero(owner, heroReq, this.state.heroList, this.state.currentTurn) ); //filter out 
+    filteredList = teamList.filter(checkConditionHero(owner, heroReq, this.state.heroList, this.state.currentTurn) ); //filter out 
       //console.log(filteredList);
     //}
 
@@ -1342,8 +1284,8 @@ class GameBoard extends React.Component{
       dropPosition = parseInt(dropPosition);
     }
 
-
-    let cellContent = this.props.G.cells[dropPosition];
+    let newCells = this.state.cells;
+    let cellContent = newCells[dropPosition];
 
 
     //check if cell has a hero and if it is on opposite side
@@ -1352,7 +1294,7 @@ class GameBoard extends React.Component{
       //if it is not the same draggedOver as before or if there was none before for battle forecast
       if ( (this.state.draggedOver !== null && this.state.draggedOver.position !== dropPosition) || this.state.draggedOver === null ) {
 
-        let draggedOverHero = JSON.parse(JSON.stringify(this.props.G.cells[dropPosition]) ); // copies hero - non-reference copy so this copy can have temporary effects
+        let draggedOverHero = JSON.parse(JSON.stringify(newCells[dropPosition]) ); // copies hero - non-reference copy so this copy can have temporary effects
         let draggedHero = JSON.parse(JSON.stringify(this.state.draggedHeroOrg)); //get the original dragged hero
 
 
@@ -1439,34 +1381,49 @@ class GameBoard extends React.Component{
         }
 
 
-        this.calculateBattlingAuraStats(this.state.heroList, draggedHero, draggedOverHero);
         
+        //Aura effects are effects granted by auras 
         this.getAuraEffects(draggedHero, draggedOverHero, this.state.heroList);
         this.getAuraEffects(draggedOverHero, draggedHero, this.state.heroList);
 
 
+        //Regular conditional effects that do not depend on effects on other skills
+        this.getConditionalEffects(draggedHero, draggedOverHero);
+        this.getConditionalEffects(draggedOverHero, draggedHero);
+
+        //For conditional effects that check for buff/debuffs and also provide neutralzing effects - These must be after conditional effects as neutralizers from there can falsify the condition - This is basically for idunn and brunnya's weapons
+        this.getConditionalBonusPenaltyNeutralizers(draggedHero, draggedOverHero);
+        this.getConditionalBonusPenaltyNeutralizers(draggedOverHero, draggedHero);
+
+        //Here all neutralizations should be added
+
+        //Combat effects that provide stats but need buff/debuff neutralizations -
+        this.getConditionalCombatStats(draggedHero, draggedOverHero);
+        this.getConditionalCombatStats(draggedOverHero, draggedHero);
+
+        //Get stats buffs that have variable amounts of stats provided - this requires buffs/debuffs to be calculated
         this.getVariableStats(draggedHero, draggedOverHero);
         this.getVariableStats(draggedOverHero, draggedHero);
 
+        //calulcating aura stats based on battling heroes
+        this.calculateBattlingAuraStats(this.state.heroList, draggedHero, draggedOverHero);
 
 
 
-        this.getConditionalEffects(draggedHero, draggedOverHero);
-        this.getConditionalEffects(draggedOverHero, draggedHero);
+        //At this point stats should be finalized and will be calculated.
 
         draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
         draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
 
-
-
-
+        //Conditional effects that need final combat stats
         this.getConditionalCombat(draggedHero, draggedOverHero);
         this.getConditionalCombat(draggedOverHero, draggedHero);
 
-
+        //Variable effects that need final combat stats
         this.getVariableCombat(draggedHero, draggedOverHero);
         this.getVariableCombat(draggedOverHero, draggedHero);
 
+        console.log(draggedHero);
 
         this.setState({draggedHero: draggedHero});
         this.setState({draggedOverOriginalHP: orgHP});
@@ -1586,23 +1543,59 @@ class GameBoard extends React.Component{
 
   }
 
+  getConditionalBonusPenaltyNeutralizers(owner, enemy){ 
+
+    //Conditionals
+    for (let effect of owner.conditionalBonusPenaltyNeutralizers){
+
+      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+          addEffect(owner, effect);
+
+
+      } //end if condition true
+
+    } //end for 
+  }
+
+
+  getConditionalCombatStats(owner, enemy){ 
+
+    //Conditionals
+    for (let effect of owner.conditionalCombatStats){
+
+      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+          addEffect(owner, effect);
+        // for (let y in x){ //loop through 
+        //   if (y !== "condition" && y !== "type"){ //everything else should be combat effects
+        //     owner.combatEffects[y]+= x[y]; 
+        //   }
+
+
+        // } //end loop through gained effects
+
+
+      } //end if condition true
+
+    } //end for 
+  }
+
   //conditionals that use combat stats. These are the same as conditional effects but occur after the other conditional effects activate as they need to take into account combat stats
   //Examples include heavy blade, flashing blade which use combat stats for their condition 
 
   getConditionalCombat(owner, enemy){ 
 
     //Conditionals
-    for (let x of owner.conditionalCombat){
+    for (let effect of owner.conditionalCombat){
 
-      if (x !== null && checkCondition(this.state.heroList, x.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+          addEffect(owner, effect);
+        // for (let y in x){ //loop through 
+        //   if (y !== "condition" && y !== "type"){ //everything else should be combat effects
+        //     owner.combatEffects[y]+= x[y]; 
+        //   }
 
-        for (let y in x){ //loop through 
-          if (y !== "condition" && y !== "type"){ //everything else should be combat effects
-            owner.combatEffects[y]+= x[y]; 
-          }
 
-
-        } //end loop through gained effects
+        // } //end loop through gained effects
 
 
       } //end if condition true
@@ -1636,10 +1629,10 @@ class GameBoard extends React.Component{
 
     for (let x of owner.variableStats){
 
-      if (x !== null ){ //if condition is true, then provide the rest of the effects
+      if (x !== null  ){ //if condition is true, then provide the rest of the effects
 
 
-        let buffs =  calculateVariableEffect(this.state.heroList, x, owner, enemy);
+        let buffs =  calculateVariableEffect(this.state.heroList, x, owner, enemy, this.state.currentTurn);
 
         addEffect(owner, buffs);
 
@@ -1659,6 +1652,9 @@ class GameBoard extends React.Component{
 
       if (effect !== null ){ //if condition is true, then provide the rest of the effects
 
+        if ("condition" in effect && !checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn) ){ //check if condition has not been met to skip
+          continue;
+        }
 
         let effectList = calculateVariableCombat(this.state.heroList, effect, owner, enemy);
 
@@ -1678,6 +1674,10 @@ class GameBoard extends React.Component{
     for (let effect of owner.variablePreCombat){
 
       if (effect !== null ){ //if there is an effect
+
+        if ("condition" in effect && !checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn) ){ //check if condition has not been met to skip
+          continue;
+        }
 
         let effectList = calculateVariableCombat(this.state.heroList, effect, owner, enemy);
         //Object.keys(effectList).forEach((key, i) => {
@@ -1732,24 +1732,24 @@ class GameBoard extends React.Component{
 
     let temp = this.state.heroList;
 
-
+    let newCells = this.state.cells;
 
 
     //if spot is already filled then start an assist or attack
-    if (this.props.G.cells[dropPosition] !==null){
+    if (newCells[dropPosition] !==null){
 
-      //at this point, we should probably use this.state.draggedOver over this.props.G.cells since the position is confirmed to have a hero.
+      //at this point, we should probably use this.state.draggedOver over newCells since the position is confirmed to have a hero.
       //the cells version should not have any temporary effects which don't really matter for assists and movements (only battles)
-      let dropIndex = this.props.G.cells[dropPosition].listIndex;
-      let dropSide = this.props.G.cells[dropPosition].side;
+      let dropIndex = newCells[dropPosition].listIndex;
+      let dropSide = newCells[dropPosition].side;
 
 
       //let tempOrg = temp;
 
 
-      //if (this.CheckAdjacent(dragData.position, this.props.G.cells[dropPosition].position )){
+      //if (this.CheckAdjacent(dragData.position, newCells[dropPosition].position )){
         //Check if in range for assist and they are on the same side
-      if ( this.state.availableAssist.includes(this.props.G.cells[dropPosition].position) && dragData.side === this.props.G.cells[dropPosition].side && dragData.statusEffect.isolation < 1 && this.props.G.cells[dropPosition].statusEffect.isolation < 1){
+      if ( this.state.availableAssist.includes(newCells[dropPosition].position) && dragData.side === newCells[dropPosition].side && dragData.statusEffect.isolation < 1 && newCells[dropPosition].statusEffect.isolation < 1){
 
 
         //Note - These apply functions currently use a copy of the the assister (drag data) and assistee (dropPosition in cell list) 
@@ -1762,34 +1762,34 @@ class GameBoard extends React.Component{
 
               let orgAssisterPos = temp[dragSide][dragIndex].position;
               let orgAssisteePos = temp[dropSide][dropIndex].position;
-              temp = this.applyMovementAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect); //should update temp accordingly
+              temp = this.applyMovementAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect); //should update temp accordingly
 
               
 
               //clear initial positions of assister/assistee
-              this.props.G.cells[orgAssisterPos] = null;
-              this.props.G.cells[orgAssisteePos] = null;
+              newCells[orgAssisterPos] = null;
+              newCells[orgAssisteePos] = null;
 
               //move the assistee/assister to their new positions 
-              this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
-              this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+              newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+              newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
               dropPosition = temp[dropSide][dropIndex].position;
 
 
             } else if (assistType === "rally"){
-              temp = this.applyRallyAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+              temp = this.applyRallyAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
 
 
             } else if (assistType === "health"){
-              temp = this.applyHealthAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+              temp = this.applyHealthAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
               
             } else if (assistType === "heal"){
-              temp = this.applyHealAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+              temp = this.applyHealAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
               
             } else if (assistType === "dance"){
-              temp = this.applyDanceAssist(temp, dragData, this.props.G.cells[dropPosition]);
+              temp = this.applyDanceAssist(temp, dragData, newCells[dropPosition]);
             } else if (assistType === "neutralize"){
-              temp = this.applyNeutralizeAssist(temp, dragData, this.props.G.cells[dropPosition], dragData.assist.effect);
+              temp = this.applyNeutralizeAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
             }
 
 
@@ -1801,21 +1801,21 @@ class GameBoard extends React.Component{
 
 
       //Check if in range for attack and if they are on the same side
-      } else if (getDistance(dragData.position, this.props.G.cells[dropPosition].position) === dragData.range && dragData.side !== this.props.G.cells[dropPosition].side ){
+      } else if (getDistance(dragData.position, newCells[dropPosition].position) === dragData.range && dragData.side !== newCells[dropPosition].side ){
         let orgAttackerPos = temp[dragSide][dragIndex].position;
         let orgDefenderPos = temp[dropSide][dropIndex].position;
 
 
-        //temp = DoBattle(temp, dragData, this.props.G.cells[dropPosition]);
-        temp = doBattle(temp, dragData, this.state.draggedOver, this.props.G.cells); //do battle has to use the combat versions of drag and draggedOver heroes
+        //temp = DoBattle(temp, dragData, newCells[dropPosition]);
+        temp = doBattle(temp, dragData, this.state.draggedOver, newCells); //do battle has to use the combat versions of drag and draggedOver heroes
 
         //clear initial positions of assister/assistee
-        this.props.G.cells[orgAttackerPos] = null;
-        this.props.G.cells[orgDefenderPos] = null;
+        newCells[orgAttackerPos] = null;
+        newCells[orgDefenderPos] = null;
 
         //move the assistee/assister to their new positions 
-        this.props.G.cells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
-        this.props.G.cells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+        newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+        newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
 
       }
 
@@ -1838,11 +1838,11 @@ class GameBoard extends React.Component{
 
 
       //remove old from board
-      this.props.G.cells[temp[dragSide][dragIndex].position] = null;
+      newCells[temp[dragSide][dragIndex].position] = null;
       
 
       //update for new position
-      this.props.G.cells[dropPosition] = temp[dragSide][dragIndex]; //update in gameboard
+      newCells[dropPosition] = temp[dragSide][dragIndex]; //update in gameboard
       temp[dragSide][dragIndex].position = dropPosition; //update in team list
 
 
@@ -1860,7 +1860,7 @@ class GameBoard extends React.Component{
     this.selectNewMember(dragSide, dragIndex);
 
     this.dragEnd(ev);
-
+    this.setState({cells: newCells});
   }
 
   //Given an index, get the side and index (for that side)
@@ -2198,8 +2198,8 @@ class GameBoard extends React.Component{
     let assisteeAlt = newPositions.otherAlt;
     
     //The above values can still be invalid if out of bounds
-
-    if (checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, this.props.G.cells) || checkValidMovement(assisterPos, assisteeAlt, [-1, -1], participantIDs, this.props.G.cells)  ){ //no issues with given movement positions
+    let cells = this.state.cells
+    if (checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, cells) || checkValidMovement(assisterPos, assisteeAlt, [-1, -1], participantIDs, cells)  ){ //no issues with given movement positions
       return true;
     } else{
       return false;
@@ -2233,66 +2233,64 @@ class GameBoard extends React.Component{
     //The above values can still be invalid if out of bounds
     //Battle does not have access to the board, but does it need it?
 
+    let cells = this.state.cells;
 
 
+    if (checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, cells) || checkValidMovement(assisterPos, assisteeAlt, [-1, -1], participantIDs, cells)  ){ //no issues with given movement positions
 
-    if (checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, this.props.G.cells) || checkValidMovement(assisterPos, assisteeAlt, [-1, -1], participantIDs, this.props.G.cells)  ){ //no issues with given movement positions
-
-      if (!checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, this.props.G.cells)) { //if only alt space was balid
+      if (!checkValidMovement(assisterPos, assisteePos, assisteeAlt, participantIDs, cells)) { //if only alt space was balid
         newAssisteePos = rowColumnToPosition(assisteeAlt); //use the alt position
       } 
 
       list[assister.side][assister.listIndex].position = newAssisterPos;
       list[assistee.side][assistee.listIndex].position = newAssisteePos;
 
-      for (let i of assister.onAssist){ //loop through each on move assist effect on the assister
-        if (i !== null && i["subtype"] === "movement"){
+      for (let effect of assister.onAssist){ //loop through each on move assist effect on the assister
+        if (effect !== null && effect["assistType"] === "movement"){
 
-          for (let j in i){ //
-            if (j === "buff"){
+          let side = 0;
+          let range = effect.range;
 
-              let buffs = i.buff;
-              for (let key in buffs){
-              
-                assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
-                assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
-              }
-
-
-            } else if (j === "debuff"){
-
-              let range = i.range;
-              let debuff = i.debuff;
-
-              let heroesInRange = [];
-
-
-              if (i["from"].includes("assister") ){
-                heroesInRange = getDistantHeroes(updatedHeroList[getEnemySide(assister.side)],  list[assister.side][assister.listIndex], [], range);
-              }
-
-              if (i["from"].includes("assistee") ){
-                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[getEnemySide(assistee.side)], list[assistee.side][assistee.listIndex], [], range)); 
-              }
-             
-              
-              
-              //loop through heroes
-              for (let hero of heroesInRange){
-
-                //loop through debuff values
-                for (let key in debuff){
-
-                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
-
-                }
-
-              } //end hero in range
-
-
-            }
+          if (effect.team === "owner"){
+            side = assister.side;
+          } else if (effect.team === "enemy") {
+            side = getEnemySide(assister.side);
 
           }
+
+
+            //let buffs = i.buff;
+            
+
+          let heroesInRange = [];
+
+          if (range > 0){
+            if (effect["from"].includes("assister") ){
+              heroesInRange = getDistantHeroes(list[side],  list[assister.side][assister.listIndex], [assistee.id], range);
+            }
+
+            if (effect["from"].includes("assistee") ){
+              heroesInRange = heroesInRange.concat(getDistantHeroes(list[side], list[assistee.side][assistee.listIndex], [assister.id], range)); 
+            }
+         
+          }
+
+          if ("exclude" in effect){ //if there is an exclude keyword, check to see if participants will be affected - should only really be for buffs, debuffs will exclude them automatically
+            if (!effect.exclude.includes("owner")){
+              heroesInRange.push(list[assister.side][assister.listIndex]);
+              //assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
+            }
+
+            if (!effect.exclude.includes("other")){
+              heroesInRange.push(list[assistee.side][assistee.listIndex]);
+              //assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
+            }
+          } else if (effect.subtype === "buff") { //buffs effects participants
+            heroesInRange.push(list[assister.side][assister.listIndex]);
+            heroesInRange.push(list[assistee.side][assistee.listIndex]);
+          }
+          applyBuffList(list, heroesInRange, effect); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
+
 
 
 
@@ -2300,54 +2298,55 @@ class GameBoard extends React.Component{
 
       } //end for assister moveAssist
 
-      for (let i of assistee.onAssist){ //loop through each on move assist effect on the assistee
-        if (i !== null && i["subtype"] === "movement"){
+      for (let effect of assistee.onAssist){ //loop through each on move assist effect on the assistee
+        if (effect !== null && effect["assistType"] === "movement"){
 
 
-          for (let j in i){ //
-            if (j === "buff"){
+          let side = 0;
+          let range = effect.range;
 
-              let buffs = i.buff;
-              for (let key in buffs){
-                assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
-                assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
-              }
-
-
-            } else if (j === "debuff"){
-
-              let range = i.range;
-              let debuff = i.debuff;
-
-
-              let heroesInRange = [];
-
-
-              if (i["from"].includes("assister") ){
-                heroesInRange = getDistantHeroes(updatedHeroList[getEnemySide(assister.side)],  list[assister.side][assister.listIndex], [], range);
-              }
-
-              if (i["from"].includes("assistee") ){
-                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[getEnemySide(assistee.side)], list[assistee.side][assistee.listIndex], [], range)); 
-              }
-             
-              
-              //loop through heroes
-              for (let hero of heroesInRange){
-
-                //loop through debuff values
-                for (let key in debuff){
-
-                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
-
-                }
-
-              } //end hero in range
-
-
-            }
+          if (effect.team === "owner"){
+            side = assister.side;
+          } else if (effect.team === "enemy") {
+            side = getEnemySide(assister.side);
 
           }
+
+
+          let heroesInRange = [];
+
+
+          if (range > 0){
+            if (effect["from"].includes("assister") ){
+              heroesInRange = getDistantHeroes(list[side], list[assister.side][assister.listIndex], [assistee.id], range);
+            }
+
+            if (effect["from"].includes("assistee") ){
+              heroesInRange = heroesInRange.concat(getDistantHeroes(list[side], list[assistee.side][assistee.listIndex], [assister.id], range)); 
+            }
+         
+          }
+
+
+          if ("exclude" in effect){
+            if (!effect.exclude.includes("other")){
+              heroesInRange.push(list[assister.side][assister.listIndex]);
+              //assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
+            }
+
+            if (!effect.exclude.includes("owner")){
+              heroesInRange.push(list[assistee.side][assistee.listIndex]);
+              //assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
+            }
+          } else if (effect.subtype === "buff") {
+            heroesInRange.push(list[assister.side][assister.listIndex]);
+            heroesInRange.push(list[assistee.side][assistee.listIndex]);
+          }
+
+
+          applyBuffList(list, heroesInRange, effect);
+
+
 
 
 
@@ -2355,8 +2354,8 @@ class GameBoard extends React.Component{
 
       } //end for assistee moveAssist
 
-      list[assister.side][assister.listIndex].buff = assister.buff;
-      list[assistee.side][assistee.listIndex].buff = assistee.buff;
+      // list[assister.side][assister.listIndex].buff = assister.buff;
+      // list[assistee.side][assistee.listIndex].buff = assistee.buff;
 
       return list;
 
@@ -2417,7 +2416,7 @@ class GameBoard extends React.Component{
 
 
     for (let i of assister.onAssist){ //loop through each on rally effect on the assister
-      if (i !== null && i["subtype"] === "rally"){
+      if (i !== null && i["assistType"] === "rally"){
         
         return true;
 
@@ -2426,7 +2425,7 @@ class GameBoard extends React.Component{
     } //end for assister onRally
 
     for (let i of assistee.onAssist){ //loop through each on rally effect on the assistee
-      if (i !== null && i["subtype"] === "rally"){
+      if (i !== null && i["assistType"] === "rally"){
 
         return true;
 
@@ -2441,7 +2440,7 @@ class GameBoard extends React.Component{
   applyRallyAssist(updatedHeroList, assister, assistee, effect){
     //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
     //if the first element is just up, then the buff is applied to units around the assistee as well
-
+    let cells = this.state.cells;
     let list = updatedHeroList;
     let aoe = false;
     let buffs = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -2489,7 +2488,7 @@ class GameBoard extends React.Component{
     //list[assister.side][assister.listIndex].assistSuccess = true; //at this point, assist has succeeded - Note - still need to check if assist made a difference for assist success
 
     for (let i of assister.onAssist){ //loop through each on rally effect on the assister
-      if (i !== null && i["subtype"] === "rally"){
+      if (i !== null && i["assistType"] === "rally"){
         
         for (let j in i){ //
   //"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"},
@@ -2510,8 +2509,8 @@ class GameBoard extends React.Component{
             } //check for cardinal range
 
             for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
-              let side = this.props.G.cells[k].side;
-              let index = this.props.G.cells[k].listIndex;
+              let side = cells[k].side;
+              let index = cells[k].listIndex;
 
               if (side !== assister.side){ //only apply if on enemy team
 
@@ -2545,7 +2544,7 @@ class GameBoard extends React.Component{
     } //end for assister onRally
 
     for (let i of assistee.onAssist){ //loop through each on rally effect on the assistee
-      if (i !== null && i["subtype"] === "rally"){
+      if (i !== null && i["assistType"] === "rally"){
 
 
         for (let j in i){ //
@@ -2566,8 +2565,8 @@ class GameBoard extends React.Component{
             } //check for cardinal range
 
             for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
-              let side = this.props.G.cells[k].side;
-              let index = this.props.G.cells[k].listIndex;
+              let side = cells[k].side;
+              let index = cells[k].listIndex;
 
               if (side !== assistee.side){ //only apply if on enemy team
 
@@ -2617,11 +2616,11 @@ class GameBoard extends React.Component{
 
     let col = position; //start from position
 
-
+    let cells = this.state.cells;
     //checking west
     while ( (col % 6) - 1 >= 0){ //get col and reduce by and 
       col--;
-      if (this.props.G.cells[col] !== null && !excluded.includes(this.props.G.cells[col].position) ){ //if a hero is in that space
+      if (cells[col] !== null && !excluded.includes(cells[col].position) ){ //if a hero is in that space
         cardinalList.push(col);
       }
 
@@ -2631,7 +2630,7 @@ class GameBoard extends React.Component{
     //checking east
     while ( (col % 6) + 1 <= 5){ //get col and reduce by and 
       col++;
-      if (this.props.G.cells[col] !== null && !excluded.includes(this.props.G.cells[col].position) ){ //if a hero is in that space
+      if (cells[col] !== null && !excluded.includes(cells[col].position) ){ //if a hero is in that space
         cardinalList.push(col);
       }
 
@@ -2644,7 +2643,7 @@ class GameBoard extends React.Component{
     while ( Math.floor(row / 6) - 1 >= 0){ //get col and reduce by and 
       row+= -6;
 
-      if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
+      if (cells[row] !== null && !excluded.includes(cells[row].position) ){ //if a hero is in that space
         cardinalList.push(row);
       }
 
@@ -2655,7 +2654,7 @@ class GameBoard extends React.Component{
     while ( Math.floor(row / 6) + 1 <= 7){ //get col and reduce by and 
       row+= 6;
 
-      if (this.props.G.cells[row] !== null && !excluded.includes(this.props.G.cells[row].position) ){ //if a hero is in that space
+      if (cells[row] !== null && !excluded.includes(cells[row].position) ){ //if a hero is in that space
         cardinalList.push(row);
       }
 
@@ -2784,7 +2783,7 @@ class GameBoard extends React.Component{
 
     if (effect.modifiers.includes("restore")){ //Reset debuffs and status effects.
 
-      if (checkCondition(heroList, [["penalty", "enemy"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
 
         return true;
        
@@ -2807,7 +2806,7 @@ class GameBoard extends React.Component{
 
     if (effect.modifiers.includes("restore")){ //Reset debuffs and status effects.
       //(heroList, condition, owner, enemy, turn)
-      if (checkCondition(list, [["penalty", "enemy"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(list, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
         list[assistee.side][assistee.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
         list[assistee.side][assistee.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
       }
@@ -2928,7 +2927,7 @@ class GameBoard extends React.Component{
     }
 
     for (let i of assister.onAssist){ //loop through each dance effect
-      if (i !== null && i["subtype"] === "heal"){
+      if (i !== null && i["assistType"] === "heal"){
 
         for (let j in i){ //
           if (j === "selfHeal"){
@@ -2989,7 +2988,7 @@ class GameBoard extends React.Component{
 
     
     for (let i of assister.onAssist){ //loop through each dance effect
-      if (i !== null && i["subtype"] === "dance"){
+      if (i !== null && i["assistType"] === "dance"){
 
         for (let j in i){ //
           if (j === "buff"){
@@ -3058,7 +3057,7 @@ class GameBoard extends React.Component{
       }
 
 
-      if (checkCondition(heroList, [["statPenalty", "enemy"]], assister, assistee )){ //if enemy has a statPenalty
+      if (checkCondition(heroList, [["statPenalty", "enemy", "battleStart"]], assister, assistee )){ //if enemy has a statPenalty
         return true;
       }
     //
@@ -3067,7 +3066,7 @@ class GameBoard extends React.Component{
 
     if (effect.neutralize.includes("restore")){
 
-      if (checkCondition(heroList, [["penalty", "enemy"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
         
         return true;
       }
@@ -3090,7 +3089,7 @@ class GameBoard extends React.Component{
 
       }
 
-      if (checkCondition(list, [["statPenalty", "enemy"]], assister, assistee )){ //if enemy has a statPenalty
+      if (checkCondition(list, [["statPenalty", "enemy", "battleStart"]], assister, assistee )){ //if enemy has a statPenalty
         list[assistee.side][assistee.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //clear debuffs
 
       }
@@ -3100,7 +3099,7 @@ class GameBoard extends React.Component{
 
     if (effect.neutralize.includes("restore")){
 
-      if (checkCondition(list, [["penalty", "enemy"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(list, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
         
         list[assistee.side][assistee.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
         list[assistee.side][assistee.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -3211,136 +3210,12 @@ class GameBoard extends React.Component{
           continue;
         }
 
-
-        if (effect.checkType === "reqCheck"){ //buff eligibility is by some kind of req/condition
-
-
-          //for status buff, we can then buff those heroes instead
-          let teamList;
-
-          let postTeam;
-          let postSpecial;
-
-          if (effect.team === "owner"){
-            teamList = heroList[side];
-            postTeam = allyTeamPost;
-            postSpecial = allyTeamSpecial;
-
-          } else if (effect.team === "enemy") {
-            teamList = heroList[enemySide];
-            postTeam = enemyTeamPost;
-            postSpecial = enemyTeamSpecial;
-          }
-
-
-          let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
-          for (let x in teamList){
-            if (heroValid(teamList[x]) && teamList[x].id !== i.id ){ //exclude themselves, self buff req is done separately
-              teamListValid.push(teamList[x]);
-            }
-          } 
-
-         // for (let m of heroList[side]){ //loop through friendly heroes
-
-          let passedHeroList = [];
-
-          if ("effectReq" in effect){
-            passedHeroList = this.heroReqCheck(i, teamListValid, effect.effectReq); //Get the list of allies that pass the req check
-
-        
-            applyBuffList(tempList, passedHeroList, effect, postTeam, postSpecial);
-
-          } //end ally req
-          
-
-          
-          //if there is a requirement for the buff to apply to themselves
-          if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, i, i, this.state.currentTurn)) {
-
-            applyBuffList(tempList, [i], effect, postTeam, postSpecial);
-          } 
-
-
-          //applyBuffList(tempList, passedHeroList, effect);
-
-        } else if (effect.checkType === "targeting"){ //targets a unit, usually for having the highest or lowest of a stat
-
-          let checkStats = effect.checkStats;
-
-          let affectedList = [];
-
-          let peak;
-
-          if (effect.peak === "max"){
-            peak = 0;
-          } else if (effect.peak === "min"){
-            peak = 999;
-          }
+        calculateBuffEffect(tempList, heroList,  i, effect, this.state.currentTurn, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
 
 
 
-          let effectSide = 0;
-          let postSpecial;
-          let postTeam;
 
-          if (effect.team === "owner"){
-            effectSide = side;
-            postTeam = allyTeamPost;
-            postSpecial = allyTeamSpecial;
-          } else if (effect.team === "enemy") {
-            effectSide = enemySide;
-            postTeam = enemyTeamPost;
-            postSpecial = enemyTeamSpecial;
-
-          }
-
-          for (let hero of heroList[effectSide]){
-
-            if ("targetReq" in effect && !checkCondition(heroList, effect.targetReq, i, hero) ){
-              continue; //if there is a target req and they don't meeet that requirement skip them
-            }
-
-            if (i.id === hero.id || !heroValid(hero) ){
-              continue; //cannot target themselves
-            }
-
-            let sum = 0;
-
-            for (let stat of checkStats){
-
-              if (stat === "hp"){
-                sum+= hero.currentHP;
-
-              } else if (stat === "damage"){ //the amount of damage on the ally
-                sum+= hero.stats.hp - hero.currentHP;
-              } else {
-                sum+= hero.visibleStats[stat];  
-              }
-
-              
-            }
-
-            if (sum === peak){ //same as peak, add to list
-              affectedList.push(hero);
-            } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
-
-              if (heroValid(hero)){
-                affectedList = []; //reset list
-                affectedList.push(hero);
-                peak = sum; //set new peak
-              }
-
-            } 
-
-
-          } //loop through team
-          
-          applyBuffList(tempList, affectedList, effect, postTeam, postSpecial);
-
-        } //end targeting type
-
-
-      } //end j
+      } //end effects
 
 
     } //end i
@@ -3406,6 +3281,7 @@ class GameBoard extends React.Component{
 
     //console.log(this.state.heroList);
     console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
+    
 
     return (
 
@@ -3511,19 +3387,20 @@ class GameBoard extends React.Component{
 
 function makeHeroStruct(){
 
-  function hero(){
-    this["id"] = arguments[0];
-    this["listIndex"] = arguments[0] % 7; //index of the hero for the list of heroes
+  function hero( idNumber, hero = {value: 0, label: ""} ){
+    this["id"] = idNumber;
+    this["listIndex"] = idNumber % 7; //index of the hero for the list of heroes
     this["level"] = 40;
     this["merge"] = 0;
     this["dragonflower"] = 0;
-    this["heroID"] = {value: 0, label: ""};
+
+    this["heroID"] = hero;
     this["iv"] = {asset: "neutral", flaw: "neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
 
-    this["side"] = (Math.floor(arguments[0] / 7) + 1).toString();
+    this["side"] = (Math.floor(idNumber / 7) + 1).toString();
     // these are reset at the start of the hero's turn
     this["buff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //visible buffs
     this["statusBuff"] =  JSON.parse(JSON.stringify(statusBuffs));//{"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
@@ -3558,14 +3435,16 @@ function makeHeroStruct(){
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0};
 
-    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0,
+    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0, "selfSweep": 0,
+    //enemyDouble stops enemy from double, stopDouble stops your own double
       "brashAssault": 0, "desperation": 0, "vantage": 0, 
-      "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0,
-      "brave": 0, "enemyBrave": 0,
+      "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
+      "brave": 0,
       "galeforce": 0,
       "wrathful": 0,
       "reflect": 0,
       "recoil": 0, "postHeal": 0, "burn": 0,
+      "onHitHeal": 0,
       "specialTrueDamage": 0, "specialFlatReduction": 0, "specialHeal": 0.0,
       "spiral": 0,
       "statBuff": {"atk": 0, "spd": 0, "def": 0, "res": 0},
@@ -3574,11 +3453,15 @@ function makeHeroStruct(){
       "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0,
-      "teamNihil": 0 }; //effects the change during battle
+      "teamNihil": 0,
+      "minimumDamage": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
     this["variablePreCombat"] = [];
     this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
+
+    this["conditionalBonusPenaltyNeutralizers"] = [];
+    this["conditionalCombatStats"] = [];
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
     this["conditionalSpecial"] = [];
     this["initiating"] = false;
@@ -3599,6 +3482,10 @@ function makeHeroStruct(){
     this["combatCount"] = 0;
     this["postCombatBuffDebuff"] = [];
 
+    this["effectiveCondition"] = [];
+    this["addedEffective"] = [];
+    this["negateEffective"] = [];
+
   }  
   return hero;
 }
@@ -3612,9 +3499,10 @@ function addEffect(hero, effect){
   if (Array.isArray(effect) ){ //a list of effects will push each element to the hero depending on the type of effect - E.g. effects to be applied at certain times (conditionals for example), will be in a list with their subtype to put them in appropriate place
 
     for (let elementEffect of effect){
-
+      
       //If combat effect in list, then add effect
-      if (effect.type === "combatEffect"){
+      if (elementEffect.type === "combatEffect"){
+        
         applyCombatEffect(hero, elementEffect); 
       } else {
 
@@ -3700,6 +3588,10 @@ function findMatchingEffect(item){
   return JSON.stringify(item) === this;
 }
 
+
+
+
+
 // function findMatchingValue(item){
 //   return item.value === this;
 // }
@@ -3741,3 +3633,363 @@ export function getEnemySide(side){
     return "1";
   }
 }
+
+
+
+export function checkConditionHero(owner, condition, heroList, turn){
+  return function(other){
+
+      return checkCondition(heroList, condition, owner, other, turn);
+  }
+}
+
+function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
+
+  //let tempBlessings = this.state.blessingBuffs; //copy the blessing buffs
+
+
+
+
+  var newHero = heroData[hero.heroID.value]; //get the heroData from heroInfo.json
+
+  var updatedDropdowns = updateDropdowns(newHero, false); //only really updates the weaponlist for now
+
+
+
+  let tSkills = {};
+
+
+  tSkills["weapon"] = updatedDropdowns["weapon"].list.find(findSkillWithName, newHero.weapon);
+  tSkills["assist"] = updatedDropdowns["assist"].list.find(findSkillWithName, newHero.assist);
+  tSkills["special"] = updatedDropdowns["special"].list.find(findSkillWithName, newHero.special);
+  tSkills["a"] = updatedDropdowns["a"].list.find(findSkillWithName, newHero.askill);
+  tSkills["b"] = updatedDropdowns["b"].list.find(findSkillWithName, newHero.bskill);
+  tSkills["c"] = updatedDropdowns["c"].list.find(findSkillWithName, newHero.cskill);
+  tSkills["seal"] = updatedDropdowns["seal"].list.find(findSkillWithName, newHero.sseal);
+
+  hero.heroSkills = tSkills; //update the new heroes default skills
+
+  //Passives/weapons only currently
+  //Add the effects of the skills to the hero
+  Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
+     hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+  });
+
+
+
+  if (newHero.type === "legendary" || newHero.type === "mythic"){
+    hero.blessing = newHero.blessing; //set blessing
+
+    for (let stat in blessingBuffs[hero.side][hero.blessing]){  //loop through stats of the corresponding blessing
+      blessingBuffs[hero.side][hero.blessing][stat] += newHero.buff[stat];
+    }     
+
+  }
+
+  hero.currentHP = hero.stats.hp;
+
+  if (hero.heroID.value === 0){ //default empty hero has no 
+    hero.position = -1;
+  } else {
+
+    let position = hero.listIndex;
+
+    if (hero.side === "1"){
+      position = position + 42; //
+    }
+    hero.position = position;
+
+    cells[position] = hero;
+
+  }
+
+    
+  //   if (e.value === "0"){ //if blank hero, take it off the board
+  //     newCells[hero.position] = null;
+  //     hero.position = -1;
+  //   } else {
+
+  //     newCells[hero.position] = hero;
+  //   }
+
+  // }
+
+
+}
+
+function updateDropdowns(newHero, newMax){
+  let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
+                       "assist":{list: [], info: assists}, "special":{list: [], info: specials},
+                       "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
+                       "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal},
+                       "o":{list: [], info: skills.o}
+                 };
+
+
+
+  // eslint-disable-next-line               
+  for (let [key, value] of Object.entries(dropTemp)) {
+    fillDropdown(value.list, value.info, newHero, newMax);
+  }
+  
+
+  return dropTemp;
+}
+
+function fillDropdown(dropdownList, info, newHero, newMax){
+
+  
+  // eslint-disable-next-line
+  for (let [key, value1] of Object.entries(info)) {
+
+    if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
+      value1.prf === false || //if the prf key says false, then push to the list
+      ( !('users' in value1) || value1.users.includes(newHero.name ) )  
+      ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
+        
+        if (!newMax || (  !('max' in value1) || value1.max  ) ){ //if newMax toggle is set to false or the skill has no max value/ is max
+          dropdownList.push({value: key, label: value1.name});
+        }
+    }
+  }
+  dropdownList.sort(compareLabels);
+
+}
+
+
+function compareLabels(a, b){
+  return a.label > b.label ? 1 : b.label > a.label ? -1 : 0;
+}
+function findSkillWithName(item){
+  return item.label === this;
+}
+
+function getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype refers to the slot the skill originates from
+
+
+  let updatedHero = currentHero;
+
+  let cdTriggerOrg = updatedHero.effects.cdTrigger;
+
+
+  let effect = skillDropdowns[skillType].info[id].effect;
+
+  if (skillType === "weapon"){
+
+    let pTemp = updatedHero.passive;
+
+
+    pTemp["atk"] += skillDropdowns["weapon"].info[id].might; //add the might of the weapon
+
+
+    //Add the passive stats from the weapon
+    let passiveStats = skillDropdowns[skillType].info[id].passive
+
+    for (let key in passiveStats){
+      pTemp[key] += passiveStats[key];
+
+    }
+
+
+    if ("effect" in skillDropdowns[skillType].info[id]){
+      addEffect(updatedHero, effect);
+    }
+
+    updatedHero.passive = pTemp;
+    updatedHero.range = skillDropdowns["weapon"].info[id].range;
+
+
+  } else if (skillType === "assist"){
+
+    updatedHero.assist = Object.assign({}, skillDropdowns[skillType].info[id] );
+
+  } else if (skillType === "special"){
+
+    //updatedHero.special.type = skillDropdowns[skillType].info[id].type;
+
+    updatedHero.special = Object.assign({}, skillDropdowns[skillType].info[id]);
+
+    var initialCharge = skillDropdowns[skillType].info[id].cd + updatedHero.effects.cdTrigger;
+
+    updatedHero.special.cd = initialCharge;
+    updatedHero.special.charge = initialCharge;
+    //updatedHero.special.effect = skillDropdowns[skillType].info[id].effect;
+
+
+  } else if (skillDropdowns[skillType].info[id].type  === "passive") {
+    let statMods = effect; //effect should contain the list of stats to buff
+    let pTemp = updatedHero.passive;
+
+    for (let key in statMods){
+      pTemp[key] += statMods[key];
+    }
+
+    updatedHero.passive = pTemp;
+
+  } else if (skillDropdowns[skillType].info[id].type === "battle-movement"){
+    updatedHero.battleMovement = Object.assign({}, effect);
+
+  } else if (skillDropdowns[skillType].info[id].type === "effect"){
+
+    addEffect(updatedHero, effect);
+
+  } //end effect
+
+
+
+
+  if ('skills' in skillDropdowns[skillType].info[id]) { // if the skill has additional skills
+    for (var x of skillDropdowns[skillType].info[id].skills) {
+
+
+      var additionalSkill  = skillDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+
+      updatedHero = getSkillEffect(additionalSkill, x[0], updatedHero, skillDropdowns); //add the extra skills as well
+    }
+
+  }
+
+
+  //Check if skill has a cdtrigger effect cdTriggers
+  if ('cdTrigger' in skillDropdowns[skillType].info[id]){
+    updatedHero.effects.cdTrigger+= skillDropdowns[skillType].info[id].cdTrigger;
+
+  }
+
+  //if the hero's cdTrigger stat has been changed, recalculate special cd.
+  if (updatedHero.effects.cdTrigger !== cdTriggerOrg){ //check if 
+
+    //get base cd of special and use modified value
+    var newCharge = skillDropdowns["special"].info[updatedHero.heroSkills.special.value].cd + updatedHero.effects.cdTrigger;
+
+    updatedHero.special.cd = newCharge;
+    updatedHero.special.charge = newCharge;
+
+  }
+
+  return updatedHero; //hero with new skills
+
+}
+
+
+function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial){
+
+  //lets say the enemy can now be owner it will work for positions but would be using the other for everything else
+  let postSpecial;
+  let postTeam;
+
+  let teamList;
+
+  if (effect.team === "owner"){
+    teamList = refList[owner.side];
+    postTeam = allyTeamPost;
+    postSpecial = allyTeamSpecial;
+
+  } else if (effect.team === "enemy") {
+    teamList = refList[getEnemySide(owner.side)];
+    postTeam = enemyTeamPost;
+    postSpecial = enemyTeamSpecial;
+  }
+
+
+  if (effect.checkType === "reqCheck"){ //buff eligibility is by some kind of req/condition
+
+    //for status buff, we can then buff those heroes instead
+
+
+    let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+    for (let x in teamList){
+      if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves, self buff req is done separately
+        teamListValid.push(teamList[x]);
+      }
+    } 
+
+   // for (let m of heroList[side]){ //loop through friendly heroes
+
+    let passedHeroList = [];
+    //owner, teamList, heroReq, heroList, turn){
+    if ("effectReq" in effect){
+      passedHeroList = heroReqCheck(owner, teamListValid, effect.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+
+
+      applyBuffList(heroList, passedHeroList, effect, postTeam, postSpecial);
+
+    } //end ally req
+    
+
+    
+    //if there is a requirement for the buff to apply to themselves
+    if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, owner, owner, currentTurn)) {
+
+      applyBuffList(heroList, [owner], effect, postTeam, postSpecial);
+    } 
+
+
+    //applyBuffList(tempList, passedHeroList, effect);
+
+  } else if (effect.checkType === "targeting"){ //targets a unit, usually for having the highest or lowest of a stat
+
+    let checkStats = effect.checkStats;
+
+    let affectedList = [];
+
+    let peak;
+
+    if (effect.peak === "max"){
+      peak = 0;
+    } else if (effect.peak === "min"){
+      peak = 999;
+    }
+
+
+
+    for (let hero of teamList){
+
+      if ("targetReq" in effect && !checkCondition(refList, effect.targetReq, owner, hero) ){
+        continue; //if there is a target req and they don't meeet that requirement skip them
+      }
+
+      if (owner.id === hero.id || !heroValid(hero) ){
+        continue; //cannot target themselves
+      }
+
+      let sum = 0;
+
+      for (let stat of checkStats){
+
+        if (stat === "hp"){
+          sum+= hero.currentHP;
+
+        } else if (stat === "damage"){ //the amount of damage on the ally
+          sum+= hero.stats.hp - hero.currentHP;
+
+        } else if (stat === "distance"){
+          sum+= getDistance(hero.position, owner.position);
+
+        } else {
+          sum+= hero.visibleStats[stat];  
+        }
+
+        
+      }
+
+      if (sum === peak){ //same as peak, add to list
+        affectedList.push(hero);
+      } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
+
+        if (heroValid(hero)){
+          affectedList = []; //reset list
+          affectedList.push(hero);
+          peak = sum; //set new peak
+        }
+
+      } 
+
+
+    } //loop through team
+    
+    applyBuffList(heroList, affectedList, effect, postTeam, postSpecial);
+
+  } //end targeting type
+}
+

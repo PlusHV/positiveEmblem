@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,8 +19,9 @@
 		"prf": true,
 		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "greentome",
-		"skills": [["a", "Resistance +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -30,8 +32,9 @@
 		"prf": true,
 		"users": ["Azura: Young Songstress"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"3": {
@@ -42,7 +45,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"4": {
@@ -53,7 +57,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"5": {
@@ -64,8 +69,9 @@
 		"prf": true,
 		"users": ["Yune: Chaos Goddess"],
 		"type": "greentome",
-		"skills": [["a", "Resistance +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"6": {
@@ -76,7 +82,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -87,7 +94,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"8": {
@@ -99,7 +107,8 @@
 		"users": ["Sonya: Vengeful Mage", "Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"9": {
@@ -111,7 +120,8 @@
 		"users": ["Deirdre: Lady of the Forest", "Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"10": {
@@ -123,7 +133,8 @@
 		"users": [],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"11": {
@@ -134,7 +145,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"12": {
@@ -146,7 +158,8 @@
 		"users": ["Merric: Wind Mage"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"13": {
@@ -157,8 +170,9 @@
 		"prf": true,
 		"users": ["Lewyn: Guiding Breeze"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"14": {
@@ -169,8 +183,9 @@
 		"prf": true,
 		"users": ["Nino: Pale Flower"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"15": {
@@ -181,7 +196,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"16": {
@@ -192,7 +208,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"17": {
@@ -203,7 +220,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"18": {
@@ -214,7 +232,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"19": {
@@ -225,7 +244,9 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": true
 	},
 	"20": {
@@ -236,7 +257,9 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": false
 	},
 	"21": {
@@ -247,7 +270,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"22": {
@@ -258,7 +282,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"23": {
@@ -269,7 +294,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"24": {
@@ -280,7 +306,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"25": {
@@ -291,7 +318,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"26": {
@@ -302,7 +330,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"27": {
@@ -313,7 +342,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"28": {
@@ -324,7 +354,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"29": {
@@ -335,7 +366,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"30": {
@@ -346,7 +378,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"31": {
@@ -357,7 +390,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"32": {
@@ -368,7 +402,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"33": {
@@ -380,7 +415,8 @@
 		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"34": {
@@ -392,7 +428,8 @@
 		"users": ["Boey: Skillful Survivor"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"35": {
@@ -404,7 +441,8 @@
 		"users": ["Nino: Pious Mage"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"36": {
@@ -415,7 +453,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"37": {
@@ -426,7 +465,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"38": {
@@ -437,8 +477,9 @@
 		"prf": true,
 		"users": ["Micaiah: Queen of Dawn"],
 		"type": "greentome",
-		"skills": [["a", "Resistance +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"39": {
@@ -449,8 +490,9 @@
 		"prf": true,
 		"users": ["Sharena: Spring Princess"],
 		"type": "greentome",
-		"skills": [["a", "Resistance +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"40": {
@@ -462,7 +504,8 @@
 		"users": ["Julia: Naga's Blood"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"41": {
@@ -473,8 +516,9 @@
 		"prf": true,
 		"users": ["Sanaki: Apostle in White"],
 		"type": "greentome",
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"42": {
@@ -485,7 +529,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"43": {
@@ -496,7 +541,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"44": {
@@ -507,7 +553,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"45": {
@@ -518,7 +565,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"46": {
@@ -529,7 +577,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"47": {
@@ -540,7 +589,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"48": {
@@ -552,7 +602,8 @@
 		"users": ["Robin: Mystery Tactician"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"49": {
@@ -564,7 +615,8 @@
 		"users": ["Olwen: Righteous Knight"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"50": {
@@ -575,7 +627,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"51": {
@@ -587,7 +640,8 @@
 		"users": ["Reinhardt: Lightning's Rondo"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"52": {
@@ -598,8 +652,9 @@
 		"prf": true,
 		"users": ["Veronica: Spring Princess"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"53": {
@@ -611,7 +666,8 @@
 		"users": ["Soren: Shrewd Strategist"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"54": {
@@ -622,7 +678,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"55": {
@@ -633,7 +690,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"56": {
@@ -644,7 +702,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"57": {
@@ -655,8 +714,9 @@
 		"prf": true,
 		"users": ["Celica: Queen of Valentia"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"58": {
@@ -667,8 +727,9 @@
 		"prf": true,
 		"users": ["Ced: Hero on the Wind"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"59": {
@@ -680,7 +741,9 @@
 		"users": ["Merric: Changing Winds"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"60": {
@@ -691,8 +754,9 @@
 		"prf": true,
 		"users": ["Lyon: Demon King"],
 		"type": "greentome",
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"61": {
@@ -703,8 +767,9 @@
 		"prf": true,
 		"users": ["Selena: Sandbar Fluorspar"],
 		"type": "greentome",
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"62": {
@@ -715,7 +780,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"63": {
@@ -726,7 +792,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"64": {
@@ -738,7 +805,8 @@
 		"users": ["Cecilia: Etrurian General"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"65": {
@@ -750,7 +818,8 @@
 		"users": ["Rhajat: Black Magician"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"66": {
@@ -761,8 +830,9 @@
 		"prf": true,
 		"users": ["Triandra: Nightmare"],
 		"type": "greentome",
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"67": {
@@ -773,8 +843,9 @@
 		"prf": true,
 		"users": ["Bernadetta: Frosty Shut-In"],
 		"type": "bluetome",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"68": {
@@ -785,8 +856,9 @@
 		"prf": true,
 		"users": ["Peony: Álfar Dream Duo"],
 		"type": "greentome",
-		"skills": [["a", "Speed +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"69": {
@@ -798,7 +870,9 @@
 		"users": ["Asbel: Windswept Youth"],
 		"type": "greentome",
 		"skills": [], 
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"70": {
@@ -809,7 +883,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"71": {
@@ -820,7 +895,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"72": {
@@ -831,7 +907,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"73": {
@@ -842,7 +919,8 @@
 		"prf": false,
 		"type": "greentome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	}
 

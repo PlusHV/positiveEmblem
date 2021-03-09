@@ -36,7 +36,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 2, "def": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"5": {
@@ -44,7 +44,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 4, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"6": {
@@ -52,7 +52,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 6, "def": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"7": {
@@ -60,7 +60,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"8": {
@@ -68,7 +68,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"atk": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 5}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"9": {
@@ -76,7 +76,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"atk": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 7}, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"10": {
@@ -84,7 +84,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 2, "res": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["atk", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"11": {
@@ -92,7 +92,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"12": {
@@ -100,7 +100,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 6, "res": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"13": {
@@ -108,7 +108,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 2, "spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"14": {
@@ -116,7 +116,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 4, "spd": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"15": {
@@ -124,7 +124,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"atk": 6, "spd": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"16": {
@@ -132,7 +132,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "spd": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "spd": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"17": {
@@ -140,7 +140,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "spd": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "spd": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"18": {
@@ -148,7 +148,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "spd": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "spd": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"19": {
@@ -222,7 +222,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2}}],
 		"max": false
 	},
 	"28": {
@@ -230,7 +230,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3}}],
 		"max": false
 	},
 	"29": {
@@ -238,7 +238,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 4}}],
 		"max": true
 	},
 	"30": {
@@ -327,7 +327,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 2, "def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "def": 3}}],
 		"max": false
 	},
 	"41": {
@@ -335,7 +335,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 3, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "def": 4}}],
 		"max": true
 	},
 	"42": {
@@ -529,7 +529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"def": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 3}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"66": {
@@ -537,7 +537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"def": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 5}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"67": {
@@ -545,7 +545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"def": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 7}, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"68": {
@@ -553,7 +553,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"def": 2, "res": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["def", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"69": {
@@ -561,7 +561,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"def": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"70": {
@@ -569,7 +569,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"def": 6, "res": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"71": {
@@ -577,7 +577,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"def": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"72": {
@@ -585,7 +585,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"def": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"73": {
@@ -593,7 +593,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"def": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"74": {
@@ -601,7 +601,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 2, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2, "res": 3}}],
 		"max": false
 	},
 	"75": {
@@ -609,7 +609,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 3, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3, "res": 4}}],
 		"max": true
 	},
 	"76": {
@@ -730,7 +730,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 3}}],
 		"max": false
 	},
 	"91": {
@@ -738,7 +738,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 4}}],
 		"max": false
 	},
 	"92": {
@@ -746,7 +746,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"def": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 5}}],
 		"max": true
 	},
 	"93": {
@@ -778,7 +778,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 2, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "res": 3}}],
 		"max": false
 	},
 	"97": {
@@ -786,7 +786,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 3, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "res": 4}}],
 		"max": true
 	},
 	"98": {
@@ -794,7 +794,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 2, "spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "spd": 2}}],
 		"max": false
 	},
 	"99": {
@@ -802,7 +802,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"atk": 3, "spd": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "spd": 3}}],
 		"max": true
 	},
 	"100": {
@@ -876,7 +876,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2}}],
 		"max": false
 	},
 	"109": {
@@ -884,7 +884,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3}}],
 		"max": false
 	},
 	"110": {
@@ -892,7 +892,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 4}}],
 		"max": true
 	},
 	"111": {
@@ -900,7 +900,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"def": 3, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 3, "res": 3}}],
 		"max": false
 	},
 	"112": {
@@ -908,7 +908,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"def": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 4, "res": 4}}],
 		"max": true
 	},
 	"113": {
@@ -1005,7 +1005,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "heal", "selfHeal": 0.5}],
+		"effect": [{"type": "onAssist", "assistType": "heal", "selfHeal": 0.5}],
 		"max": false
 	},
 	"125": {
@@ -1013,7 +1013,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "heal", "selfHeal": 0.75}],
+		"effect": [{"type": "onAssist", "assistType": "heal", "selfHeal": 0.75}],
 		"max": false
 	},
 	"126": {
@@ -1021,7 +1021,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "heal", "selfHeal": 1.0}],
+		"effect": [{"type": "onAssist", "assistType": "heal", "selfHeal": 1.0}],
 		"max": true
 	},
 	"127": {
@@ -1104,8 +1104,9 @@
 		"sp": 300,
 		"prf": true,
 		"users": ["Eirika: Graceful Resolve"],
-		"type": "on-special",
-		"effect": {"cdTrigger": 1, "damage": ["defender", "def", 0.5, "trueDamage"]},
+		"type": "effect",
+		"effect": [{"type": "onSpecial", "damage": ["defender", "def", 0.5, "trueDamage"]}],
+		"cdTrigger": 1,
 		"max": true
 	},
 	"137": {
@@ -1349,7 +1350,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"res": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 3}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"167": {
@@ -1357,7 +1358,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"res": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 5}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"168": {
@@ -1365,7 +1366,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"res": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 7}, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"169": {
@@ -1373,7 +1374,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 2, "def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2, "def": 3}}],
 		"max": false
 	},
 	"170": {
@@ -1381,7 +1382,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"spd": 3, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3, "def": 4}}],
 		"max": true
 	},
 	"171": {
@@ -1480,7 +1481,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"183": {
@@ -1488,7 +1489,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"184": {
@@ -1496,7 +1497,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"185": {
@@ -1504,7 +1505,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"186": {
@@ -1512,7 +1513,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"187": {
@@ -1520,7 +1521,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"188": {
@@ -1528,7 +1529,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"189": {
@@ -1536,7 +1537,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"190": {
@@ -1544,7 +1545,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"191": {
@@ -1552,7 +1553,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"192": {
@@ -1560,7 +1561,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["def", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["def", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"193": {
@@ -1568,7 +1569,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["def", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["def", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"194": {
@@ -1576,7 +1577,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"195": {
@@ -1584,7 +1585,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"196": {
@@ -1592,7 +1593,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"197": {
@@ -1600,7 +1601,7 @@
 		"sp": 40,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"198": {
@@ -1608,7 +1609,7 @@
 		"sp": 80,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"199": {
@@ -1616,7 +1617,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"200": {
@@ -1624,7 +1625,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"201": {
@@ -1632,7 +1633,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"202": {
@@ -1675,7 +1676,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 2, "def": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"207": {
@@ -1683,7 +1684,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 4, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"208": {
@@ -1691,7 +1692,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 6, "def": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"209": {
@@ -1699,7 +1700,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"spd": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 3}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"210": {
@@ -1707,7 +1708,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"spd": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 5}, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"211": {
@@ -1715,7 +1716,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": [], "debuff": {"spd": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 7}, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"212": {
@@ -1723,7 +1724,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 2, "res": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"213": {
@@ -1731,7 +1732,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "owner", "range": 0}],
 		"max": false
 	},
 	"214": {
@@ -1739,7 +1740,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "buff": {"spd": 6, "res": 6}}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "team": "owner", "range": 0}],
 		"max": true
 	},
 	"215": {
@@ -1843,7 +1844,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 3}}],
 		"max": false
 	},
 	"228": {
@@ -1851,7 +1852,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 4}}],
 		"max": false
 	},
 	"229": {
@@ -1859,7 +1860,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "buff": {"res": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 5}}],
 		"max": true
 	},
 	"230": {
@@ -2087,7 +2088,7 @@
 		"prf": true,
 		"users": ["Thrasir: Omnicidal Witch"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["enemyhp", "less", 0.99, "penalty", "enemy"]], "desperation": 1, "lull": {"spd": 5, "res": 5} }],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["phase", "player"], ["enemyhp", "less", 0.99, "penalty", "enemy", "combat"]], "desperation": 1, "lull": {"spd": 5, "res": 5} }],
 		"max": true
 	},
 	"257": {
@@ -2119,7 +2120,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"261": {
@@ -2127,7 +2128,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"262": {
@@ -2135,7 +2136,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"263": {
@@ -2264,7 +2265,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"277": {
@@ -2272,7 +2273,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"278": {
@@ -2280,7 +2281,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"279": {
@@ -2313,7 +2314,7 @@
 		"prf": true,
 		"users": ["Líf: Lethal Swordsman"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5, "penalty", "player"]], "defenseCharge": 1, "lull": {"atk": 5, "def": 5} }],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.5, "penalty", "player", "combat"]], "defenseCharge": 1, "lull": {"atk": 5, "def": 5} }],
 		"max": true
 	},
 	"283": {
@@ -2373,7 +2374,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"290": {
@@ -2381,7 +2382,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"291": {
@@ -2389,7 +2390,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"292": {
@@ -2512,7 +2513,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"307": {
@@ -2520,7 +2521,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"308": {
@@ -2528,7 +2529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 2, "def": 2}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"309": {
@@ -2536,7 +2537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 4, "def": 4}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"310": {
@@ -2544,7 +2545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 6, "def": 6}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": true
 	},
 	"311": {
@@ -2552,7 +2553,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 2, "res": 2}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"312": {
@@ -2560,7 +2561,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 4, "res": 4}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"313": {
@@ -2568,7 +2569,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"spd": 6, "res": 6}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": true
 	},
 	"314": {
@@ -2601,7 +2602,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"atk": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 3}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"318": {
@@ -2609,7 +2610,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"atk": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 5}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"319": {
@@ -2617,7 +2618,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"atk": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 7}, "range": 4, "from": ["assister"]}],
 		"max": true
 	},
 	"320": {
@@ -2724,7 +2725,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"def": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 3}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"332": {
@@ -2732,7 +2733,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"def": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 5}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"333": {
@@ -2740,7 +2741,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"def": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 7}, "range": 4, "from": ["assister"]}],
 		"max": true
 	},
 	"334": {
@@ -2882,7 +2883,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"351": {
@@ -2890,7 +2891,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"352": {
@@ -2898,7 +2899,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"353": {
@@ -2930,7 +2931,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 3}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"357": {
@@ -2938,7 +2939,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 5}, "range": 4, "from": ["assister"]}],
 		"max": false
 	},
 	"358": {
@@ -2946,7 +2947,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "dance", "debuff": {"res": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 7}, "range": 4, "from": ["assister"]}],
 		"max": true
 	},
 	"359": {
@@ -2954,7 +2955,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 2, "def": 2}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"360": {
@@ -2962,7 +2963,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 4, "def": 4}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": false
 	},
 	"361": {
@@ -2970,7 +2971,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "subtype": "movement", "debuff": {"atk": 6, "def": 6}, "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
 		"max": true
 	},
 	"362": {
@@ -2978,7 +2979,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"363": {
@@ -2986,7 +2987,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"364": {

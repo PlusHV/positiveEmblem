@@ -16,7 +16,7 @@ export default class Map extends React.Component{
       let cells = [];
         for (let j = 0; j < 6; j++) { //columns
           const id = 6 * i + j;
-          //if (this.props.G.cells[id] != null){
+          //if (this.props.gameState.cells[id] != null){
             let cellClass = "cellStyle";
 
             if (id  === highLightedCell){
@@ -36,41 +36,41 @@ export default class Map extends React.Component{
             if (positions.includes(id)){ //if it has a person in the cell
               //onDrop = {(e) => this.dropBoardMember(e)} >
               var imgClass = "heroFace";
-              if (this.props.G.cells[id].end === true){
+              if (this.props.gameState.cells[id].end === true){
                 imgClass = "waitHeroFace";
               }
 
 
-              var currentCharge = this.props.G.cells[id].special.charge;
+              var currentCharge = this.props.gameState.cells[id].special.charge;
               if (currentCharge < 0){
               	currentCharge = "";
               }
 
 
               cells.push(
-                <td className= {cellClass} key={id} onClick={() => this.props.selectNewMember(this.props.G.cells[id].side, (this.props.G.cells[id].listIndex))} 
+                <td className= {cellClass} key={id} onClick={() => this.props.selectNewMember(this.props.gameState.cells[id].side, (this.props.gameState.cells[id].listIndex))} 
                   id = {id}
                   onDragOver = {(e) => this.props.dragOver(e)}>
 
                   <span className = "healthText" 
-                  		id =  {JSON.stringify(this.props.G.cells[id])}
+                  		id =  {JSON.stringify(this.props.gameState.cells[id])}
                   		onDrop = {(e) => this.props.drop(e)}
                   		onDragEnd = {(e) => this.props.dragEnd(e)}>
-                  	{this.props.G.cells[id].currentHP}
+                  	{this.props.gameState.cells[id].currentHP}
                   </span>
 
                   <span className = "specialText" 
-                  		id =  {JSON.stringify(this.props.G.cells[id])}
+                  		id =  {JSON.stringify(this.props.gameState.cells[id])}
                   		onDrop = {(e) => this.props.drop(e)}
                   		onDragEnd = {(e) => this.props.dragEnd(e)}>
                   	{currentCharge}
                   </span>
 
-                <img src= {require('./art/' +  heroData[this.props.G.cells[id].heroID.value].art + '/Face_FC.png') } 
+                <img src= {require('./art/' +  heroData[this.props.gameState.cells[id].heroID.value].art + '/Face_FC.png') } 
                     className = {imgClass} 
-                    alt = {heroData[this.props.G.cells[id].heroID.value].name}
+                    alt = {heroData[this.props.gameState.cells[id].heroID.value].name}
                     draggable = "true"
-                    id =  {JSON.stringify(this.props.G.cells[id])}
+                    id =  {JSON.stringify(this.props.gameState.cells[id])}
                     onDragStart = {(e) => this.props.dragStart(e)}
                     onDrop = {(e) => this.props.drop(e)}
                     onDragEnd = {(e) => this.props.dragEnd(e)} />
@@ -104,7 +104,7 @@ export default class Map extends React.Component{
           //   </td>
           //   );
           // }
-          ////{this.props.G.cells[id]}
+          ////{this.props.gameState.cells[id]}
         }
       tbody.push(<tr key={i}>{cells}</tr>);
     }

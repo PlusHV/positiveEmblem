@@ -395,7 +395,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"50": {
@@ -403,7 +403,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"51": {
@@ -411,7 +411,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"52": {
@@ -1133,6 +1133,7 @@
 		"users": ["Robin: Fell Vessel"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"skills": [["a", "Iote's Shield"]],
 		"max": true
 	},
 	"142": {
@@ -1407,7 +1408,8 @@
 		"name": "Grani's Shield",
 		"sp": 200,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"176": {
@@ -1526,7 +1528,8 @@
 		"name": "Iote's Shield",
 		"sp": 200,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": true
 	},
 	"191": {
@@ -1779,7 +1782,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"222": {
@@ -1787,7 +1790,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"223": {
@@ -1795,7 +1798,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"224": {
@@ -2002,7 +2005,8 @@
 		"name": "Svalinn Shield",
 		"sp": 200,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"250": {
@@ -2281,6 +2285,7 @@
 		"users": ["Altina: Dawn's Trueblade"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], "statBuff": {"atk": 6, "def": 6} }],
+		"skills": [["a", "Iote's Shield"]],
 		"max": true
 	},
 	"285": {
@@ -2288,7 +2293,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"286": {
@@ -2296,7 +2301,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"287": {
@@ -2304,7 +2309,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"288": {
@@ -2352,7 +2357,7 @@
 		"sp": 3000,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4}, "guard": 1 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6, "def": 6}, "guard": 1 }],
 		"max": true
 	},
 	"294": {
@@ -2408,7 +2413,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"301": {
@@ -2416,7 +2421,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"302": {
@@ -2424,7 +2429,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"303": {
@@ -2466,6 +2471,7 @@
 		"users": ["Minerva: Princess-Knight"],
 		"type": "passive",
 		"effect": {"atk": 3, "spd": 3, "def": 3},
+		"skills": [["a", "Iote's Shield"]],
 		"max": true
 	},
 	"308": {
@@ -2569,7 +2575,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "res"],  "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"321": {
@@ -2577,7 +2583,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"322": {
@@ -2585,7 +2591,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"323": {
@@ -2595,6 +2601,7 @@
 		"users": ["Robin: Fall Vessel"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1.00]], "lull": {"atk": 6, "res": 6}, "defenseCharge": 1 }],
+		"skills": [["a", "Iote's Shield"]],
 		"max": true
 	},
 	"324": {
@@ -2650,7 +2657,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"331": {
@@ -2658,7 +2665,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
 		"max": false
 	},
 	"332": {
@@ -2666,7 +2673,23 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyDistance", "distance": 2, "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1}],
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"333": {
+		"name": "R Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"334": {
+		"name": "B Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
 		"max": true
 	}
 }

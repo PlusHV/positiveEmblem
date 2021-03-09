@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {
     "@hapi/hoek": "^9.1.0",
-    "boardgame.io": "^0.35.1",
+    "autosize-input": "^1.0.2",
+    "boardgame.io": "^0.43.3",
     "bufferutil": "^4.0.2",
     "express": "^4.17.1",
     "fibers": "^4.0.3",
@@ -20,6 +21,7 @@
     "react-select": "^3.1.1",
     "react-select-v2": "^2.4.2",
     "sass": "^1.30.0",
+    "select": "^1.1.2",
     "typescript": "^3.9.7",
     "underscore": "^1.12.0",
     "underscore.string": "^3.3.5",

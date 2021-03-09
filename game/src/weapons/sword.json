@@ -2,12 +2,13 @@
 	"0": {
 		"name": "",
 		"might": 0,
-		"range": 1,
+		"range": 0,
 		"sp": 0,
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,8 +19,9 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -30,8 +32,9 @@
 		"prf": true,
 		"users": ["Elincia: Lost Princess"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": -2},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"3": {
@@ -42,8 +45,9 @@
 		"prf": true,
 		"users": ["Eliwood: Blazing Knight"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["bonusDouble"], "checkStats": ["atk"], "team": "owner", "peak": "max"}],
 		"max": true
 	},
 	"4": {
@@ -54,7 +58,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"5": {
@@ -65,7 +70,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": false
 	},
 	"6": {
@@ -76,7 +82,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"7": {
@@ -87,7 +94,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": false
 	},
 	"8": {
@@ -98,8 +106,10 @@
 		"prf": true,
 		"users": ["Joshua: Tempest King"],
 		"type": "sword",
-		"skills": [["a", "Resistance +3"], ["a", "Resistance +2"]],
-		"effect": {"cdTrigger": -1},
+		"skills": [],
+		"passive": {"res": 5},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"9": {
@@ -110,8 +120,9 @@
 		"prf": true,
 		"users": ["Ayra: Astra's Wielder"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [["a", "Flashing Blade 3"]],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"10": {
@@ -122,7 +133,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 7} }],
 		"max": true
 	},
 	"11": {
@@ -133,7 +145,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 7} }],
 		"max": false
 	},
 	"12": {
@@ -144,8 +157,9 @@
 		"prf": true,
 		"users": ["Celica: Imprisoned Soul"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "subEffect": [{"type": "onAttack", "recoil": 7}] }],
 		"max": true
 	},
 	"13": {
@@ -157,7 +171,8 @@
 		"users": ["Roy: Young Lion"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2} }],
 		"max": true
 	},
 	"14": {
@@ -168,8 +183,9 @@
 		"prf": true,
 		"users": ["Roy: Brave Lion", "Eliwood: Knight of Lycia"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [["a", "Heavy Blade 3"]],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"15": {
@@ -180,7 +196,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"16": {
@@ -191,7 +208,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": false
 	},
 	"17": {
@@ -203,7 +221,8 @@
 		"users": ["Cain: The Bull"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]] }],
 		"max": true
 	},
 	"18": {
@@ -214,7 +233,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"19": {
@@ -225,7 +245,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"20": {
@@ -237,7 +258,9 @@
 		"users": ["Byleth: Proven Professor", "Byleth: Tested Professor"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": {"type": "combatEffect", "nullEnemyFollowUp": 1, "nullStopFollowUp": 1, "nullGuard": 1, "nullCharge": 1 },
+		"cdTrigger": -1,
 		"max": true
 	},
 	"21": {
@@ -249,7 +272,8 @@
 		"users": ["Siegbert: Future King"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"22": {
@@ -260,8 +284,10 @@
 		"prf": true,
 		"users": ["Ares: Black Knight", "Eldigan: Lionheart"],
 		"type": "sword",
-		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"skills": [["b", "Special Spiral 3"]],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"23": {
@@ -272,8 +298,9 @@
 		"prf": true,
 		"users": ["Sigurd: Holy Knight", "Seliph: Heir of Light"],
 		"type": "sword",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]]], "firstReduction": 0.5 }],
 		"max": true
 	},
 	"24": {
@@ -284,8 +311,10 @@
 		"prf": true,
 		"users": ["Alm: Imperial Ascent"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] }, 
+			{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less"]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}  }],
 		"max": true
 	},
 	"25": {
@@ -296,8 +325,9 @@
 		"prf": true,
 		"users": ["Roy: Blazing Lion"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] }], 
 		"max": true
 	},
 	"26": {
@@ -309,7 +339,8 @@
 		"users": ["Eliwood: Knight of Lycia"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4} }],
 		"max": true
 	},
 	"27": {
@@ -321,7 +352,8 @@
 		"users": ["Zephiel: The Liberator"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"28": {
@@ -332,8 +364,10 @@
 		"prf": true,
 		"users": ["Marth: Hero-King"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "combatEffect", "bonusDouble": 1}], 
 		"max": true
 	},
 	"29": {
@@ -345,7 +379,9 @@
 		"users": ["Marth: Enigmatic Blade", "Lucina: Future Witness", "Chrom: Exalted Prince"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "turnStart", "condition": [["turn", 3, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
 	},
 	"30": {
@@ -357,7 +393,9 @@
 		"users": ["Alm: Hero of Prophecy"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "turnStart", "condition": [["turn", 3, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
 	},
 	"31": {
@@ -369,7 +407,9 @@
 		"users": ["Marth: Altean Prince"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "turnStart", "condition": [["turn", 3, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
 	},
 	"32": {
@@ -380,7 +420,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "selfSweep": 1, "sweep": 1},
 		"max": true
 	},
 	"33": {
@@ -391,7 +432,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "selfSweep": 1, "sweep": 1},
 		"max": false
 	},
 	"34": {
@@ -403,7 +445,8 @@
 		"users": ["Alfonse: Prince of Askr"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
 		"max": true
 	},
 	"35": {
@@ -414,7 +457,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk"], "checkStats": ["atk"], "team": "enemy", "peak": "max" }],
 		"max": true
 	},
 	"36": {
@@ -425,7 +469,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk"], "checkStats": ["atk"], "team": "enemy", "peak": "max" }],
 		"max": false
 	},
 	"37": {
@@ -436,8 +481,9 @@
 		"prf": true,
 		"users": ["Hríd: Icy Blade"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalCombat", "condition": [ ["penalty", "enemy", "combat"]], "double": 1, "enemyDouble": 1}],
 		"max": true
 	},
 	"38": {
@@ -448,8 +494,9 @@
 		"prf": true,
 		"users": ["Ogma: Loyal Blade"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Heavy Blade 3"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"39": {
@@ -461,7 +508,9 @@
 		"users": ["Saber: Driven Mercenary"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"40": {
@@ -473,7 +522,8 @@
 		"users": ["Hana: Focused Samurai"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"41": {
@@ -484,7 +534,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"42": {
@@ -495,7 +546,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": false
 	},
 	"43": {
@@ -507,7 +559,8 @@
 		"users": ["Gunnthrá: Year's First Dream"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"44": {
@@ -519,7 +572,8 @@
 		"users": ["Hinata: Wild Samurai"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
 		"max": true
 	},
 	"45": {
@@ -530,7 +584,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"46": {
@@ -541,7 +596,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
 		"max": true
 	},
 	"47": {
@@ -552,7 +608,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
 		"max": false
 	},
 	"48": {
@@ -563,7 +620,9 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"49": {
@@ -574,7 +633,9 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": false
 	},
 	"50": {
@@ -585,8 +646,9 @@
 		"prf": true,
 		"users": ["Laevatein: Searing Steel"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"max": true
 	},
 	"51": {
@@ -597,8 +659,9 @@
 		"prf": true,
 		"users": ["Leif: Prince of Leonster"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "enemy", "def", "enemy", "res", "greater", 5]], "trueDamage": 7 }],
 		"max": true
 	},
 	"52": {
@@ -610,7 +673,8 @@
 		"users": ["Reinhardt: Thunder's Sword"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": -5},
+		"effect": {"type": "combatEffect", "brave": 1},
 		"max": true
 	},
 	"53": {
@@ -622,7 +686,9 @@
 		"users": ["Owain: Chosen One"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": {"type": "combatEffect", "defenseCharge": 1},
+		"cdTrigger": -1,
 		"max": true
 	},
 	"54": {
@@ -634,7 +700,9 @@
 		"users": ["Eldigan: Lionheart"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"55": {
@@ -646,7 +714,9 @@
 		"users": ["Fir: Sword Student", "Karel: Sword Demon"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"56": {
@@ -657,8 +727,9 @@
 		"prf": true,
 		"users": ["Laegjarn: Sheathed Steel"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "enemy", "multiplier": 0.5}],
 		"max": true
 	},
 	"57": {
@@ -669,8 +740,9 @@
 		"prf": true,
 		"users": ["Stahl: Viridian Knight"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Triangle Adept 3"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"58": {
@@ -681,7 +753,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"59": {
@@ -692,7 +765,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": false
 	},
 	"60": {
@@ -703,8 +777,9 @@
 		"prf": true,
 		"users": ["Ike: Vanguard Legend", "Ike: Young Mercenary"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"61": {
@@ -715,8 +790,9 @@
 		"prf": true,
 		"users": ["Ryoma: Peerless Samurai", "Ryoma: Supreme Samurai"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"62": {
@@ -728,7 +804,8 @@
 		"users": ["Lloyd: White Wolf"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2} }],
 		"max": true
 	},
 	"63": {
@@ -739,8 +816,9 @@
 		"prf": true,
 		"users": ["Mia: Lady of Blades"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"64": {
@@ -752,7 +830,8 @@
 		"users": ["Luke: Rowdy Squire"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"65": {
@@ -763,8 +842,9 @@
 		"prf": true,
 		"users": ["Celica: Warrior Priestess"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "attackCharge": 1 }],
 		"max": true
 	},
 	"66": {
@@ -774,8 +854,9 @@
 		"sp":300,
 		"prf": false,
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Triangle Adept 3"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"67": {
@@ -785,8 +866,9 @@
 		"sp":200,
 		"prf": false,
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Triangle Adept 3"]],
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"68": {
@@ -797,7 +879,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 7} }],
 		"max": true
 	},
 	"69": {
@@ -808,7 +891,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 7} }],
 		"max": false
 	},
 	"70": {
@@ -819,7 +903,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": true
 	},
 	"71": {
@@ -830,7 +915,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": false
 	},
 	"72": {
@@ -842,7 +928,9 @@
 		"users": ["Navarre: Scarlet Sword"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"73": {
@@ -854,7 +942,9 @@
 		"users": ["Chrom: Exalted Prince", "Chrom: Knight Exalt", "Lucina: Future Witness", "Marth: Enigmatic Blade"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "less", 0.99]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} }],
 		"max": true
 	},
 	"74": {
@@ -866,7 +956,9 @@
 		"users": ["Selena: Cutting Wit"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "conditionalEffects", "condition": [["statCompare", "visible", "atk", "less", 3]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"75": {
@@ -878,7 +970,9 @@
 		"users": ["Mareeta: The Blade's Pawn"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 0.5]], "desperation": 1  }],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"76": {
@@ -889,8 +983,9 @@
 		"prf": true,
 		"users": ["Xander: Paragon Knight"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"77": {
@@ -902,7 +997,8 @@
 		"users": ["Eirika: Restoration Lady"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"78": {
@@ -913,7 +1009,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"79": {
@@ -924,7 +1021,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"80": {
@@ -935,8 +1033,9 @@
 		"prf": true,
 		"users": ["Seth: Silver Knight"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Triangle Adept 3"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"81": {
@@ -948,7 +1047,8 @@
 		"users": ["Olivia: Sky-High Dancer"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "spd": 3, "def": 3, "res": 3}}],
 		"max": true
 	},
 	"82": {
@@ -959,7 +1059,9 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"83": {
@@ -970,7 +1072,9 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": false
 	},
 	"84": {
@@ -982,7 +1086,9 @@
 		"users": ["Líf: Lethal Swordsman"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 3, "greater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "double": 1,
+			"subEffect": [{"type": "onAttack", "subEffect": [{ "type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "minDistance", "range": "3", "list": ["stats"], "value": 20, "stats": ["hp"], "reference": false, "team": "owner", "from": "owner"}] }] }],
 		"max": true
 	},
 	"85": {
@@ -994,7 +1100,8 @@
 		"users": ["Lyn: Lady of the Plains"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.5]], "desperation": 1  }],
 		"max": true
 	},
 	"86": {
@@ -1006,7 +1113,9 @@
 		"users": ["Lon'qu: Solitary Blade"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"87": {
@@ -1017,7 +1126,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"88": {
@@ -1028,8 +1138,9 @@
 		"prf": true,
 		"users": ["Eirika: Graceful Resolve"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less"]], "statBuff": {"def": 3, "res": 3}, "attackCharge": 1  }],
 		"max": true
 	},
 	"89": {
@@ -1041,7 +1152,8 @@
 		"users": ["Seliph: Heir of Light"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.5]], "statBuff": {"def": 4} }],
 		"max": true
 	},
 	"90": {
@@ -1051,8 +1163,9 @@
 		"sp":0,
 		"prf": false,
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": {"type": "combatEffect", "minimumDamage": 1},
 		"max": false
 	},
 	"91": {
@@ -1064,7 +1177,9 @@
 		"users": ["Karla: Sword Vassal"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"92": {
@@ -1075,8 +1190,9 @@
 		"prf": true,
 		"users": ["Palla: Eldest Whitewing"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Triangle Adept 3"]],
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"93": {
@@ -1088,7 +1204,9 @@
 		"users": ["Caeda: Talys's Heart"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"94": {
@@ -1099,7 +1217,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"95": {
@@ -1110,7 +1229,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": false
 	},
 	"96": {
@@ -1122,7 +1242,8 @@
 		"users": ["Corrin: Fateful Prince"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4} }],
 		"max": true
 	},
 	"97": {
@@ -1133,7 +1254,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"98": {
@@ -1144,7 +1266,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"99": {
@@ -1155,8 +1278,10 @@
 		"prf": true,
 		"users": ["Phina: Roving Dancer", "Marth: Legacied Hero"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "less", 0.75], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": true
 	},
 	"100": {
@@ -1167,8 +1292,9 @@
 		"prf": true,
 		"users": ["Astram: Midia's Hero"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "effectReq": [["distanceCheck", 2], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"101": {
@@ -1179,8 +1305,10 @@
 		"prf": true,
 		"users": ["Hector: Dressed-Up Duo"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "less", 0.99, "turn", 2, 0]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"102": {
@@ -1191,8 +1319,10 @@
 		"prf": true,
 		"users": ["Catria: Mild Middle Sister"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "owner", "atk", "enemy", "def", "greater", 1]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "def", "factor": 0.5, "max": 999}] }],
 		"max": true
 	},
 	"103": {
@@ -1203,8 +1333,9 @@
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade", "Altina: Cross-Time Duo"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {"spd": -5},
+		"effect": {"type": "combatEffect", "brave": 1},
 		"max": true
 	},
 	"104": {
@@ -1215,7 +1346,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": true
 	},
 	"105": {
@@ -1226,7 +1358,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": false
 	},
 	"106": {
@@ -1238,7 +1371,9 @@
 		"users": ["Mareeta: Sword of Stars"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6, "def": 6, "res": 6}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1  }],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"107": {
@@ -1249,8 +1384,10 @@
 		"prf": true,
 		"users": ["Kempf: Conniving General"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "value": 1, "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] } ],
 		"max": true
 	},
 	"108": {
@@ -1261,7 +1398,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "onHitHeal": 5},
 		"max": true
 	},
 	"109": {
@@ -1272,7 +1410,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "onHitHeal": 5},
 		"max": false
 	},
 	"110": {
@@ -1284,7 +1423,9 @@
 		"users": ["Larcei: Keen Kin"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare2", "visible", "owner", "spd", "enemy", "spd", "greater", 1, "enemyhp", "greater", 1]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1},  "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"111": {
@@ -1295,8 +1436,9 @@
 		"prf": true,
 		"users": ["Shannan: Wielder of Astra"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1]], "penaltyNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1},  "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} }],
 		"max": true
 	},
 	"112": {
@@ -1307,8 +1449,11 @@
 		"prf": true,
 		"users": ["Itsuki: Finding a Path"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "variableStats", "stats": ["atk", "def"], "key": "session", "phase": "player", "multiplier": 2, "constant": 3, "max": 7},
+			{"type": "variableStats", "stats": ["atk", "def"], "key": "session", "phase": "enemy", "multiplier": 2, "constant": 7, "min": 3} ],
 		"max": true
 	},
 	"113": {
@@ -1319,7 +1464,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"114": {
@@ -1330,7 +1476,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
 		"max": false
 	},
 	"115": {
@@ -1342,7 +1489,8 @@
 		"users": ["Athena: Borderland Sword"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"116": {
@@ -1354,7 +1502,8 @@
 		"users": ["Laslow: Dancing Duelist"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "range": 2, "from": ["assister", "assistee"], "exclude": ["owner"]}],
 		"max": true
 	},
 	"117": {
@@ -1366,7 +1515,9 @@
 		"users": ["Gray: Wry Comrade"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]],  "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} } ],
 		"max": true
 	},
 	"118": {
@@ -1378,7 +1529,8 @@
 		"users": ["Tobin: The Clueless One"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"119": {
@@ -1389,7 +1541,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
 		"max": true
 	},
 	"120": {
@@ -1400,7 +1553,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
 		"max": false
 	},
 	"121": {
@@ -1412,7 +1566,8 @@
 		"users": ["Draug: Gentle Giant"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "lull": {"atk": 6} }],
 		"max": true
 	},
 	"122": {
@@ -1423,8 +1578,14 @@
 		"prf": true,
 		"users": ["Caeda: Princess of Talys"],
 		"type": "sword",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["sword"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["lance"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["axe"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "less", 0.75, "heroInfoCheck", "movetype", ["Armored"], "heroInfoCheck", "weapontype", ["sword", "lance", "axe"], [["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]]] ] ] , "vantage": 1 }],
 		"max": true
 	},
 	"123": {
@@ -1435,8 +1596,9 @@
 		"prf": true,
 		"users": ["Ike: Zeal Unleashed"],
 		"type": "sword",
-		"skills": [],
-		"effect": {},
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": {"type": "combatEffect", "penaltyReverse": {"atk": 1, "spd": 1, "def": 1, "res": 1} },
 		"max": true
 	},
 	"124": {
@@ -1447,8 +1609,9 @@
 		"prf": true,
 		"users": ["Ashnard: Mad King"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [["a", "Iote's Shield"]],
+		"passive": {"def": 3},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 5}],
 		"max": true
 	},
 	"125": {
@@ -1459,7 +1622,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}, "defenseCharge": 1 }],
 		"max": true
 	},
 	"126": {
@@ -1470,7 +1634,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}, "defenseCharge": 1 }],
 		"max": false
 	},
 	"127": {
@@ -1481,8 +1646,9 @@
 		"prf": true,
 		"users": ["Mirabilis: Daydream"],
 		"type": "sword",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [{"type": "auraStats", "effectReq": [ ["penalty", "enemy", "combat"], ["cardinalRC", true, 1, 0]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def", "res"], "value": 3}],
 		"max": true
 	},
 	"128": {
@@ -1494,7 +1660,9 @@
 		"users": ["Say'ri: Chon'sin's Blade"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "counter": 1 }],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"129": {
@@ -1505,8 +1673,10 @@
 		"prf": true,
 		"users": ["Seliph: Scion of Light"],
 		"type": "sword",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "hp", "less", 0.99]], "lull": {"atk": 6, "def": 6 } },
+			{"type": "combatEffect", "onHitHeal": 7}],
 		"max": true
 	},
 	"130": {
@@ -1518,7 +1688,9 @@
 		"users": ["Kris: Unknown Hero"],
 		"type": "sword",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1]], "penaltyNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1},  "lull": {"atk": 5, "spd": 5, "def": 5} }],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"131": {
@@ -1529,8 +1701,10 @@
 		"prf": true,
 		"users": ["Catherine: Thunder Knight"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], "statBuff": {"atk": 5, "spd": 5}, "nullStopFollowUp": 1 },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5], ["phase", "player"] ], "desperation": 1 }],
 		"max": true
 	},
 	"132": {
@@ -1541,8 +1715,11 @@
 		"prf": true,
 		"users": ["Nemesis: King of Liberation"],
 		"type": "sword",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] },
+			{"type": "variableCombat", "condition": [["combatCount", 0]], "combatEffects": ["damageReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] },
+			{"type": "variablePreCombat", "condition": [["combatCount", 0]], "combatEffects": ["preBattleReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] }],
 		"max": true
 	},
 	"133": {
@@ -1553,7 +1730,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": 4, "def": -4, "res": -4},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"134": {
@@ -1564,7 +1742,8 @@
 		"prf": false,
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": 4, "def": -4, "res": -4},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": false
 	},
 	"135": {
@@ -1575,8 +1754,9 @@
 		"prf": true,
 		"users": ["Reginn: Bearing Hope"],
 		"type": "sword",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 6}, "firstReduction": 0.7 }],
 		"max": true
 	},
 	"136": {
@@ -1588,8 +1768,33 @@
 		"users": ["Arden: Strong and Tough"],
 		"type": "sword",
 		"skills": [],
-		"effect": {},
+		"passive": {"spd": -5},
+		"effect": {"type": "combatEffect", "brave": 1},
 		"max": true
+	},
+	"137": {
+		"name": "Unbound Blade+",
+		"might": 14,
+		"range": 1,
+		"sp":300,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "buffNeutralize": {"atk": 1, "def": 1} }],
+		"max": true
+	},
+	"138": {
+		"name": "Unbound Blade",
+		"might": 10,
+		"range": 1,
+		"sp":200,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "buffNeutralize": {"atk": 1, "def": 1} }],
+		"max": false
 	}
 
 

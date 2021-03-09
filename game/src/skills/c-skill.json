@@ -129,7 +129,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"17": {
@@ -137,7 +137,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"18": {
@@ -145,7 +145,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"19": {
@@ -345,7 +345,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"47": {
@@ -353,7 +353,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"48": {
@@ -361,7 +361,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"49": {
@@ -472,7 +472,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"63": {
@@ -480,7 +480,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"64": {
@@ -488,7 +488,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"65": {
@@ -889,7 +889,7 @@
 		"prf": true,
 		"users": ["Nailah: Unflinching Eye", "Nailah: Blessed Queen"],
 		"type": "effect",
-		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"116": {
@@ -1387,7 +1387,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"178": {
@@ -1395,7 +1395,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"179": {
@@ -1403,7 +1403,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"180": {
@@ -1501,7 +1501,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"193": {
@@ -1509,7 +1509,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"194": {
@@ -1517,7 +1517,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"195": {
@@ -1573,7 +1573,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"202": {
@@ -1581,7 +1581,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"203": {
@@ -1589,7 +1589,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": true
 	},
 	"204": {
@@ -1663,7 +1663,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"213": {
@@ -1671,7 +1671,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"214": {
@@ -1679,7 +1679,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"215": {
@@ -2188,7 +2188,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"279": {
@@ -2196,7 +2196,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"280": {
@@ -2204,7 +2204,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"281": {
@@ -3041,7 +3041,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"386": {
@@ -3049,7 +3049,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"387": {
@@ -3057,7 +3057,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	}
 }

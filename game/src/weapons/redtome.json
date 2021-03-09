@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,8 +19,9 @@
 		"prf": true,
 		"users": ["Aversa: Dark One"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"2": {
@@ -30,7 +32,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"3": {
@@ -41,7 +44,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"4": {
@@ -52,8 +56,9 @@
 		"prf": true,
 		"users": ["Camilla: Flower of Fantasy"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"5": {
@@ -65,7 +70,8 @@
 		"users": ["Leo: Sorcerous Prince"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"6": {
@@ -76,7 +82,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"7": {
@@ -87,7 +94,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"8": {
@@ -99,7 +107,8 @@
 		"users": ["Sanaki: Begnion's Apostle"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"9": {
@@ -110,8 +119,9 @@
 		"prf": true,
 		"users": ["Micaiah: Summer's Dawn"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"10": {
@@ -122,7 +132,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"11": {
@@ -134,7 +145,8 @@
 		"users": ["Sophia: Nabata Prophet"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"12": {
@@ -145,7 +157,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"13": {
@@ -156,7 +169,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"14": {
@@ -167,7 +181,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"15": {
@@ -178,7 +193,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"16": {
@@ -190,7 +206,8 @@
 		"users": ["Lilina: Delightful Noble"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"17": {
@@ -201,8 +218,9 @@
 		"prf": true,
 		"users": ["Tana: Noble and Nimble"],
 		"type": "redtome",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"18": {
@@ -213,8 +231,9 @@
 		"prf": true,
 		"users": ["Eirika: Anamnesis Lady"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"19": {
@@ -225,8 +244,9 @@
 		"prf": true,
 		"users": ["Morgan: Lad from Afar"],
 		"type": "redtome",
-		"skills": [["a", "Defense +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [],
 		"max": true
 	},
 	"20": {
@@ -238,7 +258,8 @@
 		"users": ["Nowi: Eternal Witch"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"21": {
@@ -250,7 +271,8 @@
 		"users": ["Raigh: Dark Child"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"22": {
@@ -261,8 +283,9 @@
 		"prf": true,
 		"users": ["Gharnef: Dark Pontifex"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"23": {
@@ -273,7 +296,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"24": {
@@ -284,7 +308,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"25": {
@@ -295,8 +320,9 @@
 		"prf": true,
 		"users": ["Julius: Scion of Darkness"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"26": {
@@ -307,7 +333,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"27": {
@@ -318,7 +345,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"28": {
@@ -329,8 +357,9 @@
 		"prf": true,
 		"users": ["Ishtar: Thunder's Waltz"],
 		"type": "redtome",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"29": {
@@ -341,8 +370,9 @@
 		"prf": true,
 		"users": ["Tharja: Obsessive Bride"],
 		"type": "redtome",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"30": {
@@ -354,7 +384,8 @@
 		"users": ["Lyon: Shadow Prince"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"31": {
@@ -366,7 +397,8 @@
 		"users": ["Celica: Caring Princess"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"32": {
@@ -377,7 +409,9 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": true
 	},
 	"33": {
@@ -388,7 +422,9 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {"cdTrigger": 1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": 1,
 		"max": false
 	},
 	"34": {
@@ -399,7 +435,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"35": {
@@ -410,7 +447,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"36": {
@@ -421,7 +459,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"37": {
@@ -432,7 +471,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"38": {
@@ -443,7 +483,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"39": {
@@ -454,7 +495,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"40": {
@@ -465,7 +507,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"41": {
@@ -476,7 +519,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"42": {
@@ -488,7 +532,8 @@
 		"users": ["Katarina: Wayward One"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"43": {
@@ -499,7 +544,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"44": {
@@ -511,7 +557,8 @@
 		"users": ["Tharja: Dark Shadow"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"45": {
@@ -522,7 +569,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"46": {
@@ -533,7 +581,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"47": {
@@ -544,7 +593,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"48": {
@@ -556,7 +606,8 @@
 		"users": ["Arvis: Emperor of Flame"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"49": {
@@ -567,7 +618,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"50": {
@@ -578,7 +630,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"51": {
@@ -589,8 +642,9 @@
 		"prf": true,
 		"users": ["Kiria: Cool Façade"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"52": {
@@ -602,7 +656,8 @@
 		"users": ["Henry: Twisted Mind"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"53": {
@@ -614,7 +669,9 @@
 		"users": ["Lysithea: Child Prodigy"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"54": {
@@ -625,8 +682,9 @@
 		"prf": true,
 		"users": ["Iago: Nohr's Tactician"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"55": {
@@ -637,8 +695,9 @@
 		"prf": true,
 		"users": ["Julia: Heart Usurped"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"56": {
@@ -650,7 +709,9 @@
 		"users": ["Byleth: Fell Star's Duo"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"57": {
@@ -661,7 +722,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"58": {
@@ -672,7 +734,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"59": {
@@ -683,8 +746,9 @@
 		"prf": true,
 		"users": ["Lysithea: Earnest Seeker"],
 		"type": "redtome",
-		"skills": [["a", "Speed +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	},
 	"60": {
@@ -695,8 +759,9 @@
 		"prf": true,
 		"users": ["Sigurd: Destined Duo"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"61": {
@@ -707,8 +772,9 @@
 		"prf": true,
 		"users": ["Plumeria: Lewd Dream"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"62": {
@@ -720,7 +786,9 @@
 		"users": ["Lilina: Firelight Leader"],
 		"type": "redtome",
 		"skills": [],
-		"effect": {"cdTrigger": -1},
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
 		"max": true
 	},
 	"63": {
@@ -731,8 +799,9 @@
 		"prf": true,
 		"users": ["Veld: Manfroy's Rock"],
 		"type": "redtome",
-		"skills": [["a", "Resistance +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [],
 		"max": true
 	},
 	"64": {
@@ -743,8 +812,9 @@
 		"prf": true,
 		"users": ["Dorothea: Twilit Harmony"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"65": {
@@ -755,7 +825,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"66": {
@@ -766,7 +837,8 @@
 		"prf": false,
 		"type": "redtome",
 		"skills": [],
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"67": {
@@ -777,8 +849,22 @@
 		"prf": true,
 		"users": ["Líf: Undying Ties Duo"],
 		"type": "redtome",
-		"skills": [["a", "Attack +3"]],
-		"effect": {},
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
+		"max": true
+	},
+	"68": {
+		"name": "Sparking Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Azelle: Youthful Flame"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [],
 		"max": true
 	}
 

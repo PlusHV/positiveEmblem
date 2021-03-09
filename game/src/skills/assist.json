@@ -94,7 +94,8 @@
 		"range": 1,
 		"prf": false,
 		"type": ["heal"],
-		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"], "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"]},
+		"cdTrigger": 1,
 		"max": false
 	},
 	"11": {
@@ -337,7 +338,8 @@
 		"range": 1,
 		"prf": false,
 		"type": ["heal"],
-		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "modifiers": [], "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"cdTrigger": 1,
 		"max": false
 	},
 	"38": {
@@ -355,7 +357,8 @@
 		"range": 1,
 		"prf": false,
 		"type": ["heal"],
-		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "modifiers": ["rehab"], "cdTrigger": 1},
+		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "modifiers": ["rehab"]},
+		"cdTrigger": 1,
 		"max": false
 	},
 	"40": {
@@ -392,7 +395,7 @@
 		"prf": true,
 		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn", "Micaiah: Dawn Wind's Duo"],
 		"type": ["health", "neutralize"],
-		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":0, "neutralize": ["harsh"]},
+		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":1, "neutralize": ["harsh"]},
 		"max": true
 	},
 	"44": {

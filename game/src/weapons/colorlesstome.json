@@ -7,7 +7,8 @@
 		"prf": false,
 		"type": "colorlesstome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": true
 	},
 	"1": {
@@ -18,7 +19,8 @@
 		"prf": false,
 		"type": "colorlesstome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"2": {
@@ -29,7 +31,8 @@
 		"prf": false,
 		"type": "colorlesstome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"3": {
@@ -40,7 +43,8 @@
 		"prf": false,
 		"type": "colorlesstome",
 		"skills": [], 
-		"effect": {},
+		"passive": {},
+		"effect": [],
 		"max": false
 	},
 	"4": {
@@ -51,8 +55,9 @@
 		"prf": true,
 		"type": "colorlesstome",
 		"users": ["Bramimond: The Enigma"],
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"5": {
@@ -63,8 +68,9 @@
 		"prf": true,
 		"type": "colorlesstome",
 		"users": ["Micaiah: Dawn Wind's Duo"],
-		"skills": [["a", "Attack +3"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
 		"max": true
 	},
 	"6": {
@@ -75,8 +81,9 @@
 		"prf": true,
 		"type": "colorlesstome",
 		"users": ["Xane: Autumn Trickster"],
-		"skills": [["a", "HP +5"]], 
-		"effect": {},
+		"skills": [], 
+		"passive": {"hp": 5},
+		"effect": [],
 		"max": true
 	}
 
