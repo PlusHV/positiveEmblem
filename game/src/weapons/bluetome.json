@@ -2,7 +2,7 @@
 	"0": {
 		"name": "",
 		"might": 0,
-		"range": 2,
+		"range": 0,
 		"sp": 0,
 		"prf": false,
 		"type": "bluetome",
@@ -1012,5 +1012,18 @@
 		"passive": {},
 		"effect": [],
 		"max": false
+	},
+	"82": {
+		"name": "Icy Fimbulvetr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Marianne: Adopted Daughter"],
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
+		"max": true
 	}
 }

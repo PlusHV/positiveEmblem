@@ -2,7 +2,7 @@
 	"0": {
 		"name": "",
 		"might": 0,
-		"range": 2,
+		"range": 0,
 		"sp": 0,
 		"prf": false,
 		"type": "redtome",
@@ -864,6 +864,19 @@
 		"type": "redtome",
 		"skills": [],
 		"passive": {"spd": 3},
+		"effect": [],
+		"max": true
+	},
+	"69": {
+		"name": "Banshee Θ",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Solon: Church Shadow"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
 		"effect": [],
 		"max": true
 	}

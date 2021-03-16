@@ -501,7 +501,17 @@ export function getDamageType(weaponType, owner, enemy){
     if (owner.combatEffects.adaptive > 0){
       return getAdaptiveDamage(enemy);
 
-    } else if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
+    }
+
+
+    for (let stat in owner.combatEffects.defenseTarget){ //defense  target contains list of stats - if a stat is on, then that stat will be returned
+      if (owner.combatEffects.defenseTarget[stat] > 0){
+        return stat;
+      }
+
+    }
+
+    if (["sword", "lance", "axe", "bow", "dagger", "beast"].includes(weaponType) ){
       return "def";
     } else if (["redtome", "bluetome", "greentome", "breath", "staff", "colorlesstome"].includes(weaponType)){
       return "res";
@@ -1196,8 +1206,10 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
       if (Array.isArray(keyWord)){
         console.log(keyWord);
-        innerResult = checkCondition(heroList, keyWord, owner, enemy, turn);
 
+        if (checkCondition(heroList, keyWord, owner, enemy, turn) ){ //if the condition within the innercondition is true, set to true
+          innerResult = true;
+        }
       //so always on effects can be mixed with conditional effects easily
       } else if (keyWord === "always"){
         innerResult = true;
@@ -1232,7 +1244,8 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         let hpThreshold =  Math.trunc(innerCondition[j+2] * owner.stats.hp);
 
-        if (innerCondition[j+1] === "greater" && owner.currentHP >= hpThreshold ){
+
+        if (innerCondition[j+1] === "greater" && owner.currentHP >= hpThreshold ){ ///
           innerResult = true;
         } else if (innerCondition[j+1] === "less" && owner.currentHP <= hpThreshold ){
           innerResult = true;
@@ -1245,7 +1258,6 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
       } else if (keyWord === "enemyhp"){ //if hp must be at a ceretain threshold
 
         let hpThreshold =  Math.trunc(innerCondition[j+2] * enemy.stats.hp);
-
         if (innerCondition[j+1] === "greater" && enemy.currentHP >= hpThreshold ){
           innerResult = true;
         } else if (innerCondition[j+1] === "less" && enemy.currentHP <= hpThreshold ){
@@ -1409,7 +1421,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         j = j + 2;
 
 
-      } else if (keyWord === "allyInfo"){ //check if there are enough allies within range are of certain types
+      } else if (keyWord === "allyInfo"){ //check if there are enough allies within range are of certain types - this is separate from allyReq since it allows the all check on the distant allies
 
         //j+1 is range
         //j+2 is the allyInfo type
@@ -1695,10 +1707,147 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 2;
-      }
+      } else if (keyWord === "followUp"){
 
 
-    }//end for j
+        let check = {};
+        let other;
+        //determine who's followup to check
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+          other = enemy;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+          other = owner;
+        }
+
+        let checkAttackCount = 0;
+
+
+        //Get check's attack count. the getAttackCount check depends on initiation
+        if (check.initiating){
+          checkAttackCount = getAttackCount(check, other)[0];
+        } else {
+          checkAttackCount = getAttackCount(other, check)[1];
+        }
+
+        let followUpReq = 2; //attacks required to be a followup by default 
+        if(check.combatEffects.brave > 0){
+          followUpReq = 4; //if brave effect is active, then 4 attacks are required.
+        }
+
+        if (checkAttackCount >= followUpReq){
+          innerResult = true;
+        }
+
+        
+
+
+        j = j + 1;
+      } else if (keyWord === "allyReq"){ //general allyReq that allows for checking allies against a condition
+        //j + 1 is the team
+        // j + 2 is the condition
+        // 
+        //j+3 minimum needed - can also be all if all allies are requied
+        //j+4 greater/less 
+        let passCount = 0;
+
+        let side = 0;
+
+        if (innerCondition[j+1] === "owner"){
+          side = owner.side;
+        } else if (innerCondition[j+1] === "enemy"){
+          side = getEnemySide(owner.side);
+        }
+
+
+        let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+
+        let teamList = heroList[side];
+
+        for (let x in teamList){
+          if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves, self buff req is done separately
+            teamListValid.push(teamList[x]);
+          }
+        } 
+        let passedHeroList = [];
+
+
+        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+2], heroList, turn) ; //Get the list of allies that pass the req che
+        console.log(passedHeroList);
+
+        passCount = passedHeroList.length;
+        
+        if (innerCondition[j+3] === "all"){
+          if (passCount === teamListValid.length){ //if all allies meet the condition   - not used yet
+            innerResult = true;
+          }
+
+        } else if (passCount >= innerCondition[j+3] && innerCondition[j+4] === "greater"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } else if (passCount <= innerCondition[j+3] && innerCondition[j+4] === "less"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } 
+
+        j = j + 4;
+      } else if (keyWord === "heroEnd"){ //check if hero has ended their turn - used with allyReq above
+
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+
+        if (check.end && innerCondition[j+2]){ //if check unit has ended their turn and condition requires them to end their turn
+          innerResult = true;
+        } else if (!check.end && !innerCondition[j+2]){ //if check unit has not ended their turn and condition requires them to not have ended their turn
+          innerResult = true;
+        }
+        j = j + 2;
+
+      } else if (keyWord === "statusCheck"){ //check status on owner 
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        //j+2 is statusBuff or statusEffect
+        //j+3 is the status to check
+
+        if (check[innerCondition[j+2]][innerCondition[j+3]] > 0){
+          innerResult = true;
+        }
+
+
+        j = j + 3;
+
+
+      } else if (keyWord === "supportAlly"){ //checks if the other ally is a support ally
+
+        let support = owner.allySupport;
+        let allyHero = enemy.heroID;
+
+        if (support.value === allyHero.value && support.label === allyHero.label && innerCondition[j+1]){ //if they are the support ally
+
+          innerResult = true;
+        } else if ( (support.value !== allyHero.value || support.label !== allyHero.label) && !innerCondition[j+1]){ //if not support ally and asking for not support ally
+          innerResult = true;
+        }
+
+        j = j + 1;
+
+      } //end keyword
+
+      
+    } //end for j
 
     if (!innerResult){ //if the innerResult false, then result becomes false
       result = false;

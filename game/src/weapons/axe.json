@@ -2,7 +2,7 @@
 	"0": {
 		"name": "",
 		"might": 0,
-		"range": 1,
+		"range": 0,
 		"sp": 0,
 		"prf": false,
 		"type": "axe",
@@ -20,7 +20,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"2": {
@@ -32,7 +32,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"3": {
@@ -45,7 +45,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.8]], "double": 1 }],
 		"max": true
 	},
 	"4": {
@@ -58,7 +58,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"5": {
@@ -1025,7 +1025,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"82": {
@@ -1170,7 +1170,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 6, "def": 6}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"93": {
@@ -1439,6 +1439,30 @@
 		"passive": {"def": 5, "spd": -5, "res": -5},
 		"effect": [],
 		"max": true
+	},
+	"114": {
+		"name": "Steadfast Axe+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	},
+	"115": {
+		"name": "Steadfast Axe",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": false
 	}
 
 

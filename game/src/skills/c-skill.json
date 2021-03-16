@@ -3059,5 +3059,29 @@
 		"type": "effect",
 		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
+	},
+	"388": {
+		"name": "A/D Near Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 1, "def": 1} }],
+		"max": false
+	},
+	"389": {
+		"name": "A/D Near Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"390": {
+		"name": "A/D Near Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 4, "def": 4} }],
+		"max": true
 	}
 }

@@ -25,7 +25,7 @@ import skills from './skillList.js';
 
 var heroStruct = makeHeroStruct();
 
-export const statusBuffs = {"bonusDouble": 0, "airOrders": 0, "mobility+": 0, "dragonEffective": 0};
+export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0, };
 
 export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0};
 
@@ -73,7 +73,7 @@ class GameBoard extends React.Component{
     let fortLevel = 0;
     let season = {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"};
 
-    let heroList = {"1":[new heroStruct(0, {"value": 2, "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": 92, "label": "Eirika: Restoration Lady"}), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
+    let heroList = {"1":[new heroStruct(0, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": 92, "label": "Eirika: Restoration Lady"}), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
         "2": [new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]};
      //skips id 5 for listIndex  
 
@@ -122,7 +122,7 @@ class GameBoard extends React.Component{
       "draggedOver": null,
       "preBattleDamage": -1,
       "draggedOverOriginalHP": 0,
-      "selectedStatusBuff": "bonusDouble",
+      "selectedStatusBuff": "airOrders",
       "selectedStatusEffect": "counterDisrupt",
       "cells": cells 
 
@@ -1380,6 +1380,16 @@ class GameBoard extends React.Component{
           draggedOverHero = saviorHero;
         }
 
+        //"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.5 }],
+        if (draggedHero.statusBuff.fallenStar > 0){
+          draggedHero.conditionalEffects.push({"type": "conditionalEffects", "condition": [["combatCount", 0]], "firstReduction": 0.2 }); //Add conditional effect of fallen star
+
+        }
+
+        if (draggedOverHero.statusBuff.fallenStar > 0){
+          draggedOverHero.conditionalEffects.push({"type": "conditionalEffects", "condition": [["combatCount", 0]], "firstReduction": 0.2 }); //Add conditional effect of fallen star
+
+        }
 
         
         //Aura effects are effects granted by auras 
@@ -1388,18 +1398,18 @@ class GameBoard extends React.Component{
 
 
         //Regular conditional effects that do not depend on effects on other skills
-        this.getConditionalEffects(draggedHero, draggedOverHero);
-        this.getConditionalEffects(draggedOverHero, draggedHero);
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalEffects");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalEffects");
 
         //For conditional effects that check for buff/debuffs and also provide neutralzing effects - These must be after conditional effects as neutralizers from there can falsify the condition - This is basically for idunn and brunnya's weapons
-        this.getConditionalBonusPenaltyNeutralizers(draggedHero, draggedOverHero);
-        this.getConditionalBonusPenaltyNeutralizers(draggedOverHero, draggedHero);
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalBonusPenaltyNeutralizers");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalBonusPenaltyNeutralizers");
 
         //Here all neutralizations should be added
 
         //Combat effects that provide stats but need buff/debuff neutralizations -
-        this.getConditionalCombatStats(draggedHero, draggedOverHero);
-        this.getConditionalCombatStats(draggedOverHero, draggedHero);
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombatStats");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombatStats");
 
         //Get stats buffs that have variable amounts of stats provided - this requires buffs/debuffs to be calculated
         this.getVariableStats(draggedHero, draggedOverHero);
@@ -1416,12 +1426,17 @@ class GameBoard extends React.Component{
         draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
 
         //Conditional effects that need final combat stats
-        this.getConditionalCombat(draggedHero, draggedOverHero);
-        this.getConditionalCombat(draggedOverHero, draggedHero);
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombat");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombat");
 
         //Variable effects that need final combat stats
         this.getVariableCombat(draggedHero, draggedOverHero);
         this.getVariableCombat(draggedOverHero, draggedHero);
+
+
+        //Conditional effects that check for followups which requires final stats (for speed check) and conditionalCombat effects (in particular, wind/water/myhrr sweep effects are conditionalcombat effects which affect followups)
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalFollowUp");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalFollowUp");
 
         console.log(draggedHero);
 
@@ -1543,6 +1558,19 @@ class GameBoard extends React.Component{
 
   }
 
+  getConditionalEffects(owner, enemy, type){
+
+    for (let effect of owner[type]){
+
+      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+          addEffect(owner, effect);
+
+
+      } //end if condition true
+
+    } //end for 
+  }
+
   getConditionalBonusPenaltyNeutralizers(owner, enemy){ 
 
     //Conditionals
@@ -1606,21 +1634,21 @@ class GameBoard extends React.Component{
   //effects/stats provided to the user if condition is met 
   //E.g. darting blow, brazen, close foil etc
 
-  getConditionalEffects(owner, enemy){
+  // getConditionalEffects(owner, enemy){
 
 
-    //Conditionals
-    for (let effect of owner.conditionalEffects){
+  //   //Conditionals
+  //   for (let effect of owner.conditionalEffects){
 
-      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
+  //     if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
 
-        addEffect(owner, effect);
+  //       addEffect(owner, effect);
 
 
-      } //end if condition true
+  //     } //end if condition true
 
-    } //end for 
-  }
+  //   } //end for 
+  // }
 
   //Not neccessarily a conditional (they are built in) but provides a variable value of stats depending on the state of the board.
   //Blade sessions, atk/spd form etc
@@ -3451,6 +3479,7 @@ function makeHeroStruct(){
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0,
       "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "defenseTarget": {"def": 0, "res": 0}, //if stat is active, then the defensive stat checked against will be the activated stat (can't test, but adaptive damage should/will override this) - can also target speed/attack if that is ever implemented
       "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0,
       "teamNihil": 0,
@@ -3463,6 +3492,7 @@ function makeHeroStruct(){
     this["conditionalBonusPenaltyNeutralizers"] = [];
     this["conditionalCombatStats"] = [];
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
+    this["conditionalFollowUp"] = [];
     this["conditionalSpecial"] = [];
     this["initiating"] = false;
 

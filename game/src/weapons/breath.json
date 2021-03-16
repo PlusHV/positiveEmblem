@@ -2,7 +2,7 @@
 	"0": {
 		"name": "",
 		"might": 0,
-		"range": 1,
+		"range": 0,
 		"sp": 0,
 		"prf": false,
 		"type": "breath",

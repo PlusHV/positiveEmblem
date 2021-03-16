@@ -2691,5 +2691,49 @@
 		"type": "passive",
 		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
 		"max": true
+	},
+	"335": {
+		"name": "Atk/Spd Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "spd": 3} }],
+		"max": false
+	},
+	"336": {
+		"name": "Atk/Spd Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": false
+	},
+	"337": {
+		"name": "Atk/Spd Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"338": {
+		"name": "Atk/Spd Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "spd": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": true
+	},
+	"339": {
+		"name": "B Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
 	}
+
+
+	
 }

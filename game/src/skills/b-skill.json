@@ -1122,8 +1122,8 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {},
-		"skills": [["o", "Post Heal 1"]],
+		"effect": [{"type": "combatEffect", "postHeal": 2}],
+		"skills": [],
 		"max": false
 	},
 	"139": {
@@ -1131,8 +1131,8 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {},
-		"skills": [["o", "Post Heal 2"]],
+		"effect": [{"type": "combatEffect", "postHeal": 4}],
+		"skills": [],
 		"max": false
 	},
 	"140": {
@@ -1140,8 +1140,8 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {},
-		"skills": [["o", "Post Heal 3"]],
+		"effect": [{"type": "combatEffect", "postHeal": 6}],
+		"skills": [],
 		"max": true
 	},
 	"141": {
@@ -3031,6 +3031,17 @@
 		"type": "effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40}],
+		"max": true
+	},
+	"369": {
+		"name": "Fallen Star",
+		"sp": 300,
+		"prf": true,
+		"users": ["Claude: King of Unification"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "firstReduction": 0.2, 
+			"subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"},
+				{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["fallenStar"], "range": 0, "reference": true, "team": "owner", "from": "owner"}] }],
 		"max": true
 	}
 }
