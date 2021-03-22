@@ -60,7 +60,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["atk"], "team": "enemy", "value": 3, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"8": {
@@ -68,7 +68,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["atk"], "team": "enemy", "value": 5, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"9": {
@@ -76,7 +76,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"atk": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["atk"], "team": "enemy", "value": 7, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"10": {
@@ -132,7 +132,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "spd": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "spd"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"17": {
@@ -140,7 +140,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "spd": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "spd"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"18": {
@@ -148,7 +148,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "spd": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "spd"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"19": {
@@ -529,7 +529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["def"], "team": "enemy", "value": 3, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"66": {
@@ -537,7 +537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["def"], "team": "enemy", "value": 5, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"67": {
@@ -545,7 +545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"def": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["def"], "team": "enemy", "value": 7, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"68": {
@@ -577,7 +577,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["def", "res"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"72": {
@@ -585,7 +585,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["def", "res"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"73": {
@@ -593,7 +593,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"def": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["def", "res"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"74": {
@@ -1350,7 +1350,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["res"], "team": "enemy", "value": 3, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"167": {
@@ -1358,7 +1358,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["res"], "team": "enemy", "value": 5, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"168": {
@@ -1366,7 +1366,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"res": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["res"], "team": "enemy", "value": 7, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"169": {
@@ -1700,7 +1700,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 3}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["spd"], "team": "enemy", "value": 3, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"210": {
@@ -1708,7 +1708,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 5}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["spd"], "team": "enemy", "value": 5, "from": ["owner"], "range": "cardinal"}],
 		"max": false
 	},
 	"211": {
@@ -1716,7 +1716,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": [], "debuff": {"spd": 7}, "from": ["owner"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats"], "stats": ["spd"], "team": "enemy", "value": 7, "from": ["owner"], "range": "cardinal"}],
 		"max": true
 	},
 	"212": {
@@ -2120,7 +2120,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "res"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"261": {
@@ -2128,7 +2128,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "res"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"262": {
@@ -2136,7 +2136,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "res"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"263": {
@@ -2265,7 +2265,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "def"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"277": {
@@ -2273,7 +2273,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "def"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"278": {
@@ -2281,7 +2281,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"spd": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["spd", "def"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"279": {
@@ -2374,7 +2374,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "def": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "def"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"290": {
@@ -2382,7 +2382,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "def": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "def"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"291": {
@@ -2390,7 +2390,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "def": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "def"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"292": {
@@ -2883,7 +2883,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 1, "res": 1}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "res"], "team": "enemy", "value": 1, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"351": {
@@ -2891,7 +2891,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 3, "res": 3}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "res"], "team": "enemy", "value": 3, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": false
 	},
 	"352": {
@@ -2899,7 +2899,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "rally", "statusEffect": ["guard"], "debuff": {"atk": 5, "res": 5}, "from": ["owner", "ally"], "range": "cardinal"}],
+		"effect": [{"type": "onAssist", "assistType": "rally", "subtype": "debuff", "list": ["stats", "guard"], "stats": ["atk", "res"], "team": "enemy", "value": 5, "from": ["owner", "ally"], "range": "cardinal"}],
 		"max": true
 	},
 	"353": {

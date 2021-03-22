@@ -84,7 +84,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": true
 	},
 	"7": {
@@ -96,7 +96,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": false
 	},
 	"8": {
@@ -109,7 +109,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["always"]] },
+			{"type": "conditionalSpecial", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 10 } ],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -135,8 +136,8 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"11": {
@@ -147,8 +148,8 @@
 		"prf": false,
 		"type": "axe",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": false
 	},
 	"12": {
@@ -161,7 +162,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"13": {
@@ -174,7 +175,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["allyInfo", 2, "movetype", ["Cavalry", "Flying"], 1, "greater"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"14": {
@@ -186,7 +187,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": true
 	},
 	"15": {
@@ -198,7 +199,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": false
 	},
 	"16": {
@@ -210,8 +211,8 @@
 		"users": ["Cherche: Wyvern Friend"],
 		"type": "axe",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"17": {
@@ -222,7 +223,7 @@
 		"prf": true,
 		"users": ["Titania: Mighty Mercenary"],
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Triangle Adept 3"]],
 		"passive": {},
 		"effect": [],
 		"max": true
@@ -237,7 +238,9 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["beast"]]] },
+			{"type": "conditionalEffects", "condition": [["statCompare", "visible", "res", "greater", 1]],
+				"subEffect": [{"type": "variableCombat", "combatEffects": ["lull"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.5, "max": 8, "stats": ["atk", "spd"]}] }],
 		"max": true
 	},
 	"19": {
@@ -247,7 +250,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Triangle Adept 3"]],
 		"passive": {},
 		"effect": [],
 		"max": true
@@ -259,7 +262,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Triangle Adept 3"]],
 		"passive": {},
 		"effect": [],
 		"max": false
@@ -273,7 +276,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"22": {
@@ -285,7 +288,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": false
 	},
 	"23": {
@@ -298,7 +301,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["statCompare", "visible", "def", "less", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4},
+			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["distanceCheck", 2], ["statCompare", "visible", "def", "less", 1]], 0, "less"]], "statBuff": {"atk": 6, "def": 6} }],
 		"max": true
 	},
 	"24": {
@@ -311,7 +315,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "double": 1 }],
 		"max": true
 	},
 	"25": {
@@ -323,7 +327,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"26": {
@@ -335,7 +339,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": false
 	},
 	"27": {
@@ -348,7 +352,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"atk": 6} },
+			{"type": "combatEffect", "brashAssault": 1}],
 		"max": true
 	},
 	"28": {
@@ -374,7 +379,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": true
 	},
 	"30": {
@@ -386,7 +391,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": false
 	},
 	"31": {
@@ -398,7 +403,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": true
 	},
 	"32": {
@@ -410,7 +415,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": false
 	},
 	"33": {
@@ -422,7 +427,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"34": {
@@ -434,7 +439,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": false
 	},
 	"35": {
@@ -446,7 +451,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": true
 	},
 	"36": {
@@ -458,7 +463,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": false
 	},
 	"37": {
@@ -537,7 +542,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"43": {
@@ -549,7 +554,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"44": {
@@ -561,7 +566,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": true
 	},
 	"45": {
@@ -573,7 +578,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": false
 	},
 	"46": {
@@ -585,7 +590,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "subEffect": [{"type": "onAttack", "recoil": 2}] }],
 		"max": true
 	},
 	"47": {
@@ -597,7 +602,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "subEffect": [{"type": "onAttack", "recoil": 2}] }],
 		"max": false
 	},
 	"48": {
@@ -610,7 +615,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]] }],
 		"max": true
 	},
 	"49": {
@@ -622,7 +627,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"50": {
@@ -634,7 +639,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"51": {
@@ -646,7 +651,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": true
 	},
 	"52": {
@@ -658,7 +663,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": false
 	},
 	"53": {
@@ -670,7 +675,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": true
 	},
 	"54": {
@@ -682,7 +687,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": false
 	},
 	"55": {
@@ -719,7 +724,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 20, "stats": ["hp"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"58": {
@@ -757,7 +762,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"61": {
@@ -769,14 +774,13 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": false
 	},
 	"62": {
 		"name": "Steel Axe",
 		"might": 8,
 		"range": 1,
-
 		"sp": 100,
 		"prf": false,
 		"type": "axe",
@@ -793,7 +797,7 @@
 		"prf": true,
 		"users": ["Dorcas: Serene Warrior"],
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Distant Counter"]],
 		"passive": {},
 		"effect": [],
 		"max": true
@@ -808,7 +812,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "greater", 1]], "enemyDouble": 1 }],
 		"max": true
 	},
 	"65": {
@@ -818,9 +822,9 @@
 		"sp": 0,
 		"prf": false,
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Distant Counter"]],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "minimumDamage": 1},
 		"max": false
 	},
 	"66": {
@@ -833,7 +837,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "consecutiveReduction": 0.2},
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -847,7 +851,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "spd": 3, "def": 3, "res": 3}}],
 		"max": true
 	},
 	"68": {
@@ -860,7 +864,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less", 0]], "double": 1 }],
 		"max": true
 	},
 	"69": {
@@ -872,7 +876,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
 	},
 	"70": {
@@ -884,7 +888,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": false
 	},
 	"71": {
@@ -897,7 +901,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less", 0]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"72": {
@@ -909,7 +913,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "selfSweep": 1, "sweep": 1},
 		"max": true
 	},
 	"73": {
@@ -921,7 +925,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "selfSweep": 1, "sweep": 1},
 		"max": false
 	},
 	"74": {
@@ -933,7 +937,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 7} }],
 		"max": true
 	},
 	"75": {
@@ -945,7 +949,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 7} }],
 		"max": false
 	},
 	"76": {
@@ -958,7 +962,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "counter": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -972,7 +976,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"def": 6, "res": 6}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"78": {
@@ -985,7 +989,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["bonus", "player", "combat", "hp", "greater", 0.7]], "stat": "def", "stats": ["atk"], "key": "heroStats", "subtype": "statBuff", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25},
+			{"type": "variableStats", "condition": [["bonus", "player", "combat", "hp", "greater", 0.7]], "stat": "res", "stats": ["atk"], "key": "heroStats", "subtype": "lull", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25}],
 		"max": true
 	},
 	"79": {
@@ -1012,7 +1017,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
 		"max": true
 	},
 	"81": {
@@ -1038,7 +1043,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }, {"type": "onAttack", "recoil": 4} ],
 		"max": true
 	},
 	"83": {
@@ -1051,7 +1056,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "adaptive": 1},
+			{"type": "onAssist", "assistType": "rally", "subtype": "buff", "list": ["mobility+"], "team": "owner", "range": 0, "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Flying", "Armored"]], ["rangeCheck", 2, false]], "assistee": true}],
 		"max": true
 	},
 	"84": {
@@ -1063,7 +1069,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": true
 	},
 	"85": {
@@ -1075,7 +1081,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "guard": 1},
 		"max": false
 	},
 	"86": {
@@ -1088,7 +1094,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "combatEffect", "nullEnemyFollowUp": 1, "nullStopFollowUp": 1}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1102,7 +1109,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "hp", "less", 0.99]], "statBuff": {"atk": 5, "def": 5}, "defenseCharge": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1116,7 +1123,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["spd"], "team": "enemy", "peak": "min" }],
 		"max": true
 	},
 	"89": {
@@ -1129,7 +1136,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "onHitHeal": 7},
 		"max": true
 	},
 	"90": {
@@ -1156,7 +1163,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "guard": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1182,7 +1189,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}, "defenseCharge": 1 }],
 		"max": true
 	},
 	"94": {
@@ -1194,7 +1201,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}, "defenseCharge": 1 }],
 		"max": false
 	},
 	"95": {
@@ -1206,7 +1213,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 7} }],
 		"max": true
 	},
 	"96": {
@@ -1218,7 +1225,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 7} }],
 		"max": false
 	},
 	"97": {
@@ -1229,9 +1236,9 @@
 		"prf": true,
 		"users": ["Hel: Death Sovereign"],
 		"type": "axe",
-		"skills": [],
+		"skills": [["a", "Iote's Shield"]],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [ ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast", "bow", "dagger"]]], "defenseTarget": {"res": 1}, "miracle": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1245,7 +1252,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
+			{"type": "combatEffect", "buffReverse": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"99": {
@@ -1258,7 +1266,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 5, "res": 5}, "lull": {"def": 5, "res": 5}, "double": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1271,7 +1279,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "buffNeutralize": {"atk": 1, "def": 1} }],
 		"max": true
 	},
 	"101": {
@@ -1283,7 +1291,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "buffNeutralize": {"atk": 1, "def": 1} }],
 		"max": false
 	},
 	"102": {
@@ -1296,7 +1304,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.25]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+", "airOrders"], "team": "owner", "selfReq": [["hp", "greater", 0.25]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 6, "def": 6} }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1305,12 +1314,13 @@
 		"might": 16,
 		"range": 1,
 		"sp": 400,
+		"type": "axe",
 		"prf": true,
 		"users": ["Jill: Fiery Dracoknight"],
-		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "desperation": 1 } ],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1324,7 +1334,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": -5},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "brave": 1 },
+			{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 0.5}],
 		"max": true
 	},
 	"105": {
@@ -1336,7 +1347,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 4, "def": -4, "res": -4},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"106": {
@@ -1348,7 +1359,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 4, "def": -4, "res": -4},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": false
 	},
 	"107": {
@@ -1361,7 +1372,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1]], "double": 1 } ],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1374,7 +1386,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6} }],
 		"max": true
 	},
 	"109": {
@@ -1386,7 +1398,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6} }],
 		"max": false
 	},
 	"110": {
@@ -1398,7 +1410,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "penaltyDouble": {"atk": 1, "def": 1} }],
 		"max": true
 	},
 	"111": {
@@ -1410,7 +1422,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "penaltyDouble": {"atk": 1, "def": 1} }],
 		"max": false
 	},
 	"112": {
@@ -1423,7 +1435,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "lull": {"atk": 6, "def": 6} },
+			{"type": "conditionalFollowUp", "condition": [["followUp", "enemy"]], "firstReduction": 0.25 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1437,7 +1450,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"def": 5, "spd": -5, "res": -5},
-		"effect": [],
+		"effect": {"type": "combatEffect", "brave": 1},
 		"max": true
 	},
 	"114": {
@@ -1449,7 +1462,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
 		"max": true
 	},
 	"115": {
@@ -1461,7 +1474,31 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
+		"max": false
+	},
+	"116": {
+		"name": "Springy Axe+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
+		"max": true
+	},
+	"117": {
+		"name": "Springy Axe",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
 		"max": false
 	}
 

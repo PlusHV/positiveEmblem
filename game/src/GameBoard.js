@@ -4,7 +4,7 @@ import React from 'react';
 
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal} from './Battle.js';
 
 import './App.css';
 
@@ -73,8 +73,8 @@ class GameBoard extends React.Component{
     let fortLevel = 0;
     let season = {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"};
 
-    let heroList = {"1":[new heroStruct(0, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": 92, "label": "Eirika: Restoration Lady"}), new heroStruct(2), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
-        "2": [new heroStruct(7), new heroStruct(8), new heroStruct(9), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]};
+    let heroList = {"1":[new heroStruct(0, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": "92", "label": "Eirika: Restoration Lady"}), new heroStruct(2, {"value": "166", "label": "Innes: Flawless Form"}), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
+        "2": [new heroStruct(7, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(8, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(9, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]};
      //skips id 5 for listIndex  
 
     for (let team in heroList){
@@ -87,6 +87,7 @@ class GameBoard extends React.Component{
     for (let team in heroList){
       for (let teammate of heroList[team]){
         teammate.stats = calculateStats(teammate, fortLevel, blessings, season); //initialize heroes
+        teammate.visibleStats = calculateVisibleStats(teammate);
         teammate.currentHP = teammate.stats.hp;
       }//alculateStats(hero, fort, blessings, seasons
 
@@ -1434,6 +1435,9 @@ class GameBoard extends React.Component{
         this.getVariableCombat(draggedOverHero, draggedHero);
 
 
+        //currently brash assault's double is calculated in getAttack count (which is used for conditional follow ups) - can make a conditional type for conditonalCounter (checks if enemy can counter which must occur after the sweeps in conditional combat)
+        // specifically for brash assault but will keep it in getattack count for now
+
         //Conditional effects that check for followups which requires final stats (for speed check) and conditionalCombat effects (in particular, wind/water/myhrr sweep effects are conditionalcombat effects which affect followups)
         this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalFollowUp");
         this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalFollowUp");
@@ -1659,6 +1663,9 @@ class GameBoard extends React.Component{
 
       if (x !== null  ){ //if condition is true, then provide the rest of the effects
 
+        if ("condition" in x && !checkCondition(this.state.heroList, x.condition, owner, enemy, this.state.currentTurn) ){ //check if condition has not been met to skip
+          continue;
+        }
 
         let buffs =  calculateVariableEffect(this.state.heroList, x, owner, enemy, this.state.currentTurn);
 
@@ -1805,7 +1812,7 @@ class GameBoard extends React.Component{
 
 
             } else if (assistType === "rally"){
-              temp = this.applyRallyAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
+              temp = this.applyRallyAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect, this.state.currentTurn);
 
 
             } else if (assistType === "health"){
@@ -2465,11 +2472,12 @@ class GameBoard extends React.Component{
 
   }
 
-  applyRallyAssist(updatedHeroList, assister, assistee, effect){
+  applyRallyAssist(updatedHeroList, assister, assistee, effect, currentTurn){
     //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
     //if the first element is just up, then the buff is applied to units around the assistee as well
-    let cells = this.state.cells;
+    //let cells = this.state.cells;
     let list = updatedHeroList;
+    let refList = JSON.parse(JSON.stringify(list));
     let aoe = false;
     let buffs = {"atk": 0, "spd": 0, "def": 0, "res": 0};
 
@@ -2513,59 +2521,53 @@ class GameBoard extends React.Component{
 
     }
 
+    list[assistee.side][assistee.listIndex] = assistee; //apply to list
+
     //list[assister.side][assister.listIndex].assistSuccess = true; //at this point, assist has succeeded - Note - still need to check if assist made a difference for assist success
 
     for (let i of assister.onAssist){ //loop through each on rally effect on the assister
       if (i !== null && i["assistType"] === "rally"){
         
-        for (let j in i){ //
-  //"effect": {"type": "rally", "statusEffect": [], "debuff": {"atk": 3}, "from": ["owner"], "range": "cardinal"},
-          if (j === "range"){ //range determines who is affected and is main identifier to apply this effect
 
-            let affectedHeroes = [];
+        let affectedHeroes = [];
 
-            if (i.range === "cardinal"){
-
-                if (i["from"].includes("owner") ){
-                  affectedHeroes = this.getCardinalHeroPositions(assister.position, []);
-                }
-
-                if (i["from"].includes("ally") ){
-                  affectedHeroes = affectedHeroes.concat( this.getCardinalHeroPositions(assistee.position, [...affectedHeroes, assister.position]) );
-                }
-
-            } //check for cardinal range
-
-            for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
-              let side = cells[k].side;
-              let index = cells[k].listIndex;
-
-              if (side !== assister.side){ //only apply if on enemy team
-
-                let debuffs = i.debuff;
-
-                for (let l in debuffs) {
-                  list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-                }
-
-                let statusEffects = i.statusEffect;
-
-                for (let l of statusEffects){
-                  list[side][index].statusEffect[l]++; //apply the status effect
-                }
-
-              }
+        let side = "1";
 
 
-            } //end apply for each affected hero
+        if (i.team === "owner"){
+          side = assister.side;
 
-          } //end if range
+        } else if (i.team === "enemy") {
+          side = getEnemySide(assister.side);
+        }
 
 
-        } //end j loop
+
+        if (i.range === "cardinal"){ //if range is cardinal rather than a number, then we get the heroes cardinal to the assister and ally ()
+
+            if (i["from"].includes("owner") ){
+              affectedHeroes = getCardinalHeroes(list[side], assister, [assister]);
+            }
+
+            if (i["from"].includes("ally") ){
+              affectedHeroes = affectedHeroes.concat( getCardinalHeroes(list[side], assistee, [...affectedHeroes, assistee]) );
+            }
+
+        } else {
+          //export function getDistantHeroes(hList, hero, excluded, distance){
+          affectedHeroes = getDistantHeroes(list[side], assister, [assister.id], i.range); 
+        }
 
 
+        if ("assistee" in i && i["assistee"]){ //only do this assistee check for the assister's effect so extra buffs can be added to the rally. The assistee who is being rallied shouldn't have an effect that causes it to gain extra rally effects.
+          affectedHeroes.push(assistee);
+        }
+
+
+        if ("effectReq" in i){
+          affectedHeroes = heroReqCheck(assister, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+        }
+        applyBuffList(list, affectedHeroes, i);
 
       }
 
@@ -2574,51 +2576,43 @@ class GameBoard extends React.Component{
     for (let i of assistee.onAssist){ //loop through each on rally effect on the assistee
       if (i !== null && i["assistType"] === "rally"){
 
+        let affectedHeroes = [];
 
-        for (let j in i){ //
-          if (j === "range"){ //range determines who is affected and is main identifier to apply this effect
-
-            let affectedHeroes = [];
-
-            if (i.range === "cardinal"){
-
-                if (i["from"].includes("owner") ){
-                  affectedHeroes = this.getCardinalHeroPositions(assistee.position, []);
-                }
-
-                if (i["from"].includes("ally") ){
-                  affectedHeroes = affectedHeroes.concat( this.getCardinalHeroPositions(assister.position, [...affectedHeroes, assistee.position]) );
-                }
-
-            } //check for cardinal range
-
-            for (let k of affectedHeroes){ //apply debuffs and status effects to heroes in range
-              let side = cells[k].side;
-              let index = cells[k].listIndex;
-
-              if (side !== assistee.side){ //only apply if on enemy team
-
-                let debuffs = i.debuff;
-
-                for (let l in debuffs) {
-                  list[side][index].debuff[l] = Math.max(  list[side][index].debuff[l], debuffs[l]); //apply highest buff
-
-                }
-
-                let statusEffects = i.statusEffect;
-
-                for (let l of statusEffects){
-                  list[side][index].statusEffect[l]++; //apply the status effect
-                }
-
-              }
+        let side = "1";
 
 
-            } //end apply for each affected hero
+        if (i.team === "owner"){
+          side = assistee.side;
 
-          } //end if range
+        } else if (i.team === "enemy") {
+          side = getEnemySide(assistee.side);
+        }
 
-        } //end for j
+
+
+        if (i.range === "cardinal"){ //if range is cardinal rather than a number, then we get the heroes cardinal to the assister and ally ()
+
+            if (i["from"].includes("owner") ){
+              console.log(list[side]);
+              affectedHeroes = getCardinalHeroes(list[side], assistee, [assistee]);
+            }
+
+            if (i["from"].includes("ally") ){
+              affectedHeroes = affectedHeroes.concat( getCardinalHeroes(list[side], assister, [...affectedHeroes, assister]) );
+            }
+
+        } else {
+          //export function getDistantHeroes(hList, hero, excluded, distance){
+          affectedHeroes = getDistantHeroes(list[side], assistee, [assistee.id], i.range); 
+        }
+
+        if ("effectReq" in i){
+          affectedHeroes = heroReqCheck(assistee, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+        }
+
+        applyBuffList(list, affectedHeroes, i);
+
+
 
 
 
@@ -2638,6 +2632,7 @@ class GameBoard extends React.Component{
 
 
   //from a position, get a list of heroes that are cardinal to the position (and get their positions)
+  //export function getDistantHeroes(hList, hero, excluded, distance){
   getCardinalHeroPositions(position, excluded){
 
     let cardinalList = [];
@@ -2694,6 +2689,9 @@ class GameBoard extends React.Component{
 
 
   }
+
+
+
 
   checkHealthAssist(heroList, assister, assistee, effect){
 
@@ -3479,11 +3477,13 @@ function makeHeroStruct(){
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0,
       "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "penaltyDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "defenseTarget": {"def": 0, "res": 0}, //if stat is active, then the defensive stat checked against will be the activated stat (can't test, but adaptive damage should/will override this) - can also target speed/attack if that is ever implemented
       "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "bonusDouble": 0,
       "teamNihil": 0,
-      "minimumDamage": 0 }; //effects the change during battle
+      "minimumDamage": 0,
+      "miracle": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
     this["variablePreCombat"] = [];
@@ -4022,4 +4022,33 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
 
   } //end targeting type
 }
+
+//hList, list to read from
+//hero - the hero to check for cardinal
+//excluded, list of hero ids to exclude
+function getCardinalHeroes(hList, hero, excluded){ 
+
+  let cardinalList = [];
+
+  //get list of ids to exclude
+  let idList = [];
+  for (let x of excluded){
+    idList.push(x.id);
+  }
+
+
+  for (let checkHero of hList){
+
+    if (checkCardinal(hero, checkHero) && !idList.includes(checkHero.id)){ //if cardinal and not in excluded list
+      cardinalList.push(checkHero);
+    }
+
+  } //end for loop through hero list
+
+  return cardinalList;
+
+
+
+}
+
 

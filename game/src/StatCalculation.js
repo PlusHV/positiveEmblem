@@ -393,10 +393,14 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 	let bonusCopy = hero.combatEffects.bonusCopy;
 	let bonusDoubleCombatEffect = hero.combatEffects.bonusDouble;
 	let bonusDoubleStatus = hero.statusEffect.bonusDouble;
+	
 
-	//Enemy effects that affefct stats
+	//Enemy effects that affect stats
 	let buffNeutralize = enemy.combatEffects.buffNeutralize;
 	let bonusNull = enemy.combatEffects.bonusNull;
+	let penaltyDouble = enemy.combatEffects.penaltyDouble;
+
+	let buffReverse = enemy.combatEffects.buffReverse;
 
 	let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
 
@@ -449,7 +453,7 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 	//effects from the enemy\
 
 	let buffNeutralizer = 0; //set neutralizer that will cancel out buffs
-	if (buffNeutralize[stat] > 0){
+	if (buffNeutralize[stat] > 0 && panicFactor > 0){ //only neutralize buffs if not panicked.
 		buffNeutralizer = hero.buff[stat];
 	}
 
@@ -460,24 +464,27 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 	}
 
 
-	//blade tome buff
-	let bladeBuff = 0;
+	let penaltyDoubler = 0;
 
-	if (hero.combatEffects.blade > 0 && stat === "atk" && panicFactor > 0){ //blade buff only applies to atk and requires not being panicked
+	if (penaltyDouble[stat] > 0 && penaltyNeutralize[stat] <= 0){ //check if penalty double is active and penalties aren't neutralized
+		penaltyDoubler = hero.debuff[stat];
+		if (panicFactor < 0){ //if panicked, also add a buff that is double of that to reverse it
+			penaltyDoubler += hero.buff[stat];
+		}
+	}
 
- 		for (let s in buffNeutralize){ //loop through neutralizers
- 			if (buffNeutralize[s] <= 0){ //check if neutralizer is off first
- 				bladeBuff+= hero.buff[s]; //add the current buff value to the bladebuff value
- 			}
 
- 		}
+	let buffReverser = 0;
+
+	if (buffReverse[stat] > 0 && panicFactor > 0 && buffNeutralize[stat] <= 0){ //check if buff reverse is acive, if not panicked and buffs are not neutralized.
+		buffReverser = hero.buff[stat] * 2;
 
 	}
 
 
 	//
 	modifier = /*(panicFactor * hero.buff[stat]) - hero.debuff[stat] + hero.aura[stat] + */hero.combatEffects.statBuff[stat] - enemy.combatEffects.lull[stat]
-	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer + bladeBuff; 
+	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer - penaltyDoubler - buffReverser; 
 
 
 	return modifier;

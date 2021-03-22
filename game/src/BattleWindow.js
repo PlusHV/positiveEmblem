@@ -35,11 +35,13 @@ export default class BattleWindow extends React.Component{
 		let aDmgHits = [];
 		let aCount = 0;
 		let aSpecial = {};
+		let aMiracle = false;
 
 		let dDmg = {"damage": "-"};
 		let dCount = 0;
 	   	let dDmgHits = [];
 	   	let dSpecial = {};
+	   	let dMiracle = false;
 
 	   	let preBattleDmg = this.props.gameState.preBattleDamage;
 
@@ -106,14 +108,15 @@ export default class BattleWindow extends React.Component{
 
 		      if (temp === 1){
 
-		      	aDmg = calculateDamage(attacker, defender, attackerType, aSpecial, dSpecial, this.props.gameState.heroList, attackStack, attackIndex);
+		      	aDmg = calculateDamage(attacker, defender, attackerType, aSpecial, dSpecial, this.props.gameState.heroList, attackStack, attackIndex, dMiracle);
 
 		      	aSpecial.charge = aDmg.attackerSpecialCharge;
 
 		      	dSpecial.charge = aDmg.defenderSpecialCharge;
 
-
-
+		      	if (aDmg.miracleActivated){
+		      		dMiracle = aDmg.miracleActivated;
+		      	}
 		        defender.currentHP = Math.max(0, defender.currentHP - aDmg.damage);
 
 		        if (attacker.statusEffect.deepWounds < 1){
@@ -139,12 +142,16 @@ export default class BattleWindow extends React.Component{
 		        }
 
 		      } else if (temp === 2){
-		      	dDmg = calculateDamage(defender, attacker, defenderType, dSpecial, aSpecial, this.props.gameState.heroList, attackStack, attackIndex);
+		      	dDmg = calculateDamage(defender, attacker, defenderType, dSpecial, aSpecial, this.props.gameState.heroList, attackStack, attackIndex, aMiracle);
 
 		      	dSpecial.charge = dDmg.attackerSpecialCharge;
 
 		      	aSpecial.charge = dDmg.defenderSpecialCharge;
 
+
+		      	if (dDmg.miracleActivated){
+		      		aMiracle = dDmg.miracleActivated;
+		      	}
 
 		        attacker.currentHP = Math.max(0, attacker.currentHP - dDmg.damage);
 

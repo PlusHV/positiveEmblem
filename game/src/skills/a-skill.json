@@ -467,7 +467,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} }],
 		"max": true
 	},
 	"59": {
@@ -2727,6 +2727,70 @@
 	},
 	"339": {
 		"name": "B Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"340": {
+		"name": "R Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"341": {
+		"name": "R Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"342": {
+		"name": "R Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"343": {
+		"name": "R Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"344": {
+		"name": "G Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"345": {
+		"name": "G Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"346": {
+		"name": "G Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"347": {
+		"name": "G Duel Flying 4",
 		"sp": 300,
 		"prf": false,
 		"type": "passive",

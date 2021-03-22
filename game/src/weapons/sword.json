@@ -222,7 +222,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]] }],
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"18": {
@@ -314,7 +314,7 @@
 		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] }, 
-			{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less"]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}  }],
+			{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less", 0]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}  }],
 		"max": true
 	},
 	"25": {
@@ -597,7 +597,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": true
 	},
 	"47": {
@@ -609,7 +609,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": false
 	},
 	"48": {
@@ -1140,7 +1140,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less"]], "statBuff": {"def": 3, "res": 3}, "attackCharge": 1  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "less", 0]], "statBuff": {"def": 3, "res": 3}, "attackCharge": 1  }],
 		"max": true
 	},
 	"89": {
@@ -1281,6 +1281,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
 			{"type": "conditionalEffects", "condition": [["hp", "less", 0.75], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": true
 	},

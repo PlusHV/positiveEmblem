@@ -635,6 +635,20 @@
 		"passive": {"atk": 3},
 		"effect": [],
 		"max": true
+	},
+	"50": {
+		"name": "Lilac-Jade Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Myrrh: Spring Harmony"],
+		"type": "breath",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
 	}
 
 }

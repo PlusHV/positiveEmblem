@@ -879,6 +879,20 @@
 		"passive": {},
 		"effect": [],
 		"max": true
+	},
+	"70": {
+		"name": "Gullinkambi Egg",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Severa: Bitter Blossom"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
 	}
 
 }
