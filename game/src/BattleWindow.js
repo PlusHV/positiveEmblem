@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import heroData from './heroInfo.json';
-import { getDamageType, getAttackCount, getAttackOrder, calculateDamage} from './Battle.js';
+import { getDamageType, getAttackCount, getAttackOrder, postCombat, calculateDamage} from './Battle.js';
 import {calculateCombatStats} from './StatCalculation.js';
+import {addEffect} from './GameBoard.js'
 
 export default class BattleWindow extends React.Component{
 
@@ -11,23 +12,27 @@ export default class BattleWindow extends React.Component{
 	    let tbody = [];
 	    let cells = [];
 
-	    let dragged = this.props.gameState.draggedHero; //the attacker
-	    let draggedOver = this.props.gameState.draggedOver; // the defender
+	    let dragged =  JSON.parse(JSON.stringify(this.props.gameState.draggedHero));// this.props.gameState.draggedHero; //the attacker
+	    let draggedOver = JSON.parse(JSON.stringify(this.props.gameState.draggedOver)); // this.props.gameState.draggedOver; // the defender
 
-
-
+	    let battleList = JSON.parse(JSON.stringify(this.props.gameState.heroList));
+	    let board = JSON.parse(JSON.stringify(this.props.gameState.cells));
 
 		let aArt = "Blank";
 		let dArt = "Blank";
 		let aClass = "forecastHero";
 		let dClass = "forecastHero";
+
 		let aOrgHP = 0;
 		let aNewHP = 0;
+		let aPostHP = 0;
 		let aOrgSpecial = -10;
 		let aNewSpecial = -10;
 
+
 		let dOrgHP = 0;
 		let dNewHP = 0;
+		let dPostHP = 0;
 		let dOrgSpecial = -10;
 		let dNewSpecial = -10;
 
@@ -36,22 +41,25 @@ export default class BattleWindow extends React.Component{
 		let aCount = 0;
 		let aSpecial = {};
 		let aMiracle = false;
+		let aPostDamage = 0;
 
 		let dDmg = {"damage": "-"};
 		let dCount = 0;
 	   	let dDmgHits = [];
 	   	let dSpecial = {};
 	   	let dMiracle = false;
+	   	let dPostDamage = 0;
 
 	   	let preBattleDmg = this.props.gameState.preBattleDamage;
 
+	   	let preBattleMod = 0; //uses dmg hits to check for attacks, this is an extra value to check if prebattle damage is done so it can be discounted in the attack check
 	    //TODO - Show aoe damage(on defender in the forecast) and needs to show markings on board?
 
 
 	    if (dragged !== null && draggedOver !== null && dragged.side !== draggedOver.side){
 
-	    	let attacker = Object.assign({}, dragged);
-	    	let defender = Object.assign({}, draggedOver);
+	    	let attacker = dragged;//Object.assign({}, dragged);
+	    	let defender = draggedOver;//Object.assign({}, draggedOver);
 
 	    	aArt = heroData[attacker.heroID.value].art;
 	    	dArt = heroData[defender.heroID.value].art;
@@ -79,6 +87,9 @@ export default class BattleWindow extends React.Component{
 		    let attackerSpecialActivated = false;
 		    let defenderSpecialActivated = false;
 
+		    let aSubEffect = [];
+		    let dSubEffect = [];
+
 		    if (attacker.specialActivated){ //check if pre battle special used
 		    	attackerSpecialActivated = true;
 		    }
@@ -97,6 +108,7 @@ export default class BattleWindow extends React.Component{
 
 		    if (preBattleDmg >= 0){
 		    	aDmgHits.push(preBattleDmg);
+		    	preBattleMod = 1;
 		    }
 
 		    attacker.combatStats = calculateCombatStats(attacker, defender);
@@ -134,11 +146,12 @@ export default class BattleWindow extends React.Component{
 		        aDmgHits.push(aDmg.damage);
 
 		        if (aDmg.attackerSpecialActivated){
-		          attackerSpecialActivated = true;
+		        	aSubEffect = aDmg.subEffect;
+		        	attackerSpecialActivated = true;
 		        }
 
 		        if (aDmg.defenderSpecialActivated){
-		          defenderSpecialActivated = true;
+					defenderSpecialActivated = true;
 		        }
 
 		      } else if (temp === 2){
@@ -171,6 +184,7 @@ export default class BattleWindow extends React.Component{
 		        dDmgHits.push(dDmg.damage);
 
 		        if (dDmg.attackerSpecialActivated){
+		        	dSubEffect = dDmg.subEffect;
 		          defenderSpecialActivated = true;
 		        }
 
@@ -192,20 +206,90 @@ export default class BattleWindow extends React.Component{
 		    }
 
 
-		    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
-		      aSpecial.charge = Math.max(0, aSpecial.charge - attacker.combatEffects.spiral);
-		    }
-
-		    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
-		      dSpecial.charge = Math.max(0, dSpecial.charge - defender.combatEffects.spiral);
-		    }
 
 
+		    //damage after battles
 		    aNewHP = attacker.currentHP;
 		    dNewHP = defender.currentHP;
 
 		    aNewSpecial = aSpecial.charge;
 		    dNewSpecial = dSpecial.charge;
+
+
+		    addEffect(attacker, aSubEffect);
+    		addEffect(defender, dSubEffect);
+
+    //combat has now ended, post combat effects activate
+    		let attackerAttacked = false;
+    		let defenderAttacked = false;
+
+		    if (aDmgHits.length >= 1 + preBattleMod){ //at least one attack was done, if pre battle damage was done, then require another attack
+		    	attackerAttacked = true;
+
+		    }
+
+		    if (dDmgHits.length >= 1){
+		    	defenderAttacked = true;
+
+		    }
+
+
+    		let postCombatInfo = postCombat(battleList, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated);
+
+		    //let attackerTeamPost = postCombatInfo.attackerTeamPost;
+		    //let defenderTeamPost = postCombatInfo.defenderTeamPost;
+
+		    let attackerTeamSpecial = postCombatInfo.attackerTeamSpecial;
+		    let defenderTeamSpecial = postCombatInfo.defenderTeamSpecial;
+
+		    let attackerPostDamage = postCombatInfo.attackerPostDamage;
+		    let defenderPostDamage = postCombatInfo.defenderPostDamage;
+
+
+    		if (attackerPostDamage !== 0){
+    			aPostDamage = attackerPostDamage;
+    		}
+
+    		if (defenderPostDamage !== 0){
+    			dPostDamage = defenderPostDamage;
+    		}
+
+
+    		if (attackerTeamSpecial[attacker.listIndex] === "reset"){
+    			aNewSpecial = attacker.special.cd;
+    		} else {
+    			aNewSpecial = Math.min(Math.max(0, aNewSpecial - attackerTeamSpecial[attacker.listIndex]), attacker.special.cd);
+    		}
+
+    		if (defenderTeamSpecial[defender.listIndex] === "reset"){
+    			dNewSpecial = defender.special.cd;
+    		} else {
+    			dNewSpecial = Math.min(Math.max(0, dNewSpecial - defenderTeamSpecial[attacker.listIndex]), defender.special.cd);
+    		}
+
+
+
+		    if (aNewHP > 0){
+		      aPostHP = Math.min(Math.max(1, aNewHP - aPostDamage), attacker.stats.hp); //cannot go below 0 from post battle damage and hp is capped
+		    }
+		    if (dNewHP > 0){
+		      dPostHP = Math.min(Math.max(1, dNewHP - dPostDamage), defender.stats.hp); //cannot go below 0 from post battle damage and hp is capped
+		    }
+
+    //apply post combat damage to both teams
+
+   //  //Deep wounds gets cleared post combat, but will still reduce healing effects before it is cleared
+
+
+
+    //on attack combatEffects (strike effects) should just be recoil and stuff (and some debuff stuff)
+
+    //stuff like recoil should wear off and this works fine - combat effects fine
+    //buffs or status buffs need to be applied to the list version tho
+
+
+
+
 
 
 
@@ -223,6 +307,7 @@ export default class BattleWindow extends React.Component{
 	    	</td>);
 
 
+
 	    cells.push(<td align = "center" key = "aHP">
 	    	{aOrgHP} -> {aNewHP}
 	    	</td>);
@@ -230,6 +315,8 @@ export default class BattleWindow extends React.Component{
 	    cells.push(<td align = "center" key = "HPLabel">
 	    	HP
 	    	</td>);
+
+
 
 
 	    cells.push(<td align = "center" key = "dHP">
@@ -249,7 +336,7 @@ export default class BattleWindow extends React.Component{
 	    tbody.push(<tr key= "battleRow1" >{cells}</tr>);
 
 
-	    //Might put special charges here?
+	    //Specials
 	    cells = [];
 
 	    let aSpecialText = "-";
@@ -321,6 +408,75 @@ export default class BattleWindow extends React.Component{
 	    	</td>);
 
 	    tbody.push(<tr key = "battleRow3" >{cells}</tr>);
+
+
+	    //show post damage
+	    cells = [];
+
+	    let aPostDmgText = "-";
+	    let dPostDmgText = "-";
+
+
+	    if (aPostDamage !== 0){
+	    	aPostDmgText = aPostDamage;
+	    }
+
+	    if (dPostDamage !==0){
+	    	dPostDmgText = dPostDamage;
+	    }
+
+
+	    cells.push(<td colSpan = "2" align = "center" key = "aPostDamage">
+	    	{aPostDmgText}
+	    	</td>);
+
+	    cells.push(<td align = "center" key = "PostLabel">
+			POST
+	    	</td>);
+
+
+	    cells.push(<td colSpan = "2" align = "center" key = "dPostDamage">
+	    	{dPostDmgText}
+	    	</td>);
+
+	    tbody.push(<tr key = "battleRow4" >{cells}</tr>);
+
+	    //show post hp
+	    cells = [];
+
+	    let aPostHPText = "-";
+	    if (aPostHP !== aNewHP){
+	    	aPostHPText = aNewHP + " -> " + aPostHP;
+	    }
+
+	    let dPostHPText = "-";
+	    if (dPostHP !== dNewHP){
+	    	dPostHPText = dNewHP + " -> " + dPostHP;
+	    }
+
+	    if (aPostDamage !== 0){
+	    	aPostDmgText = aPostDamage;
+	    }
+
+	    if (dPostDamage !==0){
+	    	dPostDmgText = dPostDamage;
+	    }
+
+
+	    cells.push(<td colSpan = "2" align = "center" key = "aPostHP">
+	    	{aPostHPText}
+	    	</td>);
+
+	    cells.push(<td align = "center" key = "HPPostLabel">
+			HPPOST
+	    	</td>);
+
+
+	    cells.push(<td colSpan = "2" align = "center" key = "dPostHP">
+	    	{dPostHPText}
+	    	</td>);
+
+	    tbody.push(<tr key = "battleRow5" >{cells}</tr>);
 
     	return(
 	        <table key = "Battle">

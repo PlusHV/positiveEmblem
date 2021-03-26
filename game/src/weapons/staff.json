@@ -20,7 +20,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "absorb": 0.5},
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "owner", "from": "owner" }] }],
 		"max": true
 	},
 	"2": {
@@ -32,7 +33,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "absorb": 0.5},
 		"max": false
 	},
 	"3": {
@@ -56,7 +57,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"5": {
@@ -68,7 +69,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"6": {
@@ -80,7 +81,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"7": {
@@ -92,7 +93,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 6, "stats": ["atk"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"8": {
@@ -104,7 +105,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"9": {
@@ -116,7 +117,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"10": {
@@ -129,7 +130,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["isolation"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3]] }],
 		"max": true
 	},
 	"11": {
@@ -141,7 +143,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 1, "stats": ["special"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"12": {
@@ -153,7 +155,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 1, "stats": ["special"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"13": {
@@ -165,7 +167,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"14": {
@@ -177,7 +179,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"15": {
@@ -190,7 +192,9 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "sweep": 1},
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  },
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }],
 		"max": true
 	},
 	"16": {
@@ -202,7 +206,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["def", "res"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"17": {
@@ -214,7 +218,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def", "res"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"18": {
@@ -226,7 +230,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "checkStats": ["def"], "team": "enemy", "peak": "max" }],
 		"max": true
 	},
 	"19": {
@@ -238,7 +242,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "checkStats": ["def"], "team": "enemy", "peak": "max" }],
 		"max": false
 	},
 	"20": {
@@ -250,7 +254,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": true
 	},
 	"21": {
@@ -262,7 +266,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
 		"max": false
 	},
 	"22": {
@@ -274,7 +278,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "burn": 10, "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"23": {
@@ -286,7 +290,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "burn": 10 }],
 		"max": false
 	},
 	"24": {
@@ -298,7 +302,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"25": {
@@ -310,7 +314,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"26": {
@@ -323,7 +327,9 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "sweep": 1},
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 3, "spd": 3} },
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"27": {
@@ -335,7 +341,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"28": {
@@ -347,7 +353,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 6, "stats": ["spd"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"29": {
@@ -360,7 +366,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
 		"max": true
 	},
 	"30": {
@@ -372,7 +379,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": true
 	},
 	"31": {
@@ -384,7 +391,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"32": {
@@ -396,7 +403,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["triangleAdept"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"33": {
@@ -408,7 +415,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["triangleAdept"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"34": {
@@ -418,9 +425,9 @@
 		"sp": 0,
 		"prf": false,
 		"type": "staff",
-		"skills": [],
+		"skills": [["a", "Close Counter"]],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "minimumDamage": 1},
 		"max": false
 	},
 	"35": {
@@ -432,7 +439,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats", "guard"], "value": "reset", "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"36": {
@@ -444,7 +451,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats", "guard"], "value": "reset", "stats": ["special"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"37": {
@@ -456,7 +463,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats", "guard"], "value": "reset", "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"38": {
@@ -468,7 +475,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats", "guard"], "value": "reset", "stats": ["special"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": false
 	},
 	"39": {
@@ -480,7 +487,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
 		"max": true
 	},
 	"40": {
@@ -492,7 +499,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
 		"max": false
 	},
 	"41": {
@@ -504,7 +511,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 5}],
 		"max": true
 	},
 	"42": {
@@ -516,7 +523,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 5}],
 		"max": false
 	},
 	"43": {
@@ -529,7 +536,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "damageReduction": 0.7}] }],
 		"max": true
 	},
 	"44": {
@@ -542,7 +550,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"45": {
@@ -555,7 +564,9 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "sweep": 1},
+			{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 4]] },
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["atk", "spd"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"46": {
@@ -567,7 +578,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2},
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
 		"max": true
 	},
 	"47": {
@@ -579,7 +591,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2},
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
 		"max": false
 	},
 	"48": {
@@ -592,7 +605,9 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "turnStart", "condition": [["allyReq", "owner", [["distanceCheck", 4], ["penalty", "enemy", "battleStart"] ], 1, "greater"]],  "subtype": "buff", "checkType": "targeting", "list": ["stats", "restore"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["hp"], "team": "owner", "peak": "min", "targetReq": [["distanceCheck", 4], ["penalty", "enemy", "battleStart"]] },
+			{"type": "turnStart", "condition": [["allyReq", "owner", [["distanceCheck", 4], ["penalty", "enemy", "battleStart"] ], 0, "less"]],  "subtype": "buff", "checkType": "targeting", "list": ["stats", "restore"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["hp"], "team": "owner", "peak": "min", "targetReq": [["distanceCheck", 4]] }],
 		"max": true
 	},
 	"49": {
@@ -605,7 +620,8 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "sweep": 1},
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	}
 }

@@ -1,7 +1,7 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
-import {applyCombatEffect, statusDebuffs, getEnemySide, checkConditionHero} from './GameBoard.js'
+import {addEffect, applyCombatEffect, statusDebuffs, getEnemySide, checkConditionHero} from './GameBoard.js'
 
 
 
@@ -30,11 +30,6 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     let attackStack = getAttackOrder(attackCount, attacker, defender);
 
-    let attackerPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    let defenderPartyBuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-
-    let attackerPartyHeal = 0;
-    let defenderPartyHeal = 0;
 
     let attackerAttacked = false;
     let defenderAttacked = false;
@@ -43,6 +38,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     let attackerMiracle = false;
     let defenderMiracle = false;
+
+    let attackerSubEffect = [];
+    let defenderSubEffect = [];
 
     if (attacker.specialActivated){ //check if pre battle special was used
       attackerSpecialActivated = true;
@@ -86,18 +84,16 @@ export function doBattle(updatedHeroList, attacker, defender, board){
           newAttacker.combatEffects.reflect = 0;
         }
 
-        let buffs = damageInfo.partyBuff;
-        Object.keys(buffs).forEach((key, i) => {
-          attackerPartyBuff[key] = Math.max( attackerPartyBuff[key] ,buffs[key]); //apply highest buff
-        });
+        console.log(damageInfo);
 
-        attackerPartyHeal = Math.max(damageInfo.partyHeal, attackerPartyHeal ); //take the higher heal so it doesn't get overwritten
 
         attackerAttacked = true;
 
 
         if (damageInfo.attackerSpecialActivated){
+          attackerSubEffect = damageInfo.subEffect;
           attackerSpecialActivated = true;
+
         }
 
         if (damageInfo.defenderSpecialActivated){
@@ -132,16 +128,12 @@ export function doBattle(updatedHeroList, attacker, defender, board){
           newDefender.combatEffects.reflect = 0;
         }
 
-        let buffs = damageInfo.partyBuff;
-        Object.keys(buffs).forEach((key, i) => {
-          defenderPartyBuff[key] = Math.max( defenderPartyBuff[key] ,buffs[key]); //apply highest buff
-        });
 
-        defenderPartyHeal = Math.max(damageInfo.partyHeal, defenderPartyHeal ); //take the higher heal 
 
         defenderAttacked = true;
 
         if (damageInfo.attackerSpecialActivated){
+          defenderSubEffect = damageInfo.subEffect;
           defenderSpecialActivated = true;
         }
 
@@ -158,7 +150,86 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     list[attacker.side][attacker.listIndex].special = attackerSpecial;
     list[defender.side][defender.listIndex].special = defenderSpecial;
 
+    addEffect(attacker, attackerSubEffect);
+    addEffect(defender, defenderSubEffect);
+
     //combat has now ended, post combat effects activate
+//{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }
+
+
+    let postCombatInfo = postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated);
+
+    let attackerTeamPost = postCombatInfo.attackerTeamPost;
+    let defenderTeamPost = postCombatInfo.defenderTeamPost;
+
+    let attackerTeamSpecial = postCombatInfo.attackerTeamSpecial;
+    let defenderTeamSpecial = postCombatInfo.defenderTeamSpecial;
+
+    let attackerPostDamage = postCombatInfo.attackerPostDamage;
+    let defenderPostDamage = postCombatInfo.defenderPostDamage;
+
+    //apply post combat damage to both teams
+
+    for (let x of list[attacker.side]){ //for each member of side
+      if (heroValid(list[attacker.side][x.listIndex])){
+
+        //hp
+        list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
+
+        //specials
+        if (attackerTeamSpecial[x.listIndex] === "reset"){
+          list[attacker.side][x.listIndex].special.charge = list[attacker.side][x.listIndex].special.cd; //reset charge
+        } else {
+          list[attacker.side][x.listIndex].special.charge = Math.min(Math.max(0, list[attacker.side][x.listIndex].special.charge - attackerTeamSpecial[x.listIndex]),list[attacker.side][x.listIndex].special.cd);
+        }
+
+
+      }
+    }
+
+    for (let x of list[defender.side]){ //for each member of side
+      if (heroValid(list[defender.side][x.listIndex])){
+        //hp
+        list[defender.side][x.listIndex].currentHP = Math.min(Math.max(1,list[defender.side][x.listIndex].currentHP - defenderTeamPost[x.listIndex]), list[defender.side][x.listIndex].stats.hp);
+        
+        //specials
+
+        if (defenderTeamSpecial[x.listIndex] === "reset"){
+          list[defender.side][x.listIndex].special.charge = list[defender.side][x.listIndex].special.cd; //reset charge
+        } else {
+          list[defender.side][x.listIndex].special.charge = Math.min(Math.max(0, list[defender.side][x.listIndex].special.charge - defenderTeamSpecial[x.listIndex]),list[defender.side][x.listIndex].special.cd);
+        }
+
+
+
+      }
+    }
+
+    //apply post combat damage to defender/attacker
+
+    if (newDefender.currentHP > 0){
+      newDefender.currentHP = Math.min(Math.max(1, newDefender.currentHP - defenderPostDamage), newDefender.stats.hp); //cannot go below 0 from post battle damage and hp is capped
+    }
+
+    if (newAttacker.currentHP > 0){
+      newAttacker.currentHP = Math.min(Math.max(1, newAttacker.currentHP - attackerPostDamage), newAttacker.stats.hp); //cannot go below 0
+    }
+    //set new current hp values
+    list[attacker.side][attacker.listIndex].currentHP = newAttacker.currentHP;
+    list[defender.side][defender.listIndex].currentHP = newDefender.currentHP;
+
+
+
+    //increase combat Count
+    list[attacker.side][attacker.listIndex].combatCount++;
+    list[defender.side][defender.listIndex].combatCount++;
+    return list;
+  }
+
+//applies effects done post combat.
+//Returns the post hp/charge numbers
+
+export function postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated){ 
 
 
 
@@ -168,34 +239,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     //First, the attacker needs to be waited and clear debuffs/status effects
     list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    list[attacker.side][attacker.listIndex].statusEffect = statusDebuffs;
+    list[attacker.side][attacker.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
     list[attacker.side][attacker.listIndex].end = true;
 
-
-    //Party buffs
-    for (let x of list[attacker.side]){
-      for (let key in attackerPartyBuff){
-      //Object.keys(attackerPartyBuff).forEach((key, i) => {
-
-        if (x.id !== attacker.saveID){ //saved ally does not get post combat effects
-          x.buff[key] = Math.max(x.buff[key], attackerPartyBuff[key]);
-        }
-      }
-
-    }
-
-    for (let x of list[defender.side]){
-
-      for (let key in defenderPartyBuff){
-        
-        if (x.id !== defender.saveID){
-          x.buff[key] = Math.max(x.buff[key], defenderPartyBuff[key]);
-        }
-      }
-    
-
-
-    }
 
 
 
@@ -218,6 +264,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
 
       if (checkValidMovement(attackerPos, defenderPos, [-1, -1], participantIDs, board)){ //no issues with given movement positions;
+        //this changes the list version, the temporary version do not move for reference purposes
         list[attacker.side][attacker.listIndex].position = newAttackerPos;
         list[defender.side][defender.listIndex].position = newDefenderPos;
       }
@@ -233,9 +280,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     //buffs or status buffs need to be applied to the list version tho
 
     if (attackerAttacked){
-        for (let effectElement of newAttacker.onAttack){ //loops through list of onAttack effects
+        for (let effectElement of attacker.onAttack){ //loops through list of onAttack effects
 
-          applyCombatEffect(newAttacker, effectElement);
+          applyCombatEffect(attacker, effectElement);
 
 
         } //for m
@@ -243,9 +290,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     }
 
     if (defenderAttacked){
-        for (let effectElement of newDefender.onAttack){
+        for (let effectElement of defender.onAttack){
 
-          applyCombatEffect(newDefender, effectElement);
+          applyCombatEffect(defender, effectElement);
 
         } //
 
@@ -253,9 +300,9 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
 
     //Post combat effects (requires owner to survive)
-    if (newAttacker.currentHP > 0){
-       for (let effectElement of newAttacker.postCombat){ //loop through post combat effects
-          applyCombatEffect(newAttacker, effectElement);
+    if (attacker.currentHP > 0){
+       for (let effectElement of attacker.postCombat){ //loop through post combat effects
+          applyCombatEffect(attacker, effectElement);
 
 
 
@@ -263,10 +310,10 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
-    if (newDefender.currentHP > 0){
+    if (defender.currentHP > 0){
 
-       for (let effectElement of newDefender.postCombat){ //loop through post combat effects
-          applyCombatEffect(newDefender, effectElement);
+       for (let effectElement of defender.postCombat){ //loop through post combat effects
+          applyCombatEffect(defender, effectElement);
 
        } //end for post combat
 
@@ -306,38 +353,6 @@ export function doBattle(updatedHeroList, attacker, defender, board){
       defenderTeamSpecial[defender.listIndex]+= defender.combatEffects.spiral;
       //defenderSpecial.charge = Math.max(0, defenderSpecial.charge - defender.combatEffects.spiral);
     }
-
-
-    //party Heals
-    //these need to build up with recoil damage -> as negative recoil damage
-    if (attackerPartyHeal > 0){
-      for (let x of list[attacker.side]){ //for each member of side
-
-        if (x.statusEffect.deepWounds < 1 && !(x.id === attacker.saveID) ){
-          attackerTeamPost[x.listIndex]-= attackerPartyHeal; //heals are subtracted
-        }
-      }
-
-      if (attackerWounds < 1){
-        attackerPostDamage-= attackerPartyHeal; //for the attacker
-      }
-    }
-
-
-    if (defenderPartyHeal > 0){
-      for (let x of list[defender.side]){ //for each member of side
-
-        if (x.statusEffect.deepWounds < 1 && !(x.id === defender.saveID) ){ 
-          defenderTeamPost[x.listIndex]-= defenderPartyHeal;
-        }
-
-      }
-
-      if (defenderWounds < 1){
-        defenderPostDamage-= defenderPartyHeal;
-      }
-    }
-
 
 
     for (let element of attacker.postCombatBuffDebuff){
@@ -464,45 +479,11 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     }
 
-    console.log(attacker);
-    console.log(defender);
 
-    //apply post combat damage to both teams
-
-    for (let x of list[attacker.side]){ //for each member of side
-      if (heroValid(list[attacker.side][x.listIndex])){
-        list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
-        list[attacker.side][x.listIndex].special.charge = Math.min(Math.max(0, list[attacker.side][x.listIndex].special.charge - attackerTeamSpecial[x.listIndex]),list[attacker.side][x.listIndex].special.cd);
-      }
-    }
-
-    for (let x of list[defender.side]){ //for each member of side
-      if (heroValid(list[defender.side][x.listIndex])){
-        list[defender.side][x.listIndex].currentHP = Math.min(Math.max(1,list[defender.side][x.listIndex].currentHP - defenderTeamPost[x.listIndex]), list[defender.side][x.listIndex].stats.hp);
-        list[defender.side][x.listIndex].special.charge = Math.min(Math.max(0, list[defender.side][x.listIndex].special.charge - defenderTeamSpecial[x.listIndex]),list[defender.side][x.listIndex].special.cd);
-      }
-    }
-
-    //apply post combat damage to defender/attacker
-
-    if (newDefender.currentHP > 0){
-      newDefender.currentHP = Math.min(Math.max(1, newDefender.currentHP - defenderPostDamage), newDefender.stats.hp); //cannot go below 0 from post battle damage and hp is capped
-    }
-
-    if (newAttacker.currentHP > 0){
-      newAttacker.currentHP = Math.min(Math.max(1, newAttacker.currentHP - attackerPostDamage), newAttacker.stats.hp); //cannot go below 0
-    }
-    //set new current hp values
-    list[attacker.side][attacker.listIndex].currentHP = newAttacker.currentHP;
-    list[defender.side][defender.listIndex].currentHP = newDefender.currentHP;
+    return {"attackerTeamPost": attackerTeamPost, "defenderTeamPost": defenderTeamPost, "attackerTeamSpecial": attackerTeamSpecial, "defenderTeamSpecial": defenderTeamSpecial, "attackerPostDamage": attackerPostDamage, "defenderPostDamage": defenderPostDamage };
 
 
-
-    //increase combat Count
-    list[attacker.side][attacker.listIndex].combatCount++;
-    list[defender.side][defender.listIndex].combatCount++;
-    return list;
-  }
+}
 
 function getAdaptiveDamage(enemy){
   if (enemy.combatStats.def <= enemy.combatStats.res){ // if def is lower
@@ -766,8 +747,9 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   
   let specialEffect = attackerSpecial.effect;
 
-  let partyHeal = 0;
-  let partyBuff = {};
+  // let partyHeal = 0;
+  // let partyBuff = {};
+  let subEffect = [];
 
   let attackerSpecialActivated = false;
   let defenderSpecialActivated = false;
@@ -832,14 +814,12 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     attackerSpecialCharge = attackerSpecial.cd;  //reset cd
 
 
-    if ("partyHeal" in specialEffect){
-      partyHeal = specialEffect.partyHeal;
+    if ("subEffect" in specialEffect){
+
+      subEffect =  specialEffect.subEffect;
 
     }
 
-    if ("partyBuff" in specialEffect){
-      partyBuff = specialEffect.partyBuff;
-    }
 
 
 
@@ -1026,14 +1006,20 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   }
 
 
-  if (attackerSpecialActivated && attacker.statusEffect.deepWounds < 1){
+  if (attackerSpecialActivated && attacker.statusEffect.deepWounds < 1){ //special healing
     heal+= Math.trunc(attacker.combatEffects.specialHeal * damageDealt);
     if ("heal" in specialEffect){
       heal+= Math.trunc(specialEffect.heal * damageDealt); 
     }
   } 
 
-  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "partyBuff": partyBuff, "partyHeal": partyHeal,
+  if (attacker.combatEffects.absorb > 0 && attacker.statusEffect.deepWounds < 1){
+
+    heal+= Math.trunc(attacker.combatEffects.absorb * damageDealt);
+
+  }
+
+  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "subEffect": subEffect,
   "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge,
   "attackerSpecialActivated": attackerSpecialActivated, "defenderSpecialActivated": defenderSpecialActivated, "miracleActivated": miracleActivated  } ; ///glimmer interacts with damage reduction
 
@@ -2520,13 +2506,18 @@ export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specia
 
           } else if (z === "special"){
 
-              if (effect.subtype === "buff"){
-                specialPost[y.listIndex]+= effect.value; //raises the amount special is reduced
-              } else if (effect.subtype === "debuff"){
-                specialPost[y.listIndex]-= effect.value; //raises the amount special is increased
+              if (specialPost[y.listIndex] !== "reset"){
+
+                if (effect.value === "reset"){
+                  specialPost[y.listIndex] = effect.value;
+
+                } else if (effect.subtype === "buff"){
+                  specialPost[y.listIndex]+= effect.value; //raises the amount special is reduced
+                } else if (effect.subtype === "debuff"){
+                  specialPost[y.listIndex]-= effect.value; //raises the amount special is increased
+                }
+
               }
-
-
 
           } else {
 

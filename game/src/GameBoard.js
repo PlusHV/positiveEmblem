@@ -25,9 +25,9 @@ import skills from './skillList.js';
 
 var heroStruct = makeHeroStruct();
 
-export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0, };
+export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0 };
 
-export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0};
+export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0, "triangleAdept": 0};
 
 
 
@@ -489,7 +489,7 @@ class GameBoard extends React.Component{
 
 
       updatedHero.passive = pTemp;
-      updatedHero.range = -1;
+      updatedHero.range = 0;
 
     } else if (skillType === "assist"){
 
@@ -1494,7 +1494,7 @@ class GameBoard extends React.Component{
           return null; //another savior has been found so no saving occurs
         }
 
-        saviorHero = JSON.parse(JSON.stringify(ally)); //copy of the savior
+        saviorHero = JSON.parse(JSON.stringify(ally)); //copy of the savior - will be returned so it can become the new defender
         addEffect(saviorHero, effect); //add any effects connected to the savior effect
         //saviorHero.savingPosition = saviorHero.position //The position the savior will return to after combat
         saviorHero.position = defender.position; //move the savior
@@ -3250,14 +3250,27 @@ class GameBoard extends React.Component{
       if (heroValid(tempList[x.side][x.listIndex])){
 
         tempList[x.side][x.listIndex].currentHP = Math.min(Math.max(1,tempList[x.side][x.listIndex].currentHP - allyTeamPost[x.listIndex]), tempList[x.side][x.listIndex].stats.hp);
-        tempList[x.side][x.listIndex].special.charge = Math.min(Math.max(0, tempList[x.side][x.listIndex].special.charge - allyTeamSpecial[x.listIndex]), tempList[x.side][x.listIndex].special.cd);
+
+        if (allyTeamSpecial[x.listIndex] === "reset"){
+          tempList[x.side][x.listIndex].special.charge = tempList[x.side][x.listIndex].special.cd;
+        } else {
+          tempList[x.side][x.listIndex].special.charge = Math.min(Math.max(0, tempList[x.side][x.listIndex].special.charge - allyTeamSpecial[x.listIndex]), tempList[x.side][x.listIndex].special.cd);
+        }
+
       }
     }
 
     for (let x of tempList[enemySide]){ //for each member of side
       if (heroValid(tempList[x.side][x.listIndex])){
         tempList[x.side][x.listIndex].currentHP = Math.min(Math.max(1,tempList[x.side][x.listIndex].currentHP - enemyTeamPost[x.listIndex]), tempList[x.side][x.listIndex].stats.hp);
-        tempList[x.side][x.listIndex].special.charge = Math.min(Math.max(0, tempList[x.side][x.listIndex].special.charge - enemyTeamSpecial[x.listIndex]), tempList[x.side][x.listIndex].special.cd);
+
+        if (enemyTeamSpecial[x.listIndex] === "reset"){
+          tempList[x.side][x.listIndex].special.charge = tempList[x.side][x.listIndex].special.cd;
+        } else {
+          tempList[x.side][x.listIndex].special.charge = Math.min(Math.max(0, tempList[x.side][x.listIndex].special.charge - enemyTeamSpecial[x.listIndex]), tempList[x.side][x.listIndex].special.cd);
+        }
+
+
       }
     }
 
@@ -3469,6 +3482,7 @@ function makeHeroStruct(){
       "galeforce": 0,
       "wrathful": 0,
       "reflect": 0,
+      "absorb": 0,
       "recoil": 0, "postHeal": 0, "burn": 0,
       "onHitHeal": 0,
       "specialTrueDamage": 0, "specialFlatReduction": 0, "specialHeal": 0.0,
@@ -3497,6 +3511,7 @@ function makeHeroStruct(){
     this["initiating"] = false;
 
     this["saving"] = false;
+    this["saved"] = false;
     this["saveID"] = -1;
     this["conditionalSavior"] = [];
     
@@ -3524,7 +3539,7 @@ function makeHeroStruct(){
 
 export default GameBoard;
 
-function addEffect(hero, effect){
+export function addEffect(hero, effect){
 
   if (Array.isArray(effect) ){ //a list of effects will push each element to the hero depending on the type of effect - E.g. effects to be applied at certain times (conditionals for example), will be in a list with their subtype to put them in appropriate place
 
@@ -3556,11 +3571,15 @@ function removeEffect(hero, effect){
 
     for (let elementEffect of effect){
 
-      let elementEffectCopy = JSON.stringify(elementEffect); //copy of the effect in string form
-      let copyIndex = hero[elementEffect.type].findIndex(findMatchingEffect, elementEffectCopy);
+      if (elementEffect.type === "combatEffect"){
+        removeCombatEffect(hero, elementEffect);
+      } else {
 
-      hero[elementEffect.type].splice(copyIndex, 1);
+        let elementEffectCopy = JSON.stringify(elementEffect); //copy of the effect in string form
+        let copyIndex = hero[elementEffect.type].findIndex(findMatchingEffect, elementEffectCopy);
 
+        hero[elementEffect.type].splice(copyIndex, 1);
+      }
 
     }
 

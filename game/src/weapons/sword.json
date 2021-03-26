@@ -1387,7 +1387,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
+		"effect": [{"type": "onAttack", "burn": 10, "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}] },
 			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "value": 1, "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] } ],
 		"max": true
 	},

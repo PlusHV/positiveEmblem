@@ -208,7 +208,8 @@
 		"prf": true,
 		"users": ["Marth: Hero-King", "Marth: Royal Altean Duo"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
 		"max": true
 	},
 	"23": {
@@ -682,7 +683,8 @@
 		"prf": true,
 		"users": ["Marth: Legacied Hero"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
 		"max": true
 	},
 	"74": {
@@ -692,7 +694,8 @@
 		"prf": true,
 		"users": ["Merric: Changing Winds"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, "partyHeal": 10 },
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 99, "reference": false, "team": "owner", "from": "owner"}, {"type": "combatEffect", "postHeal": 10} ]}] },
 		"max": true
 	},
 	"75": {
