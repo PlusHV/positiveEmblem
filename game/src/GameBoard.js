@@ -4,7 +4,7 @@ import React from 'react';
 
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal, calculateReductionEffects} from './Battle.js';
 
 import './App.css';
 
@@ -924,6 +924,7 @@ class GameBoard extends React.Component{
     //let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to (as positions)
     let warpTargets = warpInfo.warpList;
     let obstructTargets = warpInfo.obstructList;
+    let pathfinderList = warpInfo.pathfinderList;
     let pass = warpInfo.pass;
 
 
@@ -962,6 +963,15 @@ class GameBoard extends React.Component{
 
           nextMovementCheck.push(pos); //position can be moved to, add it for the next check
 
+
+          if (pathfinderList.includes(pos)){
+            let extraSpaces = this.getAdjacentSpaces([pos]);
+
+            for (let extra of extraSpaces){
+              movementCheck.push(extra);
+            }
+
+          }
 
           if (newCells[pos] === null){ //add to movementList if no hero is occupying it
             
@@ -1151,6 +1161,7 @@ class GameBoard extends React.Component{
 
     let warpList = [];
     let obstructList = [];
+    let pathfinderList = [];
     let pass = 0;
 
     for (let team in heroList){ //loop through each team
@@ -1197,6 +1208,10 @@ class GameBoard extends React.Component{
                 }  
 
 
+              } else if (effect.effect === "pathfinder"){
+                if (!pathfinderList.includes(hero.position) && hero.side === owner.side){
+                  pathfinderList.push(hero.position);
+                }  
               }
             } //end check condition
 
@@ -1212,7 +1227,7 @@ class GameBoard extends React.Component{
       }
     } //end heroList loop
 
-    return {"warpList": warpList, "obstructList": obstructList, "pass": pass};
+    return {"warpList": warpList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
 
   }
 
@@ -1312,7 +1327,9 @@ class GameBoard extends React.Component{
           //check 
           //let oldSpecialTrigger =  Object.assign({}, draggedHero.combatEffects.specialTrigger); //get copy of the special trigger effects
 
-          
+          this.getConditionalEffects(draggedHero, draggedOverHero, "preCombatConditionalEffects");
+          this.getConditionalEffects(draggedOverHero, draggedHero, "preCombatConditionalEffects");
+            
           this.getVariablePreCombat(draggedHero, draggedOverHero);
           this.getVariablePreCombat(draggedOverHero, draggedHero);
 
@@ -1351,7 +1368,7 @@ class GameBoard extends React.Component{
           //draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
 
 
-          let damageReduction = draggedOverHero.combatEffects.preBattleReduction;
+          let damageReduction = calculateReductionEffects(draggedOverHero.combatEffects.preBattleReduction, 1.0); //no reduce reduction for pre battle
 
 
           preBattleDamage = Math.trunc(  (draggedHero.visibleStats.atk - draggedOverHero.visibleStats[damageType]) * draggedHero.special.effect.factor) + onSpecialDamage + trueDamage;
@@ -1575,86 +1592,9 @@ class GameBoard extends React.Component{
     } //end for 
   }
 
-  getConditionalBonusPenaltyNeutralizers(owner, enemy){ 
-
-    //Conditionals
-    for (let effect of owner.conditionalBonusPenaltyNeutralizers){
-
-      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
-          addEffect(owner, effect);
 
 
-      } //end if condition true
 
-    } //end for 
-  }
-
-
-  getConditionalCombatStats(owner, enemy){ 
-
-    //Conditionals
-    for (let effect of owner.conditionalCombatStats){
-
-      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
-          addEffect(owner, effect);
-        // for (let y in x){ //loop through 
-        //   if (y !== "condition" && y !== "type"){ //everything else should be combat effects
-        //     owner.combatEffects[y]+= x[y]; 
-        //   }
-
-
-        // } //end loop through gained effects
-
-
-      } //end if condition true
-
-    } //end for 
-  }
-
-  //conditionals that use combat stats. These are the same as conditional effects but occur after the other conditional effects activate as they need to take into account combat stats
-  //Examples include heavy blade, flashing blade which use combat stats for their condition 
-
-  getConditionalCombat(owner, enemy){ 
-
-    //Conditionals
-    for (let effect of owner.conditionalCombat){
-
-      if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
-          addEffect(owner, effect);
-        // for (let y in x){ //loop through 
-        //   if (y !== "condition" && y !== "type"){ //everything else should be combat effects
-        //     owner.combatEffects[y]+= x[y]; 
-        //   }
-
-
-        // } //end loop through gained effects
-
-
-      } //end if condition true
-
-    } //end for 
-  }
-
-  //effects/stats provided to the user if condition is met 
-  //E.g. darting blow, brazen, close foil etc
-
-  // getConditionalEffects(owner, enemy){
-
-
-  //   //Conditionals
-  //   for (let effect of owner.conditionalEffects){
-
-  //     if (effect !== null && checkCondition(this.state.heroList, effect.condition, owner, enemy, this.state.currentTurn)){ //if condition is true, then provide the rest of the effects
-
-  //       addEffect(owner, effect);
-
-
-  //     } //end if condition true
-
-  //   } //end for 
-  // }
-
-  //Not neccessarily a conditional (they are built in) but provides a variable value of stats depending on the state of the board.
   //Blade sessions, atk/spd form etc
 
   getVariableStats(owner, enemy){
@@ -3476,7 +3416,7 @@ function makeHeroStruct(){
 
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0, "selfSweep": 0,
     //enemyDouble stops enemy from double, stopDouble stops your own double
-      "brashAssault": 0, "desperation": 0, "vantage": 0, 
+      "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0,
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
       "brave": 0,
       "galeforce": 0,
@@ -3489,7 +3429,8 @@ function makeHeroStruct(){
       "spiral": 0,
       "statBuff": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
-      "damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0,
+      //"damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0, "reduceReduction": 1.0,
+      "damageReduction": [], "consecutiveReduction": [], "firstReduction": [], "preBattleReduction": [], "followUpReduction": [], "reduceReduction": [],
       "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "penaltyDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       "defenseTarget": {"def": 0, "res": 0}, //if stat is active, then the defensive stat checked against will be the activated stat (can't test, but adaptive damage should/will override this) - can also target speed/attack if that is ever implemented
@@ -3497,12 +3438,14 @@ function makeHeroStruct(){
       "bonusDouble": 0,
       "teamNihil": 0,
       "minimumDamage": 0,
+      "raven": 0,
+      "triangleAdept": [0], "cancelAffinity": [0],
       "miracle": 0 }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
     this["variablePreCombat"] = [];
     this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
-
+    this["preCombatConditionalEffects"] = [];
     this["conditionalBonusPenaltyNeutralizers"] = [];
     this["conditionalCombatStats"] = [];
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
@@ -3619,8 +3562,13 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
       }
 
 
-    } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(key) ){ //effects that are multipied rather than just added
-      hero.combatEffects[key]*= effect[key];
+    // } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(key) ){ //effects that are multipied rather than just added
+    //   hero.combatEffects[key]*= effect[key];
+
+
+    } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction", "reduceReduction", "triangleAdept", "cancelAffinity"].includes(key) ){ //effects added as an element of a list 
+      hero.combatEffects[key].push(effect[key])
+
 
     } else {
 
@@ -3662,6 +3610,16 @@ function removeCombatEffect(hero, effect){ //aply combat effect (an object)
         hero.combatEffects[key][subkey]-= effect[key][subkey];
 
       }
+
+    // } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction"].includes(key) ){ //effects that are multipied rather than just added
+    //   hero.combatEffects[key]*=  (1.0 / effect[key]); //multiply by the reciprocal of the reduction to remove the reduction
+
+    } else if (["damageReduction", "consecutiveReduction", "firstReduction", "preBattleReduction", "followUpReduction", "reduceReduction", "triangleAdept", "cancelAffinity"].includes(key) ){ //effects added as an element of a list
+
+      let index = hero.combatEffects[key].indexOf(effect[key]);
+      hero.combatEffects[key].splice(index, 1);
+
+
 
     } else {
 

@@ -1719,8 +1719,8 @@
 		"skills": [],
 		"passive": {"def": 3},
 		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] },
-			{"type": "variableCombat", "condition": [["combatCount", 0]], "combatEffects": ["damageReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] },
-			{"type": "variablePreCombat", "condition": [["combatCount", 0]], "combatEffects": ["preBattleReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] }],
+			{"type": "variableCombat", "condition": [["combatCount", "player", "less", 0]], "combatEffects": ["damageReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] },
+			{"type": "variablePreCombat", "condition": [["combatCount", "player", "less", 0]], "combatEffects": ["preBattleReduction"], "key": "allyReq", "multiplier": 15, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["enemyhp", "greater", 0.9]] }],
 		"max": true
 	},
 	"133": {

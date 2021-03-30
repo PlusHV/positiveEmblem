@@ -342,24 +342,24 @@
 		"name": "Cancel Affinity 1",
 		"sp": 50,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "effect",
+		"effect": {"type": "combatEffect", "cancelAffinity": 1},
 		"max": false
 	},
 	"43": {
 		"name": "Cancel Affinity 2",
 		"sp": 100,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "effect",
+		"effect": {"type": "combatEffect", "cancelAffinity": 2},
 		"max": false
 	},
 	"44": {
 		"name": "Cancel Affinity 3",
 		"sp": 200,
 		"prf": false,
-		"type": "damage-calc",
-		"effect": {},
+		"type": "effect",
+		"effect": {"type": "combatEffect", "cancelAffinity": 3},
 		"max": true
 	},
 	"45": {
@@ -2626,7 +2626,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.7 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", "player", "less", 0] ], "firstReduction": 0.7 }],
 		"max": false
 	},
 	"321": {
@@ -2634,7 +2634,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.6 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", "player", "less", 0] ], "firstReduction": 0.6 }],
 		"max": false
 	},
 	"322": {
@@ -2642,7 +2642,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", 0] ], "firstReduction": 0.5 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["combatCount", "player", "less", 0] ], "firstReduction": 0.5 }],
 		"max": true
 	},
 	"323": {
@@ -2823,7 +2823,9 @@
 		"users": ["Dimitri: Savior King"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], 
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}] }],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}] },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"344": {

@@ -2069,21 +2069,24 @@
 		"name": "Triangle Adept 1",
 		"sp": 50,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 10},
 		"max": false
 	},
 	"258": {
 		"name": "Triangle Adept 2",
 		"sp": 100,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 15},
 		"max": false
 	},
 	"259": {
 		"name": "Triangle Adept 3",
 		"sp": 200,
 		"prf": false,
-		"type": "damage-calc",
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 20},
 		"max": true
 	},
 	"260": {

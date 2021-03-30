@@ -1373,7 +1373,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
-			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1]], "double": 1 } ],
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["enemyhp", "greater", 1]], "double": 1 } ],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1436,7 +1436,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "lull": {"atk": 6, "def": 6} },
-			{"type": "conditionalFollowUp", "condition": [["followUp", "enemy"]], "firstReduction": 0.25 }],
+			{"type": "conditionalFollowUp", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75], ["followUp", "enemy"]], "firstReduction": 0.25 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1500,7 +1500,20 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
 		"max": false
+	},
+	"118": {
+		"name": "Skinfaxi",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "pathfinder"}],
+		"max": true
 	}
+
 
 
 

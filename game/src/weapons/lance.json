@@ -1359,7 +1359,7 @@
 		"type": "lance",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", 0]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "postHeal": 10 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "postHeal": 10 }],
 		"max": true
 	},
 	"107": {
@@ -1423,7 +1423,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
-			{"type": "conditionalFollowUp", "condition": [["followUp", "enemy"]], "firstReduction": 0.5 }],
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy"]], "firstReduction": 0.5 }],
 		"max": true
 	},
 	"112": {
@@ -1436,7 +1436,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
-			{"type": "conditionalFollowUp", "condition": [["followUp", "enemy"]], "firstReduction": 0.5 }],
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy"]], "firstReduction": 0.5 }],
 		"max": false
 	},
 	"113": {
@@ -1515,8 +1515,8 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
-			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
-			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
+			{"type": "variableCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1616,7 +1616,7 @@
 		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], "statBuff": {"atk": 6, "spd": 6} },
-			{"type": "conditionalEffects", "condition": [["phase", "player"], ["allyReq", "owner", [["supportAlly", true], ["distanceCheck", 2]], 1, "greater"] ], "brave": 1 }],
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5], ["phase", "player"], ["allyReq", "owner", [["supportAlly", true], ["distanceCheck", 2]], 1, "greater"] ], "brave": 1 }],
 		"max": true
 	},
 	"127": {
@@ -1630,7 +1630,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 6},
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}, {"type": "conditionalCombat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }] }],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}, {"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }] }],
 		"cdTrigger": -1,
 		"max": true
 	},

@@ -614,9 +614,10 @@ export function getAttackOrder(stack, attacker, defender){
 
     let attackStack = [];
 
+    let hardyBearing = Math.max(attacker.combatEffects.hardyBearing, defender.combatEffects.hardyBearing); //either hero having it will enable it for all attack order changes (basically vantage and desperation)
 
     //vantage attack
-    if (defenderHits > 0 && defender.combatEffects.vantage > 0){
+    if (defenderHits > 0 && defender.combatEffects.vantage > 0 && hardyBearing <= 0){
       
       for (let i = 0; i < defenderRoundHits; i++){
         attackStack.push(2);
@@ -624,7 +625,7 @@ export function getAttackOrder(stack, attacker, defender){
 
       defenderHits-= defenderRoundHits;
 
-      if (defenderHits > 0 && defender.combatEffects.desperation > 0){ //if desperation is active get follow up attack immediately
+      if (defenderHits > 0 && defender.combatEffects.desperation > 0 && hardyBearing <= 0){ //if desperation is active get follow up attack immediately
         
         for (let j = 0; j < defenderRoundHits; j++){
           attackStack.push(2);
@@ -648,7 +649,7 @@ export function getAttackOrder(stack, attacker, defender){
       attackerHits-= attackerRoundHits;
 
       //if desperation and can double, attack does their second before defender 
-      if (attackerHits > 0 && attacker.combatEffects.desperation > 0){
+      if (attackerHits > 0 && attacker.combatEffects.desperation > 0 && hardyBearing <= 0){
 
         for (let j = 0; j < attackerRoundHits; j++){
           attackStack.push(1);
@@ -672,7 +673,7 @@ export function getAttackOrder(stack, attacker, defender){
 
       defenderHits-= defenderRoundHits;
 
-      if (defenderHits > 0 && defender.combatEffects.desperation > 0){ //if desperation is active get follow up attack immediately 
+      if (defenderHits > 0 && defender.combatEffects.desperation > 0 && hardyBearing <= 0){ //if desperation is active get follow up attack immediately 
         
         for (let j = 0; j < defenderRoundHits; j++){
           attackStack.push(2);
@@ -716,7 +717,7 @@ export function getAttackOrder(stack, attacker, defender){
 
 export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList, attackStack, attackIndex, defenderMiracle){
 
-  let WTA = calculateWeaponTriangleAdvantage(heroData[attacker.heroID.value].color, heroData[defender.heroID.value].color ); //get the WTA multiplier
+  let WTA = calculateWeaponTriangleAdvantage(attacker, defender); //get the WTA multiplier
 
 
   let effective = getEffectiveDamage(heroList, attacker, defender);
@@ -850,9 +851,12 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   specialDamage+= attacker.combatEffects.reflect; //adding the reflect damage
 
 
+  let reduceReduction = calculateReductionEffects(attacker.combatEffects.reduceReduction, 1.0);
+
+
   //all damage reduction values are 1 - percent reduced by. 0 damage reduction is thus 1 - 0 = 1.0
   //When used in calculations, 1 - damage reduction is used 
-  let damageReduction = defender.combatEffects.damageReduction;
+  let damageReduction = calculateReductionEffects(defender.combatEffects.damageReduction, reduceReduction);
 
 
   let currentAttacker = attackStack[attackIndex];
@@ -873,22 +877,22 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   //first attack damage reduction
   if (previousAttacks === 0){
-    damageReduction = damageReduction * defender.combatEffects.firstReduction;
+    damageReduction = damageReduction * calculateReductionEffects(defender.combatEffects.firstReduction, reduceReduction);
   }
 
   //if adding the consecutive damage reduction 
   //check if an attack has been made before this, then check if it was the current attacker (thus a consecutive attkack)
 
   if (attackIndex - 1 >= 0 && attackStack[attackIndex - 1] === currentAttacker){ 
-    damageReduction = damageReduction * defender.combatEffects.consecutiveReduction;
+    damageReduction = damageReduction * calculateReductionEffects(defender.combatEffects.consecutiveReduction, reduceReduction);
   }
 
   //Follow-up reduction - if not brave then just check second attack, otherwise check 3rd and 4th
   if (attacker.combatEffects.brave > 0 && previousAttacks >= 2){ //if brave, check if 2 other attacks have been made (so it is now the 3rd or 4th)
-     damageReduction = damageReduction * defender.combatEffects.followUpReduction;
+     damageReduction = damageReduction * calculateReductionEffects(defender.combatEffects.followUpReduction, reduceReduction);
 
   } else if (previousAttacks >= 1) { //not brave attack, check if they have done at least one attack (should only 1 since no brave effect)
-    damageReduction = damageReduction * defender.combatEffects.followUpReduction;
+    damageReduction = damageReduction * calculateReductionEffects(defender.combatEffects.followUpReduction, reduceReduction);
   }
 
   let miracle = false;
@@ -902,7 +906,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     if (defenderSpecial.effect.factor === "miracle"){
       miracle = true;
     } else{
-      damageReduction = damageReduction * defenderSpecial.effect.factor;
+      damageReduction = damageReduction * calculateReductionEffects(defenderSpecial.effect.factor, 1.0); //special reductions are not affected by reduce reductions
     }
 
     if ("reflect" in defenderSpecial.effect){
@@ -1025,6 +1029,25 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
 }
 
+export function calculateReductionEffects(reductionList, reduceReduction){//Given a list of reduction effects, get the total reductions
+
+  let totalReduction = 1.0; //default of no reduction at 1.0
+
+  for (let reduction of reductionList){
+
+    let actualReduction = 1.0 - reduction; //the actual damage reduction is 1- reduction
+
+    let reducedAmount = Math.trunc( (actualReduction - (actualReduction * reduceReduction)) * 100) / 100; //multiplied by 100 for truncation and divided to bring back to percent
+
+    let reduce = reduction +  reducedAmount; //add the reduce reduction to the damage reduction
+
+    totalReduction*= (reduce); //add to total reduction
+
+  }
+
+  return totalReduction;
+}
+
 export function getSpecialDamage(effect, owner, enemy, heroList, damageType){
     let specialDamage = 0;
     let hero; //which hero to base the damage off of
@@ -1060,45 +1083,193 @@ export function getSpecialDamage(effect, owner, enemy, heroList, damageType){
     return specialDamage;
 }
 
-export function calculateWeaponTriangleAdvantage(colorAttack, colorDefend){
-	let val = 0.0;
+export function calculateWeaponTriangleAdvantage(attacker, defender){
+	let advantage = 0.0; //0 is no advange. > 0 is advantage , < 0 is disadvantage
 
-	if (colorAttack === "red"){
-		if (colorDefend === "blue"){
-			val = -0.2;
-		} else if (colorDefend === "green"){
-			val = 0.2;
-		} else if (colorDefend === "colorless"){
-			val = 0.0; //to do, add raven effect
-		}
+  let colorAttack = heroData[attacker.heroID.value].color;
+  let colorDefend = heroData[defender.heroID.value].color; //get the WTA multiplier
 
-	} else if (colorAttack === "blue"){
-		if (colorDefend === "green"){
-			val = -0.2;
-		} else if (colorDefend === "red"){
-			val = 0.2;
-		} else if (colorDefend === "colorless"){
-			val = 0.0; //to do, add raven effect
-		}
 
-	} else if (colorAttack === "green"){
-		if (colorDefend === "red"){
-			val = -0.2;
-		} else if (colorDefend === "blue"){
-			val = 0.2;
-		} else if (colorDefend === "colorless"){
-			val = 0.0; //to do, add raven effect
-		}
+  if (colorAttack === "red"){
+    if (colorDefend === "blue"){
+      advantage = -1;
+    } else if (colorDefend === "green"){
+      advantage = 1;
+    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+      advantage = 1;
 
-	}
+    }
+
+  } else if (colorAttack === "blue"){
+    if (colorDefend === "green"){
+      advantage = -1;
+    } else if (colorDefend === "red"){
+      advantage = 1;
+    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+      advantage = 1; //to do, add raven effect
+    }
+
+  } else if (colorAttack === "green"){
+    if (colorDefend === "red"){
+      advantage = -1;
+    } else if (colorDefend === "blue"){
+      advantage = 1;
+    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+      advantage = 1; //to do, add raven effect
+    }
+
+  } else if (colorAttack === "colorless"){ 
+    if (defender.combatEffects.raven > 0){ //if defender has raven effect, get disadvantaged
+      advantage = -1;
+    }
+
+    //technically, if you have advantage and disadvantage but have cancel affinity vs TA, the CA will reverse the TA's bonuses and still gain the advantage,  we can make it a special case if ever implemented
+    if (attacker.combatEffects.raven > 0 && colorDefend === "colorless"){ //colorless don't have a way to get the raven effect but they would theoretically be able to get the advantage boost against other colorless (and would cancel out with another raven colorless)
+    
+      if (advantage < 0){ //already have disadvantage
+        advantage = "doubleAdvantage";
+      } else { //just give advantage regularly
+        advantage = 1;
+      }
+
+    }
+
+  }
+
+
+
+//triangle adept increases these values by their specified amount (on both sides even though the wording on it suggests that it would not provide the extra attack to enemies
+//uses the highest one and does not stack
+
+//CA 1 - will cancel out all TA effects
+//CA 2 - firstly, cancels out your own TA effects. cancel enemy TA effects only if owner is at disadvantage. If at advantage, TA will still be in effect
+//CA 3 - firstly, cancels out your own TA effects. If at advantage TA effect will still be in effect. If at disadvantage TA effects will be be reversed (neutralizing the regular WTA)
+
+  let affinity = 1.0; //default affinity
+
+  let attackerTA = Math.max(...attacker.combatEffects.triangleAdept);
+  let attackerCA = Math.max(...attacker.combatEffects.cancelAffinity);
+
+
+  let defenderTA = Math.max(...defender.combatEffects.triangleAdept);
+  let defenderCA = Math.max(...defender.combatEffects.cancelAffinity);
+
+
+
+  if (attackerCA > 0 || defenderCA === 1) { //all tier of CA neutralize self triangleAdept, CA on defender will cancel it
+    attackerTA = 0.0;
+  }
+
+  if (defenderCA > 0 || attackerCA === 1) { //all tier of CA neutralize self triangleAdept, CA 1 on attacker will cancel it
+    defenderTA = 0.0;
+  }
+
+  let TAEffect = Math.max(attackerTA, defenderTA); //Get the larger TA
+
+
+
+
+  
+  if (advantage < 0) { //if attacker is at disadvantage,
+
+    if (attackerCA === 2){ //CA 2 neutralizes TA
+        TAEffect = 0.0;
+    } else if (attackerCA === 3){ //CA 3 reverse TA
+      TAEffect = -TAEffect; //reverse the affiniy
+    }
+    
+  } else if (advantage > 0){ //if attacker is at defender (which means defender is at disadvantage)
+    if (defenderCA === 2){ //CA 2 neutralizes TA
+      TAEffect = 0.0;
+    } else if (defenderCA === 3){ //CA 3 reverses TA
+      TAEffect = -TAEffect;
+    }
+
+  } else if (advantage === "doubleAdvantage"){ //theoretical situation where attacker has advantage and disadvantage at the same time - would cancel out eachother out normally but CA can swing it in a different dirrection
+
+    let TA1, TA2 = TAEffect;
+
+    //disadvantage portion
+    if (attackerCA === 2){
+      TA1 = 0.0;
+    } else if (attackerCA === 3) {
+      TA1 = -TA1
+    }
+    
+
+    //advantage
+    if (defenderCA === 2){ //CA 2 neutralizes TA
+      TA2 = 0.0;
+    } else if (defenderCA === 3){ //CA 3 reverses TA
+      TA2 = -TA2;
+    }
+
+    let affinity1 = (TA1 + 20.0) / 20.0;
+    let affinity2 = (TA2 + 20.0) / 20.0;
+
+    return ( (0.2 * affinity1 * -1) + (0.2 * affinity2 * 1)  );
+
+
+  }
+  affinity = (TAEffect + 20.0) / 20.0;
+
+  //0.2 base WTA, affinity is multiplier to affinity, and advantage determines which way the TA values goes
+  let TAValue = 0.2 * affinity * advantage;
+
+
+  return TAValue;
+	// if (colorAttack === "red"){
+	// 	if (colorDefend === "blue"){
+	// 		val = -0.2;
+	// 	} else if (colorDefend === "green"){
+	// 		val = 0.2;
+	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+ //      val = 0.2;
+
+	// 	}
+
+	// } else if (colorAttack === "blue"){
+	// 	if (colorDefend === "green"){
+	// 		val = -0.2;
+	// 	} else if (colorDefend === "red"){
+	// 		val = 0.2;
+	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+	// 		val = 0.2; //to do, add raven effect
+	// 	}
+
+	// } else if (colorAttack === "green"){
+	// 	if (colorDefend === "red"){
+	// 		val = -0.2;
+	// 	} else if (colorDefend === "blue"){
+	// 		val = 0.2;
+	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
+	// 		val = 0.2; //to do, add raven effect
+	// 	}
+
+	// } else if (colorAttack === "colorless"){ 
+ //    if (defender.combatEffects.raven > 0){ //if defender has raven effect, get disadvantaged
+ //      val = -0.2;
+ //    }
+
+ //    if (attacker.combatEffects.raven > 0 && colorDefend === "colorless"){ //colorless don't have a way to get the raven effect but they would theoretically be able to get the advantage boost against other colorless (and would cancel out with another raven colorless)
+ //      val+= 0.2;
+ //    }
+
+ //  }
 	//TODO
-	//add colorless difference if raven effect
+
 	//Add check for triangle adept and cancel affinity
 
-	//affinity (x + 20)/20 where x is the TA amount
+	//affinity (x + 20)/20 where x is the TA amount - The WTA is multplied by affinity
+  //at 10 would be 30 /20 = 1.5
+  //at 15 would be 1.75
+  //at 20 would be  2.0
+
+  //
+
 	//CA 1/2 will remove the x depending on situation, and at CA 3, the x will be reversed
 
-	return val;
+	//return val;
 
 }
 
@@ -1653,11 +1824,20 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         j = j + 2;
       } else if (keyWord === "combatCount"){ //
 
-        if (owner.combatCount === innerCondition[j+1] ){
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        if (innerCondition[j+2] === "greater" && check.combatCount >= innerCondition[j+3] ){
+          innerResult = true;
+        } else if (innerCondition[j+2] === "less" && check.combatCount <= innerCondition[j+3]){
           innerResult = true;
         }
 
-        j = j + 1;
+        j = j + 3;
       } else if (keyWord === "cardinal"){
 
         if (innerCondition[j+1] && checkCardinal(owner, enemy)){ //condition requires cardinal and they are cardinal
@@ -1880,10 +2060,38 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
 
-        console.log(rangeCheck);
         if (rangeCheck === innerCondition[j+1] && innerCondition[j+2]){
           innerResult = true;
         } else if (rangeCheck !== innerCondition[j+1] && !innerCondition[j+2]){
+          innerResult = true;
+        }
+
+        j = j + 2;
+
+      } else if (keyWord === "effectiveCheck"){
+
+        //always check enemy
+        // j + 1 //check effective type
+        // j + 2 true/false
+
+        let effectiveCheck = false; //assume not effectiveness by default
+
+        for (let effect of enemy.effectiveCondition){
+          if ("condition" in effect){
+            if (conditionMatch(effect.condition, innerCondition[j+1])){ //the condition has been found
+              effectiveCheck = true;
+            } 
+
+          } //end condition
+
+
+        }
+
+        //now know if they have the effectiveness
+
+        if (effectiveCheck && innerCondition[j+2]){ //has efectiveness
+          innerResult = true;
+        } else if (!effectiveCheck && !innerCondition[j+2]){ //does not have the effectivenes
           innerResult = true;
         }
 
@@ -2420,7 +2628,7 @@ export function checkCardinalRowColumn(hero1, hero2, width, height){
 
   }
 
-  //within both required columns and rows - NOTE - don't think any skills would use this
+  //within both required columns and rows - NOTE - don't think any skills would use this - plumeria's weapon uses this
   if (Math.abs(pos1[1] - pos2[1]) <= width && Math.abs(pos1[0] - pos2[0]) <= height){
     return true;
   } else {
@@ -2572,7 +2780,7 @@ function conditionMatch(c1, other){
   //false if either is string or both are string
   if (c1 === c2){
     return true;
-    }
+  }
 
   if (c1 === null || c2 === null){
 
