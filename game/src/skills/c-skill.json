@@ -3082,5 +3082,29 @@
 		"type": "effect",
 		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 4, "def": 4} }],
 		"max": true
+	},
+	"391": {
+		"name": "Even Tempest 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": false
+	},
+	"392": {
+		"name": "Even Tempest 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": false
+	},
+	"393": {
+		"name": "Even Tempest 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": true
 	}
 }

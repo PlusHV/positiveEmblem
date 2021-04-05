@@ -393,7 +393,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
             heroesInRange = heroesInRange.concat([reference]);
           }
 
-          applyBuffList(list, heroesInRange, element, postSide, specialSide);
+          applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide);
         } else if (element.checkType === "minDistance"){
 
           let minDistance = 999;
@@ -411,7 +411,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
             }
           }
-          applyBuffList(list, affectedList, element, postSide, specialSide);
+          applyBuffList(list, affectedList, element, attacker, postSide, specialSide);
 
         }
 
@@ -453,7 +453,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
           if (element.reference){
             heroesInRange = heroesInRange.concat([reference]);
           }
-          applyBuffList(list, heroesInRange, element, postSide, specialSide);
+          applyBuffList(list, heroesInRange, element, defender, postSide, specialSide);
 
         } else if (element.checkType === "minDistance"){
 
@@ -472,7 +472,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
             }
           }
-          applyBuffList(list, affectedList, element, postSide, specialSide);
+          applyBuffList(list, affectedList, element, defender, postSide, specialSide);
 
         }
        
@@ -494,7 +494,7 @@ function getAdaptiveDamage(enemy){
 }
 
 export function getDamageType(weaponType, owner, enemy){
-    if (owner.combatEffects.adaptive > 0){
+    if (owner.combatEffects.adaptive > 0 && enemy.combatEffects.nullAdaptive <= 0){
       return getAdaptiveDamage(enemy);
 
     }
@@ -2452,11 +2452,38 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
     return combatEffectList;
 
 
-  }
-
+  } 
 
 }
 
+//this allows us to give effects with variable values easier
+export function getVariableValue(heroList, effect, owner, turn){
+
+
+
+  if (effect.key === "teamInfo"){
+
+    let validAlliesCount = 0;
+
+    for (let ally of heroList[owner.side]){
+      let info = heroData[ally.heroID.value];
+
+
+
+      if (effect["teamInfoList"].includes(info[effect.type] )){
+        validAlliesCount++;
+      }
+
+    } //end for loop team
+
+    return validAlliesCount;
+
+  }
+
+  return 0; 
+
+
+}
 
 //This function is for combat effects where the condition check occurs at the time the special activates (e.g. wrath)
 export function getConditionalSpecial(owner, enemy, heroList){
@@ -2665,13 +2692,20 @@ export function checkTactic(hero, heroList){
 
 
 //given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
-export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specialPost, turn){
+export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost, specialPost, turn){
+
+  let value = effect.value;
+  if (value === "variable"){
+
+    value = getVariableValue(heroList, effect.variableCheck, owner, turn);
+  }
+
+
   for (let y of affectedHeroes){
     for (let x of effect.list){ //loop through status buffs to apply
 
       if (x === "stats"){
 
-        let value = effect.value;
 
 
         for (let z of effect.stats){ //loop through the stats list
@@ -2706,23 +2740,23 @@ export function applyBuffList(heroList, affectedHeroes, effect, teamPost, specia
               if (effect.subtype === "buff"){
 
                 if (y.statusEffect.deepWounds < 1){                
-                  teamPost[y.listIndex]-=  effect.value; //lowers the amount of post damage
+                  teamPost[y.listIndex]-=  value; //lowers the amount of post damage
                 }
               } else if (effect.subtype === "debuff"){
-                teamPost[y.listIndex]+=  effect.value; //raises the amount of psot damage
+                teamPost[y.listIndex]+=  value; //raises the amount of psot damage
               }
 
           } else if (z === "special"){
 
               if (specialPost[y.listIndex] !== "reset"){
 
-                if (effect.value === "reset"){
-                  specialPost[y.listIndex] = effect.value;
+                if (value === "reset"){
+                  specialPost[y.listIndex] = value;
 
                 } else if (effect.subtype === "buff"){
-                  specialPost[y.listIndex]+= effect.value; //raises the amount special is reduced
+                  specialPost[y.listIndex]+= value; //raises the amount special is reduced
                 } else if (effect.subtype === "debuff"){
-                  specialPost[y.listIndex]-= effect.value; //raises the amount special is increased
+                  specialPost[y.listIndex]-= value; //raises the amount special is increased
                 }
 
               }

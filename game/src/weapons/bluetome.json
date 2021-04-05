@@ -21,7 +21,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"2": {
@@ -33,7 +33,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
 		"max": true
 	},
@@ -46,7 +46,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
 		"max": false
 	},
@@ -59,7 +59,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"5": {
@@ -71,7 +71,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": false
 	},
 	"6": {
@@ -83,7 +83,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"7": {
@@ -95,7 +95,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"8": {
@@ -107,7 +107,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
 	},
 	"9": {
@@ -119,7 +119,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "raven": 1},
 		"max": false
 	},
 	"10": {
@@ -131,7 +131,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"11": {
@@ -143,7 +143,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": false
 	},
 	"12": {
@@ -155,7 +155,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"13": {
@@ -167,7 +167,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"14": {
@@ -179,7 +179,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["def", "res"], "range": 2, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"15": {
@@ -191,7 +191,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["def", "res"], "range": 2, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"16": {
@@ -203,7 +203,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": true
 	},
 	"17": {
@@ -215,7 +215,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": false
 	},
 	"18": {
@@ -227,7 +227,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"19": {
@@ -239,7 +239,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": false
 	},
 	"20": {
@@ -252,7 +252,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6} }],
 		"max": true
 	},
 	"21": {
@@ -264,7 +264,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"22": {
@@ -276,7 +276,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"23": {
@@ -289,7 +289,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]], ["distanceCheck", 1]] }],
 		"max": true
 	},
 	"24": {
@@ -302,7 +302,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "combatEffect", "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }, {"type": "onAttack", "recoil": 4} ],
 		"max": true
 	},
 	"25": {
@@ -314,8 +314,8 @@
 		"users": ["Reinhardt: Thunder's Fist", "Olwen: Blue Mage Knight"],
 		"type": "bluetome",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"26": {
@@ -351,7 +351,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": true
 	},
 	"29": {
@@ -363,7 +363,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
 		"max": false
 	},
 	"30": {
@@ -376,7 +376,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["res"], "team": "enemy", "peak": "min" }],
 		"max": true
 	},
 	"31": {
@@ -389,7 +389,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1]], "statBuff": {"atk": 3, "spd": 3} }],
 		"max": true
 	},
 	"32": {
@@ -401,7 +401,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": true
 	},
 	"33": {
@@ -413,7 +413,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": false
 	},
 	"34": {
@@ -425,7 +425,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"35": {
@@ -437,7 +437,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"36": {
@@ -462,7 +462,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": "variable", "variableCheck": {"key": "teamInfo", "type": "weapontype", "teamInfoList": ["redtome", "bluetome", "greentome", "colorlesstome"]}, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -475,6 +475,8 @@
 		"users": ["Ishtar: Thunder Goddess"],
 		"type": "bluetome",
 		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 6} }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -488,7 +490,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"max": true
 	},
 	"40": {
@@ -501,7 +503,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spread": 1}}],
 		"max": true
 	},
 	"41": {
@@ -514,7 +516,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "atk", "less", 5]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} }],
 		"max": true
 	},
 	"42": {
@@ -526,7 +528,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": true
 	},
 	"43": {
@@ -538,7 +540,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": false
 	},
 	"44": {
@@ -574,7 +576,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"47": {
@@ -586,7 +588,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": false
 	},
 	"48": {
@@ -599,7 +601,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
 	},
 	"49": {
@@ -612,7 +614,9 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "movetype", ["Armored", "Cavalry"]], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ], "firstReduction": 0.7 }],
 		"max": true
 	},
 	"50": {
@@ -661,7 +665,8 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["always"]] },
+			{"type": "conditionalSpecial", "condition": [["hp", "less", 0.75], ["specialType", ["attack-battle", "pre-battle"]] ], "specialTrueDamage": 10 } ],
 		"max": true
 	},
 	"54": {
@@ -671,9 +676,9 @@
 		"sp": 0,
 		"prf": false,
 		"type": "bluetome",
-		"skills": [],
+		"skills": [["a", "Close Counter"]],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "minimumDamage": 1},
 		"max": false
 	},
 	"55": {
@@ -686,7 +691,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.5], ["phase", "enemy"]  ], "vantage": 1  }],
 		"max": true
 	},
 	"56": {
@@ -698,7 +703,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"57": {
@@ -710,7 +715,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"58": {
@@ -723,7 +728,8 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "conditionalEffects", "condition": [["statCompare", "visible", "atk", "greater", 1]], "statBuff": {"atk": 6, "res": 6} }],
 		"max": true
 	},
 	"59": {
@@ -736,7 +742,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"60": {
@@ -749,7 +755,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
 		"max": true
 	},
 	"61": {
@@ -762,7 +768,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 0.5]], "desperation": 1  }],
 		"max": true
 	},
 	"62": {
@@ -773,8 +779,8 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"effect": [{"type": "combatEffect", "recoil": 6}],
 		"max": true
 	},
 	"63": {
@@ -785,8 +791,8 @@
 		"prf": false,
 		"type": "bluetome",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"effect": [{"type": "combatEffect", "recoil": 6}],
 		"max": false
 	},
 	"64": {
@@ -799,7 +805,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalBonusPenaltyNeutralizers", "condition": [["hp", "less", 0.99, "penalty", "player", "combat"]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "penaltyNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"65": {
@@ -808,11 +814,11 @@
 		"range": 2,
 		"sp": 400,
 		"prf": true,
-		"users": ["Brunnya: Devoted General"],
+		"users": ["Peony: Sweet Dream"],
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["cardinal", true]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 3}],
 		"max": true
 	},
 	"66": {
@@ -824,7 +830,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "onHitHeal": 5},
 		"max": true
 	},
 	"67": {
@@ -836,7 +842,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "onHitHeal": 5},
 		"max": false
 	},
 	"68": {
@@ -848,6 +854,8 @@
 		"users": ["Alfonse: Askran Duo"],
 		"type": "bluetome",
 		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["specialReady", "player", true]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "enemyDouble": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -861,7 +869,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "res", "grater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"70": {
@@ -874,7 +882,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"71": {
@@ -887,7 +895,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"72": {
@@ -899,7 +907,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 5}],
 		"max": true
 	},
 	"73": {
@@ -911,7 +919,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 5}],
 		"max": false
 	},
 	"74": {
@@ -923,7 +931,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"75": {
@@ -935,7 +943,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": false
 	},
 	"76": {
@@ -948,7 +956,10 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "res": 5}, "nullAdaptive": 1 },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "owner", "from": "owner"}]},
+			{"type": "combatEffect", "postHeal": 5}],
 		"max": true
 	},
 	"77": {
@@ -961,7 +972,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "redtome", "bluetome", "greentome", "colorlesstome", "breath", "bow", "dagger", "staff"]] ], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": true
 	},
 	"78": {
@@ -974,7 +985,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
 		"max": true
 	},
 	"79": {
@@ -986,6 +997,8 @@
 		"users": ["Katarina: Torchlit Wanderer"],
 		"type": "bluetome",
 		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "penaltyDouble": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -998,7 +1011,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "lull": {"atk": 5, "res": 5}, "onHitHeal": 4 }],
 		"max": true
 	},
 	"81": {
@@ -1010,7 +1023,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "lull": {"atk": 5, "res": 5}, "onHitHeal": 4 }],
 		"max": false
 	},
 	"82": {
@@ -1023,7 +1036,8 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]],  "lull": {"atk": 6, "res": 6} },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["allyInfo", 3, "movetype", ["Cavalry", "Flying"], 1, "greater"] ], "double": 1, "onHitHeal": 5 }],
 		"max": true
 	}
 }

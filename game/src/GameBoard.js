@@ -2264,7 +2264,7 @@ class GameBoard extends React.Component{
             heroesInRange.push(list[assister.side][assister.listIndex]);
             heroesInRange.push(list[assistee.side][assistee.listIndex]);
           }
-          applyBuffList(list, heroesInRange, effect); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
+          applyBuffList(list, heroesInRange, effect, assister); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
 
 
 
@@ -2319,7 +2319,7 @@ class GameBoard extends React.Component{
           }
 
 
-          applyBuffList(list, heroesInRange, effect);
+          applyBuffList(list, heroesInRange, effect, assistee);
 
 
 
@@ -2507,7 +2507,7 @@ class GameBoard extends React.Component{
         if ("effectReq" in i){
           affectedHeroes = heroReqCheck(assister, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
         }
-        applyBuffList(list, affectedHeroes, i);
+        applyBuffList(list, affectedHeroes, i, assister);
 
       }
 
@@ -2550,7 +2550,7 @@ class GameBoard extends React.Component{
           affectedHeroes = heroReqCheck(assistee, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
         }
 
-        applyBuffList(list, affectedHeroes, i);
+        applyBuffList(list, affectedHeroes, i, assistee);
 
 
 
@@ -2952,7 +2952,8 @@ class GameBoard extends React.Component{
       return list;
     }
 
-    
+    let buffSpread = false;
+
     for (let i of assister.onAssist){ //loop through each dance effect
       if (i !== null && i["assistType"] === "dance"){
 
@@ -2960,11 +2961,15 @@ class GameBoard extends React.Component{
           if (j === "buff"){
 
             let buffs = i.buff;
-            Object.keys(buffs).forEach((key, i) => {
+            
+            for (let key in buffs){
 
-              assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); //apply buff to assistee
-            });
-
+              if (key === "spread"){
+                buffSpread = true;
+              } else {
+                assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); //apply buff to assistee
+              }
+            }
 
           } else if (j === "debuff"){
 
@@ -3004,6 +3009,19 @@ class GameBoard extends React.Component{
       }
 
     } //end for assister dance assist
+
+    if (buffSpread){ 
+      let maxBuff = 0;
+
+      for (let key in assistee.buff){ //loop through buffs and get largest buff
+        maxBuff = Math.max(assistee.buff[key], maxBuff);
+      }
+
+      for (let key in assistee.buff){ //second pass to set the buffs.
+        assistee.buff[key] = maxBuff;
+      }
+
+    }
 
     return list;
 
@@ -3414,7 +3432,7 @@ function makeHeroStruct(){
     this["end"] = false;
     this["effects"] = {"cdTrigger": 0};
 
-    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "sweep": 0, "selfSweep": 0,
+    this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "nullAdaptive": 0, "sweep": 0, "selfSweep": 0,
     //enemyDouble stops enemy from double, stopDouble stops your own double
       "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0,
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
@@ -3446,10 +3464,10 @@ function makeHeroStruct(){
     this["variablePreCombat"] = [];
     this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
     this["preCombatConditionalEffects"] = [];
-    this["conditionalBonusPenaltyNeutralizers"] = [];
+    this["conditionalBonusPenaltyNeutralizers"] = []; //conditionals that depend on bonus/penalties and neutralize them at the same time
     this["conditionalCombatStats"] = [];
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
-    this["conditionalFollowUp"] = [];
+    this["conditionalFollowUp"] = []; //conditional effects that check for followups
     this["conditionalSpecial"] = [];
     this["initiating"] = false;
 
@@ -3919,7 +3937,7 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
       passedHeroList = heroReqCheck(owner, teamListValid, effect.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
 
 
-      applyBuffList(heroList, passedHeroList, effect, postTeam, postSpecial);
+      applyBuffList(heroList, passedHeroList, effect, owner, postTeam, postSpecial);
 
     } //end ally req
     
@@ -3928,11 +3946,10 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
     //if there is a requirement for the buff to apply to themselves
     if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, owner, owner, currentTurn)) {
 
-      applyBuffList(heroList, [owner], effect, postTeam, postSpecial);
+      applyBuffList(heroList, [owner], effect, owner, postTeam, postSpecial);
     } 
 
 
-    //applyBuffList(tempList, passedHeroList, effect);
 
   } else if (effect.checkType === "targeting"){ //targets a unit, usually for having the highest or lowest of a stat
 
@@ -3995,7 +4012,7 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
 
     } //loop through team
     
-    applyBuffList(heroList, affectedList, effect, postTeam, postSpecial);
+    applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial);
 
   } //end targeting type
 }

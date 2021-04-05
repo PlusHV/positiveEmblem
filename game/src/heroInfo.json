@@ -18092,6 +18092,36 @@
 		"art": "Saleh - Spring",
 		"type": "normal",
 		"entry": ["The Sacred Stones"]
+	},
+	"643": {
+		"id": 643,
+		"name": "Dagr: Sun's Radiance",
+		"movetype": "Infantry",
+		"weapontype": "axe",
+		"color": "green",
+		"growthhp": 50,
+		"growthatk": 70,
+		"growthspd": 70,
+		"growthdef": 50,
+		"growthres": 45,
+		"basehp": 19,
+		"baseatk": 9,
+		"basespd": 11,
+		"basedef": 8,
+		"baseres": 6,
+		"weapon": "Skinfaxi",
+		"assist": "",
+		"special": "Dragon Fang",
+		"askill": "Atk/Spd Push 4",
+		"bskill": "Sun-Twin Wing",
+		"cskill": "Even Tempest 3",
+		"sseal": "",
+		"bvid": 60,
+		"art": "Dagr",
+		"type": "mythic",
+		"blessing": "Light",
+		"buff": {"hp": 5, "atk": 0, "spd": 0, "def": 0, "res": 5},
+		"entry": ["Heroes"]
 	}
 
 

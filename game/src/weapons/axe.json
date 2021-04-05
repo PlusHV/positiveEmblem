@@ -1506,11 +1506,13 @@
 		"might": 16,
 		"range": 1,
 		"sp": 400,
-		"prf": false,
+		"prf": true,
+		"users": ["Dagr: Sun's Radiance"],
 		"type": "axe",
 		"skills": [],
-		"passive": {},
-		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "pathfinder"}],
+		"passive": {"spd": 3},
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "pathfinder"},
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "penaltyReverse": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	}
 

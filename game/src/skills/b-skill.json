@@ -3045,5 +3045,15 @@
 			"subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"},
 				{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["fallenStar"], "range": 0, "reference": true, "team": "owner", "from": "owner"}] }],
 		"max": true
+	},
+	"370": {
+		"name": "Sun-Twin Wing",
+		"sp": 300,
+		"prf": true,
+		"users": ["Dagr: Sun's Radiance"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "lull": {"spd": 5, "def": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
+		"max": true
 	}
 }
+
