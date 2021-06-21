@@ -229,6 +229,17 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 //applies effects done post combat.
 //Returns the post hp/charge numbers
 
+
+
+
+export function waitHero(hero){
+    hero.debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    hero.statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
+    hero.anchorPosition = hero.position;
+    hero.end = true;
+}
+
+
 export function postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated){ 
 
 
@@ -237,10 +248,13 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
     let attackerWounds = attacker.statusEffect.deepWounds;
     let defenderWounds = defender.statusEffect.deepWounds;
 
+
+
+    waitHero(list[attacker.side][attacker.listIndex]);
     //First, the attacker needs to be waited and clear debuffs/status effects
-    list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-    list[attacker.side][attacker.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
-    list[attacker.side][attacker.listIndex].end = true;
+    // list[attacker.side][attacker.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+    // list[attacker.side][attacker.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
+    // list[attacker.side][attacker.listIndex].end = true;
 
 
 
@@ -267,6 +281,11 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
         //this changes the list version, the temporary version do not move for reference purposes
         list[attacker.side][attacker.listIndex].position = newAttackerPos;
         list[defender.side][defender.listIndex].position = newDefenderPos;
+
+        //also update their anchor positions
+        list[attacker.side][attacker.listIndex].anchorPosition = newAttackerPos
+        list[defender.side][defender.listIndex].anchorPosition = newDefenderPos;
+
       }
 
     }

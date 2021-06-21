@@ -1757,7 +1757,8 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 6}, "firstReduction": 0.7 }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 6}, "firstReduction": 0.7 },
+			{"type": "conditionalEffects", "condition": [["turnRange", 1, 4, true] ], "flatCanto": 3}],
 		"max": true
 	},
 	"136": {
@@ -1796,6 +1797,20 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "buffNeutralize": {"atk": 1, "def": 1} }],
 		"max": false
+	},
+	"139": {
+		"name": "Shamshir",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Marisa: Crimson Flash"],
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": {"type": "combatEffect", "specialTrueDamage": 7},
+		"cdTrigger": -1,
+		"max": true
 	}
 
 

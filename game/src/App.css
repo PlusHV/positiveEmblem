@@ -63,6 +63,18 @@ table,tr,td {
   position: relative;
 }
 
+.anchorPositionCellStyle{
+  border: 2px solid midnightblue;
+
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  box-sizing: border-box;
+  border-spacing: 1000px; 
+  position: relative; 
+}
+
+
 .movementCellStyle{
   border: 2px solid aqua;
 

@@ -465,7 +465,7 @@
 		"users": ["Gunnthrá: Voice of Dreams"],
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["def"], "team": "enemy", "peak": "min" }],
-		"max": false
+		"max": true
 	},
 	"58": {
 		"name": "Crusader's Ward",
@@ -3053,6 +3053,28 @@
 		"users": ["Dagr: Sun's Radiance"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "lull": {"spd": 5, "def": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
+		"max": true
+	},
+	"371": {
+		"name": "Chilling Seal II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Gunnthrá: Voice of Dreams"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk", "spd", "def", "res"], "checkStats": ["def"], "team": "enemy", "peak": "min" },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 7, "stats": ["atk","res"], "checkStats": ["def"], "team": "enemy", "peak": "min" ,  "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"372": {
+		"name": "Bushido II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ryoma: Supreme Samurai"],
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "combatEffect", "trueDamage": 7}],
+		"skills": [["a", "Iote's Shield"]],
 		"max": true
 	}
 }

@@ -19,15 +19,17 @@ export default class Map extends React.Component{
           //if (this.props.gameState.cells[id] != null){
             let cellClass = "cellStyle";
 
-            if (id  === highLightedCell){
-				cellClass = "highlightedCellStyle";
-            } else if ( this.props.gameState.availableMovement.includes(id)){
-				cellClass = "movementCellStyle";
+            if ( this.props.gameState.anchorPosition === id && !this.props.gameState.freeMove){
+              cellClass = "anchorPositionCellStyle";
+            } else if ( this.props.gameState.availableMovement.includes(id) && !this.props.gameState.freeMove){
+              cellClass = "movementCellStyle";
+            } else if (id  === highLightedCell){
+				      cellClass = "highlightedCellStyle";
             } else if ( this.props.gameState.availableAssist.includes(id)){
-				cellClass =  "assistCellStyle";
+				      cellClass =  "assistCellStyle";
             } else if ( this.props.gameState.availableAttack.includes(id)){
-				cellClass =  "attackCellStyle";
-            } else if ( this.props.gameState.availableWarp.includes(id)){
+				      cellClass =  "attackCellStyle";
+            } else if ( this.props.gameState.availableWarp.includes(id) && !this.props.gameState.freeMove){
             	cellClass = "warpCellStyle";
             }
             
@@ -55,14 +57,14 @@ export default class Map extends React.Component{
                   <span className = "healthText" 
                   		id =  {JSON.stringify(this.props.gameState.cells[id])}
                   		onDrop = {(e) => this.props.drop(e)}
-                  		onDragEnd = {(e) => this.props.dragEnd(e)}>
+                  		>
                   	{this.props.gameState.cells[id].currentHP}
                   </span>
 
                   <span className = "specialText" 
                   		id =  {JSON.stringify(this.props.gameState.cells[id])}
                   		onDrop = {(e) => this.props.drop(e)}
-                  		onDragEnd = {(e) => this.props.dragEnd(e)}>
+                  		>
                   	{currentCharge}
                   </span>
 
@@ -73,14 +75,18 @@ export default class Map extends React.Component{
                     id =  {JSON.stringify(this.props.gameState.cells[id])}
                     onDragStart = {(e) => this.props.dragStart(e)}
                     onDrop = {(e) => this.props.drop(e)}
-                    onDragEnd = {(e) => this.props.dragEnd(e)} />
+                     />
 
                
-                     
+                    
 
 
                 </td>
                 );
+
+              //onDragEnd = {(e) => this.props.dragEnd(e)}
+// onDragEnd = {(e) => this.props.dragEnd(e)}
+// onDragEnd = {(e) => this.props.dragEnd(e)}
 
             } else{ //nobody in cell
               cells.push(

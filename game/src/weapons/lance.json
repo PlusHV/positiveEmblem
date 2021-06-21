@@ -1657,6 +1657,19 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
 		"max": false
+	},
+	"130": {
+		"name": "Flower Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Sumia: Maid of Flowers"],
+		"type": "lance",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
 	}
 
 }

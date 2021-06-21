@@ -270,11 +270,17 @@ const dropDownStyle = {
               />
         </td>
 
-        <td>
-
+        <td className = "equipText" key = {"freeMove"}>
+            FreeMove
         </td>
 
-        <td>
+        <td className = "equippedSkill" key = {"freeMoveCheckbox"}>
+            <input 
+            type = "checkbox"
+            value = {this.props.gameState.freeMove}
+            checked = {this.props.gameState.freeMove}
+            onChange = {(e) => this.props.freeMoveChange(e)}
+              />
         </td>
 
       </tr>

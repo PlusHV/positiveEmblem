@@ -4,7 +4,7 @@ import React from 'react';
 
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal, calculateReductionEffects} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal, calculateReductionEffects, waitHero} from './Battle.js';
 
 import './App.css';
 
@@ -110,14 +110,18 @@ class GameBoard extends React.Component{
       "weaponList": weapons[initialHeroData.weapontype],
       "selectedHeroInfo": initialHeroData, //The current hero's info
       "maxFilter": false,
+      "freeMove": true,
       "currentTurn": 0,
       "fortLevel": fortLevel,
       "blessingBuffs": blessings,
       "season": season,
+      "movementCheck": -1, //Movement check tells us if movement has been calculated and who was last movement was calculated for (by id)
+      "anchorPosition": -1,
       "availableMovement": [],
       "availableAssist": [],
       "availableAttack": [],
       "availableWarp": [],
+      "spaceRemainders": {},
       "draggedHero": null,
       "draggedHeroOrg": null,
       "draggedOver": null,
@@ -142,6 +146,7 @@ class GameBoard extends React.Component{
     this.onAllySupportChange = this.onAllySupportChange.bind(this);
     this.onFortLevelChange = this.onFortLevelChange.bind(this);
     this.onTurnChange = this.onTurnChange.bind(this);
+    this.onFreeMoveChange = this.onFreeMoveChange.bind(this);
 
     this.onSeasonChange = this.onSeasonChange.bind(this);
     this.onHPChange = this.onHPChange.bind(this);
@@ -233,6 +238,7 @@ class GameBoard extends React.Component{
 
     this.setState({heroIndex: i});
     this.setState({playerSide: side})
+
   }
 
   //Changing of levels affecting stats - includes level, merge, flower and rarity
@@ -391,6 +397,8 @@ class GameBoard extends React.Component{
       }
 
     }
+    hero.anchorPosition = hero.position; //set the inital anchorPosition too
+
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
@@ -562,6 +570,32 @@ class GameBoard extends React.Component{
     this.setState({maxFilter: e.target.checked});
   }
 
+
+  onFreeMoveChange(e){
+    this.clearMovement();
+
+    let temp = this.state.heroList;
+
+    //When this is changed, should reset any movement
+    let resetHero = this.idToHero(this.state.movementCheck, temp);
+    
+    if (resetHero !== null){
+      resetHero.cantoActive = false;
+      resetHero.canto = false;
+      resetHero.anchorPosition = resetHero.position;
+
+      temp[resetHero.side][resetHero.listIndex] = resetHero;
+    }
+    this.setState({movementCheck: -1}); //reset movement check so that movement can be recalculated
+    
+
+    this.setState({freeMove: e.target.checked});
+
+    this.setState({heroList: temp});
+
+  }
+
+
   //index is the type of buff -> buff, debuff, combat buff
   //stat, the stat being changed
   onBuffChange(e, index, stat){ //also handles debuffs and combat modifiers
@@ -612,14 +646,29 @@ class GameBoard extends React.Component{
 
     //only reset if unit has used their action
     if (e.target.checked){
-      hero.debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
-      hero.statusEffect = JSON.parse(JSON.stringify(statusDebuffs));//{"guard": 0, "panic": 0}; 
+      this.endHeroTurn(hero);
+      // hero.debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
+      // hero.statusEffect = JSON.parse(JSON.stringify(statusDebuffs));//{"guard": 0, "panic": 0}; 
+      if (hero.cantoActive){
+        hero.cantoActive = false;
+      }
+
     }
 
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
     this.setState({heroList: temp});
     this.setState({selectedMember: hero});
+
+
+  }
+
+  endHeroTurn(hero){ //wait the hero and run other functions that occur when their turn ends (through waiting or an action)
+      
+      waitHero(hero);
+      this.clearMovement();
+      this.setState({movementCheck: -1});
+      this.setState({anchorPosition: -1 });
 
 
   }
@@ -814,7 +863,7 @@ class GameBoard extends React.Component{
     ev.preventDefault();
   }
 
-  //This handles dropping team members on the side panel. Dropping members on another will swap them
+  //This handles dropping team members on the side panel. Dropping members on another will swap them. This will change their list indices but not affect their id.
   dropTeamMember(ev){
     ev.preventDefault();
     let dragData = JSON.parse(ev.dataTransfer.getData("text"));
@@ -843,7 +892,7 @@ class GameBoard extends React.Component{
     //put the dragged member into the dropped location
     temp[dropSide][dropIndex] = dragTemp;
 
-    //they have swapped and need their listIndex updated - they are the same because they have swapped
+    //they have swapped and need their listIndex updated - they are the same because they have been swapped but the dragData/dropData have the correct listIndices
     temp[dragSide][dragIndex].listIndex = dragData.listIndex;
     temp[dropSide][dropIndex].listIndex = dropData.listIndex;
 
@@ -868,183 +917,147 @@ class GameBoard extends React.Component{
 
     ev.dataTransfer.setData("text", ev.target.id ); //id is the hero struct 
 
+
+
     let dragData = JSON.parse(ev.target.id); //convert the target's text to an hero object (copy rather than a reference so we can add temporary effects to it)
     dragData.initiating = true;
 
-    let oldHero = heroData[dragData.heroID.value];
-    let move = this.getMovement(oldHero.movetype);
+    
+    let temp = this.state.heroList;
+    let newCells = this.state.cells;
+    //1. Dragging another hero while the last hero has been moved (but no action has been completed) should move back the last hero back to its anchor position (which should also recalculate some aura stats too)
+      //This does not occur while in freemove
+      //This will modify the hero/cells
 
-    //increase movement by one if they have mobility buff
-    if (dragData.statusBuff["mobility+"] > 0){
-      move++; 
+    //2. If canto movement is on, we will either stop canto movement or disable the drag
+
+    //This handles the resetting a unit back to its anchor when another unit is dragged
+    if (!this.state.freeMove && this.state.movementCheck >= 0 && dragData.id !== this.state.movementCheck) {
+
+      let previousHero = this.idToHero(this.state.movementCheck, temp); //get the previous hero
+
+      //previousHero.position = previousHero.anchorPosition;
+
+      newCells[previousHero.position] = null;
+      newCells[previousHero.anchorPosition] = previousHero;
+
+      //update for new position
+      previousHero.position = previousHero.anchorPosition;
+
+
+    }
+    // let oldHero = heroData[dragData.heroID.value];
+
+    let actionLists = getActionLists(dragData, temp, newCells, this.state.currentTurn);
+
+
+    
+    //let pos = dragData.position;
+
+
+
+    let assistList = this.getAssistList(dragData, temp, newCells);
+    let attackList = getAttackList(dragData, newCells);
+
+
+    this.setState({draggedHero: dragData});
+    this.setState({draggedHeroOrg: Object.assign({}, dragData) });
+
+    let cantoCheck = false; //Checks the canto status of last hero dragged/dropped
+
+    if (this.state.movementCheck >=  0) { //make sure that a previous movement check is active
+      cantoCheck = this.idToHero(this.state.movementCheck, temp).cantoActive; //get the previous hero's canto status
+
     }
 
-    if (dragData.statusEffect["gravity"] > 0){
-      move = 1;
+
+    if (!cantoCheck && !dragData.end){ //only set movement if unit's turn has not ended and a unit is not asking for a canto action
+
+      if (this.state.movementCheck !== dragData.id ){ //movement hasn't been calculated yet
+        this.setState({anchorPosition: dragData.anchorPosition });
+        this.setState({availableWarp: actionLists.warpList});
+        this.setState({availableMovement: actionLists.movementList});
+        this.setState({movementCheck: dragData.id});
+        this.setState({spaceRemainders : actionLists.spaceRemainders});
+      }
+
+
+      this.setState({availableAssist: assistList});
+      this.setState({availableAttack: attackList});
+      
     }
 
+
+    this.setState({heroList: temp});
+    this.setState({cells: newCells});    
+    
+
+  }
+
+
+  idToHero(id, heroList){ //Given an id and herolist,  return the hero
+
+
+    for (let team in heroList){ //loop both teams
+      for (let hero of heroList[team]){ //loop through each member
+        
+        if (hero.id === id){
+          return hero;
+        }
+
+
+      }
+    }
+
+    return null;
+
+  }
+
+  //Assist list is seperate from other actions beause it needs to check that the assists will work
+  getAssistList(hero, heroList, newCells){
     let assist = -1;
 
 
-    if (dragData.assist.range !== null)
-      assist = dragData.assist.range;
+    if (hero.assist.range !== null)
+      assist = hero.assist.range;
 
-
-    let pos = dragData.position;
-
-    //these lists contain positions that have those actions available
-    let movementList = [];
     let assistList = [];
-    let attackList = [];
-    let warpList = []; //contains positions that can be warped to
-    let obstructList = [];
-
-    //Obstruct is calculated the same way as a warp - it only takes away from normal movement though
-
-
-    //Currently loops through each space which doesn't allow for path finding
-    //Instead should do some kind of adjacency check
-    //Movement starts at 1 and increments until over movement range
-    //Have 2 lists, mList, and mList done - mList is current adjacency checks to do, Done version has positions already done the checl
-    //Start with mlist with just original space
-    //a. For each space in mList, get adjacent spaces - for spaces that have already done adjacency checks skip e.g. First pass checks adjacent spots around initial space, but not for the second pass
-    //loop through list of adjacent spaces and add accordingly. If added to movementList OR space is occupied by an ally, then add to mList
-
-    //Pass does two things
-      //spaces will be added  to mList if they are occupied by an enemy too
-      //obstruct can't disqualify spaces 
-
-
-    if (dragData.statusBuff.airOrders > 0){
-      dragData.warp.push({"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2] ] });
-
-    }
-
-    let warpInfo = this.getWarpEffects(dragData, this.state.heroList);
-    //let warpTargets = this.getWarpTargets(this.state.heroList[dragData.side], dragData); //get the heroes you can warp to (as positions)
-    let warpTargets = warpInfo.warpList;
-    let obstructTargets = warpInfo.obstructList;
-    let pathfinderList = warpInfo.pathfinderList;
-    let pass = warpInfo.pass;
-
-
-    obstructList = this.getAdjacentSpaces(obstructTargets);
-
-    //Movement Calculation
-
-    let movementCheck = this.getAdjacentSpaces([dragData.position]); //spaces to check for adjacency
-    let movementCheckDone = []; //spaces that have already been checked for adjacency
-
-    let currentMovement = 0;
-    let newCells = this.state.cells;
-    while (currentMovement < move){
-
-
-      let nextMovementCheck = [];
-      for (let pos of movementCheck) { //loop through positions to check
-
-
-        //if this position has already been checked, move to next position
-        if (movementCheckDone.includes(pos)){ continue;}
-
-        //Add to next movement check list if 
-        //is empty and (have pass or space is not obstructed) 
-        //or
-        //ally in spot 
-        //or 
-        //if pass is active and enemy is in the pos
-        //if (  (newCells[pos] === null && (pass > 0 || !obstructList.includes(pos))) || newCells[pos].side === dragData.side || (pass > 0 && newCells[pos].side !== dragData.side) ){
-        if (  (newCells[pos] === null) || newCells[pos].side === dragData.side || (pass > 0 && newCells[pos].side !== dragData.side) ){
-
-          if (newCells[pos] === null && (pass < 1 && obstructList.includes(pos)) ){ //obstructed
-            movementCheckDone.push(pos);
-            continue;
-          } 
-
-          nextMovementCheck.push(pos); //position can be moved to, add it for the next check
-
-
-          if (pathfinderList.includes(pos)){
-            let extraSpaces = this.getAdjacentSpaces([pos]);
-
-            for (let extra of extraSpaces){
-              movementCheck.push(extra);
-            }
-
-          }
-
-          if (newCells[pos] === null){ //add to movementList if no hero is occupying it
-            
-            movementList.push(pos);
-          }
-          
-          
-
-        }
-        
-        movementCheckDone.push(pos); //space has been checked and add it to list
-        
-
-      } //end for
-
-      movementCheck = this.getAdjacentSpaces(nextMovementCheck);
-
-
-
-      currentMovement++;
-    }
-
-    
-
-    //Warp space calculation
-
-    let warpSpaces = this.getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
-
-    //adds the warp spaces that are empty to the warp list 
-    for (let x of warpSpaces){
-
-      if (newCells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
-        warpList.push(x);
-      }
-
-    }
-
 
     //Assist space calculation
 
-    if (assist > 0 && dragData.statusEffect.isolation < 1){ //check for assist ability and for no isolation status
+    if (assist > 0 && hero.statusEffect.isolation < 1){ //check for assist ability and for no isolation status
 
 
-      let assistSpaces = this.getSpacesInRange(pos, assist);
+      let assistSpaces = getSpacesInRange(hero.position, assist);
 
       for (let s of assistSpaces){
-        if (newCells[s] !== null && newCells[s].side === dragData.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
+        if (newCells[s] !== null && newCells[s].side === hero.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
 
 
 
           //loop through assist effects and see if they will be activatable
           let assistValid = false;
-          for (let assistType of dragData.assist.type){
+          for (let assistType of hero.assist.type){
 
             if (assistType === "movement"){
 
-              assistValid = this.checkMovementAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect); 
+              assistValid = this.checkMovementAssist(heroList, hero, newCells[s], hero.assist.effect); 
 
 
             } else if (assistType === "rally"){
-              assistValid = this.checkRallyAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
+              assistValid = this.checkRallyAssist(heroList, hero, newCells[s], hero.assist.effect);
 
 
             } else if (assistType === "health"){
-              assistValid = this.checkHealthAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
+              assistValid = this.checkHealthAssist(heroList, hero, newCells[s], hero.assist.effect);
               
             } else if (assistType === "heal"){
-              assistValid = this.checkHealAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
+              assistValid = this.checkHealAssist(heroList, hero, newCells[s], hero.assist.effect);
               
             } else if (assistType === "dance"){
-              assistValid = this.checkDanceAssist(this.state.heroList, dragData, newCells[s]);
+              assistValid = this.checkDanceAssist(heroList, hero, newCells[s]);
             } else if (assistType === "neutralize"){
-              assistValid = this.checkNeutralizeAssist(this.state.heroList, dragData, newCells[s], dragData.assist.effect);
+              assistValid = this.checkNeutralizeAssist(heroList, hero, newCells[s], hero.assist.effect);
             }
 
             if (assistValid){
@@ -1063,203 +1076,12 @@ class GameBoard extends React.Component{
 
     } //end assist space calculation
 
-    //Attack space calculation
-    if (dragData.range > 0){
-
-
-      let attackSpaces = this.getSpacesInRange(pos, dragData.range);
-
-      for (let s of attackSpaces){
-        if (newCells[s] !== null && newCells[s].side !== dragData.side){
-          attackList.push(s);
-        }
-      }
-
-    }
-
-
-
-    this.setState({draggedHero: dragData});
-    this.setState({draggedHeroOrg: Object.assign({}, dragData) });
-    this.setState({availableWarp: warpList});
-    this.setState({availableMovement: movementList});
-    this.setState({availableAssist: assistList});
-    this.setState({availableAttack: attackList});
-    this.setState({cells: newCells});    
-
-
-  }
-
-  //Given a list of positions, get all the spaces adjacent to it
-  getAdjacentSpaces(warpPositions){
-
-    let spaces = [];
-
-    for (let x of warpPositions){
-
-      //left
-      if ( (x % 6) - 1 >= 0 && !spaces.includes(x - 1) ){ //get the column number and check if it is not the left-most column
-        spaces.push(x - 1);
-      }
-      //right
-      if ( (x % 6) + 1 <= 5 && !spaces.includes(x + 1) ){ //get the column number and check if it is not the right-most column
-        spaces.push(x + 1);
-      }
-      //up
-      if ( Math.floor(x / 6) - 1 >= 0 && !spaces.includes(x -6) ){ //get the row number and check if it is not the top-most column
-        spaces.push(x - 6);
-      }
-      //down
-      if ( Math.floor(x / 6) + 1 <= 7 && !spaces.includes(x + 6) ){ //get the row number and check if it is not the bottom-most column
-        spaces.push(x + 6);
-      }
-    }
-    return spaces;
-
-
+    return assistList;
 
   }
 
 
-  //Given a position, get spaces that are exactly at that range
-  getSpacesInRange(origin, range){
 
-    let checkSpaces = [origin];
-    let checkedSpaces = [origin];
-    let counter = 0;
-
-    while (counter < range){
-
-      let adjacent = this.getAdjacentSpaces(checkSpaces);
-      checkSpaces = []; //reset
-
-      for (let x of adjacent){ //loop through adjacent spaces add them to checkSpaces if not already checked
-
-        if (!checkedSpaces.includes(x)){
-          checkSpaces.push(x);
-          checkedSpaces.push(x);
-        }
-
-      } //end for
-
-      counter++;
-    }
-
-
-    return checkSpaces;
-
-
-
-  }
-
-  getWarpEffects(owner, heroList){
-
-    //provides a couple of things
-    //pass (just a 1 or 0 for pass effect)
-    //warp list - target that can be warped to
-    //obstruct list
-
-    let warpList = [];
-    let obstructList = [];
-    let pathfinderList = [];
-    let pass = 0;
-
-    for (let team in heroList){ //loop through each team
-      for (let hero of heroList[team]){ //loop through each hero on team
-
-        if (hero.position < 0 || hero.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
-
-
-        let warpEffects = hero.warp;
-        if (hero.id === owner.id){
-          warpEffects = owner.warp;
-        }
-
-        for (let effect of warpEffects){ //loop through loop effects
-          if (effect === null || effect === undefined) {continue;}
-        
-
-          if ("condition" in effect && !checkCondition(heroList, effect.condition, hero, hero, this.state.currentTurn) ){ //check if condition has not been met to skip
-              continue;
-          }
-
-          if (effect.subtype === "warpReq"){
-            //warp reqs - check team for allies that pass req to warp to -- only applies to self
-            if (hero.id === owner.id){
-              this.getWarpTargets(effect, heroList, owner, warpList);
-            }
-
-          } else if (effect.subtype === "warpTarget"){
-
-            if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, hero, owner, this.state.currentTurn)){
-
-
-              if (effect.effect === "obstruct"){
-
-
-                if (!obstructList.includes(hero.position) && hero.side !== owner.side){
-                  obstructList.push(hero.position);
-                }  
-
-              } else if (effect.effect === "warp"){
-
-                if (!warpList.includes(hero.position)){
-                  warpList.push(hero.position);
-                }  
-
-
-              } else if (effect.effect === "pathfinder"){
-                if (!pathfinderList.includes(hero.position) && hero.side === owner.side){
-                  pathfinderList.push(hero.position);
-                }  
-              }
-            } //end check condition
-
-          } else if (effect.subtype === "pass"){
-            pass++;
-          }
-        } //end warp loop
-        //"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }], 
-        //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.25]], "subtype": "pass"}],
-        //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
-
-
-      }
-    } //end heroList loop
-
-    return {"warpList": warpList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
-
-  }
-
-    //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
-  getWarpTargets(effect, heroList, owner, warpList){
-    
-
-    let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
-    let allyList = heroList[owner.side];
-    for (let x in allyList){
-      if (allyList[x].position >= 0 && allyList[x].currentHP > 0 && allyList[x].id !== owner.id){
-        allyListValid.push(allyList[x]);
-      }
-    } 
-
-
-        let allyReq = effect.allyReq;
-
-        let passedAllyList = this.heroReqCheck(owner, allyListValid, allyReq); //Get the list of allies that pass the req check
-
-
-        for (let y of passedAllyList){
-
-          if (!warpList.includes(y.position)){
-            warpList.push(y.position);
-          }
-
-        }
-
-
-
-  }
 
 
   //given an list of allies and a requirement object, return a list of heroes that meet the requirements
@@ -1667,10 +1489,7 @@ class GameBoard extends React.Component{
 
   dragEnd(ev){
     ev.dataTransfer.clearData();
-    this.setState({availableMovement: []});
-    this.setState({availableWarp: []});
-    this.setState({availableAssist: []});
-    this.setState({availableAttack: []});
+    //this.setState({anchorPosition: -1 });
 
     this.setState({draggedOver: null});
     this.setState({draggedHero: null});
@@ -1682,6 +1501,18 @@ class GameBoard extends React.Component{
 
   }
 
+
+  clearMovement(){
+    this.setState({anchorPosition: -1 });
+    this.setState({availableMovement: []});
+    this.setState({availableWarp: []});
+    this.setState({availableAssist: []});
+    this.setState({availableAttack: []});
+
+
+  }
+
+  //Action Function - This function handles actions on heroes (movement, assists, attacks etc)
   dropBoardMember(ev){
     ev.preventDefault();
 
@@ -1710,8 +1541,16 @@ class GameBoard extends React.Component{
     let newCells = this.state.cells;
 
 
+    let cantoCheck = false; //canto does not occur by default - this is a check that tells us if canto has been activated so movement should be calculated
+
+    let actionSuccess = false; //check to see if an action has successfully been done
+
+
     //if spot is already filled then start an assist or attack
-    if (newCells[dropPosition] !==null){
+    if (newCells[dropPosition] !==null) {
+
+
+
 
       //at this point, we should probably use this.state.draggedOver over newCells since the position is confirmed to have a hero.
       //the cells version should not have any temporary effects which don't really matter for assists and movements (only battles)
@@ -1721,17 +1560,25 @@ class GameBoard extends React.Component{
 
       //let tempOrg = temp;
 
-
-      //if (this.CheckAdjacent(dragData.position, newCells[dropPosition].position )){
-        //Check if in range for assist and they are on the same side
+      //Assist
+      //Check if in range for assist and they are on the same side
       if ( this.state.availableAssist.includes(newCells[dropPosition].position) && dragData.side === newCells[dropPosition].side && dragData.statusEffect.isolation < 1 && newCells[dropPosition].statusEffect.isolation < 1){
 
 
         //Note - These apply functions currently use a copy of the the assister (drag data) and assistee (dropPosition in cell list) 
         //Only one change is done at a time for the most part so this is fine, but for movement heal, it applies two effects, so the applyHealAssist portion uses the updated assister
 
-        if (dragData.assist.range > 0){ //range 
+        if (dragData.assist.range > 0){ //first check if there is a valid range value on the assist 
+
+
+
+
           for (let assistType of dragData.assist.type){
+
+            //Get conditional effects for the assister - This is mainly so that we can conditional canto effects for stuff like regin's sword, which activates on assists
+            //This will also activate other abilities such as swift sparrow but this should not effect assists since they do not use combat effects/stats
+            this.getConditionalEffects(dragData, newCells[dropPosition], "conditionalEffects"); 
+            
 
             if (assistType === "movement"){
 
@@ -1774,9 +1621,15 @@ class GameBoard extends React.Component{
 
         }
 
+        //The check on availableAssist spaces means that the assist will be sucessful, thus the action is successful
+        this.endHeroTurn(temp[dragSide][dragIndex]);
+        
+        actionSuccess = true;
 
+
+      //Attack
       //Check if in range for attack and if they are on the same side
-      } else if (getDistance(dragData.position, newCells[dropPosition].position) === dragData.range && dragData.side !== newCells[dropPosition].side ){
+      } else if ( this.state.availableAttack.includes(newCells[dropPosition].position) && getDistance(dragData.position, newCells[dropPosition].position) === dragData.range && dragData.side !== newCells[dropPosition].side ){
         let orgAttackerPos = temp[dragSide][dragIndex].position;
         let orgDefenderPos = temp[dropSide][dropIndex].position;
 
@@ -1792,33 +1645,95 @@ class GameBoard extends React.Component{
         newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
         newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
 
+
+        this.endHeroTurn(temp[dragSide][dragIndex]);
+        actionSuccess = true;
       }
 
 
 
-
+      //Post action
       //An action has occured which is either an assist or battle. Buffs/debuffs usually go off after these actions so visible stats should be recalculated
+      if (actionSuccess){
+        temp = this.recalculateAllVisibleStats(temp);
 
-      temp = this.recalculateAllVisibleStats(temp);
+         console.log(actionSuccess);
 
-      // this.setState({heroList: temp});
-      // this.selectNewMember(dragSide, dragIndex);
+        if (!dragData.canto){ //canto has not been used this turn by the unit
 
-      //this.setState({selectedMember: temp[this.state.playerSide][this.state.heroIndex] }); 
+          //check for flat canto values and remainder value
+          if (dragData.combatEffects.flatCanto > 0 || (dragData.combatEffects.cantoRemainder > 0 && dragData.remainder > 0  )) { //check if unit has values to activate canto
+            cantoCheck = true;
+            temp[dragSide][dragIndex].end = false;
+            temp[dragSide][dragIndex].canto = true; //set canto value  to true so it does not activate again
+            temp[dragSide][dragIndex].cantoActive = true;
 
 
+            let cantoValue = dragData.combatEffects.flatCanto;
+
+            if (dragData.combatEffects.cantoRemainder > 0){
+              cantoValue+= dragData.remainder;
+            }
+
+            temp[dragSide][dragIndex].cantoMovement = cantoValue;
+
+
+
+          }
+
+
+
+        }
+      }
 
     } else { //regular movement
 
 
-
+      //check if movement is valid and update the game with the new positions
+      //with freemove active, the movement will always be active
+      //With freemove off, it needs to check if it is valid warp or move position
+      if ( (this.state.freeMove ||   this.state.availableMovement.includes(dropPosition) || this.state.availableWarp.includes(dropPosition)) && (this.state.freeMove || dragData.id === this.state.movementCheck) ){
+      //for regular movement an action hasn't been successful yet 
       //remove old from board
-      newCells[temp[dragSide][dragIndex].position] = null;
-      
+        newCells[temp[dragSide][dragIndex].position] = null;
+        
 
-      //update for new position
-      newCells[dropPosition] = temp[dragSide][dragIndex]; //update in gameboard
-      temp[dragSide][dragIndex].position = dropPosition; //update in team list
+        //update for new position
+        newCells[dropPosition] = temp[dragSide][dragIndex]; //update in gameboard
+        temp[dragSide][dragIndex].position = dropPosition; //update in team list
+
+
+
+        if (dropPosition in this.state.spaceRemainders){ //check if the spot has a remainder value before assigning it
+
+          temp[dragSide][dragIndex].remainder = this.state.spaceRemainders[dropPosition]; //remainder needs to be calculated when movement is done
+        }
+
+
+
+
+        // if (temp[dragSide][dragIndex].cantoActive){ //this is considered a canto movement and will end the unit's turn
+        //   temp[dragSide][dragIndex].cantoActive = false;
+        //   this.dragEnd(ev);
+        //   this.endHeroTurn(temp[dragSide][dragIndex]);
+        // } else 
+        if (!temp[dragSide][dragIndex].cantoActive) { //canto is not active, recalculate attack/assists
+
+
+          let assistList = this.getAssistList(temp[dragSide][dragIndex], temp, newCells);
+          let attackList = getAttackList(temp[dragSide][dragIndex], newCells);
+
+          this.setState({availableAssist: assistList});
+          this.setState({availableAttack: attackList});
+
+          if (this.state.freeMove){
+            temp[dragSide][dragIndex].anchorPosition = dropPosition; //update in team list
+          }
+
+
+        }
+
+      }
 
 
       // this.setState({heroList: temp});
@@ -1827,15 +1742,60 @@ class GameBoard extends React.Component{
       //this.setState({selectedMember: temp[dragSide][dragIndex] });
     }
 
+
+    //a check for an action occurring needs to occur
+
+
+
+
     this.calculateAuraStats(temp,this.state.currentTurn);
 
+    if (dragSide !== this.state.playerSide || dragIndex !== this.state.heroIndex){ //if moved hero is not the currently selected hero, reset that hero's remainder value
+      temp[this.state.playerSide][this.state.heroIndex].remainder = getHeroMovement(this.state.selectedMember);
+
+    }
 
 
+
+
+    //this reset all tiles ( but should it?)
+    if (!dragData.cantoActive){
+      
+    }
+    this.dragEnd(ev); //reset the prediction menu 
+
+    if (cantoCheck){ //canto has been activated
+
+      let tempCantoHero = JSON.parse(JSON.stringify(temp[dragSide][dragIndex]) ); //create a temporary version of the hero with canto so that we can add temporary effects.
+
+
+      let actionLists = getActionLists(tempCantoHero, temp, newCells, this.state.currentTurn);
+
+
+      this.setState({availableWarp: actionLists.warpList});
+      this.setState({availableMovement: actionLists.movementList});
+      
+
+      //When the action is done, movementcheck/anchors are cleared, so we need to set new ones
+      this.setState({movementCheck: temp[dragSide][dragIndex].id });  
+      this.setState({anchorPosition: temp[dragSide][dragIndex].position });
+
+    }
+
+    //actions (attack/assist), will mark canto so that canto movement is then calculated and set
+      //at this point, moving the selected unit will also end their turn
+      //if any other unit is dragged, then the canto unit will have their turn ended. Can still select other units tho.
+
+    // update hero list
     this.setState({heroList: temp});
-    this.selectNewMember(dragSide, dragIndex);
 
-    this.dragEnd(ev);
+    //make the hero that did the last action the new selected member
+    //this.selectNewMember(dragSide, dragIndex);
+
+
     this.setState({cells: newCells});
+
+
   }
 
   //Given an index, get the side and index (for that side)
@@ -3131,17 +3091,7 @@ class GameBoard extends React.Component{
 
   }
 
-  getMovement(moveType){
 
-    if (moveType === "Cavalry")
-      return 3;
-    else if (moveType === "Infantry" || moveType === "Flying")
-      return 2;
-    else if (moveType === "Armored")
-      return 1;
-    else
-      return 0;
-  }
 
   getEnemySide(side){
 
@@ -3165,10 +3115,11 @@ class GameBoard extends React.Component{
     // this["statusBuff"] = {};
     for (let i of tempList[side]){ 
 
-      //These effects last for 1 turn which means there are reset at the start of the turn
+      //These effects last for 1 turn which means these are reset at the start of the turn
       tempList[side][i.listIndex].buff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //reset buffs
       tempList[side][i.listIndex].statusBuff = JSON.parse(JSON.stringify(statusBuffs)); //{"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
-
+      tempList[side][i.listIndex].end = false;
+      tempList[side][i.listIndex].canto = false; //reset canto value
     }
     tempList = this.recalculateAllVisibleStats(tempList);//get most up to date visible stats for all heroes
 
@@ -3346,7 +3297,8 @@ class GameBoard extends React.Component{
             supportLevelChange = {this.onSupportLevelChange}
             allySupportChange = {this.onAllySupportChange}
             bonusChange = {this.onBonusChange}
-            endChange = {this.onEndChange} />
+            endChange = {this.onEndChange}
+            freeMoveChange = {this.onFreeMoveChange} />
 
         </td>
 
@@ -3422,7 +3374,14 @@ function makeHeroStruct(){
     this["allySupportLevel"] = "None";
     this["allySupport"] = {value: 0, label: ""};
     this["blessing"] = "None";
+
     this["position"] = -1;
+    this["anchorPosition"] = -1;
+    this["remainder"] = 0;
+    this["canto"] = false; //checks if canto has been used this turn
+    this["cantoActive"] = false; //indicates if canto is movement is being done
+    this["cantoMovement"] = 0;
+
     this["currentHP"] = 0;
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //set of stats from skills
     this["assist"] = {};
@@ -3458,7 +3417,9 @@ function makeHeroStruct(){
       "minimumDamage": 0,
       "raven": 0,
       "triangleAdept": [0], "cancelAffinity": [0],
-      "miracle": 0 }; //effects the change during battle
+      "miracle": 0,
+      "flatCanto": 0, "cantoRemainder": 0 //flat canto is a flat canto amount that will always be used, cantoRemainder is true/false effect that checks if remainder value will be added to flat canto
+       }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
     this["variablePreCombat"] = [];
@@ -3723,10 +3684,13 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
       position = position + 42; //
     }
     hero.position = position;
-
+    hero.anchorPosition = position;
     cells[position] = hero;
 
   }
+
+  //Initializing remainder to the movement of the hero
+  hero.remainder = getMovement(newHero.movetype);
 
     
   //   if (e.value === "0"){ //if blank hero, take it off the board
@@ -4014,7 +3978,107 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
     
     applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial);
 
-  } //end targeting type
+  } else if (effect.checkType === "targetingReqCheck"){ //targets a unit then uses it as a refeerence - only ussed by chilling seal II currently
+    //{"type": "turnStart", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 7, "stats": ["atk","res"], "checkStats": ["def"], "team": "enemy", "peak": "min" ,  "effectReq": [["distanceCheck", 2]] }],
+    let checkStats = effect.checkStats;
+
+    let affectedList = [];
+
+    let peak;
+
+    if (effect.peak === "max"){
+      peak = 0;
+    } else if (effect.peak === "min"){
+      peak = 999;
+    }
+
+
+
+    for (let hero of teamList){
+
+      if ("targetReq" in effect && !checkCondition(refList, effect.targetReq, owner, hero) ){
+        continue; //if there is a target req and they don't meeet that requirement skip them
+      }
+
+      if (owner.id === hero.id || !heroValid(hero) ){
+        continue; //cannot target themselves
+      }
+
+      let sum = 0;
+
+      for (let stat of checkStats){
+
+        if (stat === "hp"){
+          sum+= hero.currentHP;
+
+        } else if (stat === "damage"){ //the amount of damage on the ally
+          sum+= hero.stats.hp - hero.currentHP;
+
+        } else if (stat === "distance"){
+          sum+= getDistance(hero.position, owner.position);
+
+        } else {
+          sum+= hero.visibleStats[stat];  
+        }
+
+        
+      }
+
+      if (sum === peak){ //same as peak, add to list
+        affectedList.push(hero);
+      } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
+
+        if (heroValid(hero)){
+          affectedList = []; //reset list
+          affectedList.push(hero);
+          peak = sum; //set new peak
+        }
+
+      } 
+
+
+    } //loop through team
+    //found targeted units
+
+    //We now have a list of units to use as a reference and will run the effectreq through each one
+
+
+    for (let refHero of affectedList){
+
+      let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+      for (let x in teamList){
+        if (heroValid(teamList[x]) && teamList[x].id !== refHero.id ){ //exclude themselves, self buff req is done separately
+          teamListValid.push(teamList[x]);
+        }
+      } 
+
+
+      let passedHeroList = [];
+      //owner, teamList, heroReq, heroList, turn){
+      if ("effectReq" in effect){
+
+
+        passedHeroList = heroReqCheck(refHero, teamListValid, effect.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+
+
+        applyBuffList(heroList, passedHeroList, effect, refHero, postTeam, postSpecial);
+
+
+      } //end ally req
+      
+
+      
+      //if there is a requirement for the buff to apply to themselves
+      if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, refHero, refHero, currentTurn)) {
+
+        applyBuffList(heroList, [refHero], effect, refHero, postTeam, postSpecial);
+      } 
+
+    }//end loop through each refhero
+
+  }
+
+
 }
 
 //hList, list to read from
@@ -4045,4 +4109,383 @@ function getCardinalHeroes(hList, hero, excluded){
 
 }
 
+function getMovement(moveType){
 
+  if (moveType === "Cavalry")
+    return 3;
+  else if (moveType === "Infantry" || moveType === "Flying")
+    return 2;
+  else if (moveType === "Armored")
+    return 1;
+  else
+    return 0;
+}
+
+
+function getHeroMovement(hero){ //give a hero get the movement value
+    let heroInfo = heroData[hero.heroID.value];
+    let move = getMovement(heroInfo.movetype); //the default movement given move type
+
+    //increase movement by one if they have mobility buff
+    if (hero.statusBuff["mobility+"] > 0){
+      move++; 
+    }
+
+    //set movement to 1 if they are affected by gravity
+    if (hero.statusEffect["gravity"] > 0){ 
+      move = 1;
+    }
+
+    return move;
+}
+
+
+
+function getActionLists(hero, heroList, newCells, currentTurn){
+
+  // let oldHero = heroData[dragData.heroID.value];
+  //hero should be a temporary copy of the hero being moved 
+
+  //list hero is the most updated version of the dragData so we use that version for most of this function. It only doesn't have combat effects which hero should have
+
+  let move = getHeroMovement(hero);
+  
+  //console.log(hero);
+
+  if (hero.cantoActive){ //if canto is active, movement is limited to the canto movement calculated when canto activated.
+    move = hero.cantoMovement;
+
+  }
+
+
+
+
+
+  let pos = hero.position; //get the most recent position from the heroList
+
+  //these lists contain positions that have those actions available
+  let movementList = [pos]; //the initial position can always be moved to
+  
+  let warpList = []; //contains positions that can be warped to
+
+  let obstructList = []; //This is more of a negative list, which will prevent spaces from being added to the movement list
+
+
+  if (hero.statusBuff.airOrders > 0){
+    hero.warp.push({"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2] ] });
+
+  }
+
+  //warp info finds the spaces for warping, obstructors and pathfinders. It also checks if the unit has the pass effect active.
+  let warpInfo = getWarpEffects(hero, heroList, currentTurn);
+
+  let warpTargets = warpInfo.warpList;
+  let obstructTargets = warpInfo.obstructList;
+  let pathfinderList = warpInfo.pathfinderList;
+  let pass = warpInfo.pass;
+
+
+  let spaceRemainders = {}; //object list to hold the costs of each movement space (to calculate remainders)
+
+  spaceRemainders[pos] = move; //position of hero's remainder is the movement stat
+
+  obstructList = getAdjacentSpaces(obstructTargets);
+
+  //Movement Calculation
+
+  let movementCheck = getAdjacentSpaces([hero.position]); //spaces to check for adjacency
+  let movementCheckDone = []; //spaces that have already been checked for adjacency
+
+  let currentMovement = 0;
+  while (currentMovement < move){
+
+
+    let nextMovementCheck = [];
+    for (let currentPos of movementCheck) { //loop through positions to check
+
+      //current movement tracks the amount of movement has been used
+
+
+      //if this position has already been checked, move to next position
+      if (movementCheckDone.includes(currentPos)){ continue;}
+
+
+      //if pass is active and enemy is in the pos
+      //if (  (newCells[pos] === null && (pass > 0 || !obstructList.includes(pos))) || newCells[pos].side === dragData.side || (pass > 0 && newCells[pos].side !== dragData.side) ){
+
+
+
+      //Check for if the space can be moved to/through
+      //Check if empty OR ally (can move through) OR  is enemy and pass is active 
+      if (  (newCells[currentPos] === null) || newCells[currentPos].side === hero.side || (pass > 0 && newCells[currentPos].side !== hero.side) ){
+
+
+
+        if (newCells[currentPos] === null && (pass < 1 && obstructList.includes(currentPos)) ){ //obstructed
+          movementCheckDone.push(currentPos);
+          continue;
+        } 
+
+        nextMovementCheck.push(currentPos); //position can be moved to/through, add it for the next check
+
+        //if unit has pathfinder, then adds its space to the movement check
+        if (pathfinderList.includes(currentPos)){
+          let extraSpaces = getAdjacentSpaces([currentPos]);
+
+          for (let extra of extraSpaces){
+            movementCheck.push(extra);
+          }
+
+        }
+
+        if (newCells[currentPos] === null){ //add to movementList if no hero is occupying it
+          
+          movementList.push(currentPos);
+          spaceRemainders[currentPos] = move - (currentMovement + 1);
+        }
+        
+        
+
+      }
+      
+      movementCheckDone.push(currentPos); //space has been checked and add it to list
+      
+
+    } //end for
+
+    movementCheck = getAdjacentSpaces(nextMovementCheck);
+
+
+
+    currentMovement++;
+  }
+
+
+
+  //Warp space calculation
+
+  let warpSpaces = getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
+
+  //adds the warp spaces that are empty to the warp list 
+  for (let x of warpSpaces){
+
+    if (newCells[x] === null && !movementList.includes(x) ){//space is empty and is not already a movement position
+
+      //if canto is not active, add the warp, if it is active, then only add the warp if it is within movement range (which would be modified by canto)
+      if (!hero.cantoActive || getDistance(x, pos) <= move){
+
+        warpList.push(x);
+        spaceRemainders[x] = 0; //set the remainder to 0
+      }
+
+    }
+
+  }
+
+
+
+  return {"movementList": movementList, "warpList": warpList, "spaceRemainders": spaceRemainders };
+
+
+}
+
+function getAttackList(hero, newCells){
+
+  let attackList = [];
+
+  //Attack space calculation
+  if (hero.range > 0){
+
+
+    let attackSpaces = getSpacesInRange(hero.position, hero.range);
+
+    for (let s of attackSpaces){
+      if (newCells[s] !== null && newCells[s].side !== hero.side){
+        attackList.push(s);
+      }
+    }
+
+  }
+
+  return attackList;
+
+}
+
+
+function getWarpEffects(owner, heroList, currentTurn){
+
+  //provides a couple of things
+  //pass (just a 1 or 0 for pass effect)
+  //warp list - target that can be warped to
+  //obstruct list
+
+  let warpList = [];
+  let obstructList = [];
+  let pathfinderList = [];
+  let pass = 0;
+
+  for (let team in heroList){ //loop through each team
+    for (let hero of heroList[team]){ //loop through each hero on team
+
+      if (hero.position < 0 || hero.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
+
+
+      let warpEffects = hero.warp;
+      if (hero.id === owner.id){
+        warpEffects = owner.warp;
+      }
+
+      for (let effect of warpEffects){ //loop through loop effects
+        if (effect === null || effect === undefined) {continue;}
+      
+
+        if ("condition" in effect && !checkCondition(heroList, effect.condition, hero, hero, currentTurn) ){ //check if condition has not been met to skip
+            continue;
+        }
+
+        if (effect.subtype === "warpReq"){ //
+          //warp reqs - check team for allies that pass req to warp to -- only applies to self
+          if (hero.id === owner.id){
+
+            console.log(effect);
+            console.log(heroList);
+            console.log(owner);
+            console.log(warpList);
+
+            warpList = getWarpTargets(effect, heroList, owner, warpList);
+          }
+
+        } else if (effect.subtype === "warpTarget"){ //warp effects that are granted by others to allow unit to do something like warp to them (e.g. guidance)
+
+          if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, hero, owner, currentTurn)){
+
+
+            if (effect.effect === "obstruct"){
+
+
+              if (!obstructList.includes(hero.position) && hero.side !== owner.side){
+                obstructList.push(hero.position);
+              }  
+
+            } else if (effect.effect === "warp"){
+
+              if (!warpList.includes(hero.position)){
+                warpList.push(hero.position);
+              }  
+
+
+            } else if (effect.effect === "pathfinder"){
+              if (!pathfinderList.includes(hero.position) && hero.side === owner.side){
+                pathfinderList.push(hero.position);
+              }  
+            }
+          } //end check condition
+
+        } else if (effect.subtype === "pass"){
+          pass++;
+        }
+      } //end warp loop
+      //"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }], 
+      //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.25]], "subtype": "pass"}],
+      //"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+
+
+    }
+  } //end heroList loop
+
+  return {"warpList": warpList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
+
+}
+
+  //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
+function getWarpTargets(effect, heroList, owner, warpList){
+  
+
+  let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+  let allyList = heroList[owner.side];
+  for (let x in allyList){
+    if (allyList[x].position >= 0 && allyList[x].currentHP > 0 && allyList[x].id !== owner.id){
+      allyListValid.push(allyList[x]);
+    }
+  } 
+
+
+      let allyReq = effect.allyReq;
+
+      let passedAllyList = heroReqCheck(owner, allyListValid, allyReq); //Get the list of allies that pass the req check
+
+
+      for (let y of passedAllyList){
+
+        if (!warpList.includes(y.position)){
+          warpList.push(y.position);
+        }
+
+      }
+
+
+    return warpList;
+}
+
+
+  
+
+//Given a list of positions, get all the spaces adjacent to it
+function getAdjacentSpaces(positions){
+
+  let spaces = [];
+
+  for (let x of positions){
+
+    //left
+    if ( (x % 6) - 1 >= 0 && !spaces.includes(x - 1) ){ //get the column number and check if it is not the left-most column
+      spaces.push(x - 1);
+    }
+    //right
+    if ( (x % 6) + 1 <= 5 && !spaces.includes(x + 1) ){ //get the column number and check if it is not the right-most column
+      spaces.push(x + 1);
+    }
+    //up
+    if ( Math.floor(x / 6) - 1 >= 0 && !spaces.includes(x -6) ){ //get the row number and check if it is not the top-most column
+      spaces.push(x - 6);
+    }
+    //down
+    if ( Math.floor(x / 6) + 1 <= 7 && !spaces.includes(x + 6) ){ //get the row number and check if it is not the bottom-most column
+      spaces.push(x + 6);
+    }
+  }
+  return spaces;
+
+}
+
+
+//Given a position, get spaces that are exactly at that range
+function getSpacesInRange(origin, range){
+
+  let checkSpaces = [origin];
+  let checkedSpaces = [origin];
+  let counter = 0;
+
+  while (counter < range){
+
+    let adjacent = getAdjacentSpaces(checkSpaces);
+    checkSpaces = []; //reset
+
+    for (let x of adjacent){ //loop through adjacent spaces add them to checkSpaces if not already checked
+
+      if (!checkedSpaces.includes(x)){
+        checkSpaces.push(x);
+        checkedSpaces.push(x);
+      }
+
+    } //end for
+
+    counter++;
+  }
+
+
+  return checkSpaces;
+
+
+
+}

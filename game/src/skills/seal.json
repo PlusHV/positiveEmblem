@@ -3828,5 +3828,134 @@
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 6, "def": 6} }],
 		"max": true
+	},
+	"516": {
+		"name": "Atk/Def Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"517": {
+		"name": "Atk/Def Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"518": {
+		"name": "Atk/Def Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"519": {
+		"name": "Ward Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"520": {
+		"name": "Res Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"521": {
+		"name": "Res Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"522": {
+		"name": "Res Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"523": {
+		"name": "Blade Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 1, "constant": 1, "max": 3}],
+		"max": false
+	},
+	"524": {
+		"name": "Blade Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 2, "constant": 2, "max": 6}],
+		"max": false
+	},
+	"525": {
+		"name": "Blade Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 3, "constant": 3, "max": 9}],
+		"max": true
+	},
+	"526": {
+		"name": "Squad Ace AS 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1},
+		"max": false
+	},
+	"527": {
+		"name": "Squad Ace AS 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2},
+		"max": true
+	},
+	"528": {
+		"name": "Squad Ace AT 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "def": 1},
+		"max": false
+	},
+	"529": {
+		"name": "Squad Ace AT 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "def": 2},
+		"max": true
+	},
+	"530": {
+		"name": "Squad Ace AU 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "res": 1},
+		"max": false
+	},
+	"531": {
+		"name": "Squad Ace AU 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "res": 2},
+		"max": true
 	}
+
 }
