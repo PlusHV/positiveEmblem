@@ -61,5 +61,13 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"9": {
+		"name": "Movement+",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }],
+		"max": true
 	}
 }

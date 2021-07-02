@@ -458,5 +458,19 @@
 		"effect": [],
 		"cdTrigger": -1,
 		"max": true
+	},
+	"36": {
+		"name": "Twin-Crest Power",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Edelgard: Hegemon Husk"],
+		"type": "beast",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
 	}
 }

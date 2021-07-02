@@ -85,6 +85,19 @@
 		"passive": {"hp": 5},
 		"effect": [],
 		"max": true
+	},
+	"7": {
+		"name": "Order's Sentence",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"type": "colorlesstome",
+		"users": ["Ashera: Order Goddess"],
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [],
+		"max": true
 	}
 
 

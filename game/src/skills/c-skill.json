@@ -734,7 +734,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": false
 	},
 	"96": {
@@ -742,7 +742,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": false
 	},
 	"97": {
@@ -750,7 +750,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": true
 	},
 	"98": {
@@ -961,7 +961,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": false
 	},
 	"125": {
@@ -969,7 +969,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": false
 	},
 	"126": {
@@ -977,7 +977,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": true
 	},
 	"127": {
@@ -3105,6 +3105,75 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": true
+	},
+	"394": {
+		"name": "Atk/Def Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"395": {
+		"name": "Atk/Res Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],		"max": true
+	},
+	"396": {
+		"name": "Atk/Spd Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"397": {
+		"name": "Def/Res Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"398": {
+		"name": "Order's Restraint",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ashera: Order Goddess"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "effectReq": [["distanceCheck", 2] ] },
+			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 3]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "nullPanic"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantAllies", 2, "greater", 3]] }],
+		"max": true
+	},
+	"399": {
+		"name": "Even Recovery 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 5, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"400": {
+		"name": "Even Recovery 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 10, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"401": {
+		"name": "Even Recovery 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	}
 }

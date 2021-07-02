@@ -222,7 +222,7 @@
 		"type": "redtome",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["distanceCheck", 2] ], "effect" : "warp"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
 		"max": true
 	},
 	"18": {
@@ -262,7 +262,7 @@
 		"type": "redtome",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["distanceCheck", 2] ], "range": 1 }],
 		"max": true
 	},
 	"21": {
@@ -915,6 +915,46 @@
 			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75], ["phase", "player"], ["allyReq", "owner", [["combatCount", "enemy", "greater", 1]], 1, "greater", "combatCount", "player", "greater", 1 ] ], "brave": 1  }],
 		"cdTrigger": -1,
 		"max": true
+	},
+	"71": {
+		"name": "Tome of Despair",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Morgan: Fated Darkness"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 6, "res": 6} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 5]], "enemyDouble": 1 },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 10]], "double": 1 },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 15]], "guard": 1 }],	
+		"max": true
+	},
+	"72": {
+		"name": "Peachy Parfait+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"res": 5}, "lull": {"res": 5}, "bonusCopy": {"res": 1}, "bonusNull": {"res": 1} }],
+		"max": true
+	},
+	"73": {
+		"name": "Peachy Parfait",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"res": 5}, "lull": {"res": 5}, "bonusCopy": {"res": 1}, "bonusNull": {"res": 1} }],
+		"max": false
 	}
 
 }

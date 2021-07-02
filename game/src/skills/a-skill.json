@@ -579,7 +579,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": {"type": "combatEffect", "bonusDouble": 0.5},
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 0.5, "spd": 0.5, "def": 0.5, "res": 0.5}},
 		"max": false
 	},
 	"73": {
@@ -587,7 +587,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"type": "combatEffect", "bonusDouble": 0.75},
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 0.75, "spd": 0.75, "def": 0.75, "res": 0.75}},
 		"max": false
 	},
 	"74": {
@@ -595,7 +595,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"type": "combatEffect", "bonusDouble": 1},
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 1, "spd": 1, "def": 1, "res": 1}},
 		"max": true
 	},
 	"75": {
@@ -2799,7 +2799,220 @@
 		"type": "passive",
 		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
 		"max": true
+	},
+	"348": {
+		"name": "G Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"349": {
+		"name": "Atk/Spd Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "spd": 3} } ],
+		"max": false
+	},
+	"350": {
+		"name": "Atk/Spd Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "spd": 4} } ],
+		"max": false
+	},
+	"351": {
+		"name": "Atk/Spd Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "spd": 5} } ],
+		"max": true
+	},
+	"352": {
+		"name": "Atk/Spd Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 7, "spd": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"atk": 2, "spd": 2} } ],
+		"max": true
+	},
+	"353": {
+		"name": "Atk/Def Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "def": 3} } ],
+		"max": false
+	},
+	"354": {
+		"name": "Atk/Def Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4} } ],
+		"max": false
+	},
+	"355": {
+		"name": "Atk/Def Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "def": 5} } ],
+		"max": true
+	},
+	"356": {
+		"name": "Atk/Def Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 7, "def": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"atk": 2, "def": 2} } ],
+		"max": true
+	},
+	"357": {
+		"name": "Atk/Def Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "def": 3} }],
+		"max": false
+	},
+	"358": {
+		"name": "Atk/Def Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": false
+	},
+	"359": {
+		"name": "Atk/Def Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "def": 5} }],
+		"max": true
+	},
+	"360": {
+		"name": "Atk/Def Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "def": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": true
+	},
+	"361": {
+		"name": "C Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"362": {
+		"name": "C Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"363": {
+		"name": "C Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"364": {
+		"name": "C Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"365": {
+		"name": "Atk/Res Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "res": 3} } ],
+		"max": false
+	},
+	"366": {
+		"name": "Atk/Res Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "res": 4} } ],
+		"max": false
+	},
+	"367": {
+		"name": "Atk/Res Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "res": 5} } ],
+		"max": true
+	},
+	"368": {
+		"name": "Atk/Res Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": true
+	},
+	"369": {
+		"name": "R Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"370": {
+		"name": "B Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"371": {
+		"name": "B Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"372": {
+		"name": "B Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"373": {
+		"name": "B Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
 	}
+
 
 
 	

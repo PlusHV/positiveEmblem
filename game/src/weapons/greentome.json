@@ -222,7 +222,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"18": {
@@ -234,7 +234,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": false
 	},
 	"19": {
@@ -246,7 +246,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
 		"max": true
 	},
@@ -259,7 +259,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
 		"max": false
 	},
@@ -272,7 +272,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"22": {
@@ -284,11 +284,11 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": false
 	},
 	"23": {
-		"name": "Gronfalsewl+",
+		"name": "Gronnowl+",
 		"might": 10,
 		"range": 2,
 		"sp": 300,
@@ -296,11 +296,11 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"24": {
-		"name": "Gronfalsewl",
+		"name": "Gronnowl",
 		"might": 6,
 		"range": 2,
 		"sp": 200,
@@ -308,7 +308,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": false
 	},
 	"25": {
@@ -320,7 +320,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
 	},
 	"26": {
@@ -332,7 +332,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": {"type": "combatEffect", "raven": 1},
 		"max": false
 	},
 	"27": {
@@ -344,7 +344,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"28": {
@@ -356,7 +356,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": false
 	},
 	"29": {
@@ -368,7 +368,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"30": {
@@ -380,7 +380,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"31": {
@@ -392,7 +392,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": true
 	},
 	"32": {
@@ -404,7 +404,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": false
 	},
 	"33": {
@@ -455,7 +455,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
 	},
 	"37": {
@@ -467,7 +467,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
 	},
 	"38": {
@@ -925,6 +925,44 @@
 		"skills": [], 
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "lull": {"atk": 5, "res": 5}, "onHitHeal": 4 }],
+		"max": false
+	},
+	"74": {
+		"name": "Tome of Reglay",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Pent: Mage General"],
+		"type": "greentome",
+		"skills": [], 
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": "1", "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]], ["specialMax", "player", true], ["distanceCheck", 2] ], "selfReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]], ["specialMax", "player", true]  ] }],
+		"max": true
+	},
+	"75": {
+		"name": "Gronnfox+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
+	},
+	"76": {
+		"name": "Gronnfox",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": false
 	}
 

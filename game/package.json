@@ -1,7 +1,7 @@
 {
   "name": "game",
   "version": "0.1.0",
-  "homepage": "https://HVPositive.github.io/positiveEmblem",
+  "homepage": "https://positiveHV.github.io/positiveEmblem",
   "private": true,
   "dependencies": {
     "@hapi/hoek": "^9.1.0",

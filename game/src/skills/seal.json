@@ -3956,6 +3956,54 @@
 		"type": "passive",
 		"effect": {"atk": 2, "res": 2},
 		"max": true
+	},
+	"532": {
+		"name": "Atk/Def Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "def": 3}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"533": {
+		"name": "Atk/Def Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "def": 4}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"534": {
+		"name": "Atk/Def Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": true
+	},
+	"535": {
+		"name": "Def/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"536": {
+		"name": "Def/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"537": {
+		"name": "Def/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 6, "res": 6} }],
+		"max": true
 	}
 
 }

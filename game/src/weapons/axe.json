@@ -615,7 +615,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]], "range": 1 }],
 		"max": true
 	},
 	"49": {
@@ -1436,7 +1436,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "lull": {"atk": 6, "def": 6} },
-			{"type": "conditionalFollowUp", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75], ["followUp", "enemy"]], "firstReduction": 0.25 }],
+			{"type": "conditionalFollowUp", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75], ["followUp", "enemy", true]], "firstReduction": 0.25 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1514,6 +1514,87 @@
 		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "pathfinder"},
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "penaltyReverse": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
+	},
+	"119": {
+		"name": "Axe of Despair",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Morgan: Devoted Darkness"],
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 6, "def": 6} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 5]], "enemyDouble": 1 },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 10]], "double": 1 },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25], ["bonusPenaltyTotal", "greater", 15]], "guard": 1 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"120": {
+		"name": "Wedding-Bell Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Catria: Azure Wing Pair"],
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders", "triangleAttack"], "team": "owner", "effectReq": [["distanceCheck", 2]], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"cdTrigger": -1,
+		"max": true
+	},
+
+	"121": {
+		"name": "Love Candelabra+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"122": {
+		"name": "Love Candelabra",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": false
+	},
+	"123": {
+		"name": "Victorfish+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
+		"max": true
+	},
+	"124": {
+		"name": "Victorfish",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
+		"max": false
 	}
 
 

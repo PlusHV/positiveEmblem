@@ -1039,5 +1039,67 @@
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]],  "lull": {"atk": 6, "res": 6} },
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["allyInfo", 3, "movetype", ["Cavalry", "Flying"], 1, "greater"] ], "double": 1, "onHitHeal": 5 }],
 		"max": true
+	},
+	"83": {
+		"name": "Tome of Grado",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Lyon: Grado's Gaze"],
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1]], "lull": {"atk": 6, "res": 6}, "penaltyNeutralize": {"atk": 1, "res": 1} },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1], ["heroInfoCheck", "color", ["colorless"]], ["heroInfoCheck", "weapontype", ["bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"]] ],  "raven": 1 }],
+		"max": true
+	},
+	"84": {
+		"name": "Love Bouquet+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"85": {
+		"name": "Love Bouquet",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": false
+	},
+	"86": {
+		"name": "Blárrabbit+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
+		"max": true
+	},
+	"87": {
+		"name": "Blárrabbit",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
+		"max": false
 	}
 }

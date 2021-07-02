@@ -1272,6 +1272,20 @@
 		"max": true
 	},
 	"102": {
+		"name": "Bow of Frelia",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Innes: Frelian Moonlight"],
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"103": {
 		"name": "Springy Bow+",
 		"might": 12,
 		"range": 2,
@@ -1283,8 +1297,69 @@
 		"effect": [],
 		"max": true
 	},
-	"103": {
+	"104": {
 		"name": "Springy Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": false
+	},
+	"105": {
+		"name": "Rein Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	},
+	"106": {
+		"name": "Rein Bow",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": false
+	},
+	"107": {
+		"name": "Rose-Quartz Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Shanna: Bridal Novice"],
+		"type": "bow",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [],
+		"max": true
+	},
+	"108": {
+		"name": "Sunflower Bow+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	},
+	"109": {
+		"name": "Sunflower Bow",
 		"might": 8,
 		"range": 2,
 		"sp": 200,

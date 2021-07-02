@@ -12,7 +12,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": false
 	},
 	"2": {
@@ -20,7 +20,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": false
 	},
 	"3": {
@@ -28,7 +28,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Infantry", "Cavalry", "Armored"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": true
 	},
 	"4": {
@@ -471,7 +471,7 @@
 		"name": "Crusader's Ward",
 		"sp": 300,
 		"prf": true,
-		"users": ["Sigurd: Holy Knight"],
+		"users": ["Sigurd: Holy Knight", "Sigurd: Fated Holy Knight"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "consecutiveReduction": 0.2}],
 		"max": true
@@ -754,7 +754,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.3]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.3]], "allyReq": [["always"]], "range": 1 }],
 		"max": false
 	},
 	"94": {
@@ -762,7 +762,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.4]], "allyReq": [["always"]], "range": 1 }],
 		"max": false
 	},
 	"95": {
@@ -770,7 +770,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.5]], "allyReq": [["always"]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "less", 0.5]], "allyReq": [["always"]], "range": 1 }],
 		"max": true
 	},
 	"96": {
@@ -810,7 +810,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 1]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": false
 	},
 	"101": {
@@ -818,7 +818,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.5]], "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": false
 	},
 	"102": {
@@ -826,7 +826,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "range": 1 }],
 		"max": true
 	},
 	"103": {
@@ -1917,7 +1917,7 @@
 		"prf": true,
 		"users": ["Zelgius: Jet-Black General"],
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.8]], "allyReq": [["distanceCheck", 2]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "condition": [["hp", "greater", 0.8]], "allyReq": [["distanceCheck", 2]], "range": 1 }],
 		"max": true
 	},
 	"237": {
@@ -2003,7 +2003,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.3]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.3]], "range": 1 }],
 		"max": false
 	},
 	"247": {
@@ -2011,7 +2011,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.4]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.4]], "range": 1 }],
 		"max": false
 	},
 	"248": {
@@ -2019,7 +2019,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.5]] }],
+		"effect": [{"type": "warp", "subtype": "warpReq", "allyReq": [["enemyhp", "less", 0.5]], "range": 1 }],
 		"max": true
 	},
 	"249": {
@@ -2877,7 +2877,7 @@
 		"prf": true,
 		"users": ["Freyja: Lady of Nightmare"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "bonusCopy": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "bonusNull": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "bonusCopy": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "bonusNull": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"350": {
@@ -3075,6 +3075,181 @@
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "combatEffect", "trueDamage": 7}],
 		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"373": {
+		"name": "Atk/Spd Snag 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"max": false
+	},
+	"374": {
+		"name": "Atk/Spd Snag 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"max": false
+	},
+	"375": {
+		"name": "Atk/Spd Snag 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"max": true
+	},
+	"376": {
+		"name": "Murderous Lion",
+		"sp": 300,
+		"prf": true,
+		"users": ["Dimitri: Savage Boar"],
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "canto": {"flatCanto": 1, "cantoRemainder": 1} },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"spd": 3, "def": 3}, "sweep": 1 }],
+		"max": true
+	},
+	"377": {
+		"name": "Armored Wall",
+		"sp": 300,
+		"prf": true,
+		"users": ["Edelgard: Hegemon Husk"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "attackCharge": 1, "defenseCharge": 1, "guard": 1, "postHeal": 7 },
+			{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0], ["hp", "greater", 0.25], ["transformed", true] ], "firstReduction": 0.6 }],
+		"max": true
+	},
+	"378": {
+		"name": "Moon-Twin Wing",
+		"sp": 300,
+		"prf": true,
+		"users": ["Nótt: Moon's Elegance"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 5, "spd": 5 } },
+			{"type": "variableCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
+		"max": true
+	},
+	"379": {
+		"name": "S/D Near Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 1, "def": 1}, "canto": {"flatCanto": 1, "cantoRemainder": 1} } ],
+		"max": false
+	},
+	"380": {
+		"name": "S/D Near Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 2, "def": 2}, "canto": {"flatCanto": 1, "cantoRemainder": 1}  }],
+		"max": false
+	},
+	"381": {
+		"name": "S/D Near Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 3, "def": 3}, "canto": {"flatCanto": 1, "cantoRemainder": 1}  }],
+		"max": true
+	},
+	"382": {
+		"name": "S/R Far Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 1, "res": 1}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"383": {
+		"name": "S/R Far Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 2, "res": 2}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"384": {
+		"name": "S/R Far Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"spd": 3, "res": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": true
+	},
+	"385": {
+		"name": "A/D Far Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 1, "def": 1}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"386": {
+		"name": "A/D Far Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 2, "def": 2}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"387": {
+		"name": "A/D Far Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "def": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": true
+	},
+	"388": {
+		"name": "A/D Near Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 1, "def": 1}, "canto": {"flatCanto": 1, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"389": {
+		"name": "A/D Near Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 2, "def": 2}, "canto": {"flatCanto": 1, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"390": {
+		"name": "A/D Near Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "def": 3}, "canto": {"flatCanto": 1, "cantoRemainder": 1} }],
+		"max": true
+	},
+	"391": {
+		"name": "A/R Far Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 1, "res": 1}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"392": {
+		"name": "A/R Far Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 2, "res": 2}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"393": {
+		"name": "A/R Far Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "res": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
 		"max": true
 	}
 }

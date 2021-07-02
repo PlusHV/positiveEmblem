@@ -247,7 +247,7 @@ const dropDownStyle = {
             type = "checkbox"
             value = {this.props.gameState.selectedMember.bonus}
             checked = {this.props.gameState.selectedMember.bonus}
-            onChange = {(e) => this.props.bonusChange(e)}
+            onChange = {(e) => this.props.bonusChange(e, "bonus")}
               />
         </td>
             
@@ -285,6 +285,39 @@ const dropDownStyle = {
 
       </tr>
     );
+
+    tbody.push( //Checkbox for resplendent/transformed row
+      <tr key = {"resplendent row"}> 
+        <td className = "equipText" key = {"resplendent"}>
+            Resplendent
+        </td>
+
+        <td className = "equippedSkill" key = {"resplendentCheckbox"}>
+            <input 
+            type = "checkbox"
+            value = {this.props.gameState.selectedMember.resplendent}
+            checked = {this.props.gameState.selectedMember.resplendent}
+            onChange = {(e) => this.props.bonusChange(e, "resplendent")}
+              />
+        </td>
+     
+        <td className = "equipText" key = {"transformed"}>
+            Transformed
+        </td>
+
+        <td className = "equippedSkill" key = {"transformedCheckbox"}>
+            <input 
+            type = "checkbox"
+            value = {this.props.gameState.selectedMember.transformed}
+            checked = {this.props.gameState.selectedMember.transformed}
+            onChange = {(e) => this.props.bonusChange(e, "transformed")}
+              />
+        </td>
+            
+        
+      </tr>
+    );  
+
 
     return(
 

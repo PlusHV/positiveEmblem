@@ -788,5 +788,17 @@
 		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
 		"skills": [["o", "Turn 1, CD 2"]],
 		"max": true
+	},
+	"84": {
+		"name": "Holy-Knight Aura",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Sigurd: Fated Holy Knight"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.25], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats", "mobility+"], "value": 6, "stats": ["atk", "spd"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}]  },
+		"skills": [["o", "Movement+"]],
+		"max": true
 	}
 }

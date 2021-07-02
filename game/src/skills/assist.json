@@ -554,6 +554,26 @@
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": 0, "other": -2},
 		"max": false
+	},
+	"61": {
+		"name": "Nudge+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": 1},
+		"max": true
+	},
+	"62": {
+		"name": "Nudge",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": 1},
+		"max": false
 	}
 
 }

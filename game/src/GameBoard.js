@@ -25,7 +25,7 @@ import skills from './skillList.js';
 
 var heroStruct = makeHeroStruct();
 
-export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0 };
+export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0, "nullPanic": 0, "triangleAttack": 0 };
 
 export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0, "triangleAdept": 0};
 
@@ -615,12 +615,18 @@ class GameBoard extends React.Component{
 
   }
 
-  onBonusChange(e){
+  //bonus is either being a bonus unit, resplendent unit, or transformed
+  onBonusChange(e, bonusType){
     var temp = this.state.heroList;
     let hero = temp[this.state.playerSide][this.state.heroIndex]; 
     
-
-    hero.bonus = e.target.checked;
+    if (bonusType === "bonus"){
+      hero.bonus = e.target.checked;
+    } else if (bonusType === "resplendent"){
+      hero.resplendent = e.target.checked;
+    } else if (bonusType === "transformed"){
+      hero.transformed = e.target.checked;
+    }
 
     let oldMaxHP = hero.stats.hp;
 
@@ -637,12 +643,15 @@ class GameBoard extends React.Component{
 
   }
 
+
   onEndChange(e){
     var temp = this.state.heroList;
     let hero = temp[this.state.playerSide][this.state.heroIndex]; 
     
 
     hero.end = e.target.checked;
+
+
 
     //only reset if unit has used their action
     if (e.target.checked){
@@ -666,9 +675,12 @@ class GameBoard extends React.Component{
   endHeroTurn(hero){ //wait the hero and run other functions that occur when their turn ends (through waiting or an action)
       
       waitHero(hero);
-      this.clearMovement();
-      this.setState({movementCheck: -1});
-      this.setState({anchorPosition: -1 });
+
+      if (hero.id === this.state.movementCheck){ //only clear movement if the movement check if for the current hero
+        this.clearMovement();
+        this.setState({movementCheck: -1});
+        this.setState({anchorPosition: -1 });
+      }
 
 
   }
@@ -934,7 +946,7 @@ class GameBoard extends React.Component{
     //This handles the resetting a unit back to its anchor when another unit is dragged
     if (!this.state.freeMove && this.state.movementCheck >= 0 && dragData.id !== this.state.movementCheck) {
 
-      let previousHero = this.idToHero(this.state.movementCheck, temp); //get the previous hero
+      let previousHero = this.idToHero(this.state.movementCheck, temp); //get the previous hero that was movement checked
 
       //previousHero.position = previousHero.anchorPosition;
 
@@ -1028,7 +1040,7 @@ class GameBoard extends React.Component{
     if (assist > 0 && hero.statusEffect.isolation < 1){ //check for assist ability and for no isolation status
 
 
-      let assistSpaces = getSpacesInRange(hero.position, assist);
+      let assistSpaces = getSpacesInExactRange(hero.position, assist);
 
       for (let s of assistSpaces){
         if (newCells[s] !== null && newCells[s].side === hero.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
@@ -1231,6 +1243,11 @@ class GameBoard extends React.Component{
 
         }
 
+
+        if (draggedHero.statusBuff.triangleAttack > 0){
+          draggedHero.conditionalEffects.push({"type": "conditionalEffects", "condition": [["allyReq", "owner", [["distanceCheck", 2], ["statusCheck", "player", "statusBuff", "triangleAttack"]], 2, "greater"]], "brave": 1} ); //Add conditional effect of fallen star
+        }
+
         
         //Aura effects are effects granted by auras 
         this.getAuraEffects(draggedHero, draggedOverHero, this.state.heroList);
@@ -1269,9 +1286,7 @@ class GameBoard extends React.Component{
         this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombat");
         this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombat");
 
-        //Variable effects that need final combat stats
-        this.getVariableCombat(draggedHero, draggedOverHero);
-        this.getVariableCombat(draggedOverHero, draggedHero);
+
 
 
         //currently brash assault's double is calculated in getAttack count (which is used for conditional follow ups) - can make a conditional type for conditonalCounter (checks if enemy can counter which must occur after the sweeps in conditional combat)
@@ -1280,6 +1295,11 @@ class GameBoard extends React.Component{
         //Conditional effects that check for followups which requires final stats (for speed check) and conditionalCombat effects (in particular, wind/water/myhrr sweep effects are conditionalcombat effects which affect followups)
         this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalFollowUp");
         this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalFollowUp");
+
+        //Variable effects that need final combat stats - Must be after conditionalfollowup as they can grant these effects
+        this.getVariableCombat(draggedHero, draggedOverHero);
+        this.getVariableCombat(draggedOverHero, draggedHero);
+
 
         console.log(draggedHero);
 
@@ -1662,29 +1682,43 @@ class GameBoard extends React.Component{
         if (!dragData.canto){ //canto has not been used this turn by the unit
 
           //check for flat canto values and remainder value
-          if (dragData.combatEffects.flatCanto > 0 || (dragData.combatEffects.cantoRemainder > 0 && dragData.remainder > 0  )) { //check if unit has values to activate canto
+
+          let max = -1; //current highest canto value
+          for (let cantoEffect of dragData.combatEffects.canto){ // loop through canto effects
+
+            if (cantoEffect.flatCanto > 0 || (cantoEffect.cantoRemainder > 0 && dragData.remainder > 0 )){ //first check if this canto effect will activate
+              let value = cantoEffect.flatCanto;
+
+              if (cantoEffect.cantoRemainder > 0){
+                value+= dragData.remainder;
+              }
+
+              max = Math.max(value, max); //get the highest value
+            }
+          }
+
+          if (max >= 0 ) { //canto value is at least 0
             cantoCheck = true;
             temp[dragSide][dragIndex].end = false;
             temp[dragSide][dragIndex].canto = true; //set canto value  to true so it does not activate again
             temp[dragSide][dragIndex].cantoActive = true;
 
 
-            let cantoValue = dragData.combatEffects.flatCanto;
+            // let cantoValue = dragData.combatEffects.flatCanto;
 
-            if (dragData.combatEffects.cantoRemainder > 0){
-              cantoValue+= dragData.remainder;
-            }
+            // if (dragData.combatEffects.cantoRemainder > 0){
+            //   cantoValue+= dragData.remainder;
+            // }
 
-            temp[dragSide][dragIndex].cantoMovement = cantoValue;
-
-
-
-          }
+            temp[dragSide][dragIndex].cantoMovement = max; //cantoValue;
 
 
+          } //end check if canto will activate.
 
-        }
-      }
+
+
+        } ///end check if canto has been used
+      } //end check if action has succeeded
 
     } else { //regular movement
 
@@ -3120,6 +3154,7 @@ class GameBoard extends React.Component{
       tempList[side][i.listIndex].statusBuff = JSON.parse(JSON.stringify(statusBuffs)); //{"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
       tempList[side][i.listIndex].end = false;
       tempList[side][i.listIndex].canto = false; //reset canto value
+      tempList[side][i.listIndex].transformed = false;
     }
     tempList = this.recalculateAllVisibleStats(tempList);//get most up to date visible stats for all heroes
 
@@ -3358,6 +3393,9 @@ function makeHeroStruct(){
     this["debuff"] = {"atk": 0, "spd": 0, "def": 0, "res": 0};
     this["statusEffect"] =  JSON.parse(JSON.stringify(statusDebuffs));//{"guard": 0, "panic": 0}; //
 
+    this["transformed"] = false;
+    this["resplendent"] = false;
+
 
     this["aura"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //stats changed by auras
     this["auraEffects"] = []; //auras that grant some kind of effect or conditional effect
@@ -3408,17 +3446,22 @@ function makeHeroStruct(){
       "lull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
       //"damageReduction": 1.0, "consecutiveReduction": 1.0, "firstReduction": 1.0, "preBattleReduction": 1.0, "followUpReduction": 1.0, "reduceReduction": 1.0,
       "damageReduction": [], "consecutiveReduction": [], "firstReduction": [], "preBattleReduction": [], "followUpReduction": [], "reduceReduction": [],
-      "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
-      "penaltyDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "penaltyNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "buffNeutralize": {"atk": 0, "spd": 0, "def": 0, "res": 0}, 
+      "penaltyReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes penalties and provides a buff that is double the penalty's value 
+      "penaltyDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //adds a debuff equal to the current penalty value
+      "buffReverse": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes buffs and applies a debuff that is double that buff's value
       "defenseTarget": {"def": 0, "res": 0}, //if stat is active, then the defensive stat checked against will be the activated stat (can't test, but adaptive damage should/will override this) - can also target speed/attack if that is ever implemented
-      "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0},
-      "bonusDouble": 0,
+      "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //grants buffs equal to the buffs on the enemy 
+      "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //applies a debuff that is equal to the enemy's bonus
+      "bonusDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "buffReflect": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes bonus values and applies those values as a debuff on the enemy - misunderstood an effect and implemented this 
       "teamNihil": 0,
       "minimumDamage": 0,
       "raven": 0,
       "triangleAdept": [0], "cancelAffinity": [0],
       "miracle": 0,
-      "flatCanto": 0, "cantoRemainder": 0 //flat canto is a flat canto amount that will always be used, cantoRemainder is true/false effect that checks if remainder value will be added to flat canto
+      "canto": [{"flatCanto": 0, "cantoRemainder": 0}]
+      //"flatCanto": 0, "cantoRemainder": 0 //flat canto is a flat canto amount that will always be used, cantoRemainder is true/false effect that checks if remainder value will be added to flat canto
        }; //effects the change during battle
     this["variableStats"] = [];
     this["variableCombat"] = [];
@@ -3535,9 +3578,14 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
       }
     } else if (typeof effect[key] === 'object' && effect[key] !== null){ //object values - will need to apply their effect for each subkey (e.g lulls, statBuff, neutralizers)
 
-      for (let subkey in effect[key]){
-        hero.combatEffects[key][subkey]+= effect[key][subkey];
+      if (key === "canto"){
+        hero.combatEffects[key].push(effect[key]);
+      } else {
 
+        for (let subkey in effect[key]){
+          hero.combatEffects[key][subkey]+= effect[key][subkey];
+
+        }
       }
 
 
@@ -3585,8 +3633,16 @@ function removeCombatEffect(hero, effect){ //aply combat effect (an object)
       }
     } else if (typeof effect[key] === 'object' && effect[key] !== null){ //object values - will need to apply their effect for each subkey (e.g lulls)
 
-      for (let subkey in effect[key]){
-        hero.combatEffects[key][subkey]-= effect[key][subkey];
+
+      if (key === "canto"){
+        let index = hero.combatEffects[key].indexOf(effect[key]);
+        hero.combatEffects[key].splice(index, 1);
+
+      } else {
+        for (let subkey in effect[key]){
+          hero.combatEffects[key][subkey]-= effect[key][subkey];
+
+        }
 
       }
 
@@ -4172,7 +4228,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
 
   if (hero.statusBuff.airOrders > 0){
-    hero.warp.push({"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2] ] });
+    hero.warp.push({"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2]], "range": 1 });
 
   }
 
@@ -4180,6 +4236,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
   let warpInfo = getWarpEffects(hero, heroList, currentTurn);
 
   let warpTargets = warpInfo.warpList;
+  let warpTargetRanges = warpInfo.warpRangeList;
   let obstructTargets = warpInfo.obstructList;
   let pathfinderList = warpInfo.pathfinderList;
   let pass = warpInfo.pass;
@@ -4263,8 +4320,22 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
 
   //Warp space calculation
+  let warpSpaces = [];
+  for (let i = 0; i < warpTargets.length; i++){
+    let checkSpaces = getSpacesInRange(warpTargets[i], warpTargetRanges[i]);
 
-  let warpSpaces = getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
+    for (let x of checkSpaces){
+      if (!warpSpaces.includes(x)){
+        warpSpaces.push(x);
+      }  
+    }
+    
+  }
+
+
+
+
+  //let warpSpaces = //getAdjacentSpaces(warpTargets); //set the warpspaces as the spaces adjacent to the warp targets
 
   //adds the warp spaces that are empty to the warp list 
   for (let x of warpSpaces){
@@ -4297,7 +4368,7 @@ function getAttackList(hero, newCells){
   if (hero.range > 0){
 
 
-    let attackSpaces = getSpacesInRange(hero.position, hero.range);
+    let attackSpaces = getSpacesInExactRange(hero.position, hero.range);
 
     for (let s of attackSpaces){
       if (newCells[s] !== null && newCells[s].side !== hero.side){
@@ -4320,6 +4391,7 @@ function getWarpEffects(owner, heroList, currentTurn){
   //obstruct list
 
   let warpList = [];
+  let warpRangeList = [];
   let obstructList = [];
   let pathfinderList = [];
   let pass = 0;
@@ -4335,6 +4407,8 @@ function getWarpEffects(owner, heroList, currentTurn){
         warpEffects = owner.warp;
       }
 
+      console.log(warpEffects);
+
       for (let effect of warpEffects){ //loop through loop effects
         if (effect === null || effect === undefined) {continue;}
       
@@ -4347,12 +4421,9 @@ function getWarpEffects(owner, heroList, currentTurn){
           //warp reqs - check team for allies that pass req to warp to -- only applies to self
           if (hero.id === owner.id){
 
-            console.log(effect);
-            console.log(heroList);
-            console.log(owner);
-            console.log(warpList);
-
-            warpList = getWarpTargets(effect, heroList, owner, warpList);
+            let tempWarp = getWarpTargets(effect, heroList, owner, warpList, warpRangeList);  
+            warpList = tempWarp.warpList;
+            warpRangeList = tempWarp.rangeList;
           }
 
         } else if (effect.subtype === "warpTarget"){ //warp effects that are granted by others to allow unit to do something like warp to them (e.g. guidance)
@@ -4369,8 +4440,10 @@ function getWarpEffects(owner, heroList, currentTurn){
 
             } else if (effect.effect === "warp"){
 
+            
               if (!warpList.includes(hero.position)){
                 warpList.push(hero.position);
+                warpRangeList.push(effect.range);
               }  
 
 
@@ -4393,12 +4466,12 @@ function getWarpEffects(owner, heroList, currentTurn){
     }
   } //end heroList loop
 
-  return {"warpList": warpList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
+  return {"warpList": warpList, "warpRangeList": warpRangeList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
 
 }
 
   //"effect": {"condition": [["hp", "greater", 1]], "range": 2, "allyReq": {"type": "allyInfo", "key": "movetype", "req": ["Infantry", "Cavalry", "Armored"] } },
-function getWarpTargets(effect, heroList, owner, warpList){
+function getWarpTargets(effect, heroList, owner, warpList, rangeList){
   
 
   let allyListValid = []; //copy of list that only has valid heroes (not dead and on the board)
@@ -4419,12 +4492,13 @@ function getWarpTargets(effect, heroList, owner, warpList){
 
         if (!warpList.includes(y.position)){
           warpList.push(y.position);
+          rangeList.push(effect.range);
         }
 
       }
 
 
-    return warpList;
+    return {"warpList": warpList, "rangeList": rangeList};
 }
 
 
@@ -4460,7 +4534,7 @@ function getAdjacentSpaces(positions){
 
 
 //Given a position, get spaces that are exactly at that range
-function getSpacesInRange(origin, range){
+function getSpacesInExactRange(origin, range){
 
   let checkSpaces = [origin];
   let checkedSpaces = [origin];
@@ -4486,6 +4560,35 @@ function getSpacesInRange(origin, range){
 
   return checkSpaces;
 
+
+}
+
+//Given a position, get spaces that are within that range
+function getSpacesInRange(origin, range){
+
+  let checkSpaces = [origin]; //spaces to check around
+  let checkedSpaces = []; //spaces that haven been checked
+  let counter = 0;
+
+  while (counter < range){
+
+    let adjacent = getAdjacentSpaces(checkSpaces);
+    checkSpaces = []; //reset
+
+    for (let x of adjacent){ //loop through adjacent spaces add them to checkSpaces if not already checked
+
+      if (!checkedSpaces.includes(x) && x!==origin){
+        checkSpaces.push(x);
+        checkedSpaces.push(x);
+      }
+
+    } //end for
+
+    counter++;
+  }
+
+
+  return checkedSpaces;
 
 
 }

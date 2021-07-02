@@ -133,6 +133,11 @@ export function calculateStats(hero, fort, blessings, seasons){
   		bases = applyMods(bases, object(statName,[10, 4, 4, 4, 4]));
   	}
 
+  	if (hero.resplendent){ //if hero is set as resplendent, they get 2 in every stats
+  		bases = applyMods(bases, object(statName,[2, 2, 2, 2, 2]));
+  	}
+
+
   	for (let i = 0; i < bases.length; i++) {
 		if (hero.level === 1 || hero.level === 40){
   			statArray[statName[i]] = calculateMinMaxStat(hero.level, hero.rarity, growths[i], bases[i]);
@@ -359,7 +364,7 @@ export function calculateVisibleStats(hero){
 
 		let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
 
-		if (hero.statusEffect.panic > 0){
+		if (hero.statusEffect.panic > 0 && hero.statusBuff.nullPanic <= 0){ //check for panic status and null panic
 			panicFactor = -1;
 		}
 
@@ -399,20 +404,29 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 	let buffNeutralize = enemy.combatEffects.buffNeutralize;
 	let bonusNull = enemy.combatEffects.bonusNull;
 	let penaltyDouble = enemy.combatEffects.penaltyDouble;
+	let buffReflect = enemy.combatEffects.buffReflect; 
 
 	let buffReverse = enemy.combatEffects.buffReverse;
 
 	let panicFactor = 1; //buff is multipied by this factor, if panicked, then the factor will turn the buff into a penalty
 
-	if (hero.statusEffect.panic > 0){
+
+	//Panic checks later are based on the panic factor, so null panic does not need to be checked again
+	if (hero.statusEffect.panic > 0 && hero.statusBuff.nullPanic <= 0 ){
 		panicFactor = -1;
+	}
+
+	let enemyPanicFactor = 1;
+
+	if (enemy.statusEffect.panic > 0 && enemy.statusBuff.nullPanic <= 0 ){
+		enemyPanicFactor = -1;
 	}
 
 	let penaltyNeutralizer = 0; //set neutralizer that will cancel out debuffs
 	if (penaltyNeutralize[stat] > 0){
 		penaltyNeutralizer = hero.debuff[stat]; //neutralizer will have same value as debuff to cancel it out
 
-		if (panicFactor < 0){ //also if panicked, then neutralizer will also neutralize the panicked stat 
+		if (panicFactor < 0 ){ //also if panicked, then neutralizer will also neutralize the panicked stat 
 			penaltyNeutralizer+= hero.buff[stat];
 		}
 
@@ -431,14 +445,14 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 
 	let bonusCopier = 0;
 
-	if (bonusCopy[stat] > 0 && hero.combatEffects.buffNeutralize[stat] <= 0 && enemy.statusEffect.panic <= 0){ //copy buffs from enemy - cannot copy buffs if hero is neutralizing enemy or enemy is panicked
+	if (bonusCopy[stat] > 0 && hero.combatEffects.buffNeutralize[stat] <= 0 && (enemy.statusEffect.panic <= 0 || (enemy.statusEffect.panic > 0 && enemy.statusBuff.nullPanic > 0)) ){ //copy buffs from enemy - cannot copy buffs if hero is neutralizing enemy or enemy is panicked
 		bonusCopier = enemy.buff[stat];
 	}
 
 	let bonusDoublerCombat = 0;
 
-	if (bonusDoubleCombatEffect > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //double buffs - cannot double if neutralized or panicked
-		bonusDoublerCombat = Math.trunc(hero.buff[stat] * bonusDoubleCombatEffect);
+	if (bonusDoubleCombatEffect[stat] > 0 && buffNeutralize[stat] <= 0 && panicFactor > 0){ //double buffs - cannot double if neutralized or panicked
+		bonusDoublerCombat = Math.trunc(hero.buff[stat] * bonusDoubleCombatEffect[stat]);
 
 	}
 
@@ -481,10 +495,16 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 
 	}
 
+	let buffReflecter = 0; //Reflects the enemies buffs into debuffs
+
+	if (buffReflect[stat] > 0 && enemyPanicFactor > 0 &&  hero.combatEffects.buffNeutralize[stat] <= 0){ //enemy will only reflect if not panicked and current hero is not neutralizing buffs
+		buffReflecter = enemy.buff[stat] * buffReflect[stat];
+	}
+
 
 	//
 	modifier = /*(panicFactor * hero.buff[stat]) - hero.debuff[stat] + hero.aura[stat] + */hero.combatEffects.statBuff[stat] - enemy.combatEffects.lull[stat]
-	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer - penaltyDoubler - buffReverser; 
+	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer - penaltyDoubler - buffReverser - buffReflecter; 
 
 
 	return modifier;

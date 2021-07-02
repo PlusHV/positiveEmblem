@@ -1952,14 +1952,17 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           followUpReq = 4; //if brave effect is active, then 4 attacks are required.
         }
 
-        if (checkAttackCount >= followUpReq){
+
+        if (checkAttackCount >= followUpReq && innerCondition[j+2]){ //checking for if followup is possible
+          innerResult = true;
+        } else if (checkAttackCount < followUpReq && !innerCondition[j+2]){ //checking if followup is not possible
           innerResult = true;
         }
 
         
 
 
-        j = j + 1;
+        j = j + 2;
       } else if (keyWord === "allyReq"){ //general allyReq that allows for checking allies against a condition
         //j + 1 is the team
         // j + 2 is the condition
@@ -2060,6 +2063,65 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 1;
 
+      } else if (keyWord === "supportPairReq"){ //a certain number of support pairs must meet the requirement
+
+
+        let passCount = 0;
+
+
+        let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+
+        let teamList = heroList[owner.side]; //get teamlist of owner
+
+        for (let x in teamList){
+          if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves, 
+            teamListValid.push(teamList[x]);
+          }
+        } 
+        let passedHeroList = [];
+
+
+        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+1], heroList, turn) ; //Get the list of allies that pass the req che
+        
+        let supportPartnerList = []; //list of heroes with a support partner
+        let supportNameList = []; //list of support partners
+
+
+
+
+        for (let x of passedHeroList){ //loop through heros matching the req and add them to the support partner lsit/name list
+
+          if (x.allySupport.value !== 0){ //only add to list if they have a support partner
+            supportPartnerList.push(x);
+
+            if (!supportNameList.includes(x.heroID.value) ){ //add themselves
+              supportNameList.push(x.heroID.value);
+            }
+          }
+
+        }
+
+
+
+        for (let x of supportPartnerList){ //loop through heroes with a support partner
+          if (supportNameList.includes(x.allySupport.value) ){ //if their support partner is in the list, then a pair is counted
+            passCount++;
+          }
+
+        }
+
+        
+        if (passCount > 0 && innerCondition[j+2]){ //asking for a pair and at least one pair passes the req
+
+          innerResult = true;
+        } else if (passCount <= 0 && !innerCondition[j+2]){ //asking for no pairs and no pairs pass the req
+
+          innerResult = true;
+        } 
+
+
+        j = j + 2;
+
       } else if (keyWord === "rangeCheck"){
 
         //j + 1 = range to match
@@ -2115,8 +2177,66 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 2;
-      } //end keyword
+      } else if (keyWord === "dragonflower"){
 
+
+        if (innerCondition[j+1] === "greater" && owner.dragonflower >= innerCondition[j+2] ){ ///
+          innerResult = true;
+        } else if (innerCondition[j+1] === "less" && owner.dragonflower <= innerCondition[j+2] ){
+          innerResult = true;
+        }
+
+        j = j + 2;
+
+
+      } else if (keyWord === "transformed"){
+
+
+        //always check self
+        //  j + 1 true/ false
+        if (innerCondition[j+1] && owner.transformed  ){ //transformed and checking for transformed
+          innerResult = true;
+        } else if (!innerCondition[j+1] && !owner.transformed  ){ // not transformed and checking for not transformed
+          innerResult = true;
+        }
+        j = j + 1;  
+
+      } else if (keyWord === "bonusPenaltyTotal"){
+
+        //adds up total buffs on owner, and total debuffs on enemy
+        let total = 0;
+
+
+        if (owner.statusEffect.panic < 1 || owner.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
+
+          for (let s in enemy.combatEffects.buffNeutralize){ //loop through stats
+            if (enemy.combatEffects.buffNeutralize[s] <= 0){ //if enemy is not neutralizing buffs, add to the total
+              total+= owner.buff[s];
+            }
+          }
+        }
+
+        for (let s in enemy.combatEffects.penaltyNeutralize){ //loop through stats
+          if (enemy.combatEffects.penaltyNeutralize[s] <= 0){ //if the enemy is not neutralizing penalties add it to the total value
+            total+= enemy.debuff[s];
+
+            if (owner.statusEffect.panic > 0 && owner.statusEffect.nullPanic < 1){ //if panicked (and panic not nulled) then also add the buff values
+              total+= enemy.buff[s];
+            }
+
+          }
+        }
+
+
+
+        if (innerCondition[j+1] === "greater" && total >= innerCondition[j+2]){
+          innerResult = true;
+        } else if (innerCondition[j+1] === "less" && total <= innerCondition[j+2]){
+          innerResult = true;
+        }
+
+        j = j + 2;
+      } //
       
     } //end for j
 
@@ -2239,7 +2359,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
     if (variableEffect.subtype === "buff"){
 
-      if (reference.statusEffect.panic < 1){ //if check for panic to see if buffs are not debuffs - penalty neutralize will not being back buffs
+      if (reference.statusEffect.panic < 1 || reference.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
 
       for (let s in other.combatEffects.buffNeutralize){ //loop through stats
         if (other.combatEffects.buffNeutralize[s] <= 0){ //if other is not neutralizing the stat, add it to buff value
@@ -2257,7 +2377,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
         if (reference.combatEffects.penaltyNeutralize[s] <= 0){ //if the reference is not neutralizing penalties add it to the buff value
           buffValue+= reference.debuff[s];
 
-          if (reference.statusEffect.panic > 0){ //if panicked then also add the buff values
+          if (reference.statusEffect.panic > 0 && reference.statusEffect.nullPanic < 1){ //if panicked (and panic not nulled) then also add the buff values
             buffValue+= reference.buff[s];
           }
 

@@ -1346,7 +1346,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5} },
-			{"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2] ] }],
+			{"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2]], "range": 1 }],
 		"max": true
 	},
 	"106": {
@@ -1423,7 +1423,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
-			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy"]], "firstReduction": 0.5 }],
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5 }],
 		"max": true
 	},
 	"112": {
@@ -1436,7 +1436,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
-			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy"]], "firstReduction": 0.5 }],
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5 }],
 		"max": false
 	},
 	"113": {
@@ -1669,6 +1669,109 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
+	},
+	"131": {
+		"name": "Hotshot Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Farina: The Great Wing"],
+		"type": "lance",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["dragonflower", "greater", 2]],  "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["dragonflower", "greater", 3]],  "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "statBuff": {"atk": 1, "spd": 1, "def": 1, "res": 1} },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["dragonflower", "greater", 4]],  "statBuff": {"atk": 1, "spd": 1, "def": 1, "res": 1} },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["dragonflower", "greater", 5]],  "statBuff": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"132": {
+		"name": "Vengeful Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Dimitri: Savage Boar"],
+		"type": "lance",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "conditionalFollowUp", "condition": [["adjacent", false], ["statCompare2", "combat", "owner", "atk", "enemy", "def", "greater", 1], ["followUp", "player", false]  ],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "def", "factor": 0.5, "max": 999}] }],
+
+		"max": true
+	},
+	"133": {
+		"name": "Hrímfaxi",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Nótt: Moon's Elegance"],
+		"type": "lance",
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]],  "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "bonusDouble": {"atk": 1, "spd": 1, "def": 1, "res": 1} },
+			{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "pathfinder"}],
+		"max": true
+	},
+	"134": {
+		"name": "Holy Gradivus",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Zeke: Past Unknown"],
+		"type": "lance",
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "double": 1 }],
+		"max": true
+	},
+	"135": {
+		"name": "Lance of Frelia",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Tana: Frelian Starlight"],
+		"type": "lance",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["phase", "player"]], "statBuff": {"def": 10, "res": 10} },
+			{"type": "warp", "subtype": "warpReq", "allyReq": [["distanceCheck", 2]], "range": 2 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"136": {
+		"name": "Bereft Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Orson: Passion's Folly"],
+		"type": "lance",
+		"skills": [],
+		"passive": {"def": 3},
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": -2, "constant": 6, "maxAllies": 3, "minAllies" : 0, "allyReq": [["distanceCheck", 2]] },
+			{"type": "conditionalEffects", "condition": [["distantAllies", 2, "less", 1]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"max": true
+	},
+	"137": {
+		"name": "Divine Sea Spear",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ashe: Fabled Sea Knight"],
+		"type": "lance",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75, "phase", "player"]], "statBuff": {"atk": 3, "spd": 3, "def": 3}, "lull": {"atk": 3, "spd": 3, "def": 3}, "bonusCopy": {"atk": 1, "spd": 1, "def": 1}, "bonusNull": {"atk": 1, "spd": 1, "def": 1} } ],
 		"max": true
 	}
 

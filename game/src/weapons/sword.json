@@ -1758,7 +1758,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 6}, "firstReduction": 0.7 },
-			{"type": "conditionalEffects", "condition": [["turnRange", 1, 4, true] ], "flatCanto": 3}],
+			{"type": "conditionalEffects", "condition": [["turnRange", 1, 4, true] ], "canto": {"flatCanto": 3, "cantoRemainder": 0} }],
 		"max": true
 	},
 	"136": {
@@ -1809,6 +1809,49 @@
 		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "specialTrueDamage": 7},
+		"cdTrigger": -1,
+		"max": true
+	},
+	"140": {
+		"name": "Ladyblade",
+		"might": 11,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Palla: Kind Eldest Sister"],
+		"type": "sword",
+		"skills": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "combatEffect", "brave": 1, "canto": {"flatCanto": 2, "cantoRemainder": 0}, "adaptive": 1 }],
+		"max": true
+	},
+	"141": {
+		"name": "Blade of Renais",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Eirika: Twin Refulgence"],
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
+			{"type": "variableCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["bonus", "player", "combat", "penalty", "player", "combat"] ], "combatEffects": ["trueDamage", "onHitHeal"], "key": "bonusDamage", "unit": "enemy", "stat": "def", "factor": 0.20, "max": 999 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"142": {
+		"name": "Hallowed Tyrfing",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Sigurd: Fated Holy Knight"],
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "double": 1 },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.75], ["phase", "player", "heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "firstReduction": 0.6 }],
 		"cdTrigger": -1,
 		"max": true
 	}
