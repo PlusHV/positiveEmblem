@@ -16,10 +16,21 @@
   "bugs": {
     "url": "https://github.com/HVPositive/positiveEmblem/issues"
   },
-  "homepage": "https://github.com/HVPositive/positiveEmblem#readme",
+  "homepage": "http://positiveHV.github.io/positiveEmblem",
   "dependencies": {
     "immer": "^8.0.1",
     "socket.io": "^3.1.1",
     "urijs": "^1.19.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.2"
+  },
+  "scripts": { 
+   "start": "react-scripts start",
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+   "build": "react-scripts build",
+   "test": "react-scripts test",
+   "eject": "react-scripts eject"
   }
 }

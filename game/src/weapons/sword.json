@@ -367,7 +367,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
-			{"type": "combatEffect", "bonusDouble": 1}], 
+			{"type": "combatEffect", "bonusDouble": {"atk": 1, "spd": 1, "def": 1, "res": 1} }], 
 		"max": true
 	},
 	"29": {
@@ -1088,7 +1088,10 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 3, "greater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "double": 1,
-			"subEffect": [{"type": "onAttack", "subEffect": [{ "type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "minDistance", "range": "3", "list": ["stats"], "value": 20, "stats": ["hp"], "reference": false, "team": "owner", "from": "owner"}] }] }],
+			"subEffect": [{"type": "onAttack", 
+				"subEffect": [{ "type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "minDistance", "range": 99, "list": ["stats"], "value": 20, "stats": ["hp"], "reference": false, "team": "owner", "from": "owner"}] 
+			}] 
+		}],
 		"max": true
 	},
 	"85": {

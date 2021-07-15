@@ -469,7 +469,7 @@
 		"cd": 2,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "hp", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"effect": {"damage": ["attacker", "missingHP", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"51": {
@@ -478,7 +478,7 @@
 		"cd": 3,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "hp", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"effect": {"damage": ["attacker", "missingHP", 0.3], "heal": 0.0, "amplify": 0.0 },
 		"max": false
 	},
 	"52": {
@@ -523,7 +523,7 @@
 		"cd": 2,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "condition": [["enemyInfo", "weapontype", ["breath", "beast"]]], "alt": 0.4},
+		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "condition": [["heroInfoCheck", "weapontype", ["breath", "beast"]]], "alt": 0.4},
 		"max": true
 	},
 	"57": {
@@ -615,7 +615,7 @@
 		"cd": 3,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "hp", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"effect": {"damage": ["attacker", "missingHP", 0.5], "heal": 0.0, "amplify": 0.0 },
 		"max": true
 	},
 	"67": {
@@ -653,7 +653,7 @@
 		"prf": true,
 		"users": ["Altina: Dawn's Trueblade", "Altina: Cross-Time Duo"],
 		"type": "attack-battle",
-		"effect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0 },
+		"effect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0 },
 		"max": true
 	},
 	"71": {
@@ -725,7 +725,7 @@
 		"cd": 3,
 		"prf": false,
 		"type": "attack-battle",
-		"effect": {"factor": 0.7, "reflect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 1.0 }},
+		"effect": {"damage": "", "heal": 0.0, "amplify": 1.0, "reduceReduction": 0 },
 		"max": true
 	},
 	"78": {
@@ -799,6 +799,16 @@
 		"effect": {"damage": ["attacker", "atk", 0.25], "heal": 0.0, "amplify": 0.0, 
 			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats", "mobility+"], "value": 6, "stats": ["atk", "spd"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}]  },
 		"skills": [["o", "Movement+"]],
+		"max": true
+	},
+	"85": {
+		"name": "Sublime Heaven",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Byleth: The Fódlan Star"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk",  0.25], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0, "condition": [["heroInfoCheck", "weapontype", ["breath", "beast"]]], "alt": 0.5},
 		"max": true
 	}
 }

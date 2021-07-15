@@ -3175,5 +3175,21 @@
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
+	},
+	"402": {
+		"name": "Threat. Spd/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"403": {
+		"name": "Threat. Spd/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
 	}
 }

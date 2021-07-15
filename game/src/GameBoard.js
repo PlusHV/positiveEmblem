@@ -4,7 +4,7 @@ import React from 'react';
 
 import { calculateStats, calculateVisibleStats, calculateCombatStats} from './StatCalculation.js';
 import { doBattle, getDistance, positionToRowColumn, rowColumnToPosition, calculateMovementEffect, checkValidMovement, getDamageType, checkCondition, getDistantHeroes, 
-  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialDamage, heroValid, applyBuffList, heroReqCheck, checkCardinal, calculateReductionEffects, waitHero} from './Battle.js';
+  calculateVariableEffect, calculateVariableCombat, getConditionalSpecial, removeConditionalSpecial, getSpecialValue, heroValid, applyBuffList, heroReqCheck, checkCardinal, calculateReductionEffects, waitHero} from './Battle.js';
 
 import './App.css';
 
@@ -23,7 +23,7 @@ import specials from './skills/special.json';
 import assists from './skills/assist.json';
 import skills from './skillList.js';
 
-var heroStruct = makeHeroStruct();
+export const heroStruct = makeHeroStruct();
 
 export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0, "nullPanic": 0, "triangleAttack": 0 };
 
@@ -1177,7 +1177,7 @@ class GameBoard extends React.Component{
                 if (j === "damage"){
 
 
-                  let extraDamage = getSpecialDamage(i, draggedHero, draggedOverHero, this.state.heroList, damageType);
+                  let extraDamage = getSpecialValue(i, draggedHero, draggedOverHero, this.state.heroList, damageType, j);
 
 
                   if (i.damage[3] === "trueDamage"){
@@ -1254,13 +1254,22 @@ class GameBoard extends React.Component{
         this.getAuraEffects(draggedOverHero, draggedHero, this.state.heroList);
 
 
+
+        //For conditional effects that check for buff/debuffs and also provide neutralzing effects 
+        //These have priority as they will activate before other neutralizers This is basically for idunn and brunnya's weapons
+        //No longer true- These must be after conditional effects as neutralizers from there can falsify the condition - 
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalBonusPenaltyNeutralizers");
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalBonusPenaltyNeutralizers");
+
+
+
         //Regular conditional effects that do not depend on effects on other skills
+        //An exception to this is idunn's zephyr breath which will reside here.
+          //As the initiator, zephyr breath will activate before the enemy's neutralizers can come into play
+          //As the defender, enemy neutralizations will come first and can cancel out this ability
         this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalEffects");
         this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalEffects");
 
-        //For conditional effects that check for buff/debuffs and also provide neutralzing effects - These must be after conditional effects as neutralizers from there can falsify the condition - This is basically for idunn and brunnya's weapons
-        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalBonusPenaltyNeutralizers");
-        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalBonusPenaltyNeutralizers");
 
         //Here all neutralizations should be added
 
@@ -1277,10 +1286,27 @@ class GameBoard extends React.Component{
 
 
 
-        //At this point stats should be finalized and will be calculated.
+        //At this point combat stats should be mostly finalized .
 
         draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
         draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
+
+
+        //conditionalPreCombatStats
+
+        //Conditional effects that need mostly finalized combat stats, The initator gets priority here and the stat changes from the initator here can affect the defender's initation of these skills 
+        this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalPreCombatStats");
+        //Recalculate for defender's check
+        draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
+        draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
+
+        this.getConditionalEffects(draggedOverHero, draggedHero, "conditionalPreCombatStats");
+
+
+        //Now combat stats should be fully finalized
+        draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
+        draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
+
 
         //Conditional effects that need final combat stats
         this.getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombat");
@@ -3453,7 +3479,8 @@ function makeHeroStruct(){
       "defenseTarget": {"def": 0, "res": 0}, //if stat is active, then the defensive stat checked against will be the activated stat (can't test, but adaptive damage should/will override this) - can also target speed/attack if that is ever implemented
       "bonusCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //grants buffs equal to the buffs on the enemy 
       "bonusNull": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //applies a debuff that is equal to the enemy's bonus
-      "bonusDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0},
+      "bonusDouble": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //doubles any bonuses on unit
+      "penaltyCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes a penalty on an enemy, and gives a buff based on that
       "buffReflect": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes bonus values and applies those values as a debuff on the enemy - misunderstood an effect and implemented this 
       "teamNihil": 0,
       "minimumDamage": 0,
@@ -3469,6 +3496,13 @@ function makeHeroStruct(){
     this["conditionalEffects"] = []; //conditional effects which occur at the start of combat
     this["preCombatConditionalEffects"] = [];
     this["conditionalBonusPenaltyNeutralizers"] = []; //conditionals that depend on bonus/penalties and neutralize them at the same time
+
+
+
+    this["conditionalPreCombatStats"] = []; //specific conditional that provides stats using (mostly) finalized stats, the difference is that these will be applied for the initiator first, stats will be recalculated againm then the defender will do these conditionals
+    //Basically, a check on final combat stats that will also modify those combat stats but gives initator priority ()
+
+
     this["conditionalCombatStats"] = [];
     this["conditionalCombat"] = []; //conditional effects which occur during combat and will need to use combat stats
     this["conditionalFollowUp"] = []; //conditional effects that check for followups
@@ -4407,7 +4441,6 @@ function getWarpEffects(owner, heroList, currentTurn){
         warpEffects = owner.warp;
       }
 
-      console.log(warpEffects);
 
       for (let effect of warpEffects){ //loop through loop effects
         if (effect === null || effect === undefined) {continue;}

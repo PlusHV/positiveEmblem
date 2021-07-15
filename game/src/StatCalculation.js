@@ -398,6 +398,8 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 	let bonusCopy = hero.combatEffects.bonusCopy;
 	let bonusDoubleCombatEffect = hero.combatEffects.bonusDouble;
 	let bonusDoubleStatus = hero.statusEffect.bonusDouble;
+
+	let penaltyCopy = hero.combatEffects.penaltyCopy;
 	
 
 	//Enemy effects that affect stats
@@ -463,6 +465,14 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 
 	}
 
+	let penaltyCopier = 0;
+
+	if (penaltyCopy[stat] > 0 && penaltyNeutralize[stat] <= 0){ //check if penalty copy is active and penalties aren't neutralized
+		penaltyCopier = enemy.debuff[stat];
+		if (enemyPanicFactor < 0){ //if panicked, also include that
+			penaltyCopier += enemy.buff[stat];
+		}
+	}
 
 	//effects from the enemy\
 
@@ -504,7 +514,7 @@ export function calculateCombatStatModifier(hero, enemy, stat){
 
 	//
 	modifier = /*(panicFactor * hero.buff[stat]) - hero.debuff[stat] + hero.aura[stat] + */hero.combatEffects.statBuff[stat] - enemy.combatEffects.lull[stat]
-	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus - bonusNuller - buffNeutralizer - penaltyDoubler - buffReverser - buffReflecter; 
+	 + penaltyNeutralizer + penaltyReverser + bonusCopier + bonusDoublerCombat + bonusDoublerStatus + penaltyCopier - bonusNuller - buffNeutralizer - penaltyDoubler - buffReverser - buffReflecter; 
 
 
 	return modifier;

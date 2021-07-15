@@ -1,7 +1,7 @@
 import heroData from './heroInfo.json';
 import {calculateCombatStats} from './StatCalculation.js'
 
-import {addEffect, applyCombatEffect, statusDebuffs, getEnemySide, checkConditionHero} from './GameBoard.js'
+import {addEffect, applyCombatEffect, statusDebuffs, getEnemySide, checkConditionHero, heroStruct} from './GameBoard.js'
 
 
 
@@ -10,7 +10,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     let newAttacker = attacker;
     let newDefender = defender;
-
+    console.log(attacker);
     //get specials
     let attackerSpecial = attacker.special;
     let defenderSpecial = defender.special;
@@ -413,7 +413,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
           }
 
           applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide);
-        } else if (element.checkType === "minDistance"){
+        } else if (element.checkType === "minDistance"){ //minDistance effects have 999 range but still use heroes in range for the excluded heroes
 
           let minDistance = 999;
           let affectedList = [];
@@ -767,6 +767,10 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   
   let specialEffect = attackerSpecial.effect;
 
+  let onHitHeal = attacker.combatEffects.onHitHeal;
+
+  let reduceReduction = calculateReductionEffects(attacker.combatEffects.reduceReduction, 1.0);  
+
   // let partyHeal = 0;
   // let partyBuff = {};
   let subEffect = [];
@@ -783,9 +787,13 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       
     }
 
-    if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list
+    if ("reduceReduction" in specialEffect){
+      reduceReduction = calculateReductionEffects([reduceReduction, specialEffect.reduceReduction] , 1.0);   
+    }
+
+    if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list - damage keyword holds most of the information
       
-      specialDamage = getSpecialDamage(specialEffect, attacker, defender, heroList, damageType);
+      specialDamage = getSpecialValue(specialEffect, attacker, defender, heroList, damageType, "damage");
 
 
 
@@ -795,7 +803,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
           for (let j in i){ 
             if (j === "damage"){
               //let onSpecialDamage = i.damage;
-              let extraDamage = getSpecialDamage(i, attacker, defender, heroList, damageType);
+              let extraDamage = getSpecialValue(i, attacker, defender, heroList, damageType, j);
               // let sHero;
 
 
@@ -807,7 +815,15 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
               }
 
 
-            } //end for damage
+            } else if (j === "heal"){
+
+
+              onHitHeal+= getSpecialValue(i, attacker, defender, heroList, damageType, j);
+
+
+            } else if (j === "reduceReduction") {
+              reduceReduction = calculateReductionEffects([reduceReduction, i.reduceReduction] , 1.0);  
+            } //end if heal
           } //end for i
 
 
@@ -870,7 +886,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   specialDamage+= attacker.combatEffects.reflect; //adding the reflect damage
 
 
-  let reduceReduction = calculateReductionEffects(attacker.combatEffects.reduceReduction, 1.0);
+  
 
 
   //all damage reduction values are 1 - percent reduced by. 0 damage reduction is thus 1 - 0 = 1.0
@@ -925,7 +941,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     if (defenderSpecial.effect.factor === "miracle"){
       miracle = true;
     } else{
-      damageReduction = damageReduction * calculateReductionEffects(defenderSpecial.effect.factor, 1.0); //special reductions are not affected by reduce reductions
+      damageReduction = damageReduction * calculateReductionEffects([defenderSpecial.effect.factor], 1.0); //special reductions are not affected by reduce reductions
     }
 
     if ("reflect" in defenderSpecial.effect){
@@ -933,7 +949,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       if (defenderSpecial.effect.reflect["damage"].includes("mirror")){ //if the damage key of the reflect effect is a mirror image
         reflect = true; //reflect damage is calculated later
       } else {
-        reflectDamage = getSpecialDamage(defenderSpecial.effect.reflect, defender, attacker, heroList, damageType); 
+        reflectDamage = getSpecialValue(defenderSpecial.effect.reflect, defender, attacker, heroList, damageType, "damage"); 
       }
       
     }
@@ -1025,7 +1041,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   let heal = 0;
 
   if (attacker.statusEffect.deepWounds < 1){
-    heal+= attacker.combatEffects.onHitHeal;
+    heal+= onHitHeal;//attacker.combatEffects.onHitHeal;
   }
 
 
@@ -1067,39 +1083,44 @@ export function calculateReductionEffects(reductionList, reduceReduction){//Give
   return totalReduction;
 }
 
-export function getSpecialDamage(effect, owner, enemy, heroList, damageType){
-    let specialDamage = 0;
+export function getSpecialValue(effect, owner, enemy, heroList, damageType, key){
+    let specialValue = 0;
     let hero; //which hero to base the damage off of
-    if (effect.damage[0] === "attacker"){
+    if (effect[key][0] === "attacker"){
       hero = owner;
-    } else if (effect.damage[0] === "defender"){
+    } else if (effect[key][0] === "defender"){
       hero = enemy;
     }
 
-    let stat = effect.damage[1];
+    let stat = effect[key][1];
     if (stat === "defensive"){
       stat = damageType;
     }
 
+    console.log(effect);
 
-    let factor = effect.damage[2];
+    let factor = effect[key][2];
 
     if ("condition" in effect && checkCondition(heroList, effect.condition, owner, enemy) ){
 
       factor = effect["alt"];
-
+      console.log(factor);
+      console.log(effect["alt"]);
     }
 
     if (stat === "flat"){
-      specialDamage = factor; //special damage is flat
-    } else if (stat === "hp"){ //HP specials are based on missing hp and only for attackers
-      specialDamage = Math.trunc( (owner.stats.hp - owner.currentHP) * factor);
+      specialValue = factor; //special damage is flat
+    } else if (stat === "missingHP"){ //HP specials are based on missing hp and only for attackers
+      specialValue = Math.trunc( (owner.stats.hp - owner.currentHP) * factor);
+
+    } else if (stat === "hp"){
+      specialValue = Math.trunc(hero.stats[stat] * factor);  
 
     } else{
-      specialDamage = Math.trunc(hero.combatStats[stat] * factor);
+      specialValue = Math.trunc(hero.combatStats[stat] * factor);
     }
 
-    return specialDamage;
+    return specialValue;
 }
 
 export function calculateWeaponTriangleAdvantage(attacker, defender){
@@ -1582,6 +1603,41 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 7;
+
+      } else if (keyWord === "statCheck"){
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        let statCheck = innerCondition[j+3];
+        let statType = innerCondition[j+2];
+        let statVal = 0;
+
+        //get appropriate values to compare
+        if (statCheck === "HP"){
+          statVal = check.currentHP;
+          
+        } else if (statType === "visible") {
+          statVal = check.visibleStats[statCheck];
+          
+        } else if (statType === "combat") {
+          statVal = check.combatStats[statCheck];
+          
+        }
+
+        if (innerCondition[j+4] === "greater" && statVal >= innerCondition[j+5]  ){
+          innerResult = true;
+        } else if (innerCondition[j+4] === "less" &&  statVal >= innerCondition[j+5]  ){
+          innerResult = true;
+        }
+
+        j = j + 5
+
+
 
       } else if (keyWord === "distantAllies"){ //check if a certain number of allies within the range given range
 
@@ -2236,8 +2292,18 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         j = j + 2;
-      } //
-      
+      } else if (keyWord === "sideCheck"){ //check which side the unit is on
+
+        //"1" is player's control
+        //"2" is the enemy's control
+
+        if (owner.side === innerCondition[j+1]){
+          innerResult = true;
+        }
+
+        j = j + 1;
+      }
+
     } //end for j
 
     if (!innerResult){ //if the innerResult false, then result becomes false
@@ -2355,7 +2421,46 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     } else if (variableEffect.reference === "enemy"){
       reference = enemy;
       other = owner;
-    } 
+    } else if (variableEffect.reference === "maxAlly"){//specifically for order's sentence
+      reference = new heroStruct(0);
+      let max = 0;
+
+      //loop through allies
+      for (let hero of heroList[owner.side]){
+
+        if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+          continue; //if they don't meet ally req, skip
+        }
+
+        if (owner.id === hero.id || !heroValid(hero) ){
+          continue; //cannot target themselves
+        }
+
+        let sum = 0;
+
+        //get the sum of their buffs
+        if (hero.statusEffect.panic < 1 || hero.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
+
+          for (let s in hero.buff){ //loop through buffs and add them up
+            sum+= hero.buff[s];
+          }
+        }
+
+        //check if they have a higher sum of buffs then previous max
+        if (sum > max){
+
+          if (heroValid(hero)){
+            reference = hero;
+            max = sum; //set new max
+          }
+
+        } 
+
+
+      } //loop through team
+
+      other = new heroStruct(0); //empty hero that won't affect the calculation
+    } //end max ally
 
     if (variableEffect.subtype === "buff"){
 
@@ -2384,7 +2489,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
         }
       }
 
-    }
+    } 
 
     buffValue = Math.trunc(buffValue * variableEffect.multiplier);
 
@@ -2438,7 +2543,46 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
 
 
-  } //end herostats
+  } else if (variableEffect.key === "statCopy"){ 
+    let statValues = {};
+
+    let passedHeroList = [];
+    //get list of heroes that pass the allyReq
+    for (let hero of heroList[owner.side]){
+
+      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+        continue; //if they don't meet ally req, skip
+      }
+
+      if (owner.id === hero.id || !heroValid(hero) ){
+        continue; //cannot target themselves
+      }
+      passedHeroList.push(hero);
+
+
+    } //loop through team
+
+
+    for (let stat of variableEffect.stats){
+      let statVal = 0;
+
+      for (let hero of passedHeroList){
+
+        let currentVal = hero.visibleStats[stat];
+
+        if (currentVal > statVal){
+
+          statVal = currentVal; //set new max
+        }
+
+      } // looop through heroes
+
+      statValues[stat] = statVal - owner.visibleStats[stat]; //the buff (or debuff if lower than the owner's stat) will be the difference between the two
+
+    } //loop through stats
+
+    return {"statBuff": statValues};
+  } //end statcopy
 
 
 }

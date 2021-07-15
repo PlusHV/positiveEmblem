@@ -3011,8 +3011,60 @@
 		"type": "passive",
 		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
 		"max": true
+	},
+	"374": {
+		"name": "Laws of Sacae II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Lyn: Lady of the Wind"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 2]], "statBuff": {"atk": 6, "spd": 6, "def": 6, "res": 6} },
+			{"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }],
+		"max": true
+	},
+	"375": {
+		"name": "Dragonskin II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Robin: Fell Vessel"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "statBuff": {"atk": 6, "spd": 6, "def": 6, "res": 6}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"376": {
+		"name": "Def/Res Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 3, "res": 3} }],
+		"max": false
+	},
+	"377": {
+		"name": "Def/Res Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"378": {
+		"name": "Def/Res Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 5, "res": 5} }],
+		"max": true
+	},
+	"379": {
+		"name": "Def/Res Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": true
 	}
-
 
 
 	

@@ -57,7 +57,8 @@
 		"users": ["Bramimond: The Enigma"],
 		"skills": [], 
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statCheck", "enemy", "visible", "atk", "greater", 50, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "def": 5, "res": 5}},
+			{"type": "conditionalCombatStats", "condition": [["statCheck", "enemy", "visible", "spd", "greater", 35, "penalty", "enemy", "combat"]], "double" : 1}],
 		"max": true
 	},
 	"5": {
@@ -70,7 +71,11 @@
 		"users": ["Micaiah: Dawn Wind's Duo"],
 		"skills": [], 
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 6, "res": 6} },
+			{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"], ["phase", "player"]], "double": 1 }],
+
 		"max": true
 	},
 	"6": {
@@ -83,7 +88,7 @@
 		"users": ["Xane: Autumn Trickster"],
 		"skills": [], 
 		"passive": {"hp": 5},
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["distantAllies", 2, "greater", 1]], "stats": ["atk", "spd", "def", "res"],  "key": "statCopy", "allyReq": [["distanceCheck", 2]]}],
 		"max": true
 	},
 	"7": {
@@ -96,6 +101,31 @@
 		"users": ["Ashera: Order Goddess"],
 		"skills": [], 
 		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 0.25, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5},
+			"subEffect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "maxAlly", "allyReq": [["distanceCheck", 2]], "multiplier": 1}] }],
+		"max": true
+	},
+	"8": {
+		"name": "Umbra Burst",
+		"might": 14,
+		"range": 2,
+		"sp": 0,
+		"prf": false,
+		"type": "greentome",
+		"skills": [["a", "Close Counter"]],
+		"passive": {},
+		"effect": {"type": "combatEffect", "minimumDamage": 1},
+		"max": false
+	},
+	"9": {
+		"name": "Atlas+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "colorlesstome",
+		"skills": [], 
+		"passive": {},
 		"effect": [],
 		"max": true
 	}

@@ -1389,7 +1389,7 @@
 		"name": "S Drink",
 		"sp": 300,
 		"prf": true,
-		"users": ["Leif: Prince of Leonster"],
+		"users": ["Leif: Prince of Leonster", "Leif: Unifier of Thracia"],
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 99, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] },
 				{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }],
@@ -2875,7 +2875,7 @@
 		"name": "Binding Necklace",
 		"sp": 300,
 		"prf": true,
-		"users": ["Freyja: Lady of Nightmare"],
+		"users": ["Freyja: Lady of Nightmare", "Freyja: Fleeting Summer"],
 		"type": "effect",
 		"effect": [{"type": "conditionalCombatStats", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "bonusCopy": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "bonusNull": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
@@ -3250,6 +3250,30 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "res": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": true
+	},
+	"394": {
+		"name": "Flow Refresh 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 1]], "nullStopFollowUp": 1, "postHeal": 5 }],
+		"max": false
+	},
+	"395": {
+		"name": "Flow Refresh 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 0.5]], "nullStopFollowUp": 1, "postHeal": 7 }],
+		"max": false
+	},
+	"396": {
+		"name": "Flow Refresh 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "nullStopFollowUp": 1, "postHeal": 10 }],
 		"max": true
 	}
 }

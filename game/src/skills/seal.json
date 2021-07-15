@@ -199,21 +199,24 @@
 		"name": "Atk/Spd Bond 1",
 		"sp": 60,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3} }],
 		"max": false
 	},
 	"29": {
 		"name": "Atk/Spd Bond 2",
 		"sp": 120,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"30": {
 		"name": "Atk/Spd Bond 3",
 		"sp": 240,
 		"prf": false,
-		"type": "conditional-stat",
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"31": {
@@ -4003,6 +4006,70 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 6, "res": 6} }],
+		"max": true
+	},
+	"538": {
+		"name": "Squad Ace AV 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 1, "def": 1},
+		"max": false
+	},
+	"539": {
+		"name": "Squad Ace AV 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 2, "def": 2},
+		"max": true
+	},
+	"540": {
+		"name": "Spd/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"541": {
+		"name": "Spd/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"542": {
+		"name": "Spd/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"543": {
+		"name": "Infantry Rush 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}] }],
+		"max": false
+	},
+	"544": {
+		"name": "Infantry Rush 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}] }],
+		"max": false
+	},
+	"545": {
+		"name": "Infantry Rush 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}] }],
 		"max": true
 	}
 

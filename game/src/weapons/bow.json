@@ -20,8 +20,9 @@
 		"users": ["Klein: Silver Nobleman"],
 		"type": "bow",
 		"skills": [],
-		"passive": {"spd": 3},
-		"effect": [],
+		"passive": {"spd": -2},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"2": {
@@ -33,7 +34,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["dagger"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": true
 	},
 	"3": {
@@ -45,7 +47,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["dagger"]], ["heroInfoCheck", "color", ["colorless"]] ], "enemyDouble": 1, "double": 1  }],
 		"max": false
 	},
 	"4": {
@@ -57,7 +60,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": true
 	},
 	"5": {
@@ -69,7 +73,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": false
 	},
 	"6": {
@@ -81,7 +86,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [ ["penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"7": {
@@ -93,7 +99,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [ ["penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": false
 	},
 	"8": {
@@ -105,7 +112,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": true
 	},
 	"9": {
@@ -117,7 +125,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
 		"max": false
 	},
 	"10": {
@@ -130,7 +139,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"atk": 4, "spd":4,  "def": 4, "res": 4} }],
 		"max": true
 	},
 	"11": {
@@ -141,8 +151,9 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"12": {
@@ -153,8 +164,9 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": false
 	},
 	"13": {
@@ -166,7 +178,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": true
 	},
 	"14": {
@@ -178,7 +191,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
 		"max": false
 	},
 	"15": {
@@ -190,7 +204,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": true
 	},
 	"16": {
@@ -202,7 +217,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2} }],
 		"max": false
 	},
 	"17": {
@@ -215,7 +231,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombatStats", "condition": [["bonusPenaltyTotal", "greater", 10]], "lull": {"atk": 5, "spd": 5, "def": 5, "res": 5} }],
 		"max": true
 	},
 	"18": {
@@ -227,7 +244,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["def", "res"], "range": 2, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
 	},
 	"19": {
@@ -239,7 +257,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["def", "res"], "range": 2, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
 	},
 	"20": {
@@ -252,7 +271,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armor"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1.0], ["phase", "player"]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"21": {
@@ -264,7 +285,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "guard": 1}],
 		"max": true
 	},
 	"22": {
@@ -276,7 +298,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "guard": 1}],
 		"max": false
 	},
 	"23": {
@@ -288,7 +311,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"24": {
@@ -300,7 +324,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": false
 	},
 	"25": {
@@ -312,7 +337,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "selfSweep": 1, "sweep": 1}],
 		"max": true
 	},
 	"26": {
@@ -324,7 +350,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "selfSweep": 1, "sweep": 1}],
 		"max": false
 	},
 	"27": {
@@ -336,7 +363,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": true
 	},
 	"28": {
@@ -348,7 +376,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.75]], "desperation": 1  }],
 		"max": false
 	},
 	"29": {
@@ -361,7 +390,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "pass"}],
 		"max": true
 	},
 	"30": {
@@ -373,7 +403,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"31": {
@@ -385,7 +416,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": false
 	},
 	"32": {
@@ -397,7 +429,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
 	},
 	"33": {
@@ -409,7 +442,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": false
 	},
 	"34": {
@@ -421,7 +455,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": true
 	},
 	"35": {
@@ -433,7 +468,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
 		"max": false
 	},
 	"36": {
@@ -445,7 +481,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": false
 	},
 	"37": {
@@ -457,7 +493,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["spd"], "checkStats": ["spd"], "team": "enemy", "peak": "max" }],
 		"max": true
 	},
 	"38": {
@@ -469,7 +506,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["spd"], "checkStats": ["spd"], "team": "enemy", "peak": "max" }],
 		"max": false
 	},
 	"39": {
@@ -481,7 +519,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -494,7 +532,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": false
 	},
@@ -508,7 +546,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]],
+				"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "enemy", "stat": "def", "factor": 0.25, "max": 999}] }],
 		"max": true
 	},
 	"42": {
@@ -520,7 +560,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
 	},
 	"43": {
@@ -532,7 +573,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
 	},
 	"44": {
@@ -545,7 +587,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}}],
 		"max": true
 	},
 	"45": {
@@ -558,7 +601,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": true
 	},
 	"46": {
@@ -571,7 +615,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "enemy", "def", "enemy", "res", "greater", 5]], "trueDamage": 7 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -585,7 +630,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"res": 4} }],
 		"max": true
 	},
 	"48": {
@@ -597,7 +643,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "subEffect": [{"type": "onAttack", "recoil": 2}] }],
 		"max": true
 	},
 	"49": {
@@ -609,7 +656,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "subEffect": [{"type": "onAttack", "recoil": 2}] }],
 		"max": false
 	},
 	"50": {
@@ -621,7 +669,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "enemy", "def", "enemy", "res", "greater", 5]], "trueDamage": 7 }],
 		"max": true
 	},
 	"51": {
@@ -633,7 +682,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "enemy", "def", "enemy", "res", "greater", 5]], "trueDamage": 7 }],
 		"max": false
 	},
 	"52": {
@@ -645,7 +695,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "specialTrueDamage": 10}],
 		"max": true
 	},
 	"53": {
@@ -657,7 +708,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "specialTrueDamage": 10}],
 		"max": false
 	},
 	"54": {
@@ -669,7 +721,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": true
 	},
 	"55": {
@@ -681,7 +733,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": false
 	},
 	"56": {
@@ -694,7 +746,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 10, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] }],
 		"max": true
 	},
 	"57": {
@@ -706,7 +759,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -719,7 +772,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": false
 	},
@@ -732,7 +785,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": false
 	},
 	"60": {
@@ -745,7 +798,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["distantAllyCompare", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5} }],
 		"max": true
 	},
 	"61": {
@@ -758,7 +812,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"62": {
@@ -768,9 +823,10 @@
 		"sp": 0,
 		"prf": false,
 		"type": "bow",
-		"skills": [],
+		"skills": [["a", "Close Counter"]],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "minimumDamage": 1}],
 		"max": false
 	},
 	"63": {
@@ -783,7 +839,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armor"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 3}],
 		"max": true
 	},
 	"64": {
@@ -794,8 +852,9 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "recoil": 6}],
 		"max": true
 	},
 	"65": {
@@ -806,8 +865,9 @@
 		"prf": false,
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "recoil": 6}],
 		"max": false
 	},
 	"66": {
@@ -819,8 +879,10 @@
 		"users": ["Leif: Unifier of Thracia"],
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "brave": 1},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["sideCheck", "1"]], "enemyDouble": 1 }],
 		"max": true
 	},
 	"67": {
@@ -833,7 +895,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalPreCombatStats", "condition": [["statCompare", "visible", "spd", "greater", 1, "statCompare", "combat", "spd", "greater", 1]], "lull": {"atk": 5, "spd": 5, "def": 5} }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -847,7 +910,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", "statusCheck", "player", "statusBuff", "mobility+"]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3}, "attackCharge": 1 }],
 		"max": true
 	},
 	"69": {
@@ -859,7 +923,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck",  "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "enemy", "effectReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3]] }],
 		"max": true
 	},
 	"70": {
@@ -871,7 +936,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+				{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck",  "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "enemy", "effectReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 3]] }],
 		"max": false
 	},
 	"71": {
@@ -884,7 +950,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [["phase", "player"], ["statCompare", "combat", "spd", "greater", 1]], "sweep": 1 }],
 		"max": true
 	},
 	"72": {
@@ -896,7 +963,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
 		"max": true
 	},
 	"73": {
@@ -908,7 +976,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
 		"max": false
 	},
 	"74": {
@@ -921,7 +990,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck",  "list": ["panic"], "team": "enemy", "effectReq": [["enemyAdjacent", true], ["statCompare", "visible", "HP", "greater", 1]] }],
 		"max": true
 	},
 	"75": {
@@ -933,8 +1003,9 @@
 		"users": ["Gordin: Altean Archer"],
 		"type": "bow",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
 	},
 	"76": {
@@ -947,7 +1018,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -961,7 +1032,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armor"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 1]], "penaltyNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "lull": {"atk": 6, "def": 6} }],
 		"max": true
 	},
 	"78": {
@@ -974,7 +1047,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "less", 1, "penalty", "player", "combat"]], "statBuff": {"atk": 5, "spd": 5} },
+			{"type": "conditionalEffects", "condition": [["hp", "less", 1, "penalty", "player", "combat"], ["phase", "player"]], "desperation": 1 }],
 		"max": true
 	},
 	"79": {
@@ -986,7 +1061,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "statBuff": {"atk": 7}, "lull": {"atk": 7}  },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner"}]  }],
 		"max": true
 	},
 	"80": {
@@ -998,7 +1075,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "combatEffect", "statBuff": {"atk": 7}, "lull": {"atk": 7}  },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner"}]  }],
 		"max": false
 	},
 	"81": {
@@ -1011,7 +1090,7 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1025,7 +1104,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "onAttack", "burn": 7, "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp", "atk", "spd"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
 		"max": true
 	},
 	"83": {
@@ -1037,7 +1117,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 5}],
 		"max": true
 	},
 	"84": {
@@ -1049,7 +1130,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 5}],
 		"max": false
 	},
 	"85": {
@@ -1061,7 +1143,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"spd": 5, "def": 5}, "buffNeutralize": {"spd": 1, "def": 1} }],
 		"max": true
 	},
 	"86": {
@@ -1073,7 +1156,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"spd": 5, "def": 5}, "buffNeutralize": {"spd": 1, "def": 1} }],
 		"max": false
 	},
 	"87": {
@@ -1086,7 +1170,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"atk": 4, "spd":4,  "def": 4, "res": 4} }],
 		"max": true
 	},
 	"88": {
@@ -1099,7 +1184,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5},
+				"subEffect": [{"type": "onSpecial", "heal": ["attacker", "hp", 0.5]}] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1113,7 +1200,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 5},
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk"], "value": 5}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1126,7 +1215,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5 }],
 		"max": true
 	},
 	"91": {
@@ -1138,7 +1229,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "def": 5} },
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5 }],
 		"max": false
 	},
 	"92": {
@@ -1151,7 +1244,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "counter": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1165,7 +1259,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} },
+			{"type": "conditionalEffects", "condition": [["adjacent", false], ["enemyhp", "greater", 0.8] ], "sweep": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1178,7 +1274,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "guard": 1 }],
 		"max": true
 	},
 	"95": {
@@ -1190,7 +1287,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "guard": 1 }],
 		"max": false
 	},
 	"96": {
@@ -1203,7 +1301,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 3]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 4},
+			{"type": "auraStats", "effectReq": [["distanceCheck", 3]], "subtype": "debuff", "team": "enemy", "stats": ["atk"], "value": 4}],
 		"max": true
 	},
 	"97": {
@@ -1216,7 +1316,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1] ], "statBuff": {"atk": 6}, "lull": {"atk": 6}, "penaltyNeutralize": {"atk": 1}, "buffNeutralize": {"atk": 1} }],
 		"max": true
 	},
 	"98": {
@@ -1228,7 +1329,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "penaltyDouble": {"atk": 1, "def": 1} }],
 		"max": true
 	},
 	"99": {
@@ -1240,7 +1342,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "def": 5}, "penaltyDouble": {"atk": 1, "def": 1} }],
 		"max": false
 	},
 	"100": {
@@ -1253,7 +1356,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "enemy", "def", "enemy", "res", "greater", 5]], "trueDamage": 7 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1267,7 +1371,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25] ], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1281,7 +1386,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25] ], "statBuff": {"atk": 6, "spd": 6},
+				"subEffect": [{"type": "onSpecial", "damage": ["attacker", "flat", 7, "trueDamage"], "reduceReduction": 0}] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1294,7 +1401,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
 		"max": true
 	},
 	"104": {
@@ -1306,7 +1414,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
 		"max": false
 	},
 	"105": {
@@ -1318,7 +1427,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 5}],
 		"max": true
 	},
 	"106": {
@@ -1330,7 +1440,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 5}],
 		"max": false
 	},
 	"107": {
@@ -1343,7 +1454,9 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 6, "spd": 6},
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}] }],
 		"max": true
 	},
 	"108": {
@@ -1355,7 +1468,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
 		"max": true
 	},
 	"109": {
@@ -1367,7 +1481,8 @@
 		"type": "bow",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
 		"max": false
 	}
 

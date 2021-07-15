@@ -315,7 +315,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "double": 1 }],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", "statusCheck", "player", "statusBuff", "mobility+"]], "double": 1 }],
 		"max": true
 	},
 	"25": {
@@ -989,8 +989,8 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [{"type": "variableStats", "condition": [["bonus", "player", "combat", "hp", "greater", 0.7]], "stat": "def", "stats": ["atk"], "key": "heroStats", "subtype": "statBuff", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25},
-			{"type": "variableStats", "condition": [["bonus", "player", "combat", "hp", "greater", 0.7]], "stat": "res", "stats": ["atk"], "key": "heroStats", "subtype": "lull", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25}],
+		"effect": [{"type": "variableStats", "condition": [["statBonus", "player", "combat", "hp", "greater", 0.7]], "stat": "def", "stats": ["atk"], "key": "heroStats", "subtype": "statBuff", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25},
+			{"type": "variableStats", "condition": [["statBonus", "player", "combat", "hp", "greater", 0.7]], "stat": "res", "stats": ["atk"], "key": "heroStats", "subtype": "lull", "unit": "enemy", "reference": "enemy", "stattype": "visible", "factor": 0.25}],
 		"max": true
 	},
 	"79": {
@@ -1030,7 +1030,7 @@
 		"type": "axe",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["bonus", "player", "combat"]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"82": {
@@ -1595,9 +1595,40 @@
 		"passive": {},
 		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
 		"max": false
+	},
+	"125": {
+		"name": "Masking Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Gerome: Masked Rider"],
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "def": 5} }],
+		"max": true
+	},
+	"126": {
+		"name": "Dolphin-Dive Axe",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Caeda: Sea-Blossom Pair"],
+		"type": "axe",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["sword"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["lance"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["axe"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["bow"]], ["heroInfoCheck", "color", ["colorless"]]] },
+			{"type": "combatEffect", "canto": {"flatCanto": 2, "cantoRemainder": 0} },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 2]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} }],
+		"max": true
 	}
-
-
 
 
 
