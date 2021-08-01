@@ -193,8 +193,9 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "combatEffect", "sweep": 1},
-			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  },
-			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }],
+			{"type": "onAttack", 
+				"subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"},
+					{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }],
 		"max": true
 	},
 	"16": {

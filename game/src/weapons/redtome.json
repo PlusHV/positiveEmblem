@@ -898,7 +898,7 @@
 		"type": "redtome",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 5, "greater", 1], ["turnRange", 3, 4, true] ], "subtype": "debuff", "checkType": "targeting", "list": ["stats", "gravity", "guard", "counterDisrupt", "panic"], "value": 6, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 5]], "peak": "min" }],
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 5, "greater", 1], ["turnRange", 3, 4, true] ], "subtype": "debuff", "checkType": "targeting", "list": ["stats", "gravity", "guard", "counterDisrupt", "panic"], "value": 6, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 5]], "peak": "min" }],
 		"max": true
 	},
 	"70": {
@@ -954,6 +954,44 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"res": 5}, "lull": {"res": 5}, "bonusCopy": {"res": 1}, "bonusNull": {"res": 1} }],
+		"max": false
+	},
+	"74": {
+		"name": "Ginnungagap",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Nyx: Rulebreaker Mage"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "spd": 6} },
+			 {"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["phase", "player", "heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "staff"] ]], "firstReduction": 0.6, "mirror": 1 }],	
+		"max": true
+	},
+	"75": {
+		"name": "Rauðrrabbit+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
+		"max": true
+	},
+	"76": {
+		"name": "Rauðrrabbit",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": false
 	}
 

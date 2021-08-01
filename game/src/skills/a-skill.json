@@ -3064,6 +3064,22 @@
 		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 7, "res": 7} },
 			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "spd": 2} }],
 		"max": true
+	},
+	"380": {
+		"name": "Spd/Res Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 7, "res": 7} }],
+		"max": true
+	},
+	"381": {
+		"name": "AR-D Atk/Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": true
 	}
 
 

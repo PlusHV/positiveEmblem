@@ -3191,5 +3191,15 @@
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
 		"max": false
+	},
+	"404": {
+		"name": "Domain of Ice",
+		"sp": 300,
+		"prf": true,
+		"users": ["Nifl: God of Ice"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "firstReduction": 0.7 }], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
 	}
 }

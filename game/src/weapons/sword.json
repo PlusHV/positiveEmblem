@@ -560,7 +560,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"44": {
@@ -904,7 +904,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": true
 	},
 	"71": {
@@ -916,7 +916,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4}}],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "def": 4}}],
 		"max": false
 	},
 	"72": {

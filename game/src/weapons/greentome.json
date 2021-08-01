@@ -46,7 +46,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "res": 4}}],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "res": 4}}],
 		"max": true
 	},
 	"4": {
@@ -58,7 +58,7 @@
 		"type": "greentome",
 		"skills": [], 
 		"passive": {},
-		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat"]], "statBuff": {"atk": 4, "res": 4}}],
+		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "res": 4}}],
 		"max": false
 	},
 	"5": {
@@ -122,7 +122,7 @@
 		"skills": [], 
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
-			{"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "nullAdaptive": 1 }],
+			{"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
 	},
 	"10": {
@@ -753,7 +753,7 @@
 		"skills": [], 
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", "hp", "greater", 0.5]], "statBuff": {"atk": 5, "spd": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
+			{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true, "hp", "greater", 0.5]], "statBuff": {"atk": 5, "spd": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -991,6 +991,20 @@
 			{"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["statCompare", "combat", "spd", "greater", 1]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 },
 			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }] }],
 		"cdTrigger": -1,
+		"max": true
+	},
+	"78": {
+		"name": "Tiger Spirit",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Orochi: Merry Diviner"],
+		"type": "greentome",
+		"skills": [], 
+		"passive": {"res": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "res": 6},
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }] }],
 		"max": true
 	}
 

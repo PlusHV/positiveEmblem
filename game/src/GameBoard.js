@@ -1683,13 +1683,33 @@ class GameBoard extends React.Component{
         //temp = DoBattle(temp, dragData, newCells[dropPosition]);
         temp = doBattle(temp, dragData, this.state.draggedOver, newCells); //do battle has to use the combat versions of drag and draggedOver heroes
 
-        //clear initial positions of assister/assistee
+        //clear initial positions of attacker/defender
         newCells[orgAttackerPos] = null;
         newCells[orgDefenderPos] = null;
 
-        //move the assistee/assister to their new positions 
+
+        if ( temp[dragSide][dragIndex].swapAllyPosition >= 0){
+
+          let swapAllyPosition = temp[dragSide][dragIndex].swapAllyPosition;
+
+          let swapAllySide = newCells[swapAllyPosition].side;
+          let swapAllyIndex = newCells[swapAllyPosition].listIndex;
+          
+          //clear initial position of swapAlly
+          newCells[swapAllyPosition] = null;
+
+          newCells[temp[swapAllySide][swapAllyIndex].position] = temp[swapAllySide][swapAllyIndex]; //move swap ally to their new position
+          temp[dragSide][dragIndex].swapAllyPosition = -1; //reset
+        }
+
+        
+
+
+        //move the attacker/defender to their new positions
         newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
         newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+
 
 
         this.endHeroTurn(temp[dragSide][dragIndex]);
@@ -2991,37 +3011,100 @@ class GameBoard extends React.Component{
               }
             }
 
-          } else if (j === "debuff"){
+          } else if (j === "subtype" && i.subtype === "debuff"){
 
-              let range = i.range;
-              let debuff = i.debuff;
+
+              //let debuff = i.debuff;
 
               let heroesInRange = [];
 
+              heroesInRange = getPeakList(i.checkStats, assister, list[getEnemySide(assister.side)], list[getEnemySide(assister.side)], i.peak, i.targetReq);
+                //"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+              // if (i["from"].includes("assister") ){
+              //   heroesInRange = getDistantHeroes(updatedHeroList[getEnemySide(assister.side)], assister, [], range);
+              // }
 
-              if (i["from"].includes("assister") ){
-                heroesInRange = getDistantHeroes(updatedHeroList[getEnemySide(assister.side)], assister, [], range);
-              }
-
-              if (i["from"].includes("assistee") ){
-                heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[getEnemySide(assistee.side)], assistee, [], range)); 
-              }
-
+              // if (i["from"].includes("assistee") ){
+              //   heroesInRange = heroesInRange.concat(getDistantHeroes(updatedHeroList[getEnemySide(assistee.side)], assistee, [], range)); 
+              // }
+              applyBuffList(list, heroesInRange, i, assister);
               
               //loop through heroes
-              for (let hero of heroesInRange){
+              // for (let hero of heroesInRange){
 
-                //loop through debuff values
-                for (let key in debuff){
+              //   //loop through debuff values
+              //   for (let key in i.list){
 
-                  list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
+              //     list[hero.side][hero.listIndex].debuff[key] = Math.max( list[hero.side][hero.listIndex].debuff[key], debuff[key]); //apply highest debuff
 
-                }
+              //   }
 
-              } //end hero in range
+              // } //end hero in range
 
 
-            }
+    // let checkStats = effect.checkStats;
+
+    // let affectedList = [];
+
+    // let peak;
+
+    // if (effect.peak === "max"){
+    //   peak = 0;
+    // } else if (effect.peak === "min"){
+    //   peak = 999;
+    // }
+
+
+
+    // for (let hero of teamList){
+
+    //   if ("targetReq" in effect && !checkCondition(refList, effect.targetReq, owner, hero) ){
+    //     continue; //if there is a target req and they don't meeet that requirement skip them
+    //   }
+
+    //   if (owner.id === hero.id || !heroValid(hero) ){
+    //     continue; //cannot target themselves
+    //   }
+
+    //   let sum = 0;
+
+    //   for (let stat of checkStats){
+
+    //     if (stat === "hp"){
+    //       sum+= hero.currentHP;
+
+    //     } else if (stat === "damage"){ //the amount of damage on the ally
+    //       sum+= hero.stats.hp - hero.currentHP;
+
+    //     } else if (stat === "distance"){
+    //       sum+= getDistance(hero.position, owner.position);
+
+    //     } else {
+    //       sum+= hero.visibleStats[stat];  
+    //     }
+
+        
+    //   }
+
+    //   if (sum === peak){ //same as peak, add to list
+    //     affectedList.push(hero);
+    //   } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
+
+    //     if (heroValid(hero)){
+    //       affectedList = []; //reset list
+    //       affectedList.push(hero);
+    //       peak = sum; //set new peak
+    //     }
+
+    //   } 
+
+
+    // } //loop through team
+    
+    // applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial);
+
+
+          }
         }
 
 
@@ -3461,8 +3544,8 @@ function makeHeroStruct(){
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
       "brave": 0,
       "galeforce": 0,
-      "wrathful": 0,
-      "reflect": 0,
+      "wrathful": 0, "nullWrathful": 0,
+      "reflect": 0, "mirror": 0, //reflect is the amount of damage to reflect. Mirror is an effect that indicates 
       "absorb": 0,
       "recoil": 0, "postHeal": 0, "burn": 0,
       "onHitHeal": 0,
@@ -3487,7 +3570,8 @@ function makeHeroStruct(){
       "raven": 0,
       "triangleAdept": [0], "cancelAffinity": [0],
       "miracle": 0,
-      "canto": [{"flatCanto": 0, "cantoRemainder": 0}]
+      "canto": [{"flatCanto": 0, "cantoRemainder": 0}],
+      "allySwap": null
       //"flatCanto": 0, "cantoRemainder": 0 //flat canto is a flat canto amount that will always be used, cantoRemainder is true/false effect that checks if remainder value will be added to flat canto
        }; //effects the change during battle
     this["variableStats"] = [];
@@ -3508,6 +3592,8 @@ function makeHeroStruct(){
     this["conditionalFollowUp"] = []; //conditional effects that check for followups
     this["conditionalSpecial"] = [];
     this["initiating"] = false;
+
+    this["swapAllyPosition"] = -1; //if an ally swap occurs, the position of the ally will be saved here so the cells can be updated too
 
     this["saving"] = false;
     this["saved"] = false;
@@ -3612,7 +3698,10 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
       }
     } else if (typeof effect[key] === 'object' && effect[key] !== null){ //object values - will need to apply their effect for each subkey (e.g lulls, statBuff, neutralizers)
 
-      if (key === "canto"){
+      if (key === "allySwap"){
+        hero.combatEffects[key] = effect[key]; //doubt additional allyswap effects will be added but if they did, they it would prioritize one or cancel them all
+
+      } else if (key === "canto"){
         hero.combatEffects[key].push(effect[key]);
       } else {
 
@@ -4007,127 +4096,17 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
 
   } else if (effect.checkType === "targeting"){ //targets a unit, usually for having the highest or lowest of a stat
 
-    let checkStats = effect.checkStats;
 
-    let affectedList = [];
-
-    let peak;
-
-    if (effect.peak === "max"){
-      peak = 0;
-    } else if (effect.peak === "min"){
-      peak = 999;
-    }
+    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq);
 
 
-
-    for (let hero of teamList){
-
-      if ("targetReq" in effect && !checkCondition(refList, effect.targetReq, owner, hero) ){
-        continue; //if there is a target req and they don't meeet that requirement skip them
-      }
-
-      if (owner.id === hero.id || !heroValid(hero) ){
-        continue; //cannot target themselves
-      }
-
-      let sum = 0;
-
-      for (let stat of checkStats){
-
-        if (stat === "hp"){
-          sum+= hero.currentHP;
-
-        } else if (stat === "damage"){ //the amount of damage on the ally
-          sum+= hero.stats.hp - hero.currentHP;
-
-        } else if (stat === "distance"){
-          sum+= getDistance(hero.position, owner.position);
-
-        } else {
-          sum+= hero.visibleStats[stat];  
-        }
-
-        
-      }
-
-      if (sum === peak){ //same as peak, add to list
-        affectedList.push(hero);
-      } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
-
-        if (heroValid(hero)){
-          affectedList = []; //reset list
-          affectedList.push(hero);
-          peak = sum; //set new peak
-        }
-
-      } 
-
-
-    } //loop through team
     
     applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial);
 
   } else if (effect.checkType === "targetingReqCheck"){ //targets a unit then uses it as a refeerence - only ussed by chilling seal II currently
     //{"type": "turnStart", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 7, "stats": ["atk","res"], "checkStats": ["def"], "team": "enemy", "peak": "min" ,  "effectReq": [["distanceCheck", 2]] }],
-    let checkStats = effect.checkStats;
+    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq);
 
-    let affectedList = [];
-
-    let peak;
-
-    if (effect.peak === "max"){
-      peak = 0;
-    } else if (effect.peak === "min"){
-      peak = 999;
-    }
-
-
-
-    for (let hero of teamList){
-
-      if ("targetReq" in effect && !checkCondition(refList, effect.targetReq, owner, hero) ){
-        continue; //if there is a target req and they don't meeet that requirement skip them
-      }
-
-      if (owner.id === hero.id || !heroValid(hero) ){
-        continue; //cannot target themselves
-      }
-
-      let sum = 0;
-
-      for (let stat of checkStats){
-
-        if (stat === "hp"){
-          sum+= hero.currentHP;
-
-        } else if (stat === "damage"){ //the amount of damage on the ally
-          sum+= hero.stats.hp - hero.currentHP;
-
-        } else if (stat === "distance"){
-          sum+= getDistance(hero.position, owner.position);
-
-        } else {
-          sum+= hero.visibleStats[stat];  
-        }
-
-        
-      }
-
-      if (sum === peak){ //same as peak, add to list
-        affectedList.push(hero);
-      } else if ((sum > peak && effect.peak === "max") || (sum < peak && effect.peak === "min")){
-
-        if (heroValid(hero)){
-          affectedList = []; //reset list
-          affectedList.push(hero);
-          peak = sum; //set new peak
-        }
-
-      } 
-
-
-    } //loop through team
     //found targeted units
 
     //We now have a list of units to use as a reference and will run the effectreq through each one
@@ -4623,5 +4602,72 @@ function getSpacesInRange(origin, range){
 
   return checkedSpaces;
 
+
+}
+
+
+
+//gets the peak (min or max depending on parameters given)
+export function getPeakList(checkStats, owner, teamList, refList, peakType, targetReq){
+    //let checkStats = effect.checkStats;
+
+    let affectedList = [];
+
+    let peak;
+
+    if (peakType === "max"){
+      peak = 0;
+    } else if (peakType === "min"){
+      peak = 999;
+    }
+
+
+
+    for (let hero of teamList){
+
+      if (typeof targetReq !== 'undefined' && !checkCondition(refList, targetReq, owner, hero) ){ //if there is a requirement to be targeted, the reflist is used instead
+        continue; //if there is a target req and they don't meeet that requirement skip them
+      }
+
+      if (owner.id === hero.id || !heroValid(hero) ){
+        continue; //cannot target themselves
+      }
+
+      let sum = 0;
+
+      for (let stat of checkStats){
+
+        if (stat === "hp"){
+          sum+= hero.currentHP;
+
+        } else if (stat === "damage"){ //the amount of damage on the ally1
+          sum+= hero.stats.hp - hero.currentHP;
+
+        } else if (stat === "distance"){
+          sum+= getDistance(hero.position, owner.position);
+
+        } else {
+          sum+= hero.visibleStats[stat];  
+        }
+
+        
+      }
+
+      if (sum === peak){ //same as peak, add to list
+        affectedList.push(hero);
+      } else if ((sum > peak && peakType === "max") || (sum < peak && peakType === "min")){
+
+        if (heroValid(hero)){
+          affectedList = []; //reset list
+          affectedList.push(hero);
+          peak = sum; //set new peak
+        }
+
+      } 
+
+
+    } //loop through team
+    
+    return affectedList;
 
 }

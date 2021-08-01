@@ -259,7 +259,6 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
 
 
-
     //Apply battle-movement abilities
     //Check if attacker has a battle movement effect and both battlers are not saving someone currently (attacker can't really be saving currentlyit)
     if (Object.keys(attacker.battleMovement).length > 0  && !defender.saving && !attacker.saving){
@@ -287,6 +286,46 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
         list[defender.side][defender.listIndex].anchorPosition = newDefenderPos;
 
       }
+
+    } else if (attacker.combatEffects.allySwap !== null){ //check if attack has an allySwap effect
+
+        let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+
+        let teamList = list[attacker.side];
+
+        for (let x in teamList){
+          if (heroValid(teamList[x]) && teamList[x].id !== attacker.id ){ //exclude themselves
+            teamListValid.push(teamList[x]);
+          }
+        } 
+        let passedHeroList = [];
+
+        passedHeroList = heroReqCheck(attacker, teamListValid, attacker.combatEffects.allySwap.allyReq, list, 0) ; //Get the list of allies that pass the req check, turn is set to 0 since it should not be needed
+        
+
+        if (passedHeroList.length === 1){ //if only one hero found, then perform swap, otherwise nothing happens
+
+          let ally = passedHeroList[0];
+
+          let attackerPos = ally.position;
+          let allyPos = attacker.position;
+
+
+          if (checkValidMovement(positionToRowColumn(attackerPos), positionToRowColumn(allyPos), [-1, -1], [attacker.id, ally.id], board)){ //no issues with given movement positions;
+            //this changes the list version, the temporary version do not move for reference purposes
+            list[attacker.side][attacker.listIndex].position = attackerPos;
+            list[ally.side][ally.listIndex].position = allyPos;
+
+            //also update their anchor positions
+            list[attacker.side][attacker.listIndex].anchorPosition = attackerPos;
+            list[ally.side][ally.listIndex].anchorPosition = allyPos;
+
+            list[attacker.side][attacker.listIndex].swapAllyPosition = attackerPos; //save the position the attacker moved to for updating the cells after doBattle
+
+          }
+
+        }
+
 
     }
 
@@ -414,7 +453,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
           applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide);
         } else if (element.checkType === "minDistance"){ //minDistance effects have 999 range but still use heroes in range for the excluded heroes
-
+          //Although this is looking for a peak, we redo this here since these get distance with respect to a reference position
           let minDistance = 999;
           let affectedList = [];
 
@@ -475,7 +514,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
           applyBuffList(list, heroesInRange, element, defender, postSide, specialSide);
 
         } else if (element.checkType === "minDistance"){
-
+          
           let minDistance = 999;
           let affectedList = [];
 
@@ -751,8 +790,8 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   let baseDamage = effectiveAttack - defender.combatStats[damageType] ; //damage can be negative here
   //let baseDamage = Math.trunc(attacker.combatStats.atk * WTA * effective) - defender.combatStats[damageType] ; //damage can be negative here
 
-  //staff damage reduction 
-  if (heroData[attacker.heroID.value].weapontype === "staff" && attacker.combatEffects.wrathful === 0){
+  //staff damage reduction - Check if using staff, wrathful is not active or defender is nulling wrathful 
+  if (heroData[attacker.heroID.value].weapontype === "staff" && (attacker.combatEffects.wrathful === 0 || defender.combatEffects.nullWrathful === 1) ){
     baseDamage = Math.trunc(baseDamage / 2); 
   }
 
@@ -935,6 +974,10 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   let reflectDamage = 0;
   let flatReduction = 0;
 
+
+  if (defender.combatEffects.mirror >= 1){
+    reflect = true;
+  }
 
   if (defenderSpecialCharge === 0 && defenderSpecial.type === "defend-battle" && 
     (defenderSpecial.range === 0 || defenderSpecial.range === getDistance(attacker.position, defender.position)  ) ){
@@ -1123,7 +1166,7 @@ export function getSpecialValue(effect, owner, enemy, heroList, damageType, key)
     return specialValue;
 }
 
-export function calculateWeaponTriangleAdvantage(attacker, defender){
+export function getWeaponTriangleAdvantage(attacker, defender){ //tells us if there is a WTA advange or not (not the actual advantage that would happen in combat which is in calculateWeaponTriangleAdvantage)
 	let advantage = 0.0; //0 is no advange. > 0 is advantage , < 0 is disadvantage
 
   let colorAttack = heroData[attacker.heroID.value].color;
@@ -1175,9 +1218,12 @@ export function calculateWeaponTriangleAdvantage(attacker, defender){
     }
 
   }
+  return advantage;
+} //end get WTA 
 
+export function calculateWeaponTriangleAdvantage(attacker, defender) { //calculates the multiplier granted by WTA
 
-
+  let advantage = getWeaponTriangleAdvantage(attacker, defender);
 //triangle adept increases these values by their specified amount (on both sides even though the wording on it suggests that it would not provide the extra attack to enemies
 //uses the highest one and does not stack
 
@@ -1205,9 +1251,6 @@ export function calculateWeaponTriangleAdvantage(attacker, defender){
   }
 
   let TAEffect = Math.max(attackerTA, defenderTA); //Get the larger TA
-
-
-
 
   
   if (advantage < 0) { //if attacker is at disadvantage,
@@ -1258,54 +1301,12 @@ export function calculateWeaponTriangleAdvantage(attacker, defender){
 
 
   return TAValue;
-	// if (colorAttack === "red"){
-	// 	if (colorDefend === "blue"){
-	// 		val = -0.2;
-	// 	} else if (colorDefend === "green"){
-	// 		val = 0.2;
-	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
- //      val = 0.2;
 
-	// 	}
-
-	// } else if (colorAttack === "blue"){
-	// 	if (colorDefend === "green"){
-	// 		val = -0.2;
-	// 	} else if (colorDefend === "red"){
-	// 		val = 0.2;
-	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
-	// 		val = 0.2; //to do, add raven effect
-	// 	}
-
-	// } else if (colorAttack === "green"){
-	// 	if (colorDefend === "red"){
-	// 		val = -0.2;
-	// 	} else if (colorDefend === "blue"){
-	// 		val = 0.2;
-	// 	} else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
-	// 		val = 0.2; //to do, add raven effect
-	// 	}
-
-	// } else if (colorAttack === "colorless"){ 
- //    if (defender.combatEffects.raven > 0){ //if defender has raven effect, get disadvantaged
- //      val = -0.2;
- //    }
-
- //    if (attacker.combatEffects.raven > 0 && colorDefend === "colorless"){ //colorless don't have a way to get the raven effect but they would theoretically be able to get the advantage boost against other colorless (and would cancel out with another raven colorless)
- //      val+= 0.2;
- //    }
-
- //  }
-	//TODO
-
-	//Add check for triangle adept and cancel affinity
 
 	//affinity (x + 20)/20 where x is the TA amount - The WTA is multplied by affinity
   //at 10 would be 30 /20 = 1.5
   //at 15 would be 1.75
   //at 20 would be  2.0
-
-  //
 
 	//CA 1/2 will remove the x depending on situation, and at CA 3, the x will be reversed
 
@@ -1324,12 +1325,23 @@ export function getEffectiveDamage(heroList, attacker, defender){
     //console.log(addedEffective);
     //console.log(negateEffective);
 
+    if (attacker.statusBuff.dragonEffective >= 1){ 
+
+      let dragonCondition = [["heroInfoCheck", "weapontype", ["breath"]]]; //the condition that checks if the enemy is a dragon
+
+      if ( (checkCondition(heroList, dragonCondition, attacker, defender) || addedEffective.findIndex(conditionMatch, dragonCondition) >= 0) && negateEffective.findIndex(conditionMatch, dragonCondition) < 0 ) { 
+        effectiveDamage = 0.5;
+      }
+
+    }
+
+
     for (let effect of attacker.effectiveCondition){ //loop through effective conditions
 
 
       let condition = effect.condition;
       if ("condition" in effect){
-
+        //check if enemy meets condition for effectiveness or the enemy has an effect that makes them pass the effectiveness condition anyways and that effectiveness condition is not being negated 
         if ( (checkCondition(heroList, condition, attacker, defender) || addedEffective.findIndex(conditionMatch, condition) >= 0) && negateEffective.findIndex(conditionMatch, condition) < 0 ) { 
           effectiveDamage = 0.5;
         }
@@ -1855,18 +1867,26 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         let type = innerCondition[j+2];
 
+        let statBonusCheck = false; //check to see if a stat bonus is active
+
         for (let s in check.buff){
 
-          if (check.buff[s] > 0 && check.statusEffect.panic < 1 &&  (other.combatEffects.buffNeutralize[s] < 1 || type === "battleStart") ){ //check if stat is buffed, not panicked and  not neutralized (if battle start, then neutralize is not counted)
-            innerResult = true;
+          if (check.buff[s] > 0 && (check.statusEffect.panic < 1 || check.statusBuff.nullPanic > 0) &&  (other.combatEffects.buffNeutralize[s] < 1 || type === "battleStart") ){ //check if stat is buffed, not panicked and  not neutralized (if battle start, then neutralize is not counted)
+            statBonusCheck = true;
           }
 
 
         }
 
 
+        if (statBonusCheck  && innerCondition[j+3]){
+          innerResult = true;
+        } else if (!statBonusCheck  && !innerCondition[j+3]){
+          innerResult = true;
+        }
 
-        j = j + 2;
+
+        j = j + 3;
 
       } else if (keyWord === "bonus"){
 
@@ -1884,7 +1904,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         for (let s in check.buff){
 
-          if (check.buff[s] > 0 && check.statusEffect.panic < 1 &&  (other.combatEffects.buffNeutralize[s] < 1 || type === "battleStart") ){ //check if stat is buffed, not panicked and  not neutralized (if battle start, then neutralize is not counted)
+          if (check.buff[s] > 0 && (check.statusEffect.panic < 1 || check.statusBuff.nullPanic > 0) &&  (other.combatEffects.buffNeutralize[s] < 1 || type === "battleStart") ){ //check if stat is buffed, not panicked and  not neutralized (if battle start, then neutralize is not counted)
             innerResult = true;
           }
 
@@ -2213,6 +2233,15 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         let effectiveCheck = false; //assume not effectiveness by default
 
+        //if enemy has dragonEffective status, then do a condition match against that separately
+        if (enemy.statusBuff.dragonEffective >= 1){ 
+          if (conditionMatch([["heroInfoCheck", "weapontype", ["breath"]]], innerCondition[j+1] )){
+            effectiveCheck = true;
+          }
+
+
+        }
+
         for (let effect of enemy.effectiveCondition){
           if ("condition" in effect){
             if (conditionMatch(effect.condition, innerCondition[j+1])){ //the condition has been found
@@ -2300,6 +2329,23 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         if (owner.side === innerCondition[j+1]){
           innerResult = true;
         }
+
+        j = j + 1;
+      } else if (keyWord === "wta"){
+       //check if wta is giving
+       // 1 - an advantage
+       // 0 - nothing granted
+       // -1 - a disadvantage
+
+       let wta = getWeaponTriangleAdvantage(owner, enemy); //get the 
+
+       if (innerCondition[j+1] === wta){ //inner condition is the wta value it wants
+        innerResult = true;
+       } else if (Math.abs(innerCondition[j+1]) === 1 && wta === "doubleAdvantage"){
+        //There is a theoretical situation where 2 colorless units have the raven effect in which the unit has advantage and disadvantage at the same time (doubleAdvantage). This would satisfy the advantage/disadvantage values here
+        innerResult = true;
+       }
+
 
         j = j + 1;
       }
@@ -2415,6 +2461,12 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     let reference;
     let other;
 
+    let statList = ["atk", "spd", "def", "res"];
+
+    if ("statList" in variableEffect){
+      statList = variableEffect.statList;
+    }
+
     if (variableEffect.reference === "owner"){
       reference = owner;
       other = enemy;
@@ -2441,7 +2493,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
         //get the sum of their buffs
         if (hero.statusEffect.panic < 1 || hero.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
 
-          for (let s in hero.buff){ //loop through buffs and add them up
+          for (let s of statList){ //loop through buffs and add them up
             sum+= hero.buff[s];
           }
         }
@@ -2466,7 +2518,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
       if (reference.statusEffect.panic < 1 || reference.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
 
-      for (let s in other.combatEffects.buffNeutralize){ //loop through stats
+      for (let s of statList){ //loop through stats
         if (other.combatEffects.buffNeutralize[s] <= 0){ //if other is not neutralizing the stat, add it to buff value
           buffValue+= reference.buff[s];
         }
@@ -2478,7 +2530,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
     } else if(variableEffect.subtype === "debuff"){
 
-      for (let s in reference.combatEffects.penaltyNeutralize){ //loop through stats
+      for (let s of statList){ //loop through stats
         if (reference.combatEffects.penaltyNeutralize[s] <= 0){ //if the reference is not neutralizing penalties add it to the buff value
           buffValue+= reference.debuff[s];
 
@@ -2743,7 +2795,7 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
 export function getVariableValue(heroList, effect, owner, turn){
 
 
-
+  //this gives a value depending on the amount of allies with hero info within the teamInfoList
   if (effect.key === "teamInfo"){
 
     let validAlliesCount = 0;
@@ -2760,6 +2812,34 @@ export function getVariableValue(heroList, effect, owner, turn){
     } //end for loop team
 
     return validAlliesCount;
+
+  } else if (effect.key === "effectReq"){
+
+
+    let side = "0";
+
+    if (effect.side === "owner"){
+      side = owner.side;
+    } else if (effect.side === "other"){
+      side = getEnemySide(owner.side);
+    }
+
+    let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+
+    let teamList = heroList[side];
+
+    for (let x in teamList){
+      if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves
+        teamListValid.push(teamList[x]);
+      }
+    } 
+
+
+    let passList = heroReqCheck(owner, teamListValid, effect.effectReq, heroList, turn) ;
+
+    return Math.floor(effect.factor * passList.length);
+
+
 
   }
 

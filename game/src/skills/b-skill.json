@@ -2602,7 +2602,8 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+
 		"max": false
 	},
 	"318": {
@@ -2610,7 +2611,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": false
 	},
 	"319": {
@@ -2618,7 +2619,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"atk": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"320": {
@@ -2725,7 +2726,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": false
 	},
 	"332": {
@@ -2733,7 +2734,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["def"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": false
 	},
 	"333": {
@@ -2741,7 +2742,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"def": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["def"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"334": {
@@ -2933,7 +2934,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 3}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": false
 	},
 	"357": {
@@ -2941,7 +2942,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 5}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": false
 	},
 	"358": {
@@ -2949,7 +2950,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "debuff": {"res": 7}, "range": 4, "from": ["assister"]}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"359": {
@@ -3274,6 +3275,36 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "nullStopFollowUp": 1, "postHeal": 10 }],
+		"max": true
+	},
+	"397": {
+		"name": "Frenzy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 2.0, "max": 20},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.1]], "desperation": 1  } ],
+		"max": false
+	},
+	"398": {
+		"name": "Frenzy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 3.0, "max": 30},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.3]], "desperation": 1  } ],
+		"max": false
+	},
+	"399": {
+		"name": "Frenzy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.5]], "desperation": 1  } ],
 		"max": true
 	}
 }
