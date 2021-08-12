@@ -1642,6 +1642,30 @@
 			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.15, "max": 999}] }],
 		"cdTrigger": -1,
 		"max": true
+	},
+	"128": {
+		"name": "Helmsman Axe+",
+		"might": 14,
+		"range": 1,
+		"sp": 300,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
+	},
+	"129": {
+		"name": "Helmsman Axe",
+		"might": 10,
+		"range": 1,
+		"sp": 200,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": false
 	}
 
 

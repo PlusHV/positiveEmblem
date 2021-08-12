@@ -679,5 +679,20 @@
 			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} },
 			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": {"type": "combatEffect", "defenseCharge": 1} }],
 		"max": true
+	},
+	"54": {
+		"name": "Punishment Staff",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Maribelle: Dire Damsel"],
+		"type": "staff",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "combatEffect", "wrathful": 1},
+			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} },
+			{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["triangleAdept"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }],
+		"max": true
 	}
 }

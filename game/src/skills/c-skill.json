@@ -3113,7 +3113,7 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
-				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"395": {
@@ -3122,7 +3122,8 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
-				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],		"max": true
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
 	},
 	"396": {
 		"name": "Atk/Spd Menace",
@@ -3130,7 +3131,7 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
-				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"397": {
@@ -3139,7 +3140,7 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
-				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "effectReq": [["distanceCheck", 4]], "peak": "min" }],
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
 		"max": true
 	},
 	"398": {
@@ -3200,6 +3201,64 @@
 		"type": "effect",
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] },
 			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "firstReduction": 0.7 }], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"405": {
+		"name": "Stall Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 5] ] }],
+		"max": false
+	},
+	"406": {
+		"name": "Stall Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3] ] }],
+		"max": false
+	},
+	"407": {
+		"name": "Stall Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 1] ] }],
+		"max": true
+	},
+	"408": {
+		"name": "Surtr's Portent",
+		"sp": 300,
+		"prf": true,
+		"users": ["Surtr: Pirate of Red Sky"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"409": {
+		"name": "Def/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 2}],
+		"max": false
+	},
+	"410": {
+		"name": "Def/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 3}],
+		"max": false
+	},
+	"411": {
+		"name": "Def/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 4}],
 		"max": true
 	}
 }

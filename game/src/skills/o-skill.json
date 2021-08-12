@@ -67,7 +67,41 @@
 		"sp": 0,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }],
-		"max": true
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"10": {
+		"name": "Armor Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "counter": 1}]
+	},
+	"11": {
+		"name": "Cavalry Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "def": 4}, "enemyDouble": 1 }]
+	},
+	"12": {
+		"name": "Infantry Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "specialTrueDamage": 10}]
+	},
+	"13": {
+		"name": "Flier Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"14": {
+		"name": "Beast Attack +2",
+		"sp": 0,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2}
 	}
 }

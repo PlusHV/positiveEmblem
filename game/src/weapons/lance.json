@@ -1849,6 +1849,34 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
 		"max": false
+	},
+	"144": {
+		"name": "Loyalty Spear",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Finn: Lance of Legend"],
+		"type": "lance",
+		"skills": [],
+		"passive": {"spd": 4, "def": -4, "res": -4},
+		"effect": [{"type": "combatEffect", "brave": 1 }],
+		"max": true
+	},
+	"145": {
+		"name": "Sea-Sear Lance",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Surtr: Pirate of Red Sky"],
+		"type": "lance",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "lull": {"atk": 6, "def": 6} },
+			{"type": "conditionalFollowUp", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75], ["followUp", "enemy", true]], "firstReduction": 0.25 }],
+		"cdTrigger": -1,
+		"max": true
 	}
 
 }

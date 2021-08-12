@@ -2529,7 +2529,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"309": {
@@ -2537,7 +2537,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"310": {
@@ -2545,7 +2545,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": true
 	},
 	"311": {
@@ -2553,7 +2553,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"312": {
@@ -2561,7 +2561,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"313": {
@@ -2569,7 +2569,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": true
 	},
 	"314": {
@@ -2958,7 +2958,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"360": {
@@ -2966,7 +2966,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"361": {
@@ -2974,7 +2974,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": true
 	},
 	"362": {
@@ -3083,7 +3083,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"374": {
@@ -3091,7 +3091,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": false
 	},
 	"375": {
@@ -3099,7 +3099,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "enemy", "range": 4, "from": ["assister", "assistee"]}],
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 		"max": true
 	},
 	"376": {
@@ -3305,6 +3305,16 @@
 		"effect": [{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "less", 0.5]], "desperation": 1  } ],
+		"max": true
+	},
+	"400": {
+		"name": "Yngvi Ascendant",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ullr: The Bowmaster"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "desperation": 1  },
+			{"type": "combatEffect", "nullStopFollowUp": 1 }],
 		"max": true
 	}
 }

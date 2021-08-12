@@ -69,7 +69,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
         newDefender.currentHP = Math.max(0, newDefender.currentHP - damageInfo.damage);
 
-        if (newAttacker.statusEffect.deepWounds < 1){
+        if (newAttacker.statusEffect.deepWounds < 1){ //in calculate damage, deepwounds is already accounted for so this check is not really neccessary
           newAttacker.currentHP = Math.min(newAttacker.stats.hp, newAttacker.currentHP + damageInfo.heal); //heal hp from attack
         }
 
@@ -172,6 +172,8 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
     for (let x of list[attacker.side]){ //for each member of side
       if (heroValid(list[attacker.side][x.listIndex])){
+
+
 
         //hp
         list[attacker.side][x.listIndex].currentHP = Math.min(Math.max(1,list[attacker.side][x.listIndex].currentHP - attackerTeamPost[x.listIndex]), list[attacker.side][x.listIndex].stats.hp);
@@ -384,13 +386,23 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
     let attackerPostDamage = attacker.combatEffects.recoil - attacker.combatEffects.postHeal + defender.combatEffects.burn;
     let defenderPostDamage = defender.combatEffects.recoil - defender.combatEffects.postHeal + attacker.combatEffects.burn;
 
-    if (attackerWounds > 0){
+    if (attackerWounds > 0 || attacker.combatEffects.nullHeal > 0){ //deep wounds or null heal will remove post heals
       attackerPostDamage+= attacker.combatEffects.postHeal;
     }
 
-    if (defenderWounds > 0){
+    if (defenderWounds > 0 || defender.combatEffects.nullHeal > 0){
       defenderPostDamage+= defender.combatEffects.postHeal;
     }
+
+    //null post negates any recoil damage
+    if (attacker.combatEffects.nullPost > 0){ 
+      attackerPostDamage-= (attacker.combatEffects.recoil + defender.combatEffects.burn);
+    }
+
+    if (defender.combatEffects.nullPost > 0){
+      defenderPostDamage-= (defender.combatEffects.recoil + attacker.combatEffects.burn);
+    }
+
 
     //set initial recoil values - theese will have values for the attacker and defender but those values will be overwritten by the above values
     let attackerTeamPost = new Array(7).fill(0);
@@ -440,15 +452,26 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
           specialSide = defenderTeamSpecial;
         }
 
+        //We specifically use getDistantHeroes rather than an effect req here because these postcombat effects can use the enemy as a reference point (which effectReq cannot do since it does the condition based on the owner)
         let heroesInRange = [];
         heroesInRange = getDistantHeroes(list[side], reference, [attacker.saveID, defender.saveID], element.range); //excludes hero that is saved
 
+
+
+        if ("effectReq" in element){
+          //this does not have access to the turn and would have to be pass along a lot. Maybe we can pass along the current state so we can refernce those values easily
+          heroesInRange = heroReqCheck(attacker, heroesInRange, element.effectReq, list, 0) ; //Get the list of allies that pass the req check, 
+
+        }
 
         if (element.checkType === "distance"){
           //get heroes in range
 
           if (element.reference){ //just get reference if specified
-            heroesInRange = heroesInRange.concat([reference]);
+
+            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference)  ){ //if no effectReq or passes the effect req
+              heroesInRange = heroesInRange.concat([reference]);
+            }
           }
 
           applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide);
@@ -507,9 +530,18 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
         let heroesInRange = [];
         heroesInRange = getDistantHeroes(list[side], reference, [attacker.saveID, defender.saveID], element.range);
 
+        if ("effectReq" in element){
+          //this does not have access to the turn and would have to be pass along a lot. Maybe we can pass along the current state so we can refernce those values easily
+          heroesInRange = heroReqCheck(defender, heroesInRange, element.effectReq, list, 0) ; //Get the list of allies that pass the req check, 
+
+        }
+
+
         if (element.checkType === "distance"){
           if (element.reference){
-            heroesInRange = heroesInRange.concat([reference]);
+            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference)  ){ //if no effectReq or passes the effect req
+              heroesInRange = heroesInRange.concat([reference]);
+            }
           }
           applyBuffList(list, heroesInRange, element, defender, postSide, specialSide);
 
@@ -1079,6 +1111,14 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     }
   }
 
+
+  if (defender.combatEffects.damageNull > 0){
+    //set all damage to 0
+    baseDamage = 0;
+    specialDamage = 0;
+    totalDamage = 0;
+  }
+
   let damageDealt = Math.min(defender.currentHP, totalDamage); //damage dealt maxes out at the current HP of defender (for healing purposes)
 
   let heal = 0;
@@ -1099,6 +1139,10 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
     heal+= Math.trunc(attacker.combatEffects.absorb * damageDealt);
 
+  }
+
+  if (attacker.combatEffects.nullHeal > 0){
+    heal = 0;
   }
 
   return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "subEffect": subEffect,
@@ -1554,6 +1598,9 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           enemyStat = enemy.combatStats[statCheck];
         }
 
+        ownerStat+= owner.combatEffects.phantomStats[statCheck];
+        enemyStat+= enemy.combatEffects.phantomStats[statCheck];
+
         if (innerCondition[j+3] === "greater" &&  (ownerStat - enemyStat) >= innerCondition[j+4]  ){
           innerResult = true;
         } else if (innerCondition[j+3] === "less" &&  (enemyStat - ownerStat) >= innerCondition[j+4]  ){
@@ -1598,6 +1645,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           stat1 = hero1.combatStats[statCheck1];
         }
 
+        stat1+= hero1.combatEffects.phantomStats[statCheck1];
 
         if (statCheck2 === "HP"){
           stat2 = hero2.currentHP;
@@ -1607,6 +1655,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           stat2 = hero2.combatStats[statCheck2];
         }
 
+        stat2+= hero2.combatEffects.phantomStats[statCheck2];
 
         if (innerCondition[j+6] === "greater" &&  (stat1 - stat2) >= innerCondition[j+7]  ){
           innerResult = true;
@@ -1616,7 +1665,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         j = j + 7;
 
-      } else if (keyWord === "statCheck"){
+      } else if (keyWord === "statCheck"){ //checks if a stat passes a threshold (brammimond weapon)
 
         let check = {};
         if (innerCondition[j+1] === "player"){
@@ -1722,7 +1771,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
 
-        if (innerCondition[j+4] === "all"){
+        if (innerCondition[j+4] === "all"){ //if all, then j+5 will be a blank placeholder value
           if (validAlliesCount === distantAllies.length){ //if all allies in range meet the condition
             innerResult = true;
           }
@@ -1811,7 +1860,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           }
 
           //check if buffs are reversed to penalties through panic.
-          if (check.statusEffect.panic > 0 && check.buff[s] > 0 && (check.combatEffects.penaltyNeutralize[s] < 1 || type === "battleStart")  ){ 
+          if ( check.statusEffect.panic > 0 && check.buff[s] > 0 && check.statusBuff.nullPanic <=0 && (check.combatEffects.penaltyNeutralize[s] < 1 || type === "battleStart")  ){ 
             innerResult = true;
           }
 
@@ -1840,7 +1889,8 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           }
 
           //check if buffs are reversed to penalties through panic. With panic status, this will return true anyways but this is just here for completeness
-          if (check.statusEffect.panic > 0 && check.buff[s] > 0 && (check.combatEffects.penaltyNeutralize[s] < 1 || type === "battleStart")  ){ 
+          //null panic will prevent stat penalties on the unit but the panic status will still be active. The check here is also just here for completeness
+          if (check.statusEffect.panic > 0 && check.buff[s] > 0 && check.statusBuff.nullPanic < 1 && (check.combatEffects.penaltyNeutralize[s] < 1 || type === "battleStart")  ){ 
             innerResult = true;
           }
 
@@ -3102,11 +3152,15 @@ export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost,
 
               if (effect.subtype === "buff"){
 
-                if (y.statusEffect.deepWounds < 1){                
+                if (y.statusEffect.deepWounds < 1 && y.combatEffects.nullHeal < 1){                
                   teamPost[y.listIndex]-=  value; //lowers the amount of post damage
                 }
               } else if (effect.subtype === "debuff"){
-                teamPost[y.listIndex]+=  value; //raises the amount of psot damage
+
+                if (y.combatEffects.nullPost < 1){
+              
+                  teamPost[y.listIndex]+=  value; //raises the amount of post damage
+                }
               }
 
           } else if (z === "special"){

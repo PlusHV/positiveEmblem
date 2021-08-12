@@ -27,7 +27,7 @@ export const heroStruct = makeHeroStruct();
 
 export const statusBuffs = { "airOrders": 0, "bonusDouble": 0, "dragonEffective": 0, "fallenStar": 0, "mobility+": 0, "nullPanic": 0, "triangleAttack": 0 };
 
-export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0, "triangleAdept": 0};
+export const statusDebuffs = {"counterDisrupt": 0, "deepWounds": 0, "gravity": 0, "guard": 0, "isolation": 0, "panic": 0, "stall": 0, "triangleAdept": 0};
 
 
 
@@ -189,6 +189,7 @@ class GameBoard extends React.Component{
 
   }
 
+  //given a hero and max value, return dropdown lists with approriate skills
   updateDropdowns(newHero, newMax){
     let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
                          "assist":{list: [], info: assists}, "special":{list: [], info: specials},
@@ -317,6 +318,27 @@ class GameBoard extends React.Component{
     var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter); //only really updates the weaponlist for now
 
 
+    if (hero.transformed){ //if hero is transformed, remove their transformation effects (even if new hero is also a beast)
+
+
+      var heroDropdowns = this.updateDropdowns(oldHero, false); //get dropdowns from the previous hero
+
+      let transformSkills = getTransformationSkills(hero);
+
+      if (transformSkills.length > 0){ //check if there are any skills to add/remove
+
+
+        for (let x of transformSkills) {
+          let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+          hero = this.removeSkillEffect(additionalSkill , x[0], hero); //remove the transform effect
+        }
+
+
+      }
+      hero.transformed = false; //remove the transformation
+    } //end if transformed
+
+
     //hero skill updating
     let tSkills = hero.heroSkills; //Object.assign({}, this.state.heroSkills);
 
@@ -437,16 +459,37 @@ class GameBoard extends React.Component{
 
 
     let skillList =  Object.assign({}, hero.heroSkills); //copy of hero's skill list
+    //if hero is transformed, we need to remove their transform effects first (even if the transform skill is not being removed)
+    //later on we will redo the tranformation
+    if (hero.transformed && getTransformationSkills(hero).length > 0){ 
+
+      for (let x of getTransformationSkills(hero)) {
+
+        //let heroDropdowns = this.updateDropdowns(heroData[hero.heroID.value], false); 
+        let additionalSkill = this.state.skillDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+        hero = this.removeSkillEffect(additionalSkill , x[0], hero);
+      }
+
+
+
+    }
 
     hero = this.removeSkillEffect(skillList[index].value, index, hero);
 
     skillList[index] = e; //replace skill
     hero.heroSkills = skillList; //update the temp copy of heroList
     
-    //TODO - implement skills  - weapons first
+
     //Add skill effect to the hero
     hero = getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
 
+
+    if (hero.transformed && getTransformationSkills(hero).length > 0){ //redo the transformation
+      for (let x of getTransformationSkills(hero)) {
+        let additionalSkill = this.state.skillDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+        hero = getSkillEffect(additionalSkill, x[0], hero, this.state.skillDropdowns); //add the extra skills as well
+      }
+    }
     //TODO - add other types of skills 
     let oldMaxHP = hero.stats.hp;
 
@@ -625,8 +668,41 @@ class GameBoard extends React.Component{
     } else if (bonusType === "resplendent"){
       hero.resplendent = e.target.checked;
     } else if (bonusType === "transformed"){
-      hero.transformed = e.target.checked;
-    }
+
+      //set up dropdowns
+      var currentHero = heroData[hero.heroID.value]; //get the heroData from heroInfo.json
+      var heroDropdowns = this.updateDropdowns(currentHero, false); //get dropdown list
+
+      let transformSkills = getTransformationSkills(hero);
+
+      if (transformSkills.length > 0){ //check if there are any skills to add/remove
+        if (e.target.checked){ //transform hero, add effects
+
+          for (let x of transformSkills) {
+            let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+            hero = getSkillEffect(additionalSkill, x[0], hero, heroDropdowns); //add the extra skills as well
+          }
+
+        } else{ //detransform, remove effects
+
+          for (let x of transformSkills) {
+            let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+            hero = this.removeSkillEffect(additionalSkill , x[0], hero);
+          }
+
+
+        }
+
+
+      }
+
+      hero.transformed = e.target.checked; //update the transform value
+
+    } //end if transformed changing
+
+
+
+
 
     let oldMaxHP = hero.stats.hp;
 
@@ -1942,6 +2018,7 @@ class GameBoard extends React.Component{
 
   }
 
+  //for a given hero, apply its auras to the other 2 heroes
   getBattlingAuraStats(refList, heroList, hero, hero1, hero2){
 
     //hero1/2 are the heroes in the battle
@@ -1988,7 +2065,7 @@ class GameBoard extends React.Component{
 
 
         for (let affectedHero of passedHeroList){
-          this.applyAuraStats(affectedHero, effect);
+          this.applyAuraStats(affectedHero, effect, hero, this.state.currentTurn);
 
         }
 
@@ -2000,12 +2077,12 @@ class GameBoard extends React.Component{
 
       //check if the current hero is either battling hero and do selfReq checks
       if ("selfReq" in effect && hero.id === hero1.id && checkCondition(refList, effect.selfReq, hero1, hero1)){ 
-        this.applyAuraStats(hero1, effect);
+        this.applyAuraStats(hero1, effect, hero, this.state.currentTurn);
 
       }
 
       if ("selfReq" in effect && hero.id === hero2.id && checkCondition(refList, effect.selfReq, hero2, hero2)){ 
-        this.applyAuraStats(hero2, effect);
+        this.applyAuraStats(hero2, effect, hero, this.state.currentTurn);
 
       }      
 
@@ -2086,7 +2163,7 @@ class GameBoard extends React.Component{
         passedHeroList = this.heroReqCheck(hero, heroListValid, effect.effectReq); //Get the list of allies that pass the req check
 
         for (let affectedHero of passedHeroList){
-          this.applyAuraStats(heroList[affectedHero.side][affectedHero.listIndex], effect, turn);
+          this.applyAuraStats(heroList[affectedHero.side][affectedHero.listIndex], effect, hero, turn);
 
         }
 
@@ -2099,7 +2176,7 @@ class GameBoard extends React.Component{
       //if there is a requirement for the buff to apply to themselves
       if ("selfReq" in effect && checkCondition(refList, effect.selfReq, hero, hero)){ 
         
-        this.applyAuraStats(hero, effect, turn);
+        this.applyAuraStats(hero, effect, hero, turn);
         
       } 
 
@@ -2110,7 +2187,7 @@ class GameBoard extends React.Component{
   }
 
 
-  applyAuraStats(hero, effect, turn){
+  applyAuraStats(hero, effect, owner, turn){
 
     let value = effect.value;
 
@@ -2119,14 +2196,27 @@ class GameBoard extends React.Component{
         value+= turn;
       }
 
+      
+
     }
 
     for (let currentStat of effect.stats){
 
+      let varValue = 0;
+
+      
+      if ("varValue" in effect && effect.varValue === "bonusValue"){ //bonus value provides stats that is equal to the owner's bonuses (for each stat individually)
+
+        if (owner.statusEffect.panic < 1 || owner.statusBuff.nullPanic > 0){ //check for no panic or null panic on before adding the value
+          varValue = owner.buff[currentStat];
+        }
+      }
+
+
       if (effect.subtype === "buff"){
-        hero.aura[currentStat]+= value;
+        hero.aura[currentStat]+= value + varValue;
       } else if (effect.subtype === "debuff"){
-        hero.aura[currentStat]-= value;
+        hero.aura[currentStat]-= value + varValue;
       }
 
     } //end looping through affected stats
@@ -2278,8 +2368,20 @@ class GameBoard extends React.Component{
             
 
           let heroesInRange = [];
+              //"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
 
-          if (range > 0){
+          //if effect is targeting, get heroes using peakList e.g. snags
+          if ("checkType" in effect && effect.checkType === "targeting"){ 
+
+            if (effect["from"].includes("assister") ){
+              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq);
+            }
+
+            if (effect["from"].includes("assistee") ){
+              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq));
+            }
+
+          } else if (range > 0){ //effect does not target and takes heroes within a range instead e.g. sabertooth fang/laslow blade
             if (effect["from"].includes("assister") ){
               heroesInRange = getDistantHeroes(list[side],  list[assister.side][assister.listIndex], [assistee.id], range);
             }
@@ -2331,7 +2433,17 @@ class GameBoard extends React.Component{
           let heroesInRange = [];
 
 
-          if (range > 0){
+          if ("checkType" in effect && effect.checkType === "targeting"){ 
+
+            if (effect["from"].includes("assister") ){
+              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq);
+            }
+
+            if (effect["from"].includes("assistee") ){
+              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq));
+            }
+
+          } else if (range > 0){
             if (effect["from"].includes("assister") ){
               heroesInRange = getDistantHeroes(list[side], list[assister.side][assister.listIndex], [assistee.id], range);
             }
@@ -2353,7 +2465,7 @@ class GameBoard extends React.Component{
               heroesInRange.push(list[assistee.side][assistee.listIndex]);
               //assistee.buff[key] = Math.max( assistee.buff[key], buffs[key]); 
             }
-          } else if (effect.subtype === "buff") {
+          } else if (effect.subtype === "buff") { //if no excluding occurs and effect provides a buff, then apply the buff to assist and assistee 
             heroesInRange.push(list[assister.side][assister.listIndex]);
             heroesInRange.push(list[assistee.side][assistee.listIndex]);
           }
@@ -2687,7 +2799,9 @@ class GameBoard extends React.Component{
       newAssisteeHP = Math.min(assister.currentHP, assistee.stats.hp); //keep hp below max
 
 
-      if ( (newAssisteeHP > assistee.currentHP && assistee.statusEffect.deepWounds > 0) || (newAssisterHP > assister.currentHP && assister.statusEffect.deepWounds > 0) ) { //if a unit is gaining hp and they have deep wounds, then assist will not happen (unit deepwounds can still heal others)
+      if ( (newAssisteeHP > assistee.currentHP && (assistee.statusEffect.deepWounds > 0 || assistee.combatEffects.nullHeal > 0)) || 
+          (newAssisterHP > assister.currentHP && (assister.statusEffect.deepWounds > 0 || assister.combatEffects.nullHeal > 0)) ) {
+      //if a unit is gaining hp and they have deep wounds or nullHeal, then assist will not happen (unit with deepwounds/nullheal can still heal others)
         return false;
       }
 
@@ -2712,7 +2826,7 @@ class GameBoard extends React.Component{
       //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list -or if the assistee is not being healed any ammount of hp
       //Also if assistee has deepwounds, assist does not work
 
-      if ( maxGive < effect.transferMin || healAmount === 0 || assistee.statusAffect.deepWounds > 0 ){ 
+      if ( maxGive < effect.transferMin || healAmount === 0 || assistee.statusAffect.deepWounds > 0 || assistee.combatEffects.nullHeal > 0 ){ 
         return false;
       } 
 
@@ -2741,7 +2855,8 @@ class GameBoard extends React.Component{
       //set hp for assistee
       newAssisteeHP = Math.min(assister.currentHP, assistee.stats.hp); //keep hp below max
 
-      if ( (newAssisteeHP > assistee.currentHP && assistee.statusEffect.deepWounds > 0) || (newAssisterHP > assister.currentHP && assister.statusEffect.deepWounds > 0) ) { //if a unit is gaining hp and they have deep wounds, then assist will not happen (unit deepwounds can still heal others)
+      if ( (newAssisteeHP > assistee.currentHP &&  (assistee.statusEffect.deepWounds > 0 || assistee.combatEffects.nullHeal > 0)) || 
+        (newAssisterHP > assister.currentHP &&  (assister.statusEffect.deepWounds > 0 || assister.combatEffects.nullHeal > 0)) ) { //if a unit is gaining hp and they have deep wounds, then assist will not happen (unit with deepwounds can still heal others)
         return list;
       }
 
@@ -2766,7 +2881,7 @@ class GameBoard extends React.Component{
       let healAmount = Math.min(maxHeal, maxGive, maxGet); //the amount healed is the least of these three numbers - This ensures that hp gained is always less than the max heal, less than the amount that can be transferred, and less than the assistee's max hp
       let transferAmount = Math.max(healAmount, effect.transferMin); //amount transferred is the amount healed, or the minimum transferMin (because ardent sacrifice will make you lose 10 hp even if healing less than that)  
 
-      if ( maxGive < effect.transferMin || healAmount === 0 || assistee.statusAffect.deepWounds > 0 ){ //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list -or if the assistee is not being healed any ammount of hp
+      if ( maxGive < effect.transferMin || healAmount === 0 || assistee.statusAffect.deepWounds > 0 || assistee.combatEffects.nullHeal > 0){ //if the hp that can be transferred is less than the minimum heal, then do not apply assist and return list -or if the assistee is not being healed any ammount of hp
         return list;
       }
 
@@ -2887,7 +3002,7 @@ class GameBoard extends React.Component{
           if (!participantIDs.includes(x.id) ){ //if x is not an assister/assistee
 
 
-            if (x.statusEffect.deepWounds < 1){
+            if (x.statusEffect.deepWounds < 1 && x.combatEffects.nullHeal < 1){
             //heal team according special
             list[side][x.listIndex].currentHP = Math.min(list[side][x.listIndex].currentHP + assisterSpecial.effect.teamHeal, list[side][x.listIndex].stats.hp);
             }
@@ -2928,7 +3043,7 @@ class GameBoard extends React.Component{
     }
 
     //At this point healing on assistee is done being calculated
-    if (assistee.statusEffect.deepWounds > 0){ //deep wounds will reduce to 0
+    if (assistee.statusEffect.deepWounds > 0 || assistee.combatEffects.nullHeal > 0){ //deep wounds will reduce to 0
       assisteeHeal = 0;
     }
 
@@ -2954,7 +3069,7 @@ class GameBoard extends React.Component{
 
 
     //at this point assister heal is done being calculated
-    if (assister.statusEffect.deepWounds > 0){ //deep wounds will reduce to 0
+    if (assister.statusEffect.deepWounds > 0 || assister.combatEffects.nullHeal > 0){ //deep wounds will reduce to 0
       assisterHeal = 0;
     }
 
@@ -3263,8 +3378,9 @@ class GameBoard extends React.Component{
       tempList[side][i.listIndex].statusBuff = JSON.parse(JSON.stringify(statusBuffs)); //{"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
       tempList[side][i.listIndex].end = false;
       tempList[side][i.listIndex].canto = false; //reset canto value
-      tempList[side][i.listIndex].transformed = false;
+      //tempList[side][i.listIndex].transformed = false;
     }
+
     tempList = this.recalculateAllVisibleStats(tempList);//get most up to date visible stats for all heroes
 
     let allyTeamPost = new Array(7).fill(0);
@@ -3273,9 +3389,83 @@ class GameBoard extends React.Component{
     let allyTeamSpecial = new Array(7).fill(0);
     let enemyTeamSpecial = new Array(7).fill(0);
 
+    
+
+    //first loop through heroes and their transform checks - These all occur before turn start effects
+
+    //loop through heroes and their turn start abilities
+    for (let i of tempList[side]){ //this.state.heroList[side]){ //loop through each hero
+
+
+      if (i.position < 0 || i.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
+
+      //Turn Start skills
+
+      let previousTransform = i.transformed; //get previous transform status to know if transform status changes
+      let newTransform = false; //by default, untransform
+      let transformSkills = [];
+
+      for (let effect of i.transformationEffect){ //loop through each transformation effects , should only have one transformation effect but we will just a list and have the last one overwrite use .
+        if (effect === null || effect === undefined) {continue;}
+
+        if (!("condition" in effect)){ //if there is no condition given, then ignore the effect
+          continue;
+        }
+
+
+        newTransform = checkCondition(tempList, effect.condition, i, i, this.state.currentTurn);
+        transformSkills = effect.transformSkills;
+
+      } //end loop through transformation effects
+
+      if (previousTransform !== newTransform){ //apply a transformation
+
+        var currentHero = heroData[i.heroID.value]; //get the heroData from heroInfo.json
+        var heroDropdowns = this.updateDropdowns(currentHero, false); //get dropdown list
+
+
+        if (newTransform){ //transforming, add effects
+
+          for (let x of transformSkills) {
+            let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+            i = getSkillEffect(additionalSkill, x[0], i, heroDropdowns); //add the extra skills as well
+
+          }
+
+
+
+
+        } else{ //detransform, remove effects
+
+
+          for (let x of transformSkills) {
+
+            let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+            i = this.removeSkillEffect(additionalSkill , x[0], i);
+            //i = getSkillEffect(additionalSkill, x[0], i, heroDropdowns); //add the extra skills as well
+
+          }
+
+
+        }
+
+        //recalculate stats for unit
+        let oldMaxHP = i.stats.hp;
+        i.stats =  calculateStats(i, this.state.fortLevel, this.state.blessingBuffs[this.state.playerSide], this.state.season);
+        i.currentHP = this.adjustHP(oldMaxHP, i);
+        i.transformed = newTransform;
+        tempList[i.side][i.listIndex] = i;
+
+
+      } //end if transformation state changes, else nothing occurs
+
+    } //end i
+
+
+    tempList = this.recalculateAllVisibleStats(tempList); //recalc visiblestats after transformation for turnstart effects
     let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference (so that calculations are done at the same time)
 
-    for (let i of heroList[side]){ //this.state.heroList[side]){ //loop through each hero
+    for (let i of heroList[side]){ //this.state.heroList[side]){ //loop through each hero for turn start effects
 
 
       if (i.position < 0 || i.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
@@ -3299,6 +3489,9 @@ class GameBoard extends React.Component{
 
     } //end i
 
+    
+
+    //update heroes with new calculated values
     for (let x of tempList[side]){ //for each member of side
       if (heroValid(tempList[x.side][x.listIndex])){
 
@@ -3516,7 +3709,6 @@ function makeHeroStruct(){
     this["visibleStats"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //the stats of the hero that is shown to the player in the actual game (stats + buffs/debuffs)
     this["combatStats"] = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //the stats of the hero used for battle calculation (visibleStats + combat buffs/debuffs)
 
-
     this["summonerSupport"] = "None";
     this["allySupportLevel"] = "None";
     this["allySupport"] = {value: 0, label: ""};
@@ -3539,6 +3731,7 @@ function makeHeroStruct(){
     this["effects"] = {"cdTrigger": 0};
 
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "nullAdaptive": 0, "sweep": 0, "selfSweep": 0,
+      "phantomStats": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}, //extra stats used for stat comparisons
     //enemyDouble stops enemy from double, stopDouble stops your own double
       "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0,
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
@@ -3566,7 +3759,8 @@ function makeHeroStruct(){
       "penaltyCopy": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes a penalty on an enemy, and gives a buff based on that
       "buffReflect": {"atk": 0, "spd": 0, "def": 0, "res": 0}, //takes bonus values and applies those values as a debuff on the enemy - misunderstood an effect and implemented this 
       "teamNihil": 0,
-      "minimumDamage": 0,
+      "minimumDamage": 0, "nullHeal": 0, "nullPost": 0,
+      "damageNull": 0,
       "raven": 0,
       "triangleAdept": [0], "cancelAffinity": [0],
       "miracle": 0,
@@ -3600,6 +3794,7 @@ function makeHeroStruct(){
     this["saveID"] = -1;
     this["conditionalSavior"] = [];
     
+    this["transformationEffect"] = [];
 
     this["warp"] = [];
     this["onAssist"] = [];
@@ -4671,3 +4866,28 @@ export function getPeakList(checkStats, owner, teamList, refList, peakType, targ
     return affectedList;
 
 }
+
+
+//given a hero, loop through their transformation effect and retrieve a list of transformSkills
+//transformationEffect is a list but a unit should only have one transformation effect. If there are multiple, the last one will overwrite the others
+
+function getTransformationSkills(hero){
+
+  let transformSkills = [];
+
+  for (let effect of hero.transformationEffect){ //loop through each transformation effects to get transformation skills
+    if (effect === null || effect === undefined) {continue;}
+
+    if (!("condition" in effect) ){ //if there is no condition given, then ignore the effect, here we don't check if condition is met for transformation but we still require a condition for consistency 
+      continue;
+    }
+
+    transformSkills = effect.transformSkills;
+
+  } //end loop through transformation effects
+
+
+  return transformSkills;
+
+}
+

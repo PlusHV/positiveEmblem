@@ -20,7 +20,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Armor Beast Effect"]] }],
 		"max": false
 	},
 	"2": {
@@ -32,7 +33,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] }],
 		"max": false
 	},
 	"3": {
@@ -44,7 +46,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] }],
 		"max": false
 	},
 	"4": {
@@ -56,7 +59,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] }],
 		"max": false
 	},
 	"5": {
@@ -69,7 +73,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} }],
 		"max": true
 	},
 	"6": {
@@ -82,7 +88,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner", "effectReq": [["hp", "less", 0.75]] }]  }],
 		"max": true
 	},
 	"7": {
@@ -95,7 +104,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 3, "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
 	"8": {
@@ -107,7 +118,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] }],
 		"max": false
 	},
 	"9": {
@@ -120,7 +132,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["statCompare", "visible", "res", "greater", 1], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["statBuff"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.5, "max": 8, "stats": ["atk", "spd", "def", "res"]}] }],
 		"max": true
 	},
 	"10": {
@@ -132,7 +147,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] }],
 		"max": false
 	},
 	"11": {
@@ -145,7 +161,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["enemyhp", "greater", 1.0]], "double": 1 }],
 		"max": true
 	},
 	"12": {
@@ -158,7 +176,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
 		"max": true
 	},
 	"13": {
@@ -171,7 +191,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def", "spd", "res"], "value": 0, "varValue": "bonusValue"}],
 		"max": true
 	},
 	"14": {
@@ -184,7 +206,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Armor Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
 	},
 	"15": {
@@ -197,7 +221,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"16": {
@@ -210,7 +236,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "range": 2, "from": ["assister", "assistee"]}],
 		"max": true
 	},
 	"17": {
@@ -223,7 +251,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
 	},
 	"18": {
@@ -235,7 +266,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Armor Beast Effect"]] }],
 		"max": false
 	},
 	"19": {
@@ -247,7 +279,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] }],
 		"max": false
 	},
 	"20": {
@@ -259,7 +292,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] }],
 		"max": false
 	},
 	"21": {
@@ -272,7 +306,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -286,7 +322,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["special"], "team": "owner", "selfReq": [["always"]], "effectReq": [["supportAlly", true]] }],
 		"max": true
 	},
 	"23": {
@@ -298,8 +336,10 @@
 		"users": ["Keaton: Lupine Collector"],
 		"type": "beast",
 		"skills": [],
-		"passive": {},
-		"effect": [],
+		"passive": {"spd": -5},
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "combatEffect", "brave": 1}],
 		"max": true
 	},
 	"24": {
@@ -311,7 +351,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Armor Beast Effect"]] }],
 		"max": false
 	},
 	"25": {
@@ -323,7 +364,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] }],
 		"max": false
 	},
 	"26": {
@@ -335,7 +377,8 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] }],
 		"max": false
 	},
 	"27": {
@@ -348,7 +391,11 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"max": true
 	},
 	"28": {
@@ -361,7 +408,11 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.7, "max": 7},
+			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -375,7 +426,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "lull": {"atk": 5, "spd": 5, "def": 5}, "spiral": 1}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -389,7 +442,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["supportAlly", true]] }],
 		"max": true
 	},
 	"31": {
@@ -402,7 +457,9 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 5}, "lull": {"atk": 5}, "double": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -414,9 +471,12 @@
 		"prf": true,
 		"users": ["Freyja: Lady of Nightmare"],
 		"type": "beast",
-		"skills": [],
+		"skills": [["a", "Distant Counter"]],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"max": true
 	},
 	"33": {
@@ -429,7 +489,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"spd": 5}, "lull": {"spd": 5}},
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"34": {
@@ -442,7 +505,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}},
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"35": {
@@ -455,7 +521,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["supportAlly", true], ["distanceCheck", 2]], 1, "greater"]], "lull": {"atk": 6, "spd": 6}, "attackCharge": 1, "defenseCharge": 1 },
+			{"type": "auraEffects", "effectReq": [["supportAlly", true], ["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "attackCharge": 1, "defenseCharge": 1 }] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -469,7 +538,10 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Armor Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 6, "def": 6}, "stopDouble": 1, "enemyDouble": 1 },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["phase", "player"], ["transformed", true]], "galeforce": 1 }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -483,7 +555,12 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
+			{"type": "variableCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "variablePreCombat", "condition": [["hp", "greater", 0.25]], "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25], ["transformed", true]], "nullStopFollowUp": 1 }],
 		"max": true
 	},
 	"38": {
@@ -496,7 +573,42 @@
 		"type": "beast",
 		"skills": [],
 		"passive": {"atk": 3},
-		"effect": [],
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 6}, "lull": {"atk": 6}, "double": 1 }],
+		"max": true
+	},
+	"39": {
+		"name": "Crossbones Claw",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Naesala: Sea's Shadow"],
+		"type": "beast",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"spd": 6, "def": 6}, "nullStopFollowUp": 1 },
+			{"type": "conditionalEffects", "condition": [["adjacent", false], ["phase", "player"], ["transformed", true]], "desperation": 1 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"40": {
+		"name": "Ebon-Pirate Claw",
+		"might": 14,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Vika: Sea-Dark Wing"],
+		"type": "beast",
+		"skills": [],
+		"passive": {"res": 3},
+		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
+			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5, "res": 5} },
+			{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck",  "list": ["stats"], "value": 7, "stats": ["def", "res"], "team": "enemy", "effectReq": [["enemyAdjacent", true], ["statCompare", "visible", "res", "greater", 1]] }],
 		"max": true
 	}
 }

@@ -3080,6 +3080,39 @@
 		"type": "effect",
 		"effect": [],
 		"max": true
+	},
+	"382": {
+		"name": "Def/Res Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 3, "res": 3} } ],
+		"max": false
+	},
+	"383": {
+		"name": "Def/Res Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 4, "res": 4} } ],
+		"max": false
+	},
+	"384": {
+		"name": "Def/Res Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 5, "res": 5} } ],
+		"max": true
+	},
+	"385": {
+		"name": "Def/Res Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"def": 2, "res": 2} } ],
+		"max": true
 	}
 
 

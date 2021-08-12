@@ -1484,6 +1484,37 @@
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
 			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}, "bonusCopy": {"def": 1}, "bonusNull": {"def": 1} }],
 		"max": false
+	},
+	"110": {
+		"name": "Holy Yewfelle",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Ullr: The Bowmaster"],
+		"type": "bow",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75, "phase", "player"]], "statBuff": {"atk": 6, "spd": 6}, "penaltyNeutralize": {"atk": 1, "spd": 1}, "nullGuard": 1 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"111": {
+		"name": "Mermaid Bow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Hinoka: Fair Pirate Pair"],
+		"type": "bow",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armor"]]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "spd": 6}, "adaptive": 1 },
+			{"type": "conditionalCombat", "condition": [["hp", "greater", 0.25], ["phase", "player"], ["wta", 1], ["statCompare", "combat", "spd", "greater", 1]], "brave": 1 }],
+		"max": true
 	}
 
 
