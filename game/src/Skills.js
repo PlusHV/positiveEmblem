@@ -113,9 +113,10 @@ const dropDownStyle = {
   });
     let tbody = [];
 
-    const equipText = ["weapon", "assist", "special", "a", "b", "c", "seal", "summoner", "ally", "blessing" ];
-    const equipKey = ["weapon", "assist", "special", "a", "b", "c", "seal", "summonerSupport", "allySupport", "blessing" ];
+    const equipText = ["weapon", "refine", "assist", "special", "a", "b", "c", "seal", "summoner", "ally", "blessing" ];
+    const equipKey = ["weapon", "refine", "assist", "special", "a", "b", "c", "seal", "summonerSupport", "allySupport", "blessing" ];
     const equippedValue = [ this.props.gameState.selectedMember.heroSkills["weapon"], 
+                            this.props.gameState.selectedMember.heroSkills["refine"], 
                             this.props.gameState.selectedMember.heroSkills["assist"], 
                             this.props.gameState.selectedMember.heroSkills["special"],
                             this.props.gameState.selectedMember.heroSkills["a"], this.props.gameState.selectedMember.heroSkills["b"], 
@@ -134,13 +135,21 @@ const dropDownStyle = {
         //column text
         cells.push(<td className = "equipText" key = {equipText[i]} >{capitalize(equipText[i], true) }</td>);
         //the first 7 are the equipped skills/seals etc
-        if (i < 7){
+        if (i < 8){
+
+
+          let disableValue = false;
+          if (equipKey[i] === "refine"){
+
+            disableValue = !this.props.gameState.skillDropdowns.weapon.info[this.props.gameState.selectedMember.heroSkills["weapon"].value].refinable;
+            
+          }
 
           //drop down menu for skill
           cells.push(<td className = "equippedSkill" key = {"equip:" + equipText[i]} colSpan = "3">
             
               <Select
-
+                isDisabled = {disableValue}
                 styles = {dropDownStyle}
                 theme = {dropDownTheme} 
                 options={this.props.gameState.skillDropdowns[equipKey[i]].list}

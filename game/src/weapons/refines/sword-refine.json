@@ -1,0 +1,43 @@
+{
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 0,
+		"sp": 0,
+		"prf": false,
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	},
+	"1": {
+		"name": "Alondite Eff+",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
+		"type": "sword",
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"2": {
+		"name": "Alondite Atk+",
+		"might": 18,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
+		"type": "sword",
+		"skills": [["a", "Distant Counter"]],
+		"passive": {},
+		"effect": [],
+		"cdTrigger": -1,
+		"max": true
+	}
+}
+

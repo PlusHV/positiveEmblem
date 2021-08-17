@@ -1,0 +1,18 @@
+	{
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 0,
+		"sp": 0,
+		"prf": false,
+		"refinable": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	}
+
+
+
+}

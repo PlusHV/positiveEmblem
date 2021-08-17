@@ -1,0 +1,14 @@
+{
+	"0": {
+		"name": "",
+		"might": 0,
+		"range": 0,
+		"sp": 0,
+		"prf": false,
+		"type": "lance",
+		"skills": [],
+		"passive": {},
+		"effect": [],
+		"max": true
+	}
+}

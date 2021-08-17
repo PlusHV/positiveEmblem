@@ -19,6 +19,7 @@ import Map from './Map.js';
 //Json imports
 import heroData from './heroInfo.json';
 import weapons from './weapons.js';
+import refines from './refines.js';
 import specials from './skills/special.json';
 import assists from './skills/assist.json';
 import skills from './skillList.js';
@@ -39,7 +40,7 @@ class GameBoard extends React.Component{
 	constructor(props){
     super(props);
 
-    let initDropdowns = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons["sword"]},
+    let initDropdowns = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons["sword"]}, "refine": {list: [{value: "0", label: ""}], info: refines["sword"]},
                          "assist":{list: [], info: assists}, "special":{list: [], info: specials},
                          "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
                          "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal},
@@ -93,13 +94,18 @@ class GameBoard extends React.Component{
 
     }
 
+    let initialHero = heroList["1"][0];
+    let initialHeroData = heroData[initialHero.heroID.value];
+
+
     // eslint-disable-next-line
     for (var [key, value] of Object.entries(initDropdowns)) {
 
-      fillDropdown(value.list, value.info, heroList["1"][0]);
+      fillDropdown(key, value.list, value.info, initialHeroData, false, initialHero.heroSkills.weapon.label, initDropdowns );
     }                
-    let initialHero = heroList["1"][0];
-    let initialHeroData = heroData[initialHero.heroID.value];
+
+
+
 
     this.state = {
       "heroList": heroList,
@@ -107,7 +113,6 @@ class GameBoard extends React.Component{
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
       "skillDropdowns": initDropdowns,
       "selectedMember": initialHero, //The current struct in heroList
-      "weaponList": weapons[initialHeroData.weapontype],
       "selectedHeroInfo": initialHeroData, //The current hero's info
       "maxFilter": false,
       "freeMove": true,
@@ -182,16 +187,15 @@ class GameBoard extends React.Component{
     this.setState({selectedHeroInfo: heroData[newSelected.heroID.value]});
 
 
-    this.setState({weaponList: weapons[heroData[newSelected.heroID.value].weapontype]});
 
 
-    this.updateDropdowns(heroData[newSelected.heroID.value], this.state.maxFilter);//weapons[heroData[newSelected.heroID.value].weapontype]);
+    this.updateDropdowns(heroData[newSelected.heroID.value], this.state.maxFilter, newSelected.heroSkills.weapon.label);//weapons[heroData[newSelected.heroID.value].weapontype]);
 
   }
 
   //given a hero and max value, return dropdown lists with approriate skills
-  updateDropdowns(newHero, newMax){
-    let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
+  updateDropdowns(newHero, newMax, currentWeapon){ 
+    let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]}, "refine": {list: [{value: "0", label: ""}], info: refines[newHero.weapontype]},
                          "assist":{list: [], info: assists}, "special":{list: [], info: specials},
                          "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
                          "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal},
@@ -202,29 +206,72 @@ class GameBoard extends React.Component{
 
     // eslint-disable-next-line               
     for (let [key, value] of Object.entries(dropTemp)) {
-      this.fillDropdown(value.list, value.info, newHero, newMax);
+      this.fillDropdown( key, value.list, value.info, newHero, newMax, currentWeapon, dropTemp);
     }
     
     this.setState({skillDropdowns: dropTemp});
     return dropTemp;
   }
 
-  fillDropdown(dropdownList, info, newHero, newMax){
-
+  fillDropdown(category, dropdownList, info, newHero, newMax, currentWeapon, dropDowns){
+    //dropdownList - empty list that will be filled with skills
+    //info - the json file that holds the unfiltered list of skills
+    //newHero - the hero data of the current hero
+    //currentWeapon - the name of weapon the current hero is using
     
+    let weaponList;
+    let refineWeapon;
+
+    if (category === "refine"){
+
+      weaponList = dropDowns.weapon.list; //weapon dropdown should be set first
+      refineWeapon = weaponList.find(findSkillWithName, currentWeapon); //get the list value of the weapon
+      refineWeapon = dropDowns.weapon.info[refineWeapon.value]; //get the weapons info using its name
+
+      //if the weapon is unrefinable then skip filling this dropdown (if the weapon has no refinable key, then we assume that it is not refinable)
+      if (!("refinable" in refineWeapon) || !refineWeapon.refinable){
+
+        return;
+      }
+
+    }
+
     // eslint-disable-next-line
     for (let [key, value1] of Object.entries(info)) {
 
-      if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
-        value1.prf === false || //if the prf key says false, then push to the list
-        ( !('users' in value1) || value1.users.includes(newHero.name ) )  
-        ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
-          
-          if (!newMax || (  !('max' in value1) || value1.max  ) ){ //if newMax toggle is set to false or the skill has no max value/ is max
-            dropdownList.push({value: key, label: value1.name});
-          }
+
+      //skip to next entry if the skill is a PRF and hero is not in the skills users list (if there is no users value, then we assume no wielders and skip)
+
+      //First we check for prf keys. If none are found or the value is false then we would add the skill.
+      //Next we check for a users key. Only if there is a users key and the newhero is in that user list, we add the skill
+      if ('prf' in value1 && value1.prf && (!('users' in value1) || !value1.users.includes(newHero.name) ) ){
+        continue;
+
+      } 
+
+      //skip to next entry if we are only adding max skills and max value of the skill is false
+      if (newMax && 'max' in value1 && !value1.max ){
+
+        continue;
       }
-    }
+
+      if (category === "refine"){
+
+              //skip to next entry if the skill is refinable and the current weapon is not in the refines list
+
+
+
+          if (!("refines" in refineWeapon) || !refineWeapon.refines.includes(value1.name) ){
+            continue;
+          }
+
+        
+      } 
+
+
+      dropdownList.push({value: key, label: value1.name});
+
+    } //end for
     dropdownList.sort(compareLabels);
 
   }
@@ -315,13 +362,13 @@ class GameBoard extends React.Component{
 
     var newHero = heroData[e.value]; //get the heroData from heroInfo.json
 
-    var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter); //only really updates the weaponlist for now
+    var updatedDropdowns = this.updateDropdowns(newHero, this.state.maxFilter, newHero.weapon);//weapons[newHero.weapontype].find(findSkillWithName, newHero.weapon)); //only really updates the weaponlist for now
 
 
     if (hero.transformed){ //if hero is transformed, remove their transformation effects (even if new hero is also a beast)
 
 
-      var heroDropdowns = this.updateDropdowns(oldHero, false); //get dropdowns from the previous hero
+      var heroDropdowns = getDropdowns(oldHero, false, hero.heroSkills.weapon.label); //get dropdowns from the previous hero
 
       let transformSkills = getTransformationSkills(hero);
 
@@ -343,10 +390,17 @@ class GameBoard extends React.Component{
     let tSkills = hero.heroSkills; //Object.assign({}, this.state.heroSkills);
 
     Object.keys(tSkills).forEach((key, i) => { //clear the skills on the hero for the new defaults that will be set
-       hero = this.removeSkillEffect(tSkills[key].value , key, hero);
+      
+      if (key !== "weapon" || tSkills.refine.value === "0"){ //do no remove the skill effect if it is a weapon effect and a refine is equipped (since the weapon will not be equipped)
+        hero = this.removeSkillEffect(tSkills[key].value , key, hero);
+      }
+
+       
+      
     });
 
     tSkills["weapon"] = updatedDropdowns["weapon"].list.find(findSkillWithName, newHero.weapon);
+    tSkills["refine"] = updatedDropdowns["refine"].list.find(findSkillWithName, ""); //No refine by default
     tSkills["assist"] = updatedDropdowns["assist"].list.find(findSkillWithName, newHero.assist);
     tSkills["special"] = updatedDropdowns["special"].list.find(findSkillWithName, newHero.special);
     tSkills["a"] = updatedDropdowns["a"].list.find(findSkillWithName, newHero.askill);
@@ -358,6 +412,7 @@ class GameBoard extends React.Component{
 
     //Passives/weapons only currently
     //Add the effects of the skills to the hero
+
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
        hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
     });
@@ -425,6 +480,9 @@ class GameBoard extends React.Component{
     temp[this.state.playerSide][this.state.heroIndex] = hero;
 
 
+
+
+
     //if old or new heroes were legendary/mythic, calculate stats for the team
     if (calcAll){
       temp[this.state.playerSide] = this.recalculateTeamHeroStats(temp[this.state.playerSide], tempBlessings[this.state.playerSide]);
@@ -441,7 +499,7 @@ class GameBoard extends React.Component{
     this.setState({selectedHeroInfo: heroData[newHero.id]});
 
 
-    this.setState({weaponList: weapons[heroData[newHero.id].weapontype]});
+
     this.setState({cells: newCells});
 
 
@@ -453,7 +511,7 @@ class GameBoard extends React.Component{
     return item.name === this;
   }
 
-  onSkillChange(e, index){ //e is the new value, index is the key 
+  onSkillChange(e, index){ //e is the new value, index is the key/skill type for the heroSkills object
     let tempHeroList = this.state.heroList;
     let hero = this.state.heroList[this.state.playerSide][this.state.heroIndex]; //copy of heroList
 
@@ -465,7 +523,7 @@ class GameBoard extends React.Component{
 
       for (let x of getTransformationSkills(hero)) {
 
-        //let heroDropdowns = this.updateDropdowns(heroData[hero.heroID.value], false); 
+
         let additionalSkill = this.state.skillDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
         hero = this.removeSkillEffect(additionalSkill , x[0], hero);
       }
@@ -474,11 +532,40 @@ class GameBoard extends React.Component{
 
     }
 
-    hero = this.removeSkillEffect(skillList[index].value, index, hero);
+
+    //situation when changing refines
+    //1. weapon and no refine - remove weapon and add refine)
+    //2. weapon and refine - remove refine, then add refine. If the new refine is the empty refine, add the weapon instead
+    //3. 
+
+    //if the empty refine was previously equipped and adding a new refine, then remove the weapon skill from the unit (as well as the blank refine weapon)
+    //if another refine was equipped, then the weapon should already be removed and replacing the refine is enough
+
+    if (index === "refine" && skillList.refine.value === "0"){ 
+      hero = this.removeSkillEffect(skillList.weapon.value, "weapon", hero);
+
+    } 
+
+    //remove the current skill effect that is to be reaplced
+    if (index === "weapon" && skillList.refine.value !== "0"){ //if we are adding a new weapon and there is already a refine on the unit, we remove the refine weapon from the unit instead. We also set the refine weapon to the empty weapon
+    
+      hero = this.removeSkillEffect(skillList.refine.value, "refine", hero);
+      skillList.refine = {value: "0", label: ""};
+    } else {
+      hero = this.removeSkillEffect(skillList[index].value, index, hero);
+    }
+
+
+    if (index === "refine" && e.value === "0" && skillList.refine.value !== "0"){ //if changing to the blank refine (and it is not already the  blank refine), then add base weapon to the hero
+      hero = getSkillEffect(skillList.weapon.value, "weapon", hero, this.state.skillDropdowns); //need to clear old effects  
+    }
 
     skillList[index] = e; //replace skill
     hero.heroSkills = skillList; //update the temp copy of heroList
+
+    this.updateDropdowns(heroData[hero.heroID.value], this.state.maxFilter, hero.heroSkills.weapon.label); //update dropdowns since weapon changes will updated refine list
     
+
 
     //Add skill effect to the hero
     hero = getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
@@ -521,13 +608,13 @@ class GameBoard extends React.Component{
 
     //let emptySkill =   Object.assign({}, this.state.skillDropdowns [skillType].info["0"]);
 
-    if (skillType === "weapon"){
+    if (skillType === "weapon" || skillType === "refine"){
       let pTemp = updatedHero.passive;
-      pTemp["atk"] -= this.state.weaponList[id]["might"]; //remove the weapon's attack
-
+      pTemp["atk"] -= this.state.skillDropdowns[skillType].info[id].might; //remove the weapon's attack
+      //pTemp["atk"] -= this.state.weaponList[id]["might"]; //remove the weapon's attack
 
       //Add the passive stats from the weapon
-      let passiveStats = this.state.weaponList[id].passive;
+      let passiveStats = this.state.skillDropdowns[skillType].info[id].passive;
 
       for (let key in passiveStats){
         pTemp[key] -= passiveStats[key];
@@ -609,7 +696,7 @@ class GameBoard extends React.Component{
 
   onMaxFilterChange(e){
 
-    this.updateDropdowns(this.state.selectedHeroInfo, e.target.checked);
+    this.updateDropdowns(this.state.selectedHeroInfo, e.target.checked, this.state.selectedMember.heroSkills.weapon.label);
     this.setState({maxFilter: e.target.checked});
   }
 
@@ -671,7 +758,7 @@ class GameBoard extends React.Component{
 
       //set up dropdowns
       var currentHero = heroData[hero.heroID.value]; //get the heroData from heroInfo.json
-      var heroDropdowns = this.updateDropdowns(currentHero, false); //get dropdown list
+      var heroDropdowns = getDropdowns(currentHero, this.state.maxFilter, hero.heroSkills.weapon.label); //get dropdown list
 
       let transformSkills = getTransformationSkills(hero);
 
@@ -792,11 +879,51 @@ class GameBoard extends React.Component{
 
   }
 
-  //When support levels or blessings change
+  //When support levels or blessings change, update the hero's stats
   onSupportLevelChange(e, type){
     let temp = this.state.heroList;
 
     let hero = temp[this.state.playerSide][this.state.heroIndex];
+
+
+
+    if (type === "allySupportLevel"){
+      //Remove old previous support skill
+      var updatedDropdowns = getDropdowns(heroData[hero.heroID.value], false, ""); //we are only interacting with o skills here so the weapon does not matter
+      var supportSkill;
+      if (hero.allySupportLevel !== "None"){ //no support level, do not need to remove
+
+     // let additionalSkill  = heroDropdowns[x[0]].list.find(findSkillWithName, x[1]).value;
+     //            i = this.removeSkillEffect(additionalSkill , x[0], i);
+                
+        supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + hero.allySupportLevel + " 1").value;
+        console.log(supportSkill);
+        hero = this.removeSkillEffect(supportSkill, "o", hero); //add the extra skills as well
+
+        supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + hero.allySupportLevel + " 2").value;
+        console.log(supportSkill);
+        hero = this.removeSkillEffect(supportSkill, "o", hero); //add the extra skills as well
+      }
+
+
+      //Add new support skill
+      if (e.target.value !== "None"){
+        supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + e.target.value + " 1").value;
+        console.log(supportSkill);
+        hero = getSkillEffect(supportSkill, "o", hero, updatedDropdowns); //add the extra skills as well
+
+        supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + e.target.value + " 2").value;
+        console.log(supportSkill);
+        hero = getSkillEffect(supportSkill, "o", hero, updatedDropdowns); //add the extra skills as well
+      }
+
+
+      this.calculateAuraStats(temp, this.state.currentTurn); //recalculate aura stats
+
+
+
+
+  }
 
     hero[type] = e.target.value;
 
@@ -818,6 +945,10 @@ class GameBoard extends React.Component{
   onAllySupportChange(e){
     var temp = this.state.heroList;
     let hero = temp[this.state.playerSide][this.state.heroIndex];
+
+    
+
+
 
     hero.allySupport = e;
 
@@ -3421,8 +3552,7 @@ class GameBoard extends React.Component{
       if (previousTransform !== newTransform){ //apply a transformation
 
         var currentHero = heroData[i.heroID.value]; //get the heroData from heroInfo.json
-        var heroDropdowns = this.updateDropdowns(currentHero, false); //get dropdown list
-
+        var heroDropdowns = getDropdowns(currentHero, false, ""); //should only be using "o" skills here so weapon name does not matter
 
         if (newTransform){ //transforming, add effects
 
@@ -3562,7 +3692,7 @@ class GameBoard extends React.Component{
 
 
   render() {
-
+    console.log(this.state.skillDropdowns);
 
     //console.log(this.state.heroList);
     console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
@@ -3682,7 +3812,7 @@ function makeHeroStruct(){
 
     this["heroID"] = hero;
     this["iv"] = {asset: "neutral", flaw: "neutral"};
-    this["heroSkills"] = {"weapon": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
+    this["heroSkills"] = {"weapon": {value: "0", label: ""}, "refine": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
 
@@ -3858,7 +3988,13 @@ function removeEffect(hero, effect){
         let elementEffectCopy = JSON.stringify(elementEffect); //copy of the effect in string form
         let copyIndex = hero[elementEffect.type].findIndex(findMatchingEffect, elementEffectCopy);
 
-        hero[elementEffect.type].splice(copyIndex, 1);
+
+        //only remove effect if an appropriate index value is found
+        if (copyIndex >= 0){
+
+          hero[elementEffect.type].splice(copyIndex, 1);
+        }
+
       }
 
     }
@@ -4012,7 +4148,7 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
 
   var newHero = heroData[hero.heroID.value]; //get the heroData from heroInfo.json
 
-  var updatedDropdowns = updateDropdowns(newHero, false); //only really updates the weaponlist for now
+  var updatedDropdowns = getDropdowns(newHero, false, newHero.weapon); //get default skills of the hero
 
 
 
@@ -4020,6 +4156,7 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
 
 
   tSkills["weapon"] = updatedDropdowns["weapon"].list.find(findSkillWithName, newHero.weapon);
+  tSkills["refine"] = updatedDropdowns["refine"].list.find(findSkillWithName, ""); //No refine by default
   tSkills["assist"] = updatedDropdowns["assist"].list.find(findSkillWithName, newHero.assist);
   tSkills["special"] = updatedDropdowns["special"].list.find(findSkillWithName, newHero.special);
   tSkills["a"] = updatedDropdowns["a"].list.find(findSkillWithName, newHero.askill);
@@ -4035,6 +4172,13 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
      hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
   });
 
+  if (hero.allySupportLevel !== "None"){
+    var supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + hero.allySupportLevel + " 1").value;
+    hero = getSkillEffect(supportSkill, "o", hero, updatedDropdowns); //add the extra skills as well
+
+    supportSkill  = updatedDropdowns["o"].list.find(findSkillWithName, "Ally Support " + hero.allySupportLevel + " 2").value;
+    hero = getSkillEffect(supportSkill, "o", hero, updatedDropdowns); //add the extra skills as well
+  }
 
 
   if (newHero.type === "legendary" || newHero.type === "mythic"){
@@ -4080,8 +4224,11 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
 
 }
 
-function updateDropdowns(newHero, newMax){
-  let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]},
+
+//This is different from updateDropdowns which sets the skillDropdowns state.
+//This function is used to get a temporary set of dropdowns that is used for removing skills from a unit
+function getDropdowns(newHero, newMax, weaponName){
+  let dropTemp = { "hero":{list: [], info: heroData}, "weapon":{list: [], info: weapons[newHero.weapontype]}, "refine":{list: [{value: "0", label: ""}], info: refines[newHero.weapontype]},
                        "assist":{list: [], info: assists}, "special":{list: [], info: specials},
                        "a":{list: [], info: skills.a}, "b":{list: [], info: skills.b}, 
                        "c":{list: [], info: skills.c}, "seal":{list: [], info: skills.seal},
@@ -4092,28 +4239,62 @@ function updateDropdowns(newHero, newMax){
 
   // eslint-disable-next-line               
   for (let [key, value] of Object.entries(dropTemp)) {
-    fillDropdown(value.list, value.info, newHero, newMax);
+    fillDropdown(key, value.list, value.info, newHero, newMax, weaponName, dropTemp);
   }
   
 
   return dropTemp;
 }
 
-function fillDropdown(dropdownList, info, newHero, newMax){
+function fillDropdown(category, dropdownList, info, newHero, newMax, weaponName, dropDowns){
 
-  
+  let weaponList;
+  let refineWeapon;
+
+  if (category === "refine"){
+
+    weaponList = dropDowns.weapon.list; //weapon dropdown should be set first
+    refineWeapon = weaponList.find(findSkillWithName, weaponName); //get the list value of the weapon
+    refineWeapon = dropDowns.weapon.info[refineWeapon.value]; //get the weapons info using its name
+
+    //if the weapon is unrefinable then skip filling this dropdown (if the weapon has no refinable key, then we assume that it is not refinable)
+    if (!("refinable" in refineWeapon) || !refineWeapon.refinable){
+
+      return;
+    }
+
+  }
+
   // eslint-disable-next-line
   for (let [key, value1] of Object.entries(info)) {
 
-    if ( !('prf' in value1) || //if the object has no prf key (e.g. heroInfo) then just push to the list 
-      value1.prf === false || //if the prf key says false, then push to the list
-      ( !('users' in value1) || value1.users.includes(newHero.name ) )  
-      ){ //if it has a user key (temp until those are added to skills) or if the users key has the id
-        
-        if (!newMax || (  !('max' in value1) || value1.max  ) ){ //if newMax toggle is set to false or the skill has no max value/ is max
-          dropdownList.push({value: key, label: value1.name});
-        }
+    //skip to next entry if the skill is a PRF and hero is not in the skills users list 
+    if ('prf' in value1 && value1.prf && 'users' in value1 && !value1.users.includes(newHero.name) ){
+      continue;
+
+    } 
+
+    //skip to next entry if we are only adding max skills and max value of the skill is false
+    if (newMax && 'max' in value1 && !value1.max ){
+
+      continue;
     }
+
+    if (category === "refine"){
+
+
+        if (!("refines" in refineWeapon) || !refineWeapon.refines.includes(value1.name) ){
+          continue;
+        }
+
+      
+    } 
+
+
+
+    dropdownList.push({value: key, label: value1.name});
+
+
   }
   dropdownList.sort(compareLabels);
 
@@ -4137,12 +4318,12 @@ function getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype
 
   let effect = skillDropdowns[skillType].info[id].effect;
 
-  if (skillType === "weapon"){
+  if (skillType === "weapon" || skillType === "refine"){
 
     let pTemp = updatedHero.passive;
 
 
-    pTemp["atk"] += skillDropdowns["weapon"].info[id].might; //add the might of the weapon
+    pTemp["atk"] += skillDropdowns[skillType].info[id].might; //add the might of the weapon
 
 
     //Add the passive stats from the weapon
@@ -4159,7 +4340,7 @@ function getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype
     }
 
     updatedHero.passive = pTemp;
-    updatedHero.range = skillDropdowns["weapon"].info[id].range;
+    updatedHero.range = skillDropdowns[skillType].info[id].range;
 
 
   } else if (skillType === "assist"){

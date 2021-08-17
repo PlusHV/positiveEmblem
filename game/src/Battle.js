@@ -2175,7 +2175,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         j = j + 3;
 
 
-      } else if (keyWord === "supportAlly"){ //checks if the other ally is a support ally
+      } else if (keyWord === "supportAlly"){ //checks if the other ally is a support ally - does not check if the owner is the support ally of the other ally
 
         let support = owner.allySupport;
         let allyHero = enemy.heroID;

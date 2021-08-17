@@ -1122,7 +1122,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "combatEffect", "postHeal": 2}],
+		"effect": [{"type": "combatEffect", "postHeal": 2, "nullAdaptive": 1, "nullWrathful": 1}],
 		"skills": [],
 		"max": false
 	},
@@ -1131,7 +1131,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "combatEffect", "postHeal": 4}],
+		"effect": [{"type": "combatEffect", "postHeal": 4, "nullAdaptive": 1, "nullWrathful": 1}],
 		"skills": [],
 		"max": false
 	},
@@ -1140,7 +1140,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "combatEffect", "postHeal": 6}],
+		"effect": [{"type": "combatEffect", "postHeal": 6, "nullAdaptive": 1, "nullWrathful": 1}],
 		"skills": [],
 		"max": true
 	},
