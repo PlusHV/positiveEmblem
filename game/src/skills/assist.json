@@ -40,7 +40,8 @@
 		"prf": true,
 		"users": ["Lucina: Glorious Archer"],
 		"type": ["movement"],
-		"effect": {"owner": 1, "other": -1},
+		"effect": {"owner": 1, "other": -1, 
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] } ]},
 		"max": true
 	},
 	"5": {
@@ -467,7 +468,9 @@
 		"prf": true,
 		"users": ["Chrom: Crowned Exalt"],
 		"type": ["movement"],
-		"effect": {"owner": 0, "other": -2},
+		"effect": {"owner": 0, "other": -2, 
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "galeforce"], "value": 6, "stats": ["atk"], "team": "owner", "selfReq": [["always"]] },
+				{"type": "assistAction", "subtype": "debuff", "checkType": "reqCheck", "list": ["isolation"], "team": "owner", "selfReq": [["always"]] }] },
 		"max": true
 	},
 	"52": {

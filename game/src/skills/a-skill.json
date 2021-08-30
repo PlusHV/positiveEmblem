@@ -651,7 +651,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 7} }],
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "def": 7} }],
 		"max": true
 	},
 	"82": {
@@ -2535,7 +2535,7 @@
 	},
 	"315": {
 		"name": "Atk/Def Unity",
-		"sp": 240,
+		"sp": 300,
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyReverse": {"atk": 1, "def": 1} }],
@@ -2625,7 +2625,7 @@
 	},
 	"326": {
 		"name": "Atk/Res Unity",
-		"sp": 240,
+		"sp": 300,
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
@@ -3112,6 +3112,41 @@
 		"type": "effect",
 		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 7, "res": 7} },
 			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"def": 2, "res": 2} } ],
+		"max": true
+	},
+	"386": {
+		"name": "Surge Sparrow",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 7, "spd": 7}},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["specialType", ["attack-battle"]]], 
+				"subEffect": [{"type": "onSpecial", "heal": ["attacker", "hp", "variable", "", {"key": "specialCD", "factor": 0.2, "constant": 0.1, "max": 1}] }] }],
+		"max": true
+	},
+	"387": {
+		"name": "Close Reversal",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 5}, "counter": 1 }],
+		"max": true
+	},
+	"388": {
+		"name": "Atk/Spd Unity",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5}, "penaltyReverse": {"atk": 1, "spd": 1} }],
+		"max": true
+	},
+	"389": {
+		"name": "Distant Pressure",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "counter": 1},
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"spd": 5}, "subEffect": [{"type": "onAttack", "recoil": 5}] }],
 		"max": true
 	}
 

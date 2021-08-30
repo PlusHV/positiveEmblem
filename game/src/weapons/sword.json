@@ -2072,6 +2072,25 @@
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.75], ["phase", "player", "heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "firstReduction": 0.6 }],
 		"cdTrigger": -1,
 		"max": true
+	},
+	"143": {
+		"name": "Genesis Falchion",
+		"might": 16,
+		"range": 1,
+		"sp":400,
+		"prf": true,
+		"users": ["Marth: Prince of Light"],
+		"refine": false,
+		"type": "sword",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["teamBonusTotalCheck", "owner", "greater", 10, 3]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["teamBonusTotalCheck", "owner", "greater", 25, 3]], "statBuff": {"atk": 5}, "subEffect": [{"type": "onAttack", "postHeal": 5}] },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["teamBonusTotalCheck", "owner", "greater", 60, 3], ["phase", "enemy"]], "vantage": 1  }], 
+		"cdTrigger": -1,
+		"max": true
 	}
 
 

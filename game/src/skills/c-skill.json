@@ -3260,5 +3260,13 @@
 		"type": "effect",
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 4}],
 		"max": true
+	},
+	"412": {
+		"name": "Joint Drive Def",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
 	}
 }

@@ -1498,7 +1498,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.9]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.9]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": false
 	},
 	"188": {
@@ -1506,7 +1506,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.7]],"subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.7]],"subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": false
 	},
 	"189": {
@@ -1514,7 +1514,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": true
 	},
 	"190": {
@@ -4388,7 +4388,7 @@
 		"sp": 160,
 		"prf": false,
 		"type": "passive",
-		"effect": {"spd": 2, "deres": 2},
+		"effect": {"spd": 2, "res": 2},
 		"max": true
 	},
 	"549": {

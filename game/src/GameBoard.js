@@ -302,8 +302,11 @@ class GameBoard extends React.Component{
     if (type === "level"){
       max = 40;
       min = 1;
-    } else if (type === "merge" || type === "dragonflower"){
+    } else if (type === "merge"){
       max = 10;
+      min = 0;
+    } else if (type === "dragonflower"){
+      max = 20;
       min = 0;
     } else if (type === "rarity"){
       max = 5;
@@ -414,7 +417,10 @@ class GameBoard extends React.Component{
     //Add the effects of the skills to the hero
 
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
-       hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+
+        if (key !== "refine" || tSkills.refine.value !== "0" ){ //for refines, check if the refine is not the empty one before adding it - if refine is not the empty refine, it shouuld also remove the weapon before
+          hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+        }
     });
 
 
@@ -1876,6 +1882,23 @@ class GameBoard extends React.Component{
 
         //The check on availableAssist spaces means that the assist will be sucessful, thus the action is successful
         this.endHeroTurn(temp[dragSide][dragIndex]);
+
+        let refList = JSON.parse(JSON.stringify(temp)); //deep copy for reference 
+        if (!temp[dragSide][dragIndex].assistAction && "subeffect" in temp[dragSide][dragIndex].assist.effect){
+
+          for (let effect of temp[dragSide][dragIndex].assist.effect.subeffect ){ //loop through each turnstart abilities
+            if (effect === null || effect === undefined) {continue;}
+
+            if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state.currentTurn) ){ //check if condition has not been met skip
+              continue;
+            }
+
+            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state.currentTurn);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+
+          } //end effects
+
+          temp[dragSide][dragIndex].assistAction = true;
+        }
         
         actionSuccess = true;
 
@@ -1920,6 +1943,31 @@ class GameBoard extends React.Component{
 
 
         this.endHeroTurn(temp[dragSide][dragIndex]);
+
+
+        //after all post combat stuff is done, post combat specials activate (galeforce, requiem dance etc)
+
+        //currently, post combat specials only occur when initiating
+        let refList = JSON.parse(JSON.stringify(temp)); //deep copy for reference 
+
+        if (temp[dragSide][dragIndex].special.charge === 0 && temp[dragSide][dragIndex].special.type === "post-battle" && !temp[dragSide][dragIndex].galeforce){
+          for (let effect of temp[dragSide][dragIndex].special.effect){
+
+            if (effect === null || effect === undefined) {continue;}
+
+            if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state.currentTurn) ){ //check if condition has not been met skip
+              continue;
+            }
+
+            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state.currentTurn);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+
+          }
+
+          temp[dragSide][dragIndex].special.charge = temp[dragSide][dragIndex].special.cd; //reset charge
+          temp[dragSide][dragIndex].galeforce = true;
+        }
+
+
         actionSuccess = true;
       }
 
@@ -2537,6 +2585,9 @@ class GameBoard extends React.Component{
             heroesInRange.push(list[assister.side][assister.listIndex]);
             heroesInRange.push(list[assistee.side][assistee.listIndex]);
           }
+
+
+
           applyBuffList(list, heroesInRange, effect, assister); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
 
 
@@ -3509,6 +3560,9 @@ class GameBoard extends React.Component{
       tempList[side][i.listIndex].statusBuff = JSON.parse(JSON.stringify(statusBuffs)); //{"bonusDouble": 0, "airOrders": 0, "mobility+": 0}; //reset status buffs
       tempList[side][i.listIndex].end = false;
       tempList[side][i.listIndex].canto = false; //reset canto value
+      tempList[side][i.listIndex].assistAction = false;
+      tempList[side][i.listIndex].extraAction = false; //reset extra action value
+      tempList[side][i.listIndex].galeforce = false; //reset galeforce value
       //tempList[side][i.listIndex].transformed = false;
     }
 
@@ -3851,6 +3905,11 @@ function makeHeroStruct(){
     this["cantoActive"] = false; //indicates if canto is movement is being done
     this["cantoMovement"] = 0;
 
+    this["assistAction"] = false; //denotes if extra action from assist has occured
+    this["extraAction"] = false; //denotes if an extra action has been granted by skill this turn, this turns on before galeforce - Currently, only edelgard's b skill allows for this so no conflicts, but more can cause issues
+    this["galeforce"] = false; //if an extra action has been granted by a special this turn 
+
+
     this["currentHP"] = 0;
     this["passive"] = {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}; //set of stats from skills
     this["assist"] = {};
@@ -4012,7 +4071,7 @@ function removeEffect(hero, effect){
 export function applyCombatEffect(hero, effect){ //aply combat effect (an object)
   for (let key in effect){
 
-    if (key ===  "condition" || key === "type" || key === "allyCondition" || key === "enemyCondition"){
+    if (key ===  "condition" || key === "type" || key === "allyCondition" || key === "enemyCondition" || key === "variableCheck"){
       continue; 
 
     } else if (key === "subEffect"){
@@ -4029,12 +4088,14 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
       }
     } else if (typeof effect[key] === 'object' && effect[key] !== null){ //object values - will need to apply their effect for each subkey (e.g lulls, statBuff, neutralizers)
 
-      if (key === "allySwap"){
-        hero.combatEffects[key] = effect[key]; //doubt additional allyswap effects will be added but if they did, they it would prioritize one or cancel them all
 
-      } else if (key === "canto"){
+
+      if (key === "allySwap"){
+        hero.combatEffects[key] = effect[key]; //doubt additional allyswap effects will be added but if they did, it would prioritize one or cancel them all
+
+      } else if (key === "canto"){ //canto adds its objects to its list (so we can have multiple canto effects and take highest one)
         hero.combatEffects[key].push(effect[key]);
-      } else {
+      } else { //adding values by subkey
 
         for (let subkey in effect[key]){
           hero.combatEffects[key][subkey]+= effect[key][subkey];
@@ -4052,7 +4113,7 @@ export function applyCombatEffect(hero, effect){ //aply combat effect (an object
 
 
     } else {
-
+      
       hero.combatEffects[key] += effect[key];
     }
 
@@ -4154,7 +4215,7 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
 
   let tSkills = {};
 
-
+  //this adds the default skills of the hero
   tSkills["weapon"] = updatedDropdowns["weapon"].list.find(findSkillWithName, newHero.weapon);
   tSkills["refine"] = updatedDropdowns["refine"].list.find(findSkillWithName, ""); //No refine by default
   tSkills["assist"] = updatedDropdowns["assist"].list.find(findSkillWithName, newHero.assist);
@@ -4168,8 +4229,14 @@ function setHero(hero, blessingBuffs, cells){    //Initial setup of hero
 
   //Passives/weapons only currently
   //Add the effects of the skills to the hero
+ 
+
   Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
+
+    if (key !== "refine" || tSkills.refine.value !== "0" ){ //for refines, check if the refine is not the empty one before adding it - if refine is not the empty refine, it shouuld also remove the weapon before
      hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+    }
+
   });
 
   if (hero.allySupportLevel !== "None"){
@@ -4613,7 +4680,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
   
   let warpList = []; //contains positions that can be warped to
 
-  let obstructList = []; //This is more of a negative list, which will prevent spaces from being added to the movement list
+  //let obstructList = []; //This is more of a negative list, which will prevent spaces from being added to the movement list
 
 
   if (hero.statusBuff.airOrders > 0){
@@ -4626,7 +4693,13 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
   let warpTargets = warpInfo.warpList;
   let warpTargetRanges = warpInfo.warpRangeList;
+
   let obstructTargets = warpInfo.obstructList;
+  let obstructTargetRanges = warpInfo.obstructRangeList;
+  
+  let obstructWarpTargets = warpInfo.obstructWarpList;
+  let obstructWarpTargetRanges = warpInfo.obstructWarpRangeList;
+
   let pathfinderList = warpInfo.pathfinderList;
   let pass = warpInfo.pass;
 
@@ -4635,7 +4708,23 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
   spaceRemainders[pos] = move; //position of hero's remainder is the movement stat
 
-  obstructList = getAdjacentSpaces(obstructTargets);
+
+  //Obstruct space calculation space calculation
+  let obstructSpaces = [];
+  for (let i = 0; i < obstructTargets.length; i++){
+    let checkSpaces = getSpacesInRange(obstructTargets[i], obstructTargetRanges[i]);
+
+    for (let x of checkSpaces){
+      if (!obstructSpaces.includes(x)){
+        obstructSpaces.push(x);
+      }  
+    }
+    
+  }
+
+
+
+  //obstructList = getAdjacentSpaces(obstructTargets);
 
   //Movement Calculation
 
@@ -4667,7 +4756,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
 
 
-        if (newCells[currentPos] === null && (pass < 1 && obstructList.includes(currentPos)) ){ //obstructed
+        if (newCells[currentPos] === null && (pass < 1 && obstructSpaces.includes(currentPos)) ){ //obstructed, do not add 
           movementCheckDone.push(currentPos);
           continue;
         } 
@@ -4706,15 +4795,26 @@ function getActionLists(hero, heroList, newCells, currentTurn){
     currentMovement++;
   }
 
+  let obstructWarpSpaces = [];
+  for (let i = 0; i < obstructWarpTargets.length; i++){
+    let checkSpaces = getSpacesInRange(obstructWarpTargets[i], obstructWarpTargetRanges[i]);
+
+    for (let x of checkSpaces){
+      if (!obstructWarpSpaces.includes(x)){
+        obstructWarpSpaces.push(x);
+      }  
+    }
+    
+  }
 
 
-  //Warp space calculation
+  //Warp space calculation - this checks for all possible warps including spaces that can be moved to 
   let warpSpaces = [];
   for (let i = 0; i < warpTargets.length; i++){
     let checkSpaces = getSpacesInRange(warpTargets[i], warpTargetRanges[i]);
 
     for (let x of checkSpaces){
-      if (!warpSpaces.includes(x)){
+      if (!warpSpaces.includes(x) && (pass >= 1 || !obstructWarpSpaces.includes(x)) ){ //add warp space if not already in warp space and not warp obstructed (or pass is active)
         warpSpaces.push(x);
       }  
     }
@@ -4760,7 +4860,7 @@ function getAttackList(hero, newCells){
     let attackSpaces = getSpacesInExactRange(hero.position, hero.range);
 
     for (let s of attackSpaces){
-      if (newCells[s] !== null && newCells[s].side !== hero.side){
+      if (newCells[s] !== null && newCells[s].side !== hero.side && heroValid(newCells[s]) ){
         attackList.push(s);
       }
     }
@@ -4781,7 +4881,16 @@ function getWarpEffects(owner, heroList, currentTurn){
 
   let warpList = [];
   let warpRangeList = [];
+
+
+  //Obstruct regular movement
   let obstructList = [];
+  let obstructRangeList = [];
+  
+  //Obstruct warp movement
+  let obstructWarpList = [];
+  let obstructWarpRangeList = [];
+
   let pathfinderList = [];
   let pass = 0;
 
@@ -4824,6 +4933,7 @@ function getWarpEffects(owner, heroList, currentTurn){
 
               if (!obstructList.includes(hero.position) && hero.side !== owner.side){
                 obstructList.push(hero.position);
+                obstructRangeList.push(effect.range);
               }  
 
             } else if (effect.effect === "warp"){
@@ -4832,6 +4942,13 @@ function getWarpEffects(owner, heroList, currentTurn){
               if (!warpList.includes(hero.position)){
                 warpList.push(hero.position);
                 warpRangeList.push(effect.range);
+              }  
+
+            } else if (effect.effect === "obstructWarp"){
+
+              if (!obstructWarpList.includes(hero.position) && hero.side !== owner.side){
+                obstructWarpList.push(hero.position);
+                obstructWarpRangeList.push(effect.range);
               }  
 
 
@@ -4854,7 +4971,7 @@ function getWarpEffects(owner, heroList, currentTurn){
     }
   } //end heroList loop
 
-  return {"warpList": warpList, "warpRangeList": warpRangeList, "obstructList": obstructList, "pathfinderList": pathfinderList, "pass": pass};
+  return {"warpList": warpList, "warpRangeList": warpRangeList, "obstructList": obstructList, "obstructRangeList": obstructRangeList, "obstructWarpList": obstructWarpList, "obstructWarpRangeList": obstructWarpRangeList,  "pathfinderList": pathfinderList, "pass": pass};
 
 }
 
@@ -5044,6 +5161,8 @@ export function getPeakList(checkStats, owner, teamList, refList, peakType, targ
 
     } //loop through team
     
+ 
+
     return affectedList;
 
 }

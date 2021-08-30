@@ -1097,6 +1097,36 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": false
+	},
+	"77": {
+		"name": "Rauðrlion+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"refinable": true,
+		"refines": ["Rauðrlion+ Atk+", "Rauðrlion+ Spd+", "Rauðrlion+ Def+", "Rauðrlion+ Res+"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": true
+	},
+	"78": {
+		"name": "Rauðrlion",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"refinable": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": false
 	}
+
 
 }

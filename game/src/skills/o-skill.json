@@ -159,5 +159,14 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd", "def", "res"], "value": 1}]
+	},
+	"23": {
+		"name": "Shining Emblem Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 2]] }]
 	}
+
 }

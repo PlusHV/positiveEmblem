@@ -666,7 +666,7 @@
 		"prf": true,
 		"users": ["Celica: Warrior Priestess"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 1.0]], "brave": 1  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 1.0]], "brave": 1, "recoil": 1 }],
 		"max": true
 	},
 	"83": {
@@ -1197,7 +1197,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.9]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.9]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": false
 	},
 	"148": {
@@ -1205,7 +1205,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.7]],"subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.7]],"subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": false
 	},
 	"149": {
@@ -1213,7 +1213,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct"}],
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstruct", "range": 1}],
 		"max": true
 	},
 	"150": {
@@ -3315,6 +3315,27 @@
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "desperation": 1  },
 			{"type": "combatEffect", "nullStopFollowUp": 1 }],
+		"max": true
+	},
+	"401": {
+		"name": "Moonlight Bangle",
+		"sp": 300,
+		"prf": true,
+		"users": ["Eirika: Pledged Restorer"],
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "canto": {"flatCanto": 2, "cantoRemainder": 0}, "nullGuard": 1 },
+			{"type": "onSpecial", "damage": ["defender", "def", "variable", "trueDamage", {"key": "specialCD", "factor": 0.1, "constant": 0.20, "max": 10}]}],
+		"max": true
+	},
+	"402": {
+		"name": "Detailed Report",
+		"sp": 300,
+		"prf": true,
+		"users": ["Gatekeeper: Nothing to Report"],
+		"type": "effect",
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "effect" : "obstruct", "range": 1},
+			{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "effect" : "obstruct", "range": 2},
+			{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstructWarp", "range": 4}],
 		"max": true
 	}
 }

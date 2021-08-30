@@ -236,7 +236,7 @@
 		"cd": 5,
 		"prf": false,
 		"type": "post-battle",
-		"effect": {},
+		"effect": [{"type": "specialAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
 	},
 	"26": {
@@ -643,7 +643,8 @@
 		"prf": true,
 		"users": ["Leif: Unifier of Thracia"],
 		"type": "post-battle",
-		"effect": {},
+		"effect": [{"type": "specialAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] },
+				{"type": "specialtAction", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
 	},
 	"70": {
@@ -809,6 +810,29 @@
 		"users": ["Byleth: The Fódlan Star"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "atk",  0.25], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0, "condition": [["heroInfoCheck", "weapontype", ["breath", "beast"]]], "alt": 0.5},
+		"max": true
+	},
+	"86": {
+		"name": "Requiem Dance",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Marianne: Serene Adherent"],
+		"type": "post-battle",
+		"effect":[{"type": "specialAction", "subtype": "buff", "checkType": "targeting", "list": ["galeforce"], "checkStats": ["hp"], "team": "owner", "peak": "max", "targetReq": [["heroEnd", "enemy", true],  ["distanceCheck", 2]], "singleTarget": true},
+			{"type": "specialAction", "subtype": "debuff", "checkType": "targeting", "list": ["gravity"], "checkStats": ["hp"], "team": "owner", "peak": "max", "targetReq": [["heroEnd", "enemy", true],  ["distanceCheck", 2]], "singleTarget": true}],
+		"max": true
+	},
+	"87": {
+		"name": "Shining Emblem",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Marth: Prince of Light"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.35], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
+		"skills": [["o", "Shining Emblem Buff"]],
 		"max": true
 	}
 }

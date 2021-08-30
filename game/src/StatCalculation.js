@@ -267,7 +267,7 @@ function getFlowerMods(flowers, order){
 
 	for (let i = 1; i < flowers+1; i++){
 
-		if (i === 6){ 
+		if (i % 5 === 1){  //reset stat order every 5 flowers
 			stack = [...order]; //reset stack
 		}
 

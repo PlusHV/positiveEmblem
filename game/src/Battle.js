@@ -165,6 +165,8 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     let attackerTeamSpecial = postCombatInfo.attackerTeamSpecial;
     let defenderTeamSpecial = postCombatInfo.defenderTeamSpecial;
 
+
+    //The damage for the attacker/defender is done separately
     let attackerPostDamage = postCombatInfo.attackerPostDamage;
     let defenderPostDamage = postCombatInfo.defenderPostDamage;
 
@@ -225,6 +227,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
     //increase combat Count
     list[attacker.side][attacker.listIndex].combatCount++;
     list[defender.side][defender.listIndex].combatCount++;
+
     return list;
   }
 
@@ -618,7 +621,6 @@ export function getAttackCount(attacker, defender){
 
 
 
-
     //add up effects that guarantee doubles and prevents doubles
     let attackerDouble = attacker.combatEffects["double"] - defender.combatEffects.enemyDouble - attacker.combatEffects.stopDouble;
     let defenderDouble = defender.combatEffects["double"] - attacker.combatEffects.enemyDouble - defender.combatEffects.stopDouble;
@@ -858,59 +860,57 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       
     }
 
-    if ("reduceReduction" in specialEffect){
+    if ("reduceReduction" in specialEffect){ //specials have effects that can reduce damage reductions (nullify in most cases)
       reduceReduction = calculateReductionEffects([reduceReduction, specialEffect.reduceReduction] , 1.0);   
     }
 
-    if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list - damage keyword holds most of the information
+    if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list - get the special damage 
       
       specialDamage = getSpecialValue(specialEffect, attacker, defender, heroList, damageType, "damage");
 
+    }
+    for (let i of attacker.onSpecial){ //loop through effects that activate on special
+      if (i !== null){
 
-
-      for (let i of attacker.onSpecial){ //loop through effects that activate on special
-        if (i !== null){
-
-          for (let j in i){ 
-            if (j === "damage"){
-              //let onSpecialDamage = i.damage;
-              let extraDamage = getSpecialValue(i, attacker, defender, heroList, damageType, j);
-              // let sHero;
-
-
-
-              if (i.damage[3] === "trueDamage"){
-                trueDamage+= extraDamage;
-              } else if (i.damage[3] === "specialDamage" ){
-                specialDamage+= extraDamage
-              }
-
-
-            } else if (j === "heal"){
-
-
-              onHitHeal+= getSpecialValue(i, attacker, defender, heroList, damageType, j);
-
-
-            } else if (j === "reduceReduction") {
-              reduceReduction = calculateReductionEffects([reduceReduction, i.reduceReduction] , 1.0);  
-            } //end if heal
-          } //end for i
+        for (let j in i){ 
+          if (j === "damage"){
+            //let onSpecialDamage = i.damage;
+            let extraDamage = getSpecialValue(i, attacker, defender, heroList, damageType, j);
+            // let sHero;
 
 
 
-        }
+            if (i.damage[3] === "trueDamage"){
+              trueDamage+= extraDamage;
+            } else if (i.damage[3] === "specialDamage" ){
+              specialDamage+= extraDamage
+            }
 
-      } //end for onSpecial
+
+          } else if (j === "heal"){
+
+
+            onHitHeal+= getSpecialValue(i, attacker, defender, heroList, damageType, j);
+
+
+          } else if (j === "reduceReduction") {
+            reduceReduction = calculateReductionEffects([reduceReduction, i.reduceReduction] , 1.0);  
+          } //end if heal
+        } //end for i
 
 
 
-      getConditionalSpecial(attacker, defender, heroList); 
+      }
 
-      trueDamage+= attacker.combatEffects.specialTrueDamage; 
+    } //end for onSpecial
 
-      removeConditionalSpecial(attacker, defender, heroList);
-    } //end special damage calc
+
+
+    getConditionalSpecial(attacker, defender, heroList); 
+
+    trueDamage+= attacker.combatEffects.specialTrueDamage; 
+
+    removeConditionalSpecial(attacker, defender, heroList);
 
 
 
@@ -1127,7 +1127,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     heal+= onHitHeal;//attacker.combatEffects.onHitHeal;
   }
 
-
+  console.log(attacker);
   if (attackerSpecialActivated && attacker.statusEffect.deepWounds < 1){ //special healing
     heal+= Math.trunc(attacker.combatEffects.specialHeal * damageDealt);
     if ("heal" in specialEffect){
@@ -1187,6 +1187,10 @@ export function getSpecialValue(effect, owner, enemy, heroList, damageType, key)
     console.log(effect);
 
     let factor = effect[key][2];
+
+    if (factor === "variable"){ //if factor is variable, the variable factors will be in the 5th element.
+      factor = getVariableValue(heroList, effect[key][4], owner, 0);
+    }
 
     if ("condition" in effect && checkCondition(heroList, effect.condition, owner, enemy) ){
 
@@ -2025,6 +2029,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         }
 
         //check if their special is charged
+        //Note - if an aoe special is used, it is reset and at the start of combat will be considered not ready (tested with duo alfonse)
         if (innerCondition[j+2] && check.special.charge === 0){ 
           innerResult = true;
         } else if (!innerCondition[j+2] && check.special.charge !== 0){ 
@@ -2398,6 +2403,97 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
 
         j = j + 1;
+      } else if (keyWord === "bonusTotalCheck"){ //checks if a bonus total on someone passes a check (this specifically does not check for neutralizations)
+
+        //adds up total buffs on either the owner, enemy
+        let total = 0;
+
+        let check = {};
+        if (innerCondition[j+1] === "player"){
+          check = owner;
+        } else if (innerCondition[j+1] === "enemy"){
+          check = enemy;
+        }
+
+        if (check.statusEffect.panic < 1 || check.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
+
+          for (let s in check.buff){ //loop through stats
+            
+            total+= check.buff[s];
+            
+          }
+        }
+
+        if (innerCondition[j+2] === "greater" && total >= innerCondition[j+3]){
+          innerResult = true;
+        } else if (innerCondition[j+2] === "less" && total <= innerCondition[j+3]){
+          innerResult = true;
+        }
+
+        j = j + 3;
+      } else if (keyWord === "teamBonusTotalCheck"){ //a check for bonusTotals on team (excluding owner) (only for genesis falchion currently) - Also allows for doing top X bonuses too
+        //["bonusTotalCheck", "enemy", "greater", 10]
+        //["teamBonusTotalCheck", "player" "greater", 10, 999]
+        let side = "0";
+
+        if (innerCondition[j+1] === "owner"){
+          side = owner.side;
+        } else if (innerCondition[j+1] === "enemy"){
+          side = getEnemySide(owner.side);
+        }
+
+
+        let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+
+        let teamList = heroList[side];
+
+        for (let x in teamList){
+          if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves, self buff req is done separately
+            teamListValid.push(teamList[x]);
+          }
+        } 
+
+        let bonusTotal = 0;
+        let bonusTotalList = [];
+
+        console.log(teamListValid);
+        for (let x of teamListValid){ //loop through valid allies
+          let bonusValue = 0;
+          if (x.statusEffect.panic < 1 || x.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
+            for (let s in x.buff){ //loop through stats
+              bonusValue+= x.buff[s];
+            }
+          }
+
+          console.log(bonusTotalList.length);
+          console.log(innerCondition[j+4]);
+          console.log(bonusValue);
+
+          if (bonusTotalList.length < innerCondition[j+4]){ //haven't reached the top x amount of units, add it to the total
+            bonusTotal+= bonusValue;
+            bonusTotalList.push(bonusValue);
+          } else { // top x units reached, evaluate if the total is in the top x
+            bonusTotalList.sort(function(a, b){return a-b}); //sort from lowest to greatest
+            if (bonusTotalList[0] < bonusValue){
+              bonusTotal = bonusTotal - bonusTotalList[0] + bonusValue; //remove previous lowest value and add new value 
+              bonusTotalList[0] = bonusValue; //replace lowest value with new value
+            }
+          } //end fi
+
+
+        }
+        console.log(bonusTotal);
+        console.log(bonusTotalList);
+        
+        if (bonusTotal >= innerCondition[j+3] && innerCondition[j+2] === "greater"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } else if (bonusTotal <= innerCondition[j+3] && innerCondition[j+2] === "less"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } 
+
+        j = j + 4;
       }
 
     } //end for j
@@ -2517,7 +2613,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
       statList = variableEffect.statList;
     }
 
-    if (variableEffect.reference === "owner"){
+    if (variableEffect.reference === "owner" || variableEffect.reference === "both"){
       reference = owner;
       other = enemy;
     } else if (variableEffect.reference === "enemy"){
@@ -2568,14 +2664,29 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
       if (reference.statusEffect.panic < 1 || reference.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
 
-      for (let s of statList){ //loop through stats
-        if (other.combatEffects.buffNeutralize[s] <= 0){ //if other is not neutralizing the stat, add it to buff value
-          buffValue+= reference.buff[s];
+        for (let s of statList){ //loop through stats
+          if (other.combatEffects.buffNeutralize[s] <= 0){ //if other is not neutralizing the stat, add it to buff value
+            buffValue+= reference.buff[s];
+          }
         }
-      }
 
 
       }
+
+      if (variableEffect.reference === "both"){ //if referencing both then apply get value from the other hero as well
+        if (other.statusEffect.panic < 1 || other.statusEffect.nullPanic > 0){ //if check for panic to see if buffs are not debuffs - or null panic active
+
+          for (let s of statList){ //loop through stats
+            if (reference.combatEffects.buffNeutralize[s] <= 0){ //if other is not neutralizing the stat, add it to buff value
+              buffValue+= other.buff[s];
+            }
+          }
+
+
+        }
+
+
+      } //end adding buff value from other hero as well
 
 
     } else if(variableEffect.subtype === "debuff"){
@@ -2588,12 +2699,31 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
             buffValue+= reference.buff[s];
           }
 
-        }
+        } //check reference
+
+        if (variableEffect.reference === "both"){
+          if (other.combatEffects.penaltyNeutralize[s] <= 0){ //if the reference is not neutralizing penalties add it to the buff value
+            buffValue+= other.debuff[s];
+
+            if (other.statusEffect.panic > 0 && other.statusEffect.nullPanic < 1){ //if panicked (and panic not nulled) then also add the buff values
+              buffValue+= other.buff[s];
+            }
+
+          }
+
+
+        } //check other if both
+
+
       }
 
     } 
 
     buffValue = Math.trunc(buffValue * variableEffect.multiplier);
+
+    if ("max" in variableEffect){ //if there is a max to the buff,
+      buffValue = Math.min(variableEffect.max, buffValue);
+    }
 
     let statBuff = {};
     for (let x of variableEffect.stats){
@@ -2684,7 +2814,46 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     } //loop through stats
 
     return {"statBuff": statValues};
-  } //end statcopy
+  } else if (variableEffect.key === "bonusCopy"){ 
+    let statValues = {};
+
+    let passedHeroList = [];
+    //get list of heroes that pass the allyReq
+    for (let hero of heroList[owner.side]){
+
+      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+        continue; //if they don't meet ally req, skip
+      }
+
+      if (owner.id === hero.id || !heroValid(hero) ){
+        continue; //cannot target themselves
+      }
+      passedHeroList.push(hero);
+
+
+    } //loop through team
+
+
+    for (let stat of variableEffect.stats){
+      let statVal = 0;
+
+      for (let hero of passedHeroList){
+        if (hero.statusEffect.panic < 1 || hero.statusEffect.nullPanic > 0){
+          let currentVal = hero.buff[stat];
+
+          if (currentVal > statVal){
+
+            statVal = currentVal; //set new max
+          }
+        }
+      } // looop through heroes
+
+      statValues[stat] = statVal; //statBuff will copy the buff value
+
+    } //loop through stats
+
+    return {"statBuff": statValues};
+  } //end bonusCopy
 
 
 }
@@ -2701,7 +2870,15 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
     let unit = variableEffect.unit;
     let value = 0;
 
-    if (variableEffect.stat === "flat") {
+
+    if (variableEffect.stat === "specialCD"){ //not currently used but implemented because I thought surge sparrow added a heal based on damage dealt rather than based on max hp
+      value = Math.trunc( (owner.special.cd * variableEffect.factor + variableEffect.constant) * 100.0 ); //uses the cd, if there is no special (which means below 0 cd) then set to 0
+      value = value / 100.0;
+      if (owner.special.cd < 0){
+        value = 0; //set to 0 if there is no special
+      }
+
+    } else if (variableEffect.stat === "flat") {
       value = variableEffect.factor;
     } else if (unit === "owner"){
       value = Math.trunc(owner.combatStats[variableEffect.stat] * variableEffect.factor);  
@@ -2720,6 +2897,7 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
     for (let x of variableEffect.combatEffects){
       combatEffectList[x] = value;
     }
+    console.log(combatEffectList);
     return combatEffectList;
 
   } else if (variableEffect.key === "statDifferenceEffect"){
@@ -2800,7 +2978,6 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
 
     allyCount = Math.min(passedHeroList.length, variableEffect.maxAllies);
 
-    console.log(allyCount);
 
     let value = (variableEffect.multiplier * allyCount + variableEffect.constant);
 
@@ -2891,7 +3068,18 @@ export function getVariableValue(heroList, effect, owner, turn){
 
 
 
+  } else if (effect.key === "specialCD"){
+
+    let value = Math.trunc( (owner.special.cd * effect.factor + effect.constant) * 100.0 ); //uses the cd, if there is no special (which means below 0 cd) then set to 0
+    value = value / 100.0;
+    if (owner.special.cd < 0){
+      value = 0; //set to 0 if there is no special
+    }
+    return value;
+
   }
+
+
 
   return 0; 
 
@@ -3040,11 +3228,13 @@ export function checkCardinal(hero1, hero2){
   }
 
 }
-
+//given heroes, check if they are cardinal to eachother OR if hero2 is within a certain amount of colums/rows hero1
 export function checkCardinalRowColumn(hero1, hero2, width, height){
   let pos1 = positionToRowColumn(hero1.position);
   let pos2 = positionToRowColumn(hero2.position);
 
+
+  //For effects that require unit to be within rows OR columns, use two conditionals with 0 width/height value
 
   //width = 0 means ignore column and only check row
   if (width === 0){
@@ -3106,6 +3296,13 @@ export function checkTactic(hero, heroList){
 
 //given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
 export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost, specialPost, turn){
+
+  //Single targets effects only allow a single hero
+  if ("singleTarget" in effect && effect.singleTarget){
+    if (affectedHeroes.length > 1){
+      return;
+    }
+  }
 
   let value = effect.value;
   if (value === "variable"){
@@ -3191,6 +3388,8 @@ export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost,
         heroList[y.side][y.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
         heroList[y.side][y.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
 
+      } else if (x === "galeforce"){
+        heroList[y.side][y.listIndex].end = false;
 
       } else { //otherwise, it should be a status buff
 

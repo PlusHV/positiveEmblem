@@ -138,6 +138,21 @@
 		"passive": {},
 		"effect": [],
 		"max": true
+	},
+	"10": {
+		"name": "Phantasm Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"refinable": false,
+		"type": "colorlesstome",
+		"users": ["Marianne: Serene Adherent"],
+		"skills": [], 
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], "buffNeutralize": {"spd": 1, "res": 1}, "lull": {"spd": 6, "res": 6} },
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["enemyhp", "greater", 0.5]], "firstReduction": 0.3 }],
+		"max": true
 	}
 
 

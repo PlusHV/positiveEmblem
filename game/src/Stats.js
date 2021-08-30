@@ -48,7 +48,7 @@ export default class Stats extends React.Component{
   const levelText = ["level", "merge", "flower", "rarity"];
   const levelKey = ["level", "merge", "dragonflower", "rarity"];
   const min = ["1", "0", "0", "1"];
-  const max = ["40", "10", "10", "5"];
+  const max = ["40", "10", "20", "5"];
   let cells = [];
   	
 
