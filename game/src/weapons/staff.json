@@ -363,7 +363,8 @@
 		"sp": 400,
 		"prf": true,
 		"users": ["Camilla: Light of Nohr"],
-		"refinable": false,
+		"refinable": true,
+		"refines": ["Sanngriðr Eff+"],
 		"type": "staff",
 		"skills": [],
 		"passive": {},
@@ -425,7 +426,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": true
 	},
 	"31": {
@@ -438,7 +439,7 @@
 		"type": "staff",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"32": {
@@ -601,7 +602,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "combatEffect", "wrathful": 1},
-			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "damageReduction": 0.7}] }],
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "combatEffect", "damageReduction": 0.7}] }],
 		"max": true
 	},
 	"44": {
@@ -649,7 +650,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2},
-			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
 		"max": true
 	},
 	"47": {
@@ -663,7 +664,7 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2},
-			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": [{"type": "combatEffect", "guard": 1}] }],
 		"max": false
 	},
 	"48": {
@@ -755,7 +756,7 @@
 		"effect": [{"type": "combatEffect", "wrathful": 1},
 			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 6},
 			{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} },
-			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": {"type": "combatEffect", "defenseCharge": 1} }],
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffect": {"type": "combatEffect", "defenseCharge": 1} }],
 		"max": true
 	},
 	"54": {

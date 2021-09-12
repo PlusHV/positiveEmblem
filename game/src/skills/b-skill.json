@@ -3337,6 +3337,25 @@
 			{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "effect" : "obstruct", "range": 2},
 			{"type": "warp", "subtype": "warpTarget", "effectReq": [["always"]], "effect" : "obstructWarp", "range": 4}],
 		"max": true
+	},
+	"403": {
+		"name": "Solar Brace II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ephraim: Legendary Lord"],
+		"type": "effect",
+		"effect": {"type": "combatEffect", "canto": {"flatCanto": 2, "cantoRemainder": 0}, "nullGuard": 1, "postHeal": 10},
+		"max": true
+	},
+	"404": {
+		"name": "Prescience",
+		"sp": 300,
+		"prf": true,
+		"users": ["Micaiah: Radiant Queen"],
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 5, "res": 5} },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "firstReduction": 0.7 }],
+		"max": true
 	}
 }
 

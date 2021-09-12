@@ -788,6 +788,22 @@
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "lull": {"atk": 5, "spd": 5, "def": 5, "res": 5}, 
 				"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["counterDisrupt"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }] }],
 		"max": true
+	},
+	"52": {
+		"name": "Dusk Dragonstone",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Kana: Dragon Spawn"],
+		"refinable": true,
+		"refines": ["Dusk Dragonstone Eff+", "Dusk Dragonstone Atk+", "Dusk Dragonstone Spd+", "Dusk Dragonstone Def+", "Dusk Dragonstone Res+"],
+		"type": "breath",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
+			{"type": "conditionalEffects", "condition": [["phase", "enemy", "statBonus", "enemy", "combat", false]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
 	}
 
 }

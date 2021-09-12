@@ -577,6 +577,15 @@
 		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
 			"owner": 0, "other": 1},
 		"max": false
+	},
+	"63": {
+		"name": "Maiden's Solace",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Micaiah: Radiant Queen"],
+		"type": ["health", "neutralize"],
+		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":1, "neutralize": ["harsh", "restore"]},
+		"max": true
 	}
-
 }

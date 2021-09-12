@@ -959,7 +959,7 @@
 	},
 	"69": {
 		"name": "Father's Tactics",
-		"might": 12,
+		"might": 14,
 		"range": 2,
 		"sp": 400,
 		"prf": true,

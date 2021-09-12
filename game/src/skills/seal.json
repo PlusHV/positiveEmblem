@@ -3123,7 +3123,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }] }],
 		"max": false
 	},
 	"391": {
@@ -3131,7 +3131,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 3, "res": 3} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"392": {
@@ -3139,7 +3139,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"393": {
@@ -3339,7 +3339,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }] }],
 		"max": false
 	},
 	"418": {
@@ -3347,7 +3347,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 3, "res": 3} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 3, "res": 3} }] }],
 		"max": false
 	},
 	"419": {
@@ -3355,7 +3355,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"420": {
@@ -4356,7 +4356,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}] }],
 		"max": false
 	},
 	"545": {
@@ -4364,7 +4364,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}] }],
 		"max": false
 	},
 	"546": {
@@ -4372,7 +4372,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}] }],
 		"max": true
 	},
 	"547": {

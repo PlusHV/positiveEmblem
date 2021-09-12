@@ -717,7 +717,7 @@ export function getAttackOrder(stack, attacker, defender){
 
       defenderHits-= defenderRoundHits;
 
-      if (defenderHits > 0 && defender.combatEffects.desperation > 0 && hardyBearing <= 0){ //if desperation is active get follow up attack immediately
+      if (defenderHits > 0 && (defender.combatEffects.desperation > 0 || attacker.combatEffects.grantDesperation > 0) && hardyBearing <= 0){ //if desperation is active get follow up attack immediately
         
         for (let j = 0; j < defenderRoundHits; j++){
           attackStack.push(2);
@@ -741,7 +741,7 @@ export function getAttackOrder(stack, attacker, defender){
       attackerHits-= attackerRoundHits;
 
       //if desperation and can double, attack does their second before defender 
-      if (attackerHits > 0 && attacker.combatEffects.desperation > 0 && hardyBearing <= 0){
+      if (attackerHits > 0 && (attacker.combatEffects.desperation > 0 || defender.combatEffects.grantDesperation > 0) && hardyBearing <= 0){
 
         for (let j = 0; j < attackerRoundHits; j++){
           attackStack.push(1);
@@ -765,7 +765,7 @@ export function getAttackOrder(stack, attacker, defender){
 
       defenderHits-= defenderRoundHits;
 
-      if (defenderHits > 0 && defender.combatEffects.desperation > 0 && hardyBearing <= 0){ //if desperation is active get follow up attack immediately 
+      if (defenderHits > 0 && (defender.combatEffects.desperation > 0 || attacker.combatEffects.grantDesperation > 0) && hardyBearing <= 0){ //if desperation is active get follow up attack immediately 
         
         for (let j = 0; j < defenderRoundHits; j++){
           attackStack.push(2);
@@ -2185,10 +2185,15 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         let support = owner.allySupport;
         let allyHero = enemy.heroID;
 
-        if (support.value === allyHero.value && support.label === allyHero.label && innerCondition[j+1]){ //if they are the support ally
+
+        let allySupport = enemy.allySupport;
+        let ownerHero = owner.heroID;
+
+        if (support.value === allyHero.value && support.label === allyHero.label && 
+          allySupport.value === ownerHero.value && allySupport.label === ownerHero.label && innerCondition[j+1]){ //if they are the support ally
 
           innerResult = true;
-        } else if ( (support.value !== allyHero.value || support.label !== allyHero.label) && !innerCondition[j+1]){ //if not support ally and asking for not support ally
+        } else if ( (support.value !== allyHero.value || support.label !== allyHero.label || allySupport.value !== ownerHero.value || allySupport.label !== ownerHero.label) && !innerCondition[j+1]){ //if not support ally and asking for not support ally
           innerResult = true;
         }
 

@@ -419,7 +419,16 @@ class GameBoard extends React.Component{
     Object.keys(tSkills).forEach((key, i) => { //need to clear old effects
 
         if (key !== "refine" || tSkills.refine.value !== "0" ){ //for refines, check if the refine is not the empty one before adding it - if refine is not the empty refine, it shouuld also remove the weapon before
+
+          if (key === "refine"){ //if we are adding the non-empty refine, remove the weapon first (currently, refines are blank by default so this will not occur)
+            hero = this.removeSkillEffect(tSkills.weapon.value, "weapon", hero);
+
+          } 
+
+  
+
           hero = getSkillEffect(tSkills[key].value , key, hero, updatedDropdowns);
+        
         }
     });
 
@@ -544,14 +553,15 @@ class GameBoard extends React.Component{
     //2. weapon and refine - remove refine, then add refine. If the new refine is the empty refine, add the weapon instead
     //3. 
 
-    //if the empty refine was previously equipped and adding a new refine, then remove the weapon skill from the unit (as well as the blank refine weapon)
-    //if another refine was equipped, then the weapon should already be removed and replacing the refine is enough
-
+    //Adding new refine while one hasn't been equipped before
+    //Remove weapon first
     if (index === "refine" && skillList.refine.value === "0"){ 
       hero = this.removeSkillEffect(skillList.weapon.value, "weapon", hero);
 
     } 
 
+
+    //Changing the weapon while a refine is equipped
     //remove the current skill effect that is to be reaplced
     if (index === "weapon" && skillList.refine.value !== "0"){ //if we are adding a new weapon and there is already a refine on the unit, we remove the refine weapon from the unit instead. We also set the refine weapon to the empty weapon
     
@@ -562,7 +572,9 @@ class GameBoard extends React.Component{
     }
 
 
+    //refine is already equipped and is being removed
     if (index === "refine" && e.value === "0" && skillList.refine.value !== "0"){ //if changing to the blank refine (and it is not already the  blank refine), then add base weapon to the hero
+
       hero = getSkillEffect(skillList.weapon.value, "weapon", hero, this.state.skillDropdowns); //need to clear old effects  
     }
 
@@ -573,9 +585,10 @@ class GameBoard extends React.Component{
     
 
 
-    //Add skill effect to the hero
-    hero = getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
-
+    //If adding the blank refine weapon, then we should have already added the original weapon
+    if (index !== "refine" || e.value !== "0"){
+      hero = getSkillEffect(e.value, index, hero, this.state.skillDropdowns); //need to clear old effects
+    }
 
     if (hero.transformed && getTransformationSkills(hero).length > 0){ //redo the transformation
       for (let x of getTransformationSkills(hero)) {
@@ -1466,7 +1479,8 @@ class GameBoard extends React.Component{
         this.getAuraEffects(draggedHero, draggedOverHero, this.state.heroList);
         this.getAuraEffects(draggedOverHero, draggedHero, this.state.heroList);
 
-
+        console.log(draggedHero);
+        console.log(draggedOverHero);
 
         //For conditional effects that check for buff/debuffs and also provide neutralzing effects 
         //These have priority as they will activate before other neutralizers This is basically for idunn and brunnya's weapons
@@ -1616,7 +1630,9 @@ class GameBoard extends React.Component{
   }
 
   //For the given hero, get all of the aura effects from every other hero
+  //For the given hero,  loop through their team for aura effects 
   //do not need to loop through enemies as there are not any aura debuffs yet?
+    //Update - Aura debuffs introduced with Thunderhead Eff+
   //Examples include close guard, infantry rush etc.
   getAuraEffects(hero, enemy, heroList){
 
@@ -1625,6 +1641,26 @@ class GameBoard extends React.Component{
     if (enemy.combatEffects.teamNihil > 0){
       nihilCheck = true;
     }
+    // //right now it loops through the hero's team and applies aura effects to them
+    // we have 2 options for enemy aura effects
+    //  1.  Instead of only looping your team's auras, also loop through the enemies auras
+          //this also requires that we have a check the that aura is applied to their team
+    // 2. We keep the loop and apply aura effects depending on team --
+    //  So we loop through team 1's aura's and apply to hero/enemy depending on team
+
+    //i think we got with 2 because it's less team loops and is simpler
+    //like with 1,  we will 
+
+    //   let teamNihil = false; 
+
+    //   //Team nihil is activated from opposite team
+    //   if (getEnemySide(hero1Team) === team  && hero1.combatEffects.teamNihil > 0){
+    //     teamNihil = true;
+    //   } else if (getEnemySide(hero2Team) === team  && hero2.combatEffects.teamNihil > 0){
+    //     teamNihil = true;
+
+    //   }
+
 
     for (let teammate of heroList[hero.side]){ //loop through teammates
 
@@ -1640,13 +1676,22 @@ class GameBoard extends React.Component{
           continue;
         }
 
-        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, hero, this.state.currentTurn) && teammate.id !== hero.id  ){ //check if the hero meets the allyReq to gain the aura effects - Also check if its not themselves
+        let targetedHero = hero; // by default, hit the hero
+        if (effect.team === "owner"){
+          targetedHero = hero;
+        } else if (effect.team === "enemy"){
+          targetedHero = enemy;
+        }
 
-          addEffect(hero, effect.auraEffect); //adds the effects to the hero
 
-        } else if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, teammate, hero, this.state.currentTurn) && teammate.id === hero.id ){
+        //if aura is from another hero, use effectReq, otherwise use selfReq
+        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, targetedHero, this.state.currentTurn) && teammate.id !== targetedHero.id  ){ //check if the hero meets the allyReq to gain the aura effects - Also check if its not themselves
 
-          addEffect(hero, effect.auraEffect);
+          addEffect(targetedHero, effect.auraEffects); //adds the effects to the hero
+
+        } else if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, teammate, targetedHero, this.state.currentTurn) && teammate.id === targetedHero.id ){ //if selfReq is being used, the targeted hero should be the hero. Otherwise, it would use the effectReq
+
+          addEffect(targetedHero, effect.auraEffects);
         }
 
         
@@ -3922,7 +3967,7 @@ function makeHeroStruct(){
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "adaptive": 0, "nullAdaptive": 0, "sweep": 0, "selfSweep": 0,
       "phantomStats": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}, //extra stats used for stat comparisons
     //enemyDouble stops enemy from double, stopDouble stops your own double
-      "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0,
+      "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0, "grantDesperation": 0,
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
       "brave": 0,
       "galeforce": 0,
