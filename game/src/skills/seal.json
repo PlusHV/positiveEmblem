@@ -305,7 +305,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"39": {
@@ -313,7 +313,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"40": {
@@ -321,7 +321,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"41": {
@@ -849,7 +849,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]] }],
 		"max": false
 	},
 	"107": {
@@ -857,7 +857,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]] }],
 		"max": false
 	},
 	"108": {
@@ -865,7 +865,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]] }],
 		"max": true
 	},
 	"109": {
@@ -1122,7 +1122,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"141": {
@@ -1130,7 +1130,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"142": {
@@ -1138,7 +1138,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"143": {
@@ -2819,7 +2819,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"353": {
@@ -2827,7 +2827,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"354": {
@@ -2835,7 +2835,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"355": {
@@ -4413,6 +4413,70 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"552": {
+		"name": "Squad Ace AX 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1, "res": 1},
+		"max": false
+	},
+	"553": {
+		"name": "Squad Ace AX 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2, "res": 2},
+		"max": true
+	},
+	"554": {
+		"name": "Spd Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"555": {
+		"name": "Spd Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"556": {
+		"name": "Spd Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"557": {
+		"name": "Atk/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"558": {
+		"name": "Atk/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": false
+	},
+	"559": {
+		"name": "Atk/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
 		"max": true
 	}
 

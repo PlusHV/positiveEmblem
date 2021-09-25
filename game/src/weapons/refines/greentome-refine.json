@@ -464,6 +464,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
 			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
@@ -477,7 +478,8 @@
 		"type": "greentome",
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3},
-		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
 		"max": true
 	},
 	"36": {
@@ -490,7 +492,8 @@
 		"type": "greentome",
 		"skills": [],
 		"passive": {"hp": 2, "spd": 5},
-		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
 		"max": true
 	},
 	"37": {
@@ -503,7 +506,8 @@
 		"type": "greentome",
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3, "def": 3},
-		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
 		"max": true
 	},
 	"38": {
@@ -516,7 +520,8 @@
 		"type": "greentome",
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3, "res": 3},
-		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.2, "max": 999}],
 		"max": true
 	},
 	"39": {

@@ -1126,6 +1126,51 @@
 		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] },
 			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "res": 5} }],
 		"max": false
+	},
+	"79": {
+		"name": "Luminous Grace+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"refinable": true,
+		"refines": ["Luminous Grace+ Atk+", "Luminous Grace+ Spd+", "Luminous Grace+ Def+", "Luminous Grace+ Res+"],
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"80": {
+		"name": "Luminous Grace",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"refinable": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": false
+	},
+	"81": {
+		"name": "Agnea's Arrow",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Constance: Fallen Noble"],
+		"refinable": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {"spd": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 6, "spd": 6}, "nullStopFollowUp": 1 },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["turn", 2, 0]], "buffNeutralize": {"spd": 1, "res": 1} },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["turn", 2, 1]], "penaltyNeutralize": {"atk": 1, "spd": 1} }],
+		"max": true
 	}
 
 

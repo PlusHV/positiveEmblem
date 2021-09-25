@@ -42,7 +42,7 @@
 		"type": "breath",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 }, 
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
 			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
 			{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] }],
 		"max": true
@@ -263,7 +263,7 @@
 		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
-			{"type": "conditionalCombat", "condition": [["phase", "player"], ["statCompare", "combat", "def", "greater", 5] ], "sweep": 1 }],
+			{"type": "conditionalCombat", "condition": [["phase", "player"], ["statCompare", "combat", "def", "greater", 5] ], "enemyDouble": 1 }],
 		"max": true
 	},
 	"18": {
@@ -720,7 +720,7 @@
 		"type": "breath",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 }, 
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
 			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "owner", "effectReq": [["distanceCheck", 2]], "selfReq": [["distantAllies", 2, "greater", 1]] }],
 		"max": true
 	},
@@ -803,6 +803,22 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
 			{"type": "conditionalEffects", "condition": [["phase", "enemy", "statBonus", "enemy", "combat", false]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
+	},
+	"53": {
+		"name": "Flamelick Breath",
+		"might": 16,
+		"range": 1,
+		"sp": 400,
+		"prf": true,
+		"users": ["Múspell: Flame God"],
+		"refinable": false,
+		"type": "breath",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "adaptive": 1 },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "nullEnemyHeal": 1,
+				"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }] }],
 		"max": true
 	}
 

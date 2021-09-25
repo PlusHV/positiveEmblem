@@ -1,0 +1,222 @@
+{
+    "frames":
+    {
+        "Attack.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{1781,59},{180,180}}",
+            "textureRotated": false
+        },
+        "Attack2.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{1569,113},{180,180}}",
+            "textureRotated": false
+        },
+        "Bln_L.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{7,-2}",
+            "spriteSize": "{136,108}",
+            "spriteSourceSize": "{150,150}",
+            "textureRect": "{{1751,241},{136,108}}",
+            "textureRotated": false
+        },
+        "Bln_R.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{-7,-2}",
+            "spriteSize": "{136,108}",
+            "spriteSourceSize": "{150,150}",
+            "textureRect": "{{1889,281},{136,108}}",
+            "textureRotated": false
+        },
+        "Bln_T.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,-9}",
+            "spriteSize": "{122,122}",
+            "spriteSourceSize": "{150,150}",
+            "textureRect": "{{1021,209},{122,122}}",
+            "textureRotated": false
+        },
+        "Font_HPGauge.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{350,76}",
+            "spriteSourceSize": "{352,76}",
+            "textureRect": "{{1217,113},{350,76}}",
+            "textureRotated": false
+        },
+        "Frm_WinRule.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{1214,148}",
+            "spriteSourceSize": "{1320,148}",
+            "textureRect": "{{1,59},{1214,148}}",
+            "textureRotated": false
+        },
+        "HPGauge.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{126,56}",
+            "spriteSourceSize": "{126,56}",
+            "textureRect": "{{1557,295},{126,56}}",
+            "textureRotated": false
+        },
+        "Icon_Advantage.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{156,156}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{1399,191},{156,156}}",
+            "textureRotated": false
+        },
+        "Icon_Attack.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,-1}",
+            "spriteSize": "{70,70}",
+            "spriteSourceSize": "{82,82}",
+            "textureRect": "{{1145,283},{70,70}}",
+            "textureRotated": false
+        },
+        "Icon_Crit.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{-2,-1}",
+            "spriteSize": "{562,52}",
+            "spriteSourceSize": "{580,58}",
+            "textureRect": "{{1217,59},{562,52}}",
+            "textureRotated": false
+        },
+        "Icon_Disadvantage.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{156,156}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{547,209},{156,156}}",
+            "textureRotated": false
+        },
+        "Icon_Enhance.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{4,0}",
+            "spriteSize": "{720,56}",
+            "spriteSourceSize": "{728,56}",
+            "textureRect": "{{1285,1},{720,56}}",
+            "textureRotated": false
+        },
+        "Icon_Move.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{1,-1}",
+            "spriteSize": "{220,54}",
+            "spriteSourceSize": "{224,56}",
+            "textureRect": "{{1963,59},{220,54}}",
+            "textureRotated": true
+        },
+        "Icon_PositionChange.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{62,80}",
+            "spriteSourceSize": "{82,82}",
+            "textureRect": "{{1685,295},{62,80}}",
+            "textureRotated": false
+        },
+        "Icon_Reliance.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{156,156}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{705,209},{156,156}}",
+            "textureRotated": false
+        },
+        "Icon_Support.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,-5}",
+            "spriteSize": "{64,72}",
+            "spriteSourceSize": "{82,82}",
+            "textureRect": "{{1145,209},{64,72}}",
+            "textureRotated": false
+        },
+        "Icon_Target.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{5,1}",
+            "spriteSize": "{156,156}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{863,209},{156,156}}",
+            "textureRotated": false
+        },
+        "Icon_Weapon.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{-1,0}",
+            "spriteSize": "{1282,56}",
+            "spriteSourceSize": "{1288,56}",
+            "textureRect": "{{1,1},{1282,56}}",
+            "textureRotated": false
+        },
+        "Player.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{1217,191},{180,180}}",
+            "textureRotated": false
+        },
+        "Player_Special.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{1,209},{180,180}}",
+            "textureRotated": false
+        },
+        "Support.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{183,209},{180,180}}",
+            "textureRotated": false
+        },
+        "Support2.png":
+        {
+            "aliases": [],
+            "spriteOffset": "{0,0}",
+            "spriteSize": "{180,180}",
+            "spriteSourceSize": "{180,180}",
+            "textureRect": "{{365,209},{180,180}}",
+            "textureRotated": false
+        }
+    },
+    "metadata":
+    {
+        "format": 3,
+        "pixelFormat": "RGBA8888",
+        "premultiplyAlpha": false,
+        "realTextureFileName": "Status.png",
+        "size": "{2026,390}",
+        "smartupdate": "$TexturePacker:SmartUpdate:ac5cf6da337e1ea84f6d580769e12a6a:577988eee280bc5059a387ce01b94b24:3475971789e55fbef65369d047b6de48$",
+        "textureFileName": "Status.png"
+    }
+}

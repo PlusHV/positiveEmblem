@@ -1386,7 +1386,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]]} ]}]  }],
 		"max": false
 	},
 	"178": {
@@ -1394,7 +1394,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]]} ]}]  }],
 		"max": false
 	},
 	"179": {
@@ -1402,7 +1402,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]] }]  }],
 		"max": true
 	},
 	"180": {
@@ -3286,6 +3286,35 @@
 		"type": "effect",
 		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "selfReq": [["distantAllies", 2, "greater", 1]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
+	},
+	"415": {
+		"name": "Threaten Def/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"416": {
+		"name": "Threaten Def/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"417": {
+		"name": "Domain of Flame",
+		"sp": 300,
+		"prf": true,
+		"users": ["Múspell: Flame God"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", 
+				"auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "owner", "atk", "enemy", "res", "greater", 1]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "res", "factor": 0.3, "max": 999}] }], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
 	}
+
 
 }

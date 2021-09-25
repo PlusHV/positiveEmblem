@@ -222,7 +222,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"28": {
@@ -230,7 +230,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"29": {
@@ -238,7 +238,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"30": {
@@ -327,7 +327,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"41": {
@@ -335,7 +335,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"42": {
@@ -601,7 +601,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"75": {
@@ -609,7 +609,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"76": {
@@ -730,7 +730,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"91": {
@@ -738,7 +738,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"92": {
@@ -746,7 +746,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"93": {
@@ -778,7 +778,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"97": {
@@ -786,7 +786,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"98": {
@@ -794,7 +794,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 2, "spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"99": {
@@ -802,7 +802,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 3, "spd": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"100": {
@@ -876,7 +876,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"109": {
@@ -884,7 +884,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"110": {
@@ -892,7 +892,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"111": {
@@ -900,7 +900,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 3, "res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"112": {
@@ -908,7 +908,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"def": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"113": {
@@ -979,7 +979,7 @@
 		"name": "Light and Dark",
 		"sp": 300,
 		"prf": true,
-		"users": ["Julia: Crusader of Light", "Julia: Heart Usurped"],
+		"users": ["Julia: Crusader of Light", "Julia: Heart Usurped", "Julia: Scion of the Saint"],
 		"type": "effect",
 		"effect": {"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}, "lull": {"atk": 2, "spd": 2, "def": 2, "res": 2} },
 		"max": true
@@ -1374,7 +1374,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 2, "def": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"170": {
@@ -1382,14 +1382,14 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"spd": 3, "def": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "assisteeReq": [["always"]]}, {"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"171": {
 		"name": "S Drink",
 		"sp": 300,
 		"prf": true,
-		"users": ["Leif: Prince of Leonster", "Leif: Unifier of Thracia"],
+		"users": ["Leif: Prince of Leonster", "Leif: Unifier of Thracia", "Leif: Destined Scions"],
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 99, "stats": ["hp"], "team": "owner", "selfReq": [["always"]] },
 				{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }],
@@ -1844,7 +1844,7 @@
 		"sp": 50,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 3}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"228": {
@@ -1852,7 +1852,7 @@
 		"sp": 100,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": false
 	},
 	"229": {
@@ -1860,7 +1860,7 @@
 		"sp": 200,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"res": 5}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"230": {
@@ -2823,8 +2823,8 @@
 		"prf": true,
 		"users": ["Dimitri: Savior King"],
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], 
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999}] },
+		"effect": [{"type": "variableCombat", "condition": [["enemyhp", "greater", 0.5]], "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999} ,
+			{"type": "variablePreCombat", "condition": [["enemyhp", "greater", 0.5]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999 },
 			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  },
 			{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
@@ -3355,6 +3355,30 @@
 		"type": "effect",
 		"effect": [{"type": "combatEffect", "lull": {"atk": 5, "res": 5} },
 			{"type": "conditionalEffects", "condition": [["phase", "player", "heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "firstReduction": 0.7 }],
+		"max": true
+	},
+	"405": {
+		"name": "A/S Far Trace 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 1, "spd": 1}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"406": {
+		"name": "A/S Far Trace 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 2, "spd": 2}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": false
+	},
+	"407": {
+		"name": "A/S Far Trace 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "spd": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
 		"max": true
 	}
 }

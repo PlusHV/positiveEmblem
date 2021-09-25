@@ -35,6 +35,17 @@ export default class Map extends React.Component{
             
             let positions = this.props.filledPositions();
 
+            let aoeArea = this.props.gameState.preBattleDamagePositions;
+
+
+            //let aoeIcon = "";
+            let aoeIconClass = "";
+            if (aoeArea.includes(id)){
+              aoeIconClass = "aoeIcon";
+            } else {
+              aoeIconClass = "disabledAoeIcon";
+            }
+
             if (positions.includes(id)){ //if it has a person in the cell
               //onDrop = {(e) => this.dropBoardMember(e)} >
               var imgClass = "heroFace";
@@ -47,6 +58,7 @@ export default class Map extends React.Component{
               if (currentCharge < 0){
               	currentCharge = "";
               }
+
 
 
               cells.push(
@@ -67,7 +79,20 @@ export default class Map extends React.Component{
                   		>
                   	{currentCharge}
                   </span>
+                
 
+
+                <img  src= {require('./UI/aoeIcon.png') } 
+                    className = {aoeIconClass} 
+                    alt = {heroData[this.props.gameState.cells[id].heroID.value].name}
+                    draggable = "false"
+                    id =  {JSON.stringify(this.props.gameState.cells[id])}
+                    onDragStart = {(e) => this.props.dragStart(e)}
+                    onDrop = {(e) => this.props.drop(e)}
+                     />
+
+
+                
                 <img src= {require('./art/' +  heroData[this.props.gameState.cells[id].heroID.value].art + '/Face_FC.png') } 
                     className = {imgClass} 
                     alt = {heroData[this.props.gameState.cells[id].heroID.value].name}
@@ -94,6 +119,15 @@ export default class Map extends React.Component{
                   id = {id}
                   onDragOver = {(e) => this.props.dragOver(e)}
                   onDrop = {(e) => this.props.drop(e)} >
+
+                  <img  src= {require('./UI/aoeIcon.png') } 
+                    className = {aoeIconClass} 
+                    alt = "aoeHit"
+                    id = {id}
+                    onDragOver = {(e) => this.props.dragOver(e)}
+                    onDrop = {(e) => this.props.drop(e)}
+                     />
+
                 </td>
                 );              
             }

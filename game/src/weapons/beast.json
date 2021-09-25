@@ -239,7 +239,8 @@
 		"passive": {"spd": 3},
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Flier Beast Effect"]] },
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"16": {
@@ -422,6 +423,7 @@
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
 			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
 			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "spd", "factor": 4.0, "max": 40}],
 		"max": true
@@ -440,6 +442,7 @@
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
 			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "res", "factor": 0.7, "max": 7},
 			{"type": "variableCombat", "combatEffects": ["damageReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40},
 			{"type": "variablePreCombat", "combatEffects": ["preBattleReduction"], "key": "statDifferenceEffect", "stat": "res", "factor": 4.0, "max": 40}],
 		"cdTrigger": -1,
@@ -526,7 +529,8 @@
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Cavalry Beast Effect"]] },
 			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"spd": 5}, "lull": {"spd": 5}},
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"34": {
@@ -543,7 +547,8 @@
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
 			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"def": 5}, "lull": {"def": 5}},
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "def", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"35": {
@@ -560,7 +565,7 @@
 		"effect": [{"type": "transformationEffect", "condition":[["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], 
 			"transformSkills": [["o", "Beast Attack +2"], ["o", "Infantry Beast Effect"]] },
 			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["supportAlly", true], ["distanceCheck", 2]], 1, "greater"]], "lull": {"atk": 6, "spd": 6}, "attackCharge": 1, "defenseCharge": 1 },
-			{"type": "auraEffects", "effectReq": [["supportAlly", true], ["distanceCheck", 2]], "auraEffect": [{"type": "combatEffect", "attackCharge": 1, "defenseCharge": 1 }] }],
+			{"type": "auraEffects", "effectReq": [["supportAlly", true], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "combatEffect", "attackCharge": 1, "defenseCharge": 1 }] }],
 		"cdTrigger": -1,
 		"max": true
 	},

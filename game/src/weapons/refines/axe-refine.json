@@ -2972,6 +2972,54 @@
 		"passive": {"hp": 5, "res": 4 },
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
+	},
+	"233": {
+		"name": "Instant Axe+ Atk+",
+		"might": 16,
+		"range": 1,
+		"sp": 350,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {"hp": 5},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"234": {
+		"name": "Instant Axe+ Spd+",
+		"might": 14,
+		"range": 1,
+		"sp": 350,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {"hp": 5, "spd": 3 },
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"235": {
+		"name": "Instant Axe+ Def+",
+		"might": 14,
+		"range": 1,
+		"sp": 350,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {"hp": 5, "def": 4 },
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"236": {
+		"name": "Instant Axe+ Res+",
+		"might": 14,
+		"range": 1,
+		"sp": 350,
+		"prf": false,
+		"type": "axe",
+		"skills": [],
+		"passive": {"hp": 5, "res": 4 },
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4}, "enemyDouble": 1 }],
+		"max": true
 	}
 
 

@@ -1122,7 +1122,7 @@
 		"type": "lance",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "onAssist", "assistType": "dance", "buff": {"atk": 4, "spd": 4, "def": 4, "res": 4}}],
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "assisteeReq": [["always"]]}],
 		"max": true
 	},
 	"80": {
@@ -1819,7 +1819,9 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 6},
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}, {"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }] }],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}, 
+				{"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }] },
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.20, "max": 999}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1896,7 +1898,8 @@
 		"passive": {"atk": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} },
 			{"type": "conditionalFollowUp", "condition": [["adjacent", false], ["statCompare2", "combat", "owner", "atk", "enemy", "def", "greater", 1], ["followUp", "player", false]  ],
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "def", "factor": 0.5, "max": 999}] }],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "def", "factor": 0.5, "max": 999}] },
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "def", "factor": 0.5, "max": 999}],
 
 		"max": true
 	},

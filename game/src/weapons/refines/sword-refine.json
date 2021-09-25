@@ -2377,7 +2377,8 @@
 		"skills": [],
 		"passive": {"hp": 3, "atk": 3},
 		"effect": [{"type": "combatEffect", "specialTrueDamage": 10},
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"181": {
@@ -3371,6 +3372,7 @@
 		"skills": [],
 		"passive": {"hp": 3 },
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999},
 			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "spd": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
 		"cdTrigger": -1,
 		"max": true
@@ -3385,7 +3387,8 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"hp": 5 },
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -3399,7 +3402,8 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"hp": 5, "spd": 3 },
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -3413,7 +3417,8 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"hp": 5, "def": 4 },
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -3427,7 +3432,8 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"hp": 5, "res": 4 },
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] }],
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"spd": 5},	"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.15, "max": 999}],
 		"cdTrigger": -1,
 		"max": true
 	},

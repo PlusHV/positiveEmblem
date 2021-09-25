@@ -507,7 +507,7 @@
 		"type": "dagger",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "onAttack", 
+		"effect": [{"type": "onAttack",
 			"subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"},
 				{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}] }],
 		"max": true
@@ -556,7 +556,8 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"37": {
@@ -570,7 +571,8 @@
 		"skills": [],
 		"passive": {},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
-			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+			{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": false
 	},
 	"38": {
@@ -657,7 +659,7 @@
 		"type": "dagger",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 0, "reference": true, "team": "enemy", "from": "enemy"}] },
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "statBuff": {"atk": 2, "spd": 2, "def": 2, "res": 2}, "subEffect": [{"type": "onAttack", "recoil": 2}] }],
 		"max": true
 	},
@@ -1117,7 +1119,8 @@
 		"passive": {},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
 			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4},
-				"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.1, "max": 999}] }],
+				"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.1, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["phase", "player"]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "spd", "factor": 0.1, "max": 999}],
 		"max": true
 	},
 	"75": {
@@ -1132,8 +1135,9 @@
 		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
-			{"type": "conditionalCombat", "condition": [ ["penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4},
-				"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "res", "factor": 0.2, "max": 999}] }],
+			{"type": "conditionalCombat", "condition": [["penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4},
+				"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "res", "factor": 0.2, "max": 999}] },
+			{"type": "variablePreCombat", "condition": [["penalty", "enemy", "battleStart"]], "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "res", "factor": 0.2, "max": 999}],
 		"max": true
 	},
 	"76": {
@@ -1254,7 +1258,7 @@
 		"passive": {},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5]], "statBuff": {"atk": 5, "res": 5}},
-			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5  }], 
+			{"type": "conditionalFollowUp", "condition": [["hp", "greater", 0.5], ["followUp", "enemy", true]], "firstReduction": 0.5  }],
 		"max": true
 	},
 	"84": {
@@ -1285,6 +1289,24 @@
 		"passive": {"spd": 4, "def": -4, "res": -4},
 		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
 			{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
+		"cdTrigger": -1,
+		"max": true
+	},
+	"86": {
+		"name": "Honorable Blade",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Yuri: Ashen Valiant"],
+		"refinable": false,
+		"type": "dagger",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def", "res"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] },
+			{"type": "combatEffect", "canto": {"flatCanto": 2, "cantoRemainder": 0} },
+			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] },
+			{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.5]], "statBuff": {"atk": 6, "spd": 6} }],
 		"cdTrigger": -1,
 		"max": true
 	}

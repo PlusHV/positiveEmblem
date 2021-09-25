@@ -20,10 +20,11 @@
     "react-scripts": "^3.4.4",
     "react-select": "^3.1.1",
     "react-select-v2": "^2.4.2",
+    "react-spritesheet": "^1.0.1",
     "sass": "^1.30.0",
     "select": "^1.1.2",
     "typescript": "^3.9.7",
-    "underscore": "^1.12.0",
+    "underscore": "^1.13.1",
     "underscore.string": "^3.3.5",
     "utf-8-validate": "^5.0.3"
   },
@@ -40,11 +41,16 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.3%",
+      "not ie 11",
       "not dead",
       "not op_mini all"
     ],
     "development": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"

@@ -22,6 +22,7 @@
 		"range": 1,
 		"prf": false,
 		"type": ["dance"],
+		"effect": {},
 		"max": true
 	},
 	"3": {
@@ -41,7 +42,7 @@
 		"users": ["Lucina: Glorious Archer"],
 		"type": ["movement"],
 		"effect": {"owner": 1, "other": -1, 
-			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] } ]},
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] }] },
 		"max": true
 	},
 	"5": {
@@ -51,6 +52,8 @@
 		"prf": true,
 		"users": ["Azura: Vallite Songstress"],
 		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Gray Waves Buff"]],
 		"max": true
 	},
 	"6": {
@@ -414,6 +417,7 @@
 		"range": 1,
 		"prf": false,
 		"type": ["dance"],
+		"effect": {},
 		"max": true
 	},
 	"46": {
@@ -450,6 +454,8 @@
 		"prf": true,
 		"users": ["Peony: Sweet Dream", "Peony: Álfar Dream Duo"],
 		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Gentle Dream Buff"]],
 		"max": true
 	},
 	"50": {
@@ -459,6 +465,7 @@
 		"prf": true,
 		"users": ["Nils: Bright Bard"],
 		"type": ["dance"],
+		"effect": {},
 		"max": true
 	},
 	"51": {
@@ -480,6 +487,8 @@
 		"prf": true,
 		"users": ["Mirabilis: Daydream"],
 		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Whimsical Dream Buff/Debuff"]],
 		"max": true
 	},
 	"53": {
@@ -489,6 +498,8 @@
 		"prf": true,
 		"users": ["Plumeria: Lewd Dream", "Plumeria: Temptation Anew"],
 		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Sweet Dreams Buff/Debuff"]],
 		"max": true
 	},
 	"54": {
@@ -536,6 +547,8 @@
 		"prf": true,
 		"users": ["Triandra: Nightmare"],
 		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Frightful Dream Debuff"]],
 		"max": true
 	},
 	"59": {
@@ -586,6 +599,16 @@
 		"users": ["Micaiah: Radiant Queen"],
 		"type": ["health", "neutralize"],
 		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":1, "neutralize": ["harsh", "restore"]},
+		"max": true
+	},
+	"64": {
+		"name": "Foul Play",
+		"sp": 400,
+		"range": 3,
+		"prf": true,
+		"users": ["Yuri: Ashen Valiant"],
+		"type": ["movement"],
+		"effect": {"owner": 1, "other": -1, "variable": true},
 		"max": true
 	}
 }

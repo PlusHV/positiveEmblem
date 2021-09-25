@@ -7,7 +7,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [],
 		"max": true
@@ -22,7 +22,7 @@
 		"refinable": true,
 		"refines": ["Blizzard Eff+", "Blizzard Atk+", "Blizzard Spd+", "Blizzard Def+", "Blizzard Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "debuff", "reference": "enemy", "multiplier": 1}],
 		"max": true
@@ -36,7 +36,7 @@
 		"users": ["Azura: Young Songstress"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
@@ -50,7 +50,7 @@
 		"refinable": true,
 		"refines": ["Buoyboard+ Atk+", "Buoyboard+ Spd+", "Buoyboard+ Def+", "Buoyboard+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "res": 4}}],
 		"max": true
@@ -63,7 +63,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true]], "statBuff": {"atk": 4, "res": 4}}],
 		"max": false
@@ -77,7 +77,7 @@
 		"users": ["Yune: Chaos Goddess"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "conditionalCombat", "condition": [ ["penalty", "enemy", "combat"]], "statBuff": {"atk": 6},  "double": 1}],
 		"max": true
@@ -91,7 +91,7 @@
 		"refinable": true,
 		"refines": ["Dancer's Ring+ Atk+", "Dancer's Ring+ Spd+", "Dancer's Ring+ Def+", "Dancer's Ring+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": true
@@ -104,7 +104,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
 		"max": false
@@ -119,7 +119,7 @@
 		"refinable": true,
 		"refines": ["Dark Excalibur Eff+", "Dark Excalibur Atk+", "Dark Excalibur Spd+", "Dark Excalibur Def+", "Dark Excalibur Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "specialTrueDamage": 10},
 		"max": true
@@ -134,7 +134,7 @@
 		"refinable": true,
 		"refines": ["Divine Naga Eff+", "Divine Naga Atk+", "Divine Naga Spd+", "Divine Naga Def+", "Divine Naga Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
 			{"type": "combatEffect", "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
@@ -149,7 +149,7 @@
 		"users": [],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}] }] }],
 		"max": true
@@ -162,7 +162,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [],
 		"max": false
@@ -177,7 +177,7 @@
 		"refinable": true,
 		"refines": ["Excalibur Eff+", "Excalibur Atk+", "Excalibur Spd+", "Excalibur Def+", "Excalibur Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
 		"max": true
@@ -192,7 +192,7 @@
 		"refinable": true,
 		"refines": ["Forseti Eff+", "Forseti Atk+", "Forseti Spd+", "Forseti Def+", "Forseti Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"], ["hp", "greater", 0.5]], "desperation": 1  }],
 		"max": true
@@ -207,9 +207,10 @@
 		"refinable": true,
 		"refines": ["Giga Excalibur Eff+", "Giga Excalibur Atk+", "Giga Excalibur Spd+", "Giga Excalibur Def+", "Giga Excalibur Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
-		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
 		"max": true
 	},
 	"15": {
@@ -221,7 +222,7 @@
 		"refinable": true,
 		"refines": ["Green Egg+ Atk+", "Green Egg+ Spd+", "Green Egg+ Def+", "Green Egg+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": true
@@ -234,7 +235,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "postHeal": 4 }],
 		"max": false
@@ -248,7 +249,7 @@
 		"refinable": true,
 		"refines": ["Green Gift+ Atk+", "Green Gift+ Spd+", "Green Gift+ Def+", "Green Gift+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": true
@@ -261,7 +262,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
 		"max": false
@@ -274,7 +275,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
@@ -288,7 +289,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"cdTrigger": 1,
@@ -303,7 +304,7 @@
 		"refinable": true,
 		"refines": ["Gronnblooms+ Atk+", "Gronnblooms+ Spd+", "Gronnblooms+ Def+", "Gronnblooms+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": true
@@ -316,7 +317,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3, "def": 3, "res": 3} }],
 		"max": false
@@ -330,7 +331,7 @@
 		"refinable": true,
 		"refines": ["Gronnowl+ Atk+", "Gronnowl+ Spd+", "Gronnowl+ Def+", "Gronnowl+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": true
@@ -343,7 +344,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd", "def", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 99, "minAllies" : 1, "allyReq": [["distanceCheck", 1]] }],
 		"max": false
@@ -356,7 +357,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
@@ -369,7 +370,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "raven": 1},
 		"max": false
@@ -383,7 +384,7 @@
 		"refinable": true,
 		"refines": ["Gronnserpent+ Atk+", "Gronnserpent+ Spd+", "Gronnserpent+ Def+", "Gronnserpent+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": true
@@ -396,7 +397,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
 		"max": false
@@ -409,7 +410,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
@@ -422,7 +423,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
@@ -436,7 +437,7 @@
 		"refinable": true,
 		"refines": ["Hibiscus Tome+ Atk+", "Hibiscus Tome+ Spd+", "Hibiscus Tome+ Def+", "Hibiscus Tome+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": true
@@ -449,7 +450,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 1}],
 		"max": false
@@ -463,7 +464,7 @@
 		"users": ["Thrasir: Omnicidal Witch"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
 			{"type": "conditionalEffects", "condition": [["distantAllies", 3, "greater", 1]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4}, "nullEnemyFollowUp": 1,
@@ -483,7 +484,7 @@
 		"refinable": true,
 		"refines": ["Inscribed Tome Eff+", "Inscribed Tome Atk+", "Inscribed Tome Spd+", "Inscribed Tome Def+", "Inscribed Tome Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
@@ -498,7 +499,7 @@
 		"refinable": true,
 		"refines": ["Iris's Tome Eff+", "Iris's Tome Atk+", "Iris's Tome Spd+", "Iris's Tome Def+", "Iris's Tome Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"max": true
@@ -512,7 +513,7 @@
 		"refinable": true,
 		"refines": ["Keen Gronnwolf+ Atk+", "Keen Gronnwolf+ Spd+", "Keen Gronnwolf+ Def+", "Keen Gronnwolf+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": true
@@ -525,7 +526,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
 		"max": false
@@ -540,7 +541,7 @@
 		"refinable": true,
 		"refines": ["Light of Dawn Eff+", "Light of Dawn Atk+", "Light of Dawn Spd+", "Light of Dawn Def+", "Light of Dawn Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
 			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] },
@@ -557,7 +558,7 @@
 		"refinable": true,
 		"refines": ["Muninn's Egg Eff+", "Muninn's Egg Atk+", "Muninn's Egg Spd+", "Muninn's Egg Def+", "Muninn's Egg Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "checkStats": ["spd"], "team": "enemy", "peak": "min" }],
 		"max": true
@@ -572,7 +573,7 @@
 		"refinable": true,
 		"refines": ["Naga Eff+", "Naga Atk+", "Naga Spd+", "Naga Def+", "Naga Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
 			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 2, "res": 2} }],
@@ -588,7 +589,7 @@
 		"refinable": true,
 		"refines": ["Nifl Frostflowers Eff+", "Nifl Frostflowers Atk+", "Nifl Frostflowers Spd+", "Nifl Frostflowers Def+", "Nifl Frostflowers Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]] }],
 		"max": true
@@ -602,7 +603,7 @@
 		"refinable": true,
 		"refines": ["Rexcalibur+ Atk+", "Rexcalibur+ Spd+", "Rexcalibur+ Def+", "Rexcalibur+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [],
 		"max": true
@@ -615,7 +616,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [],
 		"max": false
@@ -629,7 +630,7 @@
 		"refinable": true,
 		"refines": ["Sandwiches!+ Atk+", "Sandwiches!+ Spd+", "Sandwiches!+ Def+", "Sandwiches!+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": true
@@ -642,7 +643,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "res": 4} }],
 		"max": false
@@ -656,7 +657,7 @@
 		"refinable": true,
 		"refines": ["Spectral Tome+ Atk+", "Spectral Tome+ Spd+", "Spectral Tome+ Def+", "Spectral Tome+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": true
@@ -669,7 +670,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
 		"max": false
@@ -684,7 +685,7 @@
 		"refinable": true,
 		"refines": ["Tactical Gale Eff+", "Tactical Gale Atk+", "Tactical Gale Spd+", "Tactical Gale Def+", "Tactical Gale Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": {"type": "combatEffect", "raven": 1},
 		"max": true
@@ -699,7 +700,7 @@
 		"refinable": true,
 		"refines": ["Thunderhead Eff+", "Thunderhead Atk+", "Thunderhead Spd+", "Thunderhead Def+", "Thunderhead Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "buff", "reference": "owner", "multiplier": 1}],
 		"max": true
@@ -726,7 +727,7 @@
 		"users": ["Reinhardt: Lightning's Rondo"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": -5},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1 }],
 		"max": true
@@ -740,7 +741,7 @@
 		"users": ["Veronica: Spring Princess"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.75]],  "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
@@ -755,7 +756,7 @@
 		"refinable": true,
 		"refines": ["Wind's Brand Eff+", "Wind's Brand Atk+", "Wind's Brand Spd+", "Wind's Brand Def+", "Wind's Brand Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def"], "checkStats": ["def"], "team": "enemy", "peak": "max" }],
 		"max": true
@@ -768,7 +769,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [],
 		"max": false
@@ -782,7 +783,7 @@
 		"refinable": true,
 		"refines": ["Madness Flask+ Atk+", "Madness Flask+ Spd+", "Madness Flask+ Def+", "Madness Flask+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
 		"effect": [{"type": "combatEffect", "recoil": 6}],
 		"max": true
@@ -795,7 +796,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3, "spd": 3, "def": 3, "res": 3},
 		"effect": [{"type": "combatEffect", "recoil": 6}],
 		"max": false
@@ -809,10 +810,11 @@
 		"users": ["Celica: Queen of Valentia"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],
-			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "enemy", "stat": "res", "factor": 0.25, "max": 999}] }],
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "enemy", "stat": "res", "factor": 0.25, "max": 999}] },
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "enemy", "stat": "res", "factor": 0.25, "max": 999}],
 		"max": true
 	},
 	"58": {
@@ -824,7 +826,7 @@
 		"users": ["Ced: Hero on the Wind"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} }],
 		"max": true
@@ -838,7 +840,7 @@
 		"users": ["Merric: Changing Winds"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
 			{"type": "conditionalCombatStats", "condition": [["statBonus", "player", "combat", true, "hp", "greater", 0.5]], "statBuff": {"atk": 5, "spd": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
@@ -854,7 +856,7 @@
 		"users": ["Lyon: Demon King"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "combatEffect", "raven": 1},
 			{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ],"damageReduction": 0.5 },
@@ -870,7 +872,7 @@
 		"users": ["Selena: Sandbar Fluorspar"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 6}],
 		"max": true
@@ -884,7 +886,7 @@
 		"refinable": true,
 		"refines": ["Melon Float+ Atk+", "Melon Float+ Spd+", "Melon Float+ Def+", "Melon Float+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": true
@@ -897,7 +899,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": false
@@ -912,7 +914,7 @@
 		"refinable": true,
 		"refines": ["Tome of Order Eff+", "Tome of Order Atk+", "Tome of Order Spd+", "Tome of Order Def+", "Tome of Order Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
 			{"type": "combatEffect", "raven": 1}],
@@ -928,7 +930,7 @@
 		"refinable": true,
 		"refines": ["Obsessive Curse Eff+", "Obsessive Curse Atk+", "Obsessive Curse Spd+", "Obsessive Curse Def+", "Obsessive Curse Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] },
 			{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 5}],
@@ -943,7 +945,7 @@
 		"users": ["Triandra: Nightmare"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "auraStats", "effectReq": [["cardinal", true]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 4}],
 		"max": true
@@ -970,7 +972,7 @@
 		"users": ["Peony: Álfar Dream Duo"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "auraStats", "effectReq": [["cardinal", true]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 6}],
 		"max": true
@@ -984,7 +986,7 @@
 		"users": ["Asbel: Windswept Youth"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
 			{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
@@ -1000,7 +1002,7 @@
 		"refinable": true,
 		"refines": ["Plegian Torch+ Atk+", "Plegian Torch+ Spd+", "Plegian Torch+ Def+", "Plegian Torch+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "res": 5}, "penaltyDouble": {"atk": 1, "res": 1} }],
 		"max": true
@@ -1013,7 +1015,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "lull": {"atk": 5, "res": 5}, "penaltyDouble": {"atk": 1, "res": 1} }],
 		"max": false
@@ -1027,7 +1029,7 @@
 		"refinable": true,
 		"refines": ["Amity Blooms+ Atk+", "Amity Blooms+ Spd+", "Amity Blooms+ Def+", "Amity Blooms+ Res+"],
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "lull": {"atk": 5, "res": 5}, "onHitHeal": 4 }],
 		"max": true
@@ -1040,7 +1042,7 @@
 		"prf": false,
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "lull": {"atk": 5, "res": 5}, "onHitHeal": 4 }],
 		"max": false
@@ -1054,7 +1056,7 @@
 		"users": ["Pent: Mage General"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"atk": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 6, "spd": 6} },
 			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": "1", "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]], ["specialMax", "player", true], ["distanceCheck", 2] ], "selfReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"]], ["specialMax", "player", true]  ] }],
@@ -1096,11 +1098,11 @@
 		"users": ["Byleth: The Fódlan Star"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5, "def": 5, "res": 5} },
 			{"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["statCompare", "combat", "spd", "greater", 1]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 },
-			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }] }],
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }] }],
 		"cdTrigger": -1,
 		"max": true
 	},
@@ -1113,7 +1115,7 @@
 		"users": ["Orochi: Merry Diviner"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"res": 3},
 		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "res": 6},
 			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }] }],
@@ -1128,7 +1130,7 @@
 		"users": ["Gatekeeper: Nothing to Report"],
 		"refinable": false,
 		"type": "greentome",
-		"skills": [], 
+		"skills": [],
 		"passive": {"def": 3},
 		"effect": [{"type": "auraStats", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 5},
 			{"type": "variableCombat", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]], 1, "greater"]], "combatEffects": ["lull"], "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] },

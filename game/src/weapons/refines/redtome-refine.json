@@ -1622,5 +1622,57 @@
 		"passive": {"hp": 2, "res": 3 },
 		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] },	{"type": "conditionalEffects", "condition": [["enemyhp", "greater", 0.75]], "statBuff": {"atk": 5, "res": 5} }],
 		"max": true
+	},
+	"128": {
+		"name": "Luminous Grace+ Atk+",
+		"might": 13,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {"hp": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"129": {
+		"name": "Luminous Grace+ Spd+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {"hp": 3, "spd": 2 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"130": {
+		"name": "Luminous Grace+ Def+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {"hp": 3, "def": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"131": {
+		"name": "Luminous Grace+ Res+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "redtome",
+		"skills": [],
+		"passive": {"hp": 3, "def": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
 	}
 }

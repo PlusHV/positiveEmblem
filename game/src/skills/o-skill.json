@@ -167,6 +167,45 @@
 		"type": "effect",
 		"effect": [{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantAllies", 2, "greater", 1]] },
 			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 2]] }]
+	},
+	"24": {
+		"name": "Gray Waves Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "assisteeReq": [["always"]]}]
+	},
+	"25": {
+		"name": "Gentle Dream Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "airOrders"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "owner", "assisteeReq": [["always"]], "effectReq": [["cardinal", true]], "assisteeRef": true, "assisteeRefReq": [["cardinal", true]] }]
+	},
+	"26": {
+		"name": "Frightful Dream Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "guard"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinal", true]], "assisteeRef": true, "assisteeRefReq": [["cardinal", true]] }]
+	},
+	"27": {
+		"name": "Sweet Dreams Buff/Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "owner", "assisteeReq": [["always"]]}, 
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min" }]
+	},
+	"28": {
+		"name": "Whimsical Dream Buff/Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]], "assisteeRef": true, "assisteeRefReq": [["distanceCheck", 2]]  },
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min" },
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min", "effectReq": [["distanceCheck", 2]] }]
 	}
+
 
 }

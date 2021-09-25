@@ -2097,5 +2097,57 @@
 		"passive": {"hp": 2, "res": 3 },
 		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": true
+	},
+	"165": {
+		"name": "Drifting Grace+ Atk+",
+		"might": 13,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"hp": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"166": {
+		"name": "Drifting Grace+ Spd+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"hp": 3, "spd": 2 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"167": {
+		"name": "Drifting Grace+ Def+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"hp": 3, "def": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"168": {
+		"name": "Drifting Grace+ Res+",
+		"might": 12,
+		"range": 2,
+		"sp": 350,
+		"prf": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {"hp": 3, "def": 3 },
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
 	}
 }

@@ -643,7 +643,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": true
 	},
 	"47": {
@@ -656,7 +656,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "auraEffect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
 		"max": false
 	},
 	"48": {
@@ -1226,5 +1226,52 @@
 		"passive": {},
 		"effect": [{"type": "conditionalEffects", "condition": [["combatCount", "player", "less", 0]], "statBuff": {"atk": 5, "res": 5}, "postHeal": 7 }],
 		"max": false
+	},
+	"89": {
+		"name": "Drifting Grace+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"refinable": true,
+		"refines": ["Drifting Grace+ Atk+", "Drifting Grace+ Spd+", "Drifting Grace+ Def+", "Drifting Grace+ Res+"],
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"90": {
+		"name": "Drifting Grace",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"refinable": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "selfReq": [["always"]]  },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": false
+	},
+	"91": {
+		"name": "Demonic Tome",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Hapi: Drawn-Out Sigh"],
+		"refinable": false,
+		"type": "bluetome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["beast"]]] }, 
+			{"type": "effectiveCondition", "condition": [["heroInfoCheck", "weapontype", ["breath"]]] },
+			{"type": "turnStart", "condition": [["specialMax", "player", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true]] },
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 6, "res": 6} }],
+		"cdTrigger": -1,
+		"max": true
 	}
 }

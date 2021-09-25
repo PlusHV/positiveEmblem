@@ -1245,7 +1245,8 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1, "trueDamage": 5 }],
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1, "trueDamage": 5 },
+			{"type": "preCombatConditionalEffects", "condition": [["statCompare", "visible", "spd", "greater", 1]], "preBattleTrueDamage": 5}],
 		"max": true
 	},
 	"156": {
@@ -1710,7 +1711,8 @@
 		"users": ["Alm: Imperial Ascent"],
 		"type": "effect",
 		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
-			{"type": "conditionalEffects", "condition": [], "subEffect": [{"type": "onAttack", "recoil": 7}]} ],
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+			{"type": "onAttack", "recoil": 7}],
 		"max": true
 	},
 	"213": {
@@ -2246,7 +2248,8 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1, "trueDamage": 5}],
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1, "trueDamage": 5},
+			{"type": "preCombatConditionalEffects", "condition": [["statCompare", "visible", "atk", "greater", 1]], "preBattleTrueDamage": 5}],
 		"max": true
 	},
 	"280": {
@@ -3147,6 +3150,63 @@
 		"type": "effect",
 		"effect": [{"type": "combatEffect", "counter": 1},
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"spd": 5}, "subEffect": [{"type": "onAttack", "recoil": 5}] }],
+		"max": true
+	},
+	"390": {
+		"name": "Spd/Def Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 7, "def": 7} }],
+		"max": true
+	},
+	"391": {
+		"name": "C Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"392": {
+		"name": "Atk/Res Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "res": 3} }],
+		"max": false
+	},
+	"393": {
+		"name": "Atk/Res Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": false
+	},
+	"394": {
+		"name": "Atk/Res Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": true
+	},
+	"395": {
+		"name": "Atk/Res Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": true
+	},
+	"396": {
+		"name": "AR-D Def/Res 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
 		"max": true
 	}
 
