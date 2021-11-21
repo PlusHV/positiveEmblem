@@ -1852,7 +1852,7 @@
 		"type": "sword",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [{"type": "auraStats", "effectReq": [ ["penalty", "enemy", "combat"], ["cardinalRC", true, 1, 0]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def", "res"], "value": 3}],
+		"effect": [{"type": "auraStats", "effectReq": [ ["penalty", "enemy", "combat"], ["cardinalRC", true, 1, -1]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def", "res"], "value": 3}],
 		"max": true
 	},
 	"128": {

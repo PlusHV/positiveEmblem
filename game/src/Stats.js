@@ -149,8 +149,10 @@ export default class Stats extends React.Component{
 			    //get combat stats if hero is being dragged or dragged over
 			    let combatText = "-";
 
- 
-			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.id === this.props.gameState.draggedHero.id && this.props.gameState.draggedOver !== null){ //the dragged hero is the selected hero - combat stats will be its stats
+
+			    if (this.props.gameState.draggedHero !== null && this.props.gameState.selectedMember.id === this.props.gameState.draggedHero.id && 
+			    	this.props.gameState.draggedOver !== null && this.props.gameState.draggedOver.type === "hero" ){ 
+			    	//the dragged hero is the selected hero - combat stats will be its stats
 			    	//Add the combat stats of the dragged
 			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedHero, this.props.gameState.draggedOver, statText[i]);
 			    	// combatText = this.props.gameState.draggedHero.combatEffects.statBuff[statText[i]];
@@ -160,7 +162,9 @@ export default class Stats extends React.Component{
 			    	// }
 
 
-			    } else if (this.props.gameState.draggedOver !== null && (this.props.gameState.selectedMember.id === this.props.gameState.draggedOver.id) && this.props.gameState.draggedHero !== null){ //the dragged over hero is the selected hero
+			    } else if (this.props.gameState.draggedOver !== null && (this.props.gameState.selectedMember.id === this.props.gameState.draggedOver.id) &&
+			    	this.props.gameState.draggedHero !== null){ 
+			    	//the dragged over hero is the selected hero
 
 			    	combatText = calculateCombatStatModifier(this.props.gameState.draggedOver, this.props.gameState.draggedHero, statText[i]);
 			    	// combatText = this.props.gameState.draggedOver.combatEffects.statBuff[statText[i]];
@@ -191,8 +195,8 @@ export default class Stats extends React.Component{
 	    		options.push(<option key = "assetNeutral" value = "neutral">Neutral</option>);
 	    		for (let j = 0; j < statText.length; j++){
 
-
-	    			if (this.props.gameState.selectedMember.iv.flaw === statText[j])
+	    			//disable the stat option if it is already a flaw or an ascedended asset
+	    			if (this.props.gameState.selectedMember.iv.flaw === statText[j] || this.props.gameState.selectedMember.iv.ascended === statText[j])
 	    				options.push(<option key =  {"asset" + statText[j]} value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
 	    			else
 	    				options.push(<option key = {"asset" + statText[j]} value = {statText[j]}>{capitalize(statText[j], true)}</option>);
@@ -208,14 +212,14 @@ export default class Stats extends React.Component{
 
 
 	    		//Flaw
-	    	} else if (statText[i] === "def"){
+	    	} else if (statText[i] === "spd"){
 	    		cells.push(<td key = "flawLabel" className= "statText">Flaw</td>);
 
 	    		let options = [];
 	    		options.push(<option key = "flawNeutral" value = "neutral">Neutral</option>);
 	    		for (let j = 0; j < statText.length; j++){
 
-
+	    			//disable the stat option if it is already an asset (a stat can a flaw and ascended so that is not checked)
 	    			if (this.props.gameState.selectedMember.iv.asset === statText[j])
 	    				options.push(<option key = {"flaw" + statText[j]} value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
 	    			else
@@ -226,6 +230,28 @@ export default class Stats extends React.Component{
 	    		cells.push(<td key = "flawValue"> 
 	    				<select value = {this.props.gameState.selectedMember.iv.flaw} 
 	    						onChange = {(e, type) => this.props.ivChange(e, "flaw")} >>
+	    					{options}
+	    				</select>
+	    				</td>);
+
+	    	} else if (statText[i] === "def"){
+	    		cells.push(<td key = "ascendedLabel" className= "statText">Ascended</td>);
+
+	    		let options = [];
+	    		options.push(<option key = "ascendedNeutral" value = "neutral">Neutral</option>);
+	    		for (let j = 0; j < statText.length; j++){
+
+	    			//disable option if it is already an asset
+	    			if (this.props.gameState.selectedMember.iv.asset === statText[j])
+	    				options.push(<option key = {"ascended" + statText[j]} value = {statText[j]} disabled>{capitalize(statText[j], true)}</option>);
+	    			else
+	    				options.push(<option key = {"ascended" + statText[j]} value = {statText[j]}>{capitalize(statText[j], true)}</option>);
+
+
+	    		}
+	    		cells.push(<td key = "ascendedValue"> 
+	    				<select value = {this.props.gameState.selectedMember.iv.ascended} 
+	    						onChange = {(e, type) => this.props.ivChange(e, "ascended")} >>
 	    					{options}
 	    				</select>
 	    				</td>);
@@ -355,7 +381,6 @@ export default class Stats extends React.Component{
 
         for (let i in status){
 
-        	//console.log(status.i);
         	if (status[i] > 0){
         		statusEffectList.push(capitalize(i, true));
         	}

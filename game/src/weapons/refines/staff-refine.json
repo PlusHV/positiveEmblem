@@ -329,7 +329,7 @@
 		"effect": [{"type": "combatEffect", "sweep": 1},
 			{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 10, "spd": 10} },
 		{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] },
-		{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] }],
+		{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] }],
 		"max": true
 	},
 	"25": {

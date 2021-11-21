@@ -64,7 +64,7 @@ export function calculateStats(hero, fort, blessings, seasons){
   	
 
   	//iv calculation
-  	var ivMods = getIVMods(hero.iv.asset, hero.iv.flaw);
+  	var ivMods = getIVMods(hero.iv.asset, hero.iv.flaw, hero.iv.ascended);
   	bases = applyMods(bases, ivMods.base);
   	growths = applyMods(growths, ivMods.growth);
 
@@ -72,7 +72,7 @@ export function calculateStats(hero, fort, blessings, seasons){
   	statOrder = getStatOrder(object(statName,bases)); //recalculate with ivs applied
 
   	//merge calculation
-  	var mergeMods = getMergeMods(hero.merge, statOrder, hero.iv.flaw);
+  	var mergeMods = getMergeMods(hero.merge, statOrder, hero.iv.flaw, hero.iv.ascended);
 
   	//dragonflower calculation
   	var flowerMods = getFlowerMods(hero.dragonflower, statOrder);
@@ -160,15 +160,21 @@ function applyMods(base, mod){
 
 }
 
-function getIVMods(asset, flaw){
+function getIVMods(asset, flaw, ascended){
 	let statMods = object(statName,[0, 0, 0, 0, 0]);
 	let growthMods = object(statName,[0, 0, 0, 0, 0]);
-	if ( !(asset === "neutral") && !(flaw === "neutral") ){
+	if ( !(asset === "neutral") && !(flaw === "neutral") ){ //requires neither asset/flaw to be neutral
 		statMods[asset] = 1;
 		statMods[flaw] = -1;
 
 		growthMods[asset] = 5;
 		growthMods[flaw] = -5;		
+	}
+
+	//Add the ascended asset. Here we add since he asset will stack with the flaw 
+	if (ascended !== "neutral"){
+		statMods[ascended]+= 1;
+		growthMods[ascended]+= 5;
 	}
 
 	return {base: statMods, growth: growthMods} ;
@@ -209,11 +215,11 @@ function getRarityMods(rarity, order){
 	return mods;
 }
 
-function getMergeMods(merge, order, flaw){
+function getMergeMods(merge, order, flaw, ascended){
 	let statMods = object(statName,[0, 0, 0, 0, 0]);
 	let growthMods = object(statName,[0, 0, 0, 0, 0]);
 
-
+	console.log(order);
 	let stack = [...order];
 
 	for (let i = 1; i < merge+1; i++){
@@ -222,27 +228,46 @@ function getMergeMods(merge, order, flaw){
 
 			//First merge bonus
 			if (flaw === 'neutral'){
-				statMods[order[0]] +=1;
-				statMods[order[1]] +=1;
-				statMods[order[2]] +=1;
+				let counter = 0; //counter so that 3 stats are affected
+				let index = 0; //current index for the order
+				while (counter < 3){ //raise 3 stats 
 
+					if (order[index] !== ascended){ //if the current stat is not ascended, then we raise the counter and give the merge bonus to the stat
+						statMods[order[index]] +=1;
+						counter++;
+					}
+
+					index++; //the index in the order is always incremented
+				}
 			} else{
 				statMods[flaw] +=1;
-				growthMods[flaw] += 5 
+				growthMods[flaw] += 5;
 			}
 		}
-			
-		//on 6th merge, stack is reset
-		if (i === 6){
+		
+		//Each merge raises two different stats, each time going through the stat order.
+		//The below stack resets occur when the stack reaches the end
+
+		//First stat gain
+		//on 6th merge, stack is reset on for the first stat gain
+		//if (i === 6){
+		
+		if (stack.length <= 0){
 			stack = [...order];
+		
 		}
 
 
 		let val = stack.shift();
 		statMods[val] +=1;
 
-		//if on 3rd or 8th merge, reset stack
-		if (i%5  === 3){
+
+		//Second stat gain
+
+		//if on 3rd or 8th merge, the stack is reset on the second stat gain
+		//if (i%5  === 3){
+
+		if (stack.length <= 0){
 			stack = [...order];
 		}
 

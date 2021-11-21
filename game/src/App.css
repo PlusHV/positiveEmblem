@@ -42,10 +42,11 @@ table,tr,td {
 }
 
 
+
 .cellStyle{
   border: 2px solid #555;
-  min-width: 70px;
-  height: 70px;
+  min-width: 90px;
+  height: 90px;
   width: auto;
   vertical-align: top;
   box-sizing: border-box;
@@ -55,9 +56,10 @@ table,tr,td {
 .highlightedCellStyle{
   border: 2px solid yellow;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1px;
   position: relative;
@@ -66,9 +68,9 @@ table,tr,td {
 .anchorPositionCellStyle{
   border: 2px solid midnightblue;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1000px; 
   position: relative; 
@@ -78,9 +80,9 @@ table,tr,td {
 .movementCellStyle{
   border: 2px solid aqua;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1000px; 
   position: relative; 
@@ -89,9 +91,9 @@ table,tr,td {
 .attackCellStyle{
   border: 2px solid red;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1px;
   position: relative;
@@ -100,9 +102,9 @@ table,tr,td {
 .assistCellStyle{
   border: 2px solid lime;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1px;
   position: relative;
@@ -111,9 +113,9 @@ table,tr,td {
 .warpCellStyle{
   border: 2px solid dodgerblue;
 
-  width: 70px;
-  height: 70px;
-  text-align: center;
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
   box-sizing: border-box;
   border-spacing: 1px;
   position: relative;
@@ -121,6 +123,9 @@ table,tr,td {
 
 .boardStyle{
   border-collapse: separate;
+  background-size: contain;
+  opacity: 1.0;
+  background-color: unset;
 }
 
 .teamMember{
@@ -259,9 +264,9 @@ table,tr,td {
 }
 
 
-.aoeIcon{
+.overlayIcon{
 
-  position:  absolute;  
+  position: absolute;  
   
   width: 100%;
   height: 100%;
@@ -271,9 +276,9 @@ table,tr,td {
   z-index: 2;
 
 }
-.disabledAoeIcon{
+.disabledOverlayIcon{
 
-  position:  absolute;  
+  position: absolute;  
   
   width: 100%;
   height: 100%;

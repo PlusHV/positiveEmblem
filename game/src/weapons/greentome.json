@@ -1132,10 +1132,12 @@
 		"type": "greentome",
 		"skills": [],
 		"passive": {"def": 3},
-		"effect": [{"type": "auraStats", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 5},
-			{"type": "variableCombat", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]], 1, "greater"]], "combatEffects": ["lull"], "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] },
-			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]], 3, "greater"]], "enemyDouble": 1 }],
+		"effect": [{"type": "auraStats", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 5},
+			{"type": "variableCombat", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]], 1, "greater"], ["structureReq", "owner", [["damageable", true], ["distanceCheck", 2]], 0, "less"]], "combatEffects": ["lull"], "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] },
+			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]], 3, "greater", "structureReq", "owner", [["damageable", true], ["distanceCheck", 2]], 1, "greater"]], "enemyDouble": 1 },
+			{"type": "conditionalEffects", "condition": [["structureReq", "owner", [["damageable", true], ["distanceCheck", 2]], 1, "greater"]], "lull": {"atk": 6, "res": 6}  }],
 		"max": true
 	}
+
 
 }

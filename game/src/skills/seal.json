@@ -4478,6 +4478,22 @@
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
 		"max": true
+	},
+	"560": {
+		"name": "Squad Ace AY 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "atk": 1},
+		"max": false
+	},
+	"561": {
+		"name": "Squad Ace AY 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "atk": 2},
+		"max": true
 	}
 
 }

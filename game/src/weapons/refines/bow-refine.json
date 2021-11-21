@@ -1456,7 +1456,7 @@
 		"skills": [],
 		"passive": {"spd": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] },
+			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] },
 			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 5, "spd": 5}, 
 				"subEffect": [{"type": "onAttack", "burn": 7, "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}] }] }],
 		"max": true
@@ -1472,7 +1472,7 @@
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] }],
+			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
 		"max": true
 	},
 	"110": {
@@ -1486,7 +1486,7 @@
 		"skills": [],
 		"passive": {"hp": 2, "spd": 5},
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] }],
+			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
 		"max": true
 	},
 	"111": {
@@ -1500,7 +1500,7 @@
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3, "def": 3 },
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] }],
+			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
 		"max": true
 	},
 	"112": {
@@ -1514,7 +1514,7 @@
 		"skills": [],
 		"passive": {"hp": 2, "spd": 3, "res": 3 },
 		"effect": [{"type": "effectiveCondition", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] },
-			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0]] }],
+			{"type": "turnStart", "condition": [["turnRange", 2, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "panic"], "value": 7, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
 		"max": true
 	},
 	"113": {

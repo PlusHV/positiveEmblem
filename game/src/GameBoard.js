@@ -13,8 +13,12 @@ import TeamElement from './TeamElement.js';
 import Stats from './Stats.js';
 import Skills from './Skills.js';
 import Field from './Field.js';
+import Terrain from './Terrain.js';
+import Structure from './Structure.js';
+import structureInfo from './structureInfo.json';
 import BattleWindow from './BattleWindow.js';
 import Map from './Map.js';
+import mapData from './UI/Maps/mapData.json';
 
 //Json imports
 import heroData from './heroInfo.json';
@@ -71,6 +75,12 @@ class GameBoard extends React.Component{
     }
 
     let cells = Array(48).fill(null);
+    let terrainCells = new Array(48);
+
+    for (let i = 0; i < terrainCells.length; i++){
+      terrainCells[i] =  {"terrain": "Plains", "defensive": false};
+    }
+
     let fortLevel = 0;
     let season = {"L1": "Water", "L2": "Earth", "M1": "Light", "M2": "Dark"};
 
@@ -79,6 +89,7 @@ class GameBoard extends React.Component{
     //let heroList = {"1":[new heroStruct(0, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(1, {"value": "92", "label": "Eirika: Restoration Lady"}), new heroStruct(2, {"value": "166", "label": "Innes: Flawless Form"}), new heroStruct(3), new heroStruct(4), new heroStruct(5)],
     //    "2": [new heroStruct(7, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(8, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(9, {"value": "2", "label": "Alfonse: Prince of Askr"}), new heroStruct(10), new heroStruct(11), new heroStruct(12), new heroStruct(13)]};
     
+    let structureList = {"1": [], "2": [], "3": []};
 
      //skips id 5 for listIndex  
 
@@ -117,6 +128,7 @@ class GameBoard extends React.Component{
       "heroIndex": 0, //The index of the hero in the heroList
       "playerSide": "1", //The side of the hero. 1 means player, 2 means enemy
       "skillDropdowns": initDropdowns,
+      "selectedPosition": 42,
       "selectedMember": initialHero, //The current struct in heroList
       "selectedHeroInfo": initialHeroData, //The current hero's info
       "maxFilter": false,
@@ -142,9 +154,20 @@ class GameBoard extends React.Component{
       "draggedOverOriginalHP": 0,
       "selectedStatusBuff": "airOrders",
       "selectedStatusEffect": "counterDisrupt",
-      "cells": cells 
+      "cells": cells,
+      "terrainCells": JSON.parse(JSON.stringify(mapData["Custom"].terrainMap)),
+      "map": "Custom",
+      "structureList": structureList //List containing structures for each team (as well as neutral team)
 
     }
+
+    this.selectNewPosition = this.selectNewPosition.bind(this);
+    this.terrainChange = this.terrainChange.bind(this);
+    this.terrainDefensiveChange = this.terrainDefensiveChange.bind(this);
+    this.mapChange = this.mapChange.bind(this);
+
+    this.addStructure = this.addStructure.bind(this);
+    this.structureChange = this.structureChange.bind(this);    
 
     this.selectNewMember = this.selectNewMember.bind(this);
     this.onLevelsChange = this.onLevelsChange.bind(this);
@@ -194,9 +217,10 @@ class GameBoard extends React.Component{
 
     this.setState({selectedHeroInfo: heroData[newSelected.heroID.value]});
 
-
-
-
+    //Don't update selected position if they are not on the map
+    if (newSelected.position >= 0){
+      this.setState({selectedPosition: newSelected.position});
+    }
     this.updateDropdowns(heroData[newSelected.heroID.value], this.state.maxFilter, newSelected.heroSkills.weapon.label);//weapons[heroData[newSelected.heroID.value].weapontype]);
 
   }
@@ -286,7 +310,32 @@ class GameBoard extends React.Component{
 
 
 
+  selectNewPosition(newPos){
+    this.setState({selectedPosition: newPos});
+  }
 
+  terrainChange(e, position){
+
+    let tCells = this.state.terrainCells;
+    tCells[position].terrain = e.target.value;
+    this.setState({terrainCells: tCells});
+
+  }
+
+  terrainDefensiveChange(e, position){
+
+    let tCells = this.state.terrainCells;    
+    tCells[position].defensive = e.target.checked;
+    this.setState({terrainCells: tCells});
+
+  }
+
+  mapChange(e){
+
+
+    this.setState({terrainCells: JSON.parse(JSON.stringify(mapData[e.target.value].terrainMap))});
+    this.setState({map: e.target.value});
+  }
 
   selectNewMember(side, i){ // selecting new member
 
@@ -340,6 +389,111 @@ class GameBoard extends React.Component{
     this.setState({selectedMember: hero }); //update the selectedHero according to changed level //todo
   }
 
+
+  addStructure(e, selectedPosition){
+    let newCells = this.state.cells;
+
+    let newStructure = JSON.parse(JSON.stringify(structureInfo[e.target.value]));
+    
+    newStructure.side = "1";
+    newStructure.position = selectedPosition;
+    newStructure.currentHP = newStructure.maxHP;
+    newStructure.level = newStructure.maxLevel;
+
+
+    let structList = this.state.structureList;
+
+
+
+    newStructure.listIndex = structList["1"].push(newStructure) - 1; //The listIndex of the structure is the length of new array - 1
+
+
+    newCells[selectedPosition] = newStructure;
+    
+    this.setState({structureList: structList});
+    this.setState({cells: newCells});
+  }
+
+  removeStructure(position){
+    let newCells = this.state.cells;
+    let structList = this.state.structureList;
+    let removedStructure = newCells[position];
+
+
+    let side = removedStructure.side
+    let index = removedStructure.listIndex;
+
+
+    for (let i = index + 1; i < structList[side].length; i++){
+      structList[side][i].listIndex-= 1;
+
+    }
+
+    newCells[position] = null; //remove from cell list
+    structList[side].splice(index, 1); //remove 
+    this.setState({structureList: structList});
+    this.setState({cells: newCells});
+
+
+  }
+
+  structureChange(e, type, selectedPosition){
+
+    let newCells = this.state.cells;
+    let structList = this.state.structureList;
+    let changedStructure = newCells[selectedPosition];
+    let side = changedStructure.side
+    let index = changedStructure.listIndex;
+    //if side, then we need to update structurelist too
+    //if structure type, then we need to reset the structure (see add structure)
+    //if structure type is set to empty version, we remove the structure (see removestructure)
+    if (type === "structureType"){ //change in structure type
+
+      if (e.target.value === "0"){
+
+        for (let i = index + 1; i < structList[side].length; i++){
+          structList[side][i].listIndex-= 1;
+
+        }
+
+        newCells[selectedPosition] = null; //remove from cell list
+        structList[side].splice(index, 1); //remove 
+
+      } else {
+
+        let newStructure = JSON.parse(JSON.stringify(structureInfo[e.target.value]));
+
+        newStructure.side = changedStructure.side;
+        newStructure.position = changedStructure.position;
+        newStructure.currentHP = newStructure.maxHP;
+        newStructure.level = newStructure.maxLevel;
+        newStructure.listIndex = changedStructure.listIndex;
+
+        
+        structList[newStructure.side].splice(newStructure.listIndex, 1, newStructure); //remove previous structure and add new one 
+        newCells[selectedPosition] = newStructure;
+      }
+
+    } else if (type === "side"){ //when changing sides, we also need to update the structure list
+      //first we push up each structure on the side the structure is changing from
+      
+      
+      for (let i = index + 1; i < structList[side].length; i++){
+        structList[side][i].listIndex-= 1;
+      }
+
+
+      //remove it from its original side and push it to its new list. Update the structure's values
+      structList[side].splice(index, 1);// remove from struct list
+      changedStructure.listIndex = structList[e.target.value.toString()].push(changedStructure  ) - 1; //
+      newCells[selectedPosition].side = e.target.value;
+
+    } else {
+      newCells[selectedPosition][type] = Number(e.target.value);
+    }
+    this.setState({structureList: structList});
+    this.setState({cells: newCells});
+  }
 
   onHeroChange(e){    //Changing a hero will need to update the states of the board for stat display
 
@@ -461,7 +615,7 @@ class GameBoard extends React.Component{
 
     let newCells = this.state.cells;
 
-    //Sets the initial position of the on the board 
+    //Sets the initial position of the hero if they were not on the board 
     if (hero.position < 0 && e.value !== "0"){ //if hero was blank
       hero.side = this.state.playerSide;
       let pos = this.getFilledPositions();
@@ -477,6 +631,8 @@ class GameBoard extends React.Component{
         if (! (pos.includes(y+x)) ){ //space is free
           hero.position = y+x;
           newCells[y+x] = hero;
+          this.setState({selectedPosition: y+x}); //set the selected position to the newly placed hero
+
         } else if (x <5){ //move to next column
           x+=1;
         } else if (x>=5){ //end of row, start at first column and increment row
@@ -511,7 +667,7 @@ class GameBoard extends React.Component{
       temp[this.state.playerSide] = this.recalculateTeamHeroStats(temp[this.state.playerSide], tempBlessings[this.state.playerSide]);
     }
 
-    calculateAuraStats(temp, this.state.currentTurn); //recalculate aura stats
+    calculateAuraStats(temp, this.state); //recalculate aura stats
 
 
     this.setState({heroList: temp});
@@ -617,7 +773,7 @@ class GameBoard extends React.Component{
     
     tempHeroList[this.state.playerSide][this.state.heroIndex] = hero; //update the heroList with the updated hero
 
-    calculateAuraStats(tempHeroList, this.state.currentTurn); //recalculate aura stats
+    calculateAuraStats(tempHeroList, this.state); //recalculate aura stats
 
     //update states
     this.setState({heroList: tempHeroList}); 
@@ -882,12 +1038,12 @@ class GameBoard extends React.Component{
     let ivList =  Object.assign({}, hero.iv);
     
 
-    //if either iv is set to neutral, set the other one to neutral as well.
-    if (e.target.value === "neutral"){
+    //if either iv is set to neutral, set the other one to neutral as well if we are not changing an ascended IV
+    if (e.target.value === "neutral" && (type === "asset" || type === "flaw") ){
       ivList.asset = "neutral";
       ivList.flaw = "neutral";
     } else{
-    ivList[type] = e.target.value;
+      ivList[type] = e.target.value;
     }
 
     hero.iv = ivList;
@@ -945,7 +1101,7 @@ class GameBoard extends React.Component{
       }
 
 
-      calculateAuraStats(temp, this.state.currentTurn); //recalculate aura stats
+      calculateAuraStats(temp, this.state); //recalculate aura stats
 
 
 
@@ -1085,7 +1241,7 @@ class GameBoard extends React.Component{
   getFilledPositions(){ //get positions that are occupied by a hero
     let positions = [];
     let temp = this.state.heroList["1"].concat(this.state.heroList["2"]); //merge two lists
-    
+    temp = temp.concat(this.state.structureList["1"], this.state.structureList["2"], this.state.structureList["3"]);
     // eslint-disable-next-line
     for (let x of temp){
       if (x.position>=0)
@@ -1093,7 +1249,7 @@ class GameBoard extends React.Component{
     }
 
 
-    return positions
+    return positions;
   }
 
 
@@ -1166,6 +1322,13 @@ class GameBoard extends React.Component{
 
 
     let dragData = JSON.parse(ev.target.id); //convert the target's text to an hero object (copy rather than a reference so we can add temporary effects to it)
+    
+    if (dragData.type === "structure"){
+
+      this.setState({draggedHero: dragData}); //We just update the dragged hero to the structure and ignore any hero movement changes
+      return;
+    }
+
     dragData.initiating = true;
 
     
@@ -1194,7 +1357,7 @@ class GameBoard extends React.Component{
     }
     // let oldHero = heroData[dragData.heroID.value];
 
-    let actionLists = getActionLists(dragData, temp, newCells, this.state.currentTurn);
+    let actionLists = getActionLists(dragData, temp, newCells, this.state);
 
 
     
@@ -1209,8 +1372,10 @@ class GameBoard extends React.Component{
     this.setState({draggedHero: dragData});
     this.setState({draggedHeroOrg: Object.assign({}, dragData) });
 
-    let cantoCheck = false; //Checks the canto status of last hero dragged/dropped
 
+    // We do a check on the previous hero's canto status. If they are in their canto movement, then we need to finish their canto movement
+    // before we allow the movement of other heroes.
+    let cantoCheck = false; 
     if (this.state.movementCheck >=  0) { //make sure that a previous movement check is active
       cantoCheck = this.idToHero(this.state.movementCheck, temp).cantoActive; //get the previous hero's canto status
 
@@ -1219,7 +1384,7 @@ class GameBoard extends React.Component{
 
     if (!cantoCheck && !dragData.end){ //only set movement if unit's turn has not ended and a unit is not asking for a canto action
 
-      if (this.state.movementCheck !== dragData.id ){ //movement hasn't been calculated yet
+      if (this.state.movementCheck !== dragData.id ){ //movement hasn't been calculated yet and update movement with new dragged unit
         this.setState({anchorPosition: dragData.anchorPosition });
         this.setState({availableWarp: actionLists.warpList});
         this.setState({availableMovement: actionLists.movementList});
@@ -1277,7 +1442,7 @@ class GameBoard extends React.Component{
       let assistSpaces = getSpacesInExactRange(hero.position, assist);
 
       for (let s of assistSpaces){
-        if (newCells[s] !== null && newCells[s].side === hero.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
+        if (newCells[s] !== null && newCells[s].type === "hero" && newCells[s].side === hero.side && newCells[s].statusEffect.isolation < 1 ){ //check for same team and isolationhave
 
 
 
@@ -1338,7 +1503,7 @@ class GameBoard extends React.Component{
     let filteredList = [];//[...allyList]; //copy of allyList
 
 
-    filteredList = teamList.filter(checkConditionHero(owner, heroReq, this.state.heroList, this.state.currentTurn) ); //filter out 
+    filteredList = teamList.filter(checkConditionHero(owner, heroReq, this.state.heroList, this.state) ); //filter out 
 
 
     //checkCondition(heroList, x.condition, owner, enemy, this.state.currentTurn);
@@ -1354,7 +1519,9 @@ class GameBoard extends React.Component{
     let dropPosition = ev.target.id;
 
 
-    if (dropPosition === null){
+
+    //When dragging over empty spaces, do not update. Structures also do not do anything when dragged over anything
+    if (dropPosition === null ||  this.state.draggedHero.type === "structure"){
       return;
     
     //if the spot has a hero, convert that hero to an ID
@@ -1371,10 +1538,10 @@ class GameBoard extends React.Component{
 
 
     //check if cell has a hero and if it is on opposite side
-    if (cellContent !==null && this.state.draggedHero.side !== cellContent.side){
+    if (cellContent !==null && this.state.draggedHero.side !== cellContent.side && cellContent.type === "hero"){
 
       //if it is not the same draggedOver as before or if there was none before for battle forecast
-      if ( (this.state.draggedOver !== null && this.state.draggedOver.position !== dropPosition) || this.state.draggedOver === null ) {
+      if ( this.state.draggedOver === null ||   this.state.draggedOver.position !== dropPosition) {
 
         //Restore AOE HP values here
 
@@ -1407,7 +1574,7 @@ class GameBoard extends React.Component{
               let draggedCopy = JSON.parse(JSON.stringify(draggedHero));
               let aoeTargetCopy = JSON.parse(JSON.stringify(newCells[aoePositions[i]]));
 
-              let aoeDamage = calculatePreBattleDamage (draggedCopy, aoeTargetCopy, this.state.heroList, this.state.currentTurn); 
+              let aoeDamage = calculatePreBattleDamage (draggedCopy, aoeTargetCopy, this.state.heroList, this.state); 
               preBattleDamageList[i] = aoeDamage;
               orgAOEHP[i] = aoeTargetCopy.currentHP; 
             } else { //out of bounds or no hero found
@@ -1420,67 +1587,11 @@ class GameBoard extends React.Component{
           //Loop through each aoe position, if a hero is found, else set that aoe value in list to -1
           //if hero is found, we need to create another copy of the dragged hero and the hero in the aoe
             //We need deep copies as we need to recalculate the precombatconditionalEffects and variable precombat abilities for each hero they hit
-          preBattleDamage =  calculatePreBattleDamage (draggedHero, draggedOverHero, this.state.heroList, this.state.currentTurn);
+          preBattleDamage =  calculatePreBattleDamage (draggedHero, draggedOverHero, this.state.heroList, this.state);
 
-            // let damageType = getDamageType(heroData[draggedHero.heroID.value].weapontype, draggedHero, draggedOverHero);
-
-          // ///// special trigger effects
-          // //check 
-          // //let oldSpecialTrigger =  Object.assign({}, draggedHero.combatEffects.specialTrigger); //get copy of the special trigger effects
-
-          // getConditionalEffects(draggedHero, draggedOverHero, "preCombatConditionalEffects");
-          // getConditionalEffects(draggedOverHero, draggedHero, "preCombatConditionalEffects");
-            
-          // this.getVariablePreCombat(draggedHero, draggedOverHero);
-          // this.getVariablePreCombat(draggedOverHero, draggedHero);
-
-          // let onSpecialDamage = 0;
-          // let trueDamage = 0;
-
-          // for (let i of draggedHero.onSpecial){ //loop through each on move assist effect on the assister
-          //   if (i !== null){
-
-          //     for (let j in i){
-          //       if (j === "damage"){
-          //         //damage": ["defender", "def", "variable", "trueDamage", {"key": "specialCD", "factor": 0.1, "constant": 0.20, "max": 10}]}
-
-          //         let extraDamage = getSpecialValue(i, draggedHero, draggedOverHero, this.state.heroList, damageType, j, "preCombat");
-
-          //         if (i.damage[3] === "trueDamage"){
-          //           trueDamage+= extraDamage;
-          //         } else if (i.damage[3] === "specialDamage" ){
-          //           onSpecialDamage+= extraDamage
-          //         }
-
-
-          //       } //end for damage
-          //     } //end for i
-
-
-
-          //   }
-
-          // } //end for onSpecial
-
-          // getConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList);
-
-          // trueDamage+= draggedHero.combatEffects.specialTrueDamage; 
-          // trueDamage+= draggedHero.combatEffects.preBattleTrueDamage;
-          // //draggedHero.combatEffects.specialTrigger = oldSpecialTrigger; //revert to original
-
-
-          // let damageReduction = calculateReductionEffects(draggedOverHero.combatEffects.preBattleReduction, 1.0); //no reduce reduction for pre battle
-
-          // //The calculated damage portion stops at 0 (so you don't get negative damage) 
-          // preBattleDamage = Math.max(0, Math.trunc(  (draggedHero.visibleStats.atk - draggedOverHero.visibleStats[damageType]) * draggedHero.special.effect.factor) + onSpecialDamage) + trueDamage;
-
-          // preBattleDamage = preBattleDamage - Math.trunc( preBattleDamage - preBattleDamage * damageReduction );
-
-
-          // preBattleDamage = Math.max(preBattleDamage, 0); //pre battle damage does not go below 0 so that battle window can still identify that a prebattle special occured   
 
           //remove any effects from conditional specials (before any changes to the dragged hero is applied so that the same conditions pass)
-          removeConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList);
+          removeConditionalSpecial(draggedHero, draggedOverHero, this.state.heroList, this.state);
 
           draggedOverHero.currentHP = Math.max(1, draggedOverHero.currentHP - preBattleDamage); 
 
@@ -1514,7 +1625,7 @@ class GameBoard extends React.Component{
 
         let saviorHero = this.getSaviorHero(heroListCopy, draggedHero, draggedOverHero);
 
-        console.log(preBattleDamageList)
+
         //when there is a savior hero, overwrite the dragged over hero with the savior
         if (saviorHero !== null){
           heroListCopy[draggedOverHero.side][draggedOverHero.listIndex].currentHP = draggedOverHero.currentHP; //since the dragged over hero will be replaced with the savior, we will set their HP in the heroList copy (so their aoe damage is applied to them)
@@ -1562,8 +1673,8 @@ class GameBoard extends React.Component{
         //For conditional effects that check for buff/debuffs and also provide neutralzing effects 
         //These have priority as they will activate before other neutralizers This is basically for idunn and brunnya's weapons
         //No longer true- These must be after conditional effects as neutralizers from there can falsify the condition - 
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalBonusPenaltyNeutralizers", heroListCopy, this.state.currentTurn);
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalBonusPenaltyNeutralizers", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalBonusPenaltyNeutralizers", heroListCopy, this.state);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalBonusPenaltyNeutralizers", heroListCopy, this.state);
 
 
 
@@ -1571,19 +1682,19 @@ class GameBoard extends React.Component{
         //An exception to this is idunn's zephyr breath which will reside here.
           //As the initiator, zephyr breath will activate before the enemy's neutralizers can come into play
           //As the defender, enemy neutralizations will come first and can cancel out this ability
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalEffects", heroListCopy, this.state.currentTurn);
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalEffects", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalEffects", heroListCopy, this.state);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalEffects", heroListCopy, this.state);
 
 
         //Here all neutralizations should be added
 
         //Combat effects that provide stats but need buff/debuff neutralizations -
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombatStats", heroListCopy, this.state.currentTurn);
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombatStats", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombatStats", heroListCopy, this.state);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombatStats", heroListCopy, this.state);
 
         //Get stats buffs that have variable amounts of stats provided - this requires buffs/debuffs to be calculated
-        getVariableStats(draggedHero, draggedOverHero, heroListCopy, this.state.currentTurn);
-        getVariableStats(draggedOverHero, draggedHero, heroListCopy, this.state.currentTurn);
+        getVariableStats(draggedHero, draggedOverHero, heroListCopy, this.state);
+        getVariableStats(draggedOverHero, draggedHero, heroListCopy, this.state);
 
         //calulcating aura stats based on battling heroes
         calculateBattlingAuraStats(heroListCopy, draggedHero, draggedOverHero);
@@ -1599,12 +1710,12 @@ class GameBoard extends React.Component{
         //conditionalPreCombatStats
 
         //Conditional effects that need mostly finalized combat stats, The initator gets priority here and the stat changes from the initator here can affect the defender's initation of these skills 
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalPreCombatStats", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalPreCombatStats", heroListCopy, this.state);
         //Recalculate for defender's check
         draggedHero.combatStats = calculateCombatStats(draggedHero, draggedOverHero);
         draggedOverHero.combatStats = calculateCombatStats(draggedOverHero, draggedHero);
 
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalPreCombatStats", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalPreCombatStats", heroListCopy, this.state);
 
 
         //Now combat stats should be fully finalized
@@ -1613,8 +1724,8 @@ class GameBoard extends React.Component{
 
 
         //Conditional effects that need final combat stats
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombat", heroListCopy, this.state.currentTurn);
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombat", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalCombat", heroListCopy, this.state);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalCombat", heroListCopy, this.state);
 
 
 
@@ -1623,12 +1734,12 @@ class GameBoard extends React.Component{
         // specifically for brash assault but will keep it in getattack count for now
 
         //Conditional effects that check for followups which requires final stats (for speed check) and conditionalCombat effects (in particular, wind/water/myhrr sweep effects are conditionalcombat effects which affect followups)
-        getConditionalEffects(draggedHero, draggedOverHero, "conditionalFollowUp", heroListCopy, this.state.currentTurn);
-        getConditionalEffects(draggedOverHero, draggedHero, "conditionalFollowUp", heroListCopy, this.state.currentTurn);
+        getConditionalEffects(draggedHero, draggedOverHero, "conditionalFollowUp", heroListCopy, this.state);
+        getConditionalEffects(draggedOverHero, draggedHero, "conditionalFollowUp", heroListCopy, this.state);
 
         //Variable effects that need final combat stats - Must be after conditionalfollowup as they can grant these effects
-        getVariableCombat(draggedHero, draggedOverHero, heroListCopy, this.state.currentTurn);
-        getVariableCombat(draggedOverHero, draggedHero, heroListCopy, this.state.currentTurn);
+        getVariableCombat(draggedHero, draggedOverHero, heroListCopy, this.state);
+        getVariableCombat(draggedOverHero, draggedHero, heroListCopy, this.state);
 
 
         this.setState({battleHeroList: heroListCopy});
@@ -1648,6 +1759,26 @@ class GameBoard extends React.Component{
         //e.g. have a list of numbers indicating spaces affected. for each space, also have a corresponding text which will be "" if no hero is there and their new hp if otherwise
       }
 
+
+    } else if (cellContent !==null && this.state.draggedHero.side !== cellContent.side && cellContent.type === "structure"){
+
+
+      if ( this.state.draggedOver === null ||   this.state.draggedOver.position !== dropPosition) {
+        let draggedOverHero = JSON.parse(JSON.stringify(newCells[dropPosition]) ); // copies hero - non-reference copy so this copy can have temporary effects
+        let draggedHero = JSON.parse(JSON.stringify(this.state.draggedHeroOrg)); //get the original dragged hero
+
+
+        //let preBattleDamage = -1;
+
+        let orgHP = draggedOverHero.currentHP;
+
+
+
+        this.setState({draggedHero: draggedHero});
+        this.setState({draggedOverOriginalHP: orgHP});
+        this.setState({draggedOver: draggedOverHero});
+
+      }
 
     }
 
@@ -1673,11 +1804,11 @@ class GameBoard extends React.Component{
         if (effect === null || effect === undefined) {continue;}
         //"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyReq": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]]  "statBuff": {"atk": 4, "res": 4} }],
         
-        if ("allyCondition" in effect && !checkCondition(heroList, effect.allyCondition, ally, defender, this.state.currentTurn)){
+        if ("allyCondition" in effect && !checkCondition(heroList, effect.allyCondition, ally, defender, this.state)){
           continue;
         }
 
-        if ("enemyCondition" in effect && !checkCondition(heroList, effect.enemyCondition, ally, attacker, this.state.currentTurn)){
+        if ("enemyCondition" in effect && !checkCondition(heroList, effect.enemyCondition, ally, attacker, this.state)){
           continue;
         }
 
@@ -1753,7 +1884,7 @@ class GameBoard extends React.Component{
 
         if (effect === null || effect === undefined) {continue;}
 
-        if ("condition" in effect && !checkCondition(heroList, effect.condition, teammate, teammate, this.state.currentTurn) ){ //make sure teammate has met condition to provide the uara
+        if ("condition" in effect && !checkCondition(heroList, effect.condition, teammate, teammate, this.state) ){ //make sure teammate has met condition to provide the uara
           continue;
         }
 
@@ -1766,11 +1897,11 @@ class GameBoard extends React.Component{
 
 
         //if aura is from another hero, use effectReq, otherwise use selfReq
-        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, targetedHero, this.state.currentTurn) && teammate.id !== targetedHero.id  ){ //check if the hero meets the allyReq to gain the aura effects - Also check if its not themselves
+        if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, teammate, targetedHero, this.state) && teammate.id !== targetedHero.id  ){ //check if the hero meets the allyReq to gain the aura effects - Also check if its not themselves
 
           addEffect(targetedHero, effect.auraEffects); //adds the effects to the hero
 
-        } else if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, teammate, targetedHero, this.state.currentTurn) && teammate.id === targetedHero.id ){ //if selfReq is being used, the targeted hero should be the hero. Otherwise, it would use the effectReq
+        } else if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, teammate, targetedHero, this.state) && teammate.id === targetedHero.id ){ //if selfReq is being used, the targeted hero should be the hero. Otherwise, it would use the effectReq
 
           addEffect(targetedHero, effect.auraEffects);
         }
@@ -1848,6 +1979,7 @@ class GameBoard extends React.Component{
     }
 
     let temp = this.state.heroList;
+    let tempStructures = this.state.structureList;
 
     let newCells = this.state.cells;
 
@@ -1873,7 +2005,10 @@ class GameBoard extends React.Component{
 
       //Assist
       //Check if in range for assist and they are on the same side
-      if ( this.state.availableAssist.includes(newCells[dropPosition].position) && dragData.side === newCells[dropPosition].side && dragData.statusEffect.isolation < 1 && newCells[dropPosition].statusEffect.isolation < 1){
+
+      if (dragData.type === "structure"){
+        //do nothing
+      } else if ( this.state.availableAssist.includes(newCells[dropPosition].position) && dragData.side === newCells[dropPosition].side && dragData.statusEffect.isolation < 1 && newCells[dropPosition].statusEffect.isolation < 1){
         //restore AOE HP values here
 
         //Note - These apply functions currently use a copy of the the assister (drag data) and assistee (dropPosition in cell list) 
@@ -1888,7 +2023,7 @@ class GameBoard extends React.Component{
 
             //Get conditional effects for the assister - This is mainly so that we can conditional canto effects for stuff like regin's sword, which activates on assists
             //This will also activate other abilities such as swift sparrow but this should not effect assists since they do not use combat effects/stats
-            getConditionalEffects(dragData, newCells[dropPosition], "conditionalEffects", this.state.heroList, this.state.currentTurn); 
+            getConditionalEffects(dragData, newCells[dropPosition], "conditionalEffects", this.state.heroList, this.state); 
             
 
             if (assistType === "movement"){
@@ -1910,7 +2045,7 @@ class GameBoard extends React.Component{
 
 
             } else if (assistType === "rally"){
-              temp = this.applyRallyAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect, this.state.currentTurn);
+              temp = this.applyRallyAssist(temp, dragData, newCells[dropPosition], dragData.assist.effect);
 
 
             } else if (assistType === "health"){
@@ -1945,11 +2080,11 @@ class GameBoard extends React.Component{
           for (let effect of temp[dragSide][dragIndex].assist.effect.subeffect ){ //loop through subeffect under assist for 
             if (effect === null || effect === undefined) {continue;}
 
-            if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state.currentTurn) ){ //check if condition has not been met skip
+            if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state) ){ //check if condition has not been met skip
               continue;
             }
 
-            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state.currentTurn);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
 
           } //end effects
 
@@ -1962,8 +2097,7 @@ class GameBoard extends React.Component{
       //Attack
       //Check if in range for attack and if they are on the same side
       } else if ( this.state.availableAttack.includes(newCells[dropPosition].position) && getDistance(dragData.position, newCells[dropPosition].position) === dragData.range && dragData.side !== newCells[dropPosition].side ){
-        let orgAttackerPos = temp[dragSide][dragIndex].position;
-        let orgDefenderPos = temp[dropSide][dropIndex].position;
+
 
 
         for (let i = 0; i < this.state.preBattleDamagePositions.length; i++){ //attack has been confirmed, apply the aoe damage
@@ -1975,64 +2109,77 @@ class GameBoard extends React.Component{
 
         }
 
+        if (newCells[dropPosition].type === "structure"){
+          getConditionalEffects(dragData, dragData, "conditionalEffects", this.state.heroList, this.state); 
 
-        temp = doBattle(temp, dragData, this.state.draggedOver, newCells); //do battle has to use the combat versions of drag and draggedOver heroes
-
-        //clear initial positions of attacker/defender
-        newCells[orgAttackerPos] = null;
-        newCells[orgDefenderPos] = null;
-
-
-        if ( temp[dragSide][dragIndex].swapAllyPosition >= 0){
-
-          let swapAllyPosition = temp[dragSide][dragIndex].swapAllyPosition;
-
-          let swapAllySide = newCells[swapAllyPosition].side;
-          let swapAllyIndex = newCells[swapAllyPosition].listIndex;
-          
-          //clear initial position of swapAlly
-          newCells[swapAllyPosition] = null;
-
-          newCells[temp[swapAllySide][swapAllyIndex].position] = temp[swapAllySide][swapAllyIndex]; //move swap ally to their new position
-          temp[dragSide][dragIndex].swapAllyPosition = -1; //reset
-        }
-
-        
-
-
-        //move the attacker/defender to their new positions
-        newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
-        newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
-
-
-
-
-        this.endHeroTurn(temp[dragSide][dragIndex]);
-
-
-        //after all post combat stuff is done, post combat specials activate (galeforce, requiem dance etc)
-
-        //currently, post combat specials only occur when initiating
-        let refList = JSON.parse(JSON.stringify(temp)); //deep copy for reference 
-
-        if (temp[dragSide][dragIndex].special.charge === 0 && temp[dragSide][dragIndex].special.type === "post-battle" && !temp[dragSide][dragIndex].galeforce){
-          for (let effect of temp[dragSide][dragIndex].special.effect){
-
-            if (effect === null || effect === undefined) {continue;}
-
-            if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state.currentTurn) ){ //check if condition has not been met skip
-              continue;
-            }
-
-            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state.currentTurn);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
-
+          newCells[dropPosition].currentHP = Math.max(newCells[dropPosition].currentHP - 1, 0);
+          if (newCells[dropPosition].currentHP <= 0){
+            this.removeStructure(dropPosition);
           }
 
-          temp[dragSide][dragIndex].special.charge = temp[dragSide][dragIndex].special.cd; //reset charge
-          temp[dragSide][dragIndex].galeforce = true;
+          this.endHeroTurn(temp[dragSide][dragIndex]);
         }
 
+        else {
+          let orgAttackerPos = temp[dragSide][dragIndex].position;
+          let orgDefenderPos = temp[dropSide][dropIndex].position;
+          temp = doBattle(temp, dragData, this.state.draggedOver, newCells, this.state); //do battle has to use the combat versions of drag and draggedOver heroes
 
+          //clear initial positions of attacker/defender
+          newCells[orgAttackerPos] = null;
+          newCells[orgDefenderPos] = null;
+
+
+          if ( temp[dragSide][dragIndex].swapAllyPosition >= 0){
+
+            let swapAllyPosition = temp[dragSide][dragIndex].swapAllyPosition;
+
+            let swapAllySide = newCells[swapAllyPosition].side;
+            let swapAllyIndex = newCells[swapAllyPosition].listIndex;
+            
+            //clear initial position of swapAlly
+            newCells[swapAllyPosition] = null;
+
+            newCells[temp[swapAllySide][swapAllyIndex].position] = temp[swapAllySide][swapAllyIndex]; //move swap ally to their new position
+            temp[dragSide][dragIndex].swapAllyPosition = -1; //reset
+          }
+
+          
+
+
+          //move the attacker/defender to their new positions
+          newCells[temp[dragSide][dragIndex].position] = temp[dragSide][dragIndex];
+          newCells[temp[dropSide][dropIndex].position] = temp[dropSide][dropIndex];
+
+
+
+
+          this.endHeroTurn(temp[dragSide][dragIndex]);
+
+
+          //after all post combat stuff is done, post combat specials activate (galeforce, requiem dance etc)
+
+          //currently, post combat specials only occur when initiating
+          let refList = JSON.parse(JSON.stringify(temp)); //deep copy for reference 
+
+          if (temp[dragSide][dragIndex].special.charge === 0 && temp[dragSide][dragIndex].special.type === "post-battle" && !temp[dragSide][dragIndex].galeforce){
+            for (let effect of temp[dragSide][dragIndex].special.effect){
+
+              if (effect === null || effect === undefined) {continue;}
+
+              if ( "condition" in effect && !checkCondition(temp, effect.condition, temp[dragSide][dragIndex], temp[dragSide][dragIndex], this.state) ){ //check if condition has not been met skip
+                continue;
+              }
+
+              calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+
+            }
+
+            temp[dragSide][dragIndex].special.charge = temp[dragSide][dragIndex].special.cd; //reset charge
+            temp[dragSide][dragIndex].galeforce = true;
+          }
+
+        }
         actionSuccess = true;
       }
 
@@ -2086,15 +2233,31 @@ class GameBoard extends React.Component{
         } ///end check if canto has been used
       } //end check if action has succeeded
 
-    } else { //regular movement
+    } else { //regular movement or structure
       //reset hp
+      if (dragData.position === this.state.selectedPosition){ 
+        this.setState({selectedPosition: dropPosition});
+      }
 
+      if (dragData.type === "structure"){
+
+        newCells[dragData.position] = null;
+        newCells[dropPosition] = dragData;
+        newCells[dropPosition].position = dropPosition;
+        tempStructures[dragSide][dragIndex] = dragData;
+
+        this.setState({structureList: tempStructures});
+        
       //check if movement is valid and update the game with the new positions
       //with freemove active, the movement will always be active
       //With freemove off, it needs to check if it is valid warp or move position
-      if ( (this.state.freeMove ||   this.state.availableMovement.includes(dropPosition) || this.state.availableWarp.includes(dropPosition)) && (this.state.freeMove || dragData.id === this.state.movementCheck) ){
+      } else if ( (this.state.freeMove ||   this.state.availableMovement.includes(dropPosition) || this.state.availableWarp.includes(dropPosition)) && (this.state.freeMove || dragData.id === this.state.movementCheck) ){
       //for regular movement an action hasn't been successful yet 
       //remove old from board
+
+
+        //if the selected position was the dragged hero's position, also move the selected position since the selected position not following the selected does not feel right
+
         newCells[temp[dragSide][dragIndex].position] = null;
         
 
@@ -2111,12 +2274,6 @@ class GameBoard extends React.Component{
 
 
 
-
-        // if (temp[dragSide][dragIndex].cantoActive){ //this is considered a canto movement and will end the unit's turn
-        //   temp[dragSide][dragIndex].cantoActive = false;
-        //   this.dragEnd(ev);
-        //   this.endHeroTurn(temp[dragSide][dragIndex]);
-        // } else 
         if (!temp[dragSide][dragIndex].cantoActive) { //canto is not active, recalculate attack/assists
 
 
@@ -2133,14 +2290,12 @@ class GameBoard extends React.Component{
 
         }
 
-      }
 
 
-      // this.setState({heroList: temp});
-      // this.selectNewMember(dragSide, dragIndex);
-      //this.updateHero(dropSide, dropData);
-      //this.setState({selectedMember: temp[dragSide][dragIndex] });
-    }
+      } //end check freemove
+
+
+    } //end regular movement
 
 
     //a check for an action occurring needs to occur
@@ -2148,7 +2303,7 @@ class GameBoard extends React.Component{
 
 
 
-    calculateAuraStats(temp, this.state.currentTurn);
+    calculateAuraStats(temp, this.state);
 
     if (dragSide !== this.state.playerSide || dragIndex !== this.state.heroIndex){ //if moved hero is not the currently selected hero, reset that hero's remainder value
       temp[this.state.playerSide][this.state.heroIndex].remainder = getHeroMovement(this.state.selectedMember);
@@ -2169,7 +2324,7 @@ class GameBoard extends React.Component{
       let tempCantoHero = JSON.parse(JSON.stringify(temp[dragSide][dragIndex]) ); //create a temporary version of the hero with canto so that we can add temporary effects.
 
 
-      let actionLists = getActionLists(tempCantoHero, temp, newCells, this.state.currentTurn);
+      let actionLists = getActionLists(tempCantoHero, temp, newCells, this.state);
 
 
       this.setState({availableWarp: actionLists.warpList});
@@ -2181,6 +2336,8 @@ class GameBoard extends React.Component{
       this.setState({anchorPosition: temp[dragSide][dragIndex].position });
 
     }
+
+
 
     //actions (attack/assist), will mark canto so that canto movement is then calculated and set
       //at this point, moving the selected unit will also end their turn
@@ -2369,11 +2526,11 @@ class GameBoard extends React.Component{
           if ("checkType" in effect && effect.checkType === "targeting"){ 
 
             if (effect["from"].includes("assister") ){
-              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq);
+              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq, this.state);
             }
 
             if (effect["from"].includes("assistee") ){
-              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq));
+              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq, this.state));
             }
 
           } else if (range > 0){ //effect does not target and takes heroes within a range instead e.g. sabertooth fang/laslow blade
@@ -2404,7 +2561,7 @@ class GameBoard extends React.Component{
 
 
 
-          applyBuffList(list, heroesInRange, effect, assister); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
+          applyBuffList(list, heroesInRange, effect, assister, this.state); //postTeam, postSpecial); // these shouldn't effect postteam/specials so can be undefefined
 
 
 
@@ -2434,11 +2591,11 @@ class GameBoard extends React.Component{
           if ("checkType" in effect && effect.checkType === "targeting"){ 
 
             if (effect["from"].includes("assister") ){
-              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq);
+              heroesInRange = getPeakList(effect.checkStats, list[assister.side][assister.listIndex], list[side], list[side], effect.peak, effect.targetReq, this.state);
             }
 
             if (effect["from"].includes("assistee") ){
-              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq));
+              heroesInRange = heroesInRange.concat(getPeakList(effect.checkStats, list[assistee.side][assistee.listIndex], list[side], list[side], effect.peak, effect.targetReq, this.state));
             }
 
           } else if (range > 0){
@@ -2469,7 +2626,7 @@ class GameBoard extends React.Component{
           }
 
 
-          applyBuffList(list, heroesInRange, effect, assistee);
+          applyBuffList(list, heroesInRange, effect, assistee, this.state);
 
 
 
@@ -2562,7 +2719,7 @@ class GameBoard extends React.Component{
 
   }
 
-  applyRallyAssist(updatedHeroList, assister, assistee, effect, currentTurn){
+  applyRallyAssist(updatedHeroList, assister, assistee, effect){
     //rally effects are lists whose elements are two element lists. For those two elements lists, the first is the stat buffed and the second is the amount of the buff
     //if the first element is just up, then the buff is applied to units around the assistee as well
     //let cells = this.state.cells;
@@ -2656,9 +2813,9 @@ class GameBoard extends React.Component{
 
 
         if ("effectReq" in i){
-          affectedHeroes = heroReqCheck(assister, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+          affectedHeroes = heroReqCheck(assister, affectedHeroes, i.effectReq, refList, this.state); //Get the list of allies that pass the req check
         }
-        applyBuffList(list, affectedHeroes, i, assister);
+        applyBuffList(list, affectedHeroes, i, assister, this.state);
 
       }
 
@@ -2698,10 +2855,10 @@ class GameBoard extends React.Component{
         }
 
         if ("effectReq" in i){
-          affectedHeroes = heroReqCheck(assistee, affectedHeroes, i.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+          affectedHeroes = heroReqCheck(assistee, affectedHeroes, i.effectReq, refList, this.state); //Get the list of allies that pass the req check
         }
 
-        applyBuffList(list, affectedHeroes, i, assistee);
+        applyBuffList(list, affectedHeroes, i, assistee, this.state);
 
 
 
@@ -2903,7 +3060,7 @@ class GameBoard extends React.Component{
 
     if (effect.modifiers.includes("restore")){ //Reset debuffs and status effects.
 
-      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee, this.state )){ //First check if assistee has a penalty on them before restoring
 
         return true;
        
@@ -3134,29 +3291,29 @@ class GameBoard extends React.Component{
 
           let passedHeroList = [];
           if ("effectReq" in effect){
-            passedHeroList = heroReqCheck(assister, teamListValid, effect.effectReq, refList, 0); //Get the list of allies that pass the req check
+            passedHeroList = heroReqCheck(assister, teamListValid, effect.effectReq, refList, this.state); //Get the list of allies that pass the req check
 
-            applyBuffList(list, passedHeroList, effect, assister);
+            applyBuffList(list, passedHeroList, effect, assister, this.state);
 
           } //end ally req
 
 
           if ("assisteeRefReq" in effect && effect.assisteeRef){ //if assisteeRef is true, then we also check witht the assisteRefReq with respect to the assistee
-            passedHeroList = heroReqCheck(assistee, teamListValid, effect.assisteeRefReq, refList, 0); //Get the list of allies that pass the req check
+            passedHeroList = heroReqCheck(assistee, teamListValid, effect.assisteeRefReq, refList, this.state); //Get the list of allies that pass the req check
 
 
-            applyBuffList(list, passedHeroList, effect, assistee);
+            applyBuffList(list, passedHeroList, effect, assistee, this.state);
 
           }
 
-          if ("assisteeReq" in effect && checkCondition(list, effect.assisteeReq, assistee, assistee, 0)) { //if assistee key is true, then also check it against effectReq
-            applyBuffList(list, [assistee], effect, assister);
+          if ("assisteeReq" in effect && checkCondition(list, effect.assisteeReq, assistee, assistee, this.state)) { //if assistee key is true, then also check it against effectReq
+            applyBuffList(list, [assistee], effect, assister, this.state);
           }
           
           //if there is a requirement for the buff to apply to themselves
-          if ("selfReq" in effect && checkCondition(list, effect.selfReq, assister, assister, 0)) {
+          if ("selfReq" in effect && checkCondition(list, effect.selfReq, assister, assister, this.state)) {
 
-            applyBuffList(list, [assister], effect, assister);
+            applyBuffList(list, [assister], effect, assister, this.state);
           } 
 
 
@@ -3165,21 +3322,21 @@ class GameBoard extends React.Component{
           let heroesInRange = [];
 
           if ("targetReference" in effect && effect.targetReference === "assistee"){ //targetReference allows you to specify the reference for the peak list (which can check for distance)
-            heroesInRange = getPeakList(effect.checkStats, assistee, teamList, refList, effect.peak, effect.targetReq);
+            heroesInRange = getPeakList(effect.checkStats, assistee, teamList, refList, effect.peak, effect.targetReq, this.state);
 
           } else { //by default, use assister which cantrips use
-            heroesInRange = getPeakList(effect.checkStats, assister, teamList, refList, effect.peak, effect.targetReq);
+            heroesInRange = getPeakList(effect.checkStats, assister, teamList, refList, effect.peak, effect.targetReq, this.state);
           }
-          applyBuffList(list, heroesInRange, effect, assister);
+          applyBuffList(list, heroesInRange, effect, assister, this.state);
 
         } else if (effect.checkType === "targetingReqCheck"){
           let heroesInRange = [];
 
           if ("targetReference" in effect && effect.targetReference === "assistee"){ //targetReference allows you to specify the reference for the peak list (which can check for distance)
-            heroesInRange = getPeakList(effect.checkStats, assistee, teamList, refList, effect.peak, effect.targetReq);
+            heroesInRange = getPeakList(effect.checkStats, assistee, teamList, refList, effect.peak, effect.targetReq, this.state);
 
           } else { //by default, use assister which cantrips use
-            heroesInRange = getPeakList(effect.checkStats, assister, teamList, refList, effect.peak, effect.targetReq);
+            heroesInRange = getPeakList(effect.checkStats, assister, teamList, refList, effect.peak, effect.targetReq, this.state);
           }
 
 
@@ -3198,10 +3355,10 @@ class GameBoard extends React.Component{
             //owner, teamList, heroReq, heroList, turn){
             if ("effectReq" in effect){
 
-              passedHeroList = heroReqCheck(refHero, teamListValid, effect.effectReq, refList, 0); //Get the list of allies that pass the req check
+              passedHeroList = heroReqCheck(refHero, teamListValid, effect.effectReq, refList, this.state); //Get the list of allies that pass the req check
 
 
-              applyBuffList(list, passedHeroList, effect, refHero);
+              applyBuffList(list, passedHeroList, effect, refHero, this.state);
 
 
             } //end ally req
@@ -3250,7 +3407,7 @@ class GameBoard extends React.Component{
       }
 
 
-      if (checkCondition(heroList, [["statPenalty", "enemy", "battleStart"]], assister, assistee )){ //if enemy has a statPenalty
+      if (checkCondition(heroList, [["statPenalty", "enemy", "battleStart"]], assister, assistee, this.state )){ //if enemy has a statPenalty
         return true;
       }
     //
@@ -3259,7 +3416,7 @@ class GameBoard extends React.Component{
 
     if (effect.neutralize.includes("restore")){
 
-      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(heroList, [["penalty", "enemy", "battleStart"]], assister, assistee, this.state )){ //First check if assistee has a penalty on them before restoring
         
         return true;
       }
@@ -3282,7 +3439,7 @@ class GameBoard extends React.Component{
 
       }
 
-      if (checkCondition(list, [["statPenalty", "enemy", "battleStart"]], assister, assistee )){ //if enemy has a statPenalty
+      if (checkCondition(list, [["statPenalty", "enemy", "battleStart"]], assister, assistee, this.state )){ //if enemy has a statPenalty
         list[assistee.side][assistee.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0}; //clear debuffs
 
       }
@@ -3292,7 +3449,7 @@ class GameBoard extends React.Component{
 
     if (effect.neutralize.includes("restore")){
 
-      if (checkCondition(list, [["penalty", "enemy", "battleStart"]], assister, assistee )){ //First check if assistee has a penalty on them before restoring
+      if (checkCondition(list, [["penalty", "enemy", "battleStart"]], assister, assistee, this.state )){ //First check if assistee has a penalty on them before restoring
         
         list[assistee.side][assistee.listIndex].statusEffect = JSON.parse(JSON.stringify(statusDebuffs));
         list[assistee.side][assistee.listIndex].debuff = {"atk": 0, "spd": 0, "def": 0, "res": 0};
@@ -3357,6 +3514,7 @@ class GameBoard extends React.Component{
     let side = this.state.playerSide;
     let tempList = this.state.heroList; //this is the copy that will be modified
 
+    //let tempStructureList = this.state.structureList;
 
 
     let enemySide = getEnemySide(side);
@@ -3377,8 +3535,8 @@ class GameBoard extends React.Component{
 
     tempList = this.recalculateAllVisibleStats(tempList);//get most up to date visible stats for all heroes
 
-    let allyTeamPost = new Array(7).fill(0);
-    let enemyTeamPost = new Array(7).fill(0);
+    let allyTeamPost = new Array(7 + this.state.structureList["1"].length).fill(0);
+    let enemyTeamPost = new Array(7 + this.state.structureList["1"].length).fill(0);
 
     let allyTeamSpecial = new Array(7).fill(0);
     let enemyTeamSpecial = new Array(7).fill(0);
@@ -3387,7 +3545,7 @@ class GameBoard extends React.Component{
 
     //first loop through heroes and their transform checks - These all occur before turn start effects
 
-    //loop through heroes and their turn start abilities
+    //loop through heroes and their transform checks
     for (let i of tempList[side]){ //this.state.heroList[side]){ //loop through each hero
 
 
@@ -3407,7 +3565,7 @@ class GameBoard extends React.Component{
         }
 
 
-        newTransform = checkCondition(tempList, effect.condition, i, i, this.state.currentTurn);
+        newTransform = checkCondition(tempList, effect.condition, i, i, this.state);
         transformSkills = effect.transformSkills;
 
       } //end loop through transformation effects
@@ -3458,6 +3616,21 @@ class GameBoard extends React.Component{
     tempList = this.recalculateAllVisibleStats(tempList); //recalc visiblestats after transformation for turnstart effects
     let heroList = JSON.parse(JSON.stringify(this.state.heroList)); //deep copy of heroList for reference (so that calculations are done at the same time)
 
+    //loop through structures
+    for (let i of this.state.structureList[side]){
+
+      for (let effect of i.effect[i.level - 1]){
+        if (effect === null || effect === undefined) {continue;}
+
+        if ( "condition" in effect && !checkCondition(heroList, effect.condition, i, i, this.state) ){ //check if condition has not been met skip
+          continue;
+        }
+        
+        calculateBuffEffect(tempList, heroList,  i, effect, this.state, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+      }
+
+    }
+
     for (let i of heroList[side]){ //this.state.heroList[side]){ //loop through each hero for turn start effects
 
 
@@ -3468,11 +3641,11 @@ class GameBoard extends React.Component{
       for (let effect of i.turnStart){ //loop through each turnstart abilities
         if (effect === null || effect === undefined) {continue;}
 
-        if ( "condition" in effect && !checkCondition(heroList, effect.condition, i, i, this.state.currentTurn) ){ //check if condition has not been met skip
+        if ( "condition" in effect && !checkCondition(heroList, effect.condition, i, i, this.state) ){ //check if condition has not been met skip
           continue;
         }
 
-        calculateBuffEffect(tempList, heroList,  i, effect, this.state.currentTurn, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+        calculateBuffEffect(tempList, heroList,  i, effect, this.state, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
 
 
 
@@ -3482,7 +3655,8 @@ class GameBoard extends React.Component{
 
     } //end i
 
-    
+    let structList = this.state.structureList;    
+    let removeStructurePos = [];
 
     //update heroes with new calculated values
     for (let x of tempList[side]){ //for each member of side
@@ -3499,6 +3673,7 @@ class GameBoard extends React.Component{
       }
     }
 
+
     for (let x of tempList[enemySide]){ //for each member of side
       if (heroValid(tempList[x.side][x.listIndex])){
         tempList[x.side][x.listIndex].currentHP = Math.min(Math.max(1,tempList[x.side][x.listIndex].currentHP - enemyTeamPost[x.listIndex]), tempList[x.side][x.listIndex].stats.hp);
@@ -3512,6 +3687,23 @@ class GameBoard extends React.Component{
 
       }
     }
+
+    for (let x of structList[side]){
+      if (structList[x.side][x.listIndex].currentHP - allyTeamPost[7 + x.listIndex] <= 0){
+        removeStructurePos.push(x.position);
+      } 
+    }
+
+    for (let x of structList[enemySide]){
+      if (structList[x.side][x.listIndex].currentHP - enemyTeamPost[7 + x.listIndex] <= 0){
+        removeStructurePos.push(x.position);
+      } 
+    }
+
+    for (let x of removeStructurePos){
+      this.removeStructure(x);
+    }
+
 
     tempList = this.recalculateAllVisibleStats(tempList); //recalc visibleStats again
 
@@ -3557,7 +3749,12 @@ class GameBoard extends React.Component{
   render() {
 
     console.log(this.state.heroList[this.state.playerSide][this.state.heroIndex]);
-    
+    console.log(this.state.structureList);
+    let mapBackDrop = mapData[this.state.map].backDrop;
+    let backDropStyle = " ";
+    if (mapBackDrop !== "blank"){
+      backDropStyle = require('./UI/Maps/' + mapBackDrop + ".jpg");
+    }
 
     return (
 
@@ -3587,13 +3784,15 @@ class GameBoard extends React.Component{
               selectedStatusChange = {this.onSelectedStatusChange}
               statusChange = {this.onStatusChange} />
         </td>
-        <td rowSpan = "2">
-          <table className= "boardStyle" id="board" align = 'center'>
+        <td rowSpan = "2" background = {backDropStyle}>
+          <table className= "boardStyle" id="board" align = 'center'
+            background = {require('./UI/Maps/' + this.state.map + '.png') }>
           <tbody>
             <Map
                 gameState = {this.state}
                 G = {this.props.G}
                 filledPositions = {this.getFilledPositions}
+                selectNewPosition = {this.selectNewPosition}
                 selectNewMember = {this.selectNewMember}
                 dragOver = {this.dragOverBoard}
                 dragStart = {this.dragBoardMember}
@@ -3636,9 +3835,21 @@ class GameBoard extends React.Component{
             fortChange = {this.onFortLevelChange}
             turnChange = {this.onTurnChange}
             seasonChange = {this.onSeasonChange} 
+            mapChange = {this.mapChange}
             startTurn = {this.startTurn}
             endTurn = {this.endTurn} />
-          
+
+          <Terrain  
+            gameState = {this.state}
+
+            terrainChange = {this.terrainChange}
+            terrainDefensiveChange = {this.terrainDefensiveChange} />
+
+          <Structure  
+            gameState = {this.state}
+
+            structureChange = {this.structureChange}
+            addStructure = {this.addStructure} />
         </td>
 
         <td>
@@ -3672,7 +3883,7 @@ function makeHeroStruct(){
     this["dragonflower"] = 0;
 
     this["heroID"] = hero;
-    this["iv"] = {asset: "neutral", flaw: "neutral"};
+    this["iv"] = {asset: "neutral", flaw: "neutral", ascended: "neutral"};
     this["heroSkills"] = {"weapon": {value: "0", label: ""}, "refine": {value: "0", label: ""}, "assist": {value: "0", label: ""}, "special": {value: "0", label: ""}, 
                           "a": {value: "0", label: ""}, "b": {value: "0", label: ""}, "c": {value: "0", label: ""}, "seal": {value: "0", label: ""} //hero skills equipped
                         };
@@ -3808,7 +4019,7 @@ function makeHeroStruct(){
     this["effectiveCondition"] = [];
     this["addedEffective"] = [];
     this["negateEffective"] = [];
-
+    this["type"] = "hero";
   }  
   return hero;
 }
@@ -4003,10 +4214,10 @@ export function getEnemySide(side){
 
 
 
-export function checkConditionHero(owner, condition, heroList, turn){
+export function checkConditionHero(owner, condition, heroList, gameState){
   return function(other){
 
-      return checkCondition(heroList, condition, owner, other, turn);
+      return checkCondition(heroList, condition, owner, other, gameState);
   }
 }
 
@@ -4293,30 +4504,33 @@ function getSkillEffect(id, skillType, currentHero, skillDropdowns){ //skilltype
 }
 
 
-function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial){
+function calculateBuffEffect(heroList, refList, owner, effect, gameState, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial){
 
   //lets say the enemy can now be owner it will work for positions but would be using the other for everything else
   let postSpecial;
   let postTeam;
 
   let teamList;
+  let side = 0;
 
   if (effect.team === "owner"){
-    teamList = refList[owner.side];
+    side = owner.side;
+    //teamList = refList[owner.side];
     postTeam = allyTeamPost;
     postSpecial = allyTeamSpecial;
 
   } else if (effect.team === "enemy") {
-    teamList = refList[getEnemySide(owner.side)];
+    side = getEnemySide(owner.side);
+    //teamList = refList[getEnemySide(owner.side)];
     postTeam = enemyTeamPost;
     postSpecial = enemyTeamSpecial;
   }
 
 
-  if (effect.checkType === "reqCheck"){ //buff eligibility is by some kind of req/condition
-
-    //for status buff, we can then buff those heroes instead
-
+  if ("structure" in effect && effect.structure){
+    teamList = gameState.structureList[side];
+  } else {
+    teamList = refList[side];
 
     let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
     for (let x in teamList){
@@ -4324,25 +4538,39 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
         teamListValid.push(teamList[x]);
       }
     } 
+    teamList = teamListValid;
+  }
+
+  if (effect.checkType === "reqCheck"){ //buff eligibility is by some kind of req/condition
+
+    //for status buff, we can then buff those heroes instead
+
+
+    // let teamListValid = []; //copy of list that only has valid heroes (not dead and on the board)
+    // for (let x in teamList){
+    //   if (heroValid(teamList[x]) && teamList[x].id !== owner.id ){ //exclude themselves, self buff req is done separately
+    //     teamListValid.push(teamList[x]);
+    //   }
+    // } 
 
    // for (let m of heroList[side]){ //loop through friendly heroes
 
     let passedHeroList = [];
     //owner, teamList, heroReq, heroList, turn){
     if ("effectReq" in effect){
-      passedHeroList = heroReqCheck(owner, teamListValid, effect.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+      passedHeroList = heroReqCheck(owner, teamList, effect.effectReq, refList, gameState); //Get the list of allies that pass the req check
 
 
-      applyBuffList(heroList, passedHeroList, effect, owner, postTeam, postSpecial);
+      applyBuffList(heroList, passedHeroList, effect, owner, postTeam, postSpecial, gameState);
 
     } //end ally req
     
 
     
     //if there is a requirement for the buff to apply to themselves
-    if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, owner, owner, currentTurn)) {
+    if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, owner, owner, gameState)) {
 
-      applyBuffList(heroList, [owner], effect, owner, postTeam, postSpecial);
+      applyBuffList(heroList, [owner], effect, owner, postTeam, postSpecial, gameState);
     } 
 
 
@@ -4350,15 +4578,15 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
   } else if (effect.checkType === "targeting"){ //targets a unit, usually for having the highest or lowest of a stat
 
 
-    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq);
+    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq, gameState);
 
 
     
-    applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial);
+    applyBuffList(heroList, affectedList, effect, owner, postTeam, postSpecial, gameState);
 
   } else if (effect.checkType === "targetingReqCheck"){ //targets a unit then uses it as a refeerence - only ussed by chilling seal II currently
     //{"type": "turnStart", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 7, "stats": ["atk","res"], "checkStats": ["def"], "team": "enemy", "peak": "min" ,  "effectReq": [["distanceCheck", 2]] }],
-    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq);
+    let affectedList = getPeakList(effect.checkStats, owner, teamList, refList, effect.peak, effect.targetReq, gameState);
 
     //found targeted units
 
@@ -4380,10 +4608,10 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
       if ("effectReq" in effect){
 
 
-        passedHeroList = heroReqCheck(refHero, teamListValid, effect.effectReq, refList, currentTurn); //Get the list of allies that pass the req check
+        passedHeroList = heroReqCheck(refHero, teamListValid, effect.effectReq, refList, gameState); //Get the list of allies that pass the req check
 
 
-        applyBuffList(heroList, passedHeroList, effect, refHero, postTeam, postSpecial);
+        applyBuffList(heroList, passedHeroList, effect, refHero, postTeam, postSpecial, gameState);
 
 
       } //end ally req
@@ -4391,9 +4619,9 @@ function calculateBuffEffect(heroList, refList, owner, effect, currentTurn, ally
 
       
       //if there is a requirement for the buff to apply to themselves
-      if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, refHero, refHero, currentTurn)) {
+      if ("selfReq" in effect && checkCondition(heroList, effect.selfReq, refHero, refHero, gameState)) {
 
-        applyBuffList(heroList, [refHero], effect, refHero, postTeam, postSpecial);
+        applyBuffList(heroList, [refHero], effect, refHero, postTeam, postSpecial, gameState);
       } 
 
     }//end loop through each refhero
@@ -4463,7 +4691,7 @@ function getHeroMovement(hero){ //give a hero get the movement value
 
 
 
-function getActionLists(hero, heroList, newCells, currentTurn){
+function getActionLists(hero, heroList, newCells, gameState){
 
   // let oldHero = heroData[dragData.heroID.value];
   //hero should be a temporary copy of the hero being moved 
@@ -4499,7 +4727,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
   }
 
   //warp info finds the spaces for warping, obstructors and pathfinders. It also checks if the unit has the pass effect active.
-  let warpInfo = getWarpEffects(hero, heroList, currentTurn);
+  let warpInfo = getWarpEffects(hero, heroList, gameState);
 
   let warpTargets = warpInfo.warpList;
   let warpTargetRanges = warpInfo.warpRangeList;
@@ -4512,7 +4740,7 @@ function getActionLists(hero, heroList, newCells, currentTurn){
 
   let pathfinderList = warpInfo.pathfinderList;
   let pass = warpInfo.pass;
-  let terrainPass = warpInfo.terrainPass;
+  //let terrainPass = warpInfo.terrainPass;
 
 
   let spaceRemainders = {}; //object list to hold the costs of each movement space (to calculate remainders)
@@ -4683,7 +4911,7 @@ function getAttackList(hero, newCells){
 }
 
 
-function getWarpEffects(owner, heroList, currentTurn){
+function getWarpEffects(owner, heroList, gameState){
 
   //provides a couple of things
   //pass (just a 1 or 0 for pass effect)
@@ -4722,7 +4950,7 @@ function getWarpEffects(owner, heroList, currentTurn){
         if (effect === null || effect === undefined) {continue;}
       
 
-        if ("condition" in effect && !checkCondition(heroList, effect.condition, hero, hero, currentTurn) ){ //check if condition has not been met to skip
+        if ("condition" in effect && !checkCondition(heroList, effect.condition, hero, hero, gameState) ){ //check if condition has not been met to skip
             continue;
         }
 
@@ -4737,7 +4965,7 @@ function getWarpEffects(owner, heroList, currentTurn){
 
         } else if (effect.subtype === "warpTarget"){ //warp effects that are granted by others to allow unit to do something like warp to them (e.g. guidance)
 
-          if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, hero, owner, currentTurn)){
+          if ("effectReq" in effect && checkCondition(heroList, effect.effectReq, hero, owner, gameState)){
 
 
             if (effect.effect === "obstruct"){
@@ -4915,7 +5143,7 @@ function getSpacesInRange(origin, range){
 
 
 //gets the peak (min or max depending on parameters given)
-export function getPeakList(checkStats, owner, teamList, refList, peakType, targetReq){
+export function getPeakList(checkStats, owner, teamList, refList, peakType, targetReq, gameState){
     //let checkStats = effect.checkStats;
 
     let affectedList = [];
@@ -4932,7 +5160,7 @@ export function getPeakList(checkStats, owner, teamList, refList, peakType, targ
 
     for (let hero of teamList){
 
-      if (typeof targetReq !== 'undefined' && !checkCondition(refList, targetReq, owner, hero) ){ //if there is a requirement to be targeted, the reflist is used instead
+      if (typeof targetReq !== 'undefined' && !checkCondition(refList, targetReq, owner, hero, gameState) ){ //if there is a requirement to be targeted, the reflist is used instead
         continue; //if there is a target req and they don't meeet that requirement skip them
       }
 
@@ -5037,7 +5265,7 @@ function getAOEPositions(position, patternList){
 }
 
 
-function calculatePreBattleDamage(attacker, defender, list, currentTurn){
+function calculatePreBattleDamage(attacker, defender, list, gameState){
 
   let damageType = getDamageType(heroData[attacker.heroID.value].weapontype, attacker, defender);
 
@@ -5045,11 +5273,11 @@ function calculatePreBattleDamage(attacker, defender, list, currentTurn){
   //check 
   //let oldSpecialTrigger =  Object.assign({}, attacker.combatEffects.specialTrigger); //get copy of the special trigger effects
 
-  getConditionalEffects(attacker, defender, "preCombatConditionalEffects", list, currentTurn);
-  getConditionalEffects(defender, attacker, "preCombatConditionalEffects", list, currentTurn);
+  getConditionalEffects(attacker, defender, "preCombatConditionalEffects", list, gameState);
+  getConditionalEffects(defender, attacker, "preCombatConditionalEffects", list, gameState);
     
-  getVariablePreCombat(attacker, defender, list, currentTurn);
-  getVariablePreCombat(defender, attacker, list, currentTurn);
+  getVariablePreCombat(attacker, defender, list, gameState);
+  getVariablePreCombat(defender, attacker, list, gameState);
 
   let onSpecialDamage = 0;
   let trueDamage = 0;
@@ -5079,7 +5307,7 @@ function calculatePreBattleDamage(attacker, defender, list, currentTurn){
 
   } //end for onSpecial
 
-  getConditionalSpecial(attacker, defender, list);
+  getConditionalSpecial(attacker, defender, list, gameState);
 
   trueDamage+= attacker.combatEffects.specialTrueDamage; 
   trueDamage+= attacker.combatEffects.preBattleTrueDamage;
@@ -5103,11 +5331,11 @@ function calculatePreBattleDamage(attacker, defender, list, currentTurn){
 
 
 
-function getConditionalEffects(owner, enemy, type, heroList, currentTurn){
+function getConditionalEffects(owner, enemy, type, heroList, gameState){
 
   for (let effect of owner[type]){
 
-    if (effect !== null && checkCondition(heroList, effect.condition, owner, enemy, currentTurn)){ //if condition is true, then provide the rest of the effects
+    if (effect !== null && checkCondition(heroList, effect.condition, owner, enemy, gameState)){ //if condition is true, then provide the rest of the effects
         addEffect(owner, effect);
 
 
@@ -5116,7 +5344,7 @@ function getConditionalEffects(owner, enemy, type, heroList, currentTurn){
   } //end for 
 }
 
-function getVariablePreCombat(owner, enemy, heroList, currentTurn){
+function getVariablePreCombat(owner, enemy, heroList, gameState){
 
 
 
@@ -5124,11 +5352,11 @@ function getVariablePreCombat(owner, enemy, heroList, currentTurn){
 
     if (effect !== null ){ //if there is an effect
 
-      if ("condition" in effect && !checkCondition(heroList, effect.condition, owner, enemy, currentTurn) ){ //check if condition has not been met to skip
+      if ("condition" in effect && !checkCondition(heroList, effect.condition, owner, enemy, gameState) ){ //check if condition has not been met to skip
         continue;
       }
 
-      let effectList = calculateVariableCombat(heroList, effect, owner, enemy, currentTurn);
+      let effectList = calculateVariableCombat(heroList, effect, owner, enemy, gameState);
       //Object.keys(effectList).forEach((key, i) => {
 
       addEffect(owner, effectList)
@@ -5138,17 +5366,17 @@ function getVariablePreCombat(owner, enemy, heroList, currentTurn){
 
   } //end for 
 }
-function getVariableStats(owner, enemy, heroList, currentTurn){
+function getVariableStats(owner, enemy, heroList, gameState){
 
   for (let x of owner.variableStats){
 
     if (x !== null  ){ //if condition is true, then provide the rest of the effects
 
-      if ("condition" in x && !checkCondition(heroList, x.condition, owner, enemy, currentTurn) ){ //check if condition has not been met to skip
+      if ("condition" in x && !checkCondition(heroList, x.condition, owner, enemy, gameState) ){ //check if condition has not been met to skip
         continue;
       }
 
-      let buffs =  calculateVariableEffect(heroList, x, owner, enemy, currentTurn);
+      let buffs =  calculateVariableEffect(heroList, x, owner, enemy, gameState);
 
       addEffect(owner, buffs);
 
@@ -5159,7 +5387,7 @@ function getVariableStats(owner, enemy, heroList, currentTurn){
 
 
 //Calulcate aura stats between two battling heroes
-function calculateBattlingAuraStats(heroList, hero1, hero2, currentTurn){
+function calculateBattlingAuraStats(heroList, hero1, hero2, gameState){
 
   let hero1Team = hero1.side;
   let hero2Team = hero2.side;
@@ -5194,7 +5422,7 @@ function calculateBattlingAuraStats(heroList, hero1, hero2, currentTurn){
       if (!heroValid(hero) || (teamNihil && hero.id !== hero1.id && hero.id !== hero2.id) ){ continue;} //skip if hero is dead or not on the board - also skip team nihil is on and are not battling
 
 
-      getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn);
+      getBattlingAuraStats(refList, heroList, hero, hero1, hero2, gameState);
 
 
     }
@@ -5203,7 +5431,7 @@ function calculateBattlingAuraStats(heroList, hero1, hero2, currentTurn){
 }
 
 //for a given hero, apply its auras to the other 2 heroes
-function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn){
+function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, gameState){
 
   //hero1/2 are the heroes in the battle
   //hero is the hero which has the auras we are looking for.
@@ -5211,7 +5439,7 @@ function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn
   for (let effect of hero.auraStats){ //loop through aura stat effects
     if (effect === null || effect === undefined) {continue;}
 
-    if ("condition" in effect && !checkCondition(refList, effect.condition, hero, hero, currentTurn) ){ //check if condition has not been met to skip
+    if ("condition" in effect && !checkCondition(refList, effect.condition, hero, hero, gameState) ){ //check if condition has not been met to skip
       continue;
     }
 
@@ -5245,11 +5473,11 @@ function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn
     let passedHeroList = [];
 
     if ("effectReq" in effect){
-      passedHeroList = heroReqCheck(hero, heroListValid, effect.effectReq); //Get the list of allies that pass the req check
+      passedHeroList = heroReqCheck(hero, heroListValid, effect.effectReq, gameState); //Get the list of allies that pass the req check
 
 
       for (let affectedHero of passedHeroList){
-        applyAuraStats(affectedHero, effect, hero, currentTurn);
+        applyAuraStats(affectedHero, effect, hero, gameState);
 
       }
 
@@ -5260,13 +5488,13 @@ function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn
 
 
     //check if the current hero is either battling hero and do selfReq checks
-    if ("selfReq" in effect && hero.id === hero1.id && checkCondition(refList, effect.selfReq, hero1, hero1)){ 
-      applyAuraStats(hero1, effect, hero, currentTurn);
+    if ("selfReq" in effect && hero.id === hero1.id && checkCondition(refList, effect.selfReq, hero1, hero1, gameState)){ 
+      applyAuraStats(hero1, effect, hero, gameState);
 
     }
 
-    if ("selfReq" in effect && hero.id === hero2.id && checkCondition(refList, effect.selfReq, hero2, hero2)){ 
-      applyAuraStats(hero2, effect, hero, currentTurn);
+    if ("selfReq" in effect && hero.id === hero2.id && checkCondition(refList, effect.selfReq, hero2, hero2, gameState)){ 
+      applyAuraStats(hero2, effect, hero, gameState);
 
     }      
 
@@ -5279,7 +5507,7 @@ function getBattlingAuraStats(refList, heroList, hero, hero1, hero2, currentTurn
 }
 
 //Calulcate aura stats for every hero
-function calculateAuraStats(heroList, turn){
+function calculateAuraStats(heroList, gameState){
 
 
   for (let team in heroList){ //loop both teams
@@ -5298,7 +5526,7 @@ function calculateAuraStats(heroList, turn){
 
       if (hero.position < 0 || hero.currentHP <= 0){ continue;} //skip if hero is dead or not on the board
       //may need  to apply the auras 
-      getAuraStats(refList, heroList, hero, turn);
+      getAuraStats(refList, heroList, hero, gameState);
 
 
     } //end hero
@@ -5310,12 +5538,12 @@ function calculateAuraStats(heroList, turn){
 
 }
 
-function getAuraStats(refList, heroList, hero, turn){
+function getAuraStats(refList, heroList, hero, gameState){
 
   for (let effect of hero.auraStats){ //loop through aura stat effects
     if (effect === null || effect === undefined) {continue;}
 
-    if ("condition" in effect && !checkCondition(refList, effect.condition, hero, hero, turn) ){ //check if condition has not been met to skip
+    if ("condition" in effect && !checkCondition(refList, effect.condition, hero, hero, gameState) ){ //check if condition has not been met to skip
       continue;
     }
 
@@ -5347,7 +5575,7 @@ function getAuraStats(refList, heroList, hero, turn){
       passedHeroList = heroReqCheck(hero, heroListValid, effect.effectReq); //Get the list of allies that pass the req check
 
       for (let affectedHero of passedHeroList){
-        applyAuraStats(heroList[affectedHero.side][affectedHero.listIndex], effect, hero, turn);
+        applyAuraStats(heroList[affectedHero.side][affectedHero.listIndex], effect, hero, gameState);
 
       }
 
@@ -5358,9 +5586,9 @@ function getAuraStats(refList, heroList, hero, turn){
 
 
     //if there is a requirement for the buff to apply to themselves
-    if ("selfReq" in effect && checkCondition(refList, effect.selfReq, hero, hero)){ 
+    if ("selfReq" in effect && checkCondition(refList, effect.selfReq, hero, hero, gameState)){ 
       
-      applyAuraStats(hero, effect, hero, turn);
+      applyAuraStats(hero, effect, hero, gameState);
       
     } 
 
@@ -5371,13 +5599,13 @@ function getAuraStats(refList, heroList, hero, turn){
 }
 
 
-function applyAuraStats(hero, effect, owner, turn){
+function applyAuraStats(hero, effect, owner, gameState){
 
   let value = effect.value;
 
   if ("varValue" in effect){
     if (effect.varValue === "turn"){
-      value+= turn;
+      value+= gameState.currentTurn;
     }
 
     
@@ -5418,13 +5646,13 @@ function applyAuraStats(hero, effect, owner, turn){
 //E.g. repel, pegasus flight, scendscale.
 //These can be conditionally added (in the case of pegagus flight) so need to occur after conditional effect check
 
-function getVariableCombat(owner, enemy, heroList, currentTurn){
+function getVariableCombat(owner, enemy, heroList, gameState){
 
   for (let effect of owner.variableCombat){
 
     if (effect !== null ){ //if condition is true, then provide the rest of the effects
 
-      if ("condition" in effect && !checkCondition(heroList, effect.condition, owner, enemy, currentTurn) ){ //check if condition has not been met to skip
+      if ("condition" in effect && !checkCondition(heroList, effect.condition, owner, enemy, gameState) ){ //check if condition has not been met to skip
         continue;
       }
 

@@ -323,7 +323,7 @@
 		"type": "redtome",
 		"skills": [],
 		"passive": {"res": 3},
-		"effect": [{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "counterDisrupt"], "value": 5, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 2, 0], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast", "bow", "dagger", "staff"]]] }],
+		"effect": [{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "counterDisrupt"], "value": 5, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 2, -1], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast", "bow", "dagger", "staff"]]] }],
 		"max": true
 	},
 	"23": {

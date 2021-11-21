@@ -1443,7 +1443,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {},
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] },
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] },
 			{"type": "variableStats", "stats": ["atk"], "key": "bonusPenaltyBuffs", "subtype": "debuff", "reference": "enemy", "multiplier": 1}],
 		"max": true
 	},
@@ -1457,7 +1457,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"hp": 2 },
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] }],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] }],
 		"max": true
 	},
 	"114": {
@@ -1470,7 +1470,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"hp": 2, "spd": 2 },
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] }],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] }],
 		"max": true
 	},
 	"115": {
@@ -1483,7 +1483,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"hp": 2, "def": 3 },
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] }],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] }],
 		"max": true
 	},
 	"116": {
@@ -1496,7 +1496,7 @@
 		"type": "bluetome",
 		"skills": [],
 		"passive": {"hp": 2, "res": 3 },
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0, "cardinalRC", true, 0, 1]] }],
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]] }],
 		"max": true
 	},
 	"117": {

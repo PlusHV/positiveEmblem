@@ -67,6 +67,35 @@ export default class Field extends React.Component{
 	    tbody.push(<tr key= {seasons[i] + "Row"} >{cells}</tr>);  
     }
 
+
+    cells = [];
+    let maps = ["Springwater", "Wintry", "Abandonded Castle", "Snowdust", "Desert", "Spring Breeze", "Leafy Canopy", "Lost Castle", "Bright Grassland", "Lava Floes", "Custom"];
+    let mapValues = ["Springwater", "Wintry", "Abandoned", "Snowdust", "Desert", "SpringBreeze", "LeafyCanopy", "LostCastle", "BrightGrass", "LavaFloe", "Custom"];
+    
+		let options = [];
+
+		for (let i = 0; i < maps.length; i++){
+
+				//Getting the list of seasons to use for the dropdowns
+
+			options.push(<option key = {maps[i]} value = {mapValues[i]}>{maps[i]}</option>);
+
+		}
+
+    cells.push(<td className = "statText" key = "mapLabel">Map</td>);
+
+		cells.push(<td key = {"mapValue"}>  
+          <select value = {this.props.gameState.map}
+            onChange = {(e, position) => this.props.mapChange(e)} >
+            {options}
+          </select>
+          </td>
+
+    );
+
+
+    tbody.push(<tr key= {"MapRow"} >{cells}</tr>);  
+
     cells = [];
 
     //Fort level

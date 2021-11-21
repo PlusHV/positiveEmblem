@@ -370,7 +370,7 @@
 		"prf": true,
 		"users": ["Yune: Chaos Goddess"],
 		"type": "effect",
-		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["highest"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, 0], ["statCompare", "visible", "res", "greater", 3] ], 
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["highest"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCompare", "visible", "res", "greater", 3] ], 
 			"highMod": {"atk": -15, "spd": 0, "def": 0, "res": 0} }],
 		"max": true
 	},
@@ -2121,7 +2121,8 @@
 		"prf": true,
 		"users": ["Duma: God of Strength"],
 		"type": "effect",
-		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "enemy", "effectReq": [["always"]] }],
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "enemy", "effectReq": [["always"]] },
+			{"type": "turnStart", "condition": [["turn", 0, 1], ["sideCheck", "2"], ["season", "Anima"]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1]] }],
 		"max": true
 	},
 	"271": {

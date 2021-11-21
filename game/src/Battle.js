@@ -3,9 +3,14 @@ import {calculateCombatStats} from './StatCalculation.js'
 
 import {addEffect, applyCombatEffect, statusDebuffs, getEnemySide, checkConditionHero, heroStruct} from './GameBoard.js'
 
+export function attackStructure(updatedHeroList, attacker, defender, board){
+    
+    board[defender.position].currentHP = Math.Max(defender.currentHP - 1, 0);
+    
 
+}
 
-export function doBattle(updatedHeroList, attacker, defender, board){
+export function doBattle(updatedHeroList, attacker, defender, board, gameState){
     let list = updatedHeroList;
 
 
@@ -56,7 +61,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 
 
       if (temp === 1){ //attacker hits defender
-        damageInfo = calculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial, list, attackStack, attackIndex, defenderMiracle);
+        damageInfo = calculateDamage(newAttacker, newDefender, attackerType, attackerSpecial, defenderSpecial, list, attackStack, attackIndex, defenderMiracle, gameState);
 
         attackerSpecial.charge = damageInfo.attackerSpecialCharge;
 
@@ -103,7 +108,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
       } else if (temp === 2){ //defender hits attacker
 
         //Note - CalculateDamage defines attacker as the one attacking, and defender as the one getting hit for the current attack, not by initiator/enemy phase heroes 
-        damageInfo = calculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial, list, attackStack, attackIndex, attackerMiracle);
+        damageInfo = calculateDamage(newDefender, newAttacker, defenderType, defenderSpecial, attackerSpecial, list, attackStack, attackIndex, attackerMiracle, gameState);
 
         defenderSpecial.charge = damageInfo.attackerSpecialCharge; //defender is iniated on, but uses attacker key since they are the one attacking here
         attackerSpecial.charge = damageInfo.defenderSpecialCharge;
@@ -157,7 +162,7 @@ export function doBattle(updatedHeroList, attacker, defender, board){
 //{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }
 
 
-    let postCombatInfo = postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated);
+    let postCombatInfo = postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated, gameState);
 
     let attackerTeamPost = postCombatInfo.attackerTeamPost;
     let defenderTeamPost = postCombatInfo.defenderTeamPost;
@@ -245,7 +250,7 @@ export function waitHero(hero){
 }
 
 
-export function postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated){ 
+export function postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated, gameState){ 
 
 
 
@@ -472,12 +477,12 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
           if (element.reference){ //just get reference if specified
 
-            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference)  ){ //if no effectReq or passes the effect req
+            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference, gameState)  ){ //if no effectReq or passes the effect req
               heroesInRange = heroesInRange.concat([reference]);
             }
           }
 
-          applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide);
+          applyBuffList(list, heroesInRange, element, attacker, postSide, specialSide, gameState);
         } else if (element.checkType === "minDistance"){ //minDistance effects have 999 range but still use heroes in range for the excluded heroes
           //Although this is looking for a peak, we redo this here since these get distance with respect to a reference position
           let minDistance = 999;
@@ -495,7 +500,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
             }
           }
-          applyBuffList(list, affectedList, element, attacker, postSide, specialSide);
+          applyBuffList(list, affectedList, element, attacker, postSide, specialSide, gameState);
 
         }
 
@@ -542,11 +547,11 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
         if (element.checkType === "distance"){
           if (element.reference){
-            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference)  ){ //if no effectReq or passes the effect req
+            if ( !("effectReq" in element) || checkCondition(list, element.effectReq, reference, reference, gameState)  ){ //if no effectReq or passes the effect req
               heroesInRange = heroesInRange.concat([reference]);
             }
           }
-          applyBuffList(list, heroesInRange, element, defender, postSide, specialSide);
+          applyBuffList(list, heroesInRange, element, defender, postSide, specialSide, gameState);
 
         } else if (element.checkType === "minDistance"){
           
@@ -565,7 +570,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
             }
           }
-          applyBuffList(list, affectedList, element, defender, postSide, specialSide);
+          applyBuffList(list, affectedList, element, defender, postSide, specialSide, gameState);
 
         }
        
@@ -587,6 +592,11 @@ function getAdaptiveDamage(enemy){
 }
 
 export function getDamageType(weaponType, owner, enemy){
+
+    if (enemy.type === "structure"){
+      return "def"; //against structures, damage type doesn't matter so default to def
+    }
+
     if (owner.combatEffects.adaptive > 0 && enemy.combatEffects.nullAdaptive <= 0){
       return getAdaptiveDamage(enemy);
 
@@ -807,12 +817,12 @@ export function getAttackOrder(stack, attacker, defender){
   }
 
 
-export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList, attackStack, attackIndex, defenderMiracle){
+export function calculateDamage(attacker, defender, damageType, attackerSpecial, defenderSpecial, heroList, attackStack, attackIndex, defenderMiracle, gameState){
 
   let WTA = calculateWeaponTriangleAdvantage(attacker, defender); //get the WTA multiplier
 
 
-  let effective = getEffectiveDamage(heroList, attacker, defender);
+  let effective = getEffectiveDamage(heroList, attacker, defender, gameState);
 
   //let baseDamage = attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType] ; //damage can be negative here
 
@@ -906,11 +916,11 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
 
 
-    getConditionalSpecial(attacker, defender, heroList); 
+    getConditionalSpecial(attacker, defender, heroList, gameState); 
 
     trueDamage+= attacker.combatEffects.specialTrueDamage; 
 
-    removeConditionalSpecial(attacker, defender, heroList);
+    removeConditionalSpecial(attacker, defender, heroList, gameState);
 
 
 
@@ -1173,7 +1183,7 @@ export function calculateReductionEffects(reductionList, reduceReduction){//Give
   return totalReduction;
 }
 
-export function getSpecialValue(effect, owner, enemy, heroList, damageType, key, battleType){
+export function getSpecialValue(effect, owner, enemy, heroList, damageType, key, battleType, gameState){
     let specialValue = 0;
     let hero; //which hero to base the damage off of
     if (effect[key][0] === "attacker"){
@@ -1195,7 +1205,7 @@ export function getSpecialValue(effect, owner, enemy, heroList, damageType, key,
       factor = getVariableValue(heroList, effect[key][4], owner, 0);
     }
 
-    if ("condition" in effect && checkCondition(heroList, effect.condition, owner, enemy) ){
+    if ("condition" in effect && checkCondition(heroList, effect.condition, owner, enemy, gameState) ){
 
       factor = effect["alt"];
 
@@ -1370,7 +1380,7 @@ export function calculateWeaponTriangleAdvantage(attacker, defender) { //calcula
 }
 
 
-export function getEffectiveDamage(heroList, attacker, defender){
+export function getEffectiveDamage(heroList, attacker, defender, gameState){
 
 
     let effectiveDamage = 0.0;
@@ -1382,7 +1392,7 @@ export function getEffectiveDamage(heroList, attacker, defender){
 
       let dragonCondition = [["heroInfoCheck", "weapontype", ["breath"]]]; //the condition that checks if the enemy is a dragon
 
-      if ( (checkCondition(heroList, dragonCondition, attacker, defender) || addedEffective.findIndex(conditionMatch, dragonCondition) >= 0) && negateEffective.findIndex(conditionMatch, dragonCondition) < 0 ) { 
+      if ( (checkCondition(heroList, dragonCondition, attacker, defender, gameState) || addedEffective.findIndex(conditionMatch, dragonCondition) >= 0) && negateEffective.findIndex(conditionMatch, dragonCondition) < 0 ) { 
         effectiveDamage = 0.5;
       }
 
@@ -1395,7 +1405,7 @@ export function getEffectiveDamage(heroList, attacker, defender){
       let condition = effect.condition;
       if ("condition" in effect){
         //check if enemy meets condition for effectiveness or the enemy has an effect that makes them pass the effectiveness condition anyways and that effectiveness condition is not being negated 
-        if ( (checkCondition(heroList, condition, attacker, defender) || addedEffective.findIndex(conditionMatch, condition) >= 0) && negateEffective.findIndex(conditionMatch, condition) < 0 ) { 
+        if ( (checkCondition(heroList, condition, attacker, defender, gameState) || addedEffective.findIndex(conditionMatch, condition) >= 0) && negateEffective.findIndex(conditionMatch, condition) < 0 ) { 
           effectiveDamage = 0.5;
         }
       }
@@ -1480,7 +1490,7 @@ export function getDistantHeroes(hList, hero, excluded, distance){
 //owner - the hero that is the owner of the conditional
 //enemy - the other hero in battle with the owner.
 
-export function checkCondition(heroList, condition, owner, enemy, turn){
+export function checkCondition(heroList, condition, owner, enemy, gameState){
 
   //let keyWordList = ["phase"];  //this contains the list of keywords that denote at start of a condition
 
@@ -1499,7 +1509,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
       if (Array.isArray(keyWord)){
 
-        if (checkCondition(heroList, keyWord, owner, enemy, turn) ){ //if the condition within the innercondition is true, set to true
+        if (checkCondition(heroList, keyWord, owner, enemy, gameState) ){ //if the condition within the innercondition is true, set to true
           innerResult = true;
         }
       //so always on effects can be mixed with conditional effects easily
@@ -1598,6 +1608,11 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         if (statCheck === "HP"){
           ownerStat = owner.currentHP;
           enemyStat = enemy.currentHP;
+
+        } else if (statCheck === "level"){ //only catapult structure uses this, but should work with units if ever needed
+          ownerStat = owner.level;
+          enemyStat = enemy.level;
+
         } else if (statType === "visible") {
           ownerStat = owner.visibleStats[statCheck];
           enemyStat = enemy.visibleStats[statCheck];
@@ -1605,10 +1620,10 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
           ownerStat = owner.combatStats[statCheck];
           enemyStat = enemy.combatStats[statCheck];
         }
-
-        ownerStat+= owner.combatEffects.phantomStats[statCheck];
-        enemyStat+= enemy.combatEffects.phantomStats[statCheck];
-
+        if (statCheck !== "level"){
+          ownerStat+= owner.combatEffects.phantomStats[statCheck];
+          enemyStat+= enemy.combatEffects.phantomStats[statCheck];
+        }
         if (innerCondition[j+3] === "greater" &&  (ownerStat - enemyStat) >= innerCondition[j+4]  ){
           innerResult = true;
         } else if (innerCondition[j+3] === "less" &&  (enemyStat - ownerStat) >= innerCondition[j+4]  ){
@@ -1831,6 +1846,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
 
         let mod = innerCondition[j+2];
 
+        let turn = gameState.currentTurn;
         let check = (turn - 1) + mod;
 
         if (factor === 0 && turn === mod){ //no factor, asking for a specific turn
@@ -1848,7 +1864,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         //j+2 is the upper bound
         //bounds are inclusive
         //j+3 asks if you want to be within the range or out of range
-
+        let turn = gameState.currentTurn;
         if (turn >= innerCondition[j+1] && turn <= innerCondition[j+2] && innerCondition[j+3]){
           innerResult = true;
         } else if ( (turn < innerCondition[j+1] || turn > innerCondition[j+2]) && !innerCondition[j+3]){
@@ -2134,7 +2150,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         let passedHeroList = [];
 
 
-        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+2], heroList, turn) ; //Get the list of allies that pass the req che
+        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+2], heroList, gameState) ; //Get the list of allies that pass the req che
         
 
         passCount = passedHeroList.length;
@@ -2153,6 +2169,52 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         } 
 
         j = j + 4;
+
+      } else if (keyWord === "structureReq"){ //similar to allyReq but checks structure list rather than a team
+        //j + 1 is the structurelist to use
+        // j + 2 is the condition
+        // 
+        //j+3 minimum needed - can also be all if all allies are requied
+        //j+4 greater/less 
+        let passCount = 0;
+
+        let side = 0;
+
+        if (innerCondition[j+1] === "owner"){
+          side = owner.side;
+        } else if (innerCondition[j+1] === "enemy"){
+          side = getEnemySide(owner.side);
+        }
+
+
+
+
+        let structureList = gameState.structureList[side];
+
+
+        let passedList = [];
+
+
+        passedList = heroReqCheck(owner, structureList, innerCondition[j+2], heroList, gameState) ; //Get the list of allies that pass the req che
+        
+
+        passCount = passedList.length;
+        
+        if (innerCondition[j+3] === "all"){
+          if (passCount === passedList.length){ //if all structures meet the condition   - not used yet
+            innerResult = true;
+          }
+
+        } else if (passCount >= innerCondition[j+3] && innerCondition[j+4] === "greater"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } else if (passCount <= innerCondition[j+3] && innerCondition[j+4] === "less"){ //sufficient allies that are in range meet the condition
+
+          innerResult = true;
+        } 
+
+        j = j + 4;
+
       } else if (keyWord === "heroEnd"){ //check if hero has ended their turn - used with allyReq above
 
 
@@ -2228,7 +2290,7 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         let passedHeroList = [];
 
 
-        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+1], heroList, turn) ; //Get the list of allies that pass the req che
+        passedHeroList = heroReqCheck(owner, teamListValid, innerCondition[j+1], heroList, gameState.currentTurn) ; //Get the list of allies that pass the req che
         
         let supportPartnerList = []; //list of heroes with a support partner
         let supportNameList = []; //list of support partners
@@ -2505,6 +2567,31 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
         } 
 
         j = j + 4;
+      } else if (keyWord === "arStructure"){
+
+        if (enemy.arStructure === innerCondition[j+1]){
+          innerResult = true;
+        }
+
+        j = j + 1;
+      } else if (keyWord === "damageable"){
+
+        if (enemy.damage === innerCondition[j+1]){
+          innerResult = true;
+        }
+
+        j = j + 1;
+      } else if (keyWord === "season"){
+
+        let blessingSeasons = gameState.season;
+
+        for (let x in blessingSeasons){
+          if (blessingSeasons[x] === innerCondition[j+1]){
+            innerResult = true;
+          }
+        }
+
+        j = j + 1;
       }
 
     } //end for j
@@ -2521,17 +2608,17 @@ export function checkCondition(heroList, condition, owner, enemy, turn){
   return result;
 } //end CheckCondition
 
-export function heroReqCheck(owner, teamList, heroReq, heroList, turn){
+export function heroReqCheck(owner, teamList, heroReq, heroList, gameState){
 
   let filteredList = [];//[...allyList]; //copy of allyList
 
 
-  filteredList = teamList.filter(checkConditionHero(owner, heroReq, heroList, turn) ); //filter out 
+  filteredList = teamList.filter(checkConditionHero(owner, heroReq, heroList, gameState) ); //filter out 
 
   return filteredList;
 }
 
-export function calculateVariableEffect(heroList, variableEffect, owner, enemy, turn){
+export function calculateVariableEffect(heroList, variableEffect, owner, enemy, gameState){
 
   if (variableEffect.key === "allyReq"){
     //let distantAllies = Math.min(getDistantHeroes(heroList[owner.side], owner, [] , variableEffect.distance).length, variableEffect.maxAllies);
@@ -2551,17 +2638,17 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     let passedHeroList = [];
 
     if ("allyReq" in variableEffect){
-      passedHeroList = heroReqCheck(owner, teamListValid, variableEffect.allyReq, heroList, turn) ; //Get the list of allies that pass the req che
+      passedHeroList = heroReqCheck(owner, teamListValid, variableEffect.allyReq, heroList, gameState) ; //Get the list of allies that pass the req che
 
     } //end ally req
 
-    distantAllies = Math.min(passedHeroList.length, variableEffect.maxAllies);
+    distantAllies = Math.min(passedHeroList.length, variableEffect.maxAllies); //factor is by ally count, maxAllies cap the amount of allies counted
 
 
     let buff = (variableEffect.multiplier * distantAllies + variableEffect.constant);
 
 
-    if (distantAllies < variableEffect.minAllies){
+    if (distantAllies < variableEffect.minAllies){ //min allies requires a certain amount of allies, otherwise buff is nulled
       buff = 0;
     }
 
@@ -2571,11 +2658,55 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     }
 
     return {"statBuff": statBuff}; //return as combat effect object
+
+  } else if (variableEffect.key === "structureReq"){
+    //let distantAllies = Math.min(getDistantHeroes(heroList[owner.side], owner, [] , variableEffect.distance).length, variableEffect.maxAllies);
+    //"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+    let validStructureCount = 0;
+
+    
+
+    let side = "3";
+
+    if (variableEffect.team === "owner"){
+      side = owner.side;
+    } else if (variableEffect.team === "enemy"){
+      side = getEnemySide(owner.side);
+    }
+    
+    let teamList = gameState.structureList[side];
+
+    let passedList = [];
+
+    if ("allyReq" in variableEffect){
+
+      passedList = heroReqCheck(owner, teamList, variableEffect.allyReq, heroList, gameState) ; //Get the list of allies that pass the req che
+
+    } //end ally req
+
+    validStructureCount = passedList.length; 
+
+
+    let buff = (variableEffect.multiplier * validStructureCount + variableEffect.constant);
+
+    buff = Math.min(variableEffect.maxValue, buff); //cannot go above max value
+
+    buff = Math.max(variableEffect.minValue, buff); //cannot go above min value
+
+    let statBuff = {};
+    for (let x of variableEffect.stats){
+      statBuff[x] = buff;
+    }
+
+    return {"statBuff": statBuff}; //return as combat effect object
+
   } else if (variableEffect.key === "session"){
 
     let buffValue = 0;
 
-    if (variableEffect.phase === "enemy" && !owner.initiating){
+    //min/max value are the minimum/max buff value that is used
+
+    if (variableEffect.phase === "enemy" && !owner.initiating){ //shield session
 
       let enemies = heroList[enemy.side];
       let enemiesActed = 0;
@@ -2588,7 +2719,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
       } 
 
       buffValue = Math.max( variableEffect.min, variableEffect.constant - (variableEffect.multiplier * enemiesActed) );
-    } else if (variableEffect.phase === "player" && owner.initiating){
+    } else if (variableEffect.phase === "player" && owner.initiating){ //blade session
 
       let allies = heroList[owner.side];
       let alliesActed = 0;
@@ -2636,7 +2767,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
       //loop through allies
       for (let hero of heroList[owner.side]){
 
-        if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+        if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero, gameState) ){
           continue; //if they don't meet ally req, skip
         }
 
@@ -2792,7 +2923,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     //get list of heroes that pass the allyReq
     for (let hero of heroList[owner.side]){
 
-      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero, gameState) ){
         continue; //if they don't meet ally req, skip
       }
 
@@ -2831,7 +2962,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
     //get list of heroes that pass the allyReq
     for (let hero of heroList[owner.side]){
 
-      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero) ){
+      if ("allyReq" in variableEffect && !checkCondition(heroList, variableEffect.allyReq, owner, hero, gameState) ){
         continue; //if they don't meet ally req, skip
       }
 
@@ -2868,7 +2999,7 @@ export function calculateVariableEffect(heroList, variableEffect, owner, enemy, 
 
 }
 
-export function calculateVariableCombat(heroList, variableEffect, owner, enemy, turn){
+export function calculateVariableCombat(heroList, variableEffect, owner, enemy, gameState){
 
   
   //combatEffect contains a list of combat effects that will be granted
@@ -2998,7 +3129,7 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
     let passedHeroList = [];
 
     if ("allyReq" in variableEffect){
-      passedHeroList = heroReqCheck(owner, teamListValid, variableEffect.allyReq, heroList, turn) ; //Get the list of allies that pass the req che
+      passedHeroList = heroReqCheck(owner, teamListValid, variableEffect.allyReq, heroList, gameState) ; //Get the list of allies that pass the req che
 
     } //end ally req
 
@@ -3045,7 +3176,7 @@ export function calculateVariableCombat(heroList, variableEffect, owner, enemy, 
 }
 
 //this allows us to give effects with variable values easier
-export function getVariableValue(heroList, effect, owner, turn){
+export function getVariableValue(heroList, effect, owner, gameState){
 
 
   //this gives a value depending on the amount of allies with hero info within the teamInfoList
@@ -3088,7 +3219,7 @@ export function getVariableValue(heroList, effect, owner, turn){
     } 
 
 
-    let passList = heroReqCheck(owner, teamListValid, effect.effectReq, heroList, turn) ;
+    let passList = heroReqCheck(owner, teamListValid, effect.effectReq, heroList, gameState) ;
 
     return Math.floor(effect.factor * passList.length);
 
@@ -3113,12 +3244,12 @@ export function getVariableValue(heroList, effect, owner, turn){
 }
 
 //This function is for combat effects where the condition check occurs at the time the special activates (e.g. wrath)
-export function getConditionalSpecial(owner, enemy, heroList){
+export function getConditionalSpecial(owner, enemy, heroList, gameState){
 
   //Conditionals
   for (let x of owner.conditionalSpecial){
 
-    if (x !== null && checkCondition(heroList, x.condition, owner, enemy)){ //if condition is true, then provide the rest of the effects
+    if (x !== null && checkCondition(heroList, x.condition, owner, enemy, gameState)){ //if condition is true, then provide the rest of the effects
 
       for (let y in x){ //loop through 
         if (y !== "condition" && y !== "type"){ //everything else should be combat effects
@@ -3139,13 +3270,13 @@ export function getConditionalSpecial(owner, enemy, heroList){
 
 }
 
-export function removeConditionalSpecial(owner, enemy, heroList){
+export function removeConditionalSpecial(owner, enemy, heroList, gameState){
 
   //Conditionals
   for (let x of owner.conditionalSpecial){
 
     //this check should be done before any changes to either hero, such that it passes the same conditons as when the getConditionalSpecial function is used
-    if (x !== null && checkCondition(heroList, x.condition, owner, enemy)){ 
+    if (x !== null && checkCondition(heroList, x.condition, owner, enemy, gameState)){ 
 
       for (let y in x){ //loop through 
         if (y !== "condition" && y !== "type"){ //everything else should be combat effects
@@ -3302,8 +3433,9 @@ export function checkCardinalRowColumn(hero1, hero2, width, height){
 
   //For effects that require unit to be within rows OR columns, use two conditionals with 0 width/height value
 
-  //width = 0 means ignore column and only check row
-  if (width === 0){
+  //width = -1 means ignore column and only check row
+  if (width === -1){
+
 
     if (Math.abs(pos1[0] - pos2[0]) <= height){
       return true;
@@ -3313,8 +3445,8 @@ export function checkCardinalRowColumn(hero1, hero2, width, height){
 
   }
 
-  //height = 0 means ignore row and only check column
-  if (height === 0){
+  //height = -1 means ignore row and only check column
+  if (height === -1){
 
     if (Math.abs(pos1[1] - pos2[1]) <= width){
       return true;
@@ -3361,7 +3493,7 @@ export function checkTactic(hero, heroList){
 
 
 //given a list of heroes and an effect (which should contain a buffList and other corresponding keys) and apply buffs in the list to list of heroes
-export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost, specialPost, turn){
+export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost, specialPost, gameState){
 
   //Single targets effects only allow a single hero
   if ("singleTarget" in effect && effect.singleTarget){
@@ -3369,11 +3501,17 @@ export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost,
       return;
     }
   }
+  //tells us if we are working with structures, which should only be hit by catapult and duma?
+  let structureCheck = false;
+
+  if ("structure" in effect && effect.structure){
+    structureCheck = true;
+  }
 
   let value = effect.value;
   if (value === "variable"){
 
-    value = getVariableValue(heroList, effect.variableCheck, owner, turn);
+    value = getVariableValue(heroList, effect.variableCheck, owner, gameState);
   }
 
 
@@ -3413,7 +3551,11 @@ export function applyBuffList(heroList, affectedHeroes, effect, owner, teamPost,
 
           } else if (z === "hp"){ //special case - effects that 
 
-              if (effect.subtype === "buff"){
+
+              if (structureCheck){
+                teamPost[7 + y.listIndex]+= value; //team post has structures after the end of the hero team post
+
+              } else if (effect.subtype === "buff"){
 
                 if (y.statusEffect.deepWounds < 1 && y.combatEffects.nullHeal < 1){                
                   teamPost[y.listIndex]-=  value; //lowers the amount of post damage

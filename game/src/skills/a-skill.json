@@ -35,7 +35,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"5": {
@@ -43,7 +43,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"6": {
@@ -51,7 +51,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"7": {
@@ -107,7 +107,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"14": {
@@ -115,7 +115,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"15": {
@@ -123,7 +123,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"16": {
@@ -131,7 +131,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"17": {
@@ -139,7 +139,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"18": {
@@ -147,7 +147,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"19": {
@@ -155,7 +155,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"20": {
@@ -163,7 +163,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"21": {
@@ -171,7 +171,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"22": {
@@ -3206,7 +3206,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 4, "constant": -9, "minValue": 3, "maxValue": 11, "allyReq": [["arStructure", true]]}],
 		"max": true
 	}
 
