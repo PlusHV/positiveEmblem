@@ -20,7 +20,7 @@
   "dependencies": {
     "immer": "^9.0.6",
     "socket.io": "^3.1.1",
-    "urijs": "^1.19.7"
+    "urijs": "^1.19.9"
   },
   "devDependencies": {
     "gh-pages": "^3.2.2"
