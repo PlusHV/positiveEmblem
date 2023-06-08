@@ -2075,7 +2075,7 @@ class GameBoard extends React.Component{
         //Assist actions are for effects that specifically only occur once per turn
         //Other effects that activate on assist will be added as O skills
 
-        if (!temp[dragSide][dragIndex].assistAction && "subeffect" in temp[dragSide][dragIndex].assist.effect){
+        if ("subeffect" in temp[dragSide][dragIndex].assist.effect){
 
           for (let effect of temp[dragSide][dragIndex].assist.effect.subeffect ){ //loop through subeffect under assist for 
             if (effect === null || effect === undefined) {continue;}
@@ -2084,11 +2084,21 @@ class GameBoard extends React.Component{
               continue;
             }
 
-            calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state);  //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
+            //assist actions are assaction effects that grant can only occur once per turn (usually, gives extra actions)
+            if (effect.type === "assistAction" &&  !temp[dragSide][dragIndex].assistAction){ 
+
+              calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state);  
+              temp[dragSide][dragIndex].assistAction = true; //set this value to true so 
+            } else if (effect.type === "assistEffect"){ 
+              //assistEffects occur any time the assist is used as many times as possible per turn
+              //Most effects attached to assists will use O skills to do this but activating the effect here will trigger the effect at after the assist activates. This allows self debuffs to not be immediately cleared
+              calculateBuffEffect(temp, refList, temp[dragSide][dragIndex], effect, this.state);  
+            }
+            //I don't think assists do any postdamage/special reductions//, allyTeamPost, allyTeamSpecial, enemyTeamPost, enemyTeamSpecial);
 
           } //end effects
 
-          temp[dragSide][dragIndex].assistAction = true;
+          
         }
         
         actionSuccess = true;
@@ -2505,6 +2515,10 @@ class GameBoard extends React.Component{
       for (let effect of assister.onAssist){ //loop through each on move assist effect on the assister
         if (effect !== null && effect["assistType"] === "movement"){
 
+          if ("assistExclude" in effect && effect.assistExclude.includes("assister")){
+              continue; //on assist effect does not activate as the assister
+          }
+
           let side = 0;
           let range = effect.range;
 
@@ -2534,6 +2548,7 @@ class GameBoard extends React.Component{
             }
 
           } else if (range > 0){ //effect does not target and takes heroes within a range instead e.g. sabertooth fang/laslow blade
+            //if range is 0, then it won't effect other heroes instead
             if (effect["from"].includes("assister") ){
               heroesInRange = getDistantHeroes(list[side],  list[assister.side][assister.listIndex], [assistee.id], range);
             }
@@ -2545,6 +2560,11 @@ class GameBoard extends React.Component{
           }
 
           if ("exclude" in effect){ //if there is an exclude keyword, check to see if participants will be affected - should only really be for buffs, debuffs will exclude them automatically
+          //This can also be used to apply debuffs to the assister/assistee
+          //e.g. to change fate is a debuff and excludes the other so that it applies to themselves
+          //theoretically, we can have an empty exclude on a debuff to make it apply to assister/assistee
+
+
             if (!effect.exclude.includes("owner")){
               heroesInRange.push(list[assister.side][assister.listIndex]);
               //assister.buff[key] = Math.max( assister.buff[key], buffs[key]); //apply highest buff
@@ -2571,8 +2591,14 @@ class GameBoard extends React.Component{
       } //end for assister moveAssist
 
       for (let effect of assistee.onAssist){ //loop through each on move assist effect on the assistee
+
+        //check if the onAssist effect is for movement assists and that 
         if (effect !== null && effect["assistType"] === "movement"){
 
+
+          if ("assistExclude" in effect && effect.assistExclude.includes("assistee")){
+              continue; //on assist effect does not activate as the assistee
+          }
 
           let side = 0;
           let range = effect.range;
@@ -4015,6 +4041,11 @@ function makeHeroStruct(){
     this["specialActivated"] = false;
     this["combatCount"] = 0;
     this["postCombatBuffDebuff"] = [];
+    this["onSpecialEffect"] = []; //effects that are gained if special was activated
+
+    this["perMapList"] = []; //contains a list of per map conditions that have activated;
+    this["actionConditionList"] = []; //contains a list of per map conditions that are true for the current action. This gets added to the perMapList at the end of action.
+    //We can potentially have a perTurnList. The actionConditionList would get added to the perTurnList at the end of action and the only difference is that at the start of the turn the perTurnList is reset.
 
     this["effectiveCondition"] = [];
     this["addedEffective"] = [];

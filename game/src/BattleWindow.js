@@ -148,11 +148,12 @@ export default class BattleWindow extends React.Component{
 			        aDmgHits.push(aDmg.damage);
 
 			        if (aDmg.attackerSpecialActivated){
-			        	aSubEffect = aDmg.subEffect;
+			        	aSubEffect = aDmg.attackerSubEffect;
 			        	attackerSpecialActivated = true;
 			        }
 
 			        if (aDmg.defenderSpecialActivated){
+			        	dSubEffect = aDmg.defenderSubEffect;
 						defenderSpecialActivated = true;
 			        }
 
@@ -186,11 +187,12 @@ export default class BattleWindow extends React.Component{
 			        dDmgHits.push(dDmg.damage);
 
 			        if (dDmg.attackerSpecialActivated){
-			        	dSubEffect = dDmg.subEffect;
+			        	dSubEffect = dDmg.attackerSubEffect;
 			          defenderSpecialActivated = true;
 			        }
 
 			        if (dDmg.defenderSpecialActivated){
+			        	aSubEffect = dDmg.defenderSubEffect;
 			          attackerSpecialActivated = true;
 			        }
 
@@ -234,7 +236,13 @@ export default class BattleWindow extends React.Component{
 			    	defenderAttacked = true;
 
 			    }
+			    if (attackerSpecialActivated){
+      				attacker.specialActivated = true;
+    			}
 
+			    if (defenderSpecialActivated){
+			      defender.specialActivated = true;
+			    }
 
 	    		let postCombatInfo = postCombat(battleList, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated, this.props.gameState.currentTurn, this.props.gameState.structureList);
 

@@ -1137,7 +1137,66 @@
 			{"type": "conditionalEffects", "condition": [["allyReq", "owner", [["cardinalRC", true, 1, -1, "cardinalRC", true, -1, 1]], 3, "greater", "structureReq", "owner", [["damageable", true], ["distanceCheck", 2]], 1, "greater"]], "enemyDouble": 1 },
 			{"type": "conditionalEffects", "condition": [["structureReq", "owner", [["damageable", true], ["distanceCheck", 2]], 1, "greater"]], "lull": {"atk": 6, "res": 6}  }],
 		"max": true
+	},
+	"80": {
+		"name": "Ninjutsu Scrolls",
+		"might": 9,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Corrin: Nightfall Ninja Act"],
+		"refinable": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"spd": 4, "def": -4, "res": -4},
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "brave": 1,
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}]},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "statDifferenceEffect", "stat": "spd", "factor": 0.7, "max": 7}],
+		"max": true
+	},
+	"81": {
+		"name": "Grim Brokkr",
+		"might": 14,
+		"range": 2,
+		"sp": 400,
+		"prf": true,
+		"users": ["Eitri: Youthful Sage"],
+		"refinable": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"atk": 3},
+		"effect": [{"type": "conditionalEffects", "condition": [["turnRange", 1, 4, true] ], "canto": {"flatCanto": 2, "cantoRemainder": 0} },
+			{"type": "conditionalEffects", "condition": [["phase", "player", "adjacent", false]], "lull": {"atk": 6, "res": 6}, "dobule": 1}],
+		"max": true
+	},
+	"82": {
+		"name": "Snow Globe+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"refinable": true,
+		"refines": ["Snow Globe+ Atk+", "Snow Globe+ Spd+", "Snow Globe+ Def+", "Snow Globe+ Res+"],
+		"type": "greentome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"83": {
+		"name": "Snow Globe",
+		"might": 8,
+		"range": 2,
+		"sp": 200,
+		"prf": false,
+		"refinable": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {},
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": false
 	}
+
 
 
 }

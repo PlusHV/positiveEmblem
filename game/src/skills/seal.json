@@ -4494,6 +4494,304 @@
 		"type": "passive",
 		"effect": {"hp": 4, "atk": 2},
 		"max": true
+	},
+	"562": {
+		"name": "Squad Ace AZ 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "spd": 1},
+		"max": false
+	},
+	"563": {
+		"name": "Squad Ace AZ 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "spd": 2},
+		"max": true
+	},
+	"564": {
+		"name": "Squad Ace BA 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "def": 1},
+		"max": false
+	},
+	"565": {
+		"name": "Squad Ace BA 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "def": 2},
+		"max": true
+	},
+	"566": {
+		"name": "Odd Def Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"567": {
+		"name": "Odd Def Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"568": {
+		"name": "Odd Def Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"569": {
+		"name": "Shield Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 1, "constant": 3, "min": 1}],
+		"max": false
+	},
+	"570": {
+		"name": "Shield Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2}],
+		"max": false
+	},
+	"571": {
+		"name": "Shield Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 3, "constant": 9, "min": 3}],
+		"max": true
+	},
+	"572": {
+		"name": "Atk/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"573": {
+		"name": "Atk/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"574": {
+		"name": "Atk/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"575": {
+		"name": "Ward Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"576": {
+		"name": "Spur Spd/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 2}],
+		"max": false
+	},
+	"577": {
+		"name": "Spur Spd/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 3}],
+		"max": true
+	},
+	"578": {
+		"name": "Darting Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"579": {
+		"name": "Atk Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"580": {
+		"name": "Atk Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"581": {
+		"name": "Atk Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"582": {
+		"name": "Fury 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1, "def": 1, "res": 1},
+		"skills": [["o", "Recoil 1"]],
+		"max": false
+	},
+	"583": {
+		"name": "Fury 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2, "def": 2, "res": 2},
+		"skills": [["o", "Recoil 2"]],
+		"max": false
+	},
+	"584": {
+		"name": "Fury 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"skills": [["o", "Recoil 3"]],
+		"max": true
+	},
+	"585": {
+		"name": "Squad Ace BB 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "res": 1},
+		"max": false
+	},
+	"586": {
+		"name": "Squad Ace BB 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "res": 2},
+		"max": true
+	},
+	"587": {
+		"name": "Squad Ace BC 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1},
+		"max": false
+	},
+	"558": {
+		"name": "Squad Ace BC 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2},
+		"max": true
+	},
+	"559": {
+		"name": "Atk/Spd Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"560": {
+		"name": "Atk/Spd Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"561": {
+		"name": "Atk/Spd Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"562": {
+		"name": "Chill Spd/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "enemy", "peak": "max" }],
+		"max": false
+	},
+	"563": {
+		"name": "Chill Spd/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "enemy", "peak": "max" }],
+		"max": true
+	},
+	"564": {
+		"name": "Swift Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 2, "res": 2} }],
+		"max": false
+	},
+	"565": {
+		"name": "Swift Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4, "res": 4} }],
+		"max": true
+	},
+	"566": {
+		"name": "Ground Orders 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"567": {
+		"name": "Ground Orders 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"568": {
+		"name": "Ground Orders 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": true
 	}
-
 }

@@ -2027,5 +2027,53 @@
 		"passive": {"hp": 2, "res": 3 },
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
 		"max": true
+	},
+	"155": {
+		"name": "Snow Globe+ Atk+",
+		"might": 13,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"hp": 2 },
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"156": {
+		"name": "Snow Globe+ Spd+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"hp": 2, "spd": 2 },
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"157": {
+		"name": "Snow Globe+ Def+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"hp": 2, "def": 3 },
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"158": {
+		"name": "Snow Globe+ Res+",
+		"might": 12,
+		"range": 2,
+		"sp": 300,
+		"prf": false,
+		"type": "greentome",
+		"skills": [],
+		"passive": {"hp": 2, "res": 3 },
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
 	}
 }

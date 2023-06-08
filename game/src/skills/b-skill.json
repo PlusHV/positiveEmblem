@@ -1772,7 +1772,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "spiral": 1 }],
+		"effect": [{"type": "onSpecialEffect", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner" }] }],
 		"max": false
 	},
 	"219": {
@@ -1780,7 +1780,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": {"type": "combatEffect", "spiral": 1},
+		"effect": [{"type": "onSpecialEffect", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner" }] }],
 		"max": false
 	},
 	"220": {
@@ -1788,7 +1788,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": {"type": "combatEffect", "spiral": 2},
+		"effect": [{"type": "onSpecialEffect", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 2, "stats": ["special"], "range": 0, "reference": true, "team": "owner", "from": "owner" }] }],
 		"max": true
 	},
 	"221": {
@@ -3051,7 +3051,7 @@
 		"name": "Sun-Twin Wing",
 		"sp": 300,
 		"prf": true,
-		"users": ["Dagr: Sun's Radiance"],
+		"users": ["Dagr: Sun's Radiance", "Dagr: New Year Jötnar"],
 		"type": "effect",
 		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.25]], "lull": {"spd": 5, "def": 5}, "nullEnemyFollowUp": 1, "nullStopFollowUp": 1 }],
 		"max": true
@@ -3379,6 +3379,155 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "combatEffect", "lull": {"atk": 3, "spd": 3}, "canto": {"flatCanto": 0, "cantoRemainder": 1} }],
+		"max": true
+	},
+	"408": {
+		"name": "Dragon's Wrath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 1.00]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": false
+	},
+	"409": {
+		"name": "Dragon's Wrath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.75]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": false
+	},
+	"410": {
+		"name": "Dragon's Wrath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["hp", "greater", 0.5]], "double": 1, "nullStopFollowUp": 1 }],
+		"max": true
+	},
+	"411": {
+		"name": "Hardy Fighter 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"412": {
+		"name": "Hardy Fighter 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"413": {
+		"name": "Hardy Fighter 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": true
+	},
+	"414": {
+		"name": "Def/Res Snag 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
+		"max": false
+	},
+	"415": {
+		"name": "Def/Res Snag 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
+		"max": false
+	},
+	"416": {
+		"name": "Def/Res Snag 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min"}],
+		"max": true
+	},
+	"417": {
+		"name": "Divine Recreation",
+		"sp": 300,
+		"prf": true,
+		"users": ["Eitri: Youthful Sage"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "movetype", ["Cavalry", "Flying"] ] ], "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1}  }],
+		"max": true
+	},
+	"418": {
+		"name": "Flow Guard 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1.0]], "guard": 1 }],
+		"max": false
+	},
+	"419": {
+		"name": "Flow Guard 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.9]], "guard": 1 }],
+		"max": false
+	},
+	"420": {
+		"name": "Flow Guard 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.8]], "guard": 1 }],
+		"max": true
+	},
+	"421": {
+		"name": "Spd Cantrip 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+
+		"max": false
+	},
+	"422": {
+		"name": "Spd Cantrip 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": false
+	},
+	"423": {
+		"name": "Spd Cantrip 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["spd"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"424": {
+		"name": "Binding Shield II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Marth: Hero-King"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["breath"] ] ], "enemyDouble": 1, "double": 1, "sweep": 1 }],
+		"max": true
+	},
+	"425": {
+		"name": "Lunar Brace II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Eirika: Graceful Resolve"],
+		"type": "effect",
+		"effect": [{"type": "onSpecial", "damage": ["defender", "def", 0.5, "trueDamage"]}],
+		"cdTrigger": 1,
 		"max": true
 	}
 }

@@ -11,7 +11,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"2": {
@@ -19,7 +19,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"3": {
@@ -27,7 +27,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"4": {
@@ -59,7 +59,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"8": {
@@ -67,7 +67,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"9": {
@@ -75,7 +75,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"10": {
@@ -83,7 +83,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"11": {
@@ -91,7 +91,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"12": {
@@ -99,7 +99,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"13": {
@@ -2208,7 +2208,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"275": {
@@ -2216,7 +2216,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"276": {
@@ -2224,7 +2224,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"277": {
@@ -2557,7 +2557,7 @@
 		"sp": 60,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"318": {
@@ -2565,7 +2565,7 @@
 		"sp": 120,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
 		"max": false
 	},
 	"319": {
@@ -2573,7 +2573,7 @@
 		"sp": 240,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"320": {
@@ -3081,7 +3081,7 @@
 		"sp": 300,
 		"prf": false,
 		"type": "effect",
-		"effect": [],
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 4, "constant": -9, "minValue": 3, "maxValue": 11, "allyReq": [["arStructure", true]]}],
 		"max": true
 	},
 	"382": {
@@ -3207,6 +3207,86 @@
 		"prf": false,
 		"type": "effect",
 		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 4, "constant": -9, "minValue": 3, "maxValue": 11, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"397": {
+		"name": "G Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"398": {
+		"name": "G Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"399": {
+		"name": "G Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"400": {
+		"name": "G Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"401": {
+		"name": "C Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"402": {
+		"name": "C Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"403": {
+		"name": "C Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"404": {
+		"name": "C Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"405": {
+		"name": "Spd/Def Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 7, "def": 7}, "penaltyNeutralize": {"spd": 1, "def": 1} }],
+		"max": true
+	},
+	"406": {
+		"name": "Distant Stance",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 5}, "counter": 1 }],
 		"max": true
 	}
 

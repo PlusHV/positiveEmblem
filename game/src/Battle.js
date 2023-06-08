@@ -96,12 +96,13 @@ export function doBattle(updatedHeroList, attacker, defender, board, gameState){
 
 
         if (damageInfo.attackerSpecialActivated){
-          attackerSubEffect = damageInfo.subEffect;
+          attackerSubEffect = damageInfo.attackerSubEffect;
           attackerSpecialActivated = true;
 
         }
 
         if (damageInfo.defenderSpecialActivated){
+          defenderSubEffect = damageInfo.defenderSubEffect;
           defenderSpecialActivated = true;
         }
 
@@ -137,12 +138,14 @@ export function doBattle(updatedHeroList, attacker, defender, board, gameState){
 
         defenderAttacked = true;
 
+        //reversed since the defender is the attacker here
         if (damageInfo.attackerSpecialActivated){
-          defenderSubEffect = damageInfo.subEffect;
+          defenderSubEffect = damageInfo.attackerSubEffect;
           defenderSpecialActivated = true;
         }
 
         if (damageInfo.defenderSpecialActivated){
+          attackerSubEffect = damageInfo.defenderSubEffect;
           attackerSpecialActivated = true;
         }
       }
@@ -160,6 +163,13 @@ export function doBattle(updatedHeroList, attacker, defender, board, gameState){
 
     //combat has now ended, post combat effects activate
 //{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 2, "reference": true, "team": "owner", "from": "owner"}]  }
+    if (attackerSpecialActivated){
+      attacker.specialActivated = true;
+    }
+
+    if (defenderSpecialActivated){
+      defender.specialActivated = true;
+    }
 
 
     let postCombatInfo = postCombat(list, attacker, defender, board, attackerAttacked, defenderAttacked, attackerSpecialActivated, defenderSpecialActivated, gameState);
@@ -229,7 +239,15 @@ export function doBattle(updatedHeroList, attacker, defender, board, gameState){
 
 
 
-    //increase combat Count
+    //loop through actionConditionList and add to the perMapList (we already check for dupes, so each element is added)
+    for (let x of attacker.actionConditionList){
+      list[attacker.side][attacker.listIndex].perMapList.push(x);
+    }
+    for (let x of defender.actionConditionList){
+      list[defender.side][defender.listIndex].perMapList.push(x);
+    }
+
+    //Increase combat counts
     list[attacker.side][attacker.listIndex].combatCount++;
     list[defender.side][defender.listIndex].combatCount++;
 
@@ -389,10 +407,39 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
 
 
+   if (attackerSpecialActivated){ //should also check for not postbattle special i guess
+      
+      for (let element of attacker.onSpecialEffect){
+        if (element !== null){
+          if ("condition" in element && !checkCondition(list, element.condition, attacker, defender, gameState)){
+            continue;
+          }
+
+          addEffect(attacker, element);
+
+        } //end if condition true
+      }
+
+    }
+
+    if (defenderSpecialActivated){
+      for (let element of defender.onSpecialEffect){
+        if (element !== null){
+          if ("condition" in element && !checkCondition(list, element.condition, defender, attacker, gameState)){
+            continue;
+          }
+
+          addEffect(defender, element);
+
+        } //end if condition true
+      }
+    }
 
     //include burn
     let attackerPostDamage = attacker.combatEffects.recoil - attacker.combatEffects.postHeal + defender.combatEffects.burn;
     let defenderPostDamage = defender.combatEffects.recoil - defender.combatEffects.postHeal + attacker.combatEffects.burn;
+
+
 
     if (attackerWounds > 0 || attacker.combatEffects.nullHeal > 0 || defender.combatEffects.nullEnemyHeal > 0){ //deep wounds or null heal will remove post heals
       attackerPostDamage+= attacker.combatEffects.postHeal;
@@ -422,16 +469,7 @@ export function postCombat(list, attacker, defender, board, attackerAttacked, de
 
 
 
-    if (attackerSpecialActivated && attacker.combatEffects.spiral > 0){ //should also check for not postbattle special i guess
-      attackerTeamSpecial[attacker.listIndex]+= attacker.combatEffects.spiral;
-      //attackerSpecial.charge = Math.max(0, attackerSpecial.charge - attacker.combatEffects.spiral);
-    }
-
-    if (defenderSpecialActivated && defender.combatEffects.spiral > 0){
-      defenderTeamSpecial[defender.listIndex]+= defender.combatEffects.spiral;
-      //defenderSpecial.charge = Math.max(0, defenderSpecial.charge - defender.combatEffects.spiral);
-    }
-
+ 
 
     for (let element of attacker.postCombatBuffDebuff){
 
@@ -848,7 +886,8 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
   let trueDamage = attacker.combatEffects.trueDamage;
 
 
-  let specialEffect = attackerSpecial.effect;
+  let attackerSpecialEffect = attackerSpecial.effect;
+  let defenderSpecialEffect = defenderSpecial.effect;
 
   let onHitHeal = attacker.combatEffects.onHitHeal;
 
@@ -856,27 +895,28 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   // let partyHeal = 0;
   // let partyBuff = {};
-  let subEffect = [];
+  let attackerSubEffect = [];
+  let defenderSubEffect = [];
 
   let attackerSpecialActivated = false;
   let defenderSpecialActivated = false;
 
   if (attackerSpecialCharge === 0 && attackerSpecial.type === "attack-battle"){ //if charged and an offsensive battle special
 
-    if ("adaptive" in specialEffect){
+    if ("adaptive" in attackerSpecialEffect){
       
       damageType = getAdaptiveDamage(defender);
       baseDamage = attacker.combatStats.atk + Math.trunc(attacker.combatStats.atk * WTA) - defender.combatStats[damageType] ; //recalc base damage
       
     }
 
-    if ("reduceReduction" in specialEffect){ //specials have effects that can reduce damage reductions (nullify in most cases)
-      reduceReduction = calculateReductionEffects([reduceReduction, specialEffect.reduceReduction] , 1.0);   
+    if ("reduceReduction" in attackerSpecialEffect){ //specials have effects that can reduce damage reductions (nullify in most cases)
+      reduceReduction = calculateReductionEffects([reduceReduction, attackerSpecialEffect.reduceReduction] , 1.0);   
     }
 
-    if ( Array.isArray(specialEffect.damage) ){ //if the damage value is a list - get the special damage 
+    if ( Array.isArray(attackerSpecialEffect.damage) ){ //if the damage value is a list - get the special damage 
       
-      specialDamage = getSpecialValue(specialEffect, attacker, defender, heroList, damageType, "damage", "combat");
+      specialDamage = getSpecialValue(attackerSpecialEffect, attacker, defender, heroList, damageType, "damage", "combat");
 
     }
     for (let i of attacker.onSpecial){ //loop through effects that activate on special
@@ -925,19 +965,17 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
 
     //add the amplify special damage (astra, glimmer etc.)
-    specialDamage = specialDamage + Math.trunc( (baseDamage +  specialDamage) * specialEffect.amplify); //amplify is not applied to true damage
+    specialDamage = specialDamage + Math.trunc( (baseDamage +  specialDamage) * attackerSpecialEffect.amplify); //amplify is not applied to true damage
 
 
     attackerSpecialCharge = attackerSpecial.cd;  //reset cd
 
 
-    if ("subEffect" in specialEffect){
+    if ("subEffect" in attackerSpecialEffect){
 
-      subEffect =  specialEffect.subEffect;
+      attackerSubEffect =  attackerSpecialEffect.subEffect;
 
     }
-
-
 
 
     attackerSpecialActivated = true;
@@ -1042,12 +1080,22 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       
     }
 
-
+    //non-miracle defensive specials have activated at this point
     if (!miracle){
       defenderSpecialCharge = defenderSpecial.cd;
 
       defenderSpecialActivated = true; //if its not miracle, then it is activated
       flatReduction = defender.combatEffects.specialFlatReduction; //flat reduction does not apply to miracle
+
+
+      //defender special activated, they get the subeffects of the special
+      if ("subEffect" in defenderSpecialEffect){
+
+        defenderSubEffect =  defenderSpecialEffect.subEffect;
+
+      }
+
+
     }
 
 
@@ -1114,6 +1162,14 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
       if (defender.combatEffects.miracle < 1){
         defenderSpecialCharge = defenderSpecial.cd;
         defenderSpecialActivated = true;
+
+        //defender special activated, they get the subeffects of the special
+        if ("subEffect" in defenderSpecialEffect){
+
+          defenderSubEffect =  defenderSpecialEffect.subEffect;
+
+        }
+
       }
 
 
@@ -1143,8 +1199,8 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
 
   if (attackerSpecialActivated && attacker.statusEffect.deepWounds < 1){ //special healing
     heal+= Math.trunc(attacker.combatEffects.specialHeal * damageDealt);
-    if ("heal" in specialEffect){
-      heal+= Math.trunc(specialEffect.heal * damageDealt); 
+    if ("heal" in attackerSpecialEffect){
+      heal+= Math.trunc(attackerSpecialEffect.heal * damageDealt); 
     }
   } 
 
@@ -1158,7 +1214,7 @@ export function calculateDamage(attacker, defender, damageType, attackerSpecial,
     heal = 0;
   }
 
-  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "subEffect": subEffect,
+  return {"damage": totalDamage, "reflect": reflectDamage, "base": baseDamage, "special": specialDamage, "heal": heal, "attackerSubEffect": attackerSubEffect, "defenderSubEffect": defenderSubEffect,
   "attackerSpecialCharge": attackerSpecialCharge, "defenderSpecialCharge": defenderSpecialCharge,
   "attackerSpecialActivated": attackerSpecialActivated, "defenderSpecialActivated": defenderSpecialActivated, "miracleActivated": miracleActivated  } ; ///glimmer interacts with damage reduction
 
@@ -1237,52 +1293,48 @@ export function getWeaponTriangleAdvantage(attacker, defender){ //tells us if th
   let colorAttack = heroData[attacker.heroID.value].color;
   let colorDefend = heroData[defender.heroID.value].color; //get the WTA multiplier
 
+  let red = "red";
+  let blue = "blue";
+  let green = "green";
+  let colorless = "colorless";
 
-  if (colorAttack === "red"){
-    if (colorDefend === "blue"){
-      advantage = -1;
-    } else if (colorDefend === "green"){
-      advantage = 1;
-    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
-      advantage = 1;
 
-    }
-
-  } else if (colorAttack === "blue"){
-    if (colorDefend === "green"){
-      advantage = -1;
-    } else if (colorDefend === "red"){
-      advantage = 1;
-    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
-      advantage = 1; //to do, add raven effect
-    }
-
-  } else if (colorAttack === "green"){
-    if (colorDefend === "red"){
-      advantage = -1;
-    } else if (colorDefend === "blue"){
-      advantage = 1;
-    } else if (colorDefend === "colorless" && attacker.combatEffects.raven > 0){
-      advantage = 1; //to do, add raven effect
-    }
-
-  } else if (colorAttack === "colorless"){ 
-    if (defender.combatEffects.raven > 0){ //if defender has raven effect, get disadvantaged
-      advantage = -1;
-    }
-
-    //technically, if you have advantage and disadvantage but have cancel affinity vs TA, the CA will reverse the TA's bonuses and still gain the advantage,  we can make it a special case if ever implemented
-    if (attacker.combatEffects.raven > 0 && colorDefend === "colorless"){ //colorless don't have a way to get the raven effect but they would theoretically be able to get the advantage boost against other colorless (and would cancel out with another raven colorless)
-    
-      if (advantage < 0){ //already have disadvantage
-        advantage = "doubleAdvantage";
-      } else { //just give advantage regularly
-        advantage = 1;
-      }
-
-    }
-
+  let advantageList = {
+    red: [green],
+    blue: [red],
+    green: [blue],
+    colorless: []
   }
+    let disadvantageList = {
+    red: [blue],
+    blue: [green],
+    green: [red],
+    colorless: []
+  }
+  //to do - Arval has an ability to add extra advantages, could make a general effect that adds advantage and have raven do the same
+
+  if (attacker.combatEffects.raven > 0){
+    advantageList[colorAttack].push(colorless);
+    disadvantageList[colorless].push(colorAttack);
+  }
+
+
+  if (defender.combatEffects.raven > 0){
+    advantageList[colorDefend].push(colorless);
+    disadvantageList[colorless].push(colorDefend);
+  }
+
+  //https://www.reddit.com/r/FireEmblemHeroes/comments/yi15j6/duality_vs_raven_tomes/ 
+  //double advantage actually just cancels out in practice and is the same as having an advantage of 0. We still denote double advantage because it would theoretically have a difference when a CA3 user is against a TA user
+  if (advantageList[colorAttack].includes(colorDefend) && disadvantageList[colorAttack].includes(colorDefend)){
+
+    advantage = "doubleAdvantage";
+  } else if (advantageList[colorAttack].includes(colorDefend)){
+    advantage = 1;
+  } else if (disadvantageList[colorAttack].includes(colorDefend)){
+    advantage = -1;
+  }
+
   return advantage;
 } //end get WTA 
 
@@ -1333,7 +1385,9 @@ export function calculateWeaponTriangleAdvantage(attacker, defender) { //calcula
       TAEffect = -TAEffect;
     }
 
-  } else if (advantage === "doubleAdvantage"){ //theoretical situation where attacker has advantage and disadvantage at the same time - would cancel out eachother out normally but CA can swing it in a different dirrection
+  } else if (advantage === "doubleAdvantage"){ 
+    //theoretical situation where attacker has advantage and disadvantage at the same time - would cancel out eachother out normally
+    //CA can swing it in a different direction. Was not tested with duality since that neutralizes CA/TA
 
     let TA1, TA2 = TAEffect;
 
@@ -2081,6 +2135,16 @@ export function checkCondition(heroList, condition, owner, enemy, gameState){
         }
 
         j = j + 2;
+
+      } else if (keyWord === "specialActivated"){
+
+        if (innerCondition[j+1] && owner.specialActivated){
+          innerResult = true;
+        } else if (!innerCondition[j+1] && !owner.specialActivated){
+          innerResult = false;
+        }
+
+        j = j + 1;
       } else if (keyWord === "followUp"){
 
 
@@ -2592,6 +2656,46 @@ export function checkCondition(heroList, condition, owner, enemy, gameState){
         }
 
         j = j + 1;
+      } else if (keyWord === "perMapCheck"){
+        //assume that this is always its own and part of the condtion
+        //when this keyword is encountered, we do a couple of things.
+        //We first check if this keyword is in the owner's perMapList. If it is then, this return false and conditional false
+        //If it has not occured yet,
+        let check = true; //assume condition is not in the list
+        for (let x of owner.perMapList){
+
+
+          if (conditionMatch(condition, x)){ //condition has been found in the list, has already activated once
+            check = false;
+          }
+
+        
+        } //end loop perMapList
+
+        if (check){ //if condition has not been found, then this part of the condition passes
+          innerResult = true;
+          //we know check it against the actionConditionList and add it if not found (this is just to prevent duplicates)
+          let addToList = true;
+
+          for (let x of owner.actionConditionList){ 
+            if (conditionMatch(condition, x)){
+              addToList = false;
+            }
+
+          }
+
+          if (addToList){
+            owner.actionConditionList.push(condition);
+          }
+
+
+        }
+
+
+
+
+
+        j = j + 0; //has no keywords
       }
 
     } //end for j
@@ -3636,11 +3740,11 @@ function conditionMatch(c1, other){
 
   //true when both are array
   //false if either is string or both are string
-  if (c1 === c2){
+  if (c1 === c2){ //equal strings
     return true;
   }
 
-  if (c1 === null || c2 === null){
+  if (c1 === null || c2 === null){ 
 
     return false;
   }
@@ -3663,7 +3767,7 @@ function conditionMatch(c1, other){
 
       //return false; //if the arrays don't match, then condition match fails
 
-    } else if (c1[i] !== c2[i]) { //both a strings/ints, do comparison
+    } else if (c1[i] !== c2[i]) { //both are strings/ints, do comparison
 
       return false;
     }

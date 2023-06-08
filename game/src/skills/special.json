@@ -541,7 +541,7 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": ["Sothis: Girl on the Throne", "Sothis: Silver Specter"],
+		"users": ["Sothis: Girl on the Throne", "Sothis: Silver Specter", "Sothis: Bound-Spirit Duo"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "spd",  0.3], "heal": 0.3, "amplify": 0.0},
 		"max": true
@@ -752,7 +752,7 @@
 		"sp": 500,
 		"cd": 3,
 		"prf": true,
-		"users": ["Reginn: Bearing Hope"],
+		"users": ["Reginn: Bearing Hope", "Reginn: Bearing Dawn"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "flat", 15], "heal": 0.0, "amplify": 0.0, "adaptive": true},
 		"skills": [["o", "Turn 1, CD 3"]],
@@ -828,11 +828,43 @@
 		"sp": 500,
 		"cd": 2,
 		"prf": true,
-		"users": ["Marth: Prince of Light"],
+		"users": ["Marth: Prince of Light", "Marth: Hero-King"],
 		"type": "attack-battle",
 		"effect": {"damage": ["attacker", "spd", 0.35], "heal": 0.0, "amplify": 0.0, 
 			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
 		"skills": [["o", "Shining Emblem Buff"]],
+		"max": true
+	},
+	"88": {
+		"name": "Brutal Shell",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Ótr: Kingsbrother"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"skills": [["o", "Turn 1, CD 3"]],
+		"max": true
+	},
+	"89": {
+		"name": "Life Unending",
+		"sp": 500,
+		"cd": 5,
+		"prf": true,
+		"users": ["Fae: Childlike Dragon"],
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": "miracle"},
+		"skills": [["o", "Turn 1, CD 5"], ["o", "Max Heal 1"]],
+		"max": true
+	},
+	"90": {
+		"name": "Lethality",
+		"sp": 500,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.75], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0 },
 		"max": true
 	}
 }

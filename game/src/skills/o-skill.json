@@ -205,6 +205,34 @@
 		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]], "assisteeRef": true, "assisteeRefReq": [["distanceCheck", 2]]  },
 			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min" },
 			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min", "effectReq": [["distanceCheck", 2]] }]
+	},
+	"29": {
+		"name": "Future Vision II Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min", "assistExclude": ["assistee"] }]
+	},
+	"30": {
+		"name": "To Change Fate! Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "range": 0, "exclude": ["other"], "assistExclude": ["assistee"]}]
+	},
+	"31": {
+		"name": "Turn 1, CD 5",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"32": {
+		"name": "Max Heal 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onSpecialEffect", "condition": [["specialActivated", true], ["perMapCheck"]], "subEffect": [{"type": "combatEffect", "postHeal": 99}] }]
 	}
 
 
