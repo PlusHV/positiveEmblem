@@ -1,0 +1,482 @@
+{
+	"0": {  
+		"id": 0,
+		"name": "",
+		"damage": true,
+		"maxLevel": 0,
+		"maxHP": 0,
+		"effect": [],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"level": 0,
+		"currentHP": 0,
+		"side": 0,
+		"arStructure": false
+	},
+	"1": {  
+		"id": 1,
+		"name": "Armor School",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 8, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 9, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Armored"]] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "armorSchool",
+		"neutral": false,
+		"arStructure": true
+	},
+	"2": {  
+		"id": 2,
+		"name": "Bolt Tower",
+		"damage": true,
+		"maxLevel": 8,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 15, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 20, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 25, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 30, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 35, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 40, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }],
+			[{"type": "turnStart", "condition": [["turnRange", 3, 3, true] ], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 45, "stats": ["hp"],  "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1]] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "boltTower",
+		"neutral": false,
+		"arStructure": true
+	},
+	"3": {  
+		"id": 3,
+		"name": "Bright Shrine",
+		"damage": true,
+		"maxLevel": 8,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 8, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 9, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "brightShrine",
+		"neutral": false,
+		"arStructure": true
+	},
+	"4": {  
+		"id": 4,
+		"name": "Catapult",
+		"damage": true,
+		"maxLevel": 7,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1], ["statCompare", "combat", "level", "greater", 0]] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "catapult",
+		"neutral": false,
+		"arStructure": true
+	},
+	"5": {  
+		"id": 5,
+		"name": "Cavalry School",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 8, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 9, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Cavalry"]] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "cavalrySchool",
+		"neutral": false,
+		"arStructure": true
+	},
+	"6": {  
+		"id": 6,
+		"name": "Dark Shrine",
+		"damage": true,
+		"maxLevel": 7,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 8, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "enemy", "peak": "max" }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "darkShrine",
+		"neutral": false,
+		"arStructure": true
+	},
+	"7": {  
+		"id": 7,
+		"name": "Duo's Hindrance",
+		"damage": true,
+		"maxLevel": 4,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[]
+
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "duoHindrance",
+		"neutral": false,
+		"arStructure": true
+	},
+	"8": {  
+		"id": 8,
+		"name": "Duo's Indulgence",
+		"damage": true,
+		"maxLevel": 4,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[]
+
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "duoIndulgence",
+		"neutral": false,
+		"arStructure": true
+	},
+	"9": {  
+		"id": 9,
+		"name": "Escape Ladder",
+		"damage": false,
+		"maxLevel": 6,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[],
+			[],
+			[]
+
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "escapeLadder",
+		"neutral": false,
+		"arStructure": true
+	},
+	"10": {  
+		"id": 10,
+		"name": "Flier School",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 8, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 9, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Flying"]] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "flierSchool",
+		"neutral": false,
+		"arStructure": true
+	},
+	"11": {  
+		"id": 11,
+		"name": "Fortress",
+		"damage": false,
+		"maxLevel": 5,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[],
+			[]
+
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "fortress",
+		"neutral": false,
+		"arStructure": true
+	},
+	"12": {  
+		"id": 12,
+		"name": "Healing Tower",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 15, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 25, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 30, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 35, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 40, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 45, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }],
+			[{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 50, "stats": ["hp"], "team": "owner", "effectReq": [["cardinalRC", true, 2, 2]] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "healingTower",
+		"neutral": false,
+		"arStructure": true
+	},
+	"13": {  
+		"id": 13,
+		"name": "Infantry School",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 8, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 9, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 10, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["heroInfoCheck", "movetype", ["Infantry"]] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "infantrySchool",
+		"neutral": false,
+		"arStructure": true
+	},
+	"14": {  
+		"id": 14,
+		"name": "Panic Manor",
+		"damage": true,
+		"maxLevel": 9,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 40] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 45] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 50] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 55] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 60] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 65] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 70] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 75] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCheck", "enemy", "visible", "HP", "less", 80] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "panicManor",
+		"neutral": false,
+		"arStructure": true
+	},
+	"15": {  
+		"id": 15,
+		"name": "Safety Fence",
+		"damage": true,
+		"maxLevel": 1,
+		"maxHP": 1,
+		"effect": [
+			[]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "safetyFence",
+		"neutral": false,
+		"arStructure": true
+	},
+	"16": {  
+		"id": 16,
+		"name": "Tactics Room",
+		"damage": true,
+		"maxLevel": 8,
+		"maxHP": 1,
+		"effect": [
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 40], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 45], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 50], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 55], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 60], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 65], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 70], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }],
+			[{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "enemy", "effectReq": [["cardinalRC", true, 0, -1], ["statCheck", "enemy", "visible", "HP", "less", 75], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]] ] }]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "tacticsRoom",
+		"neutral": false,
+		"arStructure": true
+	},
+	"17": {  
+		"id": 17,
+		"name": "False Bolt Trap",
+		"damage": false,
+		"maxLevel": 1,
+		"maxHP": 1,
+		"effect": [
+			[]
+		],
+		"type": "structure",
+		"trap": true,	
+		"falseTrap": true,
+		"art": "boltTrap",
+		"neutral": false,
+		"arStructure": false
+	},
+	"18": {  
+		"id": 18,
+		"name": "False Heavy Trap",
+		"damage": false,
+		"maxLevel": 1,
+		"maxHP": 1,
+		"effect": [
+			[]
+		],
+		"type": "structure",
+		"trap": true,	
+		"falseTrap": true,
+		"art": "heavyTrap",
+		"neutral": false,
+		"arStructure": false
+	},
+	"19": {  
+		"id": 19,
+		"name": "Bolt Trap",
+		"damage": false,
+		"maxLevel": 5,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[],
+			[]
+		],
+		"type": "structure",
+		"trap": true,	
+		"falseTrap": false,
+		"art": "boltTrap",
+		"neutral": false,
+		"arStructure": false
+	},
+	"20": {  
+		"id": 20,
+		"name": "Heavy Trap",
+		"damage": false,
+		"maxLevel": 5,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[],
+			[]
+		],
+		"type": "structure",
+		"trap": true,	
+		"falseTrap": false,
+		"art": "heavyTrap",
+		"neutral": false,
+		"arStructure": false
+	},
+	"21": {  
+		"id": 21,
+		"name": "Aether Amphorae",
+		"damage": true,
+		"maxLevel": 4,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[],
+			[]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "aetherPot",
+		"neutral": false,
+		"arStructure": false
+	},
+	"22": {  
+		"id": 22,
+		"name": "Aether Fountain",
+		"damage": true,
+		"maxLevel": 3,
+		"maxHP": 1,
+		"effect": [
+			[],
+			[],
+			[]
+		],
+		"type": "structure",
+		"trap": false,	
+		"falseTrap": false,
+		"art": "aetherFountain",
+		"neutral": false,
+		"arStructure": false
+	}
+}

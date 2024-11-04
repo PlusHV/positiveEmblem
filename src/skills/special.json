@@ -1,0 +1,870 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"cd": -10,
+		"prf": false,
+		"type": "",
+		"effect": {},
+		"max": true
+	},
+	"1": {
+		"name": "Aegis",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.5},
+		"max": true
+	},
+	"2": {
+		"name": "Aether",
+		"sp": 500,
+		"cd": 5,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"max": true
+	},
+	"3": {
+		"name": "Astra",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 1.5 },
+		"max": true
+	},
+	"4": {
+		"name": "Black Luna",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Zelgius: Jet-Black General", "Black Knight: Sinister General"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.8], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"5": {
+		"name": "Blazing Flame",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.5, "pattern": [[0, 1], [0, 2], [0, -1], [0, -2]]},
+		"max": true
+	},
+	"6": {
+		"name": "Blazing Light",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.5, "pattern": [[1, 1], [1, -1], [-1, 1], [-1, -1]]},
+		"max": true
+	},
+	"7": {
+		"name": "Blazing Thunder",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.5, "pattern": [[1, 0], [2, 0], [-1, 0], [-2, 0]]},
+		"max": true
+	},
+	"8": {
+		"name": "Blazing Wind",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.5, "pattern": [[0, 1], [0, -1], [1, 0], [-1, 0]]},
+		"max": true
+	},
+	"9": {
+		"name": "Blue Flame",
+		"sp": 500,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "flat", 10], "heal": 0.0, "amplify": 0.0, "condition": [["adjacent", true]], "alt": 25},
+		"max": true
+	},
+	"10": {
+		"name": "Bonfire",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"11": {
+		"name": "Buckler",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.7},
+		"max": true
+	},
+	"12": {
+		"name": "Chilling Wind",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": false
+	},
+	"13": {
+		"name": "Daylight",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.3, "amplify": 0.0 },
+		"max": false
+	},
+	"14": {
+		"name": "Draconic Aura",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"15": {
+		"name": "Dragon Fang",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"16": {
+		"name": "Dragon Gaze",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": false
+	},
+	"17": {
+		"name": "Earthfire Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 4, "def": 4} },
+		"max": false
+	},
+	"18": {
+		"name": "Earthfire Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 6, "def": 6} },
+		"max": true
+	},
+	"19": {
+		"name": "Earthwater Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"def": 4, "res": 4} },
+		"max": false
+	},
+	"20": {
+		"name": "Earthwater Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"def": 6, "res": 6} },
+		"max": true
+	},
+	"21": {
+		"name": "Escutcheon",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.7},
+		"max": true
+	},
+	"22": {
+		"name": "Fire Emblem",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Marth: Hero-King", "Marth: Royal Altean Duo"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
+		"max": true
+	},
+	"23": {
+		"name": "Fireflood Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 4, "res": 4} },
+		"max": false
+	},
+	"24": {
+		"name": "Fireflood Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 6, "res": 6} },
+		"max": true
+	},
+	"25": {
+		"name": "Galeforce",
+		"sp": 500,
+		"cd": 5,
+		"prf": false,
+		"type": "post-battle",
+		"effect": [{"type": "specialAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] }],
+		"max": true
+	},
+	"26": {
+		"name": "Glacies",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.8], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"27": {
+		"name": "Glimmer",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 0.5 },
+		"max": true
+	},
+	"28": {
+		"name": "Glowing Ember",
+		"sp": 100,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": false
+	},
+	"29": {
+		"name": "Growing Flame",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[0, 1], [0, 2], [0, -1], [0, -2], [1, 1], [1, -1], [-1, 1], [-1, -1]]},
+		"max": true
+	},
+	"30": {
+		"name": "Growing Light",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[1, 1], [1, -1], [-1, 1], [-1, -1], [2, 0], [-2, 0], [0, 2], [0, -2]]},
+		"max": true
+	},
+	"31": {
+		"name": "Growing Thunder",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[1, 0], [2, 0], [3, 0], [-1, 0], [-2, 0], [-3, 0], [0, 1], [0, -1]]},
+		"max": true
+	},
+	"32": {
+		"name": "Growing Wind",
+		"sp": 300,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[0, 1], [0, -1], [1, 0], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]]},
+		"max": true
+	},
+	"33": {
+		"name": "Heavenly Light",
+		"sp": 150,
+		"cd": 2,
+		"prf": false,
+		"type": "heal",
+		"effect": {"teamHeal": 10},
+		"max": true
+	},
+	"34": {
+		"name": "Holy Vestments",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7},
+		"max": false
+	},
+	"35": {
+		"name": "Ice Mirror",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Fjorm: Princess of Ice"],
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7, "reflect": {"damage": ["mirror"]}},
+		"max": true
+	},
+	"36": {
+		"name": "Iceberg",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"37": {
+		"name": "Ignis",
+		"sp": 200,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.8], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"38": {
+		"name": "Imbue",
+		"sp": 50,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"flatHeal": 10},
+		"max": true
+	},
+	"39": {
+		"name": "Kindled-Fire Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 4} },
+		"max": false
+	},
+	"40": {
+		"name": "Luna",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"41": {
+		"name": "Lunar Flash",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Alm: Saint-King", "Alm: Lovebird Duo"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.2], "damage2": ["attacker", "spd", 0.2], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"42": {
+		"name": "Miracle",
+		"sp": 200,
+		"cd": 5,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": "miracle"},
+		"max": true
+	},
+	"43": {
+		"name": "Moonbow",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"44": {
+		"name": "New Moon",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": false
+	},
+	"45": {
+		"name": "Night Sky",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 0.5 },
+		"max": false
+	},
+	"46": {
+		"name": "Noontime",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.3, "amplify": 0.0 },
+		"max": true
+	},
+	"47": {
+		"name": "Pavise",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 1,
+		"effect": {"factor": 0.5},
+		"max": true
+	},
+	"48": {
+		"name": "Radiant Aether",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"users": ["Ike: Stalwart Heart", "Ike: Vanguard Legend"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"max": true
+	},
+	"49": {
+		"name": "Regnal Astra",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Ayra: Astra's Wielder", "Larcei: Keen Kin", "Larcei: Scion of Astra"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.4], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"50": {
+		"name": "Reprisal",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "missingHP", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"51": {
+		"name": "Retribution",
+		"sp": 100,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "missingHP", 0.3], "heal": 0.0, "amplify": 0.0 },
+		"max": false
+	},
+	"52": {
+		"name": "Rising Flame",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[0, 1], [0, 2], [0, -1], [0, -2]]},
+		"max": false
+	},
+	"53": {
+		"name": "Rising Light",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[1, 1], [1, -1], [-1, 1], [-1, -1]]},
+		"max": false
+	},
+	"54": {
+		"name": "Rising Thunder",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[1, 0], [2, 0], [-1, 0], [-2, 0]]},
+		"max": false
+	},
+	"55": {
+		"name": "Rising Wind",
+		"sp": 150,
+		"cd": 4,
+		"prf": false,
+		"type": "pre-battle",
+		"effect": {"factor": 1.0, "pattern": [[0, 1], [0, -1], [1, 0], [-1, 0]]},
+		"max": false
+	},
+	"56": {
+		"name": "Ruptured Sky",
+		"sp": 500,
+		"cd": 2,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "atk",  0.2], "heal": 0.0, "amplify": 0.0, "condition": [["heroInfoCheck", "weapontype", ["breath", "beast"]]], "alt": 0.4},
+		"max": true
+	},
+	"57": {
+		"name": "Sacred Cowl",
+		"sp": 200,
+		"cd": 2,
+		"prf": false,
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.7},
+		"max": true
+	},
+	"58": {
+		"name": "Sirius",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Sothis: Girl on the Throne", "Sothis: Silver Specter", "Sothis: Bound-Spirit Duo"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd",  0.3], "heal": 0.3, "amplify": 0.0},
+		"max": true
+	},
+	"59": {
+		"name": "Sol",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.5, "amplify": 0.0},
+		"max": true
+	},
+	"60": {
+		"name": "Solid-Earth Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"def": 4} },
+		"max": false
+	},
+	"61": {
+		"name": "Still-Water Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"res": 4} },
+		"max": false
+	},
+	"62": {
+		"name": "Swift-Winds Balm",
+		"sp": 150,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"spd": 4} },
+		"max": false
+	},
+	"63": {
+		"name": "Umbra Blast",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "post-battle",
+		"effect": {"flat": 5, "savage": 5},
+		"max": false
+	},
+	"64": {
+		"name": "Umbra Calamity",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "post-battle",
+		"effect": {"flat": 15, "savage": 15},
+		"max": false
+	},
+	"65": {
+		"name": "Umbra Eruption",
+		"sp": 0,
+		"cd": 9,
+		"prf": false,
+		"type": "post-battle",
+		"effect": {"flat": 10, "savage": 10},
+		"max": false
+	},
+	"66": {
+		"name": "Vengeance",
+		"sp": 200,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "missingHP", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"67": {
+		"name": "Windfire Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 4, "spd": 4} },
+		"max": false
+	},
+	"68": {
+		"name": "Windfire Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"atk": 6, "spd": 6} },
+		"max": true
+	},
+	"69": {
+		"name": "Njörun's Zeal",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Leif: Unifier of Thracia", "Leif: Destined Scions"],
+		"type": "post-battle",
+		"effect": [{"type": "specialAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] },
+				{"type": "specialAction", "subtype": "debuff", "checkType": "reqCheck", "list": ["gravity"], "team": "owner", "selfReq": [["always"]] }],
+		"max": true
+	},
+	"70": {
+		"name": "Twin Blades",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Altina: Dawn's Trueblade", "Altina: Cross-Time Duo"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0 },
+		"max": true
+	},
+	"71": {
+		"name": "Open the Future",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Alfonse: Askran Duo", "Líf: Lethal Swordsman"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "def", 0.5], "heal": 0.25, "amplify": 0.0 },
+		"max": true
+	},
+	"72": {
+		"name": "Imperial Astra",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Shannan: Wielder of Astra"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.4], "heal": 0.0, "amplify": 0.0 },
+		"max": true
+	},
+	"73": {
+		"name": "Hero's Blood",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Marth: Legacied Hero"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
+		"max": true
+	},
+	"74": {
+		"name": "Righteous Wind",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Merric: Changing Winds"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.3], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 10, "stats": ["hp"], "range": 99, "reference": false, "team": "owner", "from": "owner"}, {"type": "combatEffect", "postHeal": 10} ]}] },
+		"max": true
+	},
+	"75": {
+		"name": "Mayhem Aether",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"users": ["Ike: Zeal Unleashed"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"max": true
+	},
+	"76": {
+		"name": "Negating Fang",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Corrin: Child of Dusk"],
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": 0.7, "reflect": {"damage": ["attacker", "atk", 0.3], "heal": 0.0, "amplify": 0.0 }},
+		"max": true
+	},
+	"77": {
+		"name": "Deadeye",
+		"sp": 500,
+		"cd": 3,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": "", "heal": 0.0, "amplify": 1.0, "reduceReduction": 0 },
+		"max": true
+	},
+	"78": {
+		"name": "Deluge Balm",
+		"sp": 200,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"spd": 4, "res": 4} },
+		"max": false
+	},
+	"79": {
+		"name": "Deluge Balm+",
+		"sp": 300,
+		"cd": 1,
+		"prf": false,
+		"type": "heal",
+		"effect": {"partyBuff": {"spd": 6, "res": 6} },
+		"max": true
+	},
+	"80": {
+		"name": "Seiðr Shell",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Reginn: Bearing Hope", "Reginn: Bearing Dawn"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "flat", 15], "heal": 0.0, "amplify": 0.0, "adaptive": true},
+		"skills": [["o", "Turn 1, CD 3"]],
+		"max": true
+	},
+	"81": {
+		"name": "Gifted Magic",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Lilina: Firelight Leader"],
+		"type": "pre-battle",
+		"effect": {"factor": 0.8, "pattern": [[0, 1], [0, -1], [1, 0], [-1, 0]] },
+		"max": true
+	},
+	"82": {
+		"name": "Ice Mirror II",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Fjorm: Princess of Ice"],
+		"type": "defend-battle",
+		"range": 2,
+		"effect": {"factor": 0.6, "reflect": {"damage": ["attacker", "res", 0.4], "heal": 0.0, "amplify": 0.0 }},
+		"max": true
+	},
+	"83": {
+		"name": "Radiant Aether II",
+		"sp": 500,
+		"cd": 4,
+		"prf": true,
+		"users": ["Ike: Vanguard Legend"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.5, "amplify": 0.0 },
+		"skills": [["o", "Turn 1, CD 2"]],
+		"max": true
+	},
+	"84": {
+		"name": "Holy-Knight Aura",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Sigurd: Fated Holy Knight"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk", 0.25], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats", "mobility+"], "value": 6, "stats": ["atk", "spd"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}]  },
+		"skills": [["o", "Movement+"]],
+		"max": true
+	},
+	"85": {
+		"name": "Sublime Heaven",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Byleth: The Fódlan Star"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "atk",  0.25], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0, "condition": [["heroInfoCheck", "weapontype", ["breath", "beast"]]], "alt": 0.5},
+		"max": true
+	},
+	"86": {
+		"name": "Requiem Dance",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Marianne: Serene Adherent"],
+		"type": "post-battle",
+		"effect":[{"type": "specialAction", "subtype": "buff", "checkType": "targeting", "list": ["galeforce"], "checkStats": ["hp"], "team": "owner", "peak": "max", "targetReq": [["heroEnd", "enemy", true],  ["distanceCheck", 2]], "singleTarget": true},
+			{"type": "specialAction", "subtype": "debuff", "checkType": "targeting", "list": ["gravity"], "checkStats": ["hp"], "team": "owner", "peak": "max", "targetReq": [["heroEnd", "enemy", true],  ["distanceCheck", 2]], "singleTarget": true}],
+		"max": true
+	},
+	"87": {
+		"name": "Shining Emblem",
+		"sp": 500,
+		"cd": 2,
+		"prf": true,
+		"users": ["Marth: Prince of Light", "Marth: Hero-King"],
+		"type": "attack-battle",
+		"effect": {"damage": ["attacker", "spd", 0.35], "heal": 0.0, "amplify": 0.0, 
+			"subEffect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "range": 99, "reference": true, "team": "owner", "from": "owner"}]}] },
+		"skills": [["o", "Shining Emblem Buff"]],
+		"max": true
+	},
+	"88": {
+		"name": "Brutal Shell",
+		"sp": 500,
+		"cd": 3,
+		"prf": true,
+		"users": ["Ótr: Kingsbrother"],
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.5], "heal": 0.0, "amplify": 0.0 },
+		"skills": [["o", "Turn 1, CD 3"]],
+		"max": true
+	},
+	"89": {
+		"name": "Life Unending",
+		"sp": 500,
+		"cd": 5,
+		"prf": true,
+		"users": ["Fae: Childlike Dragon"],
+		"type": "defend-battle",
+		"range": 0,
+		"effect": {"factor": "miracle"},
+		"skills": [["o", "Turn 1, CD 5"], ["o", "Max Heal 1"]],
+		"max": true
+	},
+	"90": {
+		"name": "Lethality",
+		"sp": 500,
+		"cd": 4,
+		"prf": false,
+		"type": "attack-battle",
+		"effect": {"damage": ["defender", "defensive", 0.75], "heal": 0.0, "amplify": 0.0, "reduceReduction": 0 },
+		"max": true
+	}
+}

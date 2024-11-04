@@ -1,0 +1,3295 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"1": {
+		"name": "AR-D Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"2": {
+		"name": "AR-D Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"3": {
+		"name": "AR-D Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"4": {
+		"name": "AR-D Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"5": {
+		"name": "AR-D Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"6": {
+		"name": "AR-D Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"7": {
+		"name": "AR-D Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"8": {
+		"name": "AR-D Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"9": {
+		"name": "AR-D Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "def"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"10": {
+		"name": "AR-D Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"11": {
+		"name": "AR-D Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"12": {
+		"name": "AR-D Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"13": {
+		"name": "AR-O Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"14": {
+		"name": "AR-O Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"15": {
+		"name": "AR-O Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"16": {
+		"name": "AR-O Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"17": {
+		"name": "AR-O Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"18": {
+		"name": "AR-O Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"19": {
+		"name": "AR-O Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -1, "constant": 6, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"20": {
+		"name": "AR-O Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -2, "constant": 11 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"21": {
+		"name": "AR-O Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "1"]], "stats": ["spd", "res"],  "key": "structureReq", "team": "enemy", "multiplier": -3, "constant": 16, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"22": {
+		"name": "Armored Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 2} }],
+		"max": false
+	},
+	"23": {
+		"name": "Armored Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 4} }],
+		"max": false
+	},
+	"24": {
+		"name": "Armored Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 6} }],
+		"max": true
+	},
+	"25": {
+		"name": "Atk/Def Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "def": 3} }],
+		"max": false
+	},
+	"26": {
+		"name": "Atk/Def Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": false
+	},
+	"27": {
+		"name": "Atk/Def Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "def": 5} }],
+		"max": true
+	},
+	"28": {
+		"name": "Atk/Def Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "def": 3}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"29": {
+		"name": "Atk/Def Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "def": 4}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"30": {
+		"name": "Atk/Def Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": true
+	},
+	"31": {
+		"name": "Atk/Def Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"32": {
+		"name": "Atk/Def Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": false
+	},
+	"33": {
+		"name": "Atk/Def Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "def": 6} }],
+		"max": true
+	},
+	"34": {
+		"name": "Atk/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "res": 3} }],
+		"max": false
+	},
+	"35": {
+		"name": "Atk/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": false
+	},
+	"36": {
+		"name": "Atk/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": true
+	},
+	"37": {
+		"name": "Atk/Res Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "res": 7}, "penaltyNeutralize": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"38": {
+		"name": "Atk/Res Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "res": 3}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"39": {
+		"name": "Atk/Res Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "res": 4}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"40": {
+		"name": "Atk/Res Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": true
+	},
+	"41": {
+		"name": "Atk/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"42": {
+		"name": "Atk/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": false
+	},
+	"43": {
+		"name": "Atk/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "res": 6} }],
+		"max": true
+	},
+	"44": {
+		"name": "Atk/Spd 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1},
+		"max": false
+	},
+	"45": {
+		"name": "Atk/Spd 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2},
+		"max": true
+	},
+	"46": {
+		"name": "Atk/Spd Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 3, "spd": 3} }],
+		"max": false
+	},
+	"47": {
+		"name": "Atk/Spd Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": false
+	},
+	"48": {
+		"name": "Atk/Spd Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"49": {
+		"name": "Atk/Spd Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"50": {
+		"name": "Atk/Spd Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"51": {
+		"name": "Atk/Spd Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"52": {
+		"name": "Atk/Spd Push 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 3, "spd": 3}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"53": {
+		"name": "Atk/Spd Push 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 4, "spd": 4}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": false
+	},
+	"54": {
+		"name": "Atk/Spd Push 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1]], "statBuff": {"atk": 5, "spd": 5}, "subEffect": [{"type": "onAttack", "recoil": 1}]} ],
+		"max": true
+	},
+	"55": {
+		"name": "Atk/Spd Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "spd": 7}, "subEffect": [{"type": "onAttack", "recoil": 5}]} ],
+		"max": true
+	},
+	"56": {
+		"name": "Atk/Spd Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": false
+	},
+	"57": {
+		"name": "Atk/Spd Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": false
+	},
+	"58": {
+		"name": "Atk/Spd Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 6, "spd": 6} }],
+		"max": true
+	},
+	"59": {
+		"name": "Attack/Def +1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "def": 1},
+		"max": false
+	},
+	"60": {
+		"name": "Attack/Def +2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "def": 2},
+		"max": true
+	},
+	"61": {
+		"name": "Attack +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1},
+		"max": false
+	},
+	"62": {
+		"name": "Attack +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2},
+		"max": false
+	},
+	"63": {
+		"name": "Attack +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3},
+		"max": true
+	},
+	"64": {
+		"name": "Attack/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "res": 1},
+		"max": false
+	},
+	"65": {
+		"name": "Attack/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "res": 2},
+		"max": true
+	},
+	"66": {
+		"name": "B Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"67": {
+		"name": "B Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"68": {
+		"name": "B Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"69": {
+		"name": "B Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"70": {
+		"name": "B Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"71": {
+		"name": "B Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"72": {
+		"name": "Bonus Doubler 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 0.5, "spd": 0.5, "def": 0.5, "res": 0.5}},
+		"max": false
+	},
+	"73": {
+		"name": "Bonus Doubler 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 0.75, "spd": 0.75, "def": 0.75, "res": 0.75}},
+		"max": false
+	},
+	"74": {
+		"name": "Bonus Doubler 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "bonusDouble": {"atk": 1, "spd": 1, "def": 1, "res": 1}},
+		"max": true
+	},
+	"75": {
+		"name": "Bracing Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"76": {
+		"name": "Bracing Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"def": 4, "res": 4} }],
+		"max": true
+	},
+	"77": {
+		"name": "Bracing Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"78": {
+		"name": "Bracing Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"max": true
+	},
+	"79": {
+		"name": "Brazen Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "def": 3} }],
+		"max": false
+	},
+	"80": {
+		"name": "Brazen Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "def": 5} }],
+		"max": false
+	},
+	"81": {
+		"name": "Brazen Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "def": 7} }],
+		"max": true
+	},
+	"82": {
+		"name": "Brazen Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "res": 3} }],
+		"max": false
+	},
+	"83": {
+		"name": "Brazen Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": false
+	},
+	"84": {
+		"name": "Brazen Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "res": 7} }],
+		"max": true
+	},
+	"85": {
+		"name": "Brazen Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 3, "spd": 3} }],
+		"max": false
+	},
+	"86": {
+		"name": "Brazen Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": false
+	},
+	"87": {
+		"name": "Brazen Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 7, "spd": 7} }],
+		"max": true
+	},
+	"88": {
+		"name": "Brazen Atk/Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"atk": 9, "spd": 10} }],
+		"max": true
+	},
+	"89": {
+		"name": "Brazen Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 3, "res": 3} }],
+		"max": false
+	},
+	"90": {
+		"name": "Brazen Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 5, "res": 5} }],
+		"max": false
+	},
+	"91": {
+		"name": "Brazen Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"def": 7, "res": 7} }],
+		"max": true
+	},
+	"92": {
+		"name": "Brazen Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "def": 3} }],
+		"max": false
+	},
+	"93": {
+		"name": "Brazen Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "def": 5} }],
+		"max": false
+	},
+	"94": {
+		"name": "Brazen Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "def": 7} }],
+		"max": true
+	},
+	"95": {
+		"name": "C Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"96": {
+		"name": "C Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"97": {
+		"name": "C Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"98": {
+		"name": "Close Counter",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "counter": 1},
+		"max": true
+	},
+	"99": {
+		"name": "Close Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"100": {
+		"name": "Close Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"101": {
+		"name": "Close Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 6, "res": 6} }],
+		"max": true
+	},
+	"102": {
+		"name": "Darting Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 2} }],
+		"max": false
+	},
+	"103": {
+		"name": "Darting Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4} }],
+		"max": false
+	},
+	"104": {
+		"name": "Darting Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 6} }],
+		"max": true
+	},
+	"105": {
+		"name": "Darting Blow 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 9} }],
+		"max": true
+	},
+	"106": {
+		"name": "Darting Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2} }],
+		"max": false
+	},
+	"107": {
+		"name": "Darting Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4} }],
+		"max": false
+	},
+	"108": {
+		"name": "Darting Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6} }],
+		"max": true
+	},
+	"109": {
+		"name": "Death Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2} }],
+		"max": false
+	},
+	"110": {
+		"name": "Death Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4} }],
+		"max": false
+	},
+	"111": {
+		"name": "Death Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6} }],
+		"max": true
+	},
+	"112": {
+		"name": "Death Blow 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 8} }],
+		"max": true
+	},
+	"113": {
+		"name": "Def/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1, "res": 1},
+		"max": false
+	},
+	"114": {
+		"name": "Def/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2, "res": 2},
+		"max": true
+	},
+	"115": {
+		"name": "Def/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"def": 3, "res": 3} }],
+		"max": false
+	},
+	"116": {
+		"name": "Def/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"117": {
+		"name": "Def/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"def": 5, "res": 5} }],
+		"max": true
+	},
+	"118": {
+		"name": "Def/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"119": {
+		"name": "Def/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"120": {
+		"name": "Def/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 6, "res": 6} }],
+		"max": true
+	},
+	"121": {
+		"name": "Defense +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 1},
+		"max": false
+	},
+	"122": {
+		"name": "Defense +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 2},
+		"max": false
+	},
+	"123": {
+		"name": "Defense +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"def": 3},
+		"max": true
+	},
+	"124": {
+		"name": "Defiant Atk 1",
+		"sp": 40,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"125": {
+		"name": "Defiant Atk 2",
+		"sp": 80,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"126": {
+		"name": "Defiant Atk 3",
+		"sp": 160,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": true
+	},
+	"127": {
+		"name": "Defiant Def 1",
+		"sp": 40,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"128": {
+		"name": "Defiant Def 2",
+		"sp": 80,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"129": {
+		"name": "Defiant Def 3",
+		"sp": 160,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["def"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": true
+	},
+	"130": {
+		"name": "Defiant Res 1",
+		"sp": 40,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"131": {
+		"name": "Defiant Res 2",
+		"sp": 80,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"132": {
+		"name": "Defiant Res 3",
+		"sp": 160,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["res"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": true
+	},
+	"133": {
+		"name": "Defiant Spd 1",
+		"sp": 40,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"134": {
+		"name": "Defiant Spd 2",
+		"sp": 80,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": false
+	},
+	"135": {
+		"name": "Defiant Spd 3",
+		"sp": 160,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "less", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["spd"], "team": "owner", "selfReq": [["hp", "less", 0.5]] }],
+		"max": true
+	},
+	"136": {
+		"name": "Distant Counter",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "counter": 1},
+		"max": true
+	},
+	"137": {
+		"name": "Distant Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"138": {
+		"name": "Distant Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"139": {
+		"name": "Distant Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 6, "res": 6} }],
+		"max": true
+	},
+	"140": {
+		"name": "Distant Def 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"max": true
+	},
+	"141": {
+		"name": "Dragonskin",
+		"sp": 300,
+		"prf": true,
+		"users": ["Robin: Fell Vessel"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4, "res": 4} }],
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"142": {
+		"name": "Earth Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 2} }],
+		"max": false
+	},
+	"143": {
+		"name": "Earth Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 4} }],
+		"max": false
+	},
+	"144": {
+		"name": "Earth Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"def": 6} }],
+		"max": true
+	},
+	"145": {
+		"name": "Fierce Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"146": {
+		"name": "Fierce Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2} }],
+		"max": false
+	},
+	"147": {
+		"name": "Fierce Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4} }],
+		"max": false
+	},
+	"148": {
+		"name": "Fierce Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6} }],
+		"max": true
+	},
+	"149": {
+		"name": "Fire Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
+		"max": false
+	},
+	"150": {
+		"name": "Fire Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 2} }],
+		"max": false
+	},
+	"151": {
+		"name": "Fire Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"atk": 6} }],
+		"max": true
+	},
+	"152": {
+		"name": "Flashing Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 5]], "attackCharge": 1 }],
+		"max": false
+	},
+	"153": {
+		"name": "Flashing Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 3]], "attackCharge": 1 }],
+		"max": false
+	},
+	"154": {
+		"name": "Flashing Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1 }],
+		"max": true
+	},
+	"155": {
+		"name": "Flashing Blade 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1, "trueDamage": 5 },
+			{"type": "preCombatConditionalEffects", "condition": [["statCompare", "visible", "spd", "greater", 1]], "preBattleTrueDamage": 5}],
+		"max": true
+	},
+	"156": {
+		"name": "Fort. Def/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "def": 3, "res": 3},
+		"max": false
+	},
+	"157": {
+		"name": "Fort. Def/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "def": 4, "res": 4},
+		"max": true
+	},
+	"158": {
+		"name": "Fort. Def/Res 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -2, "def": 6, "res": 6},
+		"max": true
+	},
+	"159": {
+		"name": "Fortress Def 1",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "def": 3},
+		"max": false
+	},
+	"160": {
+		"name": "Fortress Def 2",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "def": 4},
+		"max": false
+	},
+	"161": {
+		"name": "Fortress Def 3",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "def": 5},
+		"max": true
+	},
+	"162": {
+		"name": "Fortress Res 1",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "res": 3},
+		"max": false
+	},
+	"163": {
+		"name": "Fortress Res 2",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "res": 4},
+		"max": false
+	},
+	"164": {
+		"name": "Fortress Res 3",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": -3, "res": 5},
+		"max": true
+	},
+	"165": {
+		"name": "Fury 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 1, "spd": 1, "def": 1, "res": 1},
+		"skills": [["o", "Recoil 1"]],
+		"max": false
+	},
+	"166": {
+		"name": "Fury 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2, "spd": 2, "def": 2, "res": 2},
+		"skills": [["o", "Recoil 2"]],
+		"max": false
+	},
+	"167": {
+		"name": "Fury 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": 3, "res": 3},
+		"skills": [["o", "Recoil 3"]],
+		"max": true
+	},
+	"168": {
+		"name": "Fury 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 4, "spd": 4, "def": 4, "res": 4},
+		"skills": [["o", "Recoil 4"]],
+		"max": true
+	},
+	"169": {
+		"name": "G Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"170": {
+		"name": "G Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"171": {
+		"name": "G Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"172": {
+		"name": "G Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"173": {
+		"name": "G Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"174": {
+		"name": "G Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"175": {
+		"name": "Grani's Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Cavalry"]]] }],
+		"max": true
+	},
+	"176": {
+		"name": "Heavy Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}],
+		"max": false
+	},
+	"177": {
+		"name": "Heavy Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}],
+		"max": false
+	},
+	"178": {
+		"name": "Heavy Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}],
+		"max": true
+	},
+	"179": {
+		"name": "HP/Atk 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "atk": 1},
+		"max": false
+	},
+	"180": {
+		"name": "HP/Atk 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "atk": 2},
+		"max": true
+	},
+	"181": {
+		"name": "HP/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "def": 1},
+		"max": false
+	},
+	"182": {
+		"name": "HP/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "def": 2},
+		"max": true
+	},
+	"183": {
+		"name": "HP +3",
+		"sp": 40,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"184": {
+		"name": "HP +4",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"185": {
+		"name": "HP +5",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"186": {
+		"name": "HP/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "res": 1},
+		"max": false
+	},
+	"187": {
+		"name": "HP/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "res": 2},
+		"max": true
+	},
+	"188": {
+		"name": "HP/Spd 1",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3, "spd": 1},
+		"max": false
+	},
+	"189": {
+		"name": "HP/Spd 2",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4, "spd": 2},
+		"max": true
+	},
+	"190": {
+		"name": "Iote's Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Flying"]]] }],
+		"max": true
+	},
+	"191": {
+		"name": "Kestrel Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": false
+	},
+	"192": {
+		"name": "Kestrel Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": true
+	},
+	"193": {
+		"name": "Laws of Sacae",
+		"sp": 300,
+		"prf": true,
+		"users": ["Lyn: Lady of the Wind"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["distantAllies", 2, "greater", 2]], "statBuff": {"atk": 4, "spd": 4, "def": 4, "res": 4} }],
+		"max": true
+	},
+	"194": {
+		"name": "Life and Death 1",
+		"sp": 50,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": -3, "res": -3},
+		"max": false
+	},
+	"195": {
+		"name": "Life and Death 2",
+		"sp": 100,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 4, "spd": 4, "def": -4, "res": -4},
+		"max": false
+	},
+	"196": {
+		"name": "Life and Death 3",
+		"sp": 200,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 5, "spd": 5, "def": -5, "res": -5},
+		"max": true
+	},
+	"197": {
+		"name": "Mirror Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "res": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"198": {
+		"name": "Mirror Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"199": {
+		"name": "Mirror Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": true
+	},
+	"200": {
+		"name": "Mirror Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"201": {
+		"name": "Mirror Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": true
+	},
+	"202": {
+		"name": "Ostian Counter",
+		"sp": 350,
+		"prf": true,
+		"users": ["Hector: Brave Warrior"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
+		"skills": [["a", "Distant Counter"]],
+		"max": true
+	},
+	"203": {
+		"name": "R Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"204": {
+		"name": "R Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"205": {
+		"name": "R Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"206": {
+		"name": "R Duel Infantry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"207": {
+		"name": "R Duel Infantry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"208": {
+		"name": "R Duel Infantry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"209": {
+		"name": "Resistance +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 1},
+		"max": false
+	},
+	"210": {
+		"name": "Resistance +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 2},
+		"max": false
+	},
+	"211": {
+		"name": "Resistance +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"res": 3},
+		"max": true
+	},
+	"212": {
+		"name": "Scendscale",
+		"sp": 300,
+		"prf": true,
+		"users": ["Alm: Imperial Ascent"],
+		"type": "effect",
+		"effect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+			{"type": "variablePreCombat", "combatEffects": ["preBattleTrueDamage"], "key": "bonusDamage", "unit": "owner", "stat": "atk", "factor": 0.25, "max": 999},
+			{"type": "onAttack", "recoil": 7}],
+		"max": true
+	},
+	"213": {
+		"name": "Sorcery Blade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 1], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
+		"max": false
+	},
+	"214": {
+		"name": "Sorcery Blade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.5], ["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
+		"max": false
+	},
+	"215": {
+		"name": "Sorcery Blade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["allyInfo", 1, "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome"], 1, "greater"] ], "adaptive": 1 }],
+		"max": true
+	},
+	"216": {
+		"name": "Spd/Def 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 1, "def": 1},
+		"max": false
+	},
+	"217": {
+		"name": "Spd/Def 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 2, "def": 2},
+		"max": false
+	},
+	"218": {
+		"name": "Spd/Def Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 3, "def": 3} }],
+		"max": false
+	},
+	"219": {
+		"name": "Spd/Def Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 4, "def": 4} }],
+		"max": false
+	},
+	"220": {
+		"name": "Spd/Def Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 5, "def": 5} }],
+		"max": true
+	},
+	"221": {
+		"name": "Spd/Def Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"222": {
+		"name": "Spd/Def Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"223": {
+		"name": "Spd/Def Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "def"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"224": {
+		"name": "Spd/Def Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 2, "def": 2} }],
+		"max": false
+	},
+	"225": {
+		"name": "Spd/Def Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 4, "def": 4} }],
+		"max": false
+	},
+	"226": {
+		"name": "Spd/Def Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 6, "def": 6} }],
+		"max": true
+	},
+	"227": {
+		"name": "Spd/Res 1",
+		"sp": 80,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 1, "res": 1},
+		"max": false
+	},
+	"228": {
+		"name": "Spd/Res 2",
+		"sp": 160,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 2, "res": 2},
+		"max": false
+	},
+	"229": {
+		"name": "Spd/Res Bond 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 3, "res": 3} }],
+		"max": false
+	},
+	"230": {
+		"name": "Spd/Res Bond 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 4, "res": 4} }],
+		"max": false
+	},
+	"231": {
+		"name": "Spd/Res Bond 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 5, "res": 5} }],
+		"max": true
+	},
+	"232": {
+		"name": "Speed +1",
+		"sp": 30,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 1},
+		"max": false
+	},
+	"233": {
+		"name": "Speed +2",
+		"sp": 60,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 2},
+		"max": false
+	},
+	"234": {
+		"name": "Speed +3",
+		"sp": 120,
+		"prf": false,
+		"type": "passive",
+		"effect": {"spd": 3},
+		"max": true
+	},
+	"235": {
+		"name": "Steady Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 2, "def": 2} }],
+		"max": false
+	},
+	"236": {
+		"name": "Steady Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4, "def": 4} }],
+		"max": true
+	},
+	"237": {
+		"name": "Steady Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"238": {
+		"name": "Steady Posture 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "def": 2} }],
+		"max": false
+	},
+	"239": {
+		"name": "Steady Posture 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "def": 4} }],
+		"max": true
+	},
+	"240": {
+		"name": "Steady Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2} }],
+		"max": false
+	},
+	"241": {
+		"name": "Steady Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 4} }],
+		"max": false
+	},
+	"242": {
+		"name": "Steady Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 6} }],
+		"max": true
+	},
+	"243": {
+		"name": "Steady Stance 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 8}, "guard": 1 }],
+		"max": true
+	},
+	"244": {
+		"name": "Sturdy Blow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"245": {
+		"name": "Sturdy Blow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": true
+	},
+	"246": {
+		"name": "Sturdy Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "def": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"247": {
+		"name": "Sturdy Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"248": {
+		"name": "Sturdy Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": true
+	},
+	"249": {
+		"name": "Svalinn Shield",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "negateEffective", "condition": [["heroInfoCheck", "movetype", ["Armored"]]] }],
+		"max": true
+	},
+	"250": {
+		"name": "Swift Sparrow 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": false
+	},
+	"251": {
+		"name": "Swift Sparrow 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": true
+	},
+	"252": {
+		"name": "Swift Sparrow 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 6, "spd": 7} }],
+		"max": true
+	},
+	"253": {
+		"name": "Swift Stance 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 2, "res": 2} }],
+		"max": false
+	},
+	"254": {
+		"name": "Swift Stance 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4, "res": 4} }],
+		"max": true
+	},
+	"255": {
+		"name": "Swift Strike 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 2, "res": 2} }],
+		"max": false
+	},
+	"256": {
+		"name": "Swift Strike 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 4, "res": 4} }],
+		"max": true
+	},
+	"257": {
+		"name": "Triangle Adept 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 10},
+		"max": false
+	},
+	"258": {
+		"name": "Triangle Adept 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 15},
+		"max": false
+	},
+	"259": {
+		"name": "Triangle Adept 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": {"type": "combatEffect", "triangleAdept": 20},
+		"max": true
+	},
+	"260": {
+		"name": "Warding Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"res": 2} }],
+		"max": false
+	},
+	"261": {
+		"name": "Warding Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"res": 4} }],
+		"max": false
+	},
+	"262": {
+		"name": "Warding Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"res": 6} }],
+		"max": true
+	},
+	"263": {
+		"name": "Warding Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"264": {
+		"name": "Warding Stance 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 2} }],
+		"max": false
+	},
+	"265": {
+		"name": "Warding Stance 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 4} }],
+		"max": false
+	},
+	"266": {
+		"name": "Warding Stance 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 6} }],
+		"max": true
+	},
+	"267": {
+		"name": "Warding Stance 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 8}, "guard": 1 }],
+		"max": true
+	},
+	"268": {
+		"name": "Water Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 2} }],
+		"max": false
+	},
+	"269": {
+		"name": "Water Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 4} }],
+		"max": false
+	},
+	"270": {
+		"name": "Water Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"res": 6} }],
+		"max": true
+	},
+	"271": {
+		"name": "Wind Boost 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 2} }],
+		"max": false
+	},
+	"272": {
+		"name": "Wind Boost 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 4} }],
+		"max": false
+	},
+	"273": {
+		"name": "Wind Boost 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["statCompare", "visible", "HP", "greater", 3]], "statBuff": {"spd": 6} }],
+		"max": true
+	},
+	"274": {
+		"name": "AR-D Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"275": {
+		"name": "AR-D Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"276": {
+		"name": "AR-D Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "def"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"277": {
+		"name": "Atk/Spd Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "spd": 7}, "penaltyNeutralize": {"atk": 1, "spd": 1} }],
+		"max": true
+	},
+	"278": {
+		"name": "Atk/Res Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "res": 7}, "subEffect": [{"type": "onAttack", "recoil": 5}]} ],
+		"max": true
+	},
+	"279": {
+		"name": "Heavy Blade 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1, "trueDamage": 5},
+			{"type": "preCombatConditionalEffects", "condition": [["statCompare", "visible", "atk", "greater", 1]], "preBattleTrueDamage": 5}],
+		"max": true
+	},
+	"280": {
+		"name": "Brazen Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 3, "res": 3} }],
+		"max": false
+	},
+	"281": {
+		"name": "Brazen Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 5, "res": 5} }],
+		"max": false
+	},
+	"282": {
+		"name": "Brazen Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "less", 0.80]], "statBuff": {"spd": 7, "res": 7} }],
+		"max": true
+	},
+	"283": {
+		"name": "Life and Death 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 7, "spd": 7, "def": -5, "res": -5},
+		"max": true
+	},
+	"284": {
+		"name": "Ashera's Chosen",
+		"sp": 300,
+		"prf": true,
+		"users": ["Altina: Dawn's Trueblade"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false, "allyInfo", 1, "weapontype", ["beast", "breath"], "all", ""]], "statBuff": {"atk": 6, "def": 6} }],
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"285": {
+		"name": "Atk/Def Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"286": {
+		"name": "Atk/Def Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"287": {
+		"name": "Atk/Def Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "def"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"288": {
+		"name": "Mirror Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "res": 6}, "guard": 1 }],
+		"max": true
+	},
+	"289": {
+		"name": "Distant Ward",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
+		"max": true
+	},
+	"290": {
+		"name": "Spd/Res Solo 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 2, "res": 2} }],
+		"max": false
+	},
+	"291": {
+		"name": "Spd/Res Solo 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 4, "res": 4} }],
+		"max": false
+	},
+	"292": {
+		"name": "Spd/Res Solo 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 6, "res": 6} }],
+		"max": true
+	},
+	"293": {
+		"name": "Steady Posture 3",
+		"sp": 3000,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6, "def": 6}, "guard": 1 }],
+		"max": true
+	},
+	"294": {
+		"name": "Shield Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 1, "constant": 3, "min": 1}],
+		"max": false
+	},
+	"295": {
+		"name": "Shield Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 2, "constant": 6, "min": 2}],
+		"max": false
+	},
+	"296": {
+		"name": "Shield Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "session", "phase": "enemy", "multiplier": 3, "constant": 9, "min": 3}],
+		"max": true
+	},
+	"297": {
+		"name": "Blade Session 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 1, "constant": 1, "max": 3}],
+		"max": false
+	},
+	"298": {
+		"name": "Blade Session 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 2, "constant": 2, "max": 6}],
+		"max": false
+	},
+	"299": {
+		"name": "Blade Session 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "spd"], "key": "session", "phase": "player", "multiplier": 3, "constant": 3, "max": 9}],
+		"max": true
+	},
+	"300": {
+		"name": "Spd/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"301": {
+		"name": "Spd/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"302": {
+		"name": "Spd/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["spd", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"303": {
+		"name": "Sturdy Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "def": 6}, "guard": 1 }],
+		"max": true
+	},
+	"304": {
+		"name": "Atk/Def Push 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"atk": 7, "def": 7}, "subEffect": [{"type": "onAttack", "recoil": 5}]} ],
+		"max": true
+	},
+	"305": {
+		"name": "Close Foil",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"max": true
+	},
+	"306": {
+		"name": "Distant Foil",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "beast"]]], "statBuff": {"atk": 5, "def": 5}, "counter": 1 }],
+		"max": true
+	},
+	"307": {
+		"name": "Dragoon Shield",
+		"sp": 300,
+		"prf": true,
+		"users": ["Minerva: Princess-Knight"],
+		"type": "passive",
+		"effect": {"atk": 3, "spd": 3, "def": 3},
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"308": {
+		"name": "Atk/Spd Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "spd": 7} }],
+		"max": true
+	},
+	"309": {
+		"name": "Darting Breath",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 4}, "attackCharge": 1, "defenseCharge": 1 }],
+		"max": true
+	},
+	"310": {
+		"name": "Atk/Res Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "res": 7} }],
+		"max": true
+	},
+	"311": {
+		"name": "Bracing Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 6, "res": 6}, "guard": 1}],
+		"max": true
+	},
+	"312": {
+		"name": "Kestrel Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"atk": 6, "spd": 6}, "guard": 1}],
+		"max": true
+	},
+	"313": {
+		"name": "Steady Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 7, "def": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"314": {
+		"name": "Atk/Def Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"atk": 7, "def": 7} }],
+		"max": true
+	},
+	"315": {
+		"name": "Atk/Def Unity",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "def": 5}, "penaltyReverse": {"atk": 1, "def": 1} }],
+		"max": true
+	},
+	"316": {
+		"name": "Atk/Def Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"atk": 7, "def": 7}, "penaltyNeutralize": {"atk": 1, "def": 1} }],
+		"max": true
+	},
+	"317": {
+		"name": "AR-D Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 1, "constant": -1, "minValue": 1, "maxValue": 4, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"318": {
+		"name": "AR-D Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 2, "constant": -3 , "minValue": 1, "maxValue": 7, "allyReq": [["arStructure", true]]}],
+		"max": false
+	},
+	"319": {
+		"name": "AR-D Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 3, "constant": -5, "minValue": 1, "maxValue": 10, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"320": {
+		"name": "Atk/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"],  "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"321": {
+		"name": "Atk/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"322": {
+		"name": "Atk/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["atk", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"323": {
+		"name": "Dragonscale",
+		"sp": 300,
+		"prf": true,
+		"users": ["Robin: Fall Vessel"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 1.00]], "lull": {"atk": 6, "res": 6}, "defenseCharge": 1 }],
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"324": {
+		"name": "Close Def 4",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 8, "res": 8}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"max": true
+	},
+	"325": {
+		"name": "Def/Res Solo 4",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"def": 7, "res": 7} }],
+		"max": true
+	},
+	"326": {
+		"name": "Atk/Res Unity",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "res": 5}, "penaltyReverse": {"atk": 1, "res": 1} }],
+		"max": true
+	},
+	"327": {
+		"name": "Close Ward",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"],  ["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "breath", "staff"]]], "statBuff": {"atk": 5, "res": 5}, "counter": 1 }],
+		"max": true
+	},
+	"328": {
+		"name": "Swift Stance 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"spd": 6, "res": 6}, "guard": 1 }],
+		"max": true
+	},
+	"329": {
+		"name": "Swift Impact",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"spd": 7, "res": 10}, "enemyDouble": 1 }],
+		"max": true
+	},
+	"330": {
+		"name": "Def/Res Form 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 1, "constant": 0, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"331": {
+		"name": "Def/Res Form 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 1, "constant": 2, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": false
+	},
+	"332": {
+		"name": "Def/Res Form 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "stats": ["def", "res"], "key": "allyReq", "multiplier": 2, "constant": 1, "maxAllies": 3, "minAllies" : 1, "allyReq": [["distanceCheck", 2]]}],
+		"max": true
+	},
+	"333": {
+		"name": "R Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"334": {
+		"name": "B Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"335": {
+		"name": "Atk/Spd Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "spd": 3} }],
+		"max": false
+	},
+	"336": {
+		"name": "Atk/Spd Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "spd": 4} }],
+		"max": false
+	},
+	"337": {
+		"name": "Atk/Spd Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "spd": 5} }],
+		"max": true
+	},
+	"338": {
+		"name": "Atk/Spd Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "spd": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": true
+	},
+	"339": {
+		"name": "B Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"340": {
+		"name": "R Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"341": {
+		"name": "R Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"342": {
+		"name": "R Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"343": {
+		"name": "R Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"344": {
+		"name": "G Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"345": {
+		"name": "G Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"346": {
+		"name": "G Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"347": {
+		"name": "G Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"348": {
+		"name": "G Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"349": {
+		"name": "Atk/Spd Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "spd": 3} } ],
+		"max": false
+	},
+	"350": {
+		"name": "Atk/Spd Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "spd": 4} } ],
+		"max": false
+	},
+	"351": {
+		"name": "Atk/Spd Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "spd": 5} } ],
+		"max": true
+	},
+	"352": {
+		"name": "Atk/Spd Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 7, "spd": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"atk": 2, "spd": 2} } ],
+		"max": true
+	},
+	"353": {
+		"name": "Atk/Def Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "def": 3} } ],
+		"max": false
+	},
+	"354": {
+		"name": "Atk/Def Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "def": 4} } ],
+		"max": false
+	},
+	"355": {
+		"name": "Atk/Def Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "def": 5} } ],
+		"max": true
+	},
+	"356": {
+		"name": "Atk/Def Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 7, "def": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"atk": 2, "def": 2} } ],
+		"max": true
+	},
+	"357": {
+		"name": "Atk/Def Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "def": 3} }],
+		"max": false
+	},
+	"358": {
+		"name": "Atk/Def Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "def": 4} }],
+		"max": false
+	},
+	"359": {
+		"name": "Atk/Def Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "def": 5} }],
+		"max": true
+	},
+	"360": {
+		"name": "Atk/Def Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "def": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "def": 2} }],
+		"max": true
+	},
+	"361": {
+		"name": "C Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"362": {
+		"name": "C Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"363": {
+		"name": "C Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"364": {
+		"name": "C Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"365": {
+		"name": "Atk/Res Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 3, "res": 3} } ],
+		"max": false
+	},
+	"366": {
+		"name": "Atk/Res Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 4, "res": 4} } ],
+		"max": false
+	},
+	"367": {
+		"name": "Atk/Res Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"atk": 5, "res": 5} } ],
+		"max": true
+	},
+	"368": {
+		"name": "Atk/Res Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": true
+	},
+	"369": {
+		"name": "R Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"370": {
+		"name": "B Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"371": {
+		"name": "B Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4 },
+		"max": false
+	},
+	"372": {
+		"name": "B Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"373": {
+		"name": "B Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"374": {
+		"name": "Laws of Sacae II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Lyn: Lady of the Wind"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player", "distantAllies", 2, "greater", 2]], "statBuff": {"atk": 6, "spd": 6, "def": 6, "res": 6} },
+			{"type": "conditionalCombat", "condition": [["phase", "player", "distantAllies", 2, "greater", 1], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]], ["statCompare", "combat", "spd", "greater", 5] ], "sweep": 1 }],
+		"max": true
+	},
+	"375": {
+		"name": "Dragonskin II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Robin: Fell Vessel"],
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy", "enemyhp", "greater", 0.75]], "statBuff": {"atk": 6, "spd": 6, "def": 6, "res": 6}, "buffNeutralize": {"atk": 1, "spd": 1, "def": 1, "res": 1} }],
+		"skills": [["a", "Iote's Shield"]],
+		"max": true
+	},
+	"376": {
+		"name": "Def/Res Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 3, "res": 3} }],
+		"max": false
+	},
+	"377": {
+		"name": "Def/Res Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 4, "res": 4} }],
+		"max": false
+	},
+	"378": {
+		"name": "Def/Res Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 5, "res": 5} }],
+		"max": true
+	},
+	"379": {
+		"name": "Def/Res Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"def": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "spd": 2} }],
+		"max": true
+	},
+	"380": {
+		"name": "Spd/Res Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 7, "res": 7} }],
+		"max": true
+	},
+	"381": {
+		"name": "AR-D Atk/Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["atk", "spd"],  "key": "structureReq", "team": "owner", "multiplier": 4, "constant": -9, "minValue": 3, "maxValue": 11, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"382": {
+		"name": "Def/Res Ideal 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 3, "res": 3} } ],
+		"max": false
+	},
+	"383": {
+		"name": "Def/Res Ideal 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 4, "res": 4} } ],
+		"max": false
+	},
+	"384": {
+		"name": "Def/Res Ideal 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 5, "res": 5} } ],
+		"max": true
+	},
+	"385": {
+		"name": "Def/Res Ideal 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1, "bonus", "player", "combat"]], "statBuff": {"def": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["hp", "greater", 1], ["bonus", "player", "combat"]], "statBuff": {"def": 2, "res": 2} } ],
+		"max": true
+	},
+	"386": {
+		"name": "Surge Sparrow",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "statBuff": {"atk": 7, "spd": 7}},
+			{"type": "conditionalEffects", "condition": [["phase", "player"], ["specialType", ["attack-battle"]]], 
+				"subEffect": [{"type": "onSpecial", "heal": ["attacker", "hp", "variable", "", {"key": "specialCD", "factor": 0.2, "constant": 0.1, "max": 1}] }] }],
+		"max": true
+	},
+	"387": {
+		"name": "Close Reversal",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 5}, "counter": 1 }],
+		"max": true
+	},
+	"388": {
+		"name": "Atk/Spd Unity",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["distantAllies", 2, "greater", 1]], "statBuff": {"atk": 5, "spd": 5}, "penaltyReverse": {"atk": 1, "spd": 1} }],
+		"max": true
+	},
+	"389": {
+		"name": "Distant Pressure",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "counter": 1},
+			{"type": "conditionalEffects", "condition": [["hp", "greater", 0.25]], "statBuff": {"spd": 5}, "subEffect": [{"type": "onAttack", "recoil": 5}] }],
+		"max": true
+	},
+	"390": {
+		"name": "Spd/Def Solo 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", false]], "statBuff": {"spd": 7, "def": 7} }],
+		"max": true
+	},
+	"391": {
+		"name": "C Duel Infantry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"392": {
+		"name": "Atk/Res Catch 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 3, "res": 3} }],
+		"max": false
+	},
+	"393": {
+		"name": "Atk/Res Catch 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 4, "res": 4} }],
+		"max": false
+	},
+	"394": {
+		"name": "Atk/Res Catch 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 5, "res": 5} }],
+		"max": true
+	},
+	"395": {
+		"name": "Atk/Res Catch 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0, "penalty", "enemy", "combat"]], "statBuff": {"atk": 7, "res": 7} },
+			{"type": "conditionalCombatStats", "condition": [["enemyhp", "greater", 1.0], ["penalty", "enemy", "combat"]], "statBuff": {"atk": 2, "res": 2} }],
+		"max": true
+	},
+	"396": {
+		"name": "AR-D Def/Res 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "variableStats", "condition": [["sideCheck", "2"]], "stats": ["def", "res"],  "key": "structureReq", "team": "owner", "multiplier": 4, "constant": -9, "minValue": 3, "maxValue": 11, "allyReq": [["arStructure", true]]}],
+		"max": true
+	},
+	"397": {
+		"name": "G Duel Cavalry 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"398": {
+		"name": "G Duel Cavalry 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"399": {
+		"name": "G Duel Cavalry 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"400": {
+		"name": "G Duel Cavalry 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"401": {
+		"name": "C Duel Flying 1",
+		"sp": 70,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 3},
+		"max": false
+	},
+	"402": {
+		"name": "C Duel Flying 2",
+		"sp": 150,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 4},
+		"max": false
+	},
+	"403": {
+		"name": "C Duel Flying 3",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5},
+		"max": true
+	},
+	"404": {
+		"name": "C Duel Flying 4",
+		"sp": 300,
+		"prf": false,
+		"type": "passive",
+		"effect": {"hp": 5, "atk": 2, "spd": 2, "def": 2, "res": 2},
+		"max": true
+	},
+	"405": {
+		"name": "Spd/Def Bond 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["adjacent", true]], "statBuff": {"spd": 7, "def": 7}, "penaltyNeutralize": {"spd": 1, "def": 1} }],
+		"max": true
+	},
+	"406": {
+		"name": "Distant Stance",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"res": 5}, "counter": 1 }],
+		"max": true
+	}
+
+
+	
+}

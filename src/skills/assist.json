@@ -1,0 +1,645 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"range": 0,
+		"prf": false,
+		"type": [""],
+		"max": true
+	},
+	"1": {
+		"name": "Ardent Sacrifice",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["health"],
+		"effect": {"healthType": "sacrifice", "healMax": 10, "transferMin": 10},
+		"max": true
+	},
+	"2": {
+		"name": "Dance",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["dance"],
+		"effect": {},
+		"max": true
+	},
+	"3": {
+		"name": "Draw Back",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": -1, "other": -1},
+		"max": true
+	},
+	"4": {
+		"name": "Future Vision",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Lucina: Glorious Archer"],
+		"type": ["movement"],
+		"effect": {"owner": 1, "other": -1, 
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] }] },
+		"max": true
+	},
+	"5": {
+		"name": "Gray Waves",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Azura: Vallite Songstress"],
+		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Gray Waves Buff"]],
+		"max": true
+	},
+	"6": {
+		"name": "Harsh Command+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["neutralize"],
+		"effect": {"neutralize": ["harsh", "restore"]},
+		"max": true
+	},
+	"7": {
+		"name": "Harsh Command",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["neutralize"],
+		"effect": {"neutralize": ["harsh"]},
+		"max": true
+	},
+	"8": {
+		"name": "Heal",
+		"sp": 50,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 5, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"max": false
+	},
+	"9": {
+		"name": "Martyr+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"]},
+		"max": true
+	},
+	"10": {
+		"name": "Martyr",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": "martyr", "modifiers": ["martyr"]},
+		"cdTrigger": 1,
+		"max": false
+	},
+	"11": {
+		"name": "Mend",
+		"sp": 100,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 10, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"max": false
+	},
+	"12": {
+		"name": "Physic+",
+		"sp": 300,
+		"range": 2,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"max": true
+	},
+	"13": {
+		"name": "Physic",
+		"sp": 200,
+		"range": 2,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"max": false
+	},
+	"14": {
+		"name": "Pivot",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": 2, "other": 0},
+		"max": true
+	},
+	"15": {
+		"name": "Rally Atk/Def+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 6, "def": 6} },
+		"max": true
+	},
+	"16": {
+		"name": "Rally Atk/Def",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 3, "def": 3} },
+		"max": true
+	},
+	"17": {
+		"name": "Rally Atk/Res",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 3, "res": 3} },
+		"max": true
+	},
+	"18": {
+		"name": "Rally Atk/Spd+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 6, "spd": 6} },
+		"max": true
+	},
+	"19": {
+		"name": "Rally Atk/Spd",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 6, "spd": 6} },
+		"max": true
+	},
+	"20": {
+		"name": "Rally Attack",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 4} },
+		"max": true
+	},
+	"21": {
+		"name": "Rally Def/Res+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"def": 6, "res": 6} },
+		"max": true
+	},
+	"22": {
+		"name": "Rally Def/Res",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"def": 3, "res": 3} },
+		"max": true
+	},
+	"23": {
+		"name": "Rally Defense",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"def": 4} },
+		"max": true
+	},
+	"24": {
+		"name": "Rally Resistance",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"res": 4} },
+		"max": true
+	},
+	"25": {
+		"name": "Rally Spd/Def+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 6, "def": 6} },
+		"max": true
+	},
+	"26": {
+		"name": "Rally Spd/Def",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 3, "def": 3} },
+		"max": true
+	},
+	"27": {
+		"name": "Rally Spd/Res+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 6, "res": 6} },
+		"max": true
+	},
+	"28": {
+		"name": "Rally Spd/Res",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 3, "res": 3} },
+		"max": true
+	},
+	"29": {
+		"name": "Rally Speed",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 4} },
+		"max": true
+	},
+	"30": {
+		"name": "Rally Up Atk+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 6, "up": 1} },
+		"max": true
+	},
+	"31": {
+		"name": "Rally Up Atk",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 4, "up": 1} },
+		"max": true
+	},
+	"32": {
+		"name": "Rally Up Res+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"res": 6, "up": 1} },
+		"max": true
+	},
+	"33": {
+		"name": "Rally Up Res",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"res": 4, "up": 1} },
+		"max": true
+	},
+	"34": {
+		"name": "Reciprocal Aid",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["health"],
+		"effect": {"healthType": "swap"},
+		"max": true
+	},
+	"35": {
+		"name": "Reconcile",
+		"sp": 100,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 7, "mod": 0, "selfHeal": 7, "modifiers": []},
+		"max": false
+	},
+	"36": {
+		"name": "Recover+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 15, "mod": 10, "selfHeal": 0, "modifiers": []},
+		"max": true
+	},
+	"37": {
+		"name": "Recover",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 15, "mod": 0, "selfHeal": 0, "modifiers": []},
+		"cdTrigger": 1,
+		"max": false
+	},
+	"38": {
+		"name": "Rehabilitate+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 7, "mod": -10, "selfHeal": 0, "modifiers": ["rehab"]},
+		"max": true
+	},
+	"39": {
+		"name": "Rehabilitate",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 7, "mod": 7, "selfHeal": 0, "modifiers": ["rehab"]},
+		"cdTrigger": 1,
+		"max": false
+	},
+	"40": {
+		"name": "Reposition",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": 0, "other": -2},
+		"max": true
+	},
+	"41": {
+		"name": "Restore+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["restore"]},
+		"max": true
+	},
+	"42": {
+		"name": "Restore",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["restore"]},
+		"max": false
+	},
+	"43": {
+		"name": "Sacrifice",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Micaiah: Priestess of Dawn", "Micaiah: Queen of Dawn", "Micaiah: Dawn Wind's Duo"],
+		"type": ["health", "neutralize"],
+		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":1, "neutralize": ["harsh"]},
+		"max": true
+	},
+	"44": {
+		"name": "Shove",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": 0, "other": 1},
+		"max": true
+	},
+	"45": {
+		"name": "Sing",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["dance"],
+		"effect": {},
+		"max": true
+	},
+	"46": {
+		"name": "Smite",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": 0, "other": 2},
+		"max": true
+	},
+	"47": {
+		"name": "Swap",
+		"sp": 150,
+		"range": 1,
+		"prf": false,
+		"type": ["movement"],
+		"effect": {"owner": 1, "other": -1},
+		"max": true
+	},
+	"48": {
+		"name": "Rally Atk/Res+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"atk": 6, "res": 6} },
+		"max": true
+	},
+	"49": {
+		"name": "Gentle Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Peony: Sweet Dream", "Peony: Álfar Dream Duo"],
+		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Gentle Dream Buff"]],
+		"max": true
+	},
+	"50": {
+		"name": "Play",
+		"sp": 150,
+		"range": 1,
+		"prf": true,
+		"users": ["Nils: Bright Bard"],
+		"type": ["dance"],
+		"effect": {},
+		"max": true
+	},
+	"51": {
+		"name": "To Change Fate!",
+		"sp": 500,
+		"range": 1,
+		"prf": true,
+		"users": ["Chrom: Crowned Exalt"],
+		"type": ["movement"],
+		"effect": {"owner": 0, "other": -2, 
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] },
+				{"type": "assistEffect", "subtype": "debuff", "checkType": "reqCheck", "list": ["isolation"], "team": "owner", "selfReq": [["always"]] }] },
+		"skills": [["o", "To Change Fate! Buff"]],
+		"max": true
+	},
+	"52": {
+		"name": "Whimsical Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Mirabilis: Daydream", "Mirabilis: Sugarplum Vision"],
+		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Whimsical Dream Buff/Debuff"]],
+		"max": true
+	},
+	"53": {
+		"name": "Sweet Dreams",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Plumeria: Lewd Dream", "Plumeria: Temptation Anew"],
+		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Sweet Dreams Buff/Debuff"]],
+		"max": true
+	},
+	"54": {
+		"name": "Rally Up Spd+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 6, "up": 1} },
+		"max": true
+	},
+	"55": {
+		"name": "Rally Up Spd",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"spd": 4, "up": 1} },
+		"max": true
+	},
+	"56": {
+		"name": "Rescue+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": -1, "other": -1},
+		"max": true
+	},
+	"57": {
+		"name": "Rescue",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": -1, "other": -1},
+		"max": false
+	},
+	"58": {
+		"name": "Frightful Dream",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Triandra: Nightmare"],
+		"type": ["dance"],
+		"effect": {},
+		"skills": [["o", "Frightful Dream Debuff"]],
+		"max": true
+	},
+	"59": {
+		"name": "Return+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": -2},
+		"max": true
+	},
+	"60": {
+		"name": "Return",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": -2},
+		"max": false
+	},
+	"61": {
+		"name": "Nudge+",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0.5, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": 1},
+		"max": true
+	},
+	"62": {
+		"name": "Nudge",
+		"sp": 200,
+		"range": 1,
+		"prf": false,
+		"type": ["movement", "heal"],
+		"effect": {"atk": 0, "min": 8, "mod": 0, "selfHeal": 0, "modifiers": ["nullCharge"],
+			"owner": 0, "other": 1},
+		"max": false
+	},
+	"63": {
+		"name": "Maiden's Solace",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Micaiah: Radiant Queen"],
+		"type": ["health", "neutralize"],
+		"effect": {"healthType": "sacrifice", "healMax": 99, "transferMin":1, "neutralize": ["harsh", "restore"]},
+		"max": true
+	},
+	"64": {
+		"name": "Foul Play",
+		"sp": 400,
+		"range": 3,
+		"prf": true,
+		"users": ["Yuri: Ashen Valiant"],
+		"type": ["movement"],
+		"effect": {"owner": 1, "other": -1, "variable": true},
+		"max": true
+	},
+	"65": {
+		"name": "Rally Up Def+",
+		"sp": 400,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"def": 6, "up": 1} },
+		"max": true
+	},
+	"66": {
+		"name": "Rally Up Def",
+		"sp": 300,
+		"range": 1,
+		"prf": false,
+		"type": ["rally"],
+		"effect": {"rally": {"def": 4, "up": 1} },
+		"max": true
+	},
+	"67": {
+		"name": "Future Vision II",
+		"sp": 400,
+		"range": 1,
+		"prf": true,
+		"users": ["Lucina: Glorious Archer"],
+		"type": ["movement"],
+		"effect": {"owner": 1, "other": -1, 
+			"subeffect": [{"type": "assistAction", "subtype": "buff", "checkType": "reqCheck", "list": ["galeforce"], "team": "owner", "selfReq": [["always"]] }] },
+		"skills": [["o", "Future Vision II Debuff"]],
+		"max": true
+	}
+}

@@ -1,0 +1,3506 @@
+{
+	"0": {
+		"name": "",
+		"sp": 0,
+		"prf": false,
+		"type": "",
+		"max": true
+	},	
+	"1": {
+		"name": "Air Orders 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"2": {
+		"name": "Air Orders 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"3": {
+		"name": "Air Orders 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"4": {
+		"name": "Armor March 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
+		"max": false
+	},
+	"5": {
+		"name": "Armor March 2",
+		"sp": 120,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
+		"max": false
+	},
+	"6": {
+		"name": "Armor March 3",
+		"sp": 240,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1] ], "selfReq": [["allyInfo", 1, "movetype", ["Armored"], 1, "greater"]] }],
+		"max": true
+	},
+	"7": {
+		"name": "Atk Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"8": {
+		"name": "Atk Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"9": {
+		"name": "Atk Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"10": {
+		"name": "Atk Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"11": {
+		"name": "Atk Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"12": {
+		"name": "Atk Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": true
+	},
+	"13": {
+		"name": "Atk/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"14": {
+		"name": "Atk/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"15": {
+		"name": "Atk/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"16": {
+		"name": "Atk Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"17": {
+		"name": "Atk Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"18": {
+		"name": "Atk Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["atk"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"19": {
+		"name": "Atk Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"20": {
+		"name": "Atk Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"21": {
+		"name": "Atk Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": true
+	},
+	"22": {
+		"name": "Axe Experience 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"23": {
+		"name": "Axe Experience 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"24": {
+		"name": "Axe Experience 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"25": {
+		"name": "Axe Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"26": {
+		"name": "Axe Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"27": {
+		"name": "Axe Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"28": {
+		"name": "B Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"29": {
+		"name": "B Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"30": {
+		"name": "B Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"31": {
+		"name": "B Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"32": {
+		"name": "B Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"33": {
+		"name": "B Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"34": {
+		"name": "Beast Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"35": {
+		"name": "Beast Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"36": {
+		"name": "Beast Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"37": {
+		"name": "Beast Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"38": {
+		"name": "Beast Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"39": {
+		"name": "Beast Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"40": {
+		"name": "Bow Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"41": {
+		"name": "Bow Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"42": {
+		"name": "Bow Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"43": {
+		"name": "Bow Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"44": {
+		"name": "Bow Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"45": {
+		"name": "Bow Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"46": {
+		"name": "Breath of Life 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"max": false
+	},
+	"47": {
+		"name": "Breath of Life 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"max": false
+	},
+	"48": {
+		"name": "Breath of Life 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "buff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 1, "reference": false, "team": "owner", "from": "owner"}]}]  }],
+		"max": true
+	},
+	"49": {
+		"name": "Chaos Named",
+		"sp": 300,
+		"prf": true,
+		"users": ["Yune: Chaos Goddess"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["highest"], "team": "enemy", "effectReq": [["cardinalRC", true, 1, -1], ["statCompare", "visible", "res", "greater", 3] ], 
+			"highMod": {"atk": -15, "spd": 0, "def": 0, "res": 0} }],
+		"max": true
+	},
+	"50": {
+		"name": "Close Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 2, "res": 2} }] }],
+		"max": false
+	},
+	"51": {
+		"name": "Close Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 3, "res": 3} }] }],
+		"max": false
+	},
+	"52": {
+		"name": "Close Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"max": true
+	},
+	"53": {
+		"name": "Dagger Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"54": {
+		"name": "Dagger Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"55": {
+		"name": "Dagger Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"56": {
+		"name": "Def Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"57": {
+		"name": "Def Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"58": {
+		"name": "Def Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def"], "checkStats": ["def"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"59": {
+		"name": "Def Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"60": {
+		"name": "Def Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"61": {
+		"name": "Def Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": true
+	},
+	"62": {
+		"name": "Def Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"63": {
+		"name": "Def Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"64": {
+		"name": "Def Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["def"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"65": {
+		"name": "Def Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"66": {
+		"name": "Def Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"67": {
+		"name": "Def Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": true
+	},
+	"68": {
+		"name": "Distant Guard 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 2, "res": 2} }] }],
+		"max": false
+	},
+	"69": {
+		"name": "Distant Guard 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 3, "res": 3} }] }],
+		"max": false
+	},
+	"70": {
+		"name": "Distant Guard 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"max": true
+	},
+	"71": {
+		"name": "Divine Fang",
+		"sp": 300,
+		"prf": true,
+		"users": ["Naga: Dragon Divinity"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["dragonEffective"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"72": {
+		"name": "Dragon Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"73": {
+		"name": "Dragon Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"74": {
+		"name": "Dragon Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"75": {
+		"name": "Drive Atk 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 2}],
+		"max": false
+	},
+	"76": {
+		"name": "Drive Atk 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 3}],
+		"max": true
+	},
+	"77": {
+		"name": "Drive Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 2}],
+		"max": false
+	},
+	"78": {
+		"name": "Drive Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 3}],
+		"max": true
+	},
+	"79": {
+		"name": "Drive Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 2}],
+		"max": false
+	},
+	"80": {
+		"name": "Drive Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 3}],
+		"max": true
+	},
+	"81": {
+		"name": "Drive Spd 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 2}],
+		"max": false
+	},
+	"82": {
+		"name": "Drive Spd 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 3}],
+		"max": true
+	},
+	"83": {
+		"name": "Even Atk Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"84": {
+		"name": "Even Atk Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"85": {
+		"name": "Even Atk Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"86": {
+		"name": "Even Def Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"87": {
+		"name": "Even Def Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"88": {
+		"name": "Even Def Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"89": {
+		"name": "Even Res Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"90": {
+		"name": "Even Res Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"91": {
+		"name": "Even Res Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"92": {
+		"name": "Even Spd Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"93": {
+		"name": "Even Spd Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"94": {
+		"name": "Even Spd Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"95": {
+		"name": "Flier Guidance 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": false
+	},
+	"96": {
+		"name": "Flier Guidance 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": false
+	},
+	"97": {
+		"name": "Flier Guidance 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": true
+	},
+	"98": {
+		"name": "Fortify Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"99": {
+		"name": "Fortify Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"100": {
+		"name": "Fortify Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"101": {
+		"name": "Fortify Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"102": {
+		"name": "Fortify Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"103": {
+		"name": "Fortify Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"104": {
+		"name": "Fortify Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"105": {
+		"name": "Fortify Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"106": {
+		"name": "Fortify Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"107": {
+		"name": "Fortify Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"108": {
+		"name": "Fortify Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"109": {
+		"name": "G Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"110": {
+		"name": "G Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"111": {
+		"name": "G Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"112": {
+		"name": "G Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"113": {
+		"name": "G Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"114": {
+		"name": "G Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"115": {
+		"name": "Glare",
+		"sp": 300,
+		"prf": true,
+		"users": ["Nailah: Unflinching Eye", "Nailah: Blessed Queen"],
+		"type": "effect",
+		"effect": [{"type": "onAttack", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["gravity"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}] }],
+		"max": true
+	},
+	"116": {
+		"name": "Goad Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"117": {
+		"name": "Goad Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"118": {
+		"name": "Goad Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"119": {
+		"name": "Goad Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"120": {
+		"name": "Goad Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"121": {
+		"name": "Ground Orders 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"122": {
+		"name": "Ground Orders 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5]], "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": false
+	},
+	"123": {
+		"name": "Ground Orders 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"124": {
+		"name": "Guidance 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 1.0]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": false
+	},
+	"125": {
+		"name": "Guidance 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "condition": [["hp", "greater", 0.5]], "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": false
+	},
+	"126": {
+		"name": "Guidance 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "warp", "subtype": "warpTarget", "effectReq": [["heroInfoCheck", "movetype", ["Armored", "Infantry"]], ["distanceCheck", 2] ], "effect" : "warp", "range": 1}],
+		"max": true
+	},
+	"127": {
+		"name": "Hone Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"128": {
+		"name": "Hone Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"129": {
+		"name": "Hone Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"130": {
+		"name": "Hone Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"131": {
+		"name": "Hone Atk 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"132": {
+		"name": "Hone Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"133": {
+		"name": "Hone Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"134": {
+		"name": "Hone Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"135": {
+		"name": "Hone Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"136": {
+		"name": "Hone Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"137": {
+		"name": "Hone Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": false
+	},
+	"138": {
+		"name": "Hone Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"139": {
+		"name": "Hone Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"140": {
+		"name": "Human Virtue",
+		"sp": 300,
+		"prf": true,
+		"users": ["Roy: Blazing Lion"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner",
+			"effectReq": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"]], ["distanceCheck", 1]],
+			"selfReq": [["allyInfo", 1, "weapontype", ["sword", "lance", "axe", "bow", "dagger", "redtome", "bluetome", "greentome", "colorlesstome", "staff"], 1, "greater"]] }],
+		"max": true
+	},
+	"141": {
+		"name": "Inf. Hexblade 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": {"type": "combatEffect", "adaptive": 1} }],
+		"max": false
+	},
+	"142": {
+		"name": "Inf. Hexblade 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": {"type": "combatEffect", "adaptive": 1, "statBuff": {"atk": 1, "spd": 1}} }],
+		"max": false
+	},
+	"143": {
+		"name": "Inf. Hexblade 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "bow", "dagger"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": {"type": "combatEffect", "adaptive": 1, "statBuff": {"atk": 2, "spd": 2}} }],
+		"max": true
+	},
+	"144": {
+		"name": "Infantry Breath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "attackCharge": 1, "defenseCharge": 1 }] }],
+		"max": false
+	},
+	"145": {
+		"name": "Infantry Breath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 1, "res": 1}, "attackCharge": 1, "defenseCharge": 1 }] }],
+		"max": false
+	},
+	"146": {
+		"name": "Infantry Breath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 1]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["phase", "enemy"]], "statBuff": {"def": 2, "res": 2}, "attackCharge": 1, "defenseCharge": 1 }] }],
+		"max": true
+	},
+	"147": {
+		"name": "Infantry Flash 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 5]], "attackCharge": 1 }] }],
+		"max": false
+	},
+	"148": {
+		"name": "Infantry Flash 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 3]], "attackCharge": 1 }] }],
+		"max": false
+	},
+	"149": {
+		"name": "Infantry Flash 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "spd", "greater", 1]], "attackCharge": 1 }] }],
+		"max": true
+	},
+	"150": {
+		"name": "Infantry Pulse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 5]] }],
+		"max": false
+	},
+	"151": {
+		"name": "Infantry Pulse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 3]] }],
+		"max": false
+	},
+	"152": {
+		"name": "Infantry Pulse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["statCompare", "visible", "HP", "greater", 1]] }],
+		"max": true
+	},
+	"153": {
+		"name": "Infantry Rush 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 5]], "attackCharge": 1}] }],
+		"max": false
+	},
+	"154": {
+		"name": "Infantry Rush 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 3]], "attackCharge": 1}] }],
+		"max": false
+	},
+	"155": {
+		"name": "Infantry Rush 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["heroInfoCheck", "movetype", ["Infantry"]], ["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare", "combat", "atk", "greater", 1]], "attackCharge": 1}] }],
+		"max": true
+	},
+	"156": {
+		"name": "Joint Hone Atk",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"157": {
+		"name": "Joint Hone Spd",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"158": {
+		"name": "Lance Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"159": {
+		"name": "Lance Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"160": {
+		"name": "Lance Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"161": {
+		"name": "Odd Atk Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"162": {
+		"name": "Odd Atk Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"163": {
+		"name": "Odd Atk Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"164": {
+		"name": "Odd Def Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"165": {
+		"name": "Odd Def Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"166": {
+		"name": "Odd Def Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"167": {
+		"name": "Odd Res Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"168": {
+		"name": "Odd Res Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"169": {
+		"name": "Odd Res Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"170": {
+		"name": "Odd Spd Wave 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"171": {
+		"name": "Odd Spd Wave 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": false
+	},
+	"172": {
+		"name": "Odd Spd Wave 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["always"]] }],
+		"max": true
+	},
+	"173": {
+		"name": "Ostia's Pulse",
+		"sp": 300,
+		"prf": true,
+		"users": ["Hector: Marquess of Ostia"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["tactic", "true"]] }],
+		"max": true
+	},
+	"174": {
+		"name": "Panic Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 5] ] }],
+		"max": false
+	},
+	"175": {
+		"name": "Panic Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3] ] }],
+		"max": false
+	},
+	"176": {
+		"name": "Panic Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["panic"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 1] ] }],
+		"max": true
+	},
+	"177": {
+		"name": "Pulse Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 1, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]]} ]}]  }],
+		"max": false
+	},
+	"178": {
+		"name": "Pulse Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]]} ]}]  }],
+		"max": false
+	},
+	"179": {
+		"name": "Pulse Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 1, "stats": ["special"], "range": 2, "reference": true, "team": "enemy", "from": "enemy", "effectReq": [["specialReady", "enemy", false]] }]  }],
+		"max": true
+	},
+	"180": {
+		"name": "R Tome Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"181": {
+		"name": "R Tome Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"182": {
+		"name": "R Tome Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"183": {
+		"name": "R Tome Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"184": {
+		"name": "R Tome Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"185": {
+		"name": "R Tome Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"186": {
+		"name": "Res Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"187": {
+		"name": "Res Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"188": {
+		"name": "Res Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["res"], "checkStats": ["res"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"189": {
+		"name": "Res Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"190": {
+		"name": "Res Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"191": {
+		"name": "Res Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": true
+	},
+	"192": {
+		"name": "Res Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"193": {
+		"name": "Res Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"194": {
+		"name": "Res Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["res"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"195": {
+		"name": "Res Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"196": {
+		"name": "Res Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"197": {
+		"name": "Res Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["res"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": true
+	},
+	"198": {
+		"name": "Rouse Atk/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"199": {
+		"name": "Rouse Atk/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"200": {
+		"name": "Rouse Atk/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"201": {
+		"name": "Savage Blow 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"202": {
+		"name": "Savage Blow 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"203": {
+		"name": "Savage Blow 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["hp"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": true
+	},
+	"204": {
+		"name": "Solitary Dream",
+		"sp": 300,
+		"prf": true,
+		"users": ["Tiki: Torpid Dragon"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "mobility+"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"205": {
+		"name": "Sparkling Boost",
+		"sp": 300,
+		"prf": true,
+		"users": ["Eir: Merciful Death"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 10, "stats": ["hp"], "checkStats": ["damage"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"206": {
+		"name": "Spd Opening 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 2, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"207": {
+		"name": "Spd Opening 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"208": {
+		"name": "Spd Opening 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["spd"], "checkStats": ["spd"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"209": {
+		"name": "Spd Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"210": {
+		"name": "Spd Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": false
+	},
+	"211": {
+		"name": "Spd Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "res", "greater", 1] ] }],
+		"max": true
+	},
+	"212": {
+		"name": "Spd Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 3, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"213": {
+		"name": "Spd Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 5, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": false
+	},
+	"214": {
+		"name": "Spd Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["stats"], "value": 7, "stats": ["spd"], "range": 2, "reference": false, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"215": {
+		"name": "Spd Tactic 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"216": {
+		"name": "Spd Tactic 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": false
+	},
+	"217": {
+		"name": "Spd Tactic 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd"], "team": "owner", "effectReq": [["tactic", "true"], ["distanceCheck", 2] ] }],
+		"max": true
+	},
+	"218": {
+		"name": "Spur Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 2}],
+		"max": false
+	},
+	"219": {
+		"name": "Spur Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 3}],
+		"max": false
+	},
+	"220": {
+		"name": "Spur Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 4}],
+		"max": true
+	},
+	"221": {
+		"name": "Spur Atk/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 2}],
+		"max": false
+	},
+	"222": {
+		"name": "Spur Atk/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 3}],
+		"max": true
+	},
+	"223": {
+		"name": "Spur Atk/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 2}],
+		"max": false
+	},
+	"224": {
+		"name": "Spur Atk/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "res"], "value": 3}],
+		"max": true
+	},
+	"225": {
+		"name": "Spur Atk/Spd 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 2}],
+		"max": false
+	},
+	"226": {
+		"name": "Spur Atk/Spd 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd"], "value": 3}],
+		"max": true
+	},
+	"227": {
+		"name": "Spur Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 2}],
+		"max": false
+	},
+	"228": {
+		"name": "Spur Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 3}],
+		"max": false
+	},
+	"229": {
+		"name": "Spur Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 4}],
+		"max": true
+	},
+	"230": {
+		"name": "Spur Def/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 2}],
+		"max": false
+	},
+	"231": {
+		"name": "Spur Def/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 3}],
+		"max": true
+	},
+	"232": {
+		"name": "Spur Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 2}],
+		"max": false
+	},
+	"233": {
+		"name": "Spur Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 3}],
+		"max": false
+	},
+	"234": {
+		"name": "Spur Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 4}],
+		"max": true
+	},
+	"235": {
+		"name": "Spur Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 2}],
+		"max": false
+	},
+	"236": {
+		"name": "Spur Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 3}],
+		"max": false
+	},
+	"237": {
+		"name": "Spur Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 4}],
+		"max": true
+	},
+	"238": {
+		"name": "Spur Spd/Def 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 2}],
+		"max": false
+	},
+	"239": {
+		"name": "Spur Spd/Def 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "def"], "value": 3}],
+		"max": true
+	},
+	"240": {
+		"name": "Spur Spd/Res 1",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 2}],
+		"max": false
+	},
+	"241": {
+		"name": "Spur Spd/Res 2",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 3}],
+		"max": true
+	},
+	"242": {
+		"name": "Staff Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"243": {
+		"name": "Staff Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"244": {
+		"name": "Staff Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"245": {
+		"name": "Surtr's Menace",
+		"sp": 300,
+		"prf": true,
+		"users": ["Surtr: Ruler of Flame"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"246": {
+		"name": "Sword Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"247": {
+		"name": "Sword Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"248": {
+		"name": "Sword Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"249": {
+		"name": "Sword Valor 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"250": {
+		"name": "Sword Valor 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"251": {
+		"name": "Sword Valor 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"252": {
+		"name": "Threat. Atk/Spd 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"253": {
+		"name": "Threat. Atk/Spd 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"254": {
+		"name": "Threat. Atk/Spd 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"255": {
+		"name": "Threaten Atk 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"256": {
+		"name": "Threaten Atk 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"257": {
+		"name": "Threaten Atk 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"258": {
+		"name": "Threaten Def 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"259": {
+		"name": "Threaten Def 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"260": {
+		"name": "Threaten Def 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"261": {
+		"name": "Threaten Res 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"262": {
+		"name": "Threaten Res 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"263": {
+		"name": "Threaten Res 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"264": {
+		"name": "Threaten Spd 1",
+		"sp": 50,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"265": {
+		"name": "Threaten Spd 2",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"266": {
+		"name": "Threaten Spd 3",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"267": {
+		"name": "Time's Pulse 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true], ["turn", 3, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true], ["turn", 3, 0]] }],
+		"max": false
+	},
+	"268": {
+		"name": "Time's Pulse 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true], ["turn", 2, 0]] }],
+		"max": false
+	},
+	"269": {
+		"name": "Time's Pulse 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["specialMax", "player", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "selfReq": [["specialMax", "player", true]] }],
+		"max": true
+	},
+	"270": {
+		"name": "Upheaval",
+		"sp": 300,
+		"prf": true,
+		"users": ["Duma: God of Strength"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["hp"], "team": "enemy", "effectReq": [["always"]] },
+			{"type": "turnStart", "condition": [["turn", 0, 1], ["sideCheck", "2"], ["season", "Anima"]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["hp"], "structure": true, "team": "enemy", "effectReq": [["arStructure", true], ["damageable", true], ["cardinalRC", true, 0, -1]] }],
+		"max": true
+	},
+	"271": {
+		"name": "Vision of Arcadia",
+		"sp": 300,
+		"prf": true,
+		"users": ["Eliwood: Blazing Knight"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["teamInfo", "weapontype", ["beast", "breath"], 1, "greater"]], "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["atk"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"272": {
+		"name": "Ward Armor",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Armored"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"273": {
+		"name": "Ward Beasts",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["beast"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"274": {
+		"name": "Ward Cavalry",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Cavalry"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"275": {
+		"name": "Ward Dragons",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "weapontype", ["breath"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"276": {
+		"name": "Ward Fliers",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["heroInfoCheck", "movetype", ["Flying"]], ["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"277": {
+		"name": "With Everyone!",
+		"sp": 300,
+		"prf": true,
+		"users": ["Tiki: Legendary Dragon", "Tiki: Harmonic Hope"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"278": {
+		"name": "Panic Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"279": {
+		"name": "Panic Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"280": {
+		"name": "Panic Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["panic"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"281": {
+		"name": "Atk/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"282": {
+		"name": "Atk/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"283": {
+		"name": "Atk/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "checkStats": ["atk", "res"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"284": {
+		"name": "Joint Hone Def",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"285": {
+		"name": "Staff Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"286": {
+		"name": "Staff Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"287": {
+		"name": "Staff Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"288": {
+		"name": "Spd/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"289": {
+		"name": "Spd/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"290": {
+		"name": "Spd/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "checkStats": ["spd", "res"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"291": {
+		"name": "Rouse Def/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"292": {
+		"name": "Rouse Def/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"293": {
+		"name": "Rouse Def/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"294": {
+		"name": "Atk/Def Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"295": {
+		"name": "Atk/Def Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"296": {
+		"name": "Atk/Def Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"297": {
+		"name": "Dagger Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"298": {
+		"name": "Dagger Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"299": {
+		"name": "Dagger Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"300": {
+		"name": "Fortify Res 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"301": {
+		"name": "Threat. Atk/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"302": {
+		"name": "Threat. Atk/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"303": {
+		"name": "Threat. Atk/Res 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"304": {
+		"name": "Def/Res Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"305": {
+		"name": "Def/Res Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"306": {
+		"name": "Def/Res Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["def", "res"], "checkStats": ["def", "res"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"307": {
+		"name": "Atk/Spd Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"308": {
+		"name": "Atk/Spd Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"309": {
+		"name": "Atk/Spd Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"310": {
+		"name": "Def/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"311": {
+		"name": "Def/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"312": {
+		"name": "Def/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"313": {
+		"name": "Atk/Spd Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"314": {
+		"name": "Atk/Spd Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"315": {
+		"name": "Atk/Spd Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd"], "checkStats": ["atk", "spd"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"316": {
+		"name": "Rouse Spd/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"317": {
+		"name": "Rouse Spd/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"318": {
+		"name": "Rouse Spd/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"319": {
+		"name": "Threat. Atk/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"320": {
+		"name": "Threat. Atk/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"321": {
+		"name": "Threat. Atk/Def 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "team": "owner", "selfReq": [["distantEnemies", 2, "greater", 1]] },
+			{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "redef"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"322": {
+		"name": "Atk/Def Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"323": {
+		"name": "Atk/Def Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"324": {
+		"name": "Atk/Def Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "def"], "checkStats": ["atk", "def"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"325": {
+		"name": "Rouse Spd/Def 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"326": {
+		"name": "Rouse Spd/Def 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"327": {
+		"name": "Rouse Spd/Def 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"328": {
+		"name": "Lance Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"329": {
+		"name": "Lance Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"330": {
+		"name": "Lance Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"331": {
+		"name": "Impenetrable Dark",
+		"sp": 300,
+		"prf": true,
+		"users": ["Bramimond: The Enigma"],
+		"type": "effect",
+		"effect": {"type": "combatEffect", "teamNihil": 1},
+		"max": true
+	},
+	"332": {
+		"name": "Joint Drive Atk",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"333": {
+		"name": "Spd/Def Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"334": {
+		"name": "Spd/Def Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"335": {
+		"name": "Spd/Def Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"336": {
+		"name": "Armored Stride 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"337": {
+		"name": "Armored Stride 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"338": {
+		"name": "Armored Stride 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"339": {
+		"name": "Rouse Atk/Res 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"340": {
+		"name": "Rouse Atk/Res 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"341": {
+		"name": "Rouse Atk/Res 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"342": {
+		"name": "Mila's Turnwheel",
+		"sp": 300,
+		"prf": true,
+		"users": ["Mila: Goddess of Love"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["isolation"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "def", "greater", 1] ] }],
+		"max": true
+	},
+	"343": {
+		"name": "Joint Drive Spd",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"344": {
+		"name": "Fortify Def 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 7, "stats": ["def"], "team": "owner", "effectReq": [["distanceCheck", 1]] }],
+		"max": true
+	},
+	"345": {
+		"name": "Inevitable Death",
+		"sp": 300,
+		"prf": true,
+		"users": ["Hel: Death Sovereign"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd", "def", "res"], "value": 4}],
+		"max": true
+	},
+	"346": {
+		"name": "Joint Drive Res",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"347": {
+		"name": "Atk/Spd Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 2}],
+		"max": false
+	},
+	"348": {
+		"name": "Atk/Spd Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 3}],
+		"max": false
+	},
+	"349": {
+		"name": "Atk/Spd Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "spd"], "value": 4}],
+		"max": true
+	},
+	"350": {
+		"name": "Joint Hone Res",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"351": {
+		"name": "Spd/Def Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 2}],
+		"max": false
+	},
+	"352": {
+		"name": "Spd/Def Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 3}],
+		"max": false
+	},
+	"353": {
+		"name": "Spd/Def Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "def"], "value": 4}],
+		"max": true
+	},
+	"354": {
+		"name": "Atk/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 2}],
+		"max": false
+	},
+	"355": {
+		"name": "Atk/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 3}],
+		"max": false
+	},
+	"356": {
+		"name": "Atk/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "res"], "value": 4}],
+		"max": true
+	},
+	"357": {
+		"name": "Rouse Atk/Spd 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"358": {
+		"name": "Rouse Atk/Spd 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": false
+	},
+	"359": {
+		"name": "Rouse Atk/Spd 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"360": {
+		"name": "Odd Tempest 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
+		"max": false
+	},
+	"361": {
+		"name": "Odd Tempest 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
+		"max": false
+	},
+	"362": {
+		"name": "Odd Tempest 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 0]] }],
+		"max": true
+	},
+	"363": {
+		"name": "Spd/Def Gap 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"364": {
+		"name": "Spd/Def Gap 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
+		"max": false
+	},
+	"365": {
+		"name": "Spd/Def Gap 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["spd", "def"], "checkStats": ["spd", "def"], "team": "owner", "peak": "max" }],
+		"max": true
+	},
+	"366": {
+		"name": "Atk/Def Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 2}],
+		"max": false
+	},
+	"367": {
+		"name": "Atk/Def Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 3}],
+		"max": false
+	},
+	"368": {
+		"name": "Atk/Def Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["atk", "def"], "value": 4}],
+		"max": true
+	},
+	"369": {
+		"name": "Spd/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 2}],
+		"max": false
+	},
+	"370": {
+		"name": "Spd/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 3}],
+		"max": false
+	},
+	"371": {
+		"name": "Spd/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["spd", "res"], "value": 4}],
+		"max": true
+	},
+	"372": {
+		"name": "Odd Recovery 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 5, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"373": {
+		"name": "Odd Recovery 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 10, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"374": {
+		"name": "Odd Recovery 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 0]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"375": {
+		"name": "Spd/Res Oath 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"376": {
+		"name": "Spd/Res Oath 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": false
+	},
+	"377": {
+		"name": "Spd/Res Oath 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", true]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["spd", "res"], "team": "owner", "selfReq": [["adjacent", true]] }],
+		"max": true
+	},
+	"378": {
+		"name": "Wings of Light",
+		"sp": 300,
+		"prf": true,
+		"users": ["Seiros: Saint of Legend"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "condition": [["teamInfo", "type", ["mythic"], 3, "less"], ["turnRange", 1, 5, true] ], "effectReq": [["heroInfoCheck", "type", ["mythic"]] ], "subtype": "buff", "team": "owner", "stats": ["atk", "def", "spd", "res"], "value": 2, "varValue": "turn"}],
+		"max": true
+	},
+	"379": {
+		"name": "D/R Near Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 1, "res": 1} }],
+		"max": false
+	},
+	"380": {
+		"name": "D/R Near Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"381": {
+		"name": "D/R Near Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"def": 4, "res": 4} }],
+		"max": true
+	},
+	"382": {
+		"name": "A/R Far Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 1, "res": 1} }],
+		"max": false
+	},
+	"383": {
+		"name": "A/R Far Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"384": {
+		"name": "A/R Far Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"atk": 4, "res": 4} }],
+		"max": true
+	},
+	"385": {
+		"name": "Fatal Smoke 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 1, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"386": {
+		"name": "Fatal Smoke 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]],  "subEffect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]}]  }],
+		"max": false
+	},
+	"387": {
+		"name": "Fatal Smoke 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "postCombat", "subEffect": [{"type": "postCombatBuffDebuff", "subtype": "debuff", "checkType": "distance", "list": ["deepWounds"], "range": 2, "reference": true, "team": "enemy", "from": "enemy"}]  }],
+		"max": true
+	},
+	"388": {
+		"name": "A/D Near Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 1, "def": 1} }],
+		"max": false
+	},
+	"389": {
+		"name": "A/D Near Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 2, "def": 2} }],
+		"max": false
+	},
+	"390": {
+		"name": "A/D Near Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 4, "def": 4} }],
+		"max": true
+	},
+	"391": {
+		"name": "Even Tempest 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 1.0], ["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": false
+	},
+	"392": {
+		"name": "Even Tempest 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["hp", "greater", 0.5], ["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": false
+	},
+	"393": {
+		"name": "Even Tempest 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["turn", 2, 1]] }],
+		"max": true
+	},
+	"394": {
+		"name": "Atk/Def Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"395": {
+		"name": "Atk/Res Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"396": {
+		"name": "Atk/Spd Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"397": {
+		"name": "Def/Res Menace",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 6, "stats": ["def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"398": {
+		"name": "Order's Restraint",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ashera: Order Goddess"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "res"], "team": "owner", "effectReq": [["distanceCheck", 2] ] },
+			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 3]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "nullPanic"], "value": 6, "stats": ["atk", "res"], "team": "owner", "selfReq": [["distantAllies", 2, "greater", 3]] }],
+		"max": true
+	},
+	"399": {
+		"name": "Even Recovery 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 5, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"400": {
+		"name": "Even Recovery 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 10, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"401": {
+		"name": "Even Recovery 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 2, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "restore"], "value": 20, "stats": ["hp"], "team": "owner", "effectReq": [["distanceCheck", 2]] }],
+		"max": true
+	},
+	"402": {
+		"name": "Threat. Spd/Def 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["spd", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"403": {
+		"name": "Threat. Spd/Def 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["spd", "def"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"404": {
+		"name": "Domain of Ice",
+		"sp": 300,
+		"prf": true,
+		"users": ["Nifl: God of Ice"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["spd", "res"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", "auraEffects": [{"type": "combatEffect", "firstReduction": 0.7 }], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"405": {
+		"name": "Stall Ploy 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 5] ] }],
+		"max": false
+	},
+	"406": {
+		"name": "Stall Ploy 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 3] ] }],
+		"max": false
+	},
+	"407": {
+		"name": "Stall Ploy 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "debuff", "checkType": "reqCheck", "list": ["stall"], "team": "enemy", "effectReq": [["cardinal", true], ["statCompare", "visible", "HP", "greater", 1] ] }],
+		"max": true
+	},
+	"408": {
+		"name": "Surtr's Portent",
+		"sp": 300,
+		"prf": true,
+		"users": ["Surtr: Pirate of Red Sky"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantEnemies", 4, "greater", 1]] },
+				{"type": "turnStart", "condition": [["distantEnemies", 4, "greater", 1]], "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "peak": "min" }],
+		"max": true
+	},
+	"409": {
+		"name": "Def/Res Rein 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 2}],
+		"max": false
+	},
+	"410": {
+		"name": "Def/Res Rein 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 3}],
+		"max": false
+	},
+	"411": {
+		"name": "Def/Res Rein 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "debuff", "team": "enemy", "stats": ["def", "res"], "value": 4}],
+		"max": true
+	},
+	"412": {
+		"name": "Joint Drive Def",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"413": {
+		"name": "Ostia's Pulse II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Hector: Marquess of Ostia"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 1, "stats": ["special"], "team": "owner", "effectReq": [["specialMax", "enemy", true], ["tactic", "true"]] },
+			{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["def", "res"], "team": "owner", "effectReq": [["tactic", "true"]] }],
+		"max": true
+	},
+	"414": {
+		"name": "Joint Dist. Guard",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "selfReq": [["distantAllies", 2, "greater", 1]], "team": "owner", "auraEffects": [{"type": "conditionalEffects", "condition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]], "statBuff": {"def": 4, "res": 4} }] }],
+		"max": true
+	},
+	"415": {
+		"name": "Threaten Def/Res 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"416": {
+		"name": "Threaten Def/Res 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantEnemies", 2, "greater", 1]], "subtype": "debuff", "checkType": "reqCheck", "list": ["stats"], "value": 4, "stats": ["def", "res"], "team": "enemy", "effectReq": [["distanceCheck", 2]] }],
+		"max": false
+	},
+	"417": {
+		"name": "Domain of Flame",
+		"sp": 300,
+		"prf": true,
+		"users": ["Múspell: Flame God"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk", "def"], "value": 4, "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "auraEffects", "effectReq": [["distanceCheck", 2]], "team": "owner", 
+				"auraEffects": [{"type": "conditionalCombat", "condition": [["statCompare2", "combat", "owner", "atk", "enemy", "res", "greater", 1]], 
+			"subEffect": [{"type": "variableCombat", "combatEffects": ["trueDamage"], "key": "statDifferenceEffect", "stat": "atk", "enemyStat": "res", "factor": 0.3, "max": 999}] }], "selfReq": [["distantAllies", 2, "greater", 1]] }],
+		"max": true
+	},
+	"418": {
+		"name": "Dragon Exp. 1",
+		"sp": 30,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"419": {
+		"name": "Dragon Exp. 2",
+		"sp": 60,
+		"prf": false,
+		"type": "",
+		"max": false
+	},
+	"420": {
+		"name": "Dragon Exp. 3",
+		"sp": 120,
+		"prf": false,
+		"type": "",
+		"max": true
+	},
+	"421": {
+		"name": "A/R Near Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 1, "res": 1} }],
+		"max": false
+	},
+	"422": {
+		"name": "A/R Near Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 2, "res": 2} }],
+		"max": false
+	},
+	"423": {
+		"name": "A/R Near Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["sword", "lance", "axe", "breath", "beast"]]],  "statBuff": {"atk": 4, "res": 4} }],
+		"max": true
+	},
+	"424": {
+		"name": "Rouse Atk/Spd 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"425": {
+		"name": "Worldbreaker",
+		"sp": 300,
+		"prf": true,
+		"users": ["Thórr: War God"],
+		"type": "effect",
+		"effect": [],
+		"max": true
+	},
+	"426": {
+		"name": "Goddess Bearer",
+		"sp": 300,
+		"prf": true,
+		"users": ["Byleth: The Fódlan Light"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["airOrders"], "team": "owner", "effectReq": [["heroInfoCheck", "movetype", ["Infantry", "Armored", "Cavalry"]], ["distanceCheck", 1]] }],
+		"max": true
+	},
+	"427": {
+		"name": "Rouse Spd/Def 4",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["spd", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"428": {
+		"name": "Red Feud 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"429": {
+		"name": "Red Feud 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"430": {
+		"name": "Red Feud 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": true
+	},
+	"431": {
+		"name": "Opening Retainer",
+		"sp": 300,
+		"prf": true,
+		"users": ["Ash: Retainer to Askr"],
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 3}],
+		"max": true
+	},
+	"432": {
+		"name": "C Feud 1",
+		"sp": 60,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"433": {
+		"name": "C Feud 2",
+		"sp": 120,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": false
+	},
+	"434": {
+		"name": "C Feud 3",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [],
+		"max": true
+	},
+	"435": {
+		"name": "D/R Far Save 1",
+		"sp": 100,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 1]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"def": 1, "res": 1} }],
+		"max": false
+	},
+	"436": {
+		"name": "D/R Far Save 2",
+		"sp": 200,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"def": 2, "res": 2} }],
+		"max": false
+	},
+	"437": {
+		"name": "D/R Far Save 3",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalSavior", "allyCondition": [["distanceCheck", 2]], "enemyCondition": [["heroInfoCheck", "weapontype", ["redtome", "bluetome", "greentome", "colorlesstome", "bow", "dagger", "staff"]]],  "statBuff": {"def": 4, "res": 4} }],
+		"max": true
+	},
+	"438": {
+		"name": "Cross Spur Atk",
+		"sp": 300,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1]], "subtype": "buff", "team": "owner", "stats": ["atk"], "value": 4}],
+		"max": true
+	},
+	"439": {
+		"name": "Rouse Atk/Def 4",
+		"sp": 240,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["adjacent", false]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "def"], "team": "owner", "selfReq": [["adjacent", false]] }],
+		"max": true
+	},
+	"440": {
+		"name": "With Everyone! II",
+		"sp": 300,
+		"prf": true,
+		"users": ["Tiki: Legendary Dragon"],
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["def", "res"], "team": "owner", "effectReq": [["distanceCheck", 1]], "selfReq": [["adjacent", true]] }],
+		"max": true
+	}
+
+
+}

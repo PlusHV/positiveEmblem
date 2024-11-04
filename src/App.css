@@ -1,0 +1,369 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body{
+  background-color: black;
+  color: white;
+
+}
+
+table{
+  background-color: #212C37;
+
+}
+
+table,tr,td {
+  border-collapse: collapse;
+
+  border: 2px solid #930322;
+  table-layout: auto;
+}
+
+
+
+.cellStyle{
+  border: 2px solid #555;
+  min-width: 90px;
+  height: 90px;
+  width: auto;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.highlightedCellStyle{
+  border: 2px solid yellow;
+
+  width: 90px;
+  height: 90px;
+
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1px;
+  position: relative;
+}
+
+.anchorPositionCellStyle{
+  border: 2px solid midnightblue;
+
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1000px; 
+  position: relative; 
+}
+
+
+.movementCellStyle{
+  border: 2px solid aqua;
+
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1000px; 
+  position: relative; 
+}
+
+.attackCellStyle{
+  border: 2px solid red;
+
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1px;
+  position: relative;
+}
+
+.assistCellStyle{
+  border: 2px solid lime;
+
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1px;
+  position: relative;
+}
+
+.warpCellStyle{
+  border: 2px solid dodgerblue;
+
+  width: 90px;
+  height: 90px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-spacing: 1px;
+  position: relative;
+}
+
+.boardStyle{
+  border-collapse: separate;
+  background-size: contain;
+  opacity: 1.0;
+  background-color: unset;
+}
+
+.teamMember{
+  border: 2px solid #555;
+  min-width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.heroFace{
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+
+}
+
+.forecastHero{
+  min-width: 50px;
+  height: 50px;
+}
+
+.forecastHeroGrey{
+  min-width: 50px;
+  height: 50px;
+  filter: grayscale(100%);
+
+}
+
+.waitHeroFace{
+  min-width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  filter: grayscale(100%);
+}
+
+.highlightedTeamMember{
+  border: 3px solid yellow;
+  min-width: 50px;
+  height: 50px;
+  text-align: center;
+
+}
+
+.heroText{
+  border: 2px solid #930322;
+  width: auto;
+  text-align: center;
+}
+.inputNum {
+  border: 2px solid #930322;
+  width: 150px;
+  max-width: 90px;
+  min-width: 50px;
+
+}
+.numberInput {
+  background-color: #212C37;
+  color: white;
+  width: 90%;
+}
+
+.statText {
+        
+  border: 2px solid #930322;
+  width: 150px;
+  text-align: center;
+  max-width: 90px;
+  min-width: 50px;
+
+}
+.statNum {
+  border: 2px solid #930322;
+  width: 150px;
+  height: 5px;
+  text-align: center;
+  max-width: 90px;
+  min-width: 50px;
+
+}
+.statusText {
+        
+  border: 2px solid #930322;
+  width: 150px;
+  text-align: left;
+  max-width: 90px;
+  min-width: 50px;
+
+}
+.equipText {
+  border: 2px solid #930322;
+  width: 50px;
+  height: 5px;
+  text-align: center;
+
+}
+.equippedSkill {
+  border: 2px solid #930322;
+  width: 75px;
+  height: 5px;
+  text-align: center;
+}
+
+.spacing {
+   border: 2px solid #930322;
+   width: 150px;
+  max-width: 90px;
+  min-width: 50px;
+
+   text-align: center;
+ }
+
+.dropdown{
+  background-color: blue;
+}
+
+.healthText{
+  position: absolute; 
+  bottom: 0px; 
+  left: 0px; 
+  font-weight: bold;
+  user-select: none;
+  color: red; 
+  z-index: 2;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+.specialText{
+
+  position: absolute; 
+  top: 0px; 
+  right: 0px; 
+  font-weight: bold;
+  user-select: none;
+  color: MediumOrchid; 
+  z-index: 2;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+
+.overlayIcon{
+
+  position: absolute;  
+  
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  
+  z-index: 2;
+
+}
+.disabledOverlayIcon{
+
+  position: absolute;  
+  
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  display: none;
+  z-index: 2;
+
+}
+
+.smallSelect__control {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__container {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__input {
+    height: 30px;
+    min-height: 30px;
+    top: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    transform: translateY(-50%);
+  }
+.smallSelect__singleValue {
+    height: 20px;
+    min-height: 20px;
+    top: 0%;
+    position: relative;
+
+  }
+.smallSelect__dropdownIndicator {
+    height: 20px;
+    min-height: 20px;
+    padding-top: 1;
+    padding-bottom: 1;
+    padding-right: 1;
+    padding-left: 1;
+  }
+.smallSelect__indicatorSeparator {
+    height: 15px;
+    min-height: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    align-self: center;
+  }
+.smallSelect__clearIndicator {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__valueContainer {
+    height: 20px;
+    min-height: 20px;
+
+  }
+
+.smallSelect__indicatorsContainer {
+    height: 20px;
+    min-height: 20px;
+
+  }
+.smallSelect__group {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__groupHeading {
+    height: 20px;
+    min-height: 20px;
+  }
+.smallSelect__menuPortal {
+    height: 20px;
+    min-height: 20px;
+  }
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

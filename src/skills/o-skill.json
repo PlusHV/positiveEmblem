@@ -1,0 +1,239 @@
+{
+	"0": {
+		"name": "Recoil 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "recoil": 2}]
+	},
+	"1": {
+		"name": "Recoil 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "recoil": 4}]
+	},
+	"2": {
+		"name": "Recoil 3",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "recoil": 6}]
+	},
+	"3": {
+		"name": "Recoil 4",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "recoil": 8}]
+	},
+	"4": {
+		"name": "Post Heal 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "postHeal": 2}]
+	},
+	"5": {
+		"name": "Post Heal 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "postHeal": 4}]
+	},
+	"6": {
+		"name": "Post Heal 3",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "postHeal": 6}]
+	},
+	"7": {
+		"name": "Turn 1, CD 3",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"8": {
+		"name": "Turn 1, CD 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 2, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"9": {
+		"name": "Movement+",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"10": {
+		"name": "Armor Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "counter": 1}]
+	},
+	"11": {
+		"name": "Cavalry Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "conditionalEffects", "condition": [["phase", "player"]], "lull": {"atk": 4, "def": 4}, "enemyDouble": 1 }]
+	},
+	"12": {
+		"name": "Infantry Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "combatEffect", "specialTrueDamage": 10}]
+	},
+	"13": {
+		"name": "Flier Beast Effect",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"14": {
+		"name": "Beast Attack +2",
+		"sp": 0,
+		"prf": false,
+		"type": "passive",
+		"effect": {"atk": 2}
+	},
+	"15": {
+		"name": "Ally Support C 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 1}]
+	},
+	"16": {
+		"name": "Ally Support C 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["res"], "value": 1}]
+	},
+	"17": {
+		"name": "Ally Support B 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 1}]
+	},
+	"18": {
+		"name": "Ally Support B 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["def", "res"], "value": 1}]
+	},
+	"19": {
+		"name": "Ally Support A 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["spd", "def", "res"], "value": 1}]
+	},
+	"20": {
+		"name": "Ally Support A 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["spd", "def", "res"], "value": 1}]
+	},
+	"21": {
+		"name": "Ally Support S 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 1], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd", "def", "res"], "value": 1}]
+	},
+	"22": {
+		"name": "Ally Support S 2",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "auraStats", "effectReq": [["distanceCheck", 2], ["supportAlly", true]], "subtype": "buff", "team": "owner", "stats": ["atk", "spd", "def", "res"], "value": 1}]
+	},
+	"23": {
+		"name": "Shining Emblem Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk", "spd", "def", "res"], "team": "owner", "selfReq": [["distantAllies", 2, "greater", 1]] },
+			{"type": "turnStart", "condition": [["distantAllies", 2, "greater", 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "effectReq": [["distanceCheck", 2]] }]
+	},
+	"24": {
+		"name": "Gray Waves Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["mobility+"], "team": "owner", "assisteeReq": [["always"]]}]
+	},
+	"25": {
+		"name": "Gentle Dream Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats", "airOrders"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "owner", "assisteeReq": [["always"]], "effectReq": [["cardinal", true]], "assisteeRef": true, "assisteeRefReq": [["cardinal", true]] }]
+	},
+	"26": {
+		"name": "Frightful Dream Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "reqCheck", "list": ["stats", "guard"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "enemy", "effectReq": [["cardinal", true]], "assisteeRef": true, "assisteeRefReq": [["cardinal", true]] }]
+	},
+	"27": {
+		"name": "Sweet Dreams Buff/Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 3, "stats": ["atk", "spd", "def", "res"], "team": "owner", "assisteeReq": [["always"]]}, 
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 4, "stats": ["atk", "spd", "def", "res"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min" }]
+	},
+	"28": {
+		"name": "Whimsical Dream Buff/Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "dance", "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "team": "owner", "assisteeReq": [["always"]], "assisteeRef": true, "assisteeRefReq": [["distanceCheck", 2]]  },
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min" },
+			{"type": "onAssist", "assistType": "dance", "subtype": "debuff", "checkType": "targetingReqCheck", "list": ["stats"], "value": 5, "stats": ["atk"], "checkStats": ["distance"], "team": "enemy", "targetReq": [["distanceCheck", 4]], "targetReference": "assistee", "peak": "min", "effectReq": [["distanceCheck", 2]] }]
+	},
+	"29": {
+		"name": "Future Vision II Debuff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "debuff", "checkType": "targeting", "list": ["stats"], "value": 7, "stats": ["atk", "def"], "checkStats": ["distance"], "team": "enemy", "range": 4, "from": ["assister", "assistee"], "targetReq": [["distanceCheck", 4]], "peak": "min", "assistExclude": ["assistee"] }]
+	},
+	"30": {
+		"name": "To Change Fate! Buff",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onAssist", "assistType": "movement", "subtype": "buff", "list": ["stats"], "value": 6, "stats": ["atk"], "team": "owner", "range": 0, "exclude": ["other"], "assistExclude": ["assistee"]}]
+	},
+	"31": {
+		"name": "Turn 1, CD 5",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "turnStart", "condition": [["turn", 0, 1]], "subtype": "buff", "checkType": "reqCheck", "list": ["stats"], "value": 5, "stats": ["special"], "team": "owner", "selfReq": [["always"]] }]
+	},
+	"32": {
+		"name": "Max Heal 1",
+		"sp": 0,
+		"prf": false,
+		"type": "effect",
+		"effect": [{"type": "onSpecialEffect", "condition": [["specialActivated", true], ["perMapCheck"]], "subEffect": [{"type": "combatEffect", "postHeal": 99}] }]
+	}
+
+
+}
