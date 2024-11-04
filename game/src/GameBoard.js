@@ -1697,7 +1697,7 @@ class GameBoard extends React.Component{
         getVariableStats(draggedOverHero, draggedHero, heroListCopy, this.state);
 
         //calulcating aura stats based on battling heroes
-        calculateBattlingAuraStats(heroListCopy, draggedHero, draggedOverHero);
+        calculateBattlingAuraStats(heroListCopy, draggedHero, draggedOverHero, this.state);
 
 
 
@@ -3965,7 +3965,7 @@ function makeHeroStruct(){
 
     this["combatEffects"] = {"counter": 0, "double": 0, "enemyDouble": 0, "stopDouble": 0, "attackCharge": 1, "defenseCharge": 1, "guard": 0, "trueDamage": 0, "firstTrueDamage": 0, "adaptive": 0, "nullAdaptive": 0, "sweep": 0, "selfSweep": 0,
       "preBattleTrueDamage": 0,
-      "phantomStats": {"hp": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}, //extra stats used for stat comparisons
+      "phantomStats": {"HP": 0, "atk": 0, "spd": 0, "def": 0, "res": 0}, //extra stats used for stat comparisons
     //enemyDouble stops enemy from double, stopDouble stops your own double
       "brashAssault": 0, "desperation": 0, "vantage": 0, "hardyBearing": 0, "grantDesperation": 0,
       "nullC": 0, "nullEnemyFollowUp": 0, "nullStopFollowUp": 0, "nullGuard": 0, "nullCharge": 0,
